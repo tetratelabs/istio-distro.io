@@ -1,0 +1,4 @@
+# robotstxt.org - if ENV production variable is false robots will be disallowed.
+User-agent: *
+User-agent: AdsBot-Google
+Disallow: /
