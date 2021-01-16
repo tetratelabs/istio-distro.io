@@ -187,3 +187,21 @@ a:hover {
 .top-0 {
   top: 0 !important;
 }
+// 
+// 
+#accordion  {
+  .card {
+    box-shadow: none !important;
+  }
+  .btn-link {
+    color: $primary-color;
+  }
+  .btn-link{
+    color: $primary-color;
+    text-decoration: none;
+
+    &.collapsed {
+      color: black;
+    }
+  }
+}
