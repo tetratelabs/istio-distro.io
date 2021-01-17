@@ -1,3 +1,26 @@
+.my-container {
+  max-width: 1920px;
+  padding: 0 150px;
+  margin: 0 auto;
+  @include desktop-ex {
+    padding: 0 80px;
+  }
+  @include desktop-lg {
+    padding: 0;
+  }
+  @include desktop {
+    padding: 0 50px;
+  }
+  @include tablet {
+    padding: 0 30px;
+  }
+  @include mobile {
+    padding: 0 ;
+  }
+}
+.logo-width {
+  width: 150px;
+}
 .navigation {
   transition: .2s ease;
 
