@@ -1,10 +1,10 @@
 ######################## default configuration ####################
-baseURL = ""
-title = "Get sIstio"
+baseURL = "https://getistio.netlify.app/"
+title = "Get Istio"
 # google analytics
 googleAnalytics = "" # example : UA-123-45
 # disable language
-disableLanguages = [] # desable language from here
+disableLanguages = ["fr"] # desable language from here
 
 # hugo outputs
 [outputs]
@@ -152,7 +152,7 @@ weight = 3
 
 #################### default parameters ################################
 [params]
-logo = "images/logo.png"
+logo = "images/GetIstio.svg"
 # Meta data
 description = "This is meta description"
 author = "Themefisher"
