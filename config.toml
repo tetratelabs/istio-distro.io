@@ -5,6 +5,7 @@ title = "Get Istio"
 googleAnalytics = "" # example : UA-123-45
 # disable language
 disableLanguages = ["fr"] # desable language from here
+enableRobotsTXT = true
 
 # hugo outputs
 [outputs]
@@ -108,10 +109,10 @@ page = "search/"
 ############## English navigation ###############
 
 # main menu
-# [[Languages.en.menu.main]]
-# name = "Home"
-# url = "/"
-# weight = 1
+[[Languages.en.menu.main]]
+name = "Docs"
+url = "/"
+weight = 1
 
 [[Languages.en.menu.main]]
 name = "Github"
@@ -121,27 +122,27 @@ weight = 2
 [[Languages.en.menu.main]]
 name = "Training & Certification"
 url = "#"
-weight = 2
+weight = 6
 
 [[Languages.en.menu.main]]
 name = "Blog"
 url = "/blog/"
-weight = 2
+weight = 5
 
 [[Languages.en.menu.main]]
 name = "Community Meeting"
 url = "#"
-weight = 2
+weight = 4
 
 [[Languages.en.menu.main]]
 name = "Partners"
 url = "#"
-weight = 2
+weight = 3
 
 [[Languages.en.menu.main]]
 name = "GetEnvoy"
 url = "https://www.getenvoy.io/"
-weight = 2
+weight = 7
 
 # footer menu
 
@@ -208,7 +209,7 @@ copyright = "Copyright &copy; 2020 a hugo theme by [themefisher](https://themefi
 
 # banner
 [Languages.en.banner]
-title = "Documentation Theme By Themefisher Team"
+title = "GetIstion Documentation"
 subtitle = "Lorem ipsum dolor amet, consetetur sadiffspscing elitr, diam nonumy invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua At."
 image = "images/banner.jpg"
 
