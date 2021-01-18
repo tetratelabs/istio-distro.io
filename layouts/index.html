@@ -31,9 +31,9 @@
 <!-- topics -->
 <section class="section pb-0">
   <div class="container">
-    <h2 class="section-title">{{ i18n "topics" }}</h2>
+    <!-- <h2 class="section-title">{{ i18n "topics" }}</h2> -->
     <div class="row">
-      {{ range (where .Site.Pages "Type" "docs") }}
+      {{ range first 4 (where .Site.Pages "Type" "docs") }}
       <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
         <div class="card match-height">
           <div class="card-body">
@@ -73,13 +73,15 @@
         <img loading="lazy" src="{{ .image| absURL }}" class="img-fluid">
       </div>
       <div class="col-lg-8 text-lg-left text-center">
-        <h2 class="mb-3">{{ .title | markdownify }}</h2>
-        <p>{{ .content | markdownify }}</p>
-        {{ if .button.enable }}
-        {{ with .button }}
-        <a href="{{ .link | absLangURL }}" class="btn btn-primary">{{ .label }}</a>
-        {{ end }}
-        {{ end }}
+        <div class="box">
+          <h2 class="mb-3">Get Community Updates</h2>
+          <p>Sign up for our GetIstio community newsletter to get the most recent updates and product announcements.</p>
+          <div class="form-control">
+            <input type="email" class="input" placeholder="Work Email"/ required>
+            <button class="btn btn-sm btn-primary">Join Newsletter</button>
+          </div>
+        </div>
+             
       </div>
     </div>
   </div>
