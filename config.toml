@@ -146,10 +146,10 @@ weight = 7
 
 # footer menu
 
-[[Languages.en.menu.footer]]
-name = "Github"
-url = "https://github.com/themefisher/"
-weight = 3
+#[[Languages.en.menu.footer]]
+#name = "Github"
+#url = "https://github.com/themefisher/"
+#weight = 3
 
 #################### default parameters ################################
 [params]
@@ -178,25 +178,25 @@ link = "#"
 
   
 ############################# social site ########################
-[[params.social]]
-title = "facebook"
-icon = "ti-facebook" # themify icon : https://themify.me/themify-icons
-link = "#"
+# [[params.social]]
+# title = "facebook"
+# icon = "ti-facebook" # themify icon : https://themify.me/themify-icons
+# link = "#"
 
-[[params.social]]
-title = "twitter"
-icon = "ti-twitter-alt" # themify icon : https://themify.me/themify-icons
-link = "#"
+# [[params.social]]
+# title = "twitter"
+# icon = "ti-twitter-alt" # themify icon : https://themify.me/themify-icons
+# link = "#"
 
-[[params.social]]
-title = "github"
-icon = "ti-github" # themify icon : https://themify.me/themify-icons
-link = "#"
+# [[params.social]]
+# title = "github"
+# icon = "ti-github" # themify icon : https://themify.me/themify-icons
+# link = "#"
 
-[[params.social]]
-title = "linkedin"
-icon = "ti-linkedin" # themify icon : https://themify.me/themify-icons
-link = "#"
+# [[params.social]]
+# title = "linkedin"
+# icon = "ti-linkedin" # themify icon : https://themify.me/themify-icons
+# link = "#"
 
 
 ################################### English language #####################################
