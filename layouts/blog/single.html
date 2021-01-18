@@ -1,5 +1,18 @@
 {{ define "main" }}
-    
-    {{ .Content }}
+    <section class="py-5">
+        <div class="container">
+            <div class="row my-5">
+                <div class="col-12 text-center">
+                    <h2>{{.Title}}</h2>
+                    <p class="blog-date mt-3"> <span>{{ dateFormat "Jan 02, 2006" .Date }}</span> / {{ math.Round (div (countwords .Content) 220.0) }} min read</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-9">
+                    {{ .Content }}
+                </div>
+            </div>
+        </div>
+    </section>    
 
 {{ end }}

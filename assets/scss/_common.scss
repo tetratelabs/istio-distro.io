@@ -264,3 +264,16 @@ button.btn {
  	top: 6px;
 	right: 12px;
 }
+.blog-link {
+  h5 {
+    transition: all .3s;
+  }
+  &:hover h5 {
+    color: $primary-color;
+  }
+}
+.blog-date {
+  span {
+    color: $primary-color;
+  }
+}

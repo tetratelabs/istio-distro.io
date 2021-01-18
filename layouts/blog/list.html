@@ -1,29 +1,42 @@
 {{ define "main" }}
-
     <section class="py-5">
       <div class="container">
-
         <div class="row">
+          <div class="col-sm-12 text-center">
+            <h2>Blog</h2>
+            <p>Stay up to date on the latest GetIstion news.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-5">
+      <div class="container">
+        <div class="row justify-content-center">
           {{ $pages :=  where .Data.Pages "Section" "blog" }}
                 {{ range $pages }}
-                    <div class="col-lg-4 col-md-4 col-sm-6 mb-4">
-                      <div class="card match-height">
-                        {{ with .Params.thumbnail }}
+                  <div class="col-sm-10 my-5 align-self-center">
+                    <div class="d-flex align-items-center">
+                      {{ with .Params.thumbnail }}
+                      <div style="display: inline-block; margin-right: 30px;;">
+  
                         <img
                           src="{{.}}"
                           class="card-img-top"
                           alt="..."
+                          style="width: 200px; height: 220px;"
                         />
-                        {{ end }}
-                        <div class="card-body  d-flex flex-column justify-content-center">
-                          <h5 class="card-title">{{.Title}}</h5>
-                          <p class="card-text mb-3">
-                            {{ .Params.Description }}
-                          </p>
-                          <a href="{{ .Permalink }}" class="stretched-link">Read More</a>
-                        </div>
-                      </div>                      
-                    </div>
+                      </div>
+                      {{ end }}
+                      <div style="display: inline-block;">
+                        <p>{{ dateFormat "Jan 02, 2006" .Date }} / {{ math.Round (div (countwords .Content) 220.0) }} min read</p>
+                        <a href="{{ .Permalink }}" class="blog-link"><h5 class="card-title">{{.Title}}</h5></a>
+                        <p class="card-text mb-3">
+                          {{ .Params.Description }}
+                        </p>
+                        <a href="{{ .Permalink }}">Continue Reading →</a>
+                      </div>
+                    </div>                        
+                  </div>
                 {{ end }}
         </div>
       </div>
