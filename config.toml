@@ -153,7 +153,7 @@ weight = 7
 
 #################### default parameters ################################
 [params]
-logo = "images/GetIstio.svg"
+logo = "images/temp-logo.png"
 # Meta data
 description = "This is meta description"
 author = "Themefisher"
