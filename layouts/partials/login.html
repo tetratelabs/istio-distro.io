@@ -1,0 +1,27 @@
+<script language="javascript">
+  
+  function pasuser(form) {
+
+    if (form.pass.value=="GetIstionPassword") {
+    localStorage.setItem("User", "Amjad");              
+    location="/" 
+    } else {
+    alert("Invalid Password")
+    }
+  }
+</script>
+  
+<div class="login_form">
+    <div class="details">
+      <div class="welcome">Welcome</div>
+        <form action="/" method="post">
+          <div class="wrap">
+            <label>Enter Password</label>
+              <input type="password" name="pass" class="input mt-5" id="password" data-type="password">
+              <input type="button" value="Login"
+  onClick="pasuser(this.form)" class="btn btn-sm btn-primary ml-lg-4 mt-5">
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
