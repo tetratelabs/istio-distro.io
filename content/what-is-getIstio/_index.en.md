@@ -5,6 +5,7 @@ icon: "ti-panel"
 description: "Cras at dolor eget urna varius faucibus tempus in elit dolor sit amet."
 # type dont remove or customize
 type : "docs"
+weight: 1
 ---
 
 ![image](getting-started.jpg?width=500px)
