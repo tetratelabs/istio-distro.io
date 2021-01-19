@@ -213,7 +213,8 @@ a:hover {
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
   padding: 100px 50px;
   text-align: center;
-  max-width: 600px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .box h2 {
@@ -310,10 +311,12 @@ button.btn {
     padding-left: 10px;
     li {
       display: inline-block;
-      padding: 5px 15px;
-      border: solid 1px #999;
-      border-radius: 50px;
+      padding: 2px 5px;
+      border: solid 1px #eee;
+      border-radius: 5px;
       cursor: pointer;
+      font-size: 14px;
+      background: #eee;
       transition: all .3s;
       &:hover {
         background-color: #eee;
@@ -321,4 +324,26 @@ button.btn {
       }
     }
   }
+}
+.home-code {
+  .learn-more {
+    color: blue;
+    border-bottom: solid 1px blue;
+    border-bottom-style: dotted;
+    transition: all .3s;
+    &:hover {
+      color: $primary-color;
+      border-color: $primary-color;
+    }
+  }
+}
+.link-blue {
+  color: blue;
+  transition: all .3s;
+  &:hover {
+    color: $primary-color;
+  }
+}
+pre {
+  padding: 10px;
 }
