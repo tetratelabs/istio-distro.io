@@ -1,8 +1,13 @@
 {{ define "main" }}
-    <section class="py-5">
+    <section class="py-5 blog-individual">
         <div class="container">
             <div class="row my-5">
-                <div class="col-12 text-center">
+
+                <div class="col-12">
+                    <a href="/blog/" class="link-blue">← Back to Blog</a>
+                    <hr>
+                </div>
+                <div class="col-12 text-center mt-5">
                     <h2>{{.Title}}</h2>
                     <p class="blog-date mt-3"> <span>{{ dateFormat "Jan 02, 2006" .Date }}</span> / {{ math.Round (div (countwords .Content) 220.0) }} min read</p>
                 </div>
