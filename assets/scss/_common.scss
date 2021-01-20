@@ -311,39 +311,50 @@ button.btn {
     padding-left: 10px;
     li {
       display: inline-block;
-      padding: 2px 5px;
+      padding: 5px 15px;
       border: solid 1px #eee;
-      border-radius: 5px;
+      border-radius: 50px;
       cursor: pointer;
+      border: solid 1px #d1d1d1;
       font-size: 14px;
-      background: #eee;
       transition: all .3s;
       &:hover {
-        background-color: #eee;
-        border-color: #eee;
+        background-color: #d1d1d1;
+        border-color: #d1d1d1;
       }
     }
   }
 }
 .home-code {
   .learn-more {
-    color: blue;
-    border-bottom: solid 1px blue;
+    color: $primary-color;
+    border-bottom: solid 1px $primary-color;
     border-bottom-style: dotted;
     transition: all .3s;
     &:hover {
-      color: $primary-color;
-      border-color: $primary-color;
+      color: $blue;
+      border-color: $blue;
     }
   }
 }
 .link-blue {
-  color: blue;
+  color: $primary-color;
   transition: all .3s;
   &:hover {
-    color: $primary-color;
+    color: $blue;
+  }
+}
+.nav-next {
+  &:hover {
+    color: $blue;
   }
 }
 pre {
   padding: 10px;
+}
+.font-i {
+  font-style: italic;
+}
+.color-green {
+  color: $green;
 }
