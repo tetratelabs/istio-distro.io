@@ -205,7 +205,7 @@ languageName = "En"
 languageCode = "en-us"
 weight = 1
 # copyright
-copyright = "Copyright &copy; 2020 a hugo theme by [themefisher](https://themefisher.com)"
+copyright = "Copyright &copy; 2021 a Amjad Rathod"
 
 # banner
 [Languages.en.banner]
