@@ -1,5 +1,5 @@
 ######################## default configuration ####################
-baseURL = "https://getistio.netlify.app/"
+baseURL = "https://getistio-demo.netlify.app/"
 title = "Get Istio"
 # google analytics
 googleAnalytics = "" # example : UA-123-45
