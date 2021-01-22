@@ -121,7 +121,7 @@ weight = 2
 
 [[Languages.en.menu.main]]
 name = "Community"
-url = "#"
+url = "/community"
 weight = 3
 
 [[Languages.en.menu.main]]
@@ -131,7 +131,7 @@ weight = 4
 
 [[Languages.en.menu.main]]
 name = "Partners"
-url = "#"
+url = "/ecosystem-partners/partners/"
 weight = 5
 
 [[Languages.en.menu.main]]
