@@ -139,12 +139,6 @@ name = "GetEnvoy"
 url = "https://www.getenvoy.io/"
 weight = 6
 
-[[Languages.en.menu.main]]
-name = "Github"
-url = "https://github.com/"
-weight = 7
-
-
 # footer menu
 
 #[[Languages.en.menu.footer]]
