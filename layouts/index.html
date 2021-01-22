@@ -4,8 +4,8 @@
 
 <section class="section pb-0">
   <div class="container">
-    <div class="row justify-content-between align-items-center">
-      <div class="dictionary col-lg-6 text-center text-lg-left shadow p-4">
+    <div class="row justify-content-center">
+      <div class="dictionary col-lg-10 text-center text-lg-left shadow p-4">
         <!-- {{ with .Site.Params.banner }} -->
         <h4 class=" card-title h4">Get•Is•ti•o</h4>
         <p ><span class="font-i">verb</span><br>/getˌis,’tē,ō/</p>
@@ -22,6 +22,7 @@
             </div>
           </li>
         </ol>
+        <div id="more">
         <p class="font-i mt-4">noun</p>
         <ol class="home-order-list">
           <li class="mb-3">
@@ -48,6 +49,10 @@
             <p class="list-title">Community of Istio users, developers, and technology partners</p>
           </li>
         </ol>
+      </div>
+      <div class="row justify-content-center expand-button-container">
+        <button class="expand-button" onclick="expandDictionary()" id="expandBtn">Read more</button>
+        </div>
         <!-- <p class="mb-4">1. Vetted distribution of upstream Istio tested for use in specific Kubernetes environments,
           including EKS-D</p> -->
         <!-- {{ end }} -->
@@ -56,7 +61,7 @@
           <button type="submit" class="btn btn-primary">{{ i18n "search" }}</button>
         </form> -->
       </div>
-      <div class="col-lg-6 home-code p-4">
+      <div class="col-lg-10 home-code shadow p-4">
         <h4>Get Started Quickly</h4>
         <!-- <img loading="lazy" src="{{ .Site.Params.banner.image | absURL }}" alt="illustration" class="img-fluid"> -->
         <h6 class="pb-2 pt-4">1. Download GetIstio</h5>
@@ -67,7 +72,7 @@
           <pre class="pb-2 home-code-snippet"><code>getistio version</code><span class="copy-to-clipboard">copy</span></pre>
         <h6 class="pb-2 pt-4">4. Validate config</h5>
           <pre class="pb-2 home-code-snippet"><code>getistio config-validate</code><span class="copy-to-clipboard">copy</span></pre>
-        <div class="pt-4">
+        <div class="pt-4 row justify-content-center">
           <a href="/how-do-i-install-cli/" class="btn btn-sm learn-more">Learn more</a>
           </div>
       </div>
@@ -115,7 +120,7 @@
 {{ with .Site.Params.call_to_action }}
 <section class="section">
   <div class="container">
-    <div class="row align-items-center">
+    <div class="row">
       <!-- <div class="col-lg-4 text-center d-lg-block d-none">
         <img loading="lazy" src="{{ .image| absURL }}" class="img-fluid">
       </div> -->

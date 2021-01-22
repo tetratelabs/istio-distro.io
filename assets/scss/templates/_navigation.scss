@@ -23,9 +23,10 @@
 }
 .navigation {
   transition: .2s ease;
+  background: #eeeeee;
 
   &.nav-bg {
-    background: $white;
+    background: #eeeeee;
     @extend .shadow;
     @include desktop {
       top: -50px;
@@ -61,7 +62,7 @@
 
 .navbar-expand-lg .navbar-nav .nav-link {
   padding: 20px;
-  font-size: 15px;
+  font-size: 16px;
   @include desktop {
     padding: 10px;
     display: block;
@@ -70,7 +71,11 @@
 
 .navbar-brand-container {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
+
+  span {
+    line-height: 0 !important;
+  }
 }
 
 #select-language {
