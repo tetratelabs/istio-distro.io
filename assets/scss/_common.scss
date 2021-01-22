@@ -64,7 +64,8 @@ a:hover {
 }
 
 .section {
-  padding-top: 80px;
+  // padding-top: 80px;
+  padding-top: 32px;
   padding-bottom: 80px;
 
   &-sm {
@@ -294,16 +295,22 @@ button.btn {
   }
 }
 
+.dictionary {
+  p {
+    font-size: 13px;
+  }
+}
+
 .home-order-list {
   padding-left: 10px;
   color: #000;
-  font-size: 18px;
+  font-size: 13px;
   .list-title {
     font-weight: 500;
-    font-size: 18px;
+    font-size: 13px;
   }
   .list-quote {
-    font-size: 16px;
+    font-size: 13px;
     color: #555;
   }
   .similar-list {
@@ -316,7 +323,7 @@ button.btn {
       border-radius: 50px;
       cursor: pointer;
       border: solid 1px #d1d1d1;
-      font-size: 14px;
+      font-size: 13px;
       transition: all .3s;
       &:hover {
         background-color: #d1d1d1;
@@ -324,17 +331,26 @@ button.btn {
       }
     }
   }
+  .d-inline {
+    font-size: 13px;
+  }
 }
 .home-code {
   .learn-more {
     color: $primary-color;
     border-bottom: solid 1px $primary-color;
-    border-bottom-style: dotted;
+    // border-bottom-style: dotted;
     transition: all .3s;
     &:hover {
-      color: $blue;
-      border-color: $blue;
+      color: #fff;
+      background: $primary-color;
     }
+  }
+  pre.home-code-snippet {
+    background: #1f3344;
+  }
+  pre code {
+    color: #e8b3b3;
   }
 }
 .link-blue {

@@ -5,7 +5,7 @@
 <section class="section pb-0">
   <div class="container">
     <div class="row justify-content-between align-items-center">
-      <div class="col-lg-7 text-center text-lg-left shadow p-4">
+      <div class="dictionary col-lg-6 text-center text-lg-left shadow p-4">
         <!-- {{ with .Site.Params.banner }} -->
         <h4 class=" card-title h4">Get•Is•ti•o</h4>
         <p ><span class="font-i">verb</span><br>/getˌis,’tē,ō/</p>
@@ -17,13 +17,12 @@
               <ul class="similar-list">
                 <li>service mesh</li>
                 <li>control plane</li>
-                <li>application networking</li>
                 <li>GetEnvoy</li>
               </ul>
             </div>
           </li>
         </ol>
-        <p class="font-i">noun</p>
+        <p class="font-i mt-4">noun</p>
         <ol class="home-order-list">
           <li class="mb-3">
             <p class="list-title">Simple, open source CLI for assured installation and upgrade of specific Istio versions and integrations.</p>
@@ -43,7 +42,7 @@
             <p class="list-title">Hub for Istio integrations, including public key infrastructure components from ???, Vanfi, Key Factor and others</p>
           </li>
         </ol>
-        <p class="font-i">collective noun</p>
+        <p class="font-i mt-4">collective noun</p>
         <ol class="home-order-list">
           <li class="mb-3">
             <p class="list-title">Community of Istio users, developers, and technology partners</p>
@@ -57,14 +56,20 @@
           <button type="submit" class="btn btn-primary">{{ i18n "search" }}</button>
         </form> -->
       </div>
-      <div class="col-lg-5 home-code p-4">
+      <div class="col-lg-6 home-code p-4">
+        <h4>Get Started Quickly</h4>
         <!-- <img loading="lazy" src="{{ .Site.Params.banner.image | absURL }}" alt="illustration" class="img-fluid"> -->
-        <h4 class="pb-3">Fetch, run and debug Istion using the CLI</h4>
-          <pre class="pb-3"><code>var dynamicWep = passive_eup_cable - rdram + application_srgb_barebones;
-            os_hyper_address = tutorialNocUnix;
-            mpFileFramework.pRowStick = 5 + xslt_mca;
-            </code><span class="copy-to-clipboard">copy</span></pre>
-        <a href="/how-do-i-install-cli/" class="learn-more">Learn more</a>
+        <h6 class="pb-2 pt-4">1. Download GetIstio</h5>
+          <pre class="pb-2 home-code-snippet"><code>curl -sL https://tetrate.bintray.com/getistio/download.sh | bash</code><span class="copy-to-clipboard">copy</span></pre>
+        <h6 class="pb-2 pt-4">2. Install Istio Demo</h5>
+          <pre class="pb-2 home-code-snippet"><code>getistio istioctl install --set profile=demo </code><span class="copy-to-clipboard">copy</span></pre>
+        <h6 class="pb-2 pt-4">3. Check GetIstio version</h5>
+          <pre class="pb-2 home-code-snippet"><code>getistio version</code><span class="copy-to-clipboard">copy</span></pre>
+        <h6 class="pb-2 pt-4">4. Validate config</h5>
+          <pre class="pb-2 home-code-snippet"><code>getistio config-validate</code><span class="copy-to-clipboard">copy</span></pre>
+        <div class="pt-4">
+          <a href="/how-do-i-install-cli/" class="btn btn-sm learn-more">Learn more</a>
+          </div>
       </div>
     </div>
   </div>
