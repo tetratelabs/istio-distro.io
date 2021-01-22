@@ -68,6 +68,11 @@
   }
 }
 
+.navbar-brand-container {
+  display: flex;
+  align-items: flex-end;
+}
+
 #select-language {
   border: 1px solid $border-color;
   background: transparent;
