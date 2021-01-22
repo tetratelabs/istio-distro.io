@@ -412,3 +412,49 @@ pre {
 .color-green {
   color: $green;
 }
+.blog-content {
+  a {
+    color: $primary-color;
+
+    &:hover {
+      color: $blue;
+    }
+  }
+
+  table {
+    border: 1px solid $primary-color;
+    padding: 20px 0;
+    margin: 20px 0;
+    th {
+      border: 1px solid $primary-color;
+      padding: 5px 10px;
+      text-align: left !important;
+    }
+    tr {
+      border: 1px solid $primary-color;
+      padding: 5px 10px;
+      td {
+        border: 1px solid $primary-color;
+        padding: 5px 10px;
+        text-align: left !important;
+      }
+    }
+  }
+  ul, ol {
+    margin: 20px 0;
+    padding-left: 15px;
+    li {
+      margin: 15px 0;
+    }
+  }
+}
+.gist-file {
+  table {
+    tr {
+      border: unset;
+      td {
+        border: unset;
+      }
+    }
+  }
+}
