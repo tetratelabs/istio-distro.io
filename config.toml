@@ -115,34 +115,35 @@ url = "/what-is-getistio/"
 weight = 1
 
 [[Languages.en.menu.main]]
-name = "Github"
-url = "https://github.com/"
+name = "Blog"
+url = "/blog/"
 weight = 2
 
 [[Languages.en.menu.main]]
-name = "Training & Certification"
-url = "#"
-weight = 6
+name = "Community"
+url = "/community"
+weight = 3
 
 [[Languages.en.menu.main]]
-name = "Blog"
-url = "/blog/"
-weight = 5
-
-[[Languages.en.menu.main]]
-name = "Community Meeting"
+name = "Training"
 url = "#"
 weight = 4
 
 [[Languages.en.menu.main]]
 name = "Partners"
-url = "#"
-weight = 3
+url = "/ecosystem-partners/partners/"
+weight = 5
 
 [[Languages.en.menu.main]]
 name = "GetEnvoy"
 url = "https://www.getenvoy.io/"
+weight = 6
+
+[[Languages.en.menu.main]]
+name = "Github"
+url = "https://github.com/"
 weight = 7
+
 
 # footer menu
 
@@ -153,7 +154,7 @@ weight = 7
 
 #################### default parameters ################################
 [params]
-logo = "images/temp-logo.png"
+logo = "images/getistio-logo-horizontal.png"
 # Meta data
 description = "This is meta description"
 author = "Themefisher"
@@ -174,7 +175,7 @@ preloader = "" # use jpg, png, svg or gif format.
 [[params.nav_button]]
 style = "solid" # available style: solid, outline
 label = "Download"
-link = "#"
+link = "/download"
 
   
 ############################# social site ########################
