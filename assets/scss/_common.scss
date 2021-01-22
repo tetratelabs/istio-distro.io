@@ -296,9 +296,43 @@ button.btn {
   }
 }
 
+@-webkit-keyframes display-none-transition {
+  0% {
+    display: inline;
+  }
+}
+@keyframes display-none-transition {
+  0% {
+    display: inline;
+  }
+}
+
 .dictionary {
   p {
     font-size: 13px;
+  }
+  #more {
+    display: none;
+  }
+
+  .expand-button-container {
+    position: relative;
+  }
+
+  .expand-button {
+    color: #F05623;
+    padding: 8px 16px;
+    font-size: 12px;
+    background-color: #ffffff;
+    border: 1px solid #F05623;
+    border-radius: 20px;
+    position: absolute;
+    top: 5px;
+  }
+
+  .expand-button:hover {
+    background-color: #F05623;
+    color: #ffffff;
   }
 }
 
@@ -337,6 +371,9 @@ button.btn {
   }
 }
 .home-code {
+  background-color: white;
+  margin-top: 40px;
+
   .learn-more {
     color: $primary-color;
     border-bottom: solid 1px $primary-color;
