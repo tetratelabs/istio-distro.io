@@ -2,7 +2,7 @@
 
 {{ $data := index .Site.Data .Site.Language.Lang }}
 
-<section class="section pb-0">
+<section class="section dictionary-section">
   <div class="container">
     <div class="row justify-content-center">
       <div class="dictionary rounded col-lg-10 text-center text-lg-left shadow p-4">
@@ -62,21 +62,28 @@
           <button type="submit" class="btn btn-primary">{{ i18n "search" }}</button>
         </form> -->
       </div>
-      <div class="col-lg-10 home-code rounded shadow p-4">
-        <h4>Get Started Quickly</h4>
-        <!-- <img loading="lazy" src="{{ .Site.Params.banner.image | absURL }}" alt="illustration" class="img-fluid"> -->
-        <h6 class="pb-2 pt-4">1. Download GetIstio</h5>
-          <pre class="pb-2 home-code-snippet"><code>curl -sL https://tetrate.bintray.com/getistio/download.sh | bash</code><span class="copy-to-clipboard">copy</span></pre>
-        <h6 class="pb-2 pt-4">2. Install Istio Demo</h5>
-          <pre class="pb-2 home-code-snippet"><code>getistio istioctl install --set profile=demo </code><span class="copy-to-clipboard">copy</span></pre>
-        <h6 class="pb-2 pt-4">3. Check GetIstio version</h5>
-          <pre class="pb-2 home-code-snippet"><code>getistio version</code><span class="copy-to-clipboard">copy</span></pre>
-        <h6 class="pb-2 pt-4">4. Validate config</h5>
-          <pre class="pb-2 home-code-snippet"><code>getistio config-validate</code><span class="copy-to-clipboard">copy</span></pre>
-        <div class="pt-4 row justify-content-center">
-          <a href="/how-do-i-install-cli/" class="btn btn-sm learn-more">Learn more</a>
+    </div>
+  </div>
+</section>
+
+<section class="section pb-0">
+  <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-10 home-code rounded shadow p-4">
+          <h4>Get Started Quickly</h4>
+          <!-- <img loading="lazy" src="{{ .Site.Params.banner.image | absURL }}" alt="illustration" class="img-fluid"> -->
+          <h6 class="pb-2 pt-4">1. Download GetIstio</h5>
+            <pre class="pb-2 home-code-snippet"><code>curl -sL https://tetrate.bintray.com/getistio/download.sh | bash</code><span class="copy-to-clipboard">copy</span></pre>
+          <h6 class="pb-2 pt-4">2. Install Istio Demo</h5>
+            <pre class="pb-2 home-code-snippet"><code>getistio istioctl install --set profile=demo </code><span class="copy-to-clipboard">copy</span></pre>
+          <h6 class="pb-2 pt-4">3. Check GetIstio version</h5>
+            <pre class="pb-2 home-code-snippet"><code>getistio version</code><span class="copy-to-clipboard">copy</span></pre>
+          <h6 class="pb-2 pt-4">4. Validate config</h5>
+            <pre class="pb-2 home-code-snippet"><code>getistio config-validate</code><span class="copy-to-clipboard">copy</span></pre>
+          <div class="pt-4 row justify-content-center">
+            <a href="/how-do-i-install-cli/" class="btn btn-sm learn-more">Learn more</a>
           </div>
-      </div>
+        </div>
     </div>
   </div>
 </section>
