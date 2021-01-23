@@ -179,17 +179,14 @@ $(document).on("turbolinks:load", preloader);
 
 function expandDictionary(){
   let moreText = document.getElementById("more");
-  let btnText = document.getElementById("expandBtn");
+  let btnIcon = document.getElementById("expandBtnIcon");
   
   if (moreText.style.display === "inline") {
-    btnText.innerHTML = "Read more";
     moreText.style.display = "none";
-    // moreText.style.height = 0;
-    // moreText.style.opacity = 0;
   } else {
-    btnText.innerHTML = "Read less";
     moreText.style.display = "inline";
-    // moreText.style.height = "auto";
-    // moreText.style.opacity = 1;
   }
+
+  btnIcon.classList.toggle("ti-angle-down");
+  btnIcon.classList.toggle("ti-angle-up");
 }
