@@ -1,6 +1,0 @@
-{{ $manifest := getJSON "https://tetrate.bintray.com/getistio/manifest.json" }}
-   {{ range $manifest.istio_distributions }}   
-    <li>
-      {{ .flavor }}: <strong>{{ .version }}</strong>
-    </li>
-{{ end }}
