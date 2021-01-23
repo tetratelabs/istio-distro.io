@@ -1,0 +1,10 @@
+{{ $manifest := getJSON "https://tetrate.bintray.com/getistio/manifest.json" }}
+   {{ range $manifest.istio_distributions }}   
+     <li>
+       <strong> Distribution type: </strong> {{ .flavor }}-v{{ .flavor_version }} <strong>Istio version:</strong> {{ .version }} -  
+       <a href="https://tetrate.bintray.com/getistio/istio-{{ .version }}-{{ .flavor }}-v{{ .flavor_version }}-linux-amd64.tar.gz">amd64</a>
+       <a href="https://tetrate.bintray.com/getistio/istio-{{ .version }}-{{ .flavor }}-v{{ .flavor_version }}-linux-arm64.tar.gz">arm64</a>
+       <a href="https://tetrate.bintray.com/getistio/istio-{{ .version }}-{{ .flavor }}-v{{ .flavor_version }}-linux-armv7.tar.gz">armv7</a>
+       <br>
+     </li>
+   {{ end }}
