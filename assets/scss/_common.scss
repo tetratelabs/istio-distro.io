@@ -64,7 +64,6 @@ a:hover {
 }
 
 .section {
-  // padding-top: 80px;
   padding-top: 32px;
   padding-bottom: 80px;
 
@@ -76,6 +75,14 @@ a:hover {
   &-title {
     margin-bottom: 40px;
   }
+}
+
+.page-section {
+  padding-top: 64px;
+}
+
+.cta-section {
+  padding-top: 40px;
 }
 
 .bg-cover {
