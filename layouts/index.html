@@ -13,7 +13,7 @@
           <li class="mb-3">
             <p class="list-title">The act of getting vetted distributions of upstream Istio tested for use in specific Kubernetes environments, including EKS-D.</p>
             <p class="list-quote">"What’s the best way to install and update Istio in my Kubernetes cluster? Simple, you just GetIstio"</p>
-            <div><p class="d-inline color-green">Similar:</p> 
+            <div><p class="d-inline color-green">Similar:</p>
               <ul class="similar-list">
                 <li>service mesh</li>
                 <li>control plane</li>
@@ -28,7 +28,7 @@
           <li class="mb-3">
             <p class="list-title">Simple, open source CLI for assured installation and upgrade of specific Istio versions and integrations.</p>
             <p class="list-quote">"I just upgraded to the latest Istio version in five minutes with getistio"</p>
-            <div><p class="d-inline color-green">Similar:</p> 
+            <div><p class="d-inline color-green">Similar:</p>
               <ul class="similar-list">
                 <li>kubectl</li>
                 <li>istioctl</li>
@@ -123,6 +123,32 @@
 {{ end }} -->
 <!-- /faq -->
 
+
+<section class="section events-section">
+  <div class="container">
+    <div class="row align-items-baseline justify-content-between">
+    <h4>Upcoming Community Events</h4>
+    <span><a href="/community/event">See All Events</a></span>
+    </div>
+    <div class="row">
+      {{ range .Site.Taxonomies.categories.event }}
+      {{ if eq .Page.Params.pastEvent false }}
+        <div class="col-lg-4 col-md-4 col-sm-6 mb-4">
+          <div class="card match-height event-card">
+            <p class="event-date pb-2">{{ .Page.Params.eventDate }}<span><i class="ti-calendar"></i></span></p>
+            <a href="{{ .Page.RelPermalink }}"><h5>{{ .Page.Title }}</h5></a>
+            <img src="{{ .Page.Params.image }}" />
+            <p>{{ .Page.Description }}</p>
+            <a class="btn btn-sm mb-3" href="{{ .Page.RelPermalink }}">Learn More</a>
+            <a class="btn btn-sm btn-primary" href="{{ .Page.Params.eventLink }}">Go To Event</a>
+          </div>
+        </div>
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>    
+</section>
+
 <!-- call to action -->
 {{ if .Site.Params.call_to_action.enable }}
 {{ with .Site.Params.call_to_action }}
@@ -141,7 +167,7 @@
             <button class="btn btn-sm btn-primary">Join Newsletter</button>
           </div>
         </div>
-             
+
       </div>
     </div>
   </div>
