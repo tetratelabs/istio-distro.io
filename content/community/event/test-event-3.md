@@ -1,7 +1,7 @@
 ---
-title: "Test Events 1"
+title: "Test Events 3"
 date: 2018-12-29T11:02:05+06:00
-description: "This is description for Test Event 1"
+description: "This is description for Test Event 3"
 categories: "event"
 image: "images/webinar_dummy.jpg"
 eventLink: "http://meet.google.com/abc"
