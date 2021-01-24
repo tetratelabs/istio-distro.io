@@ -100,6 +100,34 @@ a:hover {
   border-color: $border-color !important;
 }
 
+.events-section {
+  padding-top: 64px;
+
+  h4 {
+    margin-bottom: 24px;
+  }
+}
+
+.event-card {
+  background:white;
+  padding: 24px;
+
+  .event-date {
+    border-bottom: 1px solid #eeeeee;
+  }
+
+  .ti-calendar {
+    float: right;
+    color: #F05623;
+  }
+
+  h5, img {
+    margin-bottom: 16px;
+  }
+
+
+}
+
 /* overlay */
 
 .overlay {
