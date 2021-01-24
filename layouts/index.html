@@ -124,16 +124,26 @@
 <!-- /faq -->
 
 
-<section id="events-section">
-  {{ range .Site.Taxonomies.categories.event }}
-    {{ if eq .Page.Params.pastEvent false }}
-    <div class="event-card">
-      <a href="{{ .Page.RelPermalink }}"><h5>{{ .Page.Title }}</h5></a>
-      <p>{{ .Page.Description }}</p>
-      <a href="{{ .Page.Params.eventLink }}">Attend Event</p>
+<section class="section events-section">
+  <div class="container">
+    <h4>Upcoming Community Events</h4>
+    <div class="row">
+      {{ range .Site.Taxonomies.categories.event }}
+      {{ if eq .Page.Params.pastEvent false }}
+        <div class="col-lg-4 col-md-4 col-sm-6 mb-4">
+          <div class="card match-height event-card">
+            <p class="event-date pb-2">{{ .Page.Params.eventDate }}<span><i class="ti-calendar"></i></span></p>
+            <a href="{{ .Page.RelPermalink }}"><h5>{{ .Page.Title }}</h5></a>
+            <img src="{{ .Page.Params.image }}" />
+            <p>{{ .Page.Description }}</p>
+            <a class="btn btn-sm mb-3" href="{{ .Page.RelPermalink }}">Learn More</a>
+            <a class="btn btn-sm btn-primary" href="{{ .Page.Params.eventLink }}">Go To Event</a>
+          </div>
+        </div>
+      {{ end }}
+      {{ end }}
     </div>
-    {{ end }}
-  {{ end }}
+  </div>    
 </section>
 
 <!-- call to action -->
