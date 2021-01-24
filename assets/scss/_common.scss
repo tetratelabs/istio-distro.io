@@ -307,6 +307,14 @@ button.btn {
  	top: 6px;
 	right: 12px;
 }
+
+.blog-individual {
+  h1, h2, h3, h4 {
+    margin-bottom: 16px;
+    margin-top: 32px;
+  }
+}
+
 .blog-link {
   h5 {
     transition: all .3s;
