@@ -126,7 +126,10 @@
 
 <section class="section events-section">
   <div class="container">
+    <div class="row align-items-baseline justify-content-between">
     <h4>Upcoming Community Events</h4>
+    <span><a href="/community/event">See All Events</a></span>
+    </div>
     <div class="row">
       {{ range .Site.Taxonomies.categories.event }}
       {{ if eq .Page.Params.pastEvent false }}
