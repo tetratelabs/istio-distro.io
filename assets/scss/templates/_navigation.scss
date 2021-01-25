@@ -25,10 +25,10 @@
   transition: .2s ease;
   // background: #eeeeee;
   // background: #dee5f2;
-  background: #c8d3e7;
+  background: #0e1523;
 
   &.nav-bg {
-    background: #c8d3e7;
+    background: #0e1523;
     @extend .shadow;
     @include desktop {
       top: -50px;
@@ -55,7 +55,7 @@
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: $text-color-dark;
+  color: $white;
 
   &:hover {
     color: $primary-color;
