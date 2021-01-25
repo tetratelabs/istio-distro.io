@@ -107,6 +107,16 @@
   }
 }
 
+footer {
+  .navbar-brand {
+    margin-right: 0;
+  }
+
+  .social-icons a {
+    border-radius: 21px;
+  }
+}
+
 /* sidenav */
 .sidenav {
   border-right: 1px solid $border-color;
