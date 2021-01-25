@@ -479,12 +479,12 @@ pre {
       &::before {
         position: absolute;
         content: '';
-        height: 8px;
-        width: 8px;
+        height: 4px;
+        width: 4px;
         border-radius: 50%;
-        background: $primary-color;
-        left: 3px;
-        top: 8px;
+        background: #67605e;
+        left: 0px;
+        top: 12px;
       }
     }
 
