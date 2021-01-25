@@ -1,6 +1,6 @@
 ---
 title: "Quickstart"
-date: 2018-12-29T11:02:05+06:00
+date: 2021-01-25T13:00:00+07:00
 description: "GetIstio quickstart"
 # type dont remove or customize
 type : "docs"
