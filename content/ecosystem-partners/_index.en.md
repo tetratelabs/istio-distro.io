@@ -7,5 +7,3 @@ description: "Cras at dolor eget urna varius faucibus tempus in elit dolor sit a
 type : "docs"
 weight: 4
 ---
-
-This is placeholder for GetIstio's ecosystem partners.
