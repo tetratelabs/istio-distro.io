@@ -24,10 +24,11 @@
 .navigation {
   transition: .2s ease;
   // background: #eeeeee;
-  background: #dee5f2;
+  // background: #dee5f2;
+  background: #c8d3e7;
 
   &.nav-bg {
-    background: #eeeeee;
+    background: #c8d3e7;
     @extend .shadow;
     @include desktop {
       top: -50px;

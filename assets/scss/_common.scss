@@ -79,12 +79,17 @@ a:hover {
 
 .hero-section {
   background:rgba(255,247,239,1);
-  background: linear-gradient(0deg, #ede6e6, #dde4f1);
+  background: radial-gradient(#6b89c0, #0e1523);
+  // background: linear-gradient(0deg, #ede6e6, #dde4f1);
   // background: linear-gradient(45deg, rgba(255,247,239,1) 0%, rgba(254,243,234,1) 39%, rgba(181,216,251,1) 100%);
   
   h1 {
     font-weight: 700;
     margin-bottom: 24px;
+  }
+
+  h1, p.lead {
+    color: white;
   }
 }
 
@@ -371,20 +376,24 @@ button.btn {
   }
 
   .expand-button {
-    color: #F05623;
+    background-color: #F05623;
     padding: 8px 16px;
     font-size: 12px;
-    background-color: #ffffff;
+    color: #ffffff;
     border: 1px solid #F05623;
     border-radius: 23px;
     position: absolute;
     top: 2px;
     height: 46px;
+
+     i, span {
+       font-weight: 700;
+     }
   }
 
   .expand-button:hover {
-    background-color: #F05623;
-    color: #ffffff;
+    background-color: #2b303a;
+    border: 1px solid #f56023;
   }
 }
 
