@@ -365,9 +365,23 @@ button.btn {
 .dictionary {
   background-color: white;
 
-  p {
-    font-size: 13px;
+  .dictionary-title {
+    border-bottom: 1px solid #bcbcbc;
+    margin: 0 1px;
   }
+
+  h4 {
+    margin-bottom: 0;
+  }
+
+  img {
+    width: 32px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
   #more {
     display: none;
   }
@@ -401,14 +415,16 @@ button.btn {
 .home-order-list {
   padding-left: 10px;
   color: #000;
-  font-size: 13px;
+  font-size: 16px;
   .list-title {
     font-weight: 500;
-    font-size: 13px;
+    font-size: 16px;
   }
   .list-quote {
-    font-size: 13px;
+    font-size: 16px;
     color: #555;
+    padding: 16px;
+    background-color: #FEF1E2;
   }
   .similar-list {
     display: inline-block;
@@ -420,7 +436,7 @@ button.btn {
       border-radius: 50px;
       cursor: pointer;
       border: solid 1px #d1d1d1;
-      font-size: 13px;
+      font-size: 14px;
       transition: all .3s;
       &:hover {
         background-color: #d1d1d1;
@@ -429,7 +445,7 @@ button.btn {
     }
   }
   .d-inline {
-    font-size: 13px;
+    font-size: 16px;
   }
 }
 .home-code {
