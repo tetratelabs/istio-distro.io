@@ -15,8 +15,13 @@
     <div class="row justify-content-center">
       <div class="dictionary rounded col-lg-10 text-center text-lg-left shadow p-4">
         <!-- {{ with .Site.Params.banner }} -->
-        <h4 class=" card-title h4">Get•Is•ti•o</h4>
-        <p ><span class="font-i">verb</span><br>/getˌis,’tē,ō/</p>
+        <div class="dictionary-title row justify-content-between align-items-baseline mx-1 mb-3 pb-3">
+          <h4 class="card-title h4">What is Get•Is•ti•o</h4>
+          <span></span><img src="/images/getistio-logo-notext-black.png" /></span>
+        </div>
+        
+        <div class="px-2 pb-2">
+        <p><span class="font-i">verb</span><br><strong>/getˌis,’tē,ō/</strong></p>
         <ol class="home-order-list">
           <li class="mb-3">
             <p class="list-title">Act of installing and managing vetted Istio for use in Kubernetes or application platforms</p>
@@ -25,12 +30,15 @@
               <ul class="similar-list">
                 <li>service mesh</li>
                 <li>control plane</li>
+                <li>application networking</li>
                 <li>GetEnvoy</li>
               </ul>
             </div>
           </li>
         </ol>
+        </div>
         <div id="more">
+        <div class="px-2 pb-2">
         <p class="font-i mt-4">noun / benefits</p>
         <ol class="home-order-list">
           <li class="mb-3">
@@ -51,12 +59,15 @@
             <p class="list-quote">"Using GetIstio CLI, I made AWS’ ACM my trusted cert provider for Istio mesh within minutes."</p>
           </li>
         </ol>
+        </div>
+        <div class="px-2 pb-2">
         <p class="font-i mt-4">collective noun</p>
         <ol class="home-order-list">
           <li class="mb-3">
             <p class="list-title">Community of Istio users, developers, tutorials and technology partners/p>
           </li>
         </ol>
+      </div>
       </div>
       <div class="row justify-content-center expand-button-container">
         {{/*  <button class="expand-button" onclick="expandDictionary()" id="expandBtn">Read more</button>  */}}
@@ -78,21 +89,32 @@
 <section class="section pb-0">
   <div class="container">
     <div class="row justify-content-center">
-        <div class="col-lg-10 home-code rounded shadow p-4">
-          <h4>Get Started Quickly</h4>
-          <!-- <img loading="lazy" src="{{ .Site.Params.banner.image | absURL }}" alt="illustration" class="img-fluid"> -->
-          <h6 class="pb-2 pt-4">1. Download GetIstio</h5>
-            <pre class="pb-2 home-code-snippet"><code>curl -sL https://tetrate.bintray.com/getistio/download.sh | bash</code><span class="copy-to-clipboard">copy</span></pre>
-          <h6 class="pb-2 pt-4">2. Install Istio Demo</h5>
-            <pre class="pb-2 home-code-snippet"><code>getistio istioctl install --set profile=demo </code><span class="copy-to-clipboard">copy</span></pre>
-          <h6 class="pb-2 pt-4">3. Check GetIstio version</h5>
-            <pre class="pb-2 home-code-snippet"><code>getistio version</code><span class="copy-to-clipboard">copy</span></pre>
-          <h6 class="pb-2 pt-4">4. Validate config</h5>
-            <pre class="pb-2 home-code-snippet"><code>getistio config-validate</code><span class="copy-to-clipboard">copy</span></pre>
-          <div class="pt-4 row justify-content-center">
-            <a href="/how-do-i-install-cli/" class="btn btn-sm learn-more">Learn more</a>
-          </div>
+      <div class="col-lg-9 home-code rounded shadow p-4">
+        <h4>Get Started Quickly</h4>
+        <!-- <img loading="lazy" src="{{ .Site.Params.banner.image | absURL }}" alt="illustration" class="img-fluid"> -->
+        <h6 class="pb-2 pt-4">1. Download GetIstio</h5>
+          <pre class="pb-2 home-code-snippet"><code>curl -sL https://tetrate.bintray.com/getistio/download.sh | bash</code><span class="copy-to-clipboard">copy</span></pre>
+        <h6 class="pb-2 pt-4">2. Install Istio Demo</h5>
+          <pre class="pb-2 home-code-snippet"><code>getistio istioctl install --set profile=demo </code><span class="copy-to-clipboard">copy</span></pre>
+        <h6 class="pb-2 pt-4">3. Check GetIstio version</h5>
+          <pre class="pb-2 home-code-snippet"><code>getistio version</code><span class="copy-to-clipboard">copy</span></pre>
+        <h6 class="pb-2 pt-4">4. Validate config</h5>
+          <pre class="pb-2 home-code-snippet"><code>getistio config-validate</code><span class="copy-to-clipboard">copy</span></pre>
+        <div class="pt-4 row justify-content-center">
+          <a href="/how-do-i-install-cli/" class="btn btn-sm learn-more">Learn more</a>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section pb-0">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 home-code rounded shadow p-4">
+        <h4>See GetIstio in Action</h4>
+        <script id="asciicast-386188" src="https://asciinema.org/a/386188.js" async></script>
+      </div>
     </div>
   </div>
 </section>
