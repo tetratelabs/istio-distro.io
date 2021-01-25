@@ -148,7 +148,7 @@ weight = 6
 
 #################### default parameters ################################
 [params]
-logo = "images/getistio-logo-horizontal.png"
+logo = "images/getistio-logo-h.png"
 # Meta data
 description = "This is meta description"
 author = "Themefisher"
