@@ -26,9 +26,7 @@ getistio version --remote=false #only the client version details
 
 An output of the form below suggests that GetIstio was installed successfully
 
-```
-GetIstio version: 0.3.0 ...
-```
+> GetIstio version: 0.3.0 ...
 
 To know the list of commands available with GetIstio and the supported features, run:
 
@@ -39,7 +37,7 @@ getistio --help
 Once GetIstio is downloaded, it can be self-updated to the latest version by running the command:
 
 ```
-getistio upgrade
+getistio update
 ```
 
 While we recommend always using the latest GetIstio, for testing or other reasons if the user wants to download a different version of GetIstio, they could do so with the following command:

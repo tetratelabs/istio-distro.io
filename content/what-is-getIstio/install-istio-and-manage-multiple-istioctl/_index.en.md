@@ -32,11 +32,9 @@ getistio show
 
 Example output would be
 
-```
-1.7.6-distro-v0
-1.8.1-distro-v0
-1.8.2-distro-v0 (Active)
-```
+> 1.7.6-distro-v0<br>
+> 1.8.1-distro-v0<br>
+> 1.8.2-distro-v0 (Active)<br>
 
 If the required version of Istio is not downloaded yet - first the operator can query the list of trusted Istio versions through:
 
@@ -47,12 +45,12 @@ getistio list
 Example output would be
 
 ```
-ISTIO VERSION   FLAVOR  FLAVOR VERSION   K8S VERSIONS  
-   *1.8.2       tetrate       0         1.16,1.17,1.18  
-    1.8.1       tetrate       1         1.16,1.17,1.18  
-    1.7.6       tetratefips   2         1.16,1.17,1.18  
-    1.7.5       tetratefips   3         1.16,1.17,1.18  
-    1.7.4       tetrate       0         1.16,1.17,1.18  
+ ISTIO VERSION   FLAVOR  FLAVOR VERSION   K8S VERSIONS  
+    *1.8.2       tetrate       0         1.16,1.17,1.18  
+     1.8.1       tetrate       1         1.16,1.17,1.18  
+     1.7.6       tetratefips   2         1.16,1.17,1.18  
+     1.7.5       tetratefips   3         1.16,1.17,1.18  
+     1.7.4       tetrate       0         1.16,1.17,1.18  
 ```
 
 Below is an example of obtaining version 1..8.1 of Istio:
@@ -73,11 +71,12 @@ Use getistio show to cross check if the Istio version is downloaded and output w
 
 ```
 $ getistio show
-1.7.4-distro-v0
-1.7.6-distro-v0
-1.8.1-distro-v0 (Active)
-1.8.2-distro-v0
 ```
+
+> 1.7.4-distro-v0<br>
+> 1.7.6-distro-v0<br>
+> 1.8.1-distro-v0 (Active)<br>
+> 1.8.2-distro-v0<br>
 
 To switch to a different version of istioctl, run the switch command:
 
