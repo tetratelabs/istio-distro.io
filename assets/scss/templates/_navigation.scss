@@ -25,10 +25,10 @@
   transition: .2s ease;
   // background: #eeeeee;
   // background: #dee5f2;
-  background: #0e1523;
+  background: #262F40;
 
   &.nav-bg {
-    background: #0e1523;
+    background: #262F40;
     @extend .shadow;
     @include desktop {
       top: -50px;
