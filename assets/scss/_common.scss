@@ -1,3 +1,5 @@
+$breakpoint-xs: 576px;
+
 body {
   background-color: $body-color;
   overflow-x: hidden;
@@ -106,6 +108,19 @@ a:hover {
 
 .cta-section {
   padding-top: 40px;
+
+  .box {
+    padding: 32px;
+  }
+
+  p {
+    width: 75%;
+    margin: 0 auto;
+  }
+
+  .form-control {
+    margin-top: 24px;
+  }
 }
 
 .bg-cover {
@@ -532,6 +547,29 @@ pre {
       border: unset;
       td {
         border: unset;
+      }
+    }
+  }
+}
+
+
+@media (max-width: $breakpoint-xs) {
+  .cta-section {  
+    p {
+      width: 100%;
+    }
+  
+    .form-control {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+      margin-bottom: 0px;
+
+      button {
+        position: relative;
+        right: 0px;
+        top: 0px;
+        margin-top: 16px;
       }
     }
   }
