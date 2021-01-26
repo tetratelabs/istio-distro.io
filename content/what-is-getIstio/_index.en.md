@@ -25,6 +25,6 @@ Considering that some of Service-Mesh customers needs to support elevated securi
 The above functionality is achieved via elegant transparent approach, where the existing setup and tools are fully leveraged to provide additional functionality and enterprise desired feature sets and controls:
 - GetIstio connects to the kubernetes cluster pointed to by the default kubernetes config file. If KUBECONFIG environment variable is set, then takes precedence.
 - Config validation is done against two targets:
--- cluster current config that might include multiple istio configuration constructs
--- in addition GetIstio validates the manifest yaml files (that are not applied yet to the cluster)
+    - cluster current config that might include multiple istio configuration constructs
+    - in addition GetIstio validates the manifest yaml files (that are not applied yet to the cluster)
 - Creation of CA cert for Istio assumes the provider set up to issue intermediary CA cert is already done. This is optional and the default is self signed cert by Istio for workload certificates
