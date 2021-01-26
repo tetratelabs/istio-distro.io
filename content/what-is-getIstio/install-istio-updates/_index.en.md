@@ -14,13 +14,11 @@ getistio check-upgrade
 
 Output would be something like
 
-```
-$ getistio check-upgrade
-[General information about your Istio mesh]
-client version: 1.7.6-distro-v0
-control plane version: 1.8.2-distro-v0
-data plane version: 1.8.2-distro-v0 (2 proxies)
-
-[GetIstio Check]
-- 1.8.2-distro-v0 is the latest version in 1.8-distro
-```
+> $ getistio check-upgrade<br>
+> [General information about your Istio mesh]<br>
+> client version: 1.7.6-distro-v0<br>
+> control plane version: 1.8.2-distro-v0<br>
+> data plane version: 1.8.2-distro-v0 (2 proxies)<br>
+> <br>
+> [GetIstio Check]<br>
+>  1.8.2-distro-v0 is the latest version in 1.8-distro
