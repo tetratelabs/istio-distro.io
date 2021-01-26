@@ -11,7 +11,7 @@ hugo serve -D
 ```
 
 ## Adding Content
-All contents are written in markdown. You can add main category by creating a folder in `/content` directory. The main index page for that new category is a file named `index_en.md` (for English page). To add child pages under that category, create additional folder in that category folder and add another `index.md` file.
+All contents are written in markdown. You can add main category by creating a folder in `/content` directory. The main index page for that new category is a file named `_index.en.md` (for English page). To add child pages under that category, create additional folder in that category folder and add another `_index.en.md` file.
 
 As an example, to add a category named Installation, which contains 2 child pages named "Linux" and "MacOS", you need to add the following files and folders
 
