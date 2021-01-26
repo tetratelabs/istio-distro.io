@@ -111,7 +111,7 @@ a:hover {
 }
 
 .page-section {
-  padding-top: 64px;
+  padding-top: 80px;
 }
 
 .cta-section {
@@ -142,7 +142,8 @@ a:hover {
 }
 
 .events-section {
-  padding-top: 64px;
+  padding-top: 80px;
+  padding-bottom: 16px;
 
   h4 {
     margin-bottom: 24px;
@@ -473,7 +474,7 @@ button.btn {
 }
 .home-code {
   background-color: white;
-  margin-top: 40px;
+  margin-top: 24px;
 
   .learn-more {
     color: $primary-color;
