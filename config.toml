@@ -115,7 +115,7 @@ page = "search/"
 # main menu
 [[Languages.en.menu.main]]
 name = "Docs"
-url = "/what-is-getistio/"
+url = "/getistio-cli/"
 weight = 1
 
 [[Languages.en.menu.main]]
