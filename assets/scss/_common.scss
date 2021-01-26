@@ -561,6 +561,10 @@ pre {
   }
 }
 
+pre.asciinema-terminal {
+  height: 32em !important;
+}
+
 @media (min-width: $breakpoint-md) and (max-width: $breakpoint-xl) {
   .hero-section {
     h1 {

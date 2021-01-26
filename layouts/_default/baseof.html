@@ -7,6 +7,8 @@
 	{{- partial "header.html" . -}}
 	{{- block "main" . }}{{- end }}
   {{- partialCached "footer.html" . -}}
+  <!-- asciinema js -->
+  <script src="{{ .Site.BaseURL }}js/asciinema-player.js"></script>
   <!-- GitHub button -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
