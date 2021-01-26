@@ -554,6 +554,13 @@ pre {
 
 
 @media (max-width: $breakpoint-xs) {
+  .events-section {
+    .event-header {
+      margin-bottom: 24px;
+      text-align: center;
+    }
+  }
+  
   .cta-section {  
     p {
       width: 100%;
