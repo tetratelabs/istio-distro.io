@@ -1,7 +1,7 @@
 ---
-title: "ACMPCA Integration"
+title: "ACM PCA Integration"
 date: 2021-01-25T13:00:00+07:00
-description: "Integration with ACMPCS"
+description: "Integration with ACM PCA"
 # type dont remove or customize
 type : "docs"
 ---

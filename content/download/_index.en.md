@@ -8,11 +8,6 @@ type : "docs"
 ---
 
 
-Today there are two versions of GetIstio is available for Linux and MacOS.
+Today there are two versions of GetIstio is available for Linux and MacOS. Please follow [GetIstio Install and Update Page]({{< ref "/getistio-cli/install-and-update-of-getistio" >}}) to deploy the product.
 
-It's strongly recommended to use the <a href="https://tetrate.bintray.com/getistio/download.sh">script</a> to download and Install GetIstio.
-
-{{< dwn_getistio >}}
-<br>
-<br>
-There also additional pages that allow download of Istio distributions for Linux, MacOS and Windows. We recommend to use GetIsio to obtain the required version of Istio Distribution.
+There also additional pages that allow download of Istio distributions and `istioctl` binary for [Linux]({{< relref "linux" >}}), [MacOS]({{< relref "macos" >}}) and [Windows]({{< relref "windows" >}}). We recommend to use GetIsio to obtain the required files.

@@ -10,9 +10,9 @@
      <tr>
        <td>{{ .flavor }}-v{{ .flavor_version }} </td>
        <td>{{ .version }} </td>
-       <td><a href={{ $release_url }}>here</a> </td> 
-       <td><a href="https://tetrate.bintray.com/getistio/istio-{{ .version }}-{{ .flavor }}-v{{ .flavor_version }}-win.zip">Download</a> </td>
-       <td><a href="https://tetrate.bintray.com/getistio/istioctl-{{ .version }}-{{ .flavor }}-v{{ .flavor_version }}-win.zip">Istioctl</a> </td>
+       <td><a href={{ $release_url }}>Release Notes {{ .version }}</a> </td> 
+       <td><a href="https://tetrate.bintray.com/getistio/istio-{{ .version }}-{{ .flavor }}-v{{ .flavor_version }}-win.zip">Istio Distro</a> </td>
+       <td><a href="https://tetrate.bintray.com/getistio/istioctl-{{ .version }}-{{ .flavor }}-v{{ .flavor_version }}-win.zip">istioctl</a> </td>
       </tr>
    {{ end }}
    </table>
