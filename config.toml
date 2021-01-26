@@ -130,12 +130,12 @@ weight = 3
 
 [[Languages.en.menu.main]]
 name = "Training"
-url = "#"
+url = "https://academy.tetrate.io"
 weight = 4
 
 [[Languages.en.menu.main]]
 name = "Partners"
-url = "/ecosystem-partners/partners/"
+url = "/ecosystem-partners/"
 weight = 5
 
 [[Languages.en.menu.main]]
