@@ -3,12 +3,24 @@
 {{ $data := index .Site.Data .Site.Language.Lang }}
 
 <div class="hero-section mb-0 jumbotron jumbotron-fluid">
-  <div class="container text-center">
-    <h1 class="display-4">Simple, safe enterprise-grade Istio</h1>
-    <p class="lead">The most popular service-mesh, tested & hardened for your application & cloud platforms. Community hub for users and
-    ecosystem of partners</p>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <h1 class="display-4">Simple, safe enterprise-grade Istio</h1>
+        <ul class="hero">
+          <li class="lead text-white">Easiest way of installing, operating and upgrading istio</li>
+          <li class="lead text-white">Tested and hardened for your application and cloud platform</li>
+          <li class="lead text-white">Community hub for users and ecosystem & partners</li>
+        </ul>
+        {{/*  <p class="lead">The most popular service-mesh, tested & hardened for your application & cloud platforms. Community hub for users and
+        ecosystem of partners</p>  */}}
+      </div>
+      <div class="col-lg-6">
+        <script id="asciicast-386188" src="https://asciinema.org/a/386188.js" async></script>
+      </div>
+    </div>
   </div>
-
+</div>
 
 <section class="section dictionary-section">
   <div class="container">
@@ -19,59 +31,68 @@
           <h4 class="card-title h4">What is Get•Is•ti•o</h4>
           <span></span><img src="/images/getistio-logo-notext-black.png" /></span>
         </div>
-        
+
         <div class="px-2 pb-2">
-        <p><span class="font-i">verb</span><br><strong>/getˌis,’tē,ō/</strong></p>
-        <ol class="home-order-list">
-          <li class="mb-3">
-            <p class="list-title">Act of installing and managing vetted Istio for use in Kubernetes or application platforms</p>
-            <p class="list-quote">"What’s the best way to install and update Istio in my Kubernetes cluster? Simple, you just GetIstio"</p>
-            <div><p class="d-inline color-green">Similar:</p>
-              <ul class="similar-list">
-                <li>service mesh</li>
-                <li>control plane</li>
-                <li>application networking</li>
-                <li>GetEnvoy</li>
-              </ul>
-            </div>
-          </li>
-        </ol>
+          <p><span class="font-i">verb</span><br><strong>/getˌis,’tē,ō/</strong></p>
+          <ol class="home-order-list">
+            <li class="mb-3">
+              <p class="list-title">Act of installing and managing vetted Istio for use in Kubernetes or application
+                platforms</p>
+              <p class="list-quote">"What’s the best way to install and update Istio in my Kubernetes cluster? Simple,
+                you just GetIstio"</p>
+              <div>
+                <p class="d-inline color-green">Similar:</p>
+                <ul class="similar-list">
+                  <li>service mesh</li>
+                  <li>control plane</li>
+                  <li>application networking</li>
+                  <li>GetEnvoy</li>
+                </ul>
+              </div>
+            </li>
+          </ol>
         </div>
         <div id="more">
-        <div class="px-2 pb-2">
-        <p class="font-i mt-4">noun / benefits</p>
-        <ol class="home-order-list">
-          <li class="mb-3">
-            <p class="list-title">Simple, open source CLI for assured installation and upgrade of specific Istio versions.</p>
-            <p class="list-quote">"I just upgraded to the latest Istio version in five minutes with getistio"</p>
-            <div><p class="d-inline color-green">Similar:</p>
-              <ul class="similar-list">
-                <li>kubectl</li>
-                <li>istioctl</li>
-              </ul>
-            </div>
-          </li>
-          <li class="mb-3">
-            <p class="list-title">Upstream & FIPS compliant Istio distribution tested and hardened for EKS, GKE, AKS and more.</p>
-          </li>
-          <li class="mb-4">
-            <p class="list-title">Hub for validated Istio integrations & tutorials from ecosystem partners like AWS, Weaveworks, Venafi.</p>
-            <p class="list-quote">"Using GetIstio CLI, I made AWS’ ACM my trusted cert provider for Istio mesh within minutes."</p>
-          </li>
-        </ol>
+          <div class="px-2 pb-2">
+            <p class="font-i mt-4">noun / benefits</p>
+            <ol class="home-order-list">
+              <li class="mb-3">
+                <p class="list-title">Simple, open source CLI for assured installation and upgrade of specific Istio
+                  versions.</p>
+                <p class="list-quote">"I just upgraded to the latest Istio version in five minutes with getistio"</p>
+                <div>
+                  <p class="d-inline color-green">Similar:</p>
+                  <ul class="similar-list">
+                    <li>kubectl</li>
+                    <li>istioctl</li>
+                  </ul>
+                </div>
+              </li>
+              <li class="mb-3">
+                <p class="list-title">Upstream & FIPS compliant Istio distribution tested and hardened for EKS, GKE, AKS
+                  and more.</p>
+              </li>
+              <li class="mb-4">
+                <p class="list-title">Hub for validated Istio integrations & tutorials from ecosystem partners like AWS,
+                  Weaveworks, Venafi.</p>
+                <p class="list-quote">"Using GetIstio CLI, I made AWS’ ACM my trusted cert provider for Istio mesh
+                  within minutes."</p>
+              </li>
+            </ol>
+          </div>
+          <div class="px-2 pb-2">
+            <p class="font-i mt-4">collective noun</p>
+            <ol class="home-order-list">
+              <li class="mb-3">
+                <p class="list-title">Community of Istio users, developers, tutorials and technology partners/p>
+              </li>
+            </ol>
+          </div>
         </div>
-        <div class="px-2 pb-2">
-        <p class="font-i mt-4">collective noun</p>
-        <ol class="home-order-list">
-          <li class="mb-3">
-            <p class="list-title">Community of Istio users, developers, tutorials and technology partners/p>
-          </li>
-        </ol>
-      </div>
-      </div>
-      <div class="row justify-content-center expand-button-container">
-        {{/*  <button class="expand-button" onclick="expandDictionary()" id="expandBtn">Read more</button>  */}}
-          <button class="expand-button" onclick="expandDictionary()" id="expandBtn"><span class="mr-3">GetIstio benefits</span><i id="expandBtnIcon" class="ti-angle-down"></i></button>
+        <div class="row justify-content-center expand-button-container">
+          {{/* <button class="expand-button" onclick="expandDictionary()" id="expandBtn">Read more</button> */}}
+          <button class="expand-button" onclick="expandDictionary()" id="expandBtn"><span class="mr-3">GetIstio
+              benefits</span><i id="expandBtnIcon" class="ti-angle-down"></i></button>
         </div>
         <!-- <p class="mb-4">1. Vetted distribution of upstream Istio tested for use in specific Kubernetes environments,
           including EKS-D</p> -->
@@ -80,40 +101,6 @@
           <input id="search-by" name="s" type="search" class="form-control form-control-lg" placeholder="{{ i18n `search_placeholder`}}">
           <button type="submit" class="btn btn-primary">{{ i18n "search" }}</button>
         </form> -->
-      </div>
-    </div>
-  </div>
-</section>
-</div>
-
-<section class="section pb-0">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-9 home-code rounded shadow p-4">
-        <h4>Get Started Quickly</h4>
-        <!-- <img loading="lazy" src="{{ .Site.Params.banner.image | absURL }}" alt="illustration" class="img-fluid"> -->
-        <h6 class="pb-2 pt-4">1. Download GetIstio</h5>
-          <pre class="pb-2 home-code-snippet"><code>curl -sL https://tetrate.bintray.com/getistio/download.sh | bash</code><span class="copy-to-clipboard">copy</span></pre>
-        <h6 class="pb-2 pt-4">2. Install Istio Demo</h5>
-          <pre class="pb-2 home-code-snippet"><code>getistio istioctl install --set profile=demo </code><span class="copy-to-clipboard">copy</span></pre>
-        <h6 class="pb-2 pt-4">3. Check GetIstio version</h5>
-          <pre class="pb-2 home-code-snippet"><code>getistio version</code><span class="copy-to-clipboard">copy</span></pre>
-        <h6 class="pb-2 pt-4">4. Validate config</h5>
-          <pre class="pb-2 home-code-snippet"><code>getistio config-validate</code><span class="copy-to-clipboard">copy</span></pre>
-        <div class="pt-4 row justify-content-center">
-          <a href="/how-do-i-install-cli/" class="btn btn-sm learn-more">Learn more</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section pb-0">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-10 home-code rounded shadow p-4">
-        <h4>See GetIstio in Action</h4>
-        <script id="asciicast-386188" src="https://asciinema.org/a/386188.js" async></script>
       </div>
     </div>
   </div>
@@ -140,6 +127,39 @@
   </div>
 </section>
 <!-- /topics -->
+
+<section class="section pb-0">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9 home-code rounded shadow p-4">
+        <h4>Get Started Quickly</h4>
+        <!-- <img loading="lazy" src="{{ .Site.Params.banner.image | absURL }}" alt="illustration" class="img-fluid"> -->
+        <h6 class="pb-2 pt-4">1. Download GetIstio</h5>
+          <pre class="pb-2 home-code-snippet"><code>curl -sL https://tetrate.bintray.com/getistio/download.sh | bash</code><span class="copy-to-clipboard">copy</span></pre>
+        <h6 class="pb-2 pt-4">2. Install Istio Demo</h5>
+          <pre class="pb-2 home-code-snippet"><code>getistio istioctl install --set profile=demo </code><span class="copy-to-clipboard">copy</span></pre>
+        <h6 class="pb-2 pt-4">3. Check GetIstio version</h5>
+          <pre class="pb-2 home-code-snippet"><code>getistio version</code><span class="copy-to-clipboard">copy</span></pre>
+        <h6 class="pb-2 pt-4">4. Validate config</h5>
+          <pre class="pb-2 home-code-snippet"><code>getistio config-validate</code><span class="copy-to-clipboard">copy</span></pre>
+        <div class="pt-4 row justify-content-center">
+          <a href="/how-do-i-install-cli/" class="btn btn-sm learn-more">Learn more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{/*  <section class="section pb-0">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 home-code rounded shadow p-4">
+        <h4>See GetIstio in Action</h4>
+        <script id="asciicast-386188" src="https://asciinema.org/a/386188.js" async></script>
+      </div>
+    </div>
+  </div>
+</section>  */}}
 
 <!-- faq -->
 <!-- {{ with .Site.GetPage "/faq" }}
