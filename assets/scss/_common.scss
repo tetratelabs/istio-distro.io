@@ -1,4 +1,6 @@
 $breakpoint-xs: 576px;
+$breakpoint-md: 768px;
+$breakpoint-xl: 1140px;
 
 body {
   background-color: $body-color;
@@ -89,10 +91,16 @@ a:hover {
   h1 {
     font-weight: 700;
     margin-bottom: 24px;
+    margin-left: -24px;
   }
 
   h1, p.lead {
     color: white;
+  }
+
+  ul.hero {
+    list-style: disc;
+    padding-inline-start: 0px;
   }
 }
 
@@ -552,15 +560,39 @@ pre {
   }
 }
 
+@media (min-width: $breakpoint-md) and (max-width: $breakpoint-xl) {
+  .hero-section {
+    h1 {
+      margin-left: 0px;
+    }
+    ul.hero {
+      padding-inline-start: 40px;
+    }
+  }
+}
+
 
 @media (max-width: $breakpoint-xs) {
+  .hero-section {
+    .container {
+      padding: 0 24px;
+    }
+    h1 {
+      margin-left: 0px;
+      font-size: 3rem;
+    }
+    ul.hero {
+      padding-inline-start: 20px;
+    }
+  }
+
   .events-section {
     .event-header {
       margin-bottom: 24px;
       text-align: center;
     }
   }
-  
+
   .cta-section {  
     p {
       width: 100%;
