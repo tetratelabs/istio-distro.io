@@ -109,7 +109,6 @@
   <div class="container">
     <!-- <h2 class="section-title">{{ i18n "topics" }}</h2> -->
     <div class="row">
-      {{/*  {{ range (.Pages.ByParam "featureOrder") (where .Site.Pages "Params.featured" true) }}  */}}
       {{ range first 4 (.Pages.ByParam "featureOrder")}}
       <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
         <div class="card match-height">
@@ -149,17 +148,6 @@
   </div>
 </section>
 
-{{/*  <section class="section pb-0">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-10 home-code rounded shadow p-4">
-        <h4>See GetIstio in Action</h4>
-        <script id="asciicast-386188" src="https://asciinema.org/a/386188.js" async></script>
-      </div>
-    </div>
-  </div>
-</section>  */}}
-
 <!-- faq -->
 <!-- {{ with .Site.GetPage "/faq" }}
 <section class="section pb-0">
@@ -172,7 +160,6 @@
 </section>
 {{ end }} -->
 <!-- /faq -->
-
 
 <section class="section events-section">
   <div class="container">
