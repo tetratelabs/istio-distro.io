@@ -1,0 +1,41 @@
+{{ $manifest := getJSON "https://tetrate.bintray.com/getistio/manifest.json" }}
+   <table>
+      <th>Distribution type: </th>
+      <th>Istio version: </th>
+      <th>Release Notes</th>
+      <th>Full Istio amd64</th>
+      <th>Full Istio arm64</th>
+      <th>Full Istio armv7</th>
+      <th>Istioctl amd64</th>
+      <th>Istioctl arm64</th>
+      <th>Istioctl armv7</th>
+
+   {{ range $manifest.istio_distributions }}  
+     {{ $release_url := index (.release_notes) 0}}
+     <tr>
+       <td> {{ .flavor }}-v{{ .flavor_version }} </td>
+       <td> {{ .version }} </td>
+       <td> <a href={{ $release_url }}>here</a> </td> 
+       <td><a href="https://tetrate.bintray.com/getistio/istio-{{ .version }}-{{ .flavor }}-v{{ .flavor_version }}-linux-amd64.tar.gz">amd64</a> </td>
+       <td><a href="https://tetrate.bintray.com/getistio/istio-{{ .version }}-{{ .flavor }}-v{{ .flavor_version }}-linux-arm64.tar.gz">arm64</a> </td>
+       <td><a href="https://tetrate.bintray.com/getistio/istio-{{ .version }}-{{ .flavor }}-v{{ .flavor_version }}-linux-armv7.tar.gz">armv7</a> </td>
+       <td><a href="https://tetrate.bintray.com/getistio/istioctl-{{ .version }}-{{ .flavor }}-v{{ .flavor_version }}-linux-amd64.tar.gz">Istioctl amd64</a> </td>
+       <td><a href="https://tetrate.bintray.com/getistio/istioctl-{{ .version }}-{{ .flavor }}-v{{ .flavor_version }}-linux-arm64.tar.gz">Istioctl arm64</a> </td>
+       <td><a href="https://tetrate.bintray.com/getistio/istioctl-{{ .version }}-{{ .flavor }}-v{{ .flavor_version }}-linux-armv7.tar.gz">Istioctl armv7</a> </td>
+      </tr>
+   {{ end }}
+   </table>
+       <br>
+       <br>
+   <strong> Please note that the following versions of Istio are scheduled to be out of support: </strong>
+   <table>
+      <th>Istio version:</th>
+      <th>EOL Date</th>
+   {{ range $key, $value := $manifest.istio_minor_versions_eol_dates }}  
+     <tr>
+      <td> {{ $key }}</td>
+      <td> {{ $value }}</td>
+     </tr>
+   {{ end }}
+   </table>
+
