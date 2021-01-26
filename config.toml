@@ -15,6 +15,10 @@ home = [ "HTML", "JSON"]
 [markup.goldmark.renderer]
 unsafe = true
 
+[caches.getjson]
+dir = ":cacheDir/:project"
+maxAge = 0
+
 ############################# Plugins ##############################
 
 # CSS Plugins
