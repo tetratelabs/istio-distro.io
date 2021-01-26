@@ -2,7 +2,7 @@
 title: "Ecosystem & Partners"
 date: 2018-12-29T11:02:05+06:00
 icon: "ti-comments"
-description: "Cras at dolor eget urna varius faucibus tempus in elit dolor sit amet."
+description: "Take a look at GetIstio partners and see how they benefit from it."
 # type dont remove or customize
 type : "docs"
 weight: 6

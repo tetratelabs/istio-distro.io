@@ -2,7 +2,7 @@
 title: "GetIstio CLI"
 date: 2018-12-29T11:02:05+06:00
 icon: "ti-panel"
-description: "Cras at dolor eget urna varius faucibus tempus in elit dolor sit amet."
+description: "Learn more about GetIstio CLI, how to install and manage it."
 # type dont remove or customize
 type : "docs"
 weight: 1
