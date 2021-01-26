@@ -18,10 +18,10 @@ As an example, to add a category named Installation, which contains 2 child page
 - content
   - Installation
     - Linux
-      - index_en.md
+      - _index.en.md
     - MacOS
-      - index_en.md
-    - index_en.md
+      - _index.en.md
+    - _index.en.md
 
 Take a look at other file in the `/content` directory to see example of required frontmatter.
 
