@@ -5,7 +5,9 @@ icon: "ti-panel"
 description: "Cras at dolor eget urna varius faucibus tempus in elit dolor sit amet."
 # type dont remove or customize
 type : "docs"
+weight: 2
 ---
+
 An integration, and lifecycle management CLI tool that ensures the use of supported and trusted versions of Istio. The enterprises require ability to control istio versioning, support multiple versions of istio, ability to easily move between the versions, integration with cloud providers certification systems and centralized config management and validation. The GetIsio CLI tool supports these enterprise level requirements via:
 - enforcement of fetching certified versions of Istio and enables only compatible versions of Istio installation
 - allows seamlessly switching between multiple istioctl versions
