@@ -109,7 +109,8 @@
   <div class="container">
     <!-- <h2 class="section-title">{{ i18n "topics" }}</h2> -->
     <div class="row">
-      {{ range first 4 (where .Site.Pages "Type" "docs") }}
+      {{/*  {{ range (.Pages.ByParam "featureOrder") (where .Site.Pages "Params.featured" true) }}  */}}
+      {{ range first 4 (.Pages.ByParam "featureOrder")}}
       <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
         <div class="card match-height">
           <div class="card-body">

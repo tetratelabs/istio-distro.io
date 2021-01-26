@@ -1,13 +1,11 @@
 ---
-title: "Istio Cheatsheet"
+title: "GetIstio CLI"
 date: 2018-12-29T11:02:05+06:00
-icon: "ti-notepad"
+icon: "ti-panel"
 description: "Cras at dolor eget urna varius faucibus tempus in elit dolor sit amet."
 # type dont remove or customize
 type : "docs"
-weight: 3
+weight: 1
 featured: true
-featureOrder: 3
+featureOrder: 1
 ---
-
-This is placeholder for Istio cheatsheet inside GetIstio.

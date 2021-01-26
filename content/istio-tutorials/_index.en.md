@@ -5,7 +5,8 @@ icon: "ti-blackboard"
 description: "Cras at dolor eget urna varius faucibus tempus in elit dolor sit amet."
 # type dont remove or customize
 type : "docs"
-weight: 1
+featured: true
+featureOrder: 2
 ---
 
 This is placeholder for Istio tutorials inside GetIstio.
