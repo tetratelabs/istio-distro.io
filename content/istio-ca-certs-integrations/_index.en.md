@@ -7,4 +7,11 @@ type : "docs"
 weight: 3
 ---
 
-This is placeholder for Istio CA Certs Integration
+Istio provides different mechanisms to sign workload certificates for mTLS capability. Some of the options are:
+1. Istio CA uses a self-signed root certificate
+2. Istio CA uses an administrator-specified certificate and key with an administrator-specified root certificate
+3. Custom CA issues keys & certs files mounted onto the sidecars 
+4. Experimental Custom CA integration uses Kubernetes CSR API (Kubernetes 1.18+)
+5. External CA uses Istio CA gRPC API (either through Istiod RA model or directly authenticating workloads and validating SAN)
+
+GetIstio facilitates the custom CA options by providing various integration choices, including deploying Vendor agents for the purpose.
