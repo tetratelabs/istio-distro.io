@@ -7,12 +7,12 @@ description: "Cras at dolor eget urna varius faucibus tempus in elit dolor sit a
 type : "docs"
 ---
 An integration, and lifecycle management CLI tool that ensures the use of supported and trusted versions of Istio. The enterprises require ability to control istio versioning, support multiple versions of istio, ability to easily move between the versions, integration with cloud providers certification systems and centralized config management and validation. The GetIsio CLI tool supports these enterprise level requirements via:
-enforcement of fetching certified versions of Istio and enables only compatible versions of Istio installation
-allows seamlessly switching between multiple istioctl versions
-includes FIPS compliant flavor
-delivers Istio configuration validations platform based by integrating validation libraries from multiple sources
-uses number of cloud provider certificate management systems to create Istio CA certs that are used for signing Service-Mesh managed workloads 
-also provides multiple additional integration points with cloud providers
+- enforcement of fetching certified versions of Istio and enables only compatible versions of Istio installation
+- allows seamlessly switching between multiple istioctl versions
+- includes FIPS compliant flavor
+- delivers Istio configuration validations platform based by integrating validation libraries from multiple sources
+- uses number of cloud provider certificate management systems to create Istio CA certs that are used for signing Service-Mesh managed workloads 
+- also provides multiple additional integration points with cloud providers
 
 Istio release schedule can be very aggressive for the enterprise life-cycle and change management practices - GetIstio addresses this concern by testing all Istio versions against different kubernetes distributions for functional integrity. The getistio supported versions of Istio are actively supported for security patches and other bug updates and have much longer support life than provided by upstream Istio.
 
