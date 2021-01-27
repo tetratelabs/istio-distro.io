@@ -130,6 +130,28 @@ a:hover {
   .form-control {
     margin-top: 24px;
   }
+
+  #emailForm #email.error {
+	  border-color: #c50a0a;
+  }
+
+  #errorMessage {
+    display:none;
+  }
+
+  #errorMessage.active {
+    display: block;
+    color: #c50a0a;
+  }
+
+  #formMessage {
+    display: none;
+  }
+
+  #formMessage.active {
+    margin-top: 24px;
+    display: block;
+  }
 }
 
 .bg-cover {
