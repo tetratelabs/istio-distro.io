@@ -116,7 +116,11 @@
             <i class="card-icon {{ .Params.Icon }} mb-4"></i>
             <h3 class="card-title h4">{{ .Title }}</h3>
             <p class="card-text">{{ .Params.Description }}</p>
-            <a href="{{ .Permalink }}" class="stretched-link"></a>
+            {{ if (isset .Params "altlink") }}
+              <a href="{{ .Params.Altlink }}" class="stretched-link"></a>
+            {{ else }}  
+              <a href="{{ .Permalink }}" class="stretched-link"></a>
+            {{ end }}  
           </div>
         </div>
       </div>
