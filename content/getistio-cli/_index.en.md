@@ -6,6 +6,9 @@ description: "Learn more about GetIstio CLI, how to install and manage it."
 # type dont remove or customize
 type : "docs"
 weight: 1
+# set these 2 to make it featured in homepage
 featured: true
 featureOrder: 1
+# set alternate link for homepage
+altLink: "/getistio-cli/what-is-getistio"
 ---

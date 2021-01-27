@@ -6,6 +6,7 @@ description: "After you got Istio running, sharpen your Istio skill by following
 # type dont remove or customize
 type : "docs"
 weight: 4
+# set these 2 to make it featured in homepage
 featured: true
 featureOrder: 2
 ---

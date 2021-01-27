@@ -6,6 +6,7 @@ description: "Important commands that you'll need to manage your Istio."
 # type dont remove or customize
 type : "docs"
 weight: 5
+# set these 2 to make it featured in homepage
 featured: true
 featureOrder: 3
 ---
