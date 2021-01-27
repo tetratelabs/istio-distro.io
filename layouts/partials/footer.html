@@ -54,4 +54,6 @@
 
 <!-- Main Script -->
 {{ $script := resources.Get "js/script.js" | minify}}
+{{ $formScript := resources.Get "js/form.js" | minify}}
 <script src="{{ $script.Permalink }}"></script>
+<script src="{{ $formScript.Permalink }}"></script>
