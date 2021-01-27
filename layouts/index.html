@@ -199,10 +199,14 @@
         <div class="box rounded">
           <h2 class="mb-3">Get Community Updates</h2>
           <p>Sign up for our GetIstio community newsletter to get the most recent updates and product announcements.</p>
-          <div class="form-control">
-            <input type="email" class="input" placeholder="Work Email"/ required>
-            <button class="btn btn-sm btn-primary">Join Newsletter</button>
+          <div class="form-control" id="emailFormContainer">
+            <form id="emailForm">
+              <input id="email" type="email" class="input" placeholder="Work Email"/ required>
+              <button class="btn btn-sm btn-primary">Join Newsletter</button>
+            </form>
           </div>
+          <span id="errorMessage">Please enter a valid email address</span>
+          <p id="formMessage">Thank you for subscribing.</p>
         </div>
 
       </div>
