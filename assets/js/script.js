@@ -108,6 +108,10 @@ $(document).on("turbolinks:load", preloader);
 		tabPane.addClass('active');
 	});
 
+   $("pre code.language-sh")
+     .parent()
+     .append('<span class="copy-to-clipboard">copy</span>');
+
   // sets button to "copied" after clicked
 	$('.copy-to-clipboard').click(function () {
 		$(this).html('copied');
