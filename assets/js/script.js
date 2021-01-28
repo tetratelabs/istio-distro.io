@@ -108,26 +108,7 @@ $(document).on("turbolinks:load", preloader);
 		tabPane.addClass('active');
 	});
 
-
-
-	// clipboard
-	var clipInit = false;
-	$('code').each(function () {
-		var code = $(this),
-			text = code.text();
-		if (text.length > 2) {
-			if (!clipInit) {
-				var text, clip = new ClipboardJS('.copy-to-clipboard', {
-					text: function (trigger) {
-						text = $(trigger).prev('code').text();
-						return text.replace(/^\$\s/gm, '');
-					}
-				});
-				clipInit = true;
-			}
-			code.after('<span class="copy-to-clipboard">copy</span>');
-		}
-	});
+  // sets button to "copied" after clicked
 	$('.copy-to-clipboard').click(function () {
 		$(this).html('copied');
 	});
@@ -190,3 +171,11 @@ function expandDictionary(){
   btnIcon.classList.toggle("ti-angle-down");
   btnIcon.classList.toggle("ti-angle-up");
 }
+
+// actual logic to push code to clipboard.
+new ClipboardJS(".copy-to-clipboard", {
+  target: function (trigger) {
+    console.log(trigger.previousElementSibling.innerHTML);
+    return trigger.previousElementSibling;
+  },
+});
