@@ -103,6 +103,14 @@ a:hover {
     list-style: disc;
     padding-inline-start: 0px;
   }
+
+  div.asciicast {
+    margin-top: 0px !important;
+  }
+
+  #asciicast-iframe-386188 {
+    height: 480px !important;
+  }
 }
 
 .dictionary-section {
@@ -584,9 +592,10 @@ pre {
   }
 }
 
-pre.asciinema-terminal {
-  height: 32em !important;
-}
+// this is valid if we use asciinema player, not embedding from asciinema.org.
+// pre.asciinema-terminal {
+//   height: 32em !important;
+// }
 
 @media (min-width: $breakpoint-md) and (max-width: $breakpoint-xl) {
   .hero-section {

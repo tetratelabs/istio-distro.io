@@ -26,3 +26,20 @@ As an example, to add a category named Installation, which contains 2 child page
 Take a look at other file in the `/content` directory to see example of required frontmatter.
 
 To add blog content, just add markdown file in `/content/blog` directory.
+
+## Adding Event
+
+To add Event, go to the `/content/community/event` directory and add a Markdown file there with the following frontmatter
+
+```
+title: "Sample Event 1"
+date: 2018-12-29T11:02:05+06:00
+description: "This is description for Sample Event 1"
+categories: "event"
+image: "images/webinar_dummy.jpg"
+eventLink: "http://meet.google.com/abc"
+eventDate: 2021-01-29
+pastEvent: false
+```
+
+The `image`, `eventLink` and `eventDate` will be used to feature this event in the site's homepage. If the event is finished, you can change the frontmatter `pastEvent` to `true`.
