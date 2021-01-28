@@ -63,6 +63,12 @@ a:hover {
   color: $primary-color;
 }
 
+
+pre.language-sh, pre {
+  background-color: #f9f7f6 !important;
+  color: #272822 !important;
+}
+
 .slick-slide {
   outline: 0;
 }
@@ -518,10 +524,10 @@ button.btn {
     }
   }
   pre.home-code-snippet {
-    background: #1f3344;
+    background: #1f3344 !important;
   }
   pre code {
-    color: #e8b3b3;
+    color: #e8b3b3 !important;
   }
 }
 .link-blue {
@@ -591,6 +597,7 @@ pre {
     }
   }
 }
+
 
 // this is valid if we use asciinema player, not embedding from asciinema.org.
 // pre.asciinema-terminal {
