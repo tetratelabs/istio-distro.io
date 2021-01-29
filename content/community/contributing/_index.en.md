@@ -2,62 +2,6 @@
 title: "Contributing to GetIstio"
 url: /community/contributing
 ---
-## Building & Testing 
-
-Before you proceed, please make sure that you have the following dependencies available in your machine:
-
-- https://github.com/google/addlicense
-- https://github.com/golangci/golangci-lint
-- a Kubernetes cluster (e.g. https://kind.sigs.k8s.io/)
-
-
-### Run linter
-
-Here we use `golangci-lint` configured in `.golangci.yml` for static analysis, so please make sure that you have it installed.
-
-To run linter, simply execute:
-
-```
-make lint
-```
-
-### Run unittests
-
-Running unittests does not require any k8s cluster, and it can be done by
-
-```
-make unit-test
-```
-
-### Run e2e tests
-
-Running end-to-end tests requires you to have a valid k8s context. Please note that **e2e will use your default kubeconfig and default context**.
-
-In order to run e2e tests, execute:
-
-```
-make e2e-test
-```
-
-### Build binary
-
-```
-make build
-```
-
-### Build auto-generated docs
-
-```
-make doc-gen
-```
-
-### Add license headers
-
-We require every source code to have the specified license header. Adding the header can be done by
-```
-make license
-```
-
 ## Contributing
 
 We welcome contributions from the community. Please read the following guidelines carefully to maximize the chances of your PR being merged.
@@ -129,13 +73,3 @@ You can add the sign off when creating the git commit via `git commit -s`.
 Or, you can sign off the whole PR via `git rebase --signoff main`.
 
 
-## Release
-
-On any new release tag on this repository, our release workflow defined in `.github/workflows/release.yaml` 
-will be triggered to push the built binaries, `manifest.json`, and `download.sh` to
-[GetIstio's repository on Bintray](https://bintray.com/tetrate/getistio). Please note that `manifest.json` and `download.sh` are not tagged at Bintray level, 
-so they are overwritten by the new revision. The reason for that is because it is convenient to have "static" URLs for these two resources.
-
-In order to cut a new release tag and release the new version from the main branch, you should create a PR 
-where `GETISTIO_LATEST_VERSION` in [download.sh](https://github.com/tetratelabs/getistio/blob/13c222fc020e35bd73ce8041c93294278971a226/download.sh#L5) is updated to be the new release tag. 
-In this way, the downlaod.sh would behave so that it would download the new version by default.
