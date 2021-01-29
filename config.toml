@@ -1,10 +1,10 @@
 ######################## default configuration ####################
 baseURL = "/"
-title = "Get Istio"
+title = "GetIstio"
 # google analytics
 googleAnalytics = "" # example : UA-123-45
 # disable language
-disableLanguages = ["fr"] # desable language from here
+# disableLanguages = ["fr"] # disable language from here
 enableRobotsTXT = true
 
 # hugo outputs
