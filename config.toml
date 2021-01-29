@@ -154,8 +154,11 @@ weight = 6
 [params]
 logo = "images/getistio-logo-h-white.png"
 # Meta data
-description = "This is meta description"
-author = "Themefisher"
+description = "GetIstio project website, an open source Istio distribution"
+author = "Tetrate"
+sitename = "GetIstio"
+twitter = "@tetrateio"
+github = "https://github.com/tetratelabs/getistio"
 # contact form action
 contact_form_action = "#" # contact form works with https://formspree.io
 
@@ -204,11 +207,11 @@ languageName = "En"
 languageCode = "en-us"
 weight = 1
 # copyright
-copyright = "Copyright &copy; 2021 a Amjad Rathod"
+copyright = "Copyright &copy; 2021 Tetrate"
 
 # banner
 [Languages.en.banner]
-title = "GetIstion Documentation"
+title = "GetIstio Documentation"
 subtitle = "Lorem ipsum dolor amet, consetetur sadiffspscing elitr, diam nonumy invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua At."
 image = "images/banner.jpg"
 
