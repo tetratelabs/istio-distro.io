@@ -12,3 +12,7 @@ featureOrder: 1
 # set alternate link for homepage
 altLink: "/getistio-cli/what-is-getistio"
 ---
+
+<head>
+<meta http-equiv="refresh" content="0; url=what-is-getistio" />
+</head>
