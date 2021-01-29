@@ -15,7 +15,7 @@
         aria-label="Star tetratelabs/getistio on GitHub">Star</a>
         </div>
       <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
-        <i class="ti-menu h4 text-dark"></i>
+        <i class="ti-menu h4 text-white"></i>
       </button>
 
       <div class="collapse navbar-collapse text-center" id="navigation">
@@ -33,8 +33,13 @@
             </div>
           </li>
           {{ else }}
+          {{ printf "%#v" .Pre }}
           <li class="nav-item">
-            <a class="nav-link" href="{{ .URL | absURL }}">{{ .Name }}</a>
+            {{ if in .URL "www"}}
+              <a class="nav-link" href="{{ .URL | absURL }}" target="_blank">{{ .Name }} {{.Pre}}</a>
+            {{ else }}
+              <a class="nav-link" href="{{ .URL | absURL }}">{{ .Name }}</a>
+            {{ end }}
           </li>
           {{ end }}
           {{ end }}
