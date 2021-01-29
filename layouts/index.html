@@ -182,8 +182,10 @@
             <a href="{{ .Page.RelPermalink }}"><h5>{{ .Page.Title }}</h5></a>
             <img src="{{ .Page.Params.image }}" />
             <p>{{ .Page.Description }}</p>
-            <a class="btn btn-sm mb-3" href="{{ .Page.RelPermalink }}">Learn More</a>
-            <a class="btn btn-sm btn-primary" href="{{ .Page.Params.eventLink }}">Go To Event</a>
+            <div class="event-actions row">
+              <a class="btn btn-sm" href="{{ .Page.RelPermalink }}">Learn More</a>
+              <a class="btn btn-sm btn-primary" href="{{ .Page.Params.eventLink }}">Go To Event</a>
+            </div>
           </div>
         </div>
       {{ end }}

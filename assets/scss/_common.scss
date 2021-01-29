@@ -185,6 +185,18 @@ pre.language-sh, pre {
   h4 {
     margin-bottom: 24px;
   }
+
+  .card {
+    justify-content: space-between;
+  }
+
+  .event-actions {
+    justify-content: space-evenly;
+  }
+
+  .event-actions a.btn {
+    padding: 10px 28px;
+  }
 }
 
 .event-card {
