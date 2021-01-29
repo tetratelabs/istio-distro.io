@@ -7,7 +7,7 @@ image: "images/webinar_dummy.jpg"
 eventLink: "http://meet.google.com/abc"
 eventDate: 2021-03-02
 pastEvent: false
-weight: 2
+weight: 3
 ---
 
 This is our second GetIstio community meeting. This is an exciting one, as Nick Nellis will discuss the new features coming in Istio 1.9. In detail, we will discuss the following topics:

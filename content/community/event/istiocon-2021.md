@@ -1,5 +1,5 @@
 ---
-title: "GetEnvoy Deep Dive and Project Update"
+title: "IstioCon 2021"
 date: 2021-01-29T11:00:00+07:00
 description: "IstioCon 2021 is the inaugural community conference for the industry's most popular service mesh."
 categories: "event"
@@ -7,7 +7,7 @@ image: "images/webinar_dummy.jpg"
 eventLink: "https://events.istio.io/istiocon-2021/"
 eventDate: 2021-02-22
 pastEvent: false
-weight: 3
+weight: 2
 ---
 
 IstioCon is a community-led event, showcasing the lessons learned from running Istio in production, hands-on experiences from the Istio community, and featuring maintainers from across the Istio ecosystem. The conference offers a mix of keynotes, technical talks, lightning talks, workshops and roadmap sessions. Fun and games are also included with two social hours to take the load off and mesh with the Istio community, vendors, and maintainers!

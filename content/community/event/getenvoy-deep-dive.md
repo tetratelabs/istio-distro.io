@@ -7,7 +7,7 @@ image: "images/webinar_dummy.jpg"
 eventLink: "http://meet.google.com/abc"
 eventDate: 2021-03-16
 pastEvent: false
-weight: 3
+weight: 4
 ---
 
 GetEnvoy has been around for more than a year now, and it has helped many people to get Envoy up and running in swift fashion. In this meetup, Christoph Pakulski will give us detailed explanation of what the project is all about as well us some very interesting updates. 
