@@ -1,5 +1,5 @@
 ---
-title: "Config validation command"
+title: "Config validation details"
 date: 2018-12-29T11:02:05+06:00
 description: "Command usage for config validation"
 # type dont remove or customize
@@ -7,7 +7,7 @@ type : "docs"
 ---
 
 
-`config-validate` command is not limited to Istio versions installed via GetIstio and  works well with all Istio distros, upstream and others.
+[`config-validate`](/getistio-cli/reference/getistio_config-validate) command is not limited to Istio versions installed via GetIstio and  works well with all Istio distros, upstream and others.
 
 The command below checks if applying manifest that are defined in my-app.yaml and another-app.yaml will trigger any validation errors. The command reports the findings based on three sources (Istio upstream, Kiali and native GetIsito) without applying any configuration changes. It prevents unnecessary downtime or the preventable issues to affect production workloads:
 
@@ -27,7 +27,6 @@ The validation of the currently implemented configuration is also possible - can
 *\# for all namespaces*
 ```
 getistio config-validate
-
 ```
 *\# for a specific namespace*
 ```

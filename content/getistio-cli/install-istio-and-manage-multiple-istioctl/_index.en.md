@@ -1,40 +1,30 @@
 ---
-title: "Install Istio and Manage multiple istioctl"
+title: "Manage multiple istioctl"
 date: 2021-01-25T13:00:00+07:00
 description: "How to install Istio and manage multiple istioctl"
 # type dont remove or customize
 type : "docs"
 ---
-Downloading GetIstio fetches by default the latest trusted Istio and istioctl. We recommend always using  getistio to invoke istioctl. getistio not only eases switching between multiple versions of istioctl, but also does version compatibility and configuration checks to ensure that only certified Istio is deployed.
-With istioctl downloaded, one could go about installing Istio or explore other istioctl commands. For example, to install Istio using the demo profile, run the following command:
-
-```
-getistio istioctl install --set profile=demo
-```
-
-Another example would be getting istioctl help (for getistio help use “getistio --help” instead):
-
-```
-getistio istioctl --help
-```
+After downloading and [installing](/getistio-cli/install-istio) latest trusted versions of GetIstio and Istio. We recommend always using  getistio to invoke istioctl. GetIstio not only eases switching between multiple versions of istioctl, but also does version compatibility and configuration checks to ensure that only certified Istio is deployed.
 
 Refer to [Istio documentation](https://istio.io/latest/docs/reference/commands/istioctl) for the latest istioctl commands and options.
 
 Real-life requirements very often dictate the use of a different version of istioctl (than the latest version) or leverage multiple versions of istioctl due custom configuration. The steps to achieve that are explained below.
 
-List the currently downloaded versions of Istio through GetIstio:
+List the currently downloaded versions of Istio through GetIstio using [show command](/getistio-cli/reference/getistio_show):
 
 ```
 getistio show
 ```
 
 Example output would be
+<pre>
+1.7.6-distro-v0
+1.8.1-distro-v0
+1.8.2-distro-v0 (Active)
+</pre>
 
-> 1.7.6-distro-v0<br>
-> 1.8.1-distro-v0<br>
-> 1.8.2-distro-v0 (Active)<br>
-
-If the required version of Istio is not downloaded yet, first the operator can query the list of trusted Istio versions through:
+If the required version of Istio is not downloaded yet, first the operator can query the list of trusted Istio versions through [list command](/getistio-cli/reference/getistio_list):
 ```
 getistio list
 ```
@@ -48,20 +38,15 @@ Example output would be:
      1.7.5       tetratefips   3         1.16,1.17,1.18  
      1.7.4       tetrate       0         1.16,1.17,1.18  
 </pre>
-Below is an example of obtaining version 1..8.1 of Istio:
+Below is an example of obtaining version 1..8.1 of Istio by leveraging [fetch command](/getistio-cli/reference/getistio_fetch):
 
 ```
-getistio fetch --version 1.8.1 --flavor tetrate --flavor-version 1 
+getistio fetch --version 1.8.1 --flavor tetrate --flavor-version 0 
 ```
 
 In the example above, Flavor tetrate maps to upstream Istio with the addition of possible patches and Flavor tetratefips is a FIPS-compliant version of the tetrate Flavor.
 
-To learn more about fetch command, run
-
-```
-getistio fetch --help
-```
-Use getistio show to cross check if the Istio version is downloaded and the output will list all versions and mark the active one:
+Use [show command](/getistio-cli/reference/getistio_show) istio show to cross check if the Istio version is downloaded and the output will list all versions and mark the active one:
 
 <pre>
 $ getistio show
@@ -70,19 +55,15 @@ $ getistio show
 1.8.1-distro-v0 (Active)
 1.8.2-distro-v0
 </pre>
-To switch to a different version of istioctl, run the switch command:
+
+To switch to a different version of istioctl, run the [switch command](/getistio-cli/reference/getistio_switch) switch command:
 ```
-getistio switch --version 1.8.1 --flavor tetrate --flavor-version=1
+getistio switch --version 1.8.1 --flavor tetrate --flavor-version=0
 ```
 
 Output would be something similar to:
 
 ```
-istioctl switched to 1.8.1-tetrate-v1 now
+istioctl switched to 1.8.1-tetrate-v0 now
 ```
 
-To learn more about switch command, run
-
-```
-getistio switch --help
-```
