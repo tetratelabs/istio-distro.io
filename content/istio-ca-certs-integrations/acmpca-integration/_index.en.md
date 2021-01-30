@@ -9,7 +9,7 @@ type : "docs"
 Instead of using a self signed root certificate, here we get Istio an intermediary CA from AWS ACM Private CA service that would in turn be used to sign workloads certificates. This approach enables the same root of trust for the workloads as provided by the root CA in ACM Private CA. As Istio itself signs the workload certs, the latency for getting workload certs issued is far less as compared to directly getting the certs signed by ACM Private CA itself.
 <br>
 <br>
-`getistio gen-ca` utility furnishes the options to connect to ACM Private CA and get the intermediary CA cert signed. It uses the certificate details thus obtained to create 'cacerts' Kubernetes secret for Istio to use to sign workload certs. Istio at start up, checks for the presence of the secret 'cacerts' to decide if it needs to use this cert for signing workload certificates
+The [`getistio gen-ca`](/getistio-cli/reference/getistio_gen-ca) command furnishes the options to connect to ACM Private CA and get the intermediary CA cert signed. It uses the certificate details thus obtained to create 'cacerts' Kubernetes secret for Istio to use to sign workload certs. Istio at start up, checks for the presence of the secret 'cacerts' to decide if it needs to use this cert for signing workload certificates
 
 Prerequisites:
 - A CA set up in AWS ACM Private CA and the ARN for the CA
@@ -20,7 +20,7 @@ Parameters related to connecting to ACM Private CA and CSR creation can be suppl
 An example config file is given below and the parameters are self explanatory.
 
 *acmpca-config.yaml*
-```
+<pre>
 providerName: "aws"
 providerConfig:
   aws:
@@ -58,7 +58,7 @@ certificateParameters:
           - "engineering"
       emailaddresses:
         - "youremail@example.io"
-```
+</pre>
 
 Once we have the prerequisites satisfied and the config file created, we could run the getistio gen-ca command to create 'cacerts' Kubernetes secret as well as a local yaml file of the secret. `getistio` connects to the cluster your Kubernetes configuration  points to.
 ```

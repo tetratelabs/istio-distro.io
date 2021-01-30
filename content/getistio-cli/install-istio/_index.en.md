@@ -7,7 +7,7 @@ type : "docs"
 ---
 As explained earlier, GetIstio by default communicates to the cluster defined by your Kubernetes configuration. Please make sure you’re connected to the correct cluster before proceeding with the installation steps.
 
-The most common example is to install the demo profile of Istio, That can be done with following command:
+The most common example is to install the demo profile of Istio, That can be done using [getistio istioctl](/getistio-cli/reference/getistio_istioctl) command
 ```sh
 getistio istioctl install --set profile=demo
 ```
@@ -20,19 +20,20 @@ This will install the Istio demo profile with ["Istio core" "Istiod" "Ingress ga
 ✔ Ingress gateways installed
 ✔ Egress gateways installed
 ✔ Installation complete </pre>
-After the previous step is completed, the validation can be done by confirming the GetIstio and Istio versions installed:
+After the previous step is completed, the validation can be done by confirming the GetIstio and Istio versions installed, using [version command](/getistio-cli/reference/getistio_version):
 ```sh
 getistio version
 ```
 Output:<pre>
 $ getistio version
-GetIstio version: 0.3.0
-Active istioctl: 1.8.2-distro-v0
-client version: 1.8.2-distro-v0
-control plane version: 1.8.2-distro-v0
-data plane version: 1.8.2-distro-v0 (2 proxies)</pre>
+getistio version: 0.6.0
+active istioctl: 1.8.2-tetrate-v0
+client version: 1.8.2-tetrate-v0
+control plane version: 1.8.2-tetrate-v0
+data plane version: 1.8.2-tetrate-v0 (2 proxies)
+</pre>
 
-In addition  to the version output, a user can confirm that config validation is functioning as expected by issuing the following command:
+In addition  to the version output, a user can validate the expected functionality by issuing the [config-validate command](/getistio-cli/reference/getistio_config-validate) (read more around [config validation](/config-validation)):
 ```
 getistio config-validate
 ```

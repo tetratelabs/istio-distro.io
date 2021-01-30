@@ -6,12 +6,11 @@ description: "How to install and update GetIstio"
 type : "docs"
 ---
 
-Install and Update of GetIstio
 GetIstio can be obtained by issuing the following command:
 ```
 curl -sL https://tetrate.bintray.com/getistio/download.sh | bash
 ```
-This, by default, downloads the latest version of GetIstio and certified Istio. To check if the download was successful, run the version command
+This, by default, downloads the latest version of GetIstio and certified Istio. To check if the download was successful, run the [version command](/getistio-cli/reference/getistio_version)
 ```
 getistio version
 ```
@@ -20,14 +19,15 @@ or
 getistio version --remote=false #only the client version details
 ```
 An output of the form below suggests that GetIstio was installed successfully.
->GetIstio version: 0.3.0 ...
-
-To see the list of commands available with GetIstio and the supported features, run:
+<pre>getistio version: 0.6.0
+active istioctl: 1.8.2-tetrate-v0
+</pre>
+To see the list of commands available with GetIstio and the supported features, run the [help command](/getistio-cli/reference/getistio_help):
 ```
 getistio --help
 ```
 
-Once GetIstio is downloaded, it can be self-updated to the latest version by running the command:
+Once GetIstio is downloaded, it can be self-updated to the latest version by running the [update command](/getistio-cli/reference/getistio_update):
 ```
 getistio update
 ```
