@@ -3,7 +3,7 @@ title: "getistio show"
 url: /getistio-cli/reference/getistio_show/
 ---
 
-Show fetched istio version
+Show fetched Istio version
 
 ```
 getistio show [flags]

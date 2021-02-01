@@ -6,7 +6,7 @@ description: "GetIstio overview"
 type : "docs"
 ---
 
-An integration, and lifecycle management CLI tool that ensures the use of supported and trusted versions of Istio. The enterprises require ability to control istio versioning, support multiple versions of istio, ability to easily move between the versions, integration with cloud providers certification systems and centralized config management and validation. 
+An integration, and lifecycle management CLI tool that ensures the use of supported and trusted versions of Istio. The enterprises require ability to control Istio versioning, support multiple versions of istio, ability to easily move between the versions, integration with cloud providers certification systems and centralized config management and validation. 
 
 The GetIsio CLI tool supports these enterprise level requirements via:
 
@@ -28,6 +28,6 @@ The above functionality is achieved via elegant transparent approach, where the 
 
 - GetIstio connects to the kubernetes cluster pointed to by the default kubernetes config file. If KUBECONFIG environment variable is set, then takes precedence.
 - Config validation is done against two targets:
-cluster current config that might include multiple istio configuration constructs
+cluster current config that might include multiple Istio configuration constructs
 in addition GetIstio validates the manifest yaml files (that are not applied yet to the cluster)
 - Creation of CA cert for Istio assumes the provider set up to issue intermediary CA cert is already done. This is optional and the default is self signed cert by Istio for workload certificates

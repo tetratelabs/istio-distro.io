@@ -3,7 +3,7 @@ title: "getistio list"
 url: /getistio-cli/reference/getistio_list/
 ---
 
-List available istio distributions built by Tetrate
+List available Istio distributions built by Tetrate
 
 ```
 getistio list [flags]
