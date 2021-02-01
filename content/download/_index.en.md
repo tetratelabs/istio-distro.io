@@ -8,6 +8,6 @@ type : "docs"
 ---
 
 
-Today there are two versions of GetIstio is available for Linux and MacOS. Please follow [GetIstio Install and Update Page]({{< ref "/getistio-cli/install-and-update-of-getistio" >}}) to deploy the product.
+Today there are two versions of GetIstio available for Linux and MacOS. Please follow [GetIstio Install and Update Page]({{< ref "/getistio-cli/install-and-update-of-getistio" >}}) to deploy the product.
 
-There also additional pages that allow download of Istio distributions and `istioctl` binary for [Linux]({{< relref "linux" >}}), [MacOS]({{< relref "macos" >}}) and [Windows]({{< relref "windows" >}}). We recommend to use GetIsio to obtain the required files.
+There are additional pages that allow download of Istio distributions and `istioctl` binary for [Linux]({{< relref "linux" >}}), [MacOS]({{< relref "macos" >}}), and [Windows]({{< relref "windows" >}}). We recommend using GetIsio to obtain the required files.
