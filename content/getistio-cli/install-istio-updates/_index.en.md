@@ -5,7 +5,7 @@ description: "Detailed Istio update instructions."
 # type dont remove or customize
 type : "docs"
 ---
-Versions of Istio that are delivered through GetIstio are supported longer than upstream versions and are actively patched for key bug fixes and security updates. To check if you’rer running Istio versions that are up to date or if they’re missing any key security patches, run the [check-upgrade command](/getistio-cli/reference/check-upgrade) command. This command connects to the cluster (defined by the Kubernetes config of the operator workstation) to verify existing Istio installations, compares those with the latest available GetIstio certified versions, and recommends suggested upgrades. To check for upgrades, run:
+Versions of Istio that are delivered through GetIstio are supported longer than upstream versions and are actively patched for key bug fixes and security updates. To check if you’re running Istio versions that are up to date or if they’re missing any key security patches, run the [check-upgrade command](/getistio-cli/reference/check-upgrade). This command connects to the cluster (defined by the Kubernetes config of the operator workstation) to verify existing Istio installations, compares those with the latest available GetIstio certified versions, and recommends suggested upgrades. To check for upgrades, run:
 
 ```
 getistio check-upgrade
