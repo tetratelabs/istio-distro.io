@@ -22,7 +22,7 @@ Welcome to the first ever GetIstio Community meeting. Zack Butcher and Christoph
 - GetIstio Project
 - GetEnvoy Project
 - Closing with Resource Links
-- QA
+- Q&A
 - Exit
 
-This event will be hosted by Tetrate's own Sean O'Dell. See you on 16 February.
+This event will be hosted by Tetrate's own Sean O'Dell. See you on 16 February 2021.
