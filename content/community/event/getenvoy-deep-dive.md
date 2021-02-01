@@ -3,7 +3,7 @@ title: "GetEnvoy Deep Dive and Project Update"
 date: 2021-01-29T11:00:00+07:00
 description: "Let's take a deep look into GetEnvoy and exciting updates from the project."
 categories: "event"
-image: "images/webinar_dummy.jpg"
+image: "images/events/getenvoy-deep-dive.png"
 eventLink: "http://meet.google.com/abc"
 eventDate: 2021-03-16
 pastEvent: false
