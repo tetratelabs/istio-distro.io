@@ -1,6 +1,7 @@
 $breakpoint-xs: 576px;
 $breakpoint-md: 768px;
 $breakpoint-xl: 1140px;
+$breakpoint-xxl: 1400px;
 
 body {
   background-color: $body-color;
@@ -62,7 +63,6 @@ select {
 a:hover {
   color: $primary-color;
 }
-
 
 pre.language-sh, pre {
   background-color: #f9f7f6 !important;
@@ -615,6 +615,12 @@ pre {
 // pre.asciinema-terminal {
 //   height: 32em !important;
 // }
+
+@media (min-width: $breakpoint-xxl) {
+  .docs-content {
+    max-width: 1320px;
+  }
+}
 
 @media (min-width: $breakpoint-md) and (max-width: $breakpoint-xl) {
   .hero-section {
