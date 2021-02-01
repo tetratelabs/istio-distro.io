@@ -52,3 +52,21 @@ pastEvent: false
 ```
 
 The `image`, `eventLink` and `eventDate` will be used to feature this event in the site's homepage. If the event is finished, you can change the frontmatter `pastEvent` to `true`.
+
+## Multiday Event
+
+To add multiday event (events that starts and ends on different day), add a `eventEndDate` in the frontmatter to indicate the event end date. The `eventDate` frontmatter still acts as the event start date.
+
+Example, to add an event that starts on 5th March and ends on 8th March, the following frontmatter will work:
+
+```
+title: "Sample Event 1"
+date: 2018-12-29T11:02:05+06:00
+description: "This is description for Sample Event 1"
+categories: "event"
+image: "images/webinar_dummy.jpg"
+eventLink: "http://meet.google.com/abc"
+eventDate: 2021-03-05
+eventStartDate: 2021-03-08
+pastEvent: false
+```
