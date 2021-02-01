@@ -3,7 +3,7 @@ title: "GetIstio Inaugural Meetup"
 date: 2021-01-29T11:00:00+07:00
 description: "The first ever GetIstio meetup. Join us in kicking off this exciting adventure."
 categories: "event"
-image: "images/webinar_dummy.jpg"
+image: "images/events/getistio-inaugural-meetup.png"
 eventLink: "http://meet.google.com/abc"
 eventDate: 2021-02-16
 pastEvent: false
