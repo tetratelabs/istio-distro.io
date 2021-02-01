@@ -5,9 +5,9 @@ description: "How to install Istio with GetIstio CLI"
 # type dont remove or customize
 type : "docs"
 ---
-As explained earlier, GetIstio by default communicates to the cluster defined by your Kubernetes configuration. Please make sure you’re connected to the correct cluster before proceeding with the installation steps.
+GetIstio by default communicates to the cluster defined by your Kubernetes configuration. Please make sure you’re connected to the correct cluster before proceeding.
 
-The most common example is to install the demo profile of Istio, That can be done using [getistio istioctl](/getistio-cli/reference/getistio_istioctl) command
+To install the demo profile of Istio, That can be done using [getistio istioctl](/getistio-cli/reference/getistio_istioctl) command
 ```sh
 getistio istioctl install --set profile=demo
 ```
@@ -20,7 +20,7 @@ This will install the Istio demo profile with ["Istio core" "Istiod" "Ingress ga
 ✔ Ingress gateways installed
 ✔ Egress gateways installed
 ✔ Installation complete </pre>
-After the previous step is completed, the validation can be done by confirming the GetIstio and Istio versions installed, using [version command](/getistio-cli/reference/getistio_version):
+Once this step is completed, the validation can be done by confirming the GetIstio and Istio versions installed, using the [version command](/getistio-cli/reference/getistio_version):
 ```sh
 getistio version
 ```
