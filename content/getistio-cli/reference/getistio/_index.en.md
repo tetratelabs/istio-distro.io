@@ -1,6 +1,5 @@
 ---
 title: "getistio"
-icon: "ti-panel"
 url: /getistio-cli/reference/getistio/
 ---
 
