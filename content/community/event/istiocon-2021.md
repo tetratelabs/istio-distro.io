@@ -6,6 +6,7 @@ categories: "event"
 image: "images/webinar_dummy.jpg"
 eventLink: "https://events.istio.io/istiocon-2021/"
 eventDate: 2021-02-22
+eventEndDate: 2021-02-26
 pastEvent: false
 weight: 2
 ---

@@ -178,7 +178,16 @@
       {{ if eq .Page.Params.pastEvent false }}
         <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
           <div class="card match-height event-card">
-            <p class="event-date pb-2">{{ .Page.Params.eventDate }}<span><i class="ti-calendar"></i></span></p>
+            <p class="event-date pb-2">
+              {{ .Page.Params.eventDate }} 
+              {{ if .Page.Params.eventEndDate }}
+              - {{ .Page.Params.eventEndDate}}
+              {{ end }}
+              <span><i class="ti-calendar"></i></span>
+            </p>
+            {{/*  {{ if isset .Page.Params "eventEndDate" }}  */}}
+              {{/*  - <p class="event-date pb-2">{{ .Page.Params.eventEndDate }}<span><i class="ti-calendar"></i></span></p>  */}}
+            {{/*  {{ end }}  */}}
             <a href="{{ .Page.RelPermalink }}"><h5>{{ .Page.Title }}</h5></a>
             <img src="{{ .Page.Params.image }}" />
             <p>{{ .Page.Description }}</p>
