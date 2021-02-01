@@ -25,7 +25,7 @@ curl -sL https://tetrate.bintray.com/getistio/download.sh | bash
 </pre>
 
 <pre>
-# fetch latest istio version with getistio
+# fetch latest Istio version with getistio
 
 getistio fetch
 </pre>
@@ -39,16 +39,16 @@ For the specific platform Istio deployments refer to the [this page](https://ist
 
 For Istio install using operator follow [the link](https://istio.io/latest/docs/setup/install/operator/#install) to install istioctl and refer to [installation page](https://istio.io/latest/docs/setup/additional-setup/config-profiles/) for more information. Remember to use `default profile` if deploying in production environment.
 
-#### Verify istio install
+#### Verify Istio install
 <pre>
-# verify install will check on whether all istio CRDs and istiod control plane installed in a correct way
+# verify install will check on whether all Istio CRDs and istiod control plane installed in a correct way
 
 getistio istioctl verify-install
 </pre>
 
 #### Uninstall 
 <pre>
-# delete control plane using istio operator
+# delete control plane using Istio operator
 
 kubectl delete istiooperators.install.istio.io -n istio-system example-istiocontrolplane
 </pre>
@@ -61,14 +61,14 @@ getistio istioctl operator remove
 #### Observability tools
 
 There is multiple tools that can be used for Istio monitoring and observability:
-- [Prometheus](https://istio.io/latest/docs/ops/integrations/prometheus/#Configuration) (monitor): record metrics to track the health of istio and application in the mesh
+- [Prometheus](https://istio.io/latest/docs/ops/integrations/prometheus/#Configuration) (monitor): record metrics to track the health of Istio and application in the mesh
 - [Grafana](https://istio.io/latest/docs/ops/integrations/grafana/) (visualization): connect to various data sources and visualize the data use graphs, tables and heatmaps
 - [Zipkin](https://istio.io/latest/docs/ops/integrations/zipkin/) (tracing): track and analyze path, performance and latency of distributed transactions
 - [kiali](https://istio.io/latest/docs/ops/integrations/kiali/): perform basic troubleshooting with this service mesh visualization tool
 - [Skywalking](/istio-tutorials/install-skywalking) (log aggregation and visualization): analyze your platform with open source tool that provides graphical analysis of multi-cluster and multi-cloud environment via log aggregation
 
 ### Troubleshooting
-[`getistio config-validate`](/getistio-cli/reference/getistio_config-validate) single command allows the operator to validate istio configuration against checks from three different sources of istioctl, kiali and getistio libraries
+[`getistio config-validate`](/getistio-cli/reference/getistio_config-validate) single command allows the operator to validate Istio configuration against checks from three different sources of istioctl, kiali and getistio libraries
 
 Additional troubleshooting commands - also more details on troubleshooting steps in this [blog post](https://www.tetrate.io/blog/debugging-your-istio-networking-configuration/):
 <pre>
@@ -84,7 +84,7 @@ istioctl proxy-status POD_NAME -n POD_NAMESPACE
 </pre>
 
 <pre>
-# check the istio related configuration impacting a Pod or a Service in the Runtime using experimental describe feature
+# check the Istio related configuration impacting a Pod or a Service in the Runtime using experimental describe feature
 
 istioctl x describe pod POD_NAME.POD_NAMESPACE
 </pre>

@@ -12,10 +12,10 @@ getistio istioctl <args...> [flags]
 #### Examples
 
 ```
-# install istio with the default profile
+# install Istio with the default profile
 getistio istioctl install --set profile=default
 
-# check versions of istio data plane, control plane, and istioctl
+# check versions of Istio data plane, control plane, and istioctl
 getistio istioctl version
 ```
 
