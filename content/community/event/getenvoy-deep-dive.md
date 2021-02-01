@@ -10,7 +10,7 @@ pastEvent: false
 weight: 4
 ---
 
-GetEnvoy has been around for more than a year now, and it has helped many people to get Envoy up and running in swift fashion. In this meetup, Christoph Pakulski will give us detailed explanation of what the project is all about as well us some very interesting updates. 
+GetEnvoy has been around for more than a year now, and it has helped more than 70,000 people to get Envoy up and running in swift fashion. In this meetup, Christoph Pakulski engineer from Tetrate, will give a detailed explanation of how to use and participate in the project.
 
 We will go into the following updates:
 
@@ -25,8 +25,8 @@ We will go into the following updates:
   - GetEnvoy Demo
   - GetEnvoy Roadmap
   - Community Participation
-- QA
+- Q&A
 - Closing with Resource Links
 - Exit
 
-This event will be hosted by Tetrate's own Sean O'Dell. See you on 16 February.
+This event will be hosted by Tetrate's own Sean O'Dell. See you on March 16, 2021.
