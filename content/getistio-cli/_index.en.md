@@ -1,5 +1,5 @@
 ---
-title: "Getistio Overview"
+title: "GetIstio Overview"
 icon: "ti-panel"
 description: "Learn more about GetIstio CLI, how to install and manage it."
 # type dont remove or customize
