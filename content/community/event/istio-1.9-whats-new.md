@@ -10,7 +10,7 @@ pastEvent: false
 weight: 3
 ---
 
-This is our second GetIstio community meeting. This is an exciting one, as Nick Nellis will discuss the new features coming in Istio 1.9. In detail, we will discuss the following topics:
+Our second GetIstio community meeting. An exciting one, as Nick Nellis will discuss new features coming in Istio 1.9. In detail, we will discuss the following topics:
 
 - Welcome and Introduction
 - GetIstio Community
@@ -22,4 +22,4 @@ This is our second GetIstio community meeting. This is an exciting one, as Nick 
 - Closing with Resource Links
 - Exit
 
-This event will be hosted by Tetrate's own Sean O'Dell. See you on 16 February.
+This event will be hosted by Tetrate's own Sean O'Dell. See you on March 2, 2021.
