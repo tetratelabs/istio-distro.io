@@ -12,7 +12,17 @@ featureOrder: 1
 altLink: "/getistio-cli/what-is-getistio"
 ---
 
-GetIstio is an integration and lifecycle management CLI tool that ensures the use of supported and trusted versions of Istio. Enterprises need to be able to control Istio versioning, support multiple versions of Istio, easily move between versions, integrate with cloud providers’ certification systems and centralize config management and validation. The GetIsio CLI tool supports these enterprise-level requirements as it:
+GetIstio is the easiest way to get started with Istio and to ensure you're using trusted, supported versions of Istio. Installing and updating GetIstio is as easy as issuing the following command:
+
+```sh
+curl -sL https://tetrate.bintray.com/getistio/download.sh | bash
+```
+
+### Why Use a CLI?
+
+The GetIstio CLI simplifies installation, management, and upgrades of Istio so that you can get the most of your service mesh and the benefits of open source.
+
+The GetIsio CLI tool supports these enterprise-level requirements as it:
 - enforces fetching certified versions of Istio and enables only compatible versions of Istio installation
 - allows seamless switching between multiple istioctl versions
 - includes a FIPS-compliant flavor
