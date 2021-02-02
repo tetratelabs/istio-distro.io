@@ -13,7 +13,7 @@ Real-life requirements very often dictate the use of a different version of isti
 
 List the currently downloaded versions of Istio through GetIstio using the [show command](/getistio-cli/reference/getistio_show):
 
-```
+```sh
 getistio show
 ```
 
@@ -25,7 +25,7 @@ Example output would be
 </pre>
 
 If the required version of Istio is not yet downloaded, the operator can first query the list of trusted Istio versions through the [list command](/getistio-cli/reference/getistio_list):
-```
+```sh
 getistio list
 ```
 
@@ -40,7 +40,7 @@ Example output would be:
 </pre>
 Below is an example of obtaining version 1.8.1 of Istio by leveraging the [fetch command](/getistio-cli/reference/getistio_fetch):
 
-```
+```sh
 getistio fetch --version 1.8.1 --flavor tetrate --flavor-version 0 
 ```
 
@@ -57,7 +57,7 @@ $ getistio show
 </pre>
 
 To switch to a different version of istioctl, run the [switch command](/getistio-cli/reference/getistio_switch) for example:
-```
+```sh
 getistio switch --version 1.8.1 --flavor tetrate --flavor-version=0
 ```
 
