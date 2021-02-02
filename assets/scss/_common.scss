@@ -53,7 +53,7 @@ a,
 button,
 select {
   cursor: pointer;
-  transition: .2s ease;
+  transition: 0.2s ease;
 
   &:focus {
     outline: 0;
@@ -62,11 +62,6 @@ select {
 
 a:hover {
   color: $primary-color;
-}
-
-pre.language-sh, pre {
-  background-color: #f9f7f6 !important;
-  color: #272822 !important;
 }
 
 .slick-slide {
@@ -88,20 +83,21 @@ pre.language-sh, pre {
 }
 
 .hero-section {
-  background:rgba(255,247,239,1);
+  background: rgba(255, 247, 239, 1);
   background: linear-gradient(0deg, #8894a9, #262f40);
   // background: linear-gradient(0deg, #6b89c0, #0e1523);
   // background: radial-gradient(#6b89c0, #0e1523);
   // background: linear-gradient(0deg, #ede6e6, #dde4f1);
   // background: linear-gradient(45deg, rgba(255,247,239,1) 0%, rgba(254,243,234,1) 39%, rgba(181,216,251,1) 100%);
-  
+
   h1 {
     font-weight: 700;
     margin-bottom: 24px;
     margin-left: -24px;
   }
 
-  h1, p.lead {
+  h1,
+  p.lead {
     color: white;
   }
 
@@ -146,11 +142,11 @@ pre.language-sh, pre {
   }
 
   #emailForm #email.error {
-	  border-color: #c50a0a;
+    border-color: #c50a0a;
   }
 
   #errorMessage {
-    display:none;
+    display: none;
   }
 
   #errorMessage.active {
@@ -200,7 +196,7 @@ pre.language-sh, pre {
 }
 
 .event-card {
-  background:white;
+  background: white;
   padding: 24px;
 
   .event-date {
@@ -209,14 +205,13 @@ pre.language-sh, pre {
 
   .ti-calendar {
     float: right;
-    color: #F05623;
+    color: #f05623;
   }
 
-  h5, img {
+  h5,
+  img {
     margin-bottom: 16px;
   }
-
-
 }
 
 /* overlay */
@@ -232,7 +227,7 @@ pre.language-sh, pre {
     top: 0;
     left: 0;
     background: $black;
-    opacity: .5;
+    opacity: 0.5;
   }
 }
 
@@ -319,16 +314,16 @@ pre.language-sh, pre {
 .top-0 {
   top: 0 !important;
 }
-// 
-// 
-#accordion  {
+//
+//
+#accordion {
   .card {
     box-shadow: none !important;
   }
   .btn-link {
     color: $primary-color;
   }
-  .btn-link{
+  .btn-link {
     color: $primary-color;
     text-decoration: none;
 
@@ -337,7 +332,6 @@ pre.language-sh, pre {
     }
   }
 }
-
 
 .box {
   background-color: #eee;
@@ -352,21 +346,19 @@ pre.language-sh, pre {
 .box h2 {
   margin: 10px 0 0;
   font-size: 40px;
-  
 }
 
-.box p{
+.box p {
   color: #606060;
   font-size: 18px;
   // font-size: 23px;
   // font-family: "Open Sans", regular;
 }
 
-.box img{
+.box img {
   width: 400px;
-  max-width: 100%
+  max-width: 100%;
 }
-  
 
 .form-control {
   margin: 40px 0 20px;
@@ -376,31 +368,34 @@ pre.language-sh, pre {
 }
 
 .input {
-	border: 0;
-	border-radius: 50px;
-	box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
-	display: block;
-	font-size: 14px;
-	height: 42px;
-	padding: 12px 25px;
+  border: 0;
+  border-radius: 50px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+  display: block;
+  font-size: 14px;
+  height: 42px;
+  padding: 12px 25px;
   width: 100%;
   &:focus {
     outline: unset;
   }
 }
-  
+
 button.btn {
-	border-radius: 50px;
-	font-size: 14px;
-	height: 42px;
-	padding: 12px 25px;
-	position: absolute;
- 	top: 6px;
-	right: 12px;
+  border-radius: 50px;
+  font-size: 14px;
+  height: 42px;
+  padding: 12px 25px;
+  position: absolute;
+  top: 6px;
+  right: 12px;
 }
 
 .blog-individual {
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     margin-bottom: 16px;
     margin-top: 32px;
   }
@@ -408,7 +403,7 @@ button.btn {
 
 .blog-link {
   h5 {
-    transition: all .3s;
+    transition: all 0.3s;
   }
   &:hover h5 {
     color: $primary-color;
@@ -464,19 +459,20 @@ button.btn {
   }
 
   .expand-button {
-    background-color: #F05623;
+    background-color: #f05623;
     padding: 8px 16px;
     font-size: 12px;
     color: #ffffff;
-    border: 1px solid #F05623;
+    border: 1px solid #f05623;
     border-radius: 23px;
     position: absolute;
     top: 2px;
     height: 46px;
 
-     i, span {
-       font-weight: 700;
-     }
+    i,
+    span {
+      font-weight: 700;
+    }
   }
 
   .expand-button:hover {
@@ -497,7 +493,7 @@ button.btn {
     font-size: 16px;
     color: #555;
     padding: 16px;
-    background-color: #FEF1E2;
+    background-color: #fef1e2;
   }
   .similar-list {
     display: inline-block;
@@ -510,7 +506,7 @@ button.btn {
       cursor: pointer;
       border: solid 1px #d1d1d1;
       font-size: 14px;
-      transition: all .3s;
+      transition: all 0.3s;
       &:hover {
         background-color: #d1d1d1;
         border-color: #d1d1d1;
@@ -529,7 +525,7 @@ button.btn {
     color: $primary-color;
     border-bottom: solid 1px $primary-color;
     // border-bottom-style: dotted;
-    transition: all .3s;
+    transition: all 0.3s;
     &:hover {
       color: #fff;
       background: $primary-color;
@@ -544,7 +540,7 @@ button.btn {
 }
 .link-blue {
   color: $primary-color;
-  transition: all .3s;
+  transition: all 0.3s;
   &:hover {
     color: $blue;
   }
@@ -552,7 +548,7 @@ button.btn {
 
 .link-grey {
   color: $primary-color;
-  transition: all .3s;
+  transition: all 0.3s;
   &:hover {
     color: #263040;
   }
@@ -600,7 +596,8 @@ pre {
       }
     }
   }
-  ul, ol {
+  ul,
+  ol {
     margin: 20px 0;
     padding-left: 15px;
     li {
@@ -618,7 +615,6 @@ pre {
     }
   }
 }
-
 
 // this is valid if we use asciinema player, not embedding from asciinema.org.
 // pre.asciinema-terminal {
@@ -642,7 +638,6 @@ pre {
   }
 }
 
-
 @media (max-width: $breakpoint-xs) {
   .hero-section {
     .container {
@@ -664,11 +659,11 @@ pre {
     }
   }
 
-  .cta-section {  
+  .cta-section {
     p {
       width: 100%;
     }
-  
+
     .form-control {
       display: flex;
       flex-direction: column;
