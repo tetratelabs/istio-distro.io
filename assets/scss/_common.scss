@@ -549,9 +549,18 @@ button.btn {
     color: $blue;
   }
 }
+
+.link-grey {
+  color: $primary-color;
+  transition: all .3s;
+  &:hover {
+    color: #263040;
+  }
+}
+
 .nav-next {
   &:hover {
-    color: $blue;
+    color: #263040;
   }
 }
 pre {

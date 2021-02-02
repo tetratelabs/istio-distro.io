@@ -34,7 +34,7 @@ data plane version: 1.8.2-tetrate-v0 (2 proxies)
 </pre>
 
 In addition  to the version output, a user can validate the expected functionality by issuing the [config-validate command](/getistio-cli/reference/getistio_config-validate) (read more around [config validation](/config-validation)):
-```
+```sh
 getistio config-validate
 ```
 With fresh install of Kubernetes cluster and Istio, the output will look similar to the below:
