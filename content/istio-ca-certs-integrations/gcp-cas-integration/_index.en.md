@@ -58,7 +58,7 @@ certificateParameters:
 </pre>
 Once we have the prerequisites satisfied and the config file created, we could run the [`getistio gen-ca`](/getistio-cli/reference/getistio_gen-ca) command to create the 'cacerts' Kubernetes secret as well as a local yaml file of the secret. `getistio` connects to the cluster your Kubernetes configuration points to.
 
-```
+```sh
 getistio gen-ca --config-file gcp-cas-config.yaml
 ```
 

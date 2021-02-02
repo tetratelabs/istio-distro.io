@@ -11,25 +11,27 @@ type : "docs"
 
 The command below checks if applying manifest that are defined in my-app.yaml and another-app.yaml will trigger any validation errors. The command reports the findings based on three sources (Istio upstream, Kiali and native GetIsito) without applying any configuration changes. It prevents unnecessary downtime or the preventable issues to affect production workloads:
 
-*\# validating a local manifest against the current cluster*
-```
+```sh
+# validating a local manifest against the current cluster
 getistio config-validate my-app.yaml another-app.yaml
 ```
+
 For convenience the command can use all manifests from the specified directory instead of operator using individual filenames. The example below takes all manifests from my-manifest-dir and checks if applying those manifests triggers any validation alerts:
 
-*\# validating local manifests in a directory against the current cluster in a specific namespace*
-```
+```sh
+# validating local manifests in a directory against the current cluster in a specific namespace
 getistio config-validate -n bookinfo my-manifest-dir/
 ```
 
 The validation of the currently implemented configuration is also possible - can be done clusterwise or per namespace leveraging the commands below:
 
-*\# for all namespaces*
-```
+```sh
+# for all namespaces
 getistio config-validate
 ```
-*\# for a specific namespace*
-```
+
+```sh
+# for a specific namespace
 getistio config-validate -n bookinfo
 ```
 
