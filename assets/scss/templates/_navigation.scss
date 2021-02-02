@@ -60,6 +60,10 @@
   &:hover {
     color: $primary-color;
   }
+
+  &:focus {
+    color: $primary-color;
+  }
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
