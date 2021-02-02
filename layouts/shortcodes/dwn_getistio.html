@@ -1,16 +1,25 @@
-Below are the direct URLs to obtain <i>latests <b id="LatestGetIstioVersion"></b></i> GetIstio tarballs for
-<a id="LinuxURL">Linux</a> and 
-<a id="MacOSURL">MacOS</a>.
+<strong>GetIstio ensures that all Istio minor releases are supported for at least 14 months support (since the release date).</strong>
+<br>
+<br>
+The currently supported versions are <strong> 
+{{ $manifest := getJSON "https://tetrate.bintray.com/getistio/manifest.json" }}
+   {{ range $manifest.istio_distributions }}
+      {{ .version }},
+   {{ end }}
 
-<script>
-    var LINUX_AMD64_PREFIX = "https://tetrate.bintray.com/getistio/getistio_linux_amd64_";
-    var MACOS_AMD64_PREFIX = "https://tetrate.bintray.com/getistio/getistio_darwin_amd64_";
-    var GETISTIO_LATEST_VERSION = "0.5.0";
-    var VERSION_PREFIX = "v";
-    var LINUX_AMD64_COMPLETE_URL = LINUX_AMD64_PREFIX.concat(VERSION_PREFIX,GETISTIO_LATEST_VERSION);
-    var MACOS_AMD64_COMPLETE_URL = MACOS_AMD64_PREFIX.concat(VERSION_PREFIX,GETISTIO_LATEST_VERSION);
-    document.getElementById("LatestGetIstioVersion").innerHTML = GETISTIO_LATEST_VERSION;
-    document.getElementById("LinuxURL").setAttribute("href",LINUX_AMD64_COMPLETE_URL);
-    document.getElementById("MacOSURL").setAttribute("href",MACOS_AMD64_COMPLETE_URL);
-</script>
+</strong>
+<br>
+<br>
+<strong>The following versions will be out of support in the next two months</strong> - please upgrade to the supported versions.
+{{ $manifest := getJSON "https://tetrate.bintray.com/getistio/manifest.json" }}
+     {{ range $version, $eos_time := $manifest.istio_minor_versions_eol_dates }}
+        
+        {{ $t1 := time $eos_time }}
+	{{ $t2 := $t1.Sub time.Now }}
+	
+	{{ if (gt $t2 0) and (gt 5184000000 $t2) }}	     
+
+	<strong>  {{ $version }} (ends on {{ $eos_time }}), </strong>  
+       {{ end }}
+     {{ end }}
 
