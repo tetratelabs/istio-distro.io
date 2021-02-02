@@ -2,7 +2,7 @@
 Website for GetIstio project. This supersedes previous project as we move from Gatsby to Hugo.
 
 ## Run Locally
-1. Download and install [hugo](https://www.gethugo.io)
+1. Download and install [hugo](https://www.gohugo.io)
 2. Fork this repo, clone it to your local machine 
 3. Go to the cloned directory and run
 
