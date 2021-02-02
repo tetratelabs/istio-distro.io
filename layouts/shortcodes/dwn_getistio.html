@@ -14,12 +14,13 @@ The currently supported versions are <strong>
 {{ $manifest := getJSON "https://tetrate.bintray.com/getistio/manifest.json" }}
      {{ range $version, $eos_time := $manifest.istio_minor_versions_eol_dates }}
         
-        {{ $t1 := time $eos_time }}
-	{{ $t2 := $t1.Sub time.Now }}
-	
-	{{ if and (gt $t2 0) (gt 5184000000 $t2) }}	     
-
-	<strong>  {{ $version }} (ends on {{ $eos_time }}), </strong>  
-       {{ end }}
+        {{ $time_json := time $eos_time }}
+	{{ $time_unix := $time_json.Unix }}
+	{{ $current_time := time.Now.Unix }}
+	{{ $60_days := 5184000 }}
+	{{ $time_difference := sub $time_unix $current_time }}
+        {{ if and (gt $time_difference 0) (gt $60_days $time_difference) }}
+           <strong>  {{ $version }} (ends on {{ $eos_time }}), </strong>  
+	{{ end }}
      {{ end }}
 
