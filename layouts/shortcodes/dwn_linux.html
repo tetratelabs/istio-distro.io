@@ -25,17 +25,3 @@
     </tr>
    {{ end }}
    </table>
-       <br>
-       <br>
-   <strong> Please note that the following versions of Istio are scheduled to be out of support: </strong>
-   <table>
-      <th>Istio version:</th>
-      <th>EOL Date</th>
-   {{ range $key, $value := $manifest.istio_minor_versions_eol_dates }}  
-     <tr>
-      <td> {{ $key }}</td>
-      <td> {{ $value }}</td>
-     </tr>
-   {{ end }}
-   </table>
-
