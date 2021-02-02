@@ -17,7 +17,7 @@ The currently supported versions are <strong>
         {{ $t1 := time $eos_time }}
 	{{ $t2 := $t1.Sub time.Now }}
 	
-	{{ if (gt $t2 0) and (gt 5184000000 $t2) }}	     
+	{{ if and (gt $t2 0) (gt 5184000000 $t2) }}	     
 
 	<strong>  {{ $version }} (ends on {{ $eos_time }}), </strong>  
        {{ end }}
