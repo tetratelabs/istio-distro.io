@@ -1,5 +1,5 @@
 ---
-title: "Istio Tutorials"
+title: "Istio in Practice"
 date: 2018-12-29T11:02:05+06:00
 icon: "ti-blackboard"
 description: "After you got Istio running, sharpen your Istio skill by following our tutorial."
