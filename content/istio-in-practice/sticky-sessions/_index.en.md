@@ -1,32 +1,38 @@
 ---
 title: "How to use Sticky Sessions"
 date: 2021-01-01T11:02:05+06:00
-weight: 1
+weight: 4
 draft: false
 ---
 
-The idea behind sticky sessions is to route the requests for a particular session to the same endpoint that served the first request. That way to can associate a service instance with the caller, based on HTTP headers or cookies. You might want to use sticky sessions if your service is doing an expensive operation on the first request, but later caching the value. That way, if the same user makes the request, the costly operation will not be performed, and value from the cache will be used.
+The idea behind sticky sessions is to route the requests for a particular session to the same endpoint that served the first request. With a sticky session, you can associate a service instance with the caller based on HTTP headers or cookies. You might want to use sticky sessions if your service is doing an expensive operation on the first request but cache the value for all subsequent calls. That way, if the same user makes the request, the costly operation will not be performed, and value from the cache will be used.
 
-To demonstrate the functionality of sticky sessions, I will use a sample service called *sticky-svc*. When called, this service checks for the presence of the *x-user* header. If the header is present, it tries to look up the header value in the internal cache. On any first request with a new *x-user*, the value won't exist in the cache, so the service will sleep for 5 seconds (simulating an expensive operation), and after that, it will cache the value. Any subsequent requests with the same *x-user* header value will return right away. Here's the snippet of this simple logic from the service source code:
+#### Prerequisites
 
-```golang
+You can follow the [prerequisites](/istio-in-practice/prerequisites) for instructions on how to install Istio.
+
+#### Sticky Sessions
+
+To demonstrate the functionality of sticky sessions, we will use a sample service called *sticky-svc*. When called, this service checks for the presence of the *x-user* header. If the header is present, it tries to look up the header value in the internal cache. On any first request with a new *x-user*, the value won't exist in the cache, so the service will sleep for 5 seconds (simulating an expensive operation), and after that, it will cache the value. Any subsequent requests with the same *x-user* header value will return right away. Here's the snippet of this simple logic from the service source code:
+
+```go
 var (
-	cache = make(map[string]bool)
+  cache = make(map[string]bool)
 )
 
 func process(userHeaderValue string) {
-	if cache[userHeaderValue] {
-		return
-	}
+  if cache[userHeaderValue] {
+    return
+  }
 
-	cache[userHeaderValue] = true
-	time.Sleep(5 * time.Second)
+  cache[userHeaderValue] = true
+  time.Sleep(5 * time.Second)
 }
 ```
 
-To see the sticky sessions in action, we will need to deploy multiple replicas of this service. That way, when we enable sticky sessions, the requests with the same *x-user* header value will always be directed to the pod that initially served the request for the same *x-user* value. The first request we make will still take 5 seconds, however, any subsequent requests will be instantaneous.
+To see the sticky sessions in action, we will need to deploy multiple replicas of this service. That way, when we enable sticky sessions, the requests with the same *x-user* header value will always be directed to the pod that initially served the request for the same *x-user* value. The first request we make will still take 5 seconds. However, any subsequent requests will be instantaneous.
 
-Let's go ahead create the Kubernetes deployment and service first
+Let's go ahead create the Kubernetes deployment and service first.
 
 ```yaml
 apiVersion: apps/v1
@@ -71,7 +77,7 @@ spec:
 
 Save the above YAML to `sticky-deployment.yaml` and run `kubectl apply -f sticky-deployment.yaml` to create the Deployment and Service.
 
-Next, we can deploy the VirtualService and attach it to the Gateway. Make sure you delete any other VirtualService that might be attached to the gateway or use different hosts.
+Next, we can deploy the VirtualService and attach it to the Gateway. 
 
 ```yaml
 apiVersion: networking.istio.io/v1alpha3
@@ -101,7 +107,7 @@ $ curl -H "x-user: ricky" http://localhost/ping
 Call was processed by host sticky-svc-689b4b7876-cv5t9 for user ricky and it took 5.0002721s
 ```
 
-The first request (as expected) will take 5 seconds. If you make a couple of more requests, you will see that some of them will also take 5 seconds and some of them (being directed to one of the previous pods), will take significantly less, perhaps 500 microseconds.
+The first request (as expected) will take 5 seconds. If you make a couple of more requests, you will see that some of them will also take 5 seconds, and some of them (being directed to one of the previous pods) will take significantly less, perhaps 500 microseconds.
 
 With the creation of a sticky session, we want to achieve that all subsequent requests finish within a matter of microseconds, instead of taking 5 seconds. The sticky session settings can be configured in a destination rule for the service.
 
@@ -128,7 +134,7 @@ spec:
         simple: LEAST_CONN
 ```
 
-The second option for setting the load balancer settings is using the field called `consistentHash`. This option allows us to provide session affinity based on the HTTP headers (`httpHeaderName`), cookies (`httpCookie`) or other properties (source IP for example, using `useSourceIp: true` setting).
+The second option for setting the load balancer settings is using the field called `consistentHash`. This option allows us to provide session affinity based on the HTTP headers (`httpHeaderName`), cookies (`httpCookie`), or other properties (source IP, for example, using `useSourceIp: true` setting).
 
 Let's define a consistent hash algorithm in the destination rule using the *x-user* header name and deploy it:
 
@@ -146,7 +152,7 @@ spec:
 ```
 Save the above YAML to `sticky-dr-hash.yaml` and deploy it using `kubectl apply -f sticky-dr-hash.yaml`.
 
-Before we test it out, let's restart all Pods, so we get a clean slate and clear the in-memory cache. First, we scaled down the deployment to 0 replicas and then we scale it back up to 5 replicas:
+Before we test it out, let's restart all Pods so we get a clean slate and clear the in-memory cache. First, we scaled down the deployment to 0 replicas, and then we scale it back up to 5 replicas:
 
 ```sh
 kubectl scale deploy sticky-svc --replicas=0
@@ -160,7 +166,7 @@ $ curl -H "x-user: ricky" http://localhost/ping
 Call was processed by host sticky-svc-689b4b7876-cq8hs for user ricky and it took 5.0003232s
 ```
 
-As expected, the first request takes 5 seconds, however, any subsequent requests will go to the same instance and will take considerably less:
+As expected, the first request takes 5 seconds. However, any subsequent requests will go to the same instance and will take considerably less:
 
 ```text
 $ curl -H "x-user: ricky" http://localhost/ping
@@ -173,4 +179,4 @@ $ curl -H "x-user: ricky" http://localhost/ping
 Call was process by host sticky-svc-689b4b7876-cq8hs for user ricky and it took 76.5µs
 ```
 
-This is a sticky session in action! If we make a request with a different user, it will initially take 5 seconds, but then it will go to the same pod again.
+This is a sticky session in action! If we send a request with a different user, it will initially take 5 seconds, but then it will go to the same pod again.
