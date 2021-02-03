@@ -147,7 +147,7 @@
         <h6 class="pb-2 pt-4">4. Validate config</h5>
           <pre class="pb-2 home-code-snippet"><code>getistio config-validate</code><span class="copy-to-clipboard">copy</span></pre>
         <div class="pt-4 row justify-content-center">
-          <a href="/how-do-i-install-cli/" class="btn btn-sm learn-more">Learn more</a>
+            <a href="{{ "/getistio-cli/"| relLangURL }}" class="btn btn-sm learn-more">Learn more</a>
         </div>
       </div>
     </div>
@@ -179,7 +179,7 @@
         <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
           <div class="card match-height event-card">
             <p class="event-date pb-2">
-              {{ .Page.Params.eventDate }} 
+              {{ .Page.Params.eventDate }}
               {{ if .Page.Params.eventEndDate }}
               - {{ .Page.Params.eventEndDate}}
               {{ end }}
@@ -189,7 +189,7 @@
               {{/*  - <p class="event-date pb-2">{{ .Page.Params.eventEndDate }}<span><i class="ti-calendar"></i></span></p>  */}}
             {{/*  {{ end }}  */}}
             <a href="{{ .Page.RelPermalink }}"><h5>{{ .Page.Title }}</h5></a>
-            <img src="{{ .Page.Params.image }}" />
+            <img src="{{ .Page.Params.image |absURL }}" />
             <p>{{ .Page.Description }}</p>
             <div class="event-actions row">
               <a class="btn btn-sm" href="{{ .Page.RelPermalink }}">Learn More</a>
