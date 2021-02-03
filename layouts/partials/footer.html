@@ -32,7 +32,7 @@
 
 <!-- search index -->
 <script type="text/javascript">
-  var indexURL = {{ "index.json" | absLangURL }};
+  var indexURL = {{ "index.json" | relURL }};
   {{ if .Site.IsMultiLingual }}
   var baseurl = "{{.Site.BaseURL}}{{.Site.LanguagePrefix}}";
   {{ else }}
