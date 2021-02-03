@@ -273,7 +273,7 @@ weight = 2
 
 [[Languages.zh.menu.main]]
 name = "社区"
-url = "/community"
+url = "/community/"
 weight = 3
 
 [[Languages.zh.menu.main]]
