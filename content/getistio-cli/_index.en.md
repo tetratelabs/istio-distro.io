@@ -8,8 +8,6 @@ weight: 1
 # set these 2 to make it featured in homepage
 featured: true
 featureOrder: 1
-# set alternate link for homepage
-altLink: "/getistio-cli/what-is-getistio"
 ---
 
 GetIstio is the easiest way to get started with Istio and to ensure you're using trusted, supported versions of Istio. Installing and updating GetIstio is as easy as issuing the following command:
