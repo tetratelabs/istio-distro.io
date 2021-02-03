@@ -1,11 +1,13 @@
 ######################## default configuration ####################
-baseURL = "/"
+baseURL = "https://getistio.io"
 title = "GetIstio"
 # google analytics
 googleAnalytics = "" # example : UA-123-45
 # disable language
 # disableLanguages = ["fr"] # disable language from here
 enableRobotsTXT = true
+hasCJKLanguage = true
+paginate = "6"
 
 # hugo outputs
 [outputs]
@@ -178,7 +180,6 @@ style = "solid" # available style: solid, outline
 label = "Download"
 link = "/download"
 
-  
 ############################# social site ########################
 [[params.social]]
 title = "website"
@@ -201,10 +202,11 @@ icon = "ti-linkedin" # themify icon : https://themify.me/themify-icons
 link = "https://www.linkedin.com/company/tetrate/"
 
 
-################################### English language #####################################
+################################### English anguage #####################################
 [Languages.en]
 languageName = "En"
 languageCode = "en-us"
+contentDir = "content/en/"
 weight = 1
 # copyright
 copyright = "Copyright &copy; 2021 Tetrate"
@@ -228,3 +230,63 @@ content = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam <br
   label = "Submit a ticket"
   link = "contact"
 
+################################### Chinese anguage #####################################
+[Languages.zh]
+languageName = "中文"
+languageCode = "zh-cn"
+contentDir = "content/zh"
+weight = 2
+# copyright
+copyright = "Copyright &copy; 2021 Tetrate"
+
+# banner
+[Languages.zh.banner]
+title = "GetIstio 文档"
+subtitle = "Lorem ipsum dolor amet, consetetur sadiffspscing elitr, diam nonumy invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua At."
+image = "images/banner.jpg"
+
+# call to action
+[Languages.zh.call_to_action]
+enable = true
+title = "Still Didn't Find Your Answer?"
+image = "images/cta-illustration.jpg"
+content = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam <br> nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam"
+
+  # call to action button
+  [Languages.zh.call_to_action.button]
+  enable = "false"
+  label = "Submit a ticket"
+  link = "contact"
+
+############## Chinese navigation ###############
+
+# main menu
+[[Languages.zh.menu.main]]
+name = "文档"
+url = "/getistio-cli/"
+weight = 1
+
+[[Languages.zh.menu.main]]
+name = "博客"
+url = "/blog/"
+weight = 2
+
+[[Languages.zh.menu.main]]
+name = "社区"
+url = "/community"
+weight = 3
+
+[[Languages.zh.menu.main]]
+name = "培训"
+url = "https://academy.tetrate.io"
+weight = 4
+
+[[Languages.zh.menu.main]]
+name = "伙伴"
+url = "/ecosystem-partners/"
+weight = 5
+
+[[Languages.zh.menu.main]]
+name = "GetEnvoy"
+url = "https://www.getenvoy.io/"
+weight = 6
