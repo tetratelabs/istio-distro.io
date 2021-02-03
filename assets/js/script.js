@@ -113,11 +113,16 @@ $(document).on('turbolinks:load', preloader);
     tabPane.addClass('active');
   });
 
+  // Add "copy to clipboard" buttons to the language classes
   $('pre code.language-sh')
     .parent()
     .append('<span class="copy-to-clipboard">copy</span>');
 
   $('pre code.language-yaml')
+    .parent()
+    .append('<span class="copy-to-clipboard">copy</span>');
+
+  $('pre code.language-go')
     .parent()
     .append('<span class="copy-to-clipboard">copy</span>');
 
