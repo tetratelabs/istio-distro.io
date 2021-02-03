@@ -7,3 +7,7 @@ description: "Cras at dolor eget urna varius faucibus tempus in elit dolor sit a
 type : "docs"
 weight: 8
 ---
+
+<head>
+<meta http-equiv="refresh" content="0; url=/faq/faqs" />
+</head>
