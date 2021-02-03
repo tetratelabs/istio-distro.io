@@ -1,5 +1,5 @@
 ######################## default configuration ####################
-baseURL = "localhost"
+baseURL = "https://getistio.io/"
 title = "GetIstio"
 # google analytics
 googleAnalytics = "" # example : UA-123-45
