@@ -22,7 +22,7 @@
 
   <!-- Main Stylesheet -->
   {{ $styles := resources.Get "scss/style.scss" | toCSS }}
-  <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
+  <link rel="stylesheet" href="{{ $styles.Permalink | relURL }}" media="screen">
 
   <!--Favicon-->
   <link rel="shortcut icon" href="{{ `images/getistio-favicon.png` | relURL }}" type="image/x-icon">
