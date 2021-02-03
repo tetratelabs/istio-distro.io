@@ -31,7 +31,7 @@
   <!-- multilingual SEO optimizations -->
   {{ if .IsTranslated }}
   {{ range .Page.AllTranslations }}
-  <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
+  <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink | relURL }}">
   {{ end }}
   {{ end }}
 
@@ -50,18 +50,18 @@
   <meta property="og:description" content="{{ .Params.description }}" />
   <meta name="twitter:description" content="{{ .Params.description }}" />
 
-  <base href="{{ .Permalink }}">
-  <link rel="canonical" href="{{ .Permalink }}" itemprop="url" />
-  <meta name="url" content="{{ .Permalink }}" />
-  <meta name="twitter:url" content="{{ .Permalink }}" />
-  <meta property="og:url" content="{{ .Permalink }}" />
+  <base href="{{ .Permalink | relLangURL }}">
+  <link rel="canonical" href="{{ .Permalink | relURL }}" itemprop="url" />
+  <meta name="url" content="{{ .Permalink | relURL }}" />
+  <meta name="twitter:url" content="{{ .Permalink | relURL }}" />
+  <meta property="og:url" content="{{ .Permalink | relURL }}" />
 
   <meta property="og:updated_time" content={{ .Lastmod.Format "2006-01-02T15:04:05Z0700" | safeHTML }} />
-  <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ .Site.BaseURL }}sitemap.xml" />
-  
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ .Site.BaseURL | relURL }}sitemap.xml" />
+
   {{ with .OutputFormats.Get "RSS" }}
-  <link href="{{ .Permalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
-  <link href="{{ .Permalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" />
+  <link href="{{ .Permalink | relURL }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
+  <link href="{{ .Permalink | relURL }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" />
   {{ end }}
 
   {{ with .Params.Image }}
@@ -71,12 +71,12 @@
   {{ template "_internal/google_analytics.html" . }}
   {{ template "_internal/google_analytics_async.html" . }}
   <!-- asciinema css -->
-  {{/*  <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/asciinema-player.css" />  */}}
+  {{/*  <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL | relURL }}css/asciinema-player.css" />  */}}
   <script type="application/ld+json">
-    { 
-      "@context": "http://schema.org", 
-      "@type": "WebSite", 
-      "url": "{{ .Permalink }}", 
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "url": "{{ .Permalink }}",
       "name": "{{ .Site.Title }}",
         "author": {
           "@type": "Person",
