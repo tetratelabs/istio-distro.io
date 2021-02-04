@@ -1,4 +1,5 @@
 {{ define "main" }}
+{{- partial "partner-banner.html" . -}}
 <section>
   <h2>{{ .Title }}</h2>
   <div class="container">
@@ -7,4 +8,12 @@
     </div>
   </div>
 </section>
+
+<div class="container">
+  <div class="row m-4 justify-content-center">
+    <div class="col-lg-3 p-4">
+      <a href="/partners">← Go back to partners</a>
+    </div>
+  </div>
+</div>
 {{ end }}
