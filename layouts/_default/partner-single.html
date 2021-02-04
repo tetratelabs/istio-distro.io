@@ -1,10 +1,15 @@
 {{ define "main" }}
 {{- partial "partner-banner.html" . -}}
 <section>
-  <h2>{{ .Title }}</h2>
   <div class="container">
-    <div class="row">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="text-center mb-4">
+          <img class="partner-medium-logo mb-4" src="{{ .Params.Logo }}" />
+          <h2>{{ .Title }}</h2>
+        </div>
       {{ .Content }}
+      </div>
     </div>
   </div>
 </section>
