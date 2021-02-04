@@ -1,47 +1,47 @@
 ---
-title: "GCP CAS Integration"
+title: "GCP CAS 集成"
 date: 2021-01-25T13:00:00+07:00
-description: "Istio CA Certificate from GCP CAS"
+description: "GCP CAS 的 Istio CA 证书"
 # type dont remove or customize
 type : "docs"
 ---
 
-Instead of using a self-signed root certificate, here we get an intermediary Istio CA from the GCP CAS service that would in turn be used to sign workload certificates. This approach enables the same root of trust for the workloads as provided by the root CA in GCP CAS. As Istio itself signs the workload certs, the latency for getting workload certs issued is far less as compared to directly getting the certs signed by GCP CAS itself.<br><br>
-The [`getistio gen-ca`](/getistio-cli/reference/getistio_gen-ca) command furnishes the options to connect to GCP CAS and get the intermediary CA cert signed. It uses the certificate details thus obtained to create 'cacerts' Kubernetes secret for Istio to use to sign workload certs. Istio, at start up, checks for the presence of the secret 'cacerts' to decide if it needs to use this cert for signing workload certificates.
+在这里，我们不使用自签的根证书，而是从 GCP CAS 服务中获得一个中间的 Istio CA，再由它来签署工作负载证书。这种方法使工作负载的信任根与 GCP CAS 中的根 CA 所提供的相同。由于 Istio 自己签署工作负载证书，与直接获得 GCP CAS 本身签署的证书相比，获得工作负载证书的延迟要少得多。
 
-Prerequisites:
-- A CA set up in GCP CAS
-- GCP credentials file as pointed by the environment variable "GOOGLE_APPLICATION_CREDENTIALS" to get the CSR with CA bit set signed by GCP CAS. Details on how to obtain the credential file are given here.
+[`getistio gen-ca`](/getistio-cli/reference/getistio_gen-ca) 命令提供了连接到 GCP CAS 并获得中间 CA 证书签名的选项。它使用这样获得的证书细节来创建 `cacerts` Kubernetes secret，供 Istio 用来签署工作负载证书。Istio 在启动时，会检查 `cacerts` secret 的存在，以决定是否需要使用这个 cert 来签署工作负载证书。
 
+前提条件：
+- 在 GCP CAS 中设立了一个 CA
+- 环境变量 `GOOGLE_APPLICATION_CREDENTIALS` 所指向的 GCP 凭证文件，以获取由 GCP CAS 签名的 CA 位设置的 CSR。这里给出了获取凭证文件的详细方法。
 
-Configuration set up:
+## 配置设置
 
-Parameters related to connecting to GCP CAS and CSR creation can be supplied either through a file or command line options. Creating a config file is recommended.
-An example config file is given below and the parameters are self explanatory.
+与连接到 GCP CAS 和创建 CSR 相关的参数可以通过文件或命令行选项提供。建议创建一个配置文件。
+下面给出了一个配置文件的例子，参数是不言自明的。
 
 *gcp-cas-config.yaml*
-<pre>
+
+```yaml
 providerName: "gcp"
 providerConfig:
   gcp:
-    #This will hold the full CA name for the certificate authority you created on GCP
+    #  这将保存你在 GCP 上创建的证书颁发机构的完整 CA 名称。
     casCAName: "projects/{project-id}/locations/{location}/certificateAuthorities/{YourCA}"
 
 certificateParameters:
   secretOptions:
-    # Namespace where 'cacerts' Kubernetes secret is created on your target cluster
+    # 在目标集群上创建 "cacerts" Kubernetes secret 的命名空间。
     istioCANamespace: "istio-system"
-    # SecretFilePath is the file path used to store the Kubernetes Secret in yaml format
+    # SecretFilePath 是用于以 yaml 格式存储 Kubernetes Secret 的文件路径。
     secretFilePath:
-    # Force flag when enabled forcefully deletes the `cacerts` secret
-    # in istioNamespace, and creates a new one.
+    # 启用 force 标志后，强制删除 istioNamespace 中的 "cacerts" secret，并创建一个新的 secret。
     force: true
   caOptions:
-    # ValidityDays represents the number of validity days before the CA expires.
+    # ValidityDays 表示 CA 过期前的有效天数。
     validityDays: 365
-    # KeyLength is the length(bits) of Key to be created
+    # KeyLength 是要创建的 key 的比特位数。
     keyLength: 2048
-    # This is x509.CertificateRequest. Only a few fields are shown below
+    # 这是 x509.CertificateRequest。下面只显示了几个字段
     certSigningRequestParams:
       subject:
         commonname: "getistio.example.io"
@@ -55,12 +55,12 @@ certificateParameters:
           - "engineering"
       emailaddresses:
         - "youremail@example.io"
-</pre>
-Once we have the prerequisites satisfied and the config file created, we could run the [`getistio gen-ca`](/getistio-cli/reference/getistio_gen-ca) command to create the 'cacerts' Kubernetes secret as well as a local yaml file of the secret. `getistio` connects to the cluster your Kubernetes configuration points to.
+```
+
+一旦我们满足了前提条件并创建了配置文件，我们就可以运行 [`getistio gen-ca`](/getistio-cli/reference/getistio_gen-ca) 命令来创建 `cacerts` Kubernetes secret 以及 secret 的本地 yaml 文件。`getistio` 连接到你的 Kubernetes 配置指向的集群。
 
 ```sh
 getistio gen-ca --config-file gcp-cas-config.yaml
 ```
 
-Once the command is run, you will notice a file created under `~/.getistio/secret/` and 'cacerts' secret in the istio-system namespace. 'istiod' when started would use this cert to sign workload certificates.
-
+一旦运行该命令，你会发现在 `~/.getistio/secret/` 下创建了一个文件，并且在 `istio-system` 命名空间中创建了 `cacerts` secret。`istiod` 启动后会使用这个证书来签署工作负载证书。
