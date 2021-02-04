@@ -1,6 +1,6 @@
 {{ define "main" }}
+{{- partial "partner-banner.html" . -}}
 <section>
-  <h2>{{ .Title }}</h2>
   <div class="container">
     <div class="row">
     {{ range where .Site.Pages "Params.type" "partners" }}
