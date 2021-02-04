@@ -2,6 +2,7 @@
 title: "Partner A"
 type: "partners"
 description: "This is a description of Partner A"
+logo: "/images/partner-logo-dummy.png"
 layout: partner-single
 ---
 
