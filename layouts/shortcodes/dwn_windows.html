@@ -5,8 +5,28 @@
       <th>Release Notes</th>
       <th>Full Istio download URL</th>
       <th>Istioctl download URL</th>
-   {{ range $manifest.istio_distributions }}  
-     {{ $release_url := index (.release_notes) 0}}
+
+   {{ range $manifest.istio_distributions }} {{ $.Scratch.Add "version_list" (slice .version) }} {{ end }}
+
+   {{ $version_sorted := .Scratch.Get "version_list" }}
+
+   {{ range $version_value := $.Scratch.Get "version_list" }} 
+     {{ $.Scratch.Add "version_trimmed" (slice (strings.TrimRight "." (slicestr $version_value 0 4))) }} {{ end}}
+     {{ range $version_supported := uniq (.Scratch.Get "version_trimmed") }}
+       {{ range $version_value := $.Scratch.Get "version_list" }} 
+           {{ if findRE $version_supported $version_value }}
+	     {{ $subversion := strings.TrimLeft "." (substr $version_value -2) }}
+	     {{ $.Scratch.SetInMap "subversion_map" $subversion $version_value }}
+           {{ end }}
+       {{ end }}
+       {{ $.Scratch.Add "latest_versions" (last 1 ($.Scratch.GetSortedMapValues "subversion_map")) }}
+   {{ end }}      
+
+
+   {{ range $valid_version := $.Scratch.Get "latest_versions" }}
+   {{ range $manifest.istio_distributions }}
+      {{ if findRE  .version $valid_version}}
+        {{ $release_url := index (.release_notes) 0}}
      <tr>
        <td>{{ .flavor }}-v{{ .flavor_version }} </td>
        <td>{{ .version }} </td>
@@ -14,5 +34,7 @@
        <td><a href="https://tetrate.bintray.com/getistio/istio-{{ .version }}-{{ .flavor }}-v{{ .flavor_version }}-win.zip">Istio Distro</a> </td>
        <td><a href="https://tetrate.bintray.com/getistio/istioctl-{{ .version }}-{{ .flavor }}-v{{ .flavor_version }}-win.zip">istioctl</a> </td>
       </tr>
+     {{ end }}
+     {{ end }}
    {{ end }}
    </table>
