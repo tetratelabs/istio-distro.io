@@ -1,11 +1,16 @@
 <strong>GetIstio ensures that all Istio minor releases are supported for at least 14 months support (since the release date).</strong>
 <br>
 <br>
-The currently supported versions are <strong> 
+The currently major supported versions are <strong>
 {{ $manifest := getJSON "https://tetrate.bintray.com/getistio/manifest.json" }}
+
    {{ range $manifest.istio_distributions }}
-      {{ .version }},
+     {{ $.Scratch.Add "version_list" (slice .version) }}
    {{ end }}
+     {{ $version_sorted := .Scratch.Get "version_list" }}
+
+     {{ range $version_value := $version_sorted }} {{ $.Scratch.Add "version_trimmed" (slice (strings.TrimRight "." (slicestr $version_value 0 4))) }} {{ end }}
+     {{ delimit (uniq (.Scratch.Get "version_trimmed")) ", " " and " }}
 
 </strong>
 <br>
