@@ -151,7 +151,7 @@ weight = 4
 
 [[Languages.en.menu.main]]
 name = "Partners"
-url = "/ecosystem-partners/"
+url = "/partners/"
 weight = 5
 
 [[Languages.en.menu.main]]
