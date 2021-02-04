@@ -1,0 +1,28 @@
+{{ define "main" }}
+{{- partial "partner-banner.html" . -}}
+<section>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="text-center mb-4">
+          <img class="partner-medium-logo mb-4" src="{{ .Params.Logo }}" />
+          <h2>{{ .Title }}</h2>
+          <a href="{{ .Params.WebsiteURL }}">{{ .Params.WebsiteTitle }}</a>
+        </div>
+      {{ .Content }}
+      <div class="row justify-content-center">
+        <a class="btn btn-sm btn-primary" href="/ecosystem-partners{{ .Params.DocURL | relURL }}">Read More in Docs</a>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="row m-4 justify-content-center">
+    <div class="col-lg-3 p-4">
+      <a href="/partners">← Go back to partners</a>
+    </div>
+  </div>
+</div>
+{{ end }}
