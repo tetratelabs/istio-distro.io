@@ -9,6 +9,6 @@ This is a short description about a partner and how it they partners with GetIst
 To get a detailed technical information about this partner, we have prepared the following resources to get you started:
 
 <ul>
-  <li><a href="/partner-a/partner-d-documentation">Partner D Documentation</a></li>
-  <li><a href="/partner-a/partner-d-tutorial">Partner D Tutorial</a></li>
+  <li><a href="/ecosystem-partners/partner-d/partner-d-documentation">Partner D Documentation</a></li>
+  <li><a href="/ecosystem-partners/partner-d/partner-d-tutorial">Partner D Tutorial</a></li>
 </ul>
