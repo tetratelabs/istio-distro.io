@@ -37,7 +37,7 @@ Service Mesh是云原生体系下重要的微服务技术，可以有效的解�
 
 网易轻舟Service Mesh整体架构如下。
 
-![](https://tva1.sinaimg.cn/large/008eGmZEly1gna7mmf7otj311s0u0wk1.jpg)
+![网易轻舟 Service Mesh 整体架构](008eGmZEly1gna7mmf7otj311s0u0wk1.jpg)
 
 **架构设计要点**：
 
