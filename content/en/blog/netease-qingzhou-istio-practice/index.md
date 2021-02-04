@@ -35,7 +35,7 @@ Despite the comprehensive service mesh solutions provided by Istio, enterprises 
 
 An overview of the architecture of the NetEase Qingzhou Service Mesh is shown as follows:
 
-![](008eGmZEly1gna7su97x8j31340u0n2v.jpg)
+![NetEase Service Mesh Architecuture](008eGmZEly1gna7su97x8j31340u0n2v.jpg)
 
 #### Key Points on Architectural Design:
 
@@ -49,7 +49,7 @@ An overview of the architecture of the NetEase Qingzhou Service Mesh is shown as
 
 The microservices architecture development plan is founded upon the overall architectural design and reference to the architecture and tech stack of services. Let’s take the NetEase e-commerce business as an example. Its business development plan is shown below:
 
-![](008eGmZEly1gna7t5zhrjj310n0u00y7.jpg)
+![NetEase Service Mesh Evolution](008eGmZEly1gna7t5zhrjj310n0u00y7.jpg)
 
 #### Key Points on Development:
 
@@ -62,9 +62,9 @@ The microservices architecture development plan is founded upon the overall arch
 
 During their application of Istio, businesses need a visualized map of the mesh, and the ability to efficiently manage the mesh. Because of this, the NetEase Qingzhou microservices platform has been enhanced with the addition of service mesh monitoring capabilities and supporting cross-cluster centralized monitoring between service mesh and microservices framework (Spring Cloud, Dubbo, gRPC and Thrift). With this update, users can benefit from a smoother migration of their existing microservices architecture.
 
-![](008eGmZEly1gna7trfexbj31o20u00ye.jpg)
+![NetEase Qingzhou Microservices Platform](008eGmZEly1gna7trfexbj31o20u00ye.jpg)
 
-![](008eGmZEly1gna7tx19ffj31o20u018n.jpg)
+![NetEase Qingzhou Microservices Platform](008eGmZEly1gna7tx19ffj31o20u018n.jpg)
 
 #### Key Points on Building: 
 
@@ -89,7 +89,7 @@ The Istio-based service mesh architecture requires comprehensive system protecti
 
 ### Use Case Extensions: Support for the API Gateway
 
-![](008eGmZEly1gna7thob9yj30yr0u0n2f.jpg)
+![NetEase Qingzhou API Gateway](008eGmZEly1gna7thob9yj30yr0u0n2f.jpg)
 
 #### Key Points on Design:
 

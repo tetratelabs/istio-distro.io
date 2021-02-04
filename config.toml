@@ -1,5 +1,5 @@
 ######################## default configuration ####################
-baseURL = "https://getistio.io"
+baseURL = "https://getistio.io/"
 title = "GetIstio"
 # google analytics
 googleAnalytics = "" # example : UA-123-45
@@ -20,6 +20,20 @@ unsafe = true
 [caches.getjson]
 dir = ":cacheDir/:project"
 maxAge = 0
+
+[markup]
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineAnchors = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = "solarized-dark"
+    tabWidth = 4
 
 ############################# Plugins ##############################
 
@@ -202,7 +216,7 @@ icon = "ti-linkedin" # themify icon : https://themify.me/themify-icons
 link = "https://www.linkedin.com/company/tetrate/"
 
 
-################################### English anguage #####################################
+################################### English language #####################################
 [Languages.en]
 languageName = "En"
 languageCode = "en-us"
@@ -230,7 +244,7 @@ content = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam <br
   label = "Submit a ticket"
   link = "contact"
 
-################################### Chinese anguage #####################################
+################################### Chinese language #####################################
 [Languages.zh]
 languageName = "中文"
 languageCode = "zh-cn"
@@ -273,7 +287,7 @@ weight = 2
 
 [[Languages.zh.menu.main]]
 name = "社区"
-url = "/community"
+url = "/community/"
 weight = 3
 
 [[Languages.zh.menu.main]]

@@ -6,11 +6,11 @@
       <div class="navbar-brand-container">
       <a class="navbar-brand" href="{{ .Site.BaseURL | relLangURL }}">
         {{ if .Site.Params.logo }}
-        <img class="img-fluid logo-width" src="{{ .Site.Params.logo | absURL }}" alt="{{ .Site.Title }}">
+        <img class="img-fluid logo-width" src="{{ .Site.Params.logo | relURL }}" alt="{{ .Site.Title }}">
         {{ else }}
         {{ .Site.Title }}
         {{ end }}</a>
-        <!-- GitHub button. -->
+        <!-- GitHub button -->
       <a class="github-button" href="https://github.com/tetratelabs/getistio" data-icon="octicon-star"
         aria-label="Star tetratelabs/getistio on GitHub">Star</a>
         </div>
@@ -54,10 +54,10 @@
               {{ if eq $translation.Lang .Lang }}
               {{ $selected := false }}
               {{ if eq $pageLang .Lang}}
-              <option id="{{ $translation.Language }}" value="{{ $translation.Permalink }}" selected>{{ .LanguageName }}
+              <option id="{{ $translation.Language }}" value="{{ $translation.Permalink | relURL }}" selected>{{ .LanguageName }}
               </option>
               {{ else }}
-              <option id="{{ $translation.Language }}" value="{{ $translation.Permalink }}">{{ .LanguageName }}</option>
+              <option id="{{ $translation.Language }}" value="{{ $translation.Permalink | relURL }}">{{ .LanguageName }}</option>
               {{ end }}
               {{ end }}
               {{ end }}
