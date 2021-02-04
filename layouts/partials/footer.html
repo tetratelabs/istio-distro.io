@@ -11,7 +11,7 @@
       <div class="col-lg-4 col-md-4 col-9 text-center mb-4 mx-auto ml-lg-0">
         <a class="navbar-brand" href="{{ .Site.BaseURL | relLangURL }}">
           {{ if .Site.Params.logo }}
-          <img class="img-fluid" src="{{ .Site.Params.logo | absURL }}" alt="{{ .Site.Title }}">
+          <img class="img-fluid" src="{{ .Site.Params.logo | relURL }}" alt="{{ .Site.Title }}">
           {{ else }}
           {{ .Site.Title }}
           {{ end }}</a>
@@ -32,7 +32,7 @@
 
 <!-- search index -->
 <script type="text/javascript">
-  var indexURL = {{ "index.json" | absLangURL }};
+  var indexURL = {{ "index.json" | relURL }};
   {{ if .Site.IsMultiLingual }}
   var baseurl = "{{.Site.BaseURL}}{{.Site.LanguagePrefix}}";
   {{ else }}
@@ -43,17 +43,17 @@
 <!-- JS Plugins -->
 {{ $permalink:= .Permalink }}
 {{ range site.Params.plugins.js}}
-{{ if eq $permalink (.page | lower | urlize | absURL ) }}
-<script src="{{ .link | absURL }}" {{.attributes | safeHTMLAttr}}></script>
+{{ if eq $permalink (.page | lower | urlize | relURL ) }}
+<script src="{{ .link | relURL }}" {{.attributes | safeHTMLAttr}}></script>
 {{ else if eq .page "/"}}
-<script src="{{ .link | absURL }}" {{.attributes | safeHTMLAttr}}></script>
+<script src="{{ .link | relURL }}" {{.attributes | safeHTMLAttr}}></script>
 {{ else }}
-<script src="{{ .link | absURL }}" {{.attributes | safeHTMLAttr}}></script>
+<script src="{{ .link | relURL }}" {{.attributes | safeHTMLAttr}}></script>
 {{ end }}
 {{ end }}
 
 <!-- Main Script -->
 {{ $script := resources.Get "js/script.js" | minify}}
 {{ $formScript := resources.Get "js/form.js" | minify}}
-<script src="{{ $script.Permalink }}"></script>
-<script src="{{ $formScript.Permalink }}"></script>
+<script src="{{ $script.Permalink | relURL }}"></script>
+<script src="{{ $formScript.Permalink | relURL }}"></script>
