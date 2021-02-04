@@ -21,6 +21,20 @@ unsafe = true
 dir = ":cacheDir/:project"
 maxAge = 0
 
+[markup]
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineAnchors = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = "solarized-dark"
+    tabWidth = 4
+
 ############################# Plugins ##############################
 
 # CSS Plugins
