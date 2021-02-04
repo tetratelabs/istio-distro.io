@@ -1,0 +1,17 @@
+{{ define "main" }}
+<section>
+  <h2>{{ .Title }}</h2>
+  <div class="container">
+    <div class="row">
+    {{ range where .Site.Pages "Params.type" "partners" }}
+      <div class="col-lg-6">
+        <div class="card">
+          <h5>{{ .Title }}</h5>
+          <p>{{.Description}}</p>
+        </div>
+      </div>
+    {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
