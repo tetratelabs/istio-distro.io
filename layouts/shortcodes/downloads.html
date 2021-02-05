@@ -1,23 +1,25 @@
-
-{{ $os_type := .Get 0 }}
-
-{{ $url_beginning_distro := "https://tetrate.bintray.com/getistio/istio-" }}
-{{ $url_beginning_cli := "https://tetrate.bintray.com/getistio/istioctl-" }}
-
-
+  {{ $os_type := .Get 0 }}  
+  
+  {{ $url_beginning_distro := "https://tetrate.bintray.com/getistio/istio-" }}
+  {{ $url_beginning_cli := "https://tetrate.bintray.com/getistio/istioctl-" }}
+  
+  
   {{ $platforms := slice }}
   {{ $file_name_prefix := "" }}
   {{ $file_name_suffix := ".tar.gz" }}
   {{ $multiple_version := false}}
-{{ if eq "linux" $os_type }}
-  {{ $platforms = (slice "amd64" "arm64" "armv7") }}
-  {{ $file_name_prefix = "-linux-" }}
-{{ else if eq "osx" $os_type }}
-  {{ $platforms = (slice "-osx") }}
-{{ else if eq "windows" $os_type }}
-  {{ $platforms = (slice "-win") }}
-  {{ $file_name_suffix = ".zip" }}
-{{ end }}
+  
+  {{ if eq "linux" $os_type }}
+    {{ $platforms = (slice "amd64" "arm64" "armv7") }}
+    {{ $file_name_prefix = "-linux-" }}
+  {{ else if eq "osx" $os_type }}
+    {{ $platforms = (slice "-osx") }}
+  {{ else if eq "windows" $os_type }}
+    {{ $platforms = (slice "-win") }}
+    {{ $file_name_suffix = ".zip" }}
+  {{ else }}
+    {{ $os_type = "unspecified" }}
+  {{ end }}
 
 
   {{ range $platform_name := $platforms }}
@@ -29,11 +31,11 @@
   {{ end }}
 
 
-{{ $manifest := getJSON "https://tetrate.bintray.com/getistio/manifest.json" }}
+  {{ $manifest := getJSON "https://tetrate.bintray.com/getistio/manifest.json" }}
 
-   {{ range $manifest.istio_distributions }} {{ $.Scratch.Add "version_list" (slice .version) }} {{ end }}
+  {{ range $manifest.istio_distributions }} {{ $.Scratch.Add "version_list" (slice .version) }} {{ end }}
 
-   {{ $version_sorted := .Scratch.Get "version_list" }}
+  {{ $version_sorted := .Scratch.Get "version_list" }}
 
    {{ range $version_value := $.Scratch.Get "version_list" }} 
      {{ $.Scratch.Add "version_trimmed" (slice (strings.TrimRight "." (slicestr $version_value 0 4))) }} {{ end}}
@@ -61,40 +63,49 @@
    
    {{ range $valid_version := $.Scratch.Get "latest_versions" }}
      {{ range $manifest.istio_distributions }}
-        {{ if and (findRE $valid_version .version) (or (eq $os_type "osx") (eq $os_type "windows") (eq $os_type "linux"))  }}
-          {{ $release_url := index (.release_notes) 0}}
+       {{ if and (findRE $valid_version .version) (ne $os_type "unspecified") }}
+         {{ $release_url := index (.release_notes) 0}}
          <tr>
-           <td> {{ .flavor }}-v{{ .flavor_version }} </td>
-           <td> {{ .version }} </td>
-	   {{ if gt (len ($.Scratch.Get "file_suffix")) 1 }} {{ $multiple_version = true }} {{ end }}
-	   <td> <a href={{ $release_url }}>Release Notes {{ .version }}</a> </td> <td>
-	   {{ if $multiple_version }} <strong>Istio Distro</strong><br>  {{ end }}
-		   {{ $.Scratch.Add "istio_url_middle" .version }}
-		   {{ $.Scratch.Add "istio_url_middle" "-" }}
-		   {{ $.Scratch.Add "istio_url_middle" .flavor }}
-		   {{ $.Scratch.Add "istio_url_middle" "-v" }} 
-	           {{ $.Scratch.Add "istio_url_middle" (string .flavor_version)  }}
-           
-              {{ range $type,$url_ending := $.Scratch.Get "file_suffix" }}
-	      {{ if not $multiple_version }} {{ $type = "Istio Distro" }} {{ end }}
-	         <a href={{ $url_beginning_distro }}{{ $.Scratch.Get "istio_url_middle" }}{{ $url_ending }}>{{ $type }}</a> <br>
-	      {{ end }}
+         <td> {{ .flavor }}-v{{ .flavor_version }} </td>
+         <td> {{ .version }} </td>
 
+         {{ if gt (len ($.Scratch.Get "file_suffix")) 1 }} {{ $multiple_version = true }} {{ end }}
 
-           </td>
-           <td>
-	   {{ if $multiple_version }} <strong>istioctl</strong><br> {{ end }}
+         <td> <a href={{ $release_url }}>Release Notes {{ .version }}</a> </td> 
+	 <td>
 
-              {{ range $type,$url_ending := $.Scratch.Get "file_suffix" }}
-	      {{ if not $multiple_version }} {{ $type = "istioctl" }} {{ end }}
-		 <a href={{ $url_beginning_cli }}{{ $.Scratch.Get "istio_url_middle" }}{{ $url_ending }}>{{ $type }}</a> <br>
-	      {{ end }}
-          </td>
+         {{ if $multiple_version }} <strong>Istio Distro</strong><br>  {{ end }}
 
-	      {{ $.Scratch.Delete "istio_url_middle" }}
+       	 {{ $.Scratch.Add "istio_url_middle" .version }}
+       	 {{ $.Scratch.Add "istio_url_middle" "-" }}
+       	 {{ $.Scratch.Add "istio_url_middle" .flavor }}
+       	 {{ $.Scratch.Add "istio_url_middle" "-v" }} 
+         {{ $.Scratch.Add "istio_url_middle" (string .flavor_version)  }}
+         
+         {{ range $type,$url_ending := $.Scratch.Get "file_suffix" }}
+           {{ if not $multiple_version }} {{ $type = "Istio Distro" }} {{ end }}
 
-        </tr>
-        {{ end }}
-        {{ end }}
+           <a href={{ $url_beginning_distro }}{{ $.Scratch.Get "istio_url_middle" }}{{ $url_ending }}>{{ $type }}</a> <br>
+         {{ end }}
+
+         </td>
+
+	 <td>
+         {{ if $multiple_version }} <strong>istioctl</strong><br> {{ end }}
+
+         {{ range $type,$url_ending := $.Scratch.Get "file_suffix" }}
+           {{ if not $multiple_version }} {{ $type = "istioctl" }} {{ end }}
+
+       	   <a href={{ $url_beginning_cli }}{{ $.Scratch.Get "istio_url_middle" }}{{ $url_ending }}>{{ $type }}</a> <br>
+         {{ end }}
+
+         </td>
+
+         {{ $.Scratch.Delete "istio_url_middle" }}
+
+       </tr>
+
+       {{ end }}
      {{ end }}
+   {{ end }}
    </table>
