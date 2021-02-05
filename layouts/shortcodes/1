@@ -9,23 +9,27 @@
    {{ range $manifest.istio_distributions }} {{ $.Scratch.Add "version_list" (slice .version) }} {{ end }}
 
    {{ $version_sorted := .Scratch.Get "version_list" }}
-
    {{ range $version_value := $.Scratch.Get "version_list" }} 
      {{ $.Scratch.Add "version_trimmed" (slice (strings.TrimRight "." (slicestr $version_value 0 4))) }} {{ end}}
      {{ range $version_supported := uniq (.Scratch.Get "version_trimmed") }}
+     {{ $previous_value := 0 }}
        {{ range $version_value := $.Scratch.Get "version_list" }} 
-           {{ if findRE $version_supported $version_value }}
-	     {{ $subversion := strings.TrimLeft "." (substr $version_value -2) }}
-	     {{ $.Scratch.SetInMap "subversion_map" $subversion $version_value }}
-           {{ end }}
+         {{ if findRE $version_supported $version_value }}
+  	   {{ $subversion := (int (strings.TrimLeft "." (substr $version_value -2))) }}
+	     {{ if lt $previous_value $subversion }}
+	        {{ $previous_value = $subversion }} 
+	        {{ $.Scratch.Set "highest_minor_supported_version" $version_value }} 
+	     {{ end }}
+         {{ end }}
        {{ end }}
-       {{ $.Scratch.Add "latest_versions" (last 1 ($.Scratch.GetSortedMapValues "subversion_map")) }}
+       {{ $.Scratch.Add "latest_versions" (slice ($.Scratch.Get "highest_minor_supported_version")) }}
    {{ end }}
 
+   {{ .Inner }}
    
    {{ range $valid_version := $.Scratch.Get "latest_versions" }}
    {{ range $manifest.istio_distributions }}
-      {{ if findRE  .version $valid_version}}
+      {{ if findRE $valid_version .version }}
         {{ $release_url := index (.release_notes) 0}}
        <tr>
          <td> {{ .flavor }}-v{{ .flavor_version }} </td>
