@@ -14,8 +14,8 @@ featureOrder: 4
 We establish partnerships with various organizations to create synergy between Istio and their products, in order to give great value to the community. Here, we can learn more about these partnerships that you will find beneficial.
 
 <ul>
-  <li><a href="/partner-a">Partner A</a></li>
-  <li><a href="/partner-b">Partner B</a></li>
-  <li><a href="/partner-c">Partner C</a></li>
-  <li><a href="/partner-d">Partner D</a></li>
+  <li><a href="partner-a">Partner A</a></li>
+  <li><a href="partner-b">Partner B</a></li>
+  <li><a href="partner-c">Partner C</a></li>
+  <li><a href="partner-d">Partner D</a></li>
 <ul>
