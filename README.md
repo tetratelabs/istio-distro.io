@@ -75,3 +75,11 @@ eventDate: 2021-03-05
 eventStartDate: 2021-03-08
 pastEvent: false
 ```
+
+## Adding Partnership Information
+
+To add information about GetIstio partners, you can simply modify files in the following directories, with example given for a fictional partner named "Partner A":
+
+- `content/en/partners/partner-a.md` -> this file holds the overview information about the partner. The required data in frontmatter has been annotated for detail
+- `content/en/ecosystem-partners/partner-a` -> this directory holds the technical information that will be displayed in the docs section of the site. Technical documentation and tutorial can go here.
+- `static/images` -> the partner's company logo and any images that are going to be displayed should go here.
