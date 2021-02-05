@@ -2,104 +2,70 @@
 title: "FAQ"
 date: 2018-12-28T11:02:05+06:00
 icon: "ti-settings" # themify icon pack : https://themify.me/themify-icons
-description: "Cras at dolor eget urna varius faucibus tempus in elit dolor sit amet."
+description: "GetIstio 常见问题。"
 # type dont remove or customize
 type : "docs"
 weight: 8
 ---
-# Frequently Asked Questions
 
+##### GetIstio 是什么？
 
-- [What is GetIstio?](#what-is-getistio)
-- [Why should I use GetIstio?](#why-should-i-use-getistio)
-- [Is it free?](#is-it-free)
-- [What are the supported versions of GetIstio?](#what-are-the-supported-versions-of-getistio)
-- [What are the different components of the GetIstio and how do they compare to Istio upstream?](#what-are-the-different-components-of-the-getistio-and-how-do-they-compare-to-istio-upstream)
-- [What will be free and what will be paid?](#what-will-be-free-and-what-will-be-paid)
-- [I am using Istio OSS. How do I switch to using getistio?](#i-am-using-istio-oss-how-do-i-switch-to-using-getistio)
-- [I am new to Istio. Where should I start?](#i-am-new-to-istio-where-should-i-start)
-- [I am a platform admin trying to streamline Istio binaries in my organization. How should I use GetIstio?](#i-am-a-platform-admin-trying-to-streamline-istio-binaries-in-my-organization-how-should-i-use-getistio)
-- [How will I know that my Istio has CVEs?](#how-will-i-know-that-my-istio-has-cves)
-- [If my upgrade fails, how will Tetrate help me?](#if-my-upgrade-fails-how-will-tetrate-help-me)
+今天，我们推出了 GetIstio，这是一个 Istio 上游组件的发行版，经过 Tetrate 的测试、优化、保护和支持。GetIstio 为不同的 Kubernetes 环境提供经过审核的 Istio 原生版本，使 Istio 生命周期管理变得简单而安全。初始版本已通过 EKS、EKS-D 的审核，并提供与 AWS KMS 的本地集成。我们将逐步增加对新的 Kubernetes 版本和新的 KMS 后端的支持。GetIstio 将根据其支持政策支持最新的 3 个版本，并为 FedRAMP 环境提供符合 FIPS 标准的 Istio 版本。
 
+##### 为什么使用 GetIstio？
 
-[Project overview](#project-overview)
-- [Are you creating a fork of the Istio project?](#are-you-creating-a-fork-of-the-istio-project)
-- [Does the GetIstio impact the performance of my application and in what ways?](#does-the-getistio-impact-the-performance-of-my-application-and-in-what-ways)
-- [Is there a cost for using GetIstio?](#is-there-a-cost-for-using-getistio)
-- [How often do you plan to add new features to GetIstio from the upstream Istio project?](#how-often-do-you-plan-to-add-new-features-to-getistio-from-the-upstream-istio-project)
-- [How do I request new features for GetIstio?](#how-do-i-request-new-features-for-getistio)
-- [Can we contribute to the work done on GetIstio?](#can-we-contribute-to-the-work-done-on-getistio)
+如果您正在采用 Istio，并且需要一个可靠、安全的发行版来运行在 AWS、Azure 或 GCP 环境中，您应该使用 GetIstio。
 
-##### What is GetIstio?
-Today, we are launching GetIstio, a distribution for Istio upstream components which are tested, optimized, secured and supported by Tetrate. GetIstio provides vetted native versions of Istio for different K8s environments and makes Istio management easy.  The initial release is vetted for EKS, EKS-D and provides native integration into AWS KMS. We will incrementally add support for new K8s flavors and new KMS backends. GetIstio will support the last 3 versions as per its support policy and also offers a FIPS compliant version of Istio for FedRAMP environments.
+##### 它是免费的吗？
 
-##### Why should I use GetIstio?
-You should use GetIstio if you are adopting Istio and need a reliable, and secure distribution to run in AWS, Azure or GCP environment 
+是的。GetIstio 是一个免费（如语音和啤酒）的开源项目，我们欢迎社区参与和贡献。
 
-##### Is it free?
-Yes. GetIstio is an open source project and we welcome community additions. 
+##### GetIstio 的支持版本有哪些？
 
-##### What are the supported versions of GetIstio?
-Point to the supported platforms page on github project.
+请点击 Github 项目上的支持平台页面。
 
-##### What are the different components of the GetIstio and how do they compare to Istio upstream?
-GetIstio is a distribution of upstream Istio which consists of a CLI, an agent and integration APIs.
-More details (GetIstio CLI Command Reference)[/getistio-cli/reference/getistio] (Cert Integration)[/istio-ca-certs-integrations] and (Security Patches)[/download]
+##### GetIstio 有哪些不同的组件，与上游的 Istio 相比如何？
 
-##### What will be free and what will be paid?
-The most recent details are [here](https://www.tetrate.io/getistio).
+GetIstio 是上游 Istio 的发行版，它由一个 CLI、一个代理和集成 API 组成。 更多细节请查看 [GetIstio CLI 命令参考](/getistio-cli/reference/getistio)、[Cert 集成](/istio-ca-certs-integrations) 和[安全补丁](/download)。
 
-|                                                                       | OSS | Subscription |
-|-----------------------------------------------------------------------|:---:|:------------:|
-|                           Istio CLI Install                           |  ✅  |       ✅      |
-|             Tested for EKS, EKS-D, GKE, AKS, K8s upstream             |  ✅  |       ✅      |
-|                         FIPS Compliant Builds                         |     |       ✅      |
-|                     Seamless upgrades (CP and DP)                     |  ✅  |       ✅      |
-|                 Security Patches of supported versions                |  ✅  |       ✅      |
-|                     Certified for diff K8s flavors                    |  ✅  |       ✅      |
-|       KMS/CA Integration (3 cloud provider CAs + Vault, Venafi)       |  ✅  |       ✅      |
-|                           Config Validation                           |  ✅  |       ✅      |
-|                           Commercial Support                          |     |       ✅      |
-|              Add ons instructions - Skywalking/Prometheus             |  ✅  |       ✅      |
-|              Backport security fixes for Istio and Envoy              |     |       ✅      |
-|                      Access to Tetrate User Group                     |     |       ✅      |
-|                  Training Credits & Consulting hours                  |     |       ✅      |
-|                Marketplace listings - 3 cloud providers               |  ✅  |       ✅      |
-|                   Documentation on getistio.io site                   |     |              |
-|                  Email notification for security patches and upgrades |  ✅  |       ✅      |
+##### 我正在使用 Istio OSS，如何切换到 getistio？
 
-##### I am using Istio OSS. How do I switch to using getistio?
-GetIstio is an upstream distribution of Istio.      
+GetIstio 是 Istio 的上游发行版。
 
-##### I am new to Istio. Where should I start?
-We recommend you start with a vetted build for your environment from GetIsito. You get all the features of Isito and peace of mind with it.
+##### 我是 Istio 的新手，应该从何处着手？
 
-##### I am a platform admin trying to streamline Istio binaries in my organization. How should I use GetIstio?
-There is multiple ways to leverage for your benefits - please refer to the [command reference](/getistio-cli/reference/getistio) and [tutorials](/istio-tutorials)
+我们建议你从 GetIstio 的经审核的环境开始。你可以安心地使用 Isito 的所有功能。
 
-##### How will I know that my Istio has CVEs?
-If you have signed up with your email, GetIstio will notify you of CVEs and Zero day Vulnerabilities.
+##### 我是一个平台管理员，试图在我的组织中简化 Istio 二进制文件。我应该如何使用 GetIstio？
 
-##### If my upgrade fails, how will Tetrate help me?
-GetIstio enables seamless upgrades via getistio upgrade command. 
+有多种方法可以利用 GetIstio。请参考[命令参考](/getistio-cli/reference/getistio)和[教程](/istio-tutorials)。
 
-### Project overview
+##### 我如何知道我的 Istio 是否有 CVE？
 
-#####  Are you creating a fork of the Istio project?
-No, we are not creating a fork of the Istio project. We are creating a distribution of the upstream. Any enhancements we make to Istio will be made to the upstream.
+如果您已经[订阅了社区更新](/)，GetIstio 将通知您 CVE 和零日漏洞。
 
-##### Does the GetIstio impact the performance of my application and in what ways?
-No, it does not. 
+##### GetIstio 可以帮助我升级 Istio 吗？
 
-##### Is there a cost for using GetIstio?
-No, there is no cost in using GetIstio standalone. GetIstio commercial subscription is paid and will offer support, access to Tetrate user group and will be paid and it will be possible to buy on tetrate.io and on cloud marketplaces.
+可以，GetIstio 可以帮助我升级 Istio。GetIstio 可以通过 getistio 升级命令实现无缝升级。
 
-##### How often do you plan to add new features to GetIstio from the upstream Istio project?
-GetIstio will make new versions of Istio available as soon as they are available in upstream Istio.
+#### 项目概述
 
-##### How do I request new features for GetIstio?
-Our roadmap is public. Please create a feature request and vote for features on the roadmap.
+##### 你们是在创建 Istio 项目的分叉吗？
 
-##### Can we contribute to the work done on GetIstio?
-Yes, GetIstio is open source and under Apache License. You can [contribute](/community/building-and-testing) to any components of the GetIstio.
+不，我们不是在创建 Istio 项目的分叉。我们是在创建一个上游的发行版。我们对 Istio 的任何改进都会在上游进行。
+
+##### GetIstio 是否会影响我的应用程序的性能，影响的方式是什么？
+
+不会。作为上游发行版，GetIstio 对 Istio 的性能没有影响。
+
+##### 你们计划多长时间从上游 Istio 项目中为 GetIstio 添加一次新功能？
+
+一旦上游 Istio 有新版本，GetIstio 会尽快提供新版本的 Istio。
+
+##### 我如何申请 GetIstio 的新功能？
+
+我们的路线图是公开的。请创建一个功能请求，并对路线图上的功能进行投票。
+
+##### 我们可以为 GetIstio 的工作做贡献吗？
+
+是的，GetIstio 是开源的，并且采用 Apache 许可证。您可以对 GetIstio 的任何组件做出[贡献](/community/building-and-testing)。

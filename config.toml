@@ -297,7 +297,7 @@ weight = 4
 
 [[Languages.zh.menu.main]]
 name = "伙伴"
-url = "/ecosystem-partners/"
+url = "/partners/"
 weight = 5
 
 [[Languages.zh.menu.main]]
