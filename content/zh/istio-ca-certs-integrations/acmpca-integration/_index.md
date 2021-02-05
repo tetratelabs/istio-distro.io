@@ -1,22 +1,23 @@
 ---
-title: "ACM Private CA Integration"
+title: "ACM Private CA 集成"
 date: 2021-01-25T13:00:00+07:00
-description: "Integration with ACM Private CA"
+description: "与 ACM Private CA 集成。"
 # type dont remove or customize
 type : "docs"
 ---
 
-Instead of using a self-signed root certificate, here we get Istio an intermediary CA from AWS ACM Private CA service that would in turn be used to sign workloads certificates. This approach enables the same root of trust for the workloads as provided by the root CA in ACM Private CA. As Istio itself signs the workload certs, the latency for getting workload certs issued is far less as compared to directly getting the certs signed by ACM Private CA itself.
+在这里，我们不使用自签名的根证书，而是从 AWS ACM Private CA 服务中获得 Istio 这个中介 CA，再由它来签署工作负载证书。这种方法可以为工作负载提供与 ACM Private CA 中的根 CA 相同的信任根。由于 Istio 自己签署工作负载证书，与直接获得 ACM Private CA 本身签署的证书相比，获得工作负载证书的延迟要少得多。
 
-The [`getistio gen-ca`](/getistio-cli/reference/getistio_gen-ca) command furnishes the options to connect to ACM Private CA and get the intermediary CA cert signed. It uses the certificate details thus obtained to create the 'cacerts' Kubernetes secret for Istio to use to sign workload certs. Istio, at start up, checks for the presence of the secret 'cacerts' to decide if it needs to use this cert for signing workload certificates.
+[`getistio gen-ca`](/getistio-cli/reference/getistio_gen-ca) 命令提供了连接到 ACM Private CA 并获得中间 CA 证书签名的选项。它使用这样获得的证书细节来创建 `cacerts` Kubernetes  secret，供 Istio 用来签署工作负载证书。Istio 在启动时，会检查 `cacerts` secret 的存在，以决定是否需要使用该 cert 来签署工作负载证书。
 
-Prerequisites:
-- A CA set up in AWS ACM Private CA and the ARN for the CA
-- AWS credentials with the `AWSCertificateManagerPrivateCAFullAccess` and `AWSCertificateManagerFullAccess` policy attached
+## 先决条件
 
-Configuration set up:
-Parameters related to connecting to ACM Private CA and CSR creation can be supplied either through a config file or command line options. Creating a config file is recommended.
-An example config file is given below and the parameters are self explanatory.
+- 在 AWS ACM Private CA 中设置的 CA 和 CA的ARN。
+- 附带 `AWSCertificateManagerPrivateCAFullAccess` 和 `AWSCertificateManagerFullAccess` 策略的AWS证书。
+
+## 配置设置
+
+与连接 ACM 私有 CA 和创建 CSR 相关的参数可以通过配置文件或命令行选项提供。建议创建一个配置文件。下面给出一个配置文件的例子，参数是不言自明的。
 
 *acmpca-config.yaml*
 
@@ -25,26 +26,25 @@ providerName: "aws"
 providerConfig:
   aws:
     signingCAArn: {your acmpca CA ARN}
-   # template to use for the CSR.
+   # 用于 CSR 的模板。
     templateArn: "arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen0/V1"
-   # Optional field. If left blank would default to SHA256WITHRSA
+   # 可选字段。留空将确实为 SHA256WITHRSA。
    signingAlgorithm: SHA256WITHRSA
 
 certificateParameters:
   secretOptions:
-    # Namespace where 'cacerts' Kubernetes secret is created on your target cluster
+    # 在目标集群上创建 "cacerts" Kubernetes secret 的命名空间。
     istioCANamespace: "istio-system"
-    # SecretFilePath is the file path used to store the Kubernetes Secret in yaml format
+    # SecretFilePath 是用于以 yaml 格式存储 Kubernetes Secret 的文件路径。
     secretFilePath:
-    # Force flag when enabled forcefully deletes the `cacerts` secret
-    # in istioNamespace, and creates a new one.
+    # 启用 force 标志后，强制删除 istioNamespace 中的 "cacerts" secret，并创建一个新的 secret。
     force: true
   caOptions:
-    # ValidityDays represents the number of validity days before the CA expires.
+    # ValidityDays 表示 CA 过期前的有效天数。
     validityDays: 365
-    # KeyLength is the length(bits) of Key to be created
+    # KeyLength 是要创建的 key 的比特位数。
     keyLength: 2048
-    # This is x509.CertificateRequest. Only a few fields are shown below
+    # 这是 x509.CertificateRequest。下面只显示了几个字段。
     certSigningRequestParams:
       subject:
         commonname: "getistio.example.io"
@@ -60,11 +60,11 @@ certificateParameters:
         - "youremail@example.io"
 ```
 
-Once we have the prerequisites satisfied and the config file created, we could run the [`getistio gen-ca`](/getistio-cli/reference/getistio_gen-ca) command to create the 'cacerts' Kubernetes secret as well as a local yaml file of the secret. `getistio` connects to the cluster your Kubernetes configuration  points to.
+一旦我们满足了前提条件并创建了配置文件，我们就可以运行 [`getistio gen-ca`](/getistio-cli/reference/getistio_gen-ca) 命令来创建 `cacerts` Kubernetes secret 以及 secret 的本地 yaml 文件。`getistio` 连接到你的 Kubernetes 配置指向的集群。
 
 ```sh
 getistio gen-ca --config-file acmpca-config.yaml
 ```
 
-Once the command is run, you will notice a file created under `~/.getistio/secret/` and 'cacerts' secret in istio-system namespace. 'istiod' when started would use this cert to sign workload certificates.
+运行完该命令，你会发现在 `~/.getistio/secret/` 下创建了一个文件，并且在 `istio-system` 命名空间中创建了 `cacerts` secret。`istiod` 启动后会使用这个证书来签署工作负载证书。
 

@@ -42,7 +42,7 @@ certificateParameters:
     validityDays: 365
     # KeyLength 是要创建的 key 的比特位数。
     keyLength: 2048
-    # 这是 x509.CertificateRequest。下面只显示了几个字段
+    # 这是 x509.CertificateRequest。下面只显示了几个字段。
     certSigningRequestParams:
       subject:
         commonname: "getistio.example.io"

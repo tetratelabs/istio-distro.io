@@ -1,53 +1,55 @@
 ---
-title: "安装和升级 GetIstio"
+title: "安装和更新 GetIstio"
 date: 2021-01-25T13:00:00+07:00
-description: "How to install and update GetIstio"
+description: "如何安装和跟新 GetIstio。"
 # type dont remove or customize
 type : "docs"
 ---
 
-GetIstio can be obtained by issuing the following command:
+GetIstio 可以通过以下命令获得。
 
 ```sh
 curl -sL https://tetrate.bintray.com/getistio/download.sh | bash
 ```
 
-This, by default, downloads the latest version of GetIstio and certified Istio. To check if the download was successful, run the [version command](/getistio-cli/reference/getistio_version):
+默认情况下，这将下载最新版本的 GetIstio 和认证的 Istio。要检查下载是否成功，运行  [version 命令](/getistio-cli/reference/getistio_version)。
 
 ```sh
 getistio version
 ```
 
-or
+或者
 
 ```sh
-getistio version --remote=false #only the client version details
+getistio version --remote=false #只有客户端版本的详细信息
 ```
 
-An output of the form below suggests that GetIstio was installed successfully.
-<pre>getistio version: 0.6.0
-active istioctl: 1.8.2-tetrate-v0
-</pre>
+以下表格的输出表明 GetIstio 已成功安装。
 
-<br />
-To see the list of commands available with GetIstio and its supported features, run the [help command](/getistio-cli/reference/getistio_help):
+```text
+getistio version: 0.6.0
+active istioctl: 1.8.2-tetrate-v0
+```
+
+要查看 GetIstio 及其支持的功能的可用命令列表，运行 [help 命令](/getistio-cli/reference/getistio_help)。
 
 ```sh
 getistio --help
 ```
 
-<br />
-Once GetIstio is downloaded, it can be self-updated to the latest version by running the [update command](/getistio-cli/reference/getistio_update):
+下载 GetIstio 后，可以通过运行 [update 命令](/getistio-cli/reference/getistio_update)自我更新到最新版本。
 
 ```sh
 getistio update
 ```
 
-<br />
-While we recommend always using the latest GetIstio, if the user wants to download a different version of GetIstio for testing or other reasons, they could do so with the following command:
+虽然我们建议始终使用最新的 GetIstio，但如果用户出于测试或其他原因想下载不同版本的GetIstio，可以使用以下命令。
+
+
 ```sh
-export GETISTIO_VERSION=<your_version> ##say 0.5.0 for example
+export GETISTIO_VERSION=<your_version> # 比如说0.5.0
 curl -sL https://tetrate.bintray.com/getistio/download.sh | bash
 ```
-This would overwrite the existing version of GetIstio to the one just downloaded.
+
+这将把现有的 GetIstio 版本覆盖到刚刚下载的版本。
 

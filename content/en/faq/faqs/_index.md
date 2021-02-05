@@ -2,7 +2,7 @@
 title: "FAQ"
 date: 2018-12-28T11:02:05+06:00
 icon: "ti-settings" # themify icon pack : https://themify.me/themify-icons
-description: "Cras at dolor eget urna varius faucibus tempus in elit dolor sit amet."
+description: "GetIstio frequently asked questions."
 # type dont remove or customize
 type : "docs"
 weight: 8
@@ -39,11 +39,10 @@ You should use GetIstio if you are adopting Istio and need a reliable, and secur
 Yes. GetIstio is a free (as in speech and as in beer) open source project and we welcome community participation and contribution. 
 
 ##### What are the supported versions of GetIstio?
-Point to the supported platforms page on github project.
+Point to the supported platforms page on GitHub project.
 
 ##### What are the different components of the GetIstio and how do they compare to Istio upstream?
-GetIstio is a distribution of upstream Istio which consists of a CLI, an agent and integration APIs.
-More details (GetIstio CLI Command Reference)[/getistio-cli/reference/getistio] (Cert Integration)[/istio-ca-certs-integrations] and (Security Patches)[/download]
+GetIstio is a distribution of upstream Istio which consists of a CLI, an agent and integration APIs. More details [GetIstio CLI Command Reference](/getistio-cli/reference/getistio), [Cert Integration](/istio-ca-certs-integrations) and [Security Patches](/download).
 
 ##### I am using Istio OSS. How do I switch to using getistio?
 GetIstio is an upstream distribution of Istio.      
@@ -52,7 +51,7 @@ GetIstio is an upstream distribution of Istio.
 We recommend you start with a vetted build for your environment from GetIsito. You get all the features of Isito and peace of mind with it.
 
 ##### I am a platform admin trying to streamline Istio binaries in my organization. How should I use GetIstio?
-There are multiple ways to leverage GetIstio - please refer to the [command reference](/getistio-cli/reference/getistio) and [tutorials](/istio-tutorials)
+There are multiple ways to leverage GetIstio - please refer to the [command reference](/getistio-cli/reference/getistio) and [tutorials](/istio-tutorials).
 
 ##### How will I know if my Istio has CVEs?
 If you have [subscribed to community updates](/), GetIstio will notify you of CVEs and Zero day Vulnerabilities.
@@ -76,3 +75,4 @@ Our roadmap is public. Please create a feature request and vote for features on 
 
 ##### Can we contribute to the work done on GetIstio?
 Yes, GetIstio is open source and under the Apache License. You can [contribute](/community/building-and-testing) to any components of the GetIstio.
+

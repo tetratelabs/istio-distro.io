@@ -2,14 +2,13 @@
 title: "下载"
 date: 2018-12-28T11:02:05+06:00
 icon: "ti-credit-card" # themify icon pack : https://themify.me/themify-icons
-description: "Downloads list"
+description: "下载列表。"
 # type dont remove or customize
 type : "docs"
 ---
 
+目前 GetIstio 可以运行在 Linux 和 MacOS 上。请参考[安装和升级 GetIstio]({{< ref "/getistio-cli/install-and-update-of-getistio" >}})。
 
-Currently <strong>GetIstio</strong> runs on Linux and MacOS. Please follow [GetIstio Install and Update Page]({{< ref "/getistio-cli/install-and-update-of-getistio" >}}) to deploy the product.
-
-There are additional pages that allow download of <strong>Istio distributions and istioctl</strong> binaries for [Linux]({{< relref "linux" >}}), [MacOS]({{< relref "macos" >}}), and [Windows]({{< relref "windows" >}}). We recommend using GetIsio to obtain the required files.
+有其他网页允许下载 Istio 发行版和 [Linux]({{< relref "linux" >}})、[MacOS]({{< relref "macos" >}}) 和 [Windows]({{< relref "windows" >}}) 的 istioctl 二进制文件。我们建议使用 GetIsio 来获取所需文件。
 
 {{< dwn_getistio >}}
