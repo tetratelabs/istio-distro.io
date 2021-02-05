@@ -129,6 +129,11 @@ a:hover {
     color: white;
   }
 
+  #emailForm {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
   .form-control {
     margin-top: 24px;
   }
@@ -368,27 +373,27 @@ a:hover {
 
 .input {
   border: 0;
-  border-radius: 50px;
+  border-radius: 6px;
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
   display: block;
   font-size: 14px;
   height: 42px;
   padding: 12px 25px;
-  width: 100%;
+  width: 75%;
   &:focus {
     outline: unset;
   }
 }
 
-button.btn {
-  border-radius: 50px;
-  font-size: 14px;
-  height: 42px;
-  padding: 12px 25px;
-  position: absolute;
-  top: 6px;
-  right: 12px;
-}
+// button.btn {
+//   border-radius: 50px;
+//   font-size: 14px;
+//   height: 42px;
+//   padding: 12px 25px;
+//   position: absolute;
+//   top: 6px;
+//   right: 12px;
+// }
 
 .blog-individual {
   h1,
