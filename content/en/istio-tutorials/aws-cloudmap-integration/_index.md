@@ -5,7 +5,7 @@ weight: 1
 draft: false
 ---
 
-This tutorial describes how you can integrate [AWS Cloud Map](https://aws.amazon.com/cloud-map/) with you Istio mesh.
+This tutorial describes how you integrate [AWS Cloud Map](https://aws.amazon.com/cloud-map/) with your Istio mesh.
 
 ## Overview
 
