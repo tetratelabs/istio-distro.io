@@ -1,7 +1,7 @@
 ---
 title: "GetIstio 概览"
 icon: "ti-panel"
-description: "Learn more about GetIstio CLI, how to install and manage it."
+description: "了解更多关于 GetIstio CLI，如何安装和管理它。"
 # type dont remove or customize
 type : "docs"
 weight: 1
@@ -10,33 +10,36 @@ featured: true
 featureOrder: 1
 ---
 
-GetIstio is the easiest way to get started with Istio and to ensure you're using trusted, supported versions of Istio. Installing and updating GetIstio is as easy as issuing the following command:
+GetIstio是开始使用Istio的最简单方法，并确保您使用的是受信任和支持的Istio版本。安装和更新GetIstio非常简单，只需发出以下命令即可。
 
 ```sh
 curl -sL https://tetrate.bintray.com/getistio/download.sh | bash
 ```
 
-### Why Use a CLI?
+### 为什么使用 CLI?
 
-The GetIstio CLI simplifies installation, management, and upgrades of Istio so that you can get the most of your service mesh and the benefits of open source.
+GetIstio CLI 简化了 Istio 的安装、管理和升级，使您可以最大限度地利用服务网格和开源的优势。
 
-The GetIsio CLI tool supports these enterprise-level requirements as it:
-- enforces fetching certified versions of Istio and enables only compatible versions of Istio installation
-- allows seamless switching between multiple istioctl versions
-- includes a FIPS-compliant flavor
-- delivers platform-based Istio configuration validations by integrating validation libraries from multiple sources
-- uses a number of cloud provider certificate management systems to create Istio CA certs that are used for signing service mesh managed workloads 
-- provides multiple additional integration points with cloud providers
+GetIsio CLI 工具满足企业级需求，因为它：
 
-The Istio release schedule can be very aggressive for enterprise lifecycle and change management practices. GetIstio addresses this concern by testing all Istio versions against different Kubernetes distributions for functional integrity. GetIstio’sversions of Istio are actively supported for security patches and other bug updates and have much longer support life than provided by upstream Istio.
+- 强制获取 Istio 的认证版本，并只允许安装 Istio 的兼容版本。
+- 允许在多个 istioctl 版本之间无缝切换。
+- 符合 FIPS 标准。
+- 通过整合多个来源的验证库，提供基于平台的 Istio 配置验证。
+- 使用一些云提供商证书管理系统来创建 Istio CA 证书，用于签署服务网格管理工作负载。
+- 提供附加的与云提供商多个集成点。
 
-Some service mesh customers need to support elevated security requirements. GetIstio addresses compliance by offering two flavors of the Istio distribution:
-- *tetrate* tracks the upstream Istio and may have additional patches applied
-- *tetratefips* is a FIPS-compliant version of the tetrate flavor
+对于企业生命周期和变更管理实践来说，Istio 的发布时间表可能非常激进。GetIstio 通过针对不同的 Kubernetes 发行版测试所有 Istio 版本的功能完整性来解决这一问题。GetIstio 的 Istio 版本积极支持安全补丁和其他 bug 更新，比上游 Istio 提供的支持寿命要长得多。
 
-The above functionality is achieved with an elegant transparent approach, where the existing setup and tools are fully leveraged to provide additional functionality and enterprise desired feature sets and controls:
-- GetIstio connects to the Kubernetes cluster pointed to by the default Kubernetes config file. If the KUBECONFIG environment variable is set, then it takes precedence.
-- Config validation is done against two targets:
-    - cluster current config that might include multiple Istio configuration constructs
-    - in addition, GetIstio validates the manifest yaml files (that are not applied yet to the cluster)
-- Creation of CA cert for Istio assumes the provider set up to issue intermediary CA cert is already done. This is optional and the default is a self signed cert by Istio for workload certificates.
+一些服务网格客户需要支持更高的安全要求。GetIstio 通过提供两种 Istio 发行版来解决合规性问题。
+
+- *tetrate* 跟踪上游 Istio，并可能应用额外的补丁。
+- *tetratefips* 是符合 FIPS 标准的版本。
+
+上述功能是通过一种优雅的透明方法实现的，现有的设置和工具被充分利用，以提供额外的功能和企业所需的特性集和控制。
+
+- GetIstio 连接到默认 Kubernetes 配置文件所指向的 Kubernetes 集群。如果设置了 KUBECONFIG 环境变量，则以其为优先。
+- 配置验证是针对两个目标进行的。
+  - 集群当前的配置，可能包含多个 Istio 配置结构
+  - 此外，GetIstio 还验证了清单 yaml 文件（尚未应用于集群的文件）
+- 为 Istio 创建 CA 证书时，假设已经设置好了发行中间 CA 证书的提供商。这是可选的，默认情况下，Istio 为工作负载证书提供自签名证书。
