@@ -20,6 +20,24 @@
       </div>
     </div>
   </div>
+  <section class="cta-section mt-4 py-4">
+    <div class="container mw-100">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 text-center">
+          <p>GetIstio 1.0 is now available</p>
+          <p>Never miss new releases and community events</p>
+          <div class="form-control cta-form" id="emailFormContainer">
+            <form id="emailForm">
+              <input id="email" type="email" class="input" placeholder="Work Email" / required>
+              <button class="btn btn-sm btn-primary">Get Updates</button>
+            </form>
+          </div>
+          <span id="errorMessage">Please enter a valid email address</span>
+          <p id="formMessage">Thank you for subscribing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
 
 <section class="section dictionary-section">
@@ -204,14 +222,11 @@
 </section>
 
 <!-- call to action -->
-{{ if .Site.Params.call_to_action.enable }}
+<!-- {{ if .Site.Params.call_to_action.enable }}
 {{ with .Site.Params.call_to_action }}
 <section class="section cta-section">
   <div class="container">
     <div class="row">
-      <!-- <div class="col-lg-4 text-center d-lg-block d-none">
-        <img loading="lazy" src="{{ .image| relURL }}" class="img-fluid">
-      </div> -->
       <div class="col-lg-12 text-lg-left text-center">
         <div class="box rounded">
           <h2 class="mb-3">Get Community Updates</h2>
@@ -225,15 +240,12 @@
           <span id="errorMessage">Please enter a valid email address</span>
           <p id="formMessage">Thank you for subscribing.</p>
         </div>
-
       </div>
     </div>
   </div>
 </section>
-
-{{/*  <script src="{{ .Site.BaseURL }}js/asciinema-player.js"></script>  */}}
 {{ end }}
-{{ end }}
+{{ end }} -->
 <!-- /call to action -->
 
 <section class="support-section">
