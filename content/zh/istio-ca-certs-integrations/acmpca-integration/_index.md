@@ -19,7 +19,8 @@ Parameters related to connecting to ACM Private CA and CSR creation can be suppl
 An example config file is given below and the parameters are self explanatory.
 
 *acmpca-config.yaml*
-<pre>
+
+```yaml
 providerName: "aws"
 providerConfig:
   aws:
@@ -57,9 +58,10 @@ certificateParameters:
           - "engineering"
       emailaddresses:
         - "youremail@example.io"
-</pre>
+```
 
 Once we have the prerequisites satisfied and the config file created, we could run the [`getistio gen-ca`](/getistio-cli/reference/getistio_gen-ca) command to create the 'cacerts' Kubernetes secret as well as a local yaml file of the secret. `getistio` connects to the cluster your Kubernetes configuration  points to.
+
 ```sh
 getistio gen-ca --config-file acmpca-config.yaml
 ```

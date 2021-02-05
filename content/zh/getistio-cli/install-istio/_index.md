@@ -1,18 +1,21 @@
 ---
-title: "Install Istio"
+title: "安装 Istio"
 date: 2021-01-25T13:00:00+07:00
-description: "How to install Istio with GetIstio CLI"
+description: "如何使用 GetIstio CLI 安装 Istio。"
 # type dont remove or customize
 type : "docs"
 ---
-GetIstio by default communicates to the cluster defined by your Kubernetes configuration. Please make sure you’re connected to the correct cluster before proceeding.
+GetIstio 默认与你的 Kubernetes 配置所定义的集群进行通信。在继续之前，请确保你连接到了正确的集群。
 
-To install the demo profile of Istio, That can be done using [getistio istioctl](/getistio-cli/reference/getistio_istioctl) command
+要安装 Istio 的 demo profile，可以使用 [`getistio istioctl`](/getistio-cli/reference/getistio_istioctl) 命令来完成。
+
 ```sh
 getistio istioctl install --set profile=demo
 ```
 
-Output: <pre>
+输出：
+
+```text
 $ getistio istioctl install --set profile=demo
 This will install the Istio demo profile with ["Istio core" "Istiod" "Ingress gateways" "Egress gateways"] components into the cluster. Proceed? (y/N) Y
 ✔ Istio core installed
@@ -21,24 +24,33 @@ This will install the Istio demo profile with ["Istio core" "Istiod" "Ingress ga
 ✔ Egress gateways installed
 ✔ Installation complete </pre>
 Once this step is completed, the validation can be done by confirming the GetIstio and Istio versions installed, using the [version command](/getistio-cli/reference/getistio_version):
+```
+
 ```sh
 getistio version
 ```
-Output:<pre>
+
+输出：
+
+```text
 $ getistio version
 getistio version: 0.6.0
 active istioctl: 1.8.2-tetrate-v0
 client version: 1.8.2-tetrate-v0
 control plane version: 1.8.2-tetrate-v0
 data plane version: 1.8.2-tetrate-v0 (2 proxies)
-</pre>
+```
 
-In addition  to the version output, a user can validate the expected functionality by issuing the [config-validate command](/getistio-cli/reference/getistio_config-validate) (read more around [config validation](/config-validation)):
+除了版本输出之外，用户还可以通过发出 [config-validate 命令](/getistio-cli/reference/getistio_config-validate) 来验证预期的功能（阅读更多关于 [config 验证](/config-validation))。
+
 ```sh
 getistio config-validate
 ```
-With fresh install of Kubernetes cluster and Istio, the output will look similar to the below:
-<pre>$ getistio config-validate
+
+在重新安装 Kubernetes 集群和 Istio 的情况下，输出结果会类似于下面的样子：
+
+```text
+$ getistio config-validate
 Running the config validator. This may take some time...
 
 NAMESPACE       NAME    RESOURCE TYPE   ERROR CODE      SEVERITY        MESSAGE
@@ -48,4 +60,4 @@ default         default Namespace       IST0102         Info            The name
 The error codes of the found issues are prefixed by 'IST' or 'KIA'. For the detailed explanation, please refer to
 - https://istio.io/latest/docs/reference/config/analysis/ for 'IST' error codes
 - https://kiali.io/documentation/latest/validations/ for 'KIA' error codes
-</pre>
+```

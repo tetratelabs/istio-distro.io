@@ -10,7 +10,8 @@ type : "docs"
 
 [`getistio gen-ca`](/getistio-cli/reference/getistio_gen-ca) 命令提供了连接到 GCP CAS 并获得中间 CA 证书签名的选项。它使用这样获得的证书细节来创建 `cacerts` Kubernetes secret，供 Istio 用来签署工作负载证书。Istio 在启动时，会检查 `cacerts` secret 的存在，以决定是否需要使用这个 cert 来签署工作负载证书。
 
-前提条件：
+## 前提条件
+
 - 在 GCP CAS 中设立了一个 CA
 - 环境变量 `GOOGLE_APPLICATION_CREDENTIALS` 所指向的 GCP 凭证文件，以获取由 GCP CAS 签名的 CA 位设置的 CSR。这里给出了获取凭证文件的详细方法。
 
@@ -25,7 +26,7 @@ type : "docs"
 providerName: "gcp"
 providerConfig:
   gcp:
-    #  这将保存你在 GCP 上创建的证书颁发机构的完整 CA 名称。
+    # 这将保存你在 GCP 上创建的证书颁发机构的完整 CA 名称。
     casCAName: "projects/{project-id}/locations/{location}/certificateAuthorities/{YourCA}"
 
 certificateParameters:
@@ -63,4 +64,4 @@ certificateParameters:
 getistio gen-ca --config-file gcp-cas-config.yaml
 ```
 
-一旦运行该命令，你会发现在 `~/.getistio/secret/` 下创建了一个文件，并且在 `istio-system` 命名空间中创建了 `cacerts` secret。`istiod` 启动后会使用这个证书来签署工作负载证书。
+运行完该命令，你会发现在 `~/.getistio/secret/` 下创建了一个文件，并且在 `istio-system` 命名空间中创建了 `cacerts` secret。`istiod` 启动后会使用这个证书来签署工作负载证书。

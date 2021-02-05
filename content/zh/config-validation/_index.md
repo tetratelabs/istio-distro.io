@@ -1,7 +1,7 @@
 ---
-title: "配置校验"
+title: "配置验证"
 date: 2018-12-29T11:02:05+06:00
-description: "Istio 配置校验。"
+description: "Istio 配置验证。"
 # type dont remove or customize
 type : "docs"
 weight: 2
