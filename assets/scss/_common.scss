@@ -85,6 +85,7 @@ a:hover {
 .hero-section {
   background: rgba(255, 247, 239, 1);
   background: linear-gradient(0deg, #8894a9, #262f40);
+  padding-bottom: 0;
   // background: linear-gradient(0deg, #6b89c0, #0e1523);
   // background: radial-gradient(#6b89c0, #0e1523);
   // background: linear-gradient(0deg, #ede6e6, #dde4f1);
@@ -126,8 +127,8 @@ a:hover {
 }
 
 .cta-section {
-  padding-top: 40px;
-
+  // padding-top: 40px;
+  background: #29507D;
   .box {
     padding: 32px;
   }
@@ -135,6 +136,7 @@ a:hover {
   p {
     width: 75%;
     margin: 0 auto;
+    color: white;
   }
 
   .form-control {
