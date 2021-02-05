@@ -2,7 +2,7 @@
 title: "FAQ"
 date: 2018-12-28T11:02:05+06:00
 icon: "ti-settings" # themify icon pack : https://themify.me/themify-icons
-description: "Cras at dolor eget urna varius faucibus tempus in elit dolor sit amet."
+description: "GetIstio 常见问题。"
 # type dont remove or customize
 type : "docs"
 weight: 8

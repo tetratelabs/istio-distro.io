@@ -1,69 +1,75 @@
 ---
-title: "Manage multiple istioctl"
+title: "管理多个 istioctl"
 date: 2021-01-25T13:00:00+07:00
-description: "How to install Istio and manage multiple istioctl"
+description: "如何安装 Istio 和管理多个 istioctl。"
 # type dont remove or customize
 type : "docs"
 ---
-After downloading and [installing](/getistio-cli/install-istio) the latest trusted versions of GetIstio and Istio. We recommend always using  `getistio` to invoke `istioctl`. GetIstio eases switching between multiple versions of istioctl, and does version compatibility and configuration checks to ensure that only certified Istio is deployed.
 
-Refer to [Istio documentation](https://istio.io/latest/docs/reference/commands/istioctl) for the latest istioctl commands and options.
+下载并[安装](/getistio-cli/install-istio)了最新的 GetIstio 和 Istio 的可信版本后，我们建议使用 `getistio` 来调用 `istioctl`。我们建议始终使用 `getistio` 来调用 `istioctl`。GetIstio 可以轻松地在多个版本的 `istioctl` 之间切换，并进行版本兼容性和配置检查，以确保只部署经过认证的 Istio。
 
-Real-life requirements very often dictate the use of a different version of istioctl (than the latest version) or leveraging multiple versions of `istioctl` due custom configuration. The steps to achieve that are explained below.
+参考 [Istio 文档](https://istio.io/latest/docs/reference/commands/istioctl)，了解最新的 `istioctl` 命令和选项。
 
-List the currently downloaded versions of Istio through GetIstio using the [show command](/getistio-cli/reference/getistio_show):
+现实生活中的需求往往决定了使用不同版本的 `istioctl` (而不是最新版本) 或由于自定义配置而利用多个版本的 `istioctl`。下面介绍实现的步骤。
+
+通过 GetIstio 使用 [show 命令](/getistio-cli/reference/getistio_show)列出当前下载的 Istio 版本。
 
 ```sh
 getistio show
 ```
 
 Example output would be
-<pre>
+
+```text
 1.7.6-distro-v0
 1.8.1-distro-v0
 1.8.2-distro-v0 (Active)
-</pre>
+```
 
-If the required version of Istio is not yet downloaded, the operator can first query the list of trusted Istio versions through the [list command](/getistio-cli/reference/getistio_list):
+如果还没有下载到所需的 Istio 版本，操作者可以先通过 [list 命令](/getistio-cli/reference/getistio_list)查询可信的 Istio 版本列表。
+
 ```sh
 getistio list
 ```
 
-Example output would be:
-<pre>
+输出示例为：
+
+```text
  ISTIO VERSION   FLAVOR  FLAVOR VERSION   K8S VERSIONS  
     *1.8.2       tetrate       0         1.16,1.17,1.18  
      1.8.1       tetrate       1         1.16,1.17,1.18  
      1.7.6       tetratefips   2         1.16,1.17,1.18  
      1.7.5       tetratefips   3         1.16,1.17,1.18  
      1.7.4       tetrate       0         1.16,1.17,1.18  
-</pre>
-Below is an example of obtaining version 1.8.1 of Istio by leveraging the [fetch command](/getistio-cli/reference/getistio_fetch):
+```
+
+以下是利用 [fetch 命令](/getistio-cli/reference/getistio_fetch)获取 Istio 1.8.1 版本的例子。
 
 ```sh
 getistio fetch --version 1.8.1 --flavor tetrate --flavor-version 0 
 ```
 
-In the example above, `Flavor tetrate` maps to upstream Istio with the addition of possible patches and `Flavor tetratefips` is a FIPS-compliant version of the `Flavor tetrate`.
+在上面的例子中，`Flavor tetrate` 映射到上游 Istio，并添加了可能的补丁，`Flavor tetratefips` 是符合 FIPS 标准的 `Flavor tetrate` 版本。
 
-Use the [show command](/getistio-cli/reference/getistio_show) `getistio show` to cross check if the Istio version is downloaded and the output will list all versions and mark the active one:
+使用 [show 命令](/getistio-cli/reference/getistio_show) `getistio show` 交叉检查是否下载了 Istio 版本，输出将列出所有版本并标记活动版本。
 
-<pre>
+```text
 $ getistio show
 1.7.4-distro-v0
 1.7.6-distro-v0
 1.8.1-distro-v0 (Active)
 1.8.2-distro-v0
-</pre>
+```
 
-To switch to a different version of istioctl, run the [switch command](/getistio-cli/reference/getistio_switch) for example:
+要切换到不同版本的 istioctl，请运行 [switch 命令](/getistio-cli/reference/getistio_switch)，例如：
+
 ```sh
 getistio switch --version 1.8.1 --flavor tetrate --flavor-version=0
 ```
 
-Output would be something similar to:
+输出示例为：
 
-```
+```sh
 istioctl switched to 1.8.1-tetrate-v0 now
 ```
 
