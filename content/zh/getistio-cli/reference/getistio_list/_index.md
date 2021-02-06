@@ -1,6 +1,6 @@
 ---
 title: "getistio list"
-url: /getistio-cli/reference/getistio_list/
+url: /zh/getistio-cli/reference/getistio_list/
 ---
 
 List available Istio distributions built by Tetrate
