@@ -5,4 +5,5 @@ weight: 5
 draft: false
 ---
 Below you can find direct URL for Istio and istioctl distros: 
-{{< dwn_linux >}}
+
+{{< downloads linux >}}
