@@ -6,4 +6,4 @@ draft: false
 ---
 Below you can find direct URL for Istio and istioctl distros:
 
-{{< dwn_macos >}}
+{{< downloads osx >}}

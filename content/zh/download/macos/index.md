@@ -6,4 +6,4 @@ draft: false
 ---
 以下是 Istio 和 istioctl 发行版的下载链接。
 
-{{< dwn_macos >}}
+{{< downloads osx >}}
