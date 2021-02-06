@@ -1,6 +1,6 @@
 ---
 title: "getistio istioctl"
-url: /getistio-cli/reference/getistio_istioctl/
+url: /zh/getistio-cli/reference/getistio_istioctl/
 ---
 
 Execute istioctl with given arguments where the version of istioctl is specified at ~/.getistio/config.json.

@@ -1,6 +1,6 @@
 ---
 title: "getistio check-upgrade"
-url: /getistio-cli/reference/getistio_check-upgrade/
+url: /zh/getistio-cli/reference/getistio_check-upgrade/
 ---
 
 Check if there are patches available in the current minor version, e.g. 1.7-tetrate: 1.7.4-tetrate-v1 -> 1.7.5-tetrate-v1

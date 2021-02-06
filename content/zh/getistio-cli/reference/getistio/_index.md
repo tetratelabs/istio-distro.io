@@ -1,6 +1,6 @@
 ---
 title: "getistio"
-url: /getistio-cli/reference/getistio/
+url: /zh/getistio-cli/reference/getistio/
 ---
 
 GetIstio is an integration and lifecycle management CLI tool that ensures the use of supported and trusted versions of Istio.

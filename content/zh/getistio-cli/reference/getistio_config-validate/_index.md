@@ -1,6 +1,6 @@
 ---
 title: "getistio config-validate"
-url: /getistio-cli/reference/getistio_config-validate/
+url: /zh/getistio-cli/reference/getistio_config-validate/
 ---
 
 Validate the current Istio configurations in your cluster just like 'istioctl analyze'. Inspect all namespaces by default.

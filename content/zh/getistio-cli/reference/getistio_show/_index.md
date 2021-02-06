@@ -1,6 +1,6 @@
 ---
 title: "getistio show"
-url: /getistio-cli/reference/getistio_show/
+url: /zh/getistio-cli/reference/getistio_show/
 ---
 
 Show fetched Istio version
