@@ -1,6 +1,6 @@
 ---
 title: "getistio fetch"
-url: /getistio-cli/reference/getistio_fetch/
+url: /zh/getistio-cli/reference/getistio_fetch/
 ---
 
 Fetch istioctl of the specified version, flavor and flavor-version available in "getistio list" command

@@ -1,6 +1,6 @@
 ---
 title: "getistio switch"
-url: /getistio-cli/reference/getistio_switch/
+url: /zh/getistio-cli/reference/getistio_switch/
 ---
 
 Switch the active istioctl to the one of the specified version

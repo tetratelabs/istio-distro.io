@@ -1,6 +1,6 @@
 ---
 title: "getistio update"
-url: /getistio-cli/reference/getistio_update/
+url: /zh/getistio-cli/reference/getistio_update/
 ---
 
 Update getistio itself to the latest version

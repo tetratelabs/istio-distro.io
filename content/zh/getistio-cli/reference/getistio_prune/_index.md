@@ -1,6 +1,6 @@
 ---
 title: "getistio prune"
-url: /getistio-cli/reference/getistio_prune/
+url: /zh/getistio-cli/reference/getistio_prune/
 ---
 
 Remove all or a specific istioctl installed except the active one

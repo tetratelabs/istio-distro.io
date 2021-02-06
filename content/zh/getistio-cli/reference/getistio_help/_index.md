@@ -1,6 +1,6 @@
 ---
 title: "getistio help"
-url: /getistio-cli/reference/getistio_help/
+url: /zh/getistio-cli/reference/getistio_help/
 ---
 
 Help provides help for any command in the application.
