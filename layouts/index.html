@@ -2,43 +2,54 @@
 
 {{ $data := index .Site.Data .Site.Language.Lang }}
 
+{{ if $data.homepage.hero.enable }}
+{{ with $data.homepage.hero }}
 <div class="hero-section mb-0 jumbotron jumbotron-fluid">
   <div class="container">
     <div class="row">
       <div class="col-lg-6">
-        <h1 class="display-4">Simple, safe enterprise-grade Istio</h1>
+        <h1 class="display-4">{{ .title  }}</h1>
         <ul class="hero">
-          <li class="lead text-white">Easiest way of installing, operating and upgrading istio</li>
-          <li class="lead text-white">Tested and hardened for your application and cloud platform</li>
-          <li class="lead text-white">Community hub for users and ecosystem & partners</li>
+          {{ range .lead_item }}
+          <li class="lead text-white">{{ .content }}</li>
+          {{ end }}
         </ul>
       </div>
       <div class="col-lg-6 mt-md-4 mt-xl-0">
         <!-- embedded asciinema for the time being is more stable -->
-        {{/*  <asciinema-player src="/casts/387586.cast" font-size="11px"></asciinema-player>  */}}
-        <script src="https://asciinema.org/a/387586.js" id="asciicast-387586" data-size="11px" data-speed="2" async></script>
+        {{/*  <asciinema-player src="/casts/{{ .asciinema_id }}" font-size="11px"></asciinema-player>  */}}
+        <script src="https://asciinema.org/a/{{ .asciinema_id }}.js" id="asciicast-{{ .asciinema_id }}" data-size="11px" data-speed="2" async></script>
       </div>
     </div>
   </div>
+{{ end }}
+{{ end }}
+
+{{ if $data.homepage.subscribe.enable }}
+{{ with $data.homepage.subscribe }}
   <section class="cta-section mt-4 py-4">
     <div class="container mw-100">
       <div class="row justify-content-center">
         <div class="col-lg-6 text-center">
-          <p>GetIstio 1.0 is now available</p>
-          <p>Never miss new releases and community events</p>
+          {{ range .item }}
+          <p>{{ .content }}</p>
+          {{ end }}
           <div class="form-control cta-form" id="emailFormContainer">
             <form id="emailForm">
-              <input id="email" type="email" class="input" placeholder="Work Email" / required>
-              <button class="btn btn-sm btn-primary">Get Updates</button>
+                <input id="email" type="email" class="input" placeholder="{{ i18n "work_email"}}" / required>
+                <button class="btn btn-sm btn-primary">{{ i18n "get_updates" }}</button>
             </form>
           </div>
-          <span id="errorMessage">Please enter a valid email address</span>
-          <p id="formMessage">Thank you for subscribing.</p>
+          <span id="errorMessage">{{ .error_message }}</span>
+          <p id="formMessage">{{ .form_message }}</p>
         </div>
       </div>
     </div>
   </section>
 </div>
+{{ end }}
+{{ end }}
+
 
 <section class="section dictionary-section">
   <div class="container">
@@ -210,15 +221,15 @@
             <img src="{{ .Page.Params.image |relURL }}" />
             <p>{{ .Page.Description }}</p>
             <div class="event-actions row">
-              <a class="btn btn-sm" href="{{ .Page.RelPermalink }}">Learn More</a>
-              <a class="btn btn-sm btn-primary" href="{{ .Page.Params.eventLink }}">Go To Event</a>
+                <a class="btn btn-sm" href="{{ .Page.RelPermalink }}">{{ i18n "learn_more" }}</a>
+                <a class="btn btn-sm btn-primary" href="{{ .Page.Params.eventLink }}">{{ i18n "go_to_event" }}</a>
             </div>
           </div>
         </div>
       {{ end }}
       {{ end }}
     </div>
-  </div>    
+  </div>
 </section>
 
 <!-- call to action -->
@@ -253,7 +264,7 @@
     <div class="row">
       <div class="col-lg-12 text-center">
         <h4 class="mb-4">Need enterprise support for your Istio?</h4>
-        <a class="btn btn-sm btn-primary" href="https://www.tetrate.io">Get in touch</a>
+        <a class="btn btn-sm btn-primary" href="https://www.tetrate.io">{{ i18n "get_in_touch" }}</a>
       </div>
     </div>
   </div>
