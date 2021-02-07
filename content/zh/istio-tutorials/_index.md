@@ -2,7 +2,7 @@
 title: "Istio 教程"
 date: 2018-12-29T11:02:05+06:00
 icon: "ti-blackboard"
-description: "After you got Istio running, sharpen your Istio skill by following our tutorial."
+description: "运行 Istio 之后，按照我们的教程来训练你的 Istio 技能。"
 # type dont remove or customize
 type : "docs"
 weight: 4
