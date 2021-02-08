@@ -3,7 +3,7 @@ title: "getistio switch"
 url: /getistio-cli/reference/getistio_switch/
 ---
 
-Switch the active istioctl to the one of the specified version
+Switch the active istioctl to a specified version
 
 ```
 getistio switch <istio version> [flags]

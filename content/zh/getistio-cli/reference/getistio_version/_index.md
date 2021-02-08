@@ -1,9 +1,9 @@
 ---
 title: "getistio version"
-url: /zh/getistio-cli/reference/getistio_version/
+url: /getistio-cli/reference/getistio_version/
 ---
 
-Show the versions of GetIstio running Istiod, Envoy, and the active istioctl's path
+Show the versions of GetIstio cli, running Istiod, Envoy, and the active istioctl
 
 ```
 getistio version [flags]
@@ -24,5 +24,5 @@ getistio version [flags]
 
 #### SEE ALSO
 
-* [getistio](/zh/getistio-cli/reference/getistio/)	 - GetIstio is an integration and lifecycle management CLI tool that ensures the use of supported and trusted versions of Istio.
+* [getistio](/getistio-cli/reference/getistio/)	 - GetIstio is an integration and lifecycle management CLI tool that ensures the use of supported and trusted versions of Istio.
 

@@ -1,6 +1,6 @@
 ---
 title: "getistio fetch"
-url: /zh/getistio-cli/reference/getistio_fetch/
+url: /getistio-cli/reference/getistio_fetch/
 ---
 
 Fetch istioctl of the specified version, flavor and flavor-version available in "getistio list" command
@@ -63,5 +63,5 @@ For more information, please refer to "getistio list --help" command.
 
 #### SEE ALSO
 
-* [getistio](/zh/getistio-cli/reference/getistio/)	 - GetIstio is an integration and lifecycle management CLI tool that ensures the use of supported and trusted versions of Istio.
+* [getistio](/getistio-cli/reference/getistio/)	 - GetIstio is an integration and lifecycle management CLI tool that ensures the use of supported and trusted versions of Istio.
 

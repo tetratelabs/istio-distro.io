@@ -1,9 +1,9 @@
 ---
 title: "getistio prune"
-url: /zh/getistio-cli/reference/getistio_prune/
+url: /getistio-cli/reference/getistio_prune/
 ---
 
-Remove all or a specific istioctl installed except the active one
+Remove specific istioctl installed, or all, except the active one
 
 ```
 getistio prune [flags]
@@ -37,5 +37,5 @@ $ getistio prune --version 1.7.4 --flavor tetrate --flavor-version 0
 
 #### SEE ALSO
 
-* [getistio](/zh/getistio-cli/reference/getistio/)	 - GetIstio is an integration and lifecycle management CLI tool that ensures the use of supported and trusted versions of Istio.
+* [getistio](/getistio-cli/reference/getistio/)	 - GetIstio is an integration and lifecycle management CLI tool that ensures the use of supported and trusted versions of Istio.
 

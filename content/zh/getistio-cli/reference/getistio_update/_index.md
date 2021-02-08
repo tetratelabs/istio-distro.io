@@ -1,6 +1,6 @@
 ---
 title: "getistio update"
-url: /zh/getistio-cli/reference/getistio_update/
+url: /getistio-cli/reference/getistio_update/
 ---
 
 Update getistio itself to the latest version
@@ -23,5 +23,5 @@ getistio update [flags]
 
 #### SEE ALSO
 
-* [getistio](/zh/getistio-cli/reference/getistio/)	 - GetIstio is an integration and lifecycle management CLI tool that ensures the use of supported and trusted versions of Istio.
+* [getistio](/getistio-cli/reference/getistio/)	 - GetIstio is an integration and lifecycle management CLI tool that ensures the use of supported and trusted versions of Istio.
 
