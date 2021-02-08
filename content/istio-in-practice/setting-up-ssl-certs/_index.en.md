@@ -13,7 +13,7 @@ We will learn how to manually create a self-signed certificate, followed by obta
 
 For you to follow along, you will need an actual, cloud-hosted Kubernetes cluster. A cloud-hosted cluster is required because we will need an external IP address to hook up a domain name to. Of course, you will also need a domain name. 
 
-You can follow the [prerequisites](/istio-in-practice/prerequisites) for instructions on how to install Istio. 
+You can follow the [prerequisites](/istio-in-practice/prerequisites) for instructions on how to install and setup Istio. 
 
 
 ### Deploying a sample application

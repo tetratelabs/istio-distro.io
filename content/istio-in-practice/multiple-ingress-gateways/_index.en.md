@@ -45,6 +45,8 @@ To get started, we need to look at the Istio configuration for a single ingress 
 getistio istioctl profile dump --config-path components.ingressGateways > ingress-gateway.yaml
 ```
 
+>If you see a message saying `proto: tag has too few fields: "-"`, you can safely ignore it.
+
 Here's how the contents of the `ingress-gateway.yaml` file look like:
 
 ```yaml
@@ -101,7 +103,7 @@ Here's how the contents of the `ingress-gateway.yaml` file look like:
   name: istio-ingressgateway
 ```
 
-The settings defined above are for the default Istio ingress gateway. The YAML includes the HorizontalPodAutoscaler configuration, resource limits and requests, service ports, deployment strategy, and environment variables.
+The settings defined above are for the default Istio ingress gateway. The YAML includes the HorizontalPodAutoscaler configuration (`hpaSpec`), resource limits and requests (`resources`), service ports (`ports`), deployment strategy (`strategy`), and environment variables (`env`).
 
 When installing Istio, we can define one or more Gateways directly in the IstioOperator resource. Here's an example of an Istio operator that deploys a single (default) ingress gateway:
 
@@ -181,7 +183,7 @@ You'll notice a running `istio-ingressgateway-staging` Pod and a `istio-ingressg
 
 #### Testing multiple Istio Gateways
 
-Time to test the gateways! Make sure you have labeled the default namespace with `istio-injection=enabled` and then use the snippet below to create a Service, Deployment, Gateway, and a VirtualService.
+Time to test the gateways! Make sure you have labeled the `default` namespace with `istio-injection=enabled` (see [Prerequisites](./prerequisites)) and then use the snippet below to create a Service, Deployment, Gateway, and a VirtualService.
 
 ```sh
 cat << EOF | kubectl apply -f -
@@ -189,6 +191,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: nginx
+  namespace: default
   labels:
     app: nginx
 spec:
@@ -202,6 +205,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx
+  namespace: default
   labels:
     app: nginx
 spec:
@@ -225,6 +229,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
   name: gateway
+  namespace: default
 spec:
   selector:
     istio: ingressgateway
@@ -240,6 +245,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
   name: nginx-1
+  namespace: default
 spec:
   hosts:
   - "*"
@@ -268,12 +274,13 @@ kubectl get svc istio-ingressgateway-staging -n staging  -o jsonpath='{.status.l
 
 You won't be able to connect to the staging ingress gateway, and this is expected. We haven't deployed any Gateway resources that would configure the ingress. Let's update the label value to `istio-ingressgateway-staging` and re-deploy the Gateway resource:
 
-```sh {hl_lines=[8]}
+```sh {hl_lines=[9]}
 cat <<EOF | kubectl apply -f -
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
   name: gateway
+  namespace: default
 spec:
   selector:
     istio: istio-ingressgateway-staging
