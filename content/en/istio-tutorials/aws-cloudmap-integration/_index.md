@@ -23,9 +23,11 @@ a ServiceEntry resource in the k8s cluster.
 
 ## Deploying Istio Cloud Map Operator
 
+Before proceed, make sure Isito is installed in your k8s cluster. Details refer to [Install Istio through GetIstio](/getistio-cli/install-istio/).
+
 __1. Download the manifests located [here](https://github.com/tetratelabs/istio-cloud-map/tree/v0.2.0/kubernetes).__
 
-__2. Create an AWS IAM identity with read access to AWS Cloud Map for the operator to use.__    
+__2. Create an AWS IAM identity with read access to AWS Cloud Map for the operator.__
 
 __3. Modify the yaml named `aws-config.yaml` for__ 
 
@@ -63,11 +65,11 @@ Assuming that you have the following data in you AWS Cloud Map,
 
 ```bash
 # list the service in Cloud Map
-$ aws servicediscovery list-services --region us-west-1 | jq '.Services[] | "Name: \(.Name), Id: \(.Id)"'
+$ aws servicediscovery list-services | jq '.Services[] | "Name: \(.Name), Id: \(.Id)"'
 "Name: getistio-external-service, Id: srv-ou6hvfmjpls2lev6"
 
 # check namespace of your service
-$ aws servicediscovery get-namespace --id $(aws servicediscovery --region us-west-1 get-service --id srv-ou6hvfmjpls2lev6 | jq -r '.Service.NamespaceId') | jq '.Namespace.Name'
+$ aws servicediscovery get-namespace --id $(aws servicediscovery get-service --id srv-ou6hvfmjpls2lev6 | jq -r '.Service.NamespaceId') | jq '.Namespace.Name'
 "my-namespace"
 
 # list endpoints
@@ -80,7 +82,7 @@ $ aws servicediscovery list-instances --service-id srv-ou6hvfmjpls2lev6 | jq '.I
 Then you can verify the deployment by checking that a ServiceEntry is created, and it stores exactly the same endpoint information in AWS Cloud Map:
 
 ```bash
-$ k get serviceentries.networking.istio.io cloudmap-getistio-external-service.my-namespace -oyaml
+$ kubectl get serviceentries.networking.istio.io cloudmap-getistio-external-service.my-namespace -oyaml
 apiVersion: networking.istio.io/v1beta1
 kind: ServiceEntry
 metadata:
