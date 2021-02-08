@@ -19,7 +19,7 @@ unsafe = true
 
 [caches.getjson]
 dir = ":cacheDir/:project"
-maxAge = 0
+maxAge = "10s"
 
 [markup]
   [markup.highlight]
