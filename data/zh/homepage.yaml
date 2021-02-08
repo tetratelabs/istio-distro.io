@@ -1,0 +1,28 @@
+########################## Hero section ################################
+hero:
+  title: "简单，安全，企业级的 Istio"
+  enable: true
+  lead_item:
+    - content: "最简单的安装、操作和升级 Istio 的方法"
+    - content: "为您的应用和云平台进行测试和加固"
+    - content: "用户、生态系统和合作伙伴的社区中心"
+  asciinema_id: 387586
+
+########################## Subsribe section #############################
+subscribe:
+  enable: true
+  item:
+    - content: "GetIstio 1.0 已就绪"
+    - content: "不要错过新版本和社区活动"
+  error_message: "请输入有效的邮箱地址。"
+  form_message: "感谢您订阅。"
+
+########################## Dictionary section #############################
+dictionary:
+  enable: true
+  title: "什么是 GetIstio"
+
+########################## Support section ###########################
+support:
+  enable: true
+  title: "需要为您的 Istio 提供企业支持？"

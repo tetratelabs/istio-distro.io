@@ -89,7 +89,7 @@
       <div class="d-lg-flex d-none">
         {{ range site.Params.nav_button }}
         <a href="{{ .link | relLangURL }}"
-          class="btn btn-sm {{if eq .style `outline`}}btn-outline-primary{{else}}btn-primary{{end}} ml-lg-4">{{ .label }}</a>
+           class="btn btn-sm {{if eq .style `outline`}}btn-outline-primary{{else}}btn-primary{{end}} ml-lg-4">{{ i18n .label }}</a>
         {{ end }}
       </div>
       <!-- /for desktop -->

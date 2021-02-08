@@ -1,0 +1,33 @@
+########################## Hero Block ################################
+hero:
+  title: "Simple, safe enterprise-grade Istio"
+  enable: true
+  lead_item:
+    - content: "Easiest way of installing, operating and upgrading istio"
+    - content: "Tested and hardened for your application and cloud platform"
+    - content: "Community hub for users and ecosystem & partners"
+  asciinema_id: 387586
+
+########################## Subsribe section ##########################
+subscribe:
+  enable: true
+  item:
+    - content: "GetIstio 1.0 is now available"
+    - content: "Never miss new releases and community events"
+  error_message: "Please enter a valid email address."
+  form_message: "Thank you for subscribing."
+
+########################## Dictionary section ########################
+dictionary:
+  enable: true
+  title: "What is Get•Is•ti•o"
+
+########################## Event section #############################
+event:
+  enable: true
+  title: "What is Get•Is•ti•o"
+
+########################## Support section ###########################
+support:
+  enable: true
+  title: "Need enterprise support for your Istio?"
