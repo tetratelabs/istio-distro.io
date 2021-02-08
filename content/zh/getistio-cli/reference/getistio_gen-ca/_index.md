@@ -1,9 +1,9 @@
 ---
 title: "getistio gen-ca"
-url: /zh/getistio-cli/reference/getistio_gen-ca/
+url: /getistio-cli/reference/getistio_gen-ca/
 ---
 
-Generates Intermediate CA from different managed services such as AWS ACMPCA, GCP CAS
+Generates intermediate CA from different managed services such as AWS ACMPCA, GCP CAS
 
 ```
 getistio gen-ca [flags]
@@ -43,5 +43,5 @@ getistio gen-ca [flags]
 
 #### SEE ALSO
 
-* [getistio](/zh/getistio-cli/reference/getistio/)	 - GetIstio is an integration and lifecycle management CLI tool that ensures the use of supported and trusted versions of Istio.
+* [getistio](/getistio-cli/reference/getistio/)	 - GetIstio is an integration and lifecycle management CLI tool that ensures the use of supported and trusted versions of Istio.
 

@@ -3,7 +3,7 @@ title: "getistio version"
 url: /getistio-cli/reference/getistio_version/
 ---
 
-Show the versions of GetIstio running Istiod, Envoy, and the active istioctl's path
+Show the versions of GetIstio cli, running Istiod, Envoy, and the active istioctl
 
 ```
 getistio version [flags]
