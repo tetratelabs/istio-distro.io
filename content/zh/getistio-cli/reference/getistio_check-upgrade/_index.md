@@ -1,6 +1,6 @@
 ---
 title: "getistio check-upgrade"
-url: /getistio-cli/reference/getistio_check-upgrade/
+url: /zh/getistio-cli/reference/getistio_check-upgrade/
 ---
 
 Check if there are patches available in the current minor version, e.g. 1.7-tetrate: 1.7.4-tetrate-v1 -> 1.7.5-tetrate-v1
@@ -39,5 +39,5 @@ Please refer to 'getistio fetch --help' or 'getistio list --help' for more infor
 
 #### SEE ALSO
 
-* [getistio](/getistio-cli/reference/getistio/)	 - GetIstio is an integration and lifecycle management CLI tool that ensures the use of supported and trusted versions of Istio.
+* [getistio](/zh/getistio-cli/reference/getistio/)	 - GetIstio is an integration and lifecycle management CLI tool that ensures the use of supported and trusted versions of Istio.
 
