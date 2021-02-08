@@ -1,8 +1,9 @@
 {{ "<!-- details page -->" | safeHTML }}
 <section class="pt-5">
+  {{- partial "mobile-nav.html" . -}}
   <div class="container shadow section-sm rounded docs-content">
     <div class="row">
-      <div class="col-lg-3 col-md-4 d-none d-md-block">
+      <div class="col-lg-3 d-none d-md-none d-lg-block">
         <ul class="sidenav">
           {{ $currentNode := . }}
           {{range (where .Site.Pages "Type" "docs")}}
@@ -16,7 +17,7 @@
           {{ end }}
         </ul>
       </div>
-      <div class="col-md-9">
+      <div class="col-lg-9">
         <div class="px-lg-5 px-4">
           <h2 class="mb-4 font-weight-medium">{{ .Title }}</h2>
           {{ if .Content }}
@@ -71,6 +72,9 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="mt-4">
+    {{- partial "mobile-nav.html" . -}}
   </div>
 </section>
 {{ "<!-- /details page -->" | safeHTML }}
