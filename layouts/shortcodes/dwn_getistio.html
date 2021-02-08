@@ -1,31 +1,30 @@
-<strong>GetIstio ensures that all Istio releases are supported for at least 14 months from release date.</strong>
-<br>
-<br>
-The currently supported Istio versions are <strong>
+<p><strong>GetIstio ensures that all Istio releases are supported for at least 14 months from release date.</strong></p>
+
+<p>
+  The currently supported Istio versions are <strong>
+  {{ $manifest := getJSON "https://tetrate.bintray.com/getistio/manifest.json" }}
+
+    {{ range $manifest.istio_distributions }}
+      {{ $.Scratch.Add "version_list" (slice .version) }}
+    {{ end }}
+      {{ $version_sorted := .Scratch.Get "version_list" }}
+
+      {{ range $version_value := $version_sorted }} {{ $.Scratch.Add "version_trimmed" (slice (strings.TrimRight "." (slicestr $version_value 0 4))) }} {{ end }}
+      {{ delimit (uniq (.Scratch.Get "version_trimmed")) ", " " and " }}
+
+  </strong>
+</p>
+
+<p><strong>The following versions will be out of support in the next two months</strong> - please upgrade to the supported versions.
 {{ $manifest := getJSON "https://tetrate.bintray.com/getistio/manifest.json" }}
-
-   {{ range $manifest.istio_distributions }}
-     {{ $.Scratch.Add "version_list" (slice .version) }}
-   {{ end }}
-     {{ $version_sorted := .Scratch.Get "version_list" }}
-
-     {{ range $version_value := $version_sorted }} {{ $.Scratch.Add "version_trimmed" (slice (strings.TrimRight "." (slicestr $version_value 0 4))) }} {{ end }}
-     {{ delimit (uniq (.Scratch.Get "version_trimmed")) ", " " and " }}
-
-</strong>
-<br>
-<br>
-<strong>The following versions will be out of support in the next two months</strong> - please upgrade to the supported versions.
-{{ $manifest := getJSON "https://tetrate.bintray.com/getistio/manifest.json" }}
-     {{ range $version, $eos_time := $manifest.istio_minor_versions_eol_dates }}
-        
-        {{ $time_json := time $eos_time }}
-	{{ $time_unix := $time_json.Unix }}
-	{{ $current_time := time.Now.Unix }}
-	{{ $60_days := 5184000 }}
-	{{ $time_difference := sub $time_unix $current_time }}
-        {{ if and (gt $time_difference 0) (gt $60_days $time_difference) }}
-           <strong>  {{ $version }} (ends on {{ $eos_time }}), </strong>  
-	{{ end }}
-     {{ end }}
-
+{{ range $version, $eos_time := $manifest.istio_minor_versions_eol_dates }}
+  {{ $time_json := time $eos_time }}
+  {{ $time_unix := $time_json.Unix }}
+  {{ $current_time := time.Now.Unix }}
+  {{ $60_days := 5184000 }}
+  {{ $time_difference := sub $time_unix $current_time }}
+    {{ if and (gt $time_difference 0) (gt $60_days $time_difference) }}
+      <strong>  {{ $version }} (ends on {{ $eos_time }}), </strong>  
+    {{ end }}
+{{ end }}
+</p>
