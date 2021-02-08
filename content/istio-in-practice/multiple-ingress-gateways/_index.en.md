@@ -45,7 +45,7 @@ To get started, we need to look at the Istio configuration for a single ingress 
 getistio istioctl profile dump --config-path components.ingressGateways > ingress-gateway.yaml
 ```
 
->If you see a message saying `proto: tag has too few fields: "-"`, you can safely ignore it.
+>If you see a message saying `proto: tag has too few fields: "-"`, you can safely ignore it. This is a [known issue](https://github.com/istio/istio/issues/26751) that's being currently worked on.
 
 Here's how the contents of the `ingress-gateway.yaml` file look like:
 

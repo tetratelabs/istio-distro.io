@@ -21,6 +21,8 @@ The idea behind **traffic mirroring** is to minimize the risk of exposing users 
 
 You can then observe the application receiving mirrored traffic for errors without impacting any production traffic. In addition to running various tests on the deployed version of the application, we can now also use actual production traffic and increase the testing coverage. This gives us more confidence and minimizing the risk of releasing something that doesn't work correctly.
 
+Note that the requests that are sent to the mirrored instance are "fire and forget", and any responses the mirror instance sends back are ignored. 
+
 Here's a quick YAML snippet that shows how to enable traffic mirroring with Istio.
 
 ```yaml
