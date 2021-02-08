@@ -9,7 +9,7 @@ The idea behind sticky sessions is to route the requests for a particular sessio
 
 #### Prerequisites
 
-You can follow the [prerequisites](/istio-in-practice/prerequisites) for instructions on how to install Istio.
+You can follow the [prerequisites](/istio-in-practice/prerequisites) for instructions on how to install and setup Istio.
 
 #### Sticky Sessions
 
@@ -39,6 +39,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: sticky-svc
+  namespace: default
   labels:
     app: sticky-svc
     version: v1
@@ -65,6 +66,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: sticky-svc
+  namespace: default
   labels:
     app: sticky-svc
 spec:
@@ -77,13 +79,35 @@ spec:
 
 Save the above YAML to `sticky-deployment.yaml` and run `kubectl apply -f sticky-deployment.yaml` to create the Deployment and Service.
 
-Next, we can deploy the VirtualService and attach it to the Gateway. 
+To access the service from an external IP, we also need a Gateway resource:
+
+```yaml
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: gateway
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+    - port:
+        number: 80
+        name: http
+        protocol: HTTP
+      hosts:
+        - '*'
+```
+
+Save the above YAML to `gateway.yaml` and deploy it using `kubectl apply -f gateway.yaml`.
+
+Next, we can deploy the VirtualService and attach it to the Gateway.
 
 ```yaml
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
   name: sticky-svc
+  namespace: default
 spec:
   hosts:
     - '*'
@@ -127,6 +151,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
     name: sticky-svc
+    namespace: default
 spec:
     host: sticky-service.default.svc.cluster.local
     trafficPolicy:
@@ -143,6 +168,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
     name: sticky-svc
+    namespace: default
 spec:
     host: sticky-svc.default.svc.cluster.local
     trafficPolicy:

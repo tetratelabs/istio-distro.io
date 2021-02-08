@@ -45,3 +45,66 @@ Finally, to install the demo profile of Istio, use the following command:
 ```sh
 getistio istioctl install --set profile=demo
 ```
+
+#### 3. Label the namespace for Istio sidecar injection
+
+We need to label the namespace where we want Istio to inject the sidecar proxies to Kubernetes deployments automatically. 
+
+To label the namepace, we can use the `kubectl label` command and label the namespace (`default` in our case) with a label called `istio-injection=enabled`:
+
+```sh
+kubectl label namespace default istio-injection=enabled
+```
+
+#### 4. Hello world application (OPTIONAL)
+
+As a sample to deploy on your cluster, you can use the Hello World Web application. You can pull the image from `gcr.io/tetratelabs/hello-world:1.0.0`, and use the commands below to create a Kubernetes deployment and Service.
+
+```sh
+kubectl create deploy helloworld --image=gcr.io/tetratelabs/hello-world:1.0.0 --port=3000
+```
+
+Copy the below YAML to `helloworld-svc.yaml` and deploy it using `kubectl apply -f helloworld-svc.yaml`.
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: helloworld
+  labels:
+    app: helloworld
+spec:
+  ports:
+  - name: http
+    port: 80
+    targetPort: 3000
+  selector:
+    app: helloworld
+```
+
+To access the service from an external IP, we also need a Gateway resource:
+
+```yaml
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: public-gateway
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+    - port:
+        number: 80
+        name: http
+        protocol: HTTP
+      hosts:
+        - '*'
+```
+
+Save the above YAML to `gateway.yaml` and deploy it using `kubectl apply -f gateway.yaml`.
+
+We can now access the deployed Hello World web application through the external IP address. You can get the IP address using this command:
+
+```sh
+kubectl get svc istio-ingressgateway -n istio-system  -o jsonpath='{.status.loadBalancer.ingress[0].ip}'
+```

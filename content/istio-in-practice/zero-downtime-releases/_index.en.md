@@ -9,6 +9,10 @@ The purpose of the zero-downtime release is to release a new version of the appl
 
 You might wonder why we would use Istio to do rolling updates if the Kubernetes option is much simpler. That's true, and you probably shouldn't be using Istio if zero-downtime deployments are the only thing you're going to use it for. You can achieve the same behavior with Istio. However, you have way more control over how and when the traffic gets routed to a specific version.
 
+#### Prerequisites
+
+You can follow the [prerequisites](/istio-in-practice/prerequisites) for instructions on how to install and setup Istio.
+
 #### Kubernetes Deployments need to be versioned
 
 Each deployment of the service needs to be versioned - you need a label called `version: v1` (or `release: prod` or anything similar to that), as well as name the deployment, so it's clear which version it represents (e.g. `helloworld-v1`). Usually, you'd have at minimum these two labels set on each deployment:
