@@ -20,9 +20,9 @@ GetIstio is an integration and lifecycle management CLI tool that ensures the us
 * [getistio gen-ca](/zh/getistio-cli/reference/getistio_gen-ca/)	 - Generate intermediate CA
 * [getistio istioctl](/zh/getistio-cli/reference/getistio_istioctl/)	 - Execute istioctl with given arguments
 * [getistio list](/zh/getistio-cli/reference/getistio_list/)	 - List available Istio distributions built by Tetrate
-* [getistio prune](/zh/getistio-cli/reference/getistio_prune/)	 - Remove specific istioctl installed, or all, except the active one 
+* [getistio prune](/zh/getistio-cli/reference/getistio_prune/)	 - Remove specific istioctl installed, or all, except the active one
 * [getistio show](/zh/getistio-cli/reference/getistio_show/)	 - Show fetched Istio versions
 * [getistio switch](/zh/getistio-cli/reference/getistio_switch/)	 - Switch the active istioctl to a specified version
 * [getistio update](/zh/getistio-cli/reference/getistio_update/)	 - Update getistio itself to the latest version
-* [getistio version](/zh/getistio-cli/reference/getistio_version/)	 - Show the versions of GetIstio running Istiod, Envoy, and the active istioctl's path
+* [getistio version](/zh/getistio-cli/reference/getistio_version/)	 - Show the versions of GetIstio cli, running Istiod, Envoy, and the active istioctl
 
