@@ -1,0 +1,47 @@
+- id: search
+  translation: Search
+
+- id: search_placeholder
+  translation: Search Here...
+
+- id: topics
+  translation: Browse Your Topics
+
+- id: first_name
+  translation: First Name
+
+- id: last_name
+  translation: Last Name
+
+- id: email
+  translation: Email
+
+- id: contact_reason
+  translation: Reason of Contact
+
+- id: write_message
+  translation: Start Writing From Here
+
+- id: send
+  translation: Send
+
+- id: search_result
+  translation: Search result for
+
+- id: download
+  translation: 下载
+
+- id: work_email
+  translation: 邮箱
+
+- id: get_updates
+  translation: 订阅更新
+
+- id: learn_more
+  translation: 了解详情
+
+- id: go_to_event
+  translation: 转到活动
+
+- id: get_in_touch
+  translation: 联系我们

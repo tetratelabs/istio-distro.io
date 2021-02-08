@@ -27,3 +27,21 @@
 
 - id: search_result
   translation: Search result for
+
+- id: download
+  translation: Download
+
+- id: work_email
+  translation: Work Email
+
+- id: get_updates
+  translation: Get Updates
+
+- id: learn_more
+  translation: Learn More
+
+- id: go_to_event
+  translation: Go to Event
+
+- id: get_in_touch
+  translation: Get in Touch
