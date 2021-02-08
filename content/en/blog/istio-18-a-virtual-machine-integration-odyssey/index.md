@@ -6,7 +6,7 @@ bg_image: "images/backgrounds/page-title.jpg"
 # meta description
 description : "Get Istio 1.0.0 Released With Transparent Proxying For VMs & New Retry Policy"
 # thumbnail
-thumbnail: "https://mdbootstrap.com/img/new/standard/nature/184.jpg"
+thumbnail: "https://www.tetrate.io/wp-content/uploads/2021/01/fiber-4814456_1920.jpg"
 ---
 ![Istio](https://www.tetrate.io/wp-content/uploads/2021/01/fiber-4814456_1920.jpg)
 
