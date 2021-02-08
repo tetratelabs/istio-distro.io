@@ -32,7 +32,7 @@
 {{ $currentNodeFileUniqueID := "" }}
 {{ with $currentNode.File }}{{ $currentNodeFileUniqueID = .UniqueID }}{{ end }}
 <li data-nav-id="{{.Permalink | relURL }}" title="{{.Title}}"
-  class="sidelist {{if .IsAncestor $currentNode }}parent{{end}} {{if eq $fileUniqueID $currentNodeFileUniqueID}}active{{end}}">
+  class="sidelist {{if .IsAncestor $currentNode }}parent{{end}} {{if eq $fileUniqueID $currentNodeFileUniqueID}}active{{end}} my-2 ml-3">
   <a href="{{.Permalink | relURL }}">{{.Title }}</a>
   {{ $numberOfPages := (add (len .Pages) (len .Sections)) }}
   {{ if ne $numberOfPages 0 }}
