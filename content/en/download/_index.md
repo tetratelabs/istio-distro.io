@@ -16,8 +16,26 @@ curl -sL https://tetrate.bintray.com/getistio/download.sh | bash
 
 Please follow [GetIstio Install and Update Page]({{< ref "/getistio-cli/install-and-update-of-getistio" >}}) for detailed instruction on downloading and subsequent steps to have GetIstio up and running in your machine.
 
-There are additional pages that allow download of <strong>Istio distributions and istioctl</strong> binaries for [Linux]({{< relref "linux" >}}), [MacOS]({{< relref "macos" >}}), and [Windows]({{< relref "windows" >}}). We recommend using GetIsio to obtain the required files.
+There are additional download of <strong>Istio distributions and istioctl</strong> binaries for [Linux]({{< relref "#linux-istio-distros" >}}), [MacOS]({{< relref "#macos-istio-distros" >}}) and [Windows]({{< relref "#windows-istio-distros" >}}) that you can find in this page. We recommend using GetIsio to obtain the required files.
 
 ### Supported Istio Versions
 
 {{< dwn_getistio >}}
+
+### Istio Binaries Download
+
+#### Linux Istio Distros
+
+Below you can find direct URL for Istio and istioctl distros: 
+{{< downloads linux >}}
+
+#### MacOS Istio Distros
+
+Below you can find direct URL for Istio and istioctl distros: 
+{{< downloads osx >}}
+
+#### Windows Istio Distros
+
+Below you can find direct URL for Istio and istioctl distros: 
+{{< downloads windows >}}
+
