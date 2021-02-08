@@ -1,0 +1,42 @@
+{{ "<!-- navigation -->" | safeHTML }}
+<div class="container d-block d-sm-block d-lg-none">
+  <div class="row justify-content-center mb-4">
+    <div class="dropdown">
+      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Browse Docs
+      <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        {{ $currentNode := . }}
+        {{range (where .Site.Pages "Type" "docs")}}
+        <!-- not render any single page, like contact page. -->
+        {{ $numberOfMainPages := len .Pages }}
+        {{ if eq $numberOfMainPages 0 }}
+        {{ else }}
+        <!-- /not render any single page, like contact page. -->
+        {{ template "section-tree-nav-mobile" dict "sect" . "currentnode" $currentNode}}
+        {{ end }}
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+</div>
+{{ "<!-- navigation -->" | safeHTML }}
+
+<!-- templates -->
+{{ define "section-tree-nav-mobile" }}
+{{ $showvisitedlinks := .showvisitedlinks }}
+{{ $currentNode := .currentnode }}
+{{with .sect}}
+{{safeHTML .Params.head}}
+{{ $fileUniqueID := "" }}
+{{ with .File }}{{ $fileUniqueID = .UniqueID }}{{ end }}
+{{ $currentNodeFileUniqueID := "" }}
+{{ with $currentNode.File }}{{ $currentNodeFileUniqueID = .UniqueID }}{{ end }}
+<li data-nav-id="{{.Permalink | relURL }}" title="{{.Title}}"
+  class="sidelist {{if .IsAncestor $currentNode }}parent{{end}} {{if eq $fileUniqueID $currentNodeFileUniqueID}}active{{end}}">
+  <a href="{{.Permalink | relURL }}">{{.Title }}</a>
+  {{ $numberOfPages := (add (len .Pages) (len .Sections)) }}
+  {{ if ne $numberOfPages 0 }}
+</li>
+{{ end }}
+{{ end }}
+{{ end }}
