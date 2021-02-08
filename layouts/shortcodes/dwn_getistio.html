@@ -1,6 +1,5 @@
-<strong>GetIstio ensures that all Istio releases are supported for at least 14 months from release date.</strong>
-<br>
-<br>
+<strong>GetIstio ensures that all Istio releases are supported for at least 14 months from release date.</strong><br><br>
+
 The currently supported Istio versions are <strong>
 {{ $manifest := getJSON "https://tetrate.bintray.com/getistio/manifest.json" }}
 
@@ -8,24 +7,35 @@ The currently supported Istio versions are <strong>
      {{ $.Scratch.Add "version_list" (slice .version) }}
    {{ end }}
      {{ $version_sorted := .Scratch.Get "version_list" }}
-
-     {{ range $version_value := $version_sorted }} {{ $.Scratch.Add "version_trimmed" (slice (strings.TrimRight "." (slicestr $version_value 0 4))) }} {{ end }}
+     {{ range $version_value := $version_sorted }} 
+       {{ $.Scratch.Add "version_trimmed" (slice (strings.TrimRight "." (slicestr $version_value 0 4))) }} 
+     {{ end }}
      {{ delimit (uniq (.Scratch.Get "version_trimmed")) ", " " and " }}
 
-</strong>
-<br>
-<br>
-<strong>The following versions will be out of support in the next two months</strong> - please upgrade to the supported versions.
+</strong><br><br>
+
 {{ $manifest := getJSON "https://tetrate.bintray.com/getistio/manifest.json" }}
+     {{ $.Scratch.Set "eos_list" slice  }}
      {{ range $version, $eos_time := $manifest.istio_minor_versions_eol_dates }}
-        
+	{{ $.Scratch.Delete "eos_item" }}
         {{ $time_json := time $eos_time }}
 	{{ $time_unix := $time_json.Unix }}
 	{{ $current_time := time.Now.Unix }}
 	{{ $60_days := 5184000 }}
 	{{ $time_difference := sub $time_unix $current_time }}
         {{ if and (gt $time_difference 0) (gt $60_days $time_difference) }}
-           <strong>  {{ $version }} (ends on {{ $eos_time }}), </strong>  
+	  {{ $.Scratch.Add "eos_item" $version }}
+	  {{ $.Scratch.Add "eos_item" " (ends on " }}
+	  {{ $.Scratch.Add "eos_item" $eos_time }}
+	  {{ $.Scratch.Add "eos_item" ")" }}
+	  {{ $.Scratch.Add "eos_list" (slice ($.Scratch.Get "eos_item")) }}
 	{{ end }}
      {{ end }}
+	{{ $eos_versions_number := len (.Scratch.Get "eos_list") }} 
+	{{ if gt $eos_versions_number 0 }} 
+          <strong>The following versions will be out of support in the next two months</strong> - please upgrade to the supported versions - 
+          <strong>  {{ delimit (uniq ($.Scratch.Get "eos_list")) ", " " and " }} </strong>  
+	{{ else if eq $eos_versions_number 0 }}
+          <strong>There are currently no versions expiring in the next 60 days</strong>  
+        {{ end }}
 
