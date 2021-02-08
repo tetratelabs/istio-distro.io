@@ -1,6 +1,6 @@
 ---
 title: "Building and Testing"
-url: /zh/community/building-and-testing
+url: /community/building-and-testing
 ---
 
 Before you proceed, please make sure that you have the following dependencies available in your machine:

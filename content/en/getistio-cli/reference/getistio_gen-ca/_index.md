@@ -3,7 +3,7 @@ title: "getistio gen-ca"
 url: /getistio-cli/reference/getistio_gen-ca/
 ---
 
-Generates Intermediate CA from different managed services such as AWS ACMPCA, GCP CAS
+Generates intermediate CA from different managed services such as AWS ACMPCA, GCP CAS
 
 ```
 getistio gen-ca [flags]
