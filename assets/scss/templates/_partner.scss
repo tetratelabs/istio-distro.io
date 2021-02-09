@@ -10,12 +10,21 @@
   }
 }
 
+.external-link {
+  border: 1px solid #f56023;
+  padding: 6px 10px;
+  background-color: antiquewhite;
+  border-radius: 20px;
+}
+
 .partner-small-logo {
-  width: 90px;
-  height: 90px;
+  // width: 90px;
+  // height: 90px;
+  width: 80%;
 }
 
 .partner-medium-logo {
-  width: 120px;
-  height: 120px;
+  // width: 120px;
+  // height: 120px;
+  width: 50%;
 }
