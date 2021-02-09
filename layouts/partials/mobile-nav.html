@@ -1,10 +1,10 @@
 {{ "<!-- navigation -->" | safeHTML }}
 <div class="container d-block d-sm-block d-lg-none">
   <div class="row justify-content-center mb-4">
-    <div class="dropdown">
-      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Browse Docs
+    <div>
+      <button onClick="dropdownFunction()" class="btn btn-primary dropdown-toggle nav-dropdown">Browse Docs
       <span class="caret"></span></button>
-      <ul class="dropdown-menu">
+      <ul id="mobileDropdownMenu" class="dropdown-content">
         {{ $currentNode := . }}
         {{range (where .Site.Pages "Type" "docs")}}
         <!-- not render any single page, like contact page. -->
@@ -32,7 +32,7 @@
 {{ $currentNodeFileUniqueID := "" }}
 {{ with $currentNode.File }}{{ $currentNodeFileUniqueID = .UniqueID }}{{ end }}
 <li data-nav-id="{{.Permalink | relURL }}" title="{{.Title}}"
-  class="sidelist {{if .IsAncestor $currentNode }}parent{{end}} {{if eq $fileUniqueID $currentNodeFileUniqueID}}active{{end}} my-2 ml-3">
+  class="sidelist {{if .IsAncestor $currentNode }}parent{{end}} {{if eq $fileUniqueID $currentNodeFileUniqueID}}active{{end}} my-2">
   <a href="{{.Permalink | relURL }}">{{.Title }}</a>
   {{ $numberOfPages := (add (len .Pages) (len .Sections)) }}
   {{ if ne $numberOfPages 0 }}
