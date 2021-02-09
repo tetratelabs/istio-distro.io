@@ -27,6 +27,10 @@
           {{ .Content }}
         </div>
       </div>
+
+      {{ "<!-- recommend -->" | safeHTML }}
+      {{ partial "related.html" . }}
+      
       <div class="col-12 blog-post-footer">
         <hr>
         <a href="/blog/" class="link-grey">← Back to Blog</a>
