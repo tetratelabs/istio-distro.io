@@ -6,21 +6,25 @@ description: "Istio CA Certificate from GCP CAS"
 type : "docs"
 ---
 
-Instead of using a self-signed root certificate, here we get an intermediary Istio CA from the GCP CAS service that would in turn be used to sign workload certificates. This approach enables the same root of trust for the workloads as provided by the root CA in GCP CAS. As Istio itself signs the workload certs, the latency for getting workload certs issued is far less as compared to directly getting the certs signed by GCP CAS itself.<br><br>
-The [`getistio gen-ca`](/getistio-cli/reference/getistio_gen-ca) command furnishes the options to connect to GCP CAS and get the intermediary CA cert signed. It uses the certificate details thus obtained to create 'cacerts' Kubernetes secret for Istio to use to sign workload certs. Istio, at start up, checks for the presence of the secret 'cacerts' to decide if it needs to use this cert for signing workload certificates.
+Instead of using a self-signed root certificate, here we get an intermediary Istio certificate authority (CA) from GCP CAS (Certificate Authority Service) to sign the workload certificates.
 
-Prerequisites:
+This approach enables the same root of trust for the root CA's workloads in GCP CAS. As Istio signs the workload certs, the latency for getting workload certs issued is far less than directly getting the certs signed by ACM Private CA itself.
+
+The [`getistio gen-ca`](/getistio-cli/reference/getistio_gen-ca) command furnishes the options to connect to ACM Private CA and get the intermediary CA cert signed. It uses the certificate details thus obtained to create the **cacerts** Kubernetes secret for Istio to use to sign workload certs. Istio, at startup, checks for the presence of the secret **cacerts** to decide if it needs to use this cert for signing workload certificates.
+
+
+## Prerequisites
+
 - A CA set up in GCP CAS
-- GCP credentials file as pointed by the environment variable "GOOGLE_APPLICATION_CREDENTIALS" to get the CSR with CA bit set signed by GCP CAS. Details on how to obtain the credential file are given here.
+- GCP credentials file and the environment variable `GOOGLE_APPLICATION_CREDENTIALS` pointed to the crednetials to get the CSR with CA set signed by the GCP CAS. Refer to the [Getting started with authentication](https://cloud.google.com/docs/authentication/getting-started) documentation on how to setup the GCP credentials.
 
+## Configuration setup 
 
-Configuration set up:
+We can supply parameters related to connecting to GCP CAS and CSR creation through a YAML config file or command-line options. Creating a config file is recommended.
 
-Parameters related to connecting to GCP CAS and CSR creation can be supplied either through a file or command line options. Creating a config file is recommended.
-An example config file is given below and the parameters are self explanatory.
+Here's an example of a YAML config file with explained parameters.
 
-*gcp-cas-config.yaml*
-<pre>
+```yaml
 providerName: "gcp"
 providerConfig:
   gcp:
@@ -55,12 +59,19 @@ certificateParameters:
           - "engineering"
       emailaddresses:
         - "youremail@example.io"
-</pre>
-Once we have the prerequisites satisfied and the config file created, we could run the [`getistio gen-ca`](/getistio-cli/reference/getistio_gen-ca) command to create the 'cacerts' Kubernetes secret as well as a local yaml file of the secret. `getistio` connects to the cluster your Kubernetes configuration points to.
+```
+
+
+Once we have the prerequisites satisfied and the config file created, we can run the [`getistio gen-ca`](/getistio-cli/reference/getistio_gen-ca) command to create the **cacerts** Kubernetes secret. Additoonally, GetIstio  also creates a local YAML file with the secret. GetIstio uses the Kubernetes context to connect to the cluster.
+
+Assuming we saved the above YAML configuration to `gcp-cas-config.yaml`, we can run the following command:
 
 ```sh
 getistio gen-ca --config-file gcp-cas-config.yaml
 ```
 
-Once the command is run, you will notice a file created under `~/.getistio/secret/` and 'cacerts' secret in the istio-system namespace. 'istiod' when started would use this cert to sign workload certificates.
+The GetIstio CLI creates a under `~/.getistio/secret/` and a **cacerts** secret in the Istio's root namespace (`istio-system`).
 
+When `istiod` starts, it will use the certificate from the **cacerts** secret to sign the workload certificates. If you installed Istio before creating the **cacerts** secret, you would have to restart the `istiod` pod.
+
+For a practical walkthrough, refer to the [How to use custom certificate authority? (GCP)](/istio-in-practice/custom-ca-gcp).
