@@ -8,10 +8,13 @@ logo: "/images/weaveworks_logo.png"
 # give this the same name as the partner's directory name in ecosystem-partners.
 # example here, partner-a is the same name as the partner-a directory.
 # all spaces will be automatically converted into hyphens.
-docURL: "/weaveworks"
+# docURL: "/weaveworks"
 # the partner's website
 websiteURL: "https://www.weave.works/"
 websiteTitle: "Website"
+twitter: "https://twitter.com/weaveworks"
+linkedin: "https://www.linkedin.com/company/weaveworks/"
+github: "https://github.com/weaveworks/"
 # keep this 2 parameters as is.
 layout: partner-single
 type: "partners"
