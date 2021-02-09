@@ -5,13 +5,15 @@ weight: 4
 draft: false
 ---
 
+## What are sticky sessions?
+
 The idea behind sticky sessions is to route the requests for a particular session to the same endpoint that served the first request. With a sticky session, you can associate a service instance with the caller based on HTTP headers or cookies. You might want to use sticky sessions if your service is doing an expensive operation on the first request but cache the value for all subsequent calls. That way, if the same user makes the request, the costly operation will not be performed, and value from the cache will be used.
 
-#### Prerequisites
+## Prerequisites
 
 You can follow the [prerequisites](/istio-in-practice/prerequisites) for instructions on how to install and setup Istio.
 
-#### Sticky Sessions
+## How to use sticky sessions with Istio?
 
 To demonstrate the functionality of sticky sessions, we will use a sample service called *sticky-svc*. When called, this service checks for the presence of the *x-user* header. If the header is present, it tries to look up the header value in the internal cache. On any first request with a new *x-user*, the value won't exist in the cache, so the service will sleep for 5 seconds (simulating an expensive operation), and after that, it will cache the value. Any subsequent requests with the same *x-user* header value will return right away. Here's the snippet of this simple logic from the service source code:
 
@@ -56,7 +58,7 @@ spec:
         version: v1
     spec:
       containers:
-        - image: learnistio/sticky-svc:1.0.0
+        - image: gcr.io/tetratelabs/sticky-svc:1.0.0
           imagePullPolicy: Always
           name: svc
           ports:
