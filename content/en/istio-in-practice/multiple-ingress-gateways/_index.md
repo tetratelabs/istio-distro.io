@@ -19,7 +19,7 @@ getistio istioctl install --set profile=demo
 
 You can additionally customize your Istio installation, regardless of the profile, by passing additional  `--set <key>=<value>` key/value pairs to the command. 
 
-#### Multiple Gateways
+## Why multiple gateways?
 
 Now before you go and create multiple ingress gateways (and multiple load balancers with your cloud provider), make sure you need it. Load balancers cost money, and it's yet another thing you need to manage. A single load balancer can work well with a lot of scenarios, however there are cases where you might have one private or internal load balancer and a second public one.
 
@@ -37,7 +37,7 @@ Now consider a different scenario where you want two separate load balancer inst
 
 In this scenario, we have two different external IPs that point to two different ingress gateways that run inside the same Kubernetes cluster. Let's look at how to achieve this.
 
-#### Configuring Gateways
+## Configuring Gateways
 
 To get started, we need to look at the Istio configuration for a single ingress gateway that gets deployed when you use the default (or demo/preview profile). We can use the `profile dump` command to get the configuration:
 
@@ -181,7 +181,7 @@ service/istio-ingressgateway-staging   LoadBalancer   10.96.13.200   XX.XXX.XXX.
 
 You'll notice a running `istio-ingressgateway-staging` Pod and a `istio-ingressgateway-staging` service of the type LoadBalancer and with an external IP that's different from the default ingress gateway that's running in the `istio-system` namespace.
 
-#### Testing multiple Istio Gateways
+### Testing multiple Istio Gateways
 
 Time to test the gateways! Make sure you have labeled the `default` namespace with `istio-injection=enabled` (see [Prerequisites](./prerequisites)) and then use the snippet below to create a Service, Deployment, Gateway, and a VirtualService.
 

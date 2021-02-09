@@ -15,13 +15,15 @@ You might ask — what is the difference between **deploying** and **releasing**
 
 Routing traffic between two versions, doing blue-green releases is helpful and useful, but there are risks involved. For example, what if the new application breaks or malfunctions? Even if the new application is receiving only 1% of the production traffic, it can still negatively impact many users.
 
-### What is Traffic Mirroring?
+## What is Traffic Mirroring?
 
 The idea behind **traffic mirroring** is to minimize the risk of exposing users to a potentially broken or buggy application. Instead of deploying, releasing, and routing traffic to the new application, we deploy the new application and mirror the production traffic being sent to the released version of the application.
 
 You can then observe the application receiving mirrored traffic for errors without impacting any production traffic. In addition to running various tests on the deployed version of the application, we can now also use actual production traffic and increase the testing coverage. This gives us more confidence and minimizing the risk of releasing something that doesn't work correctly.
 
 Note that the requests that are sent to the mirrored instance are "fire and forget", and any responses the mirror instance sends back are ignored. 
+
+## How to enable traffic mirroring with Istio?
 
 Here's a quick YAML snippet that shows how to enable traffic mirroring with Istio.
 
@@ -54,8 +56,8 @@ The quickest way to see this in action is to watch the logs from the `test-v1` a
 
 The response you will get back when you call the application will be coming from the `v1` subset. However, you'll also see the request mirrored to the `test-v1` subset:
 
-"`sh
-$ kubectl logs my-app-test-v1–78fc64b995-krzf7 -c svc -f
+```text
+kubectl logs my-app-test-v1–78fc64b995-krzf7 -c svc -f
 > my-app@test-1.0.0 start /app
 > node server.js
 Listening on port 3000

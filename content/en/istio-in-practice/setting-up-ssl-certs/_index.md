@@ -9,14 +9,13 @@ SSL certificates are a must these days. They help protect the data that's sent b
 
 We will learn how to manually create a self-signed certificate, followed by obtaining a real SSL certificate and setting that up as well. As you will see, setting all this up is not too complicated.
 
-#### Prerequisites
+## Prerequisites
 
 For you to follow along, you will need an actual, cloud-hosted Kubernetes cluster. A cloud-hosted cluster is required because we will need an external IP address to hook up a domain name to. Of course, you will also need a domain name. 
 
 You can follow the [prerequisites](/istio-in-practice/prerequisites) for instructions on how to install and setup Istio. 
 
-
-### Deploying a sample application
+## Deploying a sample application
 
 To ensure stuff works as it should, we will start by deploying a simple Hello World web application. If you have your own application/service you want to use, feel free to use that. Otherwise, you can follow along and use the `gcr.io/tetratelabs/hello-world:1.0.0` image.
 
@@ -44,7 +43,7 @@ spec:
 
 Copy the above YAML to `helloworld-svc.yaml` and deploy it using `kubectl apply -f helloworld-svc.yaml`.
 
-> Note: we're not using `kubectl expose` command because we need to name the ports in Kubernetes services (e.g. `http`), and we can't do that through the expose command.
+> Note we're not using `kubectl expose` command because we need to name the ports in Kubernetes services (e.g. `http`), and we can't do that through the expose command.
 
 To access the service from an external IP, we also need a Gateway resource:
 
@@ -103,7 +102,7 @@ If you open the IP that shows up in the `EXTERNAL-IP` column, you will see somet
 
 We got a response back from the application, but we also got the `Not Secure` message from the browser, which tells the user that the connection is not secure and doesn't instill a lot of confidence.
 
-### Self-signed certs and manual setup
+## Self-signed certs and manual setup
 
 Let's start with the simplest scenario where we manually obtain the certificate. First thing - pick a domain you want to use - note that to test this, you don't have to own an actual domain name because we will use a self-signed certificate.
 
@@ -224,7 +223,7 @@ From the output, you will be able to see the details of the server certificate a
 Hello World
 ```
 
-### Real-signed certs and manual setup
+## Real-signed certs and manual setup
 
 The self-signed cert route from the previous section is useful to kick the tires and test things out. We will need certificates signed by an actual certificate authority (CA) that your clients can trust.
 
@@ -253,14 +252,13 @@ There are three options to verify the domain: email verification (ensure you hav
 
 You can use any one of these options. I'll be using the CNAME verification. CNAME verification involves logging in to your domain registrars and setting a CNAME record with a specific value.
 
-**Set the A name record**
+### Set the A name record
 
 While we are logged in to the domain registrar's website, let's also create an A record for the domain that will point to your cluster's external IP address. 
 
 Since we requested a certificate for mydomain.com and www.mydomain.com, the  A record should point from `mydomain.com` to the IP address.
 
-
-**Verifying the domain**
+### Verifying the domain
 
 After we've set the A record and CNAME, we can click the **Verify Domain** button. Note that it might take a while for the values to propagate and verify the domain.
 
@@ -272,7 +270,7 @@ The package will contain the following files:
 - certificate.crt
 - private.key
 
-**Re-create the secret**
+### Re-create the secret
 
 Let's delete the existing `ingressgateway-certs` secret, and create a new one with real certificates:
 

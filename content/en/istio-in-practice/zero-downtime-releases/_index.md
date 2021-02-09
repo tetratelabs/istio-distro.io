@@ -9,11 +9,11 @@ The purpose of the zero-downtime release is to release a new version of the appl
 
 You might wonder why we would use Istio to do rolling updates if the Kubernetes option is much simpler. That's true, and you probably shouldn't be using Istio if zero-downtime deployments are the only thing you're going to use it for. You can achieve the same behavior with Istio. However, you have way more control over how and when the traffic gets routed to a specific version.
 
-#### Prerequisites
+## Prerequisites
 
 You can follow the [prerequisites](/istio-in-practice/prerequisites) for instructions on how to install and setup Istio.
 
-#### Kubernetes Deployments need to be versioned
+## Kubernetes Deployments need to be versioned
 
 Each deployment of the service needs to be versioned - you need a label called `version: v1` (or `release: prod` or anything similar to that), as well as name the deployment, so it's clear which version it represents (e.g. `helloworld-v1`). Usually, you'd have at minimum these two labels set on each deployment:
 
@@ -25,7 +25,7 @@ labels:
 
 You could also include many other labels if it makes sense, but you should have a label that identifies your component and its version.
 
-#### Kubernetes Service needs to be generic
+## Kubernetes Service needs to be generic
 
 There's no need to put a version label in the Kubernetes Service selector. The label with the app/component name is enough. Also, keep the following in mind:
 
@@ -123,7 +123,7 @@ spec:
 
 Once you deployed these two resources, all traffic is routed to the `v1` subset. 
 
-#### Rolling out the second version
+## Rolling out the second version
 
 Before you deploy the second version, the first thing you need to do is to modify the DestinationRule and add a subset that represents the second version.
 
