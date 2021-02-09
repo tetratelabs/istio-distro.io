@@ -1,7 +1,7 @@
 ---
 title: "Integrate AWS Cloud Map with Istio"
 date: 2021-02-01T00:00:00+00:00
-weight: 1
+weight: 7
 draft: false
 ---
 

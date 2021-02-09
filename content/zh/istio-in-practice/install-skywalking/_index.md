@@ -1,8 +1,7 @@
 ---
 title: "Integration with Apache SkyWalking"
-date: 2020-01-22
 weight: 1
-draft: false
+draft: true
 ---
 
 This is a quick start for Istio integration with [Apache Skywalking](https://skywalking.apache.org/) in your environment .
