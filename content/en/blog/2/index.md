@@ -5,6 +5,8 @@ date: "2020-01-16"
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
 description : "Get Istio 1.0.1 Released"
+# tags
+tags : ["release"]
 # thumbnail
 
 ---
