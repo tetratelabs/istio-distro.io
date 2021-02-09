@@ -97,3 +97,15 @@ To add information about GetIstio partners, you can simply modify files in the f
 - `content/en/partners/partner-a.md` -> this file holds the overview information about the partner. The required data in frontmatter has been annotated for detail
 - `content/en/ecosystem-partners/partner-a` -> this directory holds the technical information that will be displayed in the docs section of the site. Technical documentation and tutorial can go here.
 - `static/images` -> the partner's company logo and any images that are going to be displayed should go here.
+
+
+## Auto-Generated Pages
+
+The following pages of this website are auto-generated (see [here](https://github.com/tetratelabs/getistio/blob/main/doc/gen.go)):
+
+- /community/building-and-testing
+- /community/contributing
+- /community/release
+- /getistio-cli/reference
+
+Be careful when modifying the contents of these pages in this repo as they will be lost whenever with the next GetIstio release. Also, if you're renaming the paths/URLs to those pages, make sure to [update the doc generation](https://github.com/tetratelabs/getistio/blob/main/doc/gen.go) in the GetIstio repository.
