@@ -641,7 +641,7 @@ pre {
     vertical-align: -0.4em;
   }
 
-  h5 {
+  h6 {
     margin-top: 32px;
   }
 
@@ -701,6 +701,12 @@ pre {
       padding-inline-start: 40px;
     }
   }
+  #customer-quote {
+    padding: 32px;
+    .carousel-inner {
+      width: 80%;
+    }
+  }
 }
 
 @media (max-width: $breakpoint-xs) {
@@ -741,6 +747,13 @@ pre {
         top: 0px;
         margin-top: 16px;
       }
+    }
+  }
+
+  #customer-quote {
+    padding: 32px;
+    .carousel-inner {
+      width: 100%;
     }
   }
 }
