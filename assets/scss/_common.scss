@@ -1,5 +1,6 @@
 $breakpoint-xs: 576px;
 $breakpoint-md: 768px;
+$breakpoint-lg: 992px;
 $breakpoint-xl: 1140px;
 $breakpoint-xxl: 1400px;
 
@@ -446,6 +447,7 @@ a:hover {
 
   img {
     width: 32px;
+    margin: 0px;
   }
 
   p {
@@ -617,6 +619,69 @@ pre {
   }
 }
 
+#customer-quote {
+  padding: 48px 96px;
+  background: #e3e8ef;
+  margin-bottom: -72px;
+  margin-top: 72px;
+
+  blockquote {
+    background: #e3e8ef;
+    border-left: 10px solid #abb2ba;
+    margin: 1.5em 0;
+    padding: 0.5em 16px;
+    quotes: "\201C""\201D""\2018""\2019";
+  }
+
+  blockquote:before {
+    color: #abb2ba;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+  }
+
+  h6 {
+    margin-top: 32px;
+  }
+
+  .carousel-inner {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+
+.nav-dropdown {
+  width: 240px;
+  margin-top: -16px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fdfdfd;
+  min-width: 240px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  padding: 0;
+
+  &.show {
+    display: block;
+  }
+
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
 // this is valid if we use asciinema player, not embedding from asciinema.org.
 // pre.asciinema-terminal {
 //   height: 32em !important;
@@ -635,6 +700,23 @@ pre {
     }
     ul.hero {
       padding-inline-start: 40px;
+    }
+  }
+  #customer-quote {
+    padding: 32px;
+    .carousel-inner {
+      width: 80%;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+  .hero-section {
+    h1 {
+      font-size: 24px;
+    }
+    li {
+      font-size: 18px;
     }
   }
 }
@@ -666,8 +748,6 @@ pre {
     }
 
     .form-control {
-      display: flex;
-      flex-direction: column;
       height: auto;
       margin-bottom: 0px;
 
@@ -677,6 +757,23 @@ pre {
         top: 0px;
         margin-top: 16px;
       }
+    }
+
+    #emailForm {
+      display: flex;
+      justify-content: space-evenly;
+      flex-direction: column;
+
+      input {
+        width: 100%;
+      }
+    }
+  }
+
+  #customer-quote {
+    padding: 32px;
+    .carousel-inner {
+      width: 100%;
     }
   }
 }
