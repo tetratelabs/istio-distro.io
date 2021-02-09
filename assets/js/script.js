@@ -174,14 +174,14 @@ $(document).on('turbolinks:load', preloader);
         .addClass('ti-plus');
     });
 
-  var checkUser = localStorage.getItem('User');
-  console.log(checkUser);
-  var pathname = window.location.pathname;
-  if (checkUser == null) {
-    if (pathname !== '/login/') {
-      location = '/login/';
-    }
-  }
+  // var checkUser = localStorage.getItem('User');
+  // console.log(checkUser);
+  // var pathname = window.location.pathname;
+  // if (checkUser == null) {
+  //   if (pathname !== '/login/') {
+  //     location = '/login/';
+  //   }
+  // }
 })(jQuery);
 
 function expandDictionary() {
@@ -201,7 +201,23 @@ function expandDictionary() {
 // actual logic to push code to clipboard.
 new ClipboardJS('.copy-to-clipboard', {
   target: function (trigger) {
-    console.log(trigger.previousElementSibling.innerHTML);
     return trigger.previousElementSibling;
   },
 });
+
+function dropdownFunction() {
+  document.getElementById("mobileDropdownMenu").classList.toggle("show");
+}
+
+window.onclick = function (event) {
+  if (!event.target.matches('.nav-dropdown')) {
+    var dropdowns = document.getElementsByClassName('dropdown-content');
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+};
