@@ -6,7 +6,8 @@ author: "[Jimmy Song](https://jimmysong.io)"
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
 description : "This article will start by taking you through a hands-on installation and use of GetIstio on GKE."
-tags : ["installation", "GKE", "cloud instance"]
+# tags
+tags : ["installation", "GKE"]
 # thumbnail
 ---
 
