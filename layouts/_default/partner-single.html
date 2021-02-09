@@ -9,7 +9,9 @@
           <h2>{{ .Title }}</h2>
           <a href="{{ .Params.WebsiteURL }}">{{ .Params.WebsiteTitle }}</a>
         </div>
-      {{ .Content }}
+        <div class="partner-content">
+          {{ .Content }}
+        </div>
       <div class="row justify-content-center">
         <a class="btn btn-sm btn-primary" href="/ecosystem-partners{{ .Params.DocURL | relURL }}">Read More in Docs</a>
       </div>
