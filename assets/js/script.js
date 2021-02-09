@@ -174,14 +174,14 @@ $(document).on('turbolinks:load', preloader);
         .addClass('ti-plus');
     });
 
-  var checkUser = localStorage.getItem('User');
-  console.log(checkUser);
-  var pathname = window.location.pathname;
-  if (checkUser == null) {
-    if (pathname !== '/login/') {
-      location = '/login/';
-    }
-  }
+  // var checkUser = localStorage.getItem('User');
+  // console.log(checkUser);
+  // var pathname = window.location.pathname;
+  // if (checkUser == null) {
+  //   if (pathname !== '/login/') {
+  //     location = '/login/';
+  //   }
+  // }
 })(jQuery);
 
 function expandDictionary() {
@@ -201,13 +201,11 @@ function expandDictionary() {
 // actual logic to push code to clipboard.
 new ClipboardJS('.copy-to-clipboard', {
   target: function (trigger) {
-    console.log(trigger.previousElementSibling.innerHTML);
     return trigger.previousElementSibling;
   },
 });
 
 function dropdownFunction() {
-  console.log("test");
   document.getElementById("mobileDropdownMenu").classList.toggle("show");
 }
 
