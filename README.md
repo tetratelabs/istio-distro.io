@@ -10,6 +10,8 @@ Website for GetIstio project. This supersedes previous project as we move from G
 hugo serve -D
 ```
 
+>If you don't want to include drafts, drop the `-D` from the above command.
+
 ## Adding Content
 
 All contents are written in markdown. You can add main category by creating a folder in `/content/{language_code}` directory. The main index page for that new category is a file named `_index.md`. To add child pages under that category, create additional folder in that category folder and add another `_index.md` file.
@@ -33,12 +35,24 @@ Take a look at other file in the `/content` directory to see example of required
 
 To add blog content, just add markdown file in `/content/{language_code}/blog` directory.
 
+#### Link ordering for Istio in Practice
+
+The order of links in the sidebar is controlled by the `weight` property set in the `_index.md` file. Make sure you set the correct weight for any new content you add by checking the weight of the last item in the list, and incrementing it for the new content.
+
 ### Adding Code Snippet
 
 To automatically add copy code button to a shell code snippet, specify `sh` as the language after the backticks in the code snippet. For example:
 
 ```sh
 getistio version
+```
+
+The copy code button is also enabled for YAML (`yaml`) and Go (`go`) code listings. You can add support for more in the `/assets/js/script.js` file. For example:
+
+```
+$('pre code.language-go')
+  .parent()
+  .append('<span class="copy-to-clipboard">copy</span>');
 ```
 
 ## Adding Event
