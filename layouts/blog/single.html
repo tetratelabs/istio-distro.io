@@ -7,7 +7,7 @@
           <hr>
         </div>
         <div class="col-sm-9 mt-3">
-          <h2>{{.Title}}</h2>
+          <h1>{{.Title}}</h1>
           <p class="blog-date mt-3"> <span>{{ dateFormat "Jan 02, 2006" .Date }}</span> / {{ math.Round (div (countwords .Content) 220.0) }} min read</p>
         </div>
       </div>
