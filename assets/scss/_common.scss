@@ -397,6 +397,12 @@ a:hover {
 //   right: 12px;
 // }
 
+.blog-list-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
 .blog-individual {
   h1,
   h2,
@@ -404,6 +410,9 @@ a:hover {
   h4 {
     margin-bottom: 16px;
     margin-top: 32px;
+  }
+  ul {
+    list-style: disc;
   }
 }
 
@@ -415,10 +424,19 @@ a:hover {
     color: $primary-color;
   }
 }
+
 .blog-date {
-  span {
+  a {
     color: $primary-color;
   }
+}
+
+.single-tag {
+  padding: 4px 8px;
+  border: 1px solid #d1d0d0;
+  font-size: 12px;
+  border-radius: 13px;
+  background-color: #efefef;
 }
 
 .login_form {
@@ -571,6 +589,20 @@ pre {
 .color-green {
   color: $green;
 }
+
+.blog-list {
+
+  .blog-overview {
+
+    p.author-info {
+      a {
+        color: #f56023;
+      }
+    }
+  }
+
+}
+
 .blog-content {
   a {
     color: $primary-color;
@@ -606,6 +638,10 @@ pre {
     li {
       margin: 15px 0;
     }
+  }
+
+  ul {
+    list-style: disc;
   }
 }
 .gist-file {
