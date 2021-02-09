@@ -8,7 +8,6 @@ type : "docs"
 weight: 10
 ---
 
-
 Currently <strong>GetIstio</strong> runs on Linux and MacOS. To deploy GetIstio, all you need is this one simple command:
 
 ```sh
@@ -32,6 +31,7 @@ While the core features of Istio have been tested and certified against differen
 There are additional download of <strong>Istio distributions and istioctl</strong> binaries for [Linux]({{< relref "#linux-istio-distros" >}}), [MacOS]({{< relref "#macos-istio-distros" >}}) and [Windows]({{< relref "#windows-istio-distros" >}}) that you can find in this page. We recommend using GetIsio to obtain the required files.
 
 {{< dwn_getistio >}}
+{{< seccheck >}}
 
 ### Istio Binaries Download
 
