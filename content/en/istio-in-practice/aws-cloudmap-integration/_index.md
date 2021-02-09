@@ -5,7 +5,7 @@ weight: 7
 draft: false
 ---
 
-This tutorial describes how you integrate [AWS Cloud Map](https://aws.amazon.com/cloud-map/) with your Istio mesh.
+This tutorial describes how to integrate [AWS Cloud Map](https://aws.amazon.com/cloud-map/) with your Istio service mesh.
 
 ## Overview
 
@@ -20,50 +20,52 @@ Istio Cloud Map Operator is designed for syncing Cloud Map data into Istio by pu
 It periodically checks the Cloud Map resources in AWS, and if there's any update in the information, then it creates/updates 
 a ServiceEntry resource in the k8s cluster.
 
+## Prerequisites
+
+Before proceeding, make sure you have a Kubernetes cluster with Istio installed.
+
+You can follow the [prerequisites](/istio-in-practice/prerequisites) for instructions on how to install and setup Istio.
 
 ## Deploying Istio Cloud Map Operator
 
-Before proceed, make sure Isito is installed in your k8s cluster. Details refer to [Install Istio through GetIstio](/getistio-cli/install-istio/).
+To get started we need to download and deploy Istio Cloud Map Operator:
 
-__1. Download the manifests located [here](https://github.com/tetratelabs/istio-cloud-map/tree/v0.2.0/kubernetes).__
+1. Download the manifests located [here](https://github.com/tetratelabs/istio-cloud-map/tree/v0.2.0/kubernetes).
 
-__2. Create an AWS IAM identity with read access to AWS Cloud Map for the operator.__
+1. Create an AWS IAM identity with read access to AWS Cloud Map for the operator.
 
-__3. Modify the yaml named `aws-config.yaml` for__ 
+1. Modify the YAML file `aws-config.yaml` as follows:
+    1. Set the access key used by the operator by updating the values in the secret.
 
-- Setting the access key used by the operator
+    ```yaml {hl_lines=[7,8]}
+    apiVersion: v1
+    kind: Secret
+    metadata:
+      name: aws-creds
+    type: Opaque
+    data:
+      access-key-id: <base64-encoded-IAM-access-key-id> # EDIT ME
+      secret-access-key: <base64-encoded-IAM-secret-access-key> # EDIT ME
+    ```
 
-```yaml
-apiVersion: v1
-kind: Secret
-metadata:
-  name: aws-creds
-type: Opaque
-data:
-  access-key-id: <base64-encoded-IAM-access-key-id> # EDIT ME
-  secret-access-key: <base64-encoded-IAM-secret-access-key> # EDIT ME
-```
+    2. Set the target AWS region.
 
-- Setting the target AWS region to sync with
+    ```yaml {hl_lines=[6]}
+    apiVersion: v1
+    kind: ConfigMap
+    metadata:
+      name: aws-config
+    data:
+      aws-region: us-west-2 # EDIT ME
+    ```
 
-```yaml
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: aws-config
-data:
-  aws-region: us-west-2 # EDIT ME
-```
-
-__4. Apply the modified manifest__
-
-
+1. Apply the modified manifest using Kubernetes CLI.
 
 ## Verify the deployment
 
 Assuming that you have the following data in you AWS Cloud Map,
 
-```bash
+```sh
 # list the service in Cloud Map
 $ aws servicediscovery list-services | jq '.Services[] | "Name: \(.Name), Id: \(.Id)"'
 "Name: getistio-external-service, Id: srv-ou6hvfmjpls2lev6"
@@ -79,10 +81,17 @@ $ aws servicediscovery list-instances --service-id srv-ou6hvfmjpls2lev6 | jq '.I
 }
 ```
 
-Then you can verify the deployment by checking that a ServiceEntry is created, and it stores exactly the same endpoint information in AWS Cloud Map:
+Then, you can verify the Kubernetes deployment by checking that a ServiceEntry is created, and it contains exactly the same endpoint information as in the AWS Cloud Map.
 
-```bash
-$ kubectl get serviceentries.networking.istio.io cloudmap-getistio-external-service.my-namespace -oyaml
+You can run the following command to get the YAML representation of the resource:
+
+```sh
+kubectl get serviceentries.networking.istio.io cloudmap-getistio-external-service.my-namespace -o yaml
+```
+
+Here's how the output from the command above should look like:
+
+```yaml {hl_lines=[13]}
 apiVersion: networking.istio.io/v1beta1
 kind: ServiceEntry
 metadata:
@@ -106,4 +115,4 @@ spec:
   resolution: STATIC
 ```
 
-Note that the host name is in the form of `${Cloud Map's service name}.${the service's Namespace}`.
+Note that the host name `getistio-external-service.my-namespace` is in the follow format: `${Cloud Map's service name}.${service namespace}`.

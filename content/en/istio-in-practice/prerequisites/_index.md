@@ -7,7 +7,7 @@ weight: 1
 
 To go through the Istio in practice tutorials we will need a running instance of a Kubernetes cluster and Istio.
 
-#### 1. Kubernetes Cluster
+## 1. Kubernetes Cluster
 
 All cloud providers have managed Kubernete scluster offering we can use to install Istio service mesh.
 
@@ -20,7 +20,7 @@ We can also run a Kubernetes cluster locally on your computer using one of the f
 
 When using a local Kubernetes cluster, make sure your computer meets the minimum requirements for Istio installation (e.g. 16384 MB RAM and 4 CPUs). Also, ensure the Kubernetes cluster version is v1.19.0 or higher.
 
-##### Install Kubernetes CLI
+### Install Kubernetes CLI
 
 If you need to install the Kubernetes CLI, follow [these instructions](https://kubernetes.io/docs/tasks/tools/install-kubectl/).
 
@@ -32,7 +32,7 @@ Client Version: version.Info{Major:"1", Minor:"19", GitVersion:"v1.19.2", GitCom
 Server Version: version.Info{Major:"1", Minor:"19", GitVersion:"v1.19.0", GitCommit:"e19964183377d0ec2052d1f1fa930c4d7575bd50", GitTreeState:"clean", BuildDate:"2020-08-26T14:23:04Z", GoVersion:"go1.15", Compiler:"gc", Platform:"linux/amd64"}
 ```
 
-#### 2. Install Istio with GetIstio 
+## 2. Install Istio with GetIstio 
 
 GetIstio is the easiest way to get started with Istio. After you've set up your Kubernetes cluster, you can download [GetIstio](https://getistio.io):
 
@@ -46,7 +46,7 @@ Finally, to install the demo profile of Istio, use the following command:
 getistio istioctl install --set profile=demo
 ```
 
-#### 3. Label the namespace for Istio sidecar injection
+## 3. Label the namespace for Istio sidecar injection
 
 We need to label the namespace where we want Istio to inject the sidecar proxies to Kubernetes deployments automatically. 
 
@@ -56,7 +56,7 @@ To label the namepace, we can use the `kubectl label` command and label the name
 kubectl label namespace default istio-injection=enabled
 ```
 
-#### 4. Hello world application (OPTIONAL)
+## 4. Install Hello world application (OPTIONAL)
 
 As a sample to deploy on your cluster, you can use the Hello World Web application. You can pull the image from `gcr.io/tetratelabs/hello-world:1.0.0`, and use the commands below to create a Kubernetes deployment and Service.
 
