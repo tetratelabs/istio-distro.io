@@ -322,6 +322,6 @@ gcloud compute ssh jimmy@instance-1 --zone=us-west2-a
 
 在解压后的 istio 安装包的根目录下执行：
 
-```sh
+```wsh
 samples/bookinfo/platform/kube/cleanup.sh
 ```
