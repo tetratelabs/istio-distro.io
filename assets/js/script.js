@@ -205,3 +205,21 @@ new ClipboardJS('.copy-to-clipboard', {
     return trigger.previousElementSibling;
   },
 });
+
+function dropdownFunction() {
+  console.log("test");
+  document.getElementById("mobileDropdownMenu").classList.toggle("show");
+}
+
+window.onclick = function (event) {
+  if (!event.target.matches('.nav-dropdown')) {
+    var dropdowns = document.getElementsByClassName('dropdown-content');
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+};
