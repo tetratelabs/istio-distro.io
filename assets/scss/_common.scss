@@ -415,10 +415,19 @@ a:hover {
     color: $primary-color;
   }
 }
+
 .blog-date {
   a {
     color: $primary-color;
   }
+}
+
+.single-tag {
+  padding: 4px 8px;
+  border: 1px solid #d1d0d0;
+  font-size: 12px;
+  border-radius: 13px;
+  background-color: #efefef;
 }
 
 .login_form {
