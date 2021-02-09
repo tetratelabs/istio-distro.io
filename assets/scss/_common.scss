@@ -736,8 +736,6 @@ pre {
     }
 
     .form-control {
-      display: flex;
-      flex-direction: column;
       height: auto;
       margin-bottom: 0px;
 
@@ -746,6 +744,16 @@ pre {
         right: 0px;
         top: 0px;
         margin-top: 16px;
+      }
+    }
+
+    #emailForm {
+      display: flex;
+      justify-content: space-evenly;
+      flex-direction: column;
+
+      input {
+        width: 100%;
       }
     }
   }
