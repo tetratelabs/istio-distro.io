@@ -3,9 +3,9 @@ hero:
   title: "Simple, safe enterprise-grade Istio"
   enable: true
   lead_item:
-    - content: "Easiest way of installing, operating and upgrading istio"
+    - content: "Easiest way of installing, operating, and upgrading Istio"
     - content: "Tested and hardened for your application and cloud platform"
-    - content: "Community hub for users and ecosystem & partners"
+    - content: "Community hub for users, ecosystem, and partners"
   asciinema_id: 387586
 
 ########################## Subsribe section ##########################
