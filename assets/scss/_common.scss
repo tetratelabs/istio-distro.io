@@ -416,7 +416,7 @@ a:hover {
   }
 }
 .blog-date {
-  span {
+  a {
     color: $primary-color;
   }
 }
@@ -571,6 +571,20 @@ pre {
 .color-green {
   color: $green;
 }
+
+.blog-list {
+
+  .blog-overview {
+
+    p.author-info {
+      a {
+        color: #f56023;
+      }
+    }
+  }
+
+}
+
 .blog-content {
   a {
     color: $primary-color;

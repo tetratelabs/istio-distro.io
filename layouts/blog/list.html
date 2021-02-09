@@ -9,7 +9,7 @@
         </div>
       </div>
     </section>
-    <section class="pb-5 pt-3">
+    <section class="pb-5 pt-3 blog-list">
       <div class="container">
         <div class="row justify-content-center">
           {{ $pages :=  where .Data.Pages "Section" "blog" }}
@@ -29,9 +29,12 @@
                   {{ end }}
                 </div>
 
-                <div style="display: inline-block;">
+                <div style="display: inline-block;" class="blog-overview">
                   <p>{{ dateFormat "Jan 02, 2006" .Date }} / {{ math.Round (div (countwords .Content) 220.0) }} min read</p>
                   <a href="{{ .Permalink | relURL }}" class="blog-link"><h5 class="card-title">{{.Title}}</h5></a>
+                  {{ if isset .Params "author"}}
+                    <p class="author-info">by {{ .Params.Author | markdownify }}</p>
+                  {{ end }}
                   <p class="card-text mb-3">
                     {{ .Params.Description }}
                   </p>
