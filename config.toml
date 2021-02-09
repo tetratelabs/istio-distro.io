@@ -65,10 +65,10 @@ link = "plugins/jQuery/jquery.min.js"
 attributes = ""
 page = "/"
 
-[[params.plugins.js]]
-link = "plugins/popper/popper.min.js"
-attributes = ""
-page = "/"
+# [[params.plugins.js]]
+# link = "plugins/popper/popper.min.js"
+# attributes = ""
+# page = "/"
 
 [[params.plugins.js]]
 link = "plugins/bootstrap/bootstrap.min.js"

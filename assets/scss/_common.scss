@@ -616,6 +616,36 @@ pre {
   }
 }
 
+.nav-dropdown {
+  width: 240px;
+  margin-top: -16px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fdfdfd;
+  min-width: 240px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  padding: 0;
+
+  &.show {
+    display: block;
+  }
+
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
 // this is valid if we use asciinema player, not embedding from asciinema.org.
 // pre.asciinema-terminal {
 //   height: 32em !important;
