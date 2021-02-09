@@ -1,5 +1,6 @@
 $breakpoint-xs: 576px;
 $breakpoint-md: 768px;
+$breakpoint-lg: 992px;
 $breakpoint-xl: 1140px;
 $breakpoint-xxl: 1400px;
 
@@ -705,6 +706,17 @@ pre {
     padding: 32px;
     .carousel-inner {
       width: 80%;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+  .hero-section {
+    h1 {
+      font-size: 24px;
+    }
+    li {
+      font-size: 18px;
     }
   }
 }
