@@ -1,13 +1,16 @@
 ---
 title: "网易轻舟如何基于 Istio 实现微服务架构演进"
 date: "2020-02-02"
+author: "[裴斐](https://www.linkedin.com/in/斐-裴-0a182099)"
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
 description : "网易轻舟使用 Istio 的实践分享。"
-# thumbnail
-thumbnail: "https://mdbootstrap.com/img/new/standard/nature/184.jpg"
+thumbnail: "/images/blog/netease.jpg"
+tags: ["案例分享"]
 ---
+
+作者：裴斐，网易轻舟高级架构师。
 
 ### Problem
 
