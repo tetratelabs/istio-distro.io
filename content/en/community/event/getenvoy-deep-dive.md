@@ -24,4 +24,4 @@ Episode 01 of the community launches into the broader Istio ecosystem with a loo
 * Q&A
 * Closing with resource links
 
-Join (here)[https://us02web.zoom.us/j/89163866904]
+**Join (here)[https://us02web.zoom.us/j/89163866904]**
