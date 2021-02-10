@@ -1,8 +1,8 @@
 ---
 title: "Introducing GetIstio: the easiest way to get Istio"
-description: ""
+description: "GetIstio is an integration and lifecycle management CLI tool that ensures the use of supported and vetted versions of Istio."
 date: "2021-02-10"
-author: "Varun Talwar"
+author: "[Varun Talwar](https://www.linkedin.com/in/varuntalwar/)"
 # meta description
 # thumbnail
 thumbnail: "/images/introducing-getistio.png"
