@@ -14,4 +14,3 @@ There are multiple ways you can contribute and get involved in the community:
 - Join and participate at one of our [events](/community/event/).
 - Join the **#GetIstio** channel on [Istio Slack](https://slack.istio.io).
 - Get Istio certified at [Tetrate Academy](http://certifications.tetrate.io/).
-- Follow us on [Twitter](https://twitter.com/getistio).
