@@ -203,7 +203,7 @@ link = "/download"
 [[params.social]]
 title = "website"
 icon = "ti-world" # themify icon : https://themify.me/themify-icons
-link = "https://www.twitter.com/tetrateio"
+link = "https://www.tetrate.io/"
 
 [[params.social]]
 title = "twitter"
