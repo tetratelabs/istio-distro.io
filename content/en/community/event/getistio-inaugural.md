@@ -1,5 +1,5 @@
 ---
-title: "00: What is GetIstio - Inaguaral Community Meetup"
+title: "00: What is GetIstio - Inaugural Community Meetup"
 date: 2021-01-29T11:00:00+07:00
 description: "Edpisode 00: What is GetIstio - Inaguaral Community Meetup"
 categories: "event"
