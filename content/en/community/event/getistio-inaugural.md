@@ -1,7 +1,7 @@
 ---
-title: "GetIstio Inaugural Meetup"
+title: "00: What is GetIstio - Inaguaral Community Meetup"
 date: 2021-01-29T11:00:00+07:00
-description: "00: What is GetIstio - Inaguaral Community Meetup"
+description: "Edpisode 00: What is GetIstio - Inaguaral Community Meetup"
 categories: "event"
 image: "images/events/getistio-inaugural-meetup.png"
 eventLink: "https://us02web.zoom.us/j/89163866904"
