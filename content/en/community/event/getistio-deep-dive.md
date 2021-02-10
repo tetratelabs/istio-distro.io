@@ -24,3 +24,5 @@ Episode 02 of the community meetup dives into _**getistio gen-ca**_ to help inte
   + Generate intermediate CA from different managed services
 * Q&A
 * Closing with resource links
+
+**Join [here](https://us02web.zoom.us/j/89163866904)**

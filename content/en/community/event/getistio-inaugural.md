@@ -25,3 +25,5 @@ The inaugural meetup will be a special edition with 90 minutes to introduce the 
     + Demonstration of new features related to VMs, observability, and more
 * Q&A
 * Closing with community  resource links
+
+**Join [here](https://us02web.zoom.us/j/89163866904)**
