@@ -6,10 +6,10 @@ author: "Varun Talwar"
 # meta description
 # thumbnail
 thumbnail: "/images/introducing-getistio.png"
-tags: ["getisio"]
+tags: ["getistio"]
 ---
 
-Istio is one of the most popular and [fast-growing](https://octoverse.github.com/2019/) open-source projects in the
+Istio is one of the most popular and <a href="https://octoverse.github.com/2019/" target="_blank">fast growing</a> open-source projects in the
 cloud-native world; while this growth speaks volumes about the value users get from Istio, its rapid release cadence can
 also be a challenge for users who may be managing several different versions of Istio clusters at the same time and
 manually configuring CA certificates for cloud platforms.
@@ -62,8 +62,7 @@ As part of GetIstio we are also launching a new community for developers, end us
 Envoy, and service mesh. Community is open to all. The GetIstio.io website also includes
 [practical tutorials](/istio-in-practice/) for using Istio.
 
-If you want to take your learning to the next level, we have also prepared a free
-[Learn Istio Fundamentals course](https://certifications.tetrate.io/) as part of Tetrate Academy. It is a self-paced
+If you want to take your learning to the next level, we have also prepared a free <a href="https://certifications.tetrate.io/" target="_blank">Learn Istio Fundamentals course</a> as part of Tetrate Academy. It is a self-paced
 course that has 8 modules with theoretical lessons where we explain the theory and concepts, practical lessons which
 consist of labs, and quizzes so you can check your knowledge. Join our weekly meetings, file issues, or ask questions in
 Slack. No contribution is too small and your opinions and contributions matter!
@@ -71,12 +70,13 @@ Slack. No contribution is too small and your opinions and contributions matter!
 ### GetIstio Subscription
 
 Tetrate provides commercial support for GetIstio for direct access to Istio experts, priority bug fixes and 24/7
-support. More details [here](https://www.tetrate.io/getistio).
+support. More details <a href="https://www.tetrate.io/getistio" target="_blank">here</a>.
 
 Related links:
 
-* GetEnvoy: [www.getenvoy.io](https://www.getenvoy.io)
-* GitHub: [https://github.com/tetratelabs/getistio](https://github.com/tetratelabs/getistio)
-* Join the [Istio Slack](https://istio.slack.com/) and search for the GetIstio channel to contact us Get certified on the “Fundamentals of Istio”: https://academy.tetrate.io
-* GetIstio Subscription: [https://www.tetrate.io/getistio](https://www.tetrate.io/getistio)
+* GetEnvoy: <a href="https://www.getenvoy.io" target="_blank">getenvoy.io</a>
+* GitHub: <a href="https://github.com/tetratelabs/getistio" target="_blank">github.com/tetratelabs/getistio</a>
+* Join the <a href="https://istio.slack.com" target="_blank">Istio Slack</a> and search for the GetIstio channel to contact us 
+* Get certified on the "Fundamentals of Istio": <a href="https://academy.tetrate.io" target="_blank">academy.tetrate.io</a>
+* GetIstio Subscription: <a href="https://www.tetrate.io/getistio" target="_blank">tetrate.io/getistio</a>[]()
 
