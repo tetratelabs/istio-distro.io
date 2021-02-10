@@ -1,5 +1,5 @@
 ---
-title: "How to use custom certificate authority? (ACM)"
+title: "How to use custom certificate authority? (AWS)"
 date: 2021-01-01T11:02:05+06:00
 weight: 8
 draft: false
