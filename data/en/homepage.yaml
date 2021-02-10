@@ -1,6 +1,6 @@
 ########################## Hero Block ################################
 hero:
-  title: "Simple, safe enterprise-grade Istio"
+  title: "Simple, safe enterprise-grade Istio distro"
   enable: true
   lead_item:
     - content: "Easiest way of installing, operating, and upgrading Istio"
