@@ -7,7 +7,7 @@ description: "GetIstio frequently asked questions."
 type : "docs"
 weight: 8
 ---
-## General
+## General FAQ
 
 - [What is GetIstio?](#what-is-getistio)
 - [Why should I use GetIstio?](#why-should-i-use-getistio)
@@ -96,7 +96,7 @@ There are multiple ways to leverage GetIstio - please refer to the
 ##### Can GetIstio help me upgrade Istio?
 Yes. GetIstio enables seamless upgrades via the [`getistio upgrade`](/getistio-cli/reference/getistio_update) command. 
 
-## Project
+## Project FAQ
 
 #####  Are you creating a fork of the Istio project?
 No. We provide distributions of upstream tested for specific environments. Any enhancements we make to Istio are applied 
@@ -112,5 +112,6 @@ We make new GetIstio builds available as soon as they are available in upstream 
 Create a feature requests and vote for features on [GitHub](https://github.com/tetratelabs/getistio).
 
 ##### Can we contribute to the work done on GetIstio?
-Yes, GetIstio is open source and under the Apache License. You can [contribute](/community/building-and-testing) to any components of the GetIstio.
+Yes. GetIstio is an [Apache 2 licenced](https://www.apache.org/licenses/LICENSE-2.0) open source project. You can 
+[contribute](/community/contributing) to any components of GetIstio.
 
