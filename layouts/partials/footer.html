@@ -1,25 +1,16 @@
 <footer>
   <div class="container">
     <div class="row align-items-center pb-0 footer-logo">
-      <!-- <div class="col-lg-4">
-        <ul class="list-inline footer-menu text-center text-lg-left">
-          {{ range .Site.Menus.footer }}
-          <li class="list-inline-item"><a href="{{ .URL | absLangURL }}">{{ .Name }}</a></li>
-          {{ end }}
-        </ul>
-      </div> -->
-      <!-- <div class="col-lg-4 col-md-4 col-9 text-center mb-4 mx-auto ml-lg-0"> -->
-        <a class="navbar-brand" href="{{ .Site.BaseURL | relLangURL }}">
-          {{ if .Site.Params.logo }}
-          <img id="getistio-footer-logo" class="img-fluid" src="{{ .Site.Params.logo | relURL }}" alt="{{ .Site.Title }}">
-          {{ else }}
-          {{ .Site.Title }}
-          {{ end }}
-        </a>
-        <a href="https://www.tetrate.io">
-          <img id="tetrate-footer-logo" class="img-fluid" src="/images/tetrate-logo.svg" alt="Tetrate Logo">
-        </a>
-      <!-- </div> -->
+      <a class="navbar-brand" href="{{ .Site.BaseURL | relLangURL }}">
+        {{ if .Site.Params.logo }}
+        <img id="getistio-footer-logo" class="img-fluid" src="{{ .Site.Params.logo | relURL }}" alt="{{ .Site.Title }}">
+        {{ else }}
+        {{ .Site.Title }}
+        {{ end }}
+      </a>
+      <a href="https://www.tetrate.io">
+        <img id="tetrate-footer-logo" class="img-fluid" src="/images/tetrate-logo.svg" alt="Tetrate Logo">
+      </a>
     </div>
     <div class="py-4 text-center">
       <div class="mb-4">
