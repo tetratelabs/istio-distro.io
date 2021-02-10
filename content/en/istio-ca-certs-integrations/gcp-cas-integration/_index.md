@@ -1,7 +1,7 @@
 ---
-title: "GCP CAS Integration"
+title: "GCP CA Integration"
 date: 2021-01-25T13:00:00+07:00
-description: "Istio CA Certificate from GCP CAS"
+description: "GCP CA Integration"
 # type dont remove or customize
 type : "docs"
 ---
