@@ -2,7 +2,7 @@
 baseURL = "https://getistio.io/"
 title = "GetIstio by Tetrate | Simple, safe enterprise-grade Istio distro"
 # google analytics
-googleAnalytics = ""
+googleAnalytics = "G-P3J9XNBME4"
 # disable language
 disableLanguages = ["zh"] # disable language from here
 enableRobotsTXT = true
@@ -176,6 +176,7 @@ weight = 6
 logo = "images/getistio-by-tetrate-logo.png"
 # Meta data
 description = "GetIstio project website, an open source Istio distribution"
+images = ["images/twitter-card.png"]
 author = "Tetrate"
 sitename = "GetIstio"
 twitter = "@tetrateio"
