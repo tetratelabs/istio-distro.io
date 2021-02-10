@@ -1,6 +1,6 @@
 ######################## default configuration ####################
 baseURL = "https://getistio.io/"
-title = "GetIstio"
+title = "GetIstio by Tetrate | Simple, safe enterprise-grade Istio distro"
 # google analytics
 googleAnalytics = ""
 # disable language
