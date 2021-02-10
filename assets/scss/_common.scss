@@ -240,6 +240,44 @@ a:hover {
   }
 }
 
+.community-banner {
+  background: url('/images/partner-bg.svg'), radial-gradient(70% 500px, #646F83, #A8B5CC);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 360px;
+  margin-bottom: 0;
+
+  h1 {
+    color:white;
+    font-weight: 700;
+  }
+}
+
+.community-events {
+  .event-actions {
+    justify-content: flex-end;
+    padding-right: 24px;
+    margin-top: 24px;
+    margin-bottom: 8px;
+
+    a:first-child {
+      margin-right: 24px;
+    }
+  }
+}
+
+.community-contribution {
+  margin: 48px 0 72px;
+
+  .card {
+    background: #e7ecf2
+  }
+
+  ul {
+    list-style: disc;
+  }
+}
+
 /* overlay */
 
 .overlay {
@@ -849,6 +887,30 @@ pre {
         margin-right: 0px !important;
         font-size: 16px;
         font-weight: 700;
+      }
+    }
+  }
+
+  .community-banner {
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    img {
+      max-width: 40%;
+      margin-bottom: 24px;
+    }
+  }
+
+  .community-events {
+    .event-actions {
+      flex-wrap: nowrap;
+      padding: 0;
+      justify-content: center;
+      margin-top: 0px;
+
+      a:first-child {
+        margin-right: 8px;
       }
     }
   }

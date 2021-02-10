@@ -8,7 +8,7 @@ hero:
     - content: "Community hub for users, ecosystem, and partners"
   asciinema_id: 390274
 
-########################## Subsribe section ##########################
+########################## Subscribe section ##########################
 subscribe:
   enable: true
   item:
@@ -16,6 +16,8 @@ subscribe:
     - content: "Never miss new releases and community events"
   error_message: "Please enter a valid email address."
   form_message: "Thank you for subscribing."
+  community_item:
+    - content: "Join the GetIstio community to get release updates and community announcements"
 
 ########################## Dictionary section ########################
 dictionary:
