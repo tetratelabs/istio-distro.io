@@ -4,7 +4,7 @@ title = "GetIstio"
 # google analytics
 googleAnalytics = "" # example : UA-123-45
 # disable language
-# disableLanguages = ["fr"] # disable language from here
+disableLanguages = ["zh"] # disable language from here
 enableRobotsTXT = true
 hasCJKLanguage = true
 paginate = "6"
