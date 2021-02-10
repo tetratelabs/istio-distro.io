@@ -1,7 +1,7 @@
 ---
-title: "GetIstio Deep Dive"
+title: "02: Istio the Easy Way with GetIstio"
 date: 2021-01-29T11:00:00+07:00
-description: "Let's explore what GetIstio has to offer for our service mesh adventure."
+description: "Episode 02: Istio the Easy Way with GetIstio"
 categories: "event"
 image: "images/events/istio1.9-whats-new.png"
 eventLink: "https://us02web.zoom.us/j/89163866904"
