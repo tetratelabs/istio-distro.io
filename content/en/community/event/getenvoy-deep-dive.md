@@ -1,7 +1,7 @@
 ---
 title: "01: Effortless Envoy and WASM with GetEnvoy"
 date: 2021-01-29T11:00:00+07:00
-description: "Let's take a deep look into GetEnvoy and exciting updates from the project."
+description: "Edpisode 01: Effortless Envoy and WASM with GetEnvoy"
 categories: "event"
 image: "images/events/getenvoy-deep-dive.png"
 eventLink: "https://us02web.zoom.us/j/89163866904"
