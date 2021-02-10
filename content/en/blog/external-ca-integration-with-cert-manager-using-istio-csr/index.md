@@ -15,15 +15,15 @@ In this article we at Tetrate will show how to integrate [cert-manager](https://
 
 ###  Background
 
-For key and certificate management, Istio is using its own Certificate Authority(CA) inside `istiod` control plane.
+For key and certificate management, Istio is using its own Certificate Authority (CA) inside `istiod` control plane.
 
-In here, we would use [cert-manager ](https://cert-manager.io/)provisioned Issuer as the [external CA](https://getistio-demo.netlify.app/istio-ca-certs-integrations/) to sign the workloads certificates using Istio CSR API with the CSR request directly going from the workloads to the external CA.
+Here, we would use the [cert-manager ](https://cert-manager.io/)provisioned Issuer as the [external CA](https://getistio-demo.netlify.app/istio-ca-certs-integrations/) to sign the workload certificates using Istio CSR API with the CSR request directly going from the workloads to the external CA.
 
 ### Setting up the Environment
 
 We performed this demo using Kubernetes 1.18 and Istio 1.8:
 
-1. Deploy kubernetes cluster(>=1.16) with minikube.
+1. Deploy Kubernetes cluster(>=1.16) with minikube.
 
    ```bash
    minikube start --memory=10000 --cpus=4 --kubernetes-version=1.18.6
@@ -59,7 +59,7 @@ helm install \
 
 ### Configure cert-manager Issuer
 
-While we could use cert-manager to connect with several Issuers, in this example we would configure cert-manager to create a self-signed CA to issue workload certificates. `istio-ca` secret would hold the CA key/cert pair.
+While we could use cert-manager to connect with several Issuers, in this example we would configure cert-manager to create a self-signed CA to issue workload certificates. The `istio-ca` secret would hold the CA key/cert pair.
 
 ```yaml
 apiVersion: cert-manager.io/v1
@@ -103,7 +103,7 @@ kubectl apply -f https://raw.githubusercontent.com/cert-manager/istio-csr/master
 
 ### Deploy istio-csr agent for cert-manager
 
-Deploy `istio-csr` through official helm chart, it will use a certificate named `istio-ca` to generate `istio-ca` secret for workload certificate and verification.
+Deploy `istio-csr` through official helm chart. It will use a certificate named `istio-ca` to generate `istio-ca` secret for workload certificate and verification.
 
 ```bash
 helm repo add https://chart.jetstack.io
@@ -211,15 +211,15 @@ sleep-8f795f47d-vv6hx   2/2     Running   0          42s
 
 ### Validate mTLS certs issued for workloads
 
-After the workload is running, we could check on secret in SDS using istioctl proxy-config command.
+After the workload is running, we could check on the secret in SDS using the istioctl proxy-config command.
 
 ```bash
 getistio istioctl pc secret sleep-8f795f47d-vv6hx.foo -o json > proxy_secret
 ```
 
-Check on the proxy_secret, there should have a field named `ROOTCA` and in `ROOTCA` there should have one field `trustedCA` which is signed by cert-manager `istio-ca` credentia.
+Check on the proxy_secret. There should be a field named `ROOTCA` and in `ROOTCA` there should be a field `trustedCA` which is signed by cert-manager `istio-ca`.
 
-Compare the base64 value in `trustedCA` with the `istio-ca` secret `ca.crt` located in `istio-system`, those two base64 value should be the same.
+Compare the base64 value in `trustedCA` with the `istio-ca` secret `ca.crt` located in `istio-system`. Those two should be the same.
 
 ```bash
 kubectl get secrets -n istio-system istio-ca -o json > istio-ca
