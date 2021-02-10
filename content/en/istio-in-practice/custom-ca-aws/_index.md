@@ -5,7 +5,7 @@ weight: 8
 draft: false
 ---
 
-Using GetIstio you can connect to AWS Certificate Manager (ACM) and get the intermediary CA certs signed.
+Using GetIstio you can connect to AWS Certificate Manager (ACM) Private CA and get the intermediary CA certs signed.
 
 ## Prerequisites
 
@@ -13,9 +13,9 @@ To follow this tutorial, you will need an AWS account and a Kubernetes cluster w
 
 You can follow the [prerequisites](/istio-in-practice/prerequisites) for instructions on how to install and setup Istio.
 
-### Setting up ACM
+### Setting up ACM Private CA
 
-The first thing we need is to set up the ACM in AWS Console. Log in to your AWS account and follow the steps below to create an ACM instance.
+The first thing we need is to set up the ACM Private CA in AWS Console. Log in to your AWS account and follow the steps below to create an ACM Private CA instance.
 
 1. From the services dropdown, select **Certificate Manager** under Security, Identity, & Compliance.
 1. Click **Get started** button under Private certificate authority.
@@ -32,10 +32,10 @@ The first thing we need is to set up the ACM in AWS Console. Log in to your AWS 
 1. On the "Configure certificate revocation" step, click **Next**.
 1. On the "Add tags" step, click **Next**.
 1. On the "Configure CA permissions" step, click **Next**.
-1. On the "Review" step, select the confirmation check box, and click **Confirm and create** button to create ACM.
+1. On the "Review" step, select the confirmation check box, and click **Confirm and create** button to create ACM Private CA.
 1. Click the **Create** button to create the CAS.
 
-Before ACM can start issuing certificates, you need to activate by installing a CA certificate. 
+Before ACM Private CA can start issuing certificates, you need to activate by installing a CA certificate. 
 
 1. From the "Private CAs" page, click the **Install a CA certificate to active your CA** link.
 1. Change the validity to **364 days**.
@@ -52,7 +52,7 @@ Ensure you have AWS credentials set up with the `AWSCertificateManagerPrivateCAF
 
 ## Creating ACM configuration
 
-We will use a YAML configuration to configure ACM. Use the YAML below as a template, and enter the ACM information from the AWS console:
+We will use a YAML configuration to configure ACM Private CA. Use the YAML below as a template, and enter the ACM Private CA information from the AWS console:
  
 ```yaml
 providerName: "aws"
