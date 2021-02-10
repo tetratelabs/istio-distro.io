@@ -122,8 +122,28 @@ a:hover {
   padding-top: 80px;
 }
 
+.training-section {
+  margin-top: 72px;
+
+  .banner-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(358deg, #6d90a8, transparent),
+      linear-gradient(142deg, #f56023, transparent);
+    padding: 24px;
+
+    h4 {
+      margin-bottom: 0px;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+  }
+}
+
 .cta-section {
-  background: #29507D;
+  background: #29507d;
 
   p {
     width: 75%;
@@ -591,16 +611,13 @@ pre {
 }
 
 .blog-list {
-
   .blog-overview {
-
     p.author-info {
       a {
         color: #f56023;
       }
     }
   }
-
 }
 
 .blog-content {
@@ -666,7 +683,7 @@ pre {
     border-left: 10px solid #abb2ba;
     margin: 1.5em 0;
     padding: 0.5em 16px;
-    quotes: "\201C""\201D""\2018""\2019";
+    quotes: '\201C''\201D''\2018''\2019';
   }
 
   blockquote:before {
@@ -699,14 +716,13 @@ pre {
   background-color: #fdfdfd;
   min-width: 240px;
   overflow: auto;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   padding: 0;
 
   &.show {
     display: block;
   }
-
 }
 
 .dropdown-content a {
@@ -716,7 +732,9 @@ pre {
   display: block;
 }
 
-.dropdown a:hover {background-color: #ddd;}
+.dropdown a:hover {
+  background-color: #ddd;
+}
 
 // this is valid if we use asciinema player, not embedding from asciinema.org.
 // pre.asciinema-terminal {
@@ -753,6 +771,15 @@ pre {
     }
     li {
       font-size: 18px;
+    }
+  }
+
+  .training-section {
+    .banner-content {
+      h4 {
+        font-size: 16px;
+        font-weight: 700;
+      }
     }
   }
 }
@@ -810,6 +837,19 @@ pre {
     padding: 32px;
     .carousel-inner {
       width: 100%;
+    }
+  }
+
+  .training-section {
+    .banner-content {
+      flex-wrap: wrap;
+
+      h4 {
+        margin-bottom: 24px;
+        margin-right: 0px !important;
+        font-size: 16px;
+        font-weight: 700;
+      }
     }
   }
 }
