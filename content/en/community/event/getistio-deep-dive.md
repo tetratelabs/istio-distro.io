@@ -3,7 +3,7 @@ title: "02: Istio the Easy Way with GetIstio"
 date: 2021-01-29T11:00:00+07:00
 description: "Episode 02: Istio the Easy Way with GetIstio"
 categories: "event"
-image: "images/events/istio1.9-whats-new.png"
+image: "images/events/istio-the-easy-way.png"
 eventLink: "https://us02web.zoom.us/j/89163866904"
 eventDate: 2021-03-16
 pastEvent: false
