@@ -19,8 +19,10 @@ To follow this tutorial, you will need a Google Cloud Platform account and a Kub
 - A CA set up in GCP CAS
 - GCP credentials file and the environment variable `GOOGLE_APPLICATION_CREDENTIALS` pointed to the crednetials to get the CSR with CA set signed by the GCP CAS. Refer to the [Getting started with authentication](https://cloud.google.com/docs/authentication/getting-started) documentation on how to setup the GCP credentials.
 
-
 You can follow the [prerequisites](/istio-in-practice/prerequisites) for instructions on how to install and setup Istio.
+
+<details>
+<summary><strong>Click here, if you need to set up GCP CA</strong></summary>
 
 ### Setting up CAS
 
@@ -29,13 +31,18 @@ The first thing we need is to set up the CAS in Google Cloud Console. Log in to 
 1. From the navigation menu, select Security → Certificate Authority Service.
 1. Click the **Create CA** button.
 1. Configure the CA type:
+    1. Select **Root CA**.
+    1. Select **365 days** for validity.
+    1. Select the **Enterprise** tier**.
     1. Select the CAS's location from the **Location** list (e.g. `us-east1`).
     1. Click **Next**.
 1. Configure the CA subject name (you can use your values here):
-    1. For **Organization (O)**, enter **ACME org**.
-    1. You can skip the Organization unit, Country name, State, and Locality name, as they are optional.
-    1. For **CA Common name (CN)**, enter **acmeorg.example.com**.
-    1. For **Resource ID**, enter **acmeorg-example-com**.
+    1. For **Organization (O)**, enter **Istio**.
+    1. For **Organization unit (OU)**, enter **engineering**.
+    1. For **Country name (C)**, enter **US**.
+    1. For **Locality name**, enter **Sunnyvale**.
+    1. For **CA Common name (CN)**, enter **getistio.example.io**.
+    1. For **Resource ID**, enter **getistio-example-io**.
     1. Click **Next**.
 1. Configure the CA key size and algorithm:
     1. Select **RSA PKCS1 2048 (SHA 256)**.
@@ -49,6 +56,7 @@ The figure below shows the summary page. Note that your page might look differen
 ### Configure GCP credentials
 
 Ensure you have GCP credentials set up (e.g.`GOOGLE_APPLICATION_CREDENTIALS` environment variable has to point to the credentials) on a machine you're accessing the Kubernetes cluster from. Alternatively, if you installed GetIstio on Google Cloud Shell, the credentials are already set up.
+</details>
 
 ## Creating CAS configuration
 
@@ -58,40 +66,29 @@ We will use a YAML configuration to configure CAS and CSR creation. Use the YAML
 providerName: "gcp"
 providerConfig:
   gcp:
-    # Replace with the resource name of the certificate authority you created on GCP
-    # You can get the resource name by selecting the View option in the Actions menu on GCP
-    casCAName: "projects/tetrate-io-istio/locations/us-west1/certificateAuthorities/acmeorg-example-com"
+    # This will hold the full CA name for the certificate authority you created on GCP
+    casCAName: "projects/tetrate-io-istio/locations/us-west1/certificateAuthorities/getistio-example-com"
 
 certificateParameters:
   secretOptions:
-    # Namespace where 'cacerts' Kubernetes secret is created on your target cluster
-    istioCANamespace: "istio-system"
-    # SecretFilePath is the file path used to store the Kubernetes Secret in yaml format
-    secretFilePath:
-    # Force flag when enabled forcefully deletes the `cacerts` secret
-    # in istioNamespace, and creates a new one.
-    force: true
+    istioCANamespace: "istio-system" # namespace where `cacerts` secrets live
+    force: true # force delete the `cacerts` secret and replace it with this new one
   caOptions:
-    # ValidityDays represents the number of validity days before the CA expires.
-    # Replace with the value selected during CAS creation
-    validityDays: 3640
-    # KeyLength is the length(bits) of Key to be created
-    keyLength: 2048
-    # This is x509.CertificateRequest. Only a few fields are shown below
-    certSigningRequestParams:
+    validityDays: 365 # validity days before the CA expires
+    keyLength: 2048 # length (bits) of Key to be created
+    certSigningRequestParams: # x509.CertificateRequest; most fields omitted
       subject:
-        commonname: "acmeorg.example.com"
+        commonname: "getistio.example.io"
+        country: 
+          - "US"
+        locality:
+          - "Sunnyvale"
         organization:
-          - "ACME org"
-        # You can also enter any optional fields if you defined them in CAS
-        # organizationunit:
-        #   - "engineering"
-        # country:
-        #   - "US"
-        # locality:
-        #   - "Sunnyvale"
+          - "Istio"
+        organizationunit:
+          - "engineering"
       emailaddresses:
-        - "hello@example.com"
+        - "youremail@example.io"
 ```
 
 Save the above file to `gcp-cas-config.yaml` and use `gen-ca` command to create the `cacert`:
@@ -155,16 +152,16 @@ Certificate:
     Data:
         Version: 3 (0x2)
         Serial Number:
-            a6:fd:46:64:ce:8b:21:28:6f:4b:98:7c:1c:8e:dd:88
-    Signature Algorithm: sha256WithRSAEncryption
-        Issuer: O=ACME org, CN=acmeorg.example.com
+            55:7f:b3:00:f8:b2:24:50:dc:51:7c:e5:85:5a:14:7a:65:28:26:38
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C = US, L = Sunnyvale, O = Istio, OU = engineering, CN = getistio.example.io
         Validity
-            Not Before: Feb  9 01:41:56 2021 GMT
-            Not After : Feb  9 02:41:56 2022 GMT
-        Subject: O=ACME org, CN=acmeorg.example.com
+            Not Before: Feb 10 17:24:51 2021 GMT
+            Not After : Feb 10 17:24:51 2022 GMT
+        Subject: C = US, L = Sunnyvale, O = Istio, OU = engineering, CN = getistio.example.io
         Subject Public Key Info:
             Public Key Algorithm: rsaEncryption
-                Public-Key: (2048 bit)
+                RSA Public-Key: (2048 bit)
 ...
 ```
 
