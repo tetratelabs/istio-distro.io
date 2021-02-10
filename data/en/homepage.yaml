@@ -17,7 +17,7 @@ subscribe:
   error_message: "Please enter a valid email address."
   form_message: "Thank you for subscribing."
   community_item:
-    - content: "Be a part of the GetIstio Community, join the newsletter"
+    - content: "Join the GetIstio community to get release updates and community announcements"
 
 ########################## Dictionary section ########################
 dictionary:
