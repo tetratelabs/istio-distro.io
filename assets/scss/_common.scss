@@ -240,7 +240,7 @@ a:hover {
   }
 }
 
-.community-events-page {
+.community-events {
   .event-actions {
     justify-content: flex-end;
     padding-right: 24px;
@@ -250,6 +250,18 @@ a:hover {
     a:first-child {
       margin-right: 24px;
     }
+  }
+}
+
+.community-contribution {
+  margin: 48px 0 72px;
+
+  .card {
+    background: #e7ecf2
+  }
+  
+  ul {
+    list-style: disc;
   }
 }
 
