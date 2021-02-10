@@ -1,31 +1,25 @@
 ---
-title: "GetEnvoy Deep Dive and Project Update"
+title: "01: Effortless Envoy and WASM with GetEnvoy"
 date: 2021-01-29T11:00:00+07:00
 description: "Let's take a deep look into GetEnvoy and exciting updates from the project."
 categories: "event"
 image: "images/events/getenvoy-deep-dive.png"
-eventLink: "http://meet.google.com/abc"
+eventLink: "https://us02web.zoom.us/j/89163866904"
 eventDate: 2021-03-04
 pastEvent: false
 weight: 3
 ---
 
-GetEnvoy has been around for more than a year now, and it has helped more than 70,000 people to get Envoy up and running in swift fashion. In this meetup, Christoph Pakulski engineer from Tetrate, will give a detailed explanation of how to use and participate in the project.
-
-We will go into the following updates:
+Episode 01 of the community launches into the broader Istio ecosystem with a look into Envoy and how, like GetIstio, the GetEnvoy project helps ensure success on any cloud or platform. Christoph Pakulski will be showing off the power of WASM and how Istio and Envoy are better together.
 
 * **Welcome and Introduction**
-    + GetIstio Community
-    + Future Topics
-    + Community Resources
+    + Community news
+    + Future topics
+    + Community resources
 * GetEnvoy
-  + Envoy Overview
-  + GetEnvoy CLI Overview
-  + GetEnvoy Demo
-  + GetEnvoy Roadmap
-  + Community Participation
+  + Envoy overview
+  + GetEnvoy CLI
+  + GetEnvoy demo
+  + GetEnvoy roadmap
 * Q&A
-* Closing with Resource Links
-
-
-This event will be hosted by Tetrate's own Sean O'Dell. See you on March 16, 2021.
+* Closing with resource links
