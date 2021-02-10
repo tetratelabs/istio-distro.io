@@ -15,7 +15,7 @@ In this article we at Tetrate will show how to integrate [cert-manager](https://
 
 ###  Background
 
-For key and certificate management, Istio is using its own Certificate Authority(CA) inside `istiod` control plane
+For key and certificate management, Istio is using its own Certificate Authority(CA) inside `istiod` control plane.
 
 In here, we would use [cert-manager ](https://cert-manager.io/)provisioned Issuer as the [external CA](https://getistio-demo.netlify.app/istio-ca-certs-integrations/) to sign the workloads certificates using Istio CSR API with the CSR request directly going from the workloads to the external CA.
 
@@ -35,7 +35,7 @@ We performed this demo using Kubernetes 1.18 and Istio 1.8:
    curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
    ```
 
-3. Install getistio and fetch Istio.
+3. Install GetIstio and fetch Istio.
 
    ```bash
    curl -sL https://tetrate.bintray.com/getistio/download.sh | bash
@@ -59,7 +59,7 @@ helm install \
 
 ### Configure cert-manager Issuer
 
-While we could use cert-manager to connect with several Issuers, in this example we would configure cert-manager to create a self-signed CA to issue workload certificates. `Istio-ca` secret would hold the CA key/cert pair.
+While we could use cert-manager to connect with several Issuers, in this example we would configure cert-manager to create a self-signed CA to issue workload certificates. `istio-ca` secret would hold the CA key/cert pair.
 
 ```yaml
 apiVersion: cert-manager.io/v1
@@ -103,7 +103,7 @@ kubectl apply -f https://raw.githubusercontent.com/cert-manager/istio-csr/master
 
 ### Deploy istio-csr agent for cert-manager
 
-Deploy `istio-csr` through official helm chart, it will use a certificate named `istio-ca` to generate `istio-ca` secret for workload certificate and verification
+Deploy `istio-csr` through official helm chart, it will use a certificate named `istio-ca` to generate `istio-ca` secret for workload certificate and verification.
 
 ```bash
 helm repo add https://chart.jetstack.io
@@ -121,9 +121,11 @@ Initialize Istio operator.
 getistio istioctl operator init
 ```
 
-Configure on the operator yaml.
+Configure on the `operator yaml`.
 
-Configure External CA address for workloads; Disable istiod as the CA Server; provide TLS certs for istiod from cert-manager.
+- Configure External CA address for workloads
+- Disable istiod as the CA Server
+- provide TLS certs for istiod from cert-manager
 
 ```yaml
 apiVersion: install.istio.io/v1alpha1
@@ -184,7 +186,7 @@ spec:
                 name: istio-ca-root-cert
 ```
 
-You could validate on all cert-manager certs in `istio-system` namespace through the following command。
+You could validate on all cert-manager certs in `istio-system` namespace through the following command.
 
 ```bash
 kubectl get certificates -n istio-system
@@ -195,7 +197,7 @@ istiod     True    istiod-tls   16m
 
 ### Deploy application
 
-Here we deploy a simple workload for certificate verification。
+Here we deploy a simple workload for certificate verification.
 
 ```bash
 kubectl create ns foo
@@ -225,4 +227,4 @@ kubectl get secrets -n istio-system istio-ca -o json > istio-ca
 
 ### Summary
 
-This article demonstrates how to integrate cert-manager as an external CA for Istio service mesh. The cert-manager/Service mesh integration can be successfully implemented in different clouds with brand-new or existing deployments of cert-manager, when the service mesh is introduced during Day Two implementations stage. In the end, you're getting the best of two worlds: Istio integrating with an external CA of your choice!
+This article demonstrates how to integrate cert-manager as an external CA for Istio service mesh. The cert-manager/service mesh integration can be successfully implemented in different clouds with brand-new or existing deployments of cert-manager, when the service mesh is introduced during Day 2 implementations stage. In the end, you're getting the best of two worlds: Istio integrating with an external CA of your choice!
