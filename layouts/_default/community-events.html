@@ -1,0 +1,34 @@
+{{ define "main" }}
+{{- partial "community-banner.html" . -}}
+<section class="community-events-page">
+  <div class="container">
+    <h3 class="text-center my-4">Upcoming GetIstio Community Events</h3>
+    <div class="row">
+      {{ range .Site.Taxonomies.categories.event }}
+      {{ if eq .Page.Params.pastEvent false }}
+      <div class="col-lg-6 mb-4 p-4">
+        <div class="card match-height event-card">
+          <p class="event-date pb-2">
+            {{ .Page.Params.eventDate }}
+            {{ if .Page.Params.eventEndDate }}
+            - {{ .Page.Params.eventEndDate}}
+            {{ end }}
+            <span><i class="ti-calendar"></i></span>
+          </p>
+          <a href="{{ .Page.RelPermalink }}">
+            <h5>{{ .Page.Title }}</h5>
+          </a>
+          <img src="{{ .Page.Params.image |relURL }}" />
+          <p>{{ .Page.Description }}</p>
+          <div class="event-actions row">
+            <a class="btn btn-sm" href="{{ .Page.RelPermalink }}">{{ i18n "learn_more" }}</a>
+            <a class="btn btn-sm btn-primary" href="{{ .Page.Params.eventLink }}">{{ i18n "go_to_event" }}</a>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
