@@ -2,9 +2,9 @@
 baseURL = "https://getistio.io/"
 title = "GetIstio"
 # google analytics
-googleAnalytics = "" # example : UA-123-45
+googleAnalytics = ""
 # disable language
-# disableLanguages = ["fr"] # disable language from here
+disableLanguages = ["zh"] # disable language from here
 enableRobotsTXT = true
 hasCJKLanguage = true
 paginate = "6"
@@ -146,7 +146,7 @@ weight = 2
 
 [[Languages.en.menu.main]]
 name = "Community"
-url = "/community"
+url = "/community-events/"
 weight = 3
 
 [[Languages.en.menu.main]]

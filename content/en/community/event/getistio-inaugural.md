@@ -1,29 +1,29 @@
 ---
-title: "GetIstio Inaugural Meetup"
+title: "00: What is GetIstio - Inaugural Community Meetup"
 date: 2021-01-29T11:00:00+07:00
-description: "The first ever GetIstio meetup. Join us in kicking off this exciting adventure."
+description: "Edpisode 00: What is GetIstio - Inaguaral Community Meetup"
 categories: "event"
 image: "images/events/getistio-inaugural-meetup.png"
-eventLink: "http://meet.google.com/abc"
+eventLink: "https://us02web.zoom.us/j/89163866904"
 eventDate: 2021-02-18
 pastEvent: false
 weight: 1
 ---
 
-Welcome to the first ever GetIstio Community meeting. Zack Butcher and Christoph Pakulski will guide us through the following agenda:
+The inaugural meetup will be a special edition with 90 minutes to introduce the community, unpacking the GetIstio project, an overview of the GetEnvoy project and an update on what's wew in the Istio 1.9 release. We look forward to diving into the topics, demonstrating some new Istio capabilities and answering all of your questions during the Q&A session.
 
 * **Welcome and Introduction**
-    + GetIstio Community
-    + Community Goals and Objectives
+    + GetIstio community
+    + Community goals and objectives
     + Meeting cadence
     + Current stakeholders
-    + Future Topics
-    + Community Resources
-* GetIstio Project
-* GetEnvoy Project
-* Istio 1.9
-    + What's New
+    + Future topics
+    + Community resources
+* Introduction to the GetIstio project with Zack Butcher
+* Review of the GetEnvoy project with Christoph Pakulski
+* Istio 1.9 Release Update
+    + Demonstration of new features related to VMs, observability, and more
 * Q&A
-* Closing with Resource Links
+* Closing with community  resource links
 
-This event will be hosted by Tetrate's own Sean O'Dell. See you on 16 February 2021.
+**Join [here](https://us02web.zoom.us/j/89163866904)**

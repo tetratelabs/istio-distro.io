@@ -2,7 +2,7 @@
 # the name of the partner
 title: "Venafi"
 # a quick blurb of what the partner does
-description: "This is a description of Venafi"
+description: "Venafi established the machine identity protection market, with solutions that protect the largest, most sensitive networks in the world."
 # the partner's image logo
 logo: "/images/venafi_logo.svg"
 # give this the same name as the partner's directory name in ecosystem-partners.
