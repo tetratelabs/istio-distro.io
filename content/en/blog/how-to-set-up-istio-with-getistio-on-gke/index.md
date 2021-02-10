@@ -8,7 +8,7 @@ bg_image: "images/backgrounds/page-title.jpg"
 description : "This article will start by taking you through a hands-on installation and use of GetIstio on GKE."
 # tags
 tags : ["installation", "GKE"]
-# thumbnail
+thumbnail: "/images/blog/google-cloud.jpg"
 ---
 
 GetIstio is an Istio distribution open sourced by Tetrate. It mainly solves the following problems of Istio.

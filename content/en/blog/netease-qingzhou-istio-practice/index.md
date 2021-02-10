@@ -2,9 +2,11 @@
 title: "How NetEase Qingzhou Enables Microservices Architecture Evolution with Istio"
 description: "The practice of using Istio in NetEase Qingzhou."
 date: "2020-02-02"
+author: "[Fei Pei](https://www.linkedin.com/in/斐-裴-0a182099)"
 # meta description
 # thumbnail
-thumbnail: "https://mdbootstrap.com/img/new/standard/nature/184.jpg"
+thumbnail: "/images/blog/netease.jpg"
+tags: ["case study"]
 ---
 
 Author Fei Pei, he is a senior architect at NetEase Qingzhou.
