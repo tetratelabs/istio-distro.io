@@ -19,8 +19,10 @@ To follow this tutorial, you will need an AWS account and a Kubernetes cluster w
 - A CA set up in AWS ACM Private CA and the Amazon Resource Name (ARN) of the CA
 - AWS credentials with the `AWSCertificateManagerPrivateCAFullAccess` and `AWSCertificateManagerFullAccess` policy attached. Refer to the [Configuring  the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) documentation on how to set up the credentials.
 
-
 You can follow the [prerequisites](/istio-in-practice/prerequisites) for instructions on how to install and setup Istio.
+
+<details>
+<summary><strong>Click here, if you need to set up ACM Private CA</strong></summary>
 
 ### Setting up ACM Private CA
 
@@ -30,9 +32,11 @@ The first thing we need is to set up the ACM Private CA in AWS Console. Log in t
 1. Click **Get started** button under Private certificate authority.
 1. Select the **Root CA** on the certificate authority (CA) type step, and click **Next**.
 1. Configure the CA name (you can use your values here):
-    1. For **Organization (O)**, enter **ACME org**.
-    1. You can skip the Organization unit, Country name, State, and Locality name, as they are optional.
-    1. For **Common name (CN)**, enter **acmeorg.example.com**.
+    1. For **Organization (O)**, enter **Istio**.
+    1. For **Organization unit (OU)**, enter **engineering**.
+    1. For **Country name (C)**, select  **United States (US)**.
+    1. For **Locality name**, enter **Sunnyvale**.
+    1. For **CA Common name (CN)**, enter **getistio.example.io**.
     1. Click **Next**.
 1. Configure the CA key size and algorithm:
     1. Click **Advanced** to expand the options.
@@ -47,7 +51,8 @@ The first thing we need is to set up the ACM Private CA in AWS Console. Log in t
 Before ACM Private CA can start issuing certificates, you need to activate by installing a CA certificate. 
 
 1. From the "Private CAs" page, click the **Install a CA certificate to active your CA** link.
-1. Change the validity to **364 days**.
+1. Change the validity to **365 days**.
+1. Select **SHA256WITHRSA** from the Signature algorithm list.
 1. Click **Next**.
 1. Click the **Confirm and install** button to generate, and install the root CA certificate.
 
@@ -59,6 +64,8 @@ The figure below shows the Private CA page.  Note that yours might look differen
 
 Ensure you have AWS credentials set up with the `AWSCertificateManagerPrivateCAFullAccess` and `AWSCertificateManagerFullAccess` policy attached on a machine you're accessing the Kubernetes cluster from. Alternatively, if you installed GetIstio on AWS Cloud Shell, the credentials are already set up.
 
+</details>
+
 ## Creating ACM configuration
 
 We will use a YAML configuration to configure ACM Private CA. Use the YAML below as a template, and enter the ACM Private CA information from the AWS console:
@@ -67,42 +74,30 @@ We will use a YAML configuration to configure ACM Private CA. Use the YAML below
 providerName: "aws"
 providerConfig:
   aws:
-    # You can get the ARN value from the Details page of your private certificate authority 
-    signingCAArn: "arn:aws:acm-pca:us-east-2:859085711342:certificate-authority/4cbb144c-2164-4683-ac9e-eaa25e72b85e"
-    # template to use for the CSR.
+    # This will hold the ARN value from the Details page of ACM Private CA 
+    signingCAArn: "  arn:aws:acm-pca:us-east-2:859085711342:certificate-authority/097162cc-6a9e-47ab-b5e0-fecf32556d6d"
     templateArn: "arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen0/V1"
-    # Optional field. If left blank would default to SHA256WITHRSA
     signingAlgorithm: SHA256WITHRSA
 certificateParameters:
   secretOptions:
-    # Namespace where 'cacerts' Kubernetes secret is created on your target cluster
-    istioCANamespace: "istio-system"
-    # SecretFilePath is the file path used to store the Kubernetes Secret in yaml format
-    secretFilePath:
-    # Force flag when enabled forcefully deletes the `cacerts` secret
-    # in istioNamespace, and creates a new one.
-    force: true
+    istioCANamespace: "istio-system" # namespace where `cacerts` secrets live
+    force: true # force delete the `cacerts` secret and replace it with this new one
   caOptions:
-    # ValidityDays represents the number of validity days before the CA expires.
-    # Replace with the value selected during CAS creation
-    validityDays: 364
-    # KeyLength is the length(bits) of Key to be created
-    keyLength: 2048
-    # This is x509.CertificateRequest. Only a few fields are shown below
-    certSigningRequestParams:
+    validityDays: 365 # validity days before the CA expires
+    keyLength: 2048 # length (bits) of Key to be created
+    certSigningRequestParams: # x509.CertificateRequest; most fields omitted
       subject:
-        commonname: "acmeorg.example.com"
+        commonname: "getistio.example.io"
+        country: 
+          - "US"
+        locality:
+          - "Sunnyvale"
         organization:
-          - "ACME org"
-        # You can also enter any optional fields if you defined them in CAS
-        # organizationunit:
-        #   - "engineering"
-        # country:
-        #   - "US"
-        # locality:
-        #   - "Sunnyvale"
+          - "Istio"
+        organizationunit:
+          - "engineering"
       emailaddresses:
-        - "hello@example.com"
+        - "youremail@example.io"
 ```
 
 Save the above file to `aws-acm-config.yaml` and use `gen-ca` command to create the `cacert`:
@@ -168,11 +163,11 @@ Certificate:
         Serial Number:
             94:d9:65:d0:b0:42:ac:31:70:f8:9f:84:02:6b:b1:d7:8d:2e:cb:c8
         Signature Algorithm: sha256WithRSAEncryption
-        Issuer: O = ACME org, CN = acmeorg.example.com
+        Issuer: C = US, L = Sunnyvale, O = Istio, OU = engineering, CN = getistio.example.io
         Validity
             Not Before: Feb  8 22:23:59 2021 GMT
             Not After : Jan 27 22:23:59 2031 GMT
-        Subject: O = ACME org, CN = acmeorg.example.com
+        Subject: C = US, L = Sunnyvale, O = Istio, OU = engineering, CN = getistio.example.io
         Subject Public Key Info:
             Public Key Algorithm: rsaEncryption
                 RSA Public-Key: (2048 bit)
