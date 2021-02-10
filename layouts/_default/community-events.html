@@ -1,5 +1,29 @@
 {{ define "main" }}
+
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
 {{- partial "community-banner.html" . -}}
+{{ with $data.homepage.subscribe }}
+<section class="cta-section py-4">
+  <div class="container mw-100">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 text-center">
+        {{ range .community_item }}
+        <p>{{ .content }}</p>
+        {{ end }}
+        <div class="form-control cta-form" id="emailFormContainer">
+          <form id="emailForm">
+            <input id="email" type="email" class="input" placeholder="{{ i18n " work_email"}}" / required>
+            <button class="btn btn-sm btn-primary">{{ i18n "join_now" }}</button>
+          </form>
+        </div>
+        <span id="errorMessage">{{ .error_message }}</span>
+        <p id="formMessage">{{ .form_message }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
 <section class="community-events">
   <div class="container">
     <h3 class="text-center my-4">Upcoming GetIstio Community Events</h3>
