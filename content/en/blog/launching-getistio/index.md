@@ -6,7 +6,7 @@ author: "Varun Talwar"
 # meta description
 # thumbnail
 thumbnail: "/images/introducing-getistio.png"
-tags: ["getisio"]
+tags: ["getistio"]
 ---
 
 Istio is one of the most popular and [fast-growing](https://octoverse.github.com/2019/) open-source projects in the
