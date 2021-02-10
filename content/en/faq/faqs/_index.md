@@ -1,5 +1,5 @@
 ---
-title: "FAQ"
+title: "FAQs"
 date: 2018-12-28T11:02:05+06:00
 icon: "ti-settings" # themify icon pack : https://themify.me/themify-icons
 description: "GetIstio frequently asked questions."
@@ -7,6 +7,7 @@ description: "GetIstio frequently asked questions."
 type : "docs"
 weight: 8
 ---
+## General
 
 - [What is GetIstio?](#what-is-getistio)
 - [Why should I use GetIstio?](#why-should-i-use-getistio)
@@ -21,7 +22,7 @@ weight: 8
 - [If my upgrade fails, how will Tetrate help me?](#if-my-upgrade-fails-how-will-tetrate-help-me)
 
 
-[Project overview](#project-overview)
+
 - [Are you creating a fork of the Istio project?](#are-you-creating-a-fork-of-the-istio-project)
 - [Does the GetIstio impact the performance of my application and in what ways?](#does-the-getistio-impact-the-performance-of-my-application-and-in-what-ways)
 - [Is there a cost for using GetIstio?](#is-there-a-cost-for-using-getistio)
@@ -30,48 +31,85 @@ weight: 8
 - [Can we contribute to the work done on GetIstio?](#can-we-contribute-to-the-work-done-on-getistio)
 
 ##### What is GetIstio?
-Today, we are launching GetIstio, a distribution for Istio upstream components which are tested, optimized, secured and supported by Tetrate. GetIstio provides vetted native versions of Istio for different K8s environments and makes Istio lifecycle management simple and safe.  The initial release is vetted for EKS, EKS-D and provides native integration into AWS KMS. We will incrementally add support for new K8s flavors and new KMS backends. GetIstio will support the last 3 versions as per its support policy and also offers a FIPS compliant version of Istio for FedRAMP environments.
+GetIstio is:
+
+* An open source project from Tetrate that aims to make adopting, managing, and updating Istio safe and easy.
+
+* Distros of upstream Istio that are tested and optimized for specific platforms by Tetrate. GetIstio provides 
+  vetted native versions of Istio for different K8s environments and makes Istio lifecycle management simple and safe.  
+  
+  The initial release is vetted for EKS, EKS-D and provides native integration into AWS KMS. We will continuously add 
+  support for new K8s flavors and new KMS backends. GetIstio will support the last 3 versions as per its support policy. 
+  GetIstio also offers a FIPS compliant Istio builds for FedRAMP environments.
+
+* [A CLI](/getistio-cli) that facilitates acquiring, installing, and configuring multiple GetIstio distros for multiple 
+   environments.
+
+* [A community of Istio contributors and users](/community) dedicated to helping each other make the practical use of 
+  Istio a joy. 
 
 ##### Why should I use GetIstio?
-You should use GetIstio if you are adopting Istio and need a reliable, and secure distribution to run in AWS, Azure or GCP environment 
+You should use GetIstio if need an Istio distro tested for use in AWS, Azure, or GCP and an easy way to install, 
+manage, and update Istio in those environments.
 
 ##### Is it free?
-Yes. GetIstio is a free (as in speech and as in beer) open source project and we welcome community participation and contribution. 
+Yes. GetIstio is an [Apache 2 licenced](https://www.apache.org/licenses/LICENSE-2.0) open source project and 
+all of the builds are available for free. We welcome community participation and contribution. Join our 
+[community](/community) for updates on new releases, notifications, and regular community events with Istio 
+contributors and practitioners.
 
 ##### What are the supported versions of GetIstio?
-Point to the supported platforms page on GitHub project.
+See the [download](/download) page for the current supported distributions.
 
 ##### What are the different components of the GetIstio and how do they compare to Istio upstream?
-GetIstio is a distribution of upstream Istio which consists of a CLI, an agent and integration APIs. More details [GetIstio CLI Command Reference](/getistio-cli/reference/getistio), [Cert Integration](/istio-ca-certs-integrations) and [Security Patches](/download).
+GetIstio is a distribution of upstream Istio which consists of a CLI, an agent and integration APIs. See the following
+for more details:
 
-##### I am using Istio OSS. How do I switch to using getistio?
-GetIstio is an upstream distribution of Istio.      
+* [GetIstio CLI Command Reference](/getistio-cli/reference/getistio)
+* [Cert Integration](/istio-ca-certs-integrations)
+* [Security Patches](/download).
+
+##### I am currently using the default distros of Istio. How do I switch to using GetIstio?
+GetIstio offers [distros of upstream Istio](/download) in multiple flavors that may be installed using your existing
+tooling. You may also use the [`getistio` CLI](/getistio-cli) to view the available distros, acquire them, and easily 
+manage installation, configuration, and upgrade.
 
 ##### I am new to Istio. Where should I start?
-We recommend you start with a vetted build for your environment from GetIsito. You get all the features of Isito and peace of mind with it.
+* Start by downloading the [`getistio` CLI](/getistio-cli). This will give you instant access to all of the GetIstio 
+  builds for the platforms you need.
 
+* The documentation will introduce you to the fundamentals of installing and configuring Istio.
+
+* To get up to speed on Istio quickly, we offer free training at 
+  [Tetrate Academy](https://academy.tetrate.io/courses/istio-fundamentals)
+  
+* To get insights from top Istio contributors and practitioners, [join the GetIstio community](/community) and meet up
+  at our regular GetIstio events.
+  
 ##### I am a platform admin trying to streamline Istio binaries in my organization. How should I use GetIstio?
-There are multiple ways to leverage GetIstio - please refer to the [command reference](/getistio-cli/reference/getistio) and [tutorials](/istio-tutorials).
+There are multiple ways to leverage GetIstio - please refer to the 
+[command reference](/getistio-cli/reference/getistio) and [tutorials](/istio-tutorials).
 
-##### How will I know if my Istio has CVEs?
-If you have [subscribed to community updates](/), GetIstio will notify you of CVEs and Zero day Vulnerabilities.
+##### How can I be alerted to vulnerabilities in my Istio deployments?
+[Join the GetIstio community](/community) for updates on CVEs and zero-day vulnerabilities.
 
 ##### Can GetIstio help me upgrade Istio?
-Yes. GetIstio enables seamless upgrades via `getistio upgrade` command. 
+Yes. GetIstio enables seamless upgrades via the [`getistio upgrade`](/getistio-cli/reference/getistio_update) command. 
 
-### Project overview
+## Project
 
 #####  Are you creating a fork of the Istio project?
-No, we are not creating a fork of the Istio project. We are creating a distribution of the upstream. Any enhancements we make to Istio will be made to the upstream.
+No. We provide distributions of upstream tested for specific environments. Any enhancements we make to Istio are applied 
+to upstream.
 
-##### Does GetIstio impact the performance of my application and in what ways?
+##### Does GetIstio have a performance impact?
 No. As an upstream distribution, GetIstio has no performance impact on Istio.
 
-##### How often do you plan to add new features to GetIstio from the upstream Istio project?
-GetIstio will make new versions of Istio available as soon as they are available in upstream Istio.
+##### How often are GetIstio distros updated?
+We make new GetIstio builds available as soon as they are available in upstream Istio.
 
-##### How do I request new features for GetIstio?
-Our roadmap is public. Please create a feature request and vote for features on the roadmap.
+##### How do I request features?
+Create a feature requests and vote for features on [GitHub](https://github.com/tetratelabs/getistio).
 
 ##### Can we contribute to the work done on GetIstio?
 Yes, GetIstio is open source and under the Apache License. You can [contribute](/community/building-and-testing) to any components of the GetIstio.
