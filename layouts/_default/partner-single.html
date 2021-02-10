@@ -4,17 +4,26 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-8">
-        <div class="text-center mb-4">
+        <div class="text-center partner-heading">
           <img class="partner-medium-logo mb-4" src="{{ .Params.Logo }}" />
-          <h2>{{ .Title }}</h2>
-          <a href="{{ .Params.WebsiteURL }}">{{ .Params.WebsiteTitle }}</a>
+          <!-- <h2 class="mb-3">{{ .Title }}</h2> -->
+          <a href="{{ .Params.WebsiteURL }}" class="external-link">{{ .Params.WebsiteTitle }}</a>
+          {{ if isset .Page.Params "linkedin"}}
+            <a href="{{ .Params.Linkedin }}" class="external-link">LinkedIn</a>
+          {{ end }}
+          {{ if isset .Page.Params "github"}}
+            <a href="{{ .Params.Github }}" class="external-link">GitHub</a>
+          {{ end }}
+          {{ if isset .Page.Params "twitter"}}
+            <a href="{{ .Params.Twitter }}" class="external-link">Twitter</a>
+          {{ end }}
         </div>
-        <div class="partner-content">
-          {{ .Content }}
+      {{ .Content }}
+      {{ if isset .Page.Params "docurl" }}
+        <div class="row justify-content-center">
+          <a class="btn btn-sm btn-primary" href="/ecosystem-partners{{ .Params.DocURL | relURL }}">Read More in Docs</a>
         </div>
-      <div class="row justify-content-center">
-        <a class="btn btn-sm btn-primary" href="/ecosystem-partners{{ .Params.DocURL | relURL }}">Read More in Docs</a>
-      </div>
+      {{ end }}
       </div>
     </div>
   </div>

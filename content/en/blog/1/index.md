@@ -5,6 +5,8 @@ date: "2020-01-16"
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
 description : "Get Istio 1.0.0 Released With Transparent Proxying For VMs & New Retry Policy"
+# tags
+tags : ["release"]
 # thumbnail
 thumbnail: "https://mdbootstrap.com/img/new/standard/nature/184.jpg"
 ---

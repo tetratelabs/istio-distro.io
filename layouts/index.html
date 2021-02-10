@@ -7,7 +7,7 @@
 <div class="hero-section mb-0 jumbotron jumbotron-fluid">
   <div class="container">
     <div class="row">
-      <div class="col-lg-6">
+      <div class="col-lg-6 col-md-6">
         <h1 class="display-4">{{ .title  }}</h1>
         <ul class="hero">
           {{ range .lead_item }}
@@ -15,7 +15,7 @@
           {{ end }}
         </ul>
       </div>
-      <div class="col-lg-6 mt-md-4 mt-xl-0">
+      <div class="col-lg-6 col-md-6 mt-md-0 mt-xl-0">
         <!-- embedded asciinema for the time being is more stable -->
         {{/*  <asciinema-player src="/casts/{{ .asciinema_id }}" font-size="11px"></asciinema-player>  */}}
         <script src="https://asciinema.org/a/{{ .asciinema_id }}.js" id="asciicast-{{ .asciinema_id }}" data-size="11px" data-speed="2" async></script>
@@ -56,9 +56,9 @@
     <div class="row justify-content-center">
       <div class="dictionary rounded col-lg-10 text-center text-lg-left shadow p-4">
         <!-- {{ with .Site.Params.banner }} -->
-        <div class="dictionary-title row justify-content-between align-items-baseline mx-1 mb-3 pb-3">
+        <div class="dictionary-title row justify-content-between align-items-center mx-1 mb-3 pb-3">
           <h4 class="card-title h4">What is Get•Is•ti•o</h4>
-          <span></span><img src="/images/getistio-logo-notext-black.png" /></span>
+          <img src="/images/getistio-logo-notext-black.png" /></span>
         </div>
 
         <div class="px-2 pb-2">
@@ -259,12 +259,45 @@
 {{ end }} -->
 <!-- /call to action -->
 
+<div id="customer-quote" class="carousel slide quotes-section" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <blockquote>Working with the Istio community, we're pleased to have developed "istio-csr", open source software to integrate Istio
+      with cert-manager. This enables workload certificates to be issued from the wide array of certificate authorities and
+      providers that cert-manager supports, including Venafi, Google Certificate Authority Service (CAS) and more. We look
+      forward to collaborating with the GetIstio community to provide an easy and seamless integration, enabling operators and
+      security teams to tap into cert-manager and secure the mesh from the get-go.</blockquote>
+      <h6>Matt Bates, co-founder & CTO Jetstack</h6>
+    </div>
+    <div class="carousel-item">
+      <blockquote>At Tracfone, we’ve built an immutable infrastructure with k8s, istio and a custom CI/CD platform. We leverage Istio for
+      an array of capabilities like traffic management, telemetry, zero-trust security and more. Istio training from Tetrate
+      Academy is a great resource for our teams to learn Istio fast and get the most out of it.</blockquote>
+      <h6>Kartik Rallapalli, Principal Enterprise Architect at Tracfone</h6>
+    </div>
+    <div class="carousel-item">
+      <blockquote>In combination with a service mesh like Istio, Weave GitOps workflows automate progressive deployment strategies /
+      canary management in Kubernetes. Tetrate's new GetIstio product makes this simple, providing users with a quick and safe
+      way to deploy Istio into their GitOps workflows.</blockquote>
+      <h6>Alexis Richardson, co-founder & CEO Weaveworks</h6>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#customer-quote" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#customer-quote" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
 <section class="support-section">
   <div class="container mw-100">
     <div class="row">
       <div class="col-lg-12 text-center">
         <h4 class="mb-4">Need enterprise support for your Istio?</h4>
-        <a class="btn btn-sm btn-primary" href="https://www.tetrate.io">{{ i18n "get_in_touch" }}</a>
+        <a class="btn btn-sm btn-primary" href="https://www.tetrate.io/getistio">{{ i18n "get_in_touch" }}</a>
       </div>
     </div>
   </div>
