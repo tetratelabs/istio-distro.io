@@ -2,7 +2,7 @@
 baseURL = "https://getistio.io/"
 title = "GetIstio"
 # google analytics
-googleAnalytics = "" # example : UA-123-45
+googleAnalytics = "G-P3J9XNBME4"
 # disable language
 disableLanguages = ["zh"] # disable language from here
 enableRobotsTXT = true
