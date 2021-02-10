@@ -7,7 +7,7 @@ description: "GetIstio frequently asked questions."
 type : "docs"
 weight: 8
 ---
-## General FAQ
+### General FAQ
 
 - [What is GetIstio?](#what-is-getistio)
 - [Why should I use GetIstio?](#why-should-i-use-getistio)
@@ -20,9 +20,8 @@ weight: 8
 - [I am a platform admin trying to streamline Istio binaries in my organization. How should I use GetIstio?](#i-am-a-platform-admin-trying-to-streamline-istio-binaries-in-my-organization-how-should-i-use-getistio)
 - [How will I know that my Istio has CVEs?](#how-will-i-know-that-my-istio-has-cves)
 - [If my upgrade fails, how will Tetrate help me?](#if-my-upgrade-fails-how-will-tetrate-help-me)
-
-
-
+  
+### Project FAQ
 - [Are you creating a fork of the Istio project?](#are-you-creating-a-fork-of-the-istio-project)
 - [Does the GetIstio impact the performance of my application and in what ways?](#does-the-getistio-impact-the-performance-of-my-application-and-in-what-ways)
 - [Is there a cost for using GetIstio?](#is-there-a-cost-for-using-getistio)
@@ -96,7 +95,7 @@ There are multiple ways to leverage GetIstio - please refer to the
 ##### Can GetIstio help me upgrade Istio?
 Yes. GetIstio enables seamless upgrades via the [`getistio upgrade`](/getistio-cli/reference/getistio_update) command. 
 
-## Project FAQ
+### Project FAQ
 
 #####  Are you creating a fork of the Istio project?
 No. We provide distributions of upstream tested for specific environments. Any enhancements we make to Istio are applied 
