@@ -1,6 +1,6 @@
 ---
 title: "External CA integration with cert-manager using istio-csr"
-date: "2020-02-09"
+date: "2021-02-09"
 author: "[Zhihan Zhang](https://github.com/ZhiHanZ)"
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"

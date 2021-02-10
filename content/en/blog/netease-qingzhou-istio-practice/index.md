@@ -1,7 +1,7 @@
 ---
 title: "How NetEase Qingzhou Enables Microservices Architecture Evolution with Istio"
 description: "The practice of using Istio in NetEase Qingzhou."
-date: "2020-02-02"
+date: "2021-02-02"
 author: "[Fei Pei](https://www.linkedin.com/in/斐-裴-0a182099)"
 # meta description
 # thumbnail

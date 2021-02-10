@@ -1,6 +1,6 @@
 ---
 title: "Istio 1.8: A Virtual Machine Integration Odyssey"
-date: "2020-01-21"
+date: "2021-01-21"
 author: "[Jimmy Song](https://jimmysong.io)"
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"

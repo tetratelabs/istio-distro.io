@@ -1,6 +1,6 @@
 ---
 title: "How to set up Istio with GetIstio on GKE"
-date: "2020-02-07"
+date: "2021-02-07"
 author: "[Jimmy Song](https://jimmysong.io)"
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
