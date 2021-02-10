@@ -240,6 +240,19 @@ a:hover {
   }
 }
 
+.community-events-page {
+  .event-actions {
+    justify-content: flex-end;
+    padding-right: 24px;
+    margin-top: 24px;
+    margin-bottom: 8px;
+
+    a:first-child {
+      margin-right: 24px;
+    }
+  }
+}
+
 /* overlay */
 
 .overlay {
