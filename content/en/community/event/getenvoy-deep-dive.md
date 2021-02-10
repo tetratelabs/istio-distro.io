@@ -23,3 +23,5 @@ Episode 01 of the community launches into the broader Istio ecosystem with a loo
   + GetEnvoy roadmap
 * Q&A
 * Closing with resource links
+
+Join (here)[https://us02web.zoom.us/j/89163866904]
