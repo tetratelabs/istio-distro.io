@@ -7,12 +7,12 @@ type : "docs"
 weight: 3
 ---
 
-Istio provides different mechanisms to sign workload certificates for mTLS capability. Some of the options are:
-<ol>
-  <li> Istio CA uses a self-signed root certificate</li>
-  <li> Istio CA uses an administrator-specified certificate and key with an administrator-specified root certificate</li>
-  <li> Custom CA issues keys & certs files mounted onto the sidecars </li>
-  <li> Experimental Custom CA integration uses Kubernetes CSR API (Kubernetes 1.18+)</li>
-  <li> External CA uses Istio CA gRPC API (either through Istiod RA model or directly authenticating workloads and validating SAN)</li>
-</ol>
-GetIstio facilitates the custom CA options by providing various integration choices, including deploying Vendor agents for the purpose.
+Istio provides different mechanisms to sign workload certificates for the purpose of mutual TLS (mTLS). Here are some of the options:
+
+1. Istio Certificate Authority (CA) uses a self-signed root certificate
+1. Istio CA uses an administrator-specified certificate and key with an administrator-specified root certificate
+1. Custom CA issues keys and certificate files mounted into the sidecars
+1. Experimental Custom CA integration uses Kubernetes CSR API (Kubernetes 1.18+)
+1. External CA uses Istio CA gRPC API (either through the Istiod Registration Authority (RA) model or directly authenticating workloads and validating Subject Altenrative Name (SAN))
+
+GetIstio integrates with the Private CA from AWS Certificate Manager and the GCP Certificate Authority Service (CAS) to sign the workload certificates.

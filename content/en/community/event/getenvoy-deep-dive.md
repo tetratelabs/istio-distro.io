@@ -5,28 +5,27 @@ description: "Let's take a deep look into GetEnvoy and exciting updates from the
 categories: "event"
 image: "images/events/getenvoy-deep-dive.png"
 eventLink: "http://meet.google.com/abc"
-eventDate: 2021-03-16
+eventDate: 2021-03-04
 pastEvent: false
-weight: 4
+weight: 3
 ---
 
 GetEnvoy has been around for more than a year now, and it has helped more than 70,000 people to get Envoy up and running in swift fashion. In this meetup, Christoph Pakulski engineer from Tetrate, will give a detailed explanation of how to use and participate in the project.
 
 We will go into the following updates:
 
-- Welcome and Introduction
-- GetIstio Community
-  - Future Topics
-  - Community Resources
-  - Community Feedback
-- GetEnvoy
-  - Envoy Overview
-  - GetEnvoy CLI Overview
-  - GetEnvoy Demo
-  - GetEnvoy Roadmap
-  - Community Participation
-- Q&A
-- Closing with Resource Links
-- Exit
+* **Welcome and Introduction**
+    + GetIstio Community
+    + Future Topics
+    + Community Resources
+* GetEnvoy
+  + Envoy Overview
+  + GetEnvoy CLI Overview
+  + GetEnvoy Demo
+  + GetEnvoy Roadmap
+  + Community Participation
+* Q&A
+* Closing with Resource Links
+
 
 This event will be hosted by Tetrate's own Sean O'Dell. See you on March 16, 2021.
