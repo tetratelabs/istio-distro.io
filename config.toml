@@ -146,7 +146,7 @@ weight = 2
 
 [[Languages.en.menu.main]]
 name = "Community"
-url = "/community"
+url = "/community-events/"
 weight = 3
 
 [[Languages.en.menu.main]]
