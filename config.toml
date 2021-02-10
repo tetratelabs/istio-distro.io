@@ -173,7 +173,7 @@ weight = 6
 
 #################### default parameters ################################
 [params]
-logo = "images/getistio-logo-h-white.png"
+logo = "images/getistio-by-tetrate-logo.png"
 # Meta data
 description = "GetIstio project website, an open source Istio distribution"
 author = "Tetrate"
