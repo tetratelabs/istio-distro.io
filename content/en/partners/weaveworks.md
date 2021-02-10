@@ -2,7 +2,7 @@
 # the name of the partner
 title: "Weaveworks"
 # a quick blurb of what the partner does
-description: "This is a description of Weaveworks"
+description: "Weaveworks makes it fast and simple for developers and DevOps teams to build and operate powerful containerized applications."
 # the partner's image logo
 logo: "/images/weaveworks_logo.png"
 # give this the same name as the partner's directory name in ecosystem-partners.
