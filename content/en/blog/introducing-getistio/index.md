@@ -2,7 +2,7 @@
 title: "Introducing GetIstio"
 description: ""
 date: "2021-02-10"
-author: "Tevah Platt"
+author: "Varun Talwar"
 # meta description
 # thumbnail
 thumbnail: "/images/introducing-getistio.png"
