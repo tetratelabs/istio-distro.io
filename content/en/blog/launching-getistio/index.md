@@ -23,7 +23,7 @@ certificate managers (e.g., AWS ACM, Venafi, etc). This launch includes:
 
 * GetIstio CLI, the easiest way to install, operate, and upgrade Istio. GetIstio provides a safe, vetted, upstream Istio
   distro, tested against AKS, EKS, and GKE.
-* A free, online course on Istio Fundamentals, that is available now at Tetrate Academy.
+* A free, online course on Istio Fundamentals, that is available now at [Tetrate Academy](https://academy.tetrate.io/).
 * A new community to bring together Istio and Envoy users and technology partners.
 
 ### GetIstio CLI
@@ -76,7 +76,7 @@ Related links:
 
 * GetEnvoy: <a href="https://www.getenvoy.io" target="_blank">getenvoy.io</a>
 * GitHub: <a href="https://github.com/tetratelabs/getistio" target="_blank">github.com/tetratelabs/getistio</a>
-* Join the <a href="https://istio.slack.com" target="_blank">Istio Slack</a> and search for the GetIstio channel to contact us 
+* Join the <a href="https://istio.slack.com" target="_blank">Istio Slack</a> and search for the **GetIstio** channel to contact us 
 * Get certified on the "Fundamentals of Istio": <a href="https://academy.tetrate.io" target="_blank">academy.tetrate.io</a>
 * GetIstio Subscription: <a href="https://www.tetrate.io/getistio" target="_blank">tetrate.io/getistio</a>[]()
 
