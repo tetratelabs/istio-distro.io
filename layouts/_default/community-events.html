@@ -1,6 +1,6 @@
 {{ define "main" }}
 {{- partial "community-banner.html" . -}}
-<section class="community-events-page">
+<section class="community-events">
   <div class="container">
     <h3 class="text-center my-4">Upcoming GetIstio Community Events</h3>
     <div class="row">
@@ -28,6 +28,15 @@
       </div>
       {{ end }}
       {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="community-contribution">
+  <div class="container">
+    <div class="card pt-2 px-4 pb-4">
+      <h3 class="text-center my-4">Contributing to GetIstio</h3>
+      {{ .Content }}
     </div>
   </div>
 </section>
