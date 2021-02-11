@@ -18,18 +18,17 @@
      {{ $.Scratch.Add "version_trimmed" (slice (strings.TrimRight "." (slicestr $version_value 0 4))) }} 
    {{ end }}
 
+    {{ $minor_versions := uniq (.Scratch.Get "version_trimmed") }}
+    {{ delimit (uniq ($.Scratch.Get "eos_list")) ", " " and " }}
 
-   <table>
-      <th>Major supported version</th>
-      <th>Expires in the next 60 days</th>
-      <th>Current minor release</th>
-      <th>Latest security path version</th>
+    <br><br><strong> Currently supported releases are {{ delimit $minor_versions ", " " and " }}. </strong><br><br>
 
-   {{ range $major_version := uniq (.Scratch.Get "version_trimmed") }}
+
+   {{ range $minor_versions := uniq (.Scratch.Get "version_trimmed") }}
      {{ $previous_sec_value := 0 }}
      {{ $previous_value := 0 }}
        {{ range $version_value := $.Scratch.Get "version_list" }}
-         {{ if findRE $major_version $version_value }}
+         {{ if findRE $minor_versions $version_value }}
            {{ $subversion := (int (strings.TrimLeft "." (substr $version_value -2))) }}
 	   {{ if lt $previous_sec_value $subversion }}
 	   {{ range $sec_patch_item := $.Scratch.Get "security_patches_list" }}
@@ -45,39 +44,35 @@
            {{ end }}         
 	 {{ end }}
      {{ end }}
-     <tr>
-     <td>
-       {{ $major_version }}
-     </td>
-     <td>
-       {{ range $version, $eos_time := $manifest.istio_minor_versions_eol_dates }}
-         {{ if eq $major_version $version }}
-           {{ $time_json := (time $eos_time).Unix }}
-           {{ $current_time := time.Now.Unix }}
-           {{ $60_days := 5184000 }}
-           {{ $time_difference := sub $time_json $current_time }}
-	   {{ if and (gt $time_difference 0) (gt $60_days $time_difference) }}
-             {{ $eos_time }}
-	   {{ else }}
-	   {{ range $supported_version := uniq ($.Scratch.Get "version_trimmed") }} 
-	      {{ if eq $supported_version $major_version }} N/A {{ end }}  
-	   {{ end }}
-	   {{ end }}	
-         {{ end }}
-       {{ end }}
-     </td>
-     <td>
-	     {{ $.Scratch.Get "highest_minor_supported_version" }}
-     </td>
-     <td>
+     <li>{{ $minor_versions }} users - please consider upgrading to the <strong>latest {{ $.Scratch.Get "highest_minor_supported_version" }} </strong> 
 	   {{ if ne (len ($.Scratch.Get "highest_minor_security_patches")) 0 }}
-      	     {{ $.Scratch.Get "highest_minor_security_patches" }} 
-      	     {{ $.Scratch.Set "highest_minor_security_patches" ""}} 
-	   {{ else }}
-	      N/A
+      	   (please note that the latest <strong>security patch</strong> is {{ $.Scratch.Get "highest_minor_security_patches" }})
 	   {{ end }}
-     </td>
-     </tr>
+      	     {{ $.Scratch.Set "highest_minor_security_patches" ""}}
+	    </li>
    {{ end }}
 
-</table>
+   {{ $.Scratch.Set "eos_list" slice  }}
+     {{ range $version, $eos_time := $manifest.istio_minor_versions_eol_dates }}
+       {{ $.Scratch.Delete "eos_item" }}
+       {{ $time_json := (time $eos_time).Unix }}
+       {{ $current_time := time.Now.Unix }}
+       {{ $60_days := 5184000 }}
+       {{ $time_difference := sub $time_json $current_time }}
+       {{ if and (gt $time_difference 0) (gt $60_days $time_difference) }}
+	  {{ $.Scratch.Add "eos_item" $version }}
+	  {{ $.Scratch.Add "eos_item" " (ends on " }}
+	  {{ $.Scratch.Add "eos_item" $eos_time }}
+	  {{ $.Scratch.Add "eos_item" ")" }}
+	  {{ $.Scratch.Add "eos_list" (slice ($.Scratch.Get "eos_item")) }}
+       {{ end }}
+     {{ end }}
+	{{ $eos_versions_number := len (.Scratch.Get "eos_list") }} 
+	{{ if gt $eos_versions_number 0 }} 
+	<br><strong>The following versions will be out of support in the next two months</strong> - please upgrade to the supported versions - 
+	<strong>  {{ delimit (uniq ($.Scratch.Get "eos_list")) ", " " and " }} </strong>
+	{{ else if eq $eos_versions_number 0 }}
+	<br><strong>There are currently no versions expiring in the next 60 days</strong>
+        {{ end }}
+	<br>
+	<br>
