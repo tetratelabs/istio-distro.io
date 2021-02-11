@@ -221,6 +221,11 @@ a:hover {
   }
 }
 
+.ti-calendar {
+  color: #f05623;
+  font-weight: bold;
+}
+
 .event-card {
   background: white;
   padding: 24px;
@@ -231,7 +236,6 @@ a:hover {
 
   .ti-calendar {
     float: right;
-    color: #f05623;
   }
 
   h5,
@@ -241,14 +245,15 @@ a:hover {
 }
 
 .community-banner {
-  background: url('/images/partner-bg.svg'), radial-gradient(70% 500px, #646F83, #A8B5CC);
+  background: url('/images/partner-bg.svg'),
+    radial-gradient(70% 500px, #646f83, #a8b5cc);
   background-repeat: no-repeat;
   background-position: center;
   height: 360px;
   margin-bottom: 0;
 
   h1 {
-    color:white;
+    color: white;
     font-weight: 700;
   }
 }
@@ -270,7 +275,7 @@ a:hover {
   margin: 48px 0 72px;
 
   .card {
-    background: #e7ecf2
+    background: #e7ecf2;
   }
 
   ul {
