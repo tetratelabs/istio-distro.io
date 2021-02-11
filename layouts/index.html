@@ -36,7 +36,7 @@
           {{ end }}
           <div class="form-control cta-form" id="emailFormContainer">
             <form id="emailForm">
-                <input id="email" type="email" class="input" placeholder="{{ i18n "work_email"}}" / required>
+                <input id="email" type="email" class="input" placeholder="{{ i18n "work_email"}}" required/>
                 <button class="btn btn-sm btn-primary">{{ i18n "get_updates" }}</button>
             </form>
           </div>
@@ -58,7 +58,7 @@
         <!-- {{ with .Site.Params.banner }} -->
         <div class="dictionary-title row justify-content-between align-items-center mx-1 mb-3 pb-3">
           <h4 class="card-title h4">What is Get•Is•ti•o</h4>
-          <img src="/images/getistio-logo-notext-black.png" /></span>
+          <img src="/images/getistio-logo-notext-black.png" />
         </div>
 
         <div class="px-2 pb-2">
@@ -113,7 +113,7 @@
             <p class="font-i mt-4">collective noun</p>
             <ol class="home-order-list">
               <li class="mb-3">
-                <p class="list-title">Community of Istio users, developers, tutorials and technology partners/p>
+                <p class="list-title">Community of Istio users, developers, tutorials and technology partners</p>
               </li>
             </ol>
           </div>
@@ -167,17 +167,28 @@
       <div class="col-lg-9 home-code rounded shadow p-4">
         <h4>Get Started Quickly</h4>
         <!-- <img loading="lazy" src="{{ .Site.Params.banner.image | relURL }}" alt="illustration" class="img-fluid"> -->
-        <h6 class="pb-2 pt-4">1. Download GetIstio</h5>
+        <h6 class="pb-2 pt-4">1. Download GetIstio</h6>
           <pre class="pb-2 home-code-snippet"><code>curl -sL https://tetrate.bintray.com/getistio/download.sh | bash</code><span class="copy-to-clipboard">copy</span></pre>
-        <h6 class="pb-2 pt-4">2. Install Istio Demo</h5>
+        <h6 class="pb-2 pt-4">2. Install Istio Demo</h6>
           <pre class="pb-2 home-code-snippet"><code>getistio istioctl install --set profile=demo </code><span class="copy-to-clipboard">copy</span></pre>
-        <h6 class="pb-2 pt-4">3. Check GetIstio version</h5>
+        <h6 class="pb-2 pt-4">3. Check GetIstio version</h6>
           <pre class="pb-2 home-code-snippet"><code>getistio version</code><span class="copy-to-clipboard">copy</span></pre>
-        <h6 class="pb-2 pt-4">4. Validate config</h5>
+        <h6 class="pb-2 pt-4">4. Validate config</h6>
           <pre class="pb-2 home-code-snippet"><code>getistio config-validate</code><span class="copy-to-clipboard">copy</span></pre>
         <div class="pt-4 row justify-content-center">
             <a href="{{ "/getistio-cli/"| relLangURL }}" class="btn btn-sm learn-more">Learn more</a>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="training-section">
+  <div class="container mw-100">
+    <div class="row">
+      <div class="col-lg-12 text-center banner-content">
+        <h4 class="mr-4">Increase your Istio skill with our training program</h4>
+        <span><a class="btn btn-sm btn-primary" href="https://academy.tetrate.io">Enroll Now</a></span>
       </div>
     </div>
   </div>
@@ -270,9 +281,7 @@
       <h6>Matt Bates, co-founder & CTO Jetstack</h6>
     </div>
     <div class="carousel-item">
-      <blockquote>At Tracfone, we’ve built an immutable infrastructure with k8s, istio and a custom CI/CD platform. We leverage Istio for
-      an array of capabilities like traffic management, telemetry, zero-trust security and more. Istio training from Tetrate
-      Academy is a great resource for our teams to learn Istio fast and get the most out of it.</blockquote>
+      <blockquote>At Tracfone, we’ve built an immutable infrastructure with k8s, istio and a custom CI/CD platform. We leverage Istio for an array of capabilities like traffic management, telemetry, zero-trust security and more. Istio training from Tetrate Academy is a great resource for our teams to learn Istio fast and get the most out of it.</blockquote>
       <h6>Kartik Rallapalli, Principal Enterprise Architect at Tracfone</h6>
     </div>
     <div class="carousel-item">
