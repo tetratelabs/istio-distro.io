@@ -1,22 +1,8 @@
 <head>
   <meta charset="utf-8">
-  <title>{{ .Title }}</title>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P3J9XNBME4"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-P3J9XNBME4');
-  </script>
-
-  <!-- mobile responsive meta -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-  <meta name="description" content="{{ with .Params.Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}">
-  {{ with site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
-  {{ hugo.Generator }}
+  <!-- Render all meta tags -->
+  {{ partial "meta" . }}
 
   <!-- plugins -->
   {{ $permalink:= .Permalink }}
@@ -38,61 +24,8 @@
   <link rel="shortcut icon" href="{{ `images/getistio-favicon.png` | relURL }}" type="image/x-icon">
   <link rel="icon" href="{{ `images/getistio-favicon.png` | relURL }}" type="image/x-icon">
 
-  <!-- multilingual SEO optimizations -->
-  {{ if .IsTranslated }}
-  {{ range .Page.AllTranslations }}
-  <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink | relURL }}">
-  {{ end }}
-  {{ end }}
-
-  <meta name="robots" content="index,follow" />
-  <meta name="googlebot" content="index,follow" />
-
-  <title itemprop="name">{{ .Title }} | {{ .Site.Title }}</title>
-  <meta property="og:title" content="{{ .Title }} | {{ .Site.Title }}" />
-  <meta name="twitter:title" content="{{ .Title }} | {{ .Site.Title }}" />
-  <meta itemprop="name" content="{{ .Title }} | {{ .Site.Title }}" />
-  <meta name="application-name" content="{{ .Title }} | {{ .Site.Title }}" />
-  <meta property="og:site_name" content="{{ .Site.Params.sitename }}" />
-
-  <meta name="description" content="{{ .Params.description }}" />
-  <meta itemprop="description" content="{{ .Params.description }}" />
-  <meta property="og:description" content="{{ .Params.description }}" />
-  <meta name="twitter:description" content="{{ .Params.description }}" />
-
-  <base href="{{ .Permalink | relURL }}">
-  <link rel="canonical" href="{{ .Permalink | relURL }}" itemprop="url" />
-  <meta name="url" content="{{ .Permalink | relURL }}" />
-  <meta name="twitter:url" content="{{ .Permalink | relURL }}" />
-  <meta property="og:url" content="{{ .Permalink | relURL }}" />
-
-  <meta property="og:updated_time" content={{ .Lastmod.Format "2006-01-02T15:04:05Z0700" | safeHTML }} />
-  <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ .Site.BaseURL | relURL }}sitemap.xml" />
-
-  {{ with .OutputFormats.Get "RSS" }}
-  <link href="{{ .Permalink | relURL }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
-  <link href="{{ .Permalink | relURL }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" />
-  {{ end }}
-
-  {{ with .Params.Image }}
-  <meta property="og:image" content="{{ . | relURL }}" />
-  {{ end }}
   {{ template "_internal/opengraph.html" . }}
   {{ template "_internal/google_analytics.html" . }}
   {{ template "_internal/google_analytics_async.html" . }}
-  <!-- asciinema css -->
-  {{/*  <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL | relURL }}css/asciinema-player.css" />  */}}
-  <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "WebSite",
-      "url": "{{ .Permalink }}",
-      "name": "{{ .Site.Title }}",
-        "author": {
-          "@type": "Person",
-          "name": "{{ .Site.Params.author }}"
-        },
-      "description": "{{ .Site.Params.description }}",
-    }
-    </script>
+  
 </head>
