@@ -5,10 +5,11 @@ description: "Episode 00: What is GetIstio - Inaugural Community Meetup"
 categories: "event"
 image: "images/events/getistio-inaugural-meetup.webp"
 eventLink: "https://us02web.zoom.us/j/89163866904"
-eventDate: 2021-02-18
+eventDate: "2021-02-18T09:00:00"
 pastEvent: false
 weight: 1
 ---
+{{< eventDate >}}
 
 The inaugural meetup will be a special edition with 90 minutes to introduce the community, unpacking the GetIstio project, an overview of the GetEnvoy project and an update on what's new in the Istio 1.9 release. We look forward to diving into the topics, demonstrating some new Istio capabilities and answering all of your questions during the Q&A session.
 
@@ -26,4 +27,4 @@ The inaugural meetup will be a special edition with 90 minutes to introduce the 
 - Q&A
 - Closing with community resource links
 
-**Join [here](https://us02web.zoom.us/j/89163866904)**
+{{< eventLink "Join here">}}
