@@ -31,7 +31,7 @@ certificate managers (e.g., AWS ACM, Venafi, etc). This launch includes:
 GetIstio is an integration and lifecycle management CLI tool that ensures the use of supported and vetted versions of
 Istio. Enterprises require the ability to control Istio versioning, support multiple versions of Istio, easily move
 between the versions, integrate with cloud providers’ certification systems, and centralize config management and
-validation. The GetIsio CLI tool supports these enterprise-level requirements as it:
+validation. The GetIstio CLI tool supports these enterprise-level requirements as it:
 
 * enforces fetching certified versions of Istio and enables only compatible versions of Istio installation
 * allows seamlessly switching between multiple istioctl versions
