@@ -5,10 +5,11 @@ description: "Episode 02: Istio the Easy Way with GetIstio"
 categories: "event"
 image: "images/events/istio-the-easy-way.webp"
 eventLink: "https://us02web.zoom.us/j/89163866904"
-eventDate: 2021-03-16
+eventDate: 2021-03-16T09:00:00
 pastEvent: false
 weight: 4
 ---
+{{< eventDate >}}
 
 Episode 02 of the community meetup dives into _**getistio gen-ca**_ to help integrate Istio with intermediate certificate authorities (CA). GetIstio will do more than CA integration by managing the installation, operations, and upgrade of Istio across clouds. Join us as we dive into Istio the Easy Way!
 
@@ -25,4 +26,4 @@ Episode 02 of the community meetup dives into _**getistio gen-ca**_ to help inte
 * Q&A
 * Closing with resource links
 
-**Join [here](https://us02web.zoom.us/j/89163866904)**
+{{< eventLink "Join here">}}

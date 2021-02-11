@@ -219,15 +219,13 @@
         <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
           <div class="card match-height event-card">
             <p class="event-date pb-2">
-              {{ .Page.Params.eventDate }}
               {{ if .Page.Params.eventEndDate }}
-              - {{ .Page.Params.eventEndDate}}
+              {{ dateFormat "Jan 2, 2006" .Page.Params.eventDate }} - {{ dateFormat "Jan 2, 2006" .Page.Params.eventEndDate }} 
+              {{ else }}
+              {{ dateFormat "January 2, 2006 15:04 PST" .Page.Params.eventDate }}
               {{ end }}
               <span><i class="ti-calendar"></i></span>
             </p>
-            {{/*  {{ if isset .Page.Params "eventEndDate" }}  */}}
-              {{/*  - <p class="event-date pb-2">{{ .Page.Params.eventEndDate }}<span><i class="ti-calendar"></i></span></p>  */}}
-            {{/*  {{ end }}  */}}
             <a href="{{ .Page.RelPermalink }}"><h5>{{ .Page.Title }}</h5></a>
             <img src="{{ .Page.Params.image |relURL }}" />
             <p>{{ .Page.Description }}</p>
