@@ -3,7 +3,7 @@ title: "00: What is GetIstio - Inaugural Community Meetup"
 date: 2021-01-29T11:00:00+07:00
 description: "Episode 00: What is GetIstio - Inaugural Community Meetup"
 categories: "event"
-image: "images/events/getistio-inaugural-meetup.png"
+image: "images/events/getistio-inaugural-meetup.webp"
 eventLink: "https://us02web.zoom.us/j/89163866904"
 eventDate: 2021-02-18
 pastEvent: false
