@@ -1,7 +1,7 @@
 ---
-title: "AWS CA Integration"
+title: "AWS Private CA Integration"
 date: 2021-01-25T13:00:00+07:00
-description: "AWS CA Integration"
+description: "AWS Private CA Integration"
 # type dont remove or customize
 type : "docs"
 ---

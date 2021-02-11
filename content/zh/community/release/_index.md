@@ -1,6 +1,6 @@
 ---
 title: "Release process"
-url: /zh/community/release
+url: /community/release
 ---
 
 On any new release tag on this repository, our release workflow defined in `.github/workflows/release.yaml` 

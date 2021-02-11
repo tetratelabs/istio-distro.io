@@ -1,10 +1,10 @@
 ######################## default configuration ####################
 baseURL = "https://getistio.io/"
-title = "GetIstio"
+title = "GetIstio by Tetrate | Simple, safe enterprise-grade Istio distro"
 # google analytics
-googleAnalytics = "" # example : UA-123-45
+googleAnalytics = "G-P3J9XNBME4"
 # disable language
-# disableLanguages = ["fr"] # disable language from here
+disableLanguages = ["zh"] # disable language from here
 enableRobotsTXT = true
 hasCJKLanguage = true
 paginate = "6"
@@ -146,7 +146,7 @@ weight = 2
 
 [[Languages.en.menu.main]]
 name = "Community"
-url = "/community"
+url = "/community-events/"
 weight = 3
 
 [[Languages.en.menu.main]]
@@ -173,9 +173,10 @@ weight = 6
 
 #################### default parameters ################################
 [params]
-logo = "images/getistio-logo-h-white.png"
+logo = "images/getistio-by-tetrate-logo.png"
 # Meta data
-description = "GetIstio project website, an open source Istio distribution"
+description = "Tetrate's open source GetIstio project provides a simple, safe, enterprise-grade Istio distro."
+images = ["images/twitter-card.png"]
 author = "Tetrate"
 sitename = "GetIstio"
 twitter = "@tetrateio"
@@ -203,7 +204,7 @@ link = "/download"
 [[params.social]]
 title = "website"
 icon = "ti-world" # themify icon : https://themify.me/themify-icons
-link = "https://www.twitter.com/tetrateio"
+link = "https://www.tetrate.io/"
 
 [[params.social]]
 title = "twitter"
