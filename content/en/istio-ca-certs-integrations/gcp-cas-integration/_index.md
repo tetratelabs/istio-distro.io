@@ -33,7 +33,7 @@ The first thing we need is to set up the CAS in Google Cloud Console. Log in to 
 1. Configure the CA type:
     1. Select **Root CA**.
     1. Select **365 days** for validity.
-    1. Select the **Enterprise** tier**.
+    1. Select the **Enterprise** tier.
     1. Select the CAS's location from the **Location** list (e.g. `us-east1`).
     1. Click **Next**.
 1. Configure the CA subject name (you can use your values here):
