@@ -138,7 +138,7 @@ footer {
   }
 
   #tetrate-footer-logo {
-    height: 50px;
+    height: 90px;
   }
 }
 
@@ -657,6 +657,20 @@ pre {
   }
 }
 
+
+@media (min-width: $breakpoint-lg) and (max-width: $breakpoint-xl){
+  footer {
+    #getistio-footer-logo {
+      height: 65px;
+      margin-bottom: 0x;
+    }
+
+    #tetrate-footer-logo {
+      height: 70px;
+    }
+  }
+}
+
 @media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg){
   footer {
     #getistio-footer-logo {
@@ -665,7 +679,7 @@ pre {
     }
 
     #tetrate-footer-logo {
-      height: 30px;
+      height: 50px;
     }
   }
 }
@@ -678,7 +692,7 @@ pre {
     }
 
     #tetrate-footer-logo {
-      height: 30px;
+      height: 50px;
     }
   }
 }
