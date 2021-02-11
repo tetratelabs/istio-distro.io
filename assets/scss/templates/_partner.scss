@@ -40,3 +40,16 @@
 .partner-heading {
   margin-bottom: 32px;
 }
+
+@media (max-width: $breakpoint-xs) {
+  .partner-banner {
+    h1 {
+      font-size: 3rem;
+    }
+
+    img {
+      max-width: 40%;
+      margin-bottom: 24px;
+    }
+  }
+}

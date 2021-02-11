@@ -1,3 +1,9 @@
+$breakpoint-xs: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1140px;
+$breakpoint-xxl: 1400px;
+
 .search-wrapper {
   position: relative;
 
@@ -117,6 +123,22 @@ footer {
   .social-icons a {
     line-height: 45px;
     border-radius: 21px;
+  }
+
+  .footer-logo {
+    justify-content: space-evenly;
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 24px;
+    padding-top: 32px;
+  }
+
+  #getistio-footer-logo {
+    height: 80px;
+  }
+
+  #tetrate-footer-logo {
+    height: 90px;
   }
 }
 
@@ -632,5 +654,45 @@ pre {
   code {
     margin-bottom: 0 !important;
     font-size: 100%;
+  }
+}
+
+
+@media (min-width: $breakpoint-lg) and (max-width: $breakpoint-xl){
+  footer {
+    #getistio-footer-logo {
+      height: 65px;
+      margin-bottom: 0x;
+    }
+
+    #tetrate-footer-logo {
+      height: 70px;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg){
+  footer {
+    #getistio-footer-logo {
+      height: 45px;
+      margin-bottom: 0x;
+    }
+
+    #tetrate-footer-logo {
+      height: 50px;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-xs) {
+  footer {
+    #getistio-footer-logo {
+      height: 45px;
+      margin-bottom: 24px;
+    }
+
+    #tetrate-footer-logo {
+      height: 50px;
+    }
   }
 }

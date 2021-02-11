@@ -1,15 +1,15 @@
 ---
 title: "Istio 1.8: A Virtual Machine Integration Odyssey"
-date: "2020-01-21"
+date: "2021-01-21"
+author: "[Jimmy Song](https://jimmysong.io)"
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : "Get Istio 1.0.0 Released With Transparent Proxying For VMs & New Retry Policy"
+description : "In this article, I’ll give you an overview of Istio‘s history of virtual machine integration support. "
 # thumbnail
-thumbnail: "https://www.tetrate.io/wp-content/uploads/2021/01/fiber-4814456_1920.jpg"
+thumbnail: "/images/blog/fiber.jpg"
+tags: ["VM"]
 ---
-![Istio](https://www.tetrate.io/wp-content/uploads/2021/01/fiber-4814456_1920.jpg)
-
 In this article, I’ll give you an overview of [Istio](https://istio.io/)‘s history of virtual machine integration support. In particular, the introduction of the smart DNS proxy and WorkloadGroup in Istio 1.8, which makes virtual machines and containers equivalent at the resource abstraction level.
 
 
@@ -55,7 +55,7 @@ The steps to integrate a virtual machine are as follows.
 The following figure shows the detailed flow from integrating a virtual machine to accessing services in the virtual machine in a mesh.
 
 
-![](https://i0.wp.com/cdn.thenewstack.io/media/2021/01/c2568250-image1-884x1024.png?resize=640%2C741&ssl=1)
+![Integrating VMs and accessing services](https://i0.wp.com/cdn.thenewstack.io/media/2021/01/c2568250-image1-884x1024.png?resize=640%2C741&ssl=1)
 
 
 
@@ -87,7 +87,7 @@ Everything seems perfect at this point. However, exposing the DNS server in the 
 The process of accessing the services inside mesh by configuring the local /etc/hosts of the virtual machine is shown in the following figure.
 
 
-![](https://i2.wp.com/cdn.thenewstack.io/media/2021/01/4bedb3a9-image4-933x1024.png?resize=640%2C702&ssl=1)
+![Accessing services inside the mesh](https://i2.wp.com/cdn.thenewstack.io/media/2021/01/4bedb3a9-image4-933x1024.png?resize=640%2C702&ssl=1)
 
 
 
@@ -115,7 +115,7 @@ In Kubernetes, we generally use the Service object for service registration and 
 With the introduction of smart [DNS proxy](https://cloudnative.to/blog/istio-dns-proxy/) in Istio 1.8, virtual machines can access services within the mesh without the need to configure /etc/hosts, as shown in the following figure.
 
 
-![](https://i0.wp.com/cdn.thenewstack.io/media/2021/01/484de469-image2-884x1024.png?resize=640%2C741&ssl=1)
+![Access services without /etc/hosts configuration](https://i0.wp.com/cdn.thenewstack.io/media/2021/01/484de469-image2-884x1024.png?resize=640%2C741&ssl=1)
 
 
 The Istio agent on the sidecar will come with a cached DNS proxy dynamically programmed by Istiod. DNS queries from the application are transparently intercepted and served by the Istio proxy in the pod or VM, with the response to DNS query requests, enabling seamless access from the virtual machine to the service mesh.

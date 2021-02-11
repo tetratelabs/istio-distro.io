@@ -2,7 +2,7 @@
 # the name of the partner
 title: "Keyfactor"
 # a quick blurb of what the partner does
-#description: "This is a description of Keyfactor"
+description: "Keyfactor makes it easy to apply cryptography in the right way at the right time at global scale."
 # the partner's image logo
 logo: "/images/keyfactor_logo.png"
 # give this the same name as the partner's directory name in ecosystem-partners.

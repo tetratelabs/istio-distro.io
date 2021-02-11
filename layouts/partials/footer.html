@@ -1,30 +1,26 @@
 <footer>
   <div class="container">
-    <div class="row align-items-center pt-4 pb-0">
-      <div class="col-lg-4">
-        <ul class="list-inline footer-menu text-center text-lg-left">
-          {{ range .Site.Menus.footer }}
-          <li class="list-inline-item"><a href="{{ .URL | absLangURL }}">{{ .Name }}</a></li>
-          {{ end }}
-        </ul>
-      </div>
-      <div class="col-lg-4 col-md-4 col-9 text-center mb-4 mx-auto ml-lg-0">
-        <a class="navbar-brand" href="{{ .Site.BaseURL | relLangURL }}">
-          {{ if .Site.Params.logo }}
-          <img class="img-fluid" src="{{ .Site.Params.logo | relURL }}" alt="{{ .Site.Title }}">
-          {{ else }}
-          {{ .Site.Title }}
-          {{ end }}</a>
-      </div>
+    <div class="row align-items-center pb-0 footer-logo">
+      <a class="navbar-brand" href="{{ .Site.BaseURL | relLangURL }}">
+        {{ if .Site.Params.logo }}
+        <img id="getistio-footer-logo" class="img-fluid" src="{{ .Site.Params.logo | relURL }}" alt="{{ .Site.Title }}">
+        {{ else }}
+        {{ .Site.Title }}
+        {{ end }}
+      </a>
+      <a href="https://www.tetrate.io" target="_blank">
+        <img id="tetrate-footer-logo" class="img-fluid" src="/images/tetrate-logo.svg" alt="Tetrate Logo">
+      </a>
     </div>
     <div class="py-4 text-center">
       <div class="mb-4">
         <ul class="list-inline social-icons text-lg-center text-center">
           {{ range .Site.Params.social }}
-          <li class="list-inline-item"><a href="{{ .link | safeURL }}"><i class="{{ .icon }}"></i></a></li>
+          <li class="list-inline-item"><a href="{{ .link | safeURL }}" target="_blank"><i class="{{ .icon }}"></i></a></li>
           {{ end }}
         </ul>
       </div>
+      <small class="text-white">License: GetIstio is an open source project and is released under Apache License 2.0 | <a href="https://www.tetrate.io/privacy" target="_blank">Privacy Statement</a></small><br />
       <small class="text-white">Copyright &copy; {{ dateFormat "2006" now }} <a href="https://www.tetrate.io" target="_blank">Tetrate</a> All rights reserved.</small>
     </div>
   </div>
