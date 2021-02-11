@@ -1,0 +1,83 @@
+  {{ $manifest := getJSON "https://tetrate.bintray.com/getistio/manifest.json" }}
+
+   <p><strong>GetIstio ensures that all Istio releases are supported for at least 14 months from release date.</strong></p>
+
+   Below is the summary of Istio releases, security patches and minor updates. Please make sure that the version you're running include the security updates available. Also please plan upgrades when your version is planned to be out of support.
+
+  {{ $.Scratch.Set "highest_minor_security_patches" slice }}
+
+  {{ range $manifest.istio_distributions }}
+    {{ $.Scratch.Add "version_list" (slice .version) }}
+    {{ if .is_security_patch }}
+     {{ $.Scratch.Add "security_patches_list" (slice .version) }}
+    {{ end }} 
+   {{ end }}
+
+
+   {{ range $version_value := .Scratch.Get "version_list" }} 
+     {{ $.Scratch.Add "version_trimmed" (slice (strings.TrimRight "." (slicestr $version_value 0 4))) }} 
+   {{ end }}
+
+
+   <table>
+      <th>Major supported version</th>
+      <th>Expires in the next 60 days</th>
+      <th>Current minor release</th>
+      <th>Latest security path version</th>
+
+   {{ range $major_version := uniq (.Scratch.Get "version_trimmed") }}
+     {{ $previous_sec_value := 0 }}
+     {{ $previous_value := 0 }}
+       {{ range $version_value := $.Scratch.Get "version_list" }}
+         {{ if findRE $major_version $version_value }}
+           {{ $subversion := (int (strings.TrimLeft "." (substr $version_value -2))) }}
+	   {{ if lt $previous_sec_value $subversion }}
+	   {{ range $sec_patch_item := $.Scratch.Get "security_patches_list" }}
+	   {{ if eq $sec_patch_item  $version_value }} 
+             {{ $previous_sec_value = $subversion }} 
+             {{ $.Scratch.Set "highest_minor_security_patches" $version_value }} 
+	     {{ end }}
+	   {{ end }} 
+           {{ end }} 
+           {{ if lt $previous_value $subversion }}
+              {{ $previous_value = $subversion }}
+              {{ $.Scratch.Set "highest_minor_supported_version" $version_value }}
+           {{ end }}         
+	 {{ end }}
+     {{ end }}
+     <tr>
+     <td>
+       {{ $major_version }}
+     </td>
+     <td>
+       {{ range $version, $eos_time := $manifest.istio_minor_versions_eol_dates }}
+         {{ if eq $major_version $version }}
+           {{ $time_json := (time $eos_time).Unix }}
+           {{ $current_time := time.Now.Unix }}
+           {{ $60_days := 5184000 }}
+           {{ $time_difference := sub $time_json $current_time }}
+	   {{ if and (gt $time_difference 0) (gt $60_days $time_difference) }}
+             {{ $eos_time }}
+	   {{ else }}
+	   {{ range $supported_version := uniq ($.Scratch.Get "version_trimmed") }} 
+	      {{ if eq $supported_version $major_version }} N/A {{ end }}  
+	   {{ end }}
+	   {{ end }}	
+         {{ end }}
+       {{ end }}
+     </td>
+     <td>
+	     {{ $.Scratch.Get "highest_minor_supported_version" }}
+     </td>
+     <td>
+	   {{ if ne (len ($.Scratch.Get "highest_minor_security_patches")) 0 }}
+      	     {{ $.Scratch.Get "highest_minor_security_patches" }} 
+      	     {{ $.Scratch.Set "highest_minor_security_patches" ""}} 
+	   {{ else }}
+	      N/A
+	   {{ end }}
+     </td>
+     </tr>
+   {{ end }}
+
+</table>
