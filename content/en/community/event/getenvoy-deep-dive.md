@@ -3,7 +3,7 @@ title: "01: Effortless Envoy and WASM with GetEnvoy"
 date: 2021-01-29T11:00:00+07:00
 description: "Episode 01: Effortless Envoy and WASM with GetEnvoy"
 categories: "event"
-image: "images/events/effortless-envoy.png"
+image: "images/events/effortless-envoy.webp"
 eventLink: "https://us02web.zoom.us/j/89163866904"
 eventDate: 2021-03-04
 pastEvent: false
