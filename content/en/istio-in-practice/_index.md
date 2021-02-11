@@ -24,3 +24,4 @@ This section contains practical tutorials and walkthroughs for Istio.
 | [Integrate AWS Cloud Map with Istio](/istio-in-practice/aws-cloudmap-integration) | Learn how to integrate cloud resource discovery service (AWS Cloud Map) |
 | [How to use custom certificate authority? (ACM)](/istio-in-practice/custom-ca-aws) | Learn how to use AWS Certificate Manager to sign intermediary CA certs |
 | [How to use custom certificate authority? (GCP)](/istio-in-practice/custom-ca-gcp) | Learn how to use Google's Certificate Authority Service to sign intermediary CA certs |
+| [How to Install Apache SkyWalking](/istio-in-practice/install-skywalking) | Learn how to install Apache SkyWalking and integrate it with Istio to gain observability
