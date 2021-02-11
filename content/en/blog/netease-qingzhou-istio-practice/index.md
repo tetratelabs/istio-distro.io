@@ -1,10 +1,12 @@
 ---
 title: "How NetEase Qingzhou Enables Microservices Architecture Evolution with Istio"
 description: "The practice of using Istio in NetEase Qingzhou."
-date: "2020-02-02"
+date: "2021-02-02"
+author: "[Fei Pei](https://www.linkedin.com/in/斐-裴-0a182099)"
 # meta description
 # thumbnail
-thumbnail: "https://mdbootstrap.com/img/new/standard/nature/184.jpg"
+thumbnail: "/images/blog/netease.jpg"
+tags: ["case study"]
 ---
 
 Author Fei Pei, he is a senior architect at NetEase Qingzhou.
@@ -29,7 +31,7 @@ The service mesh is a key microservices technology under the cloud-native system
 Having decided on Istio as the service mesh platform of choice, the NetEase Shufan Qingzhou team built the Qingzhou Service Mesh platform. This addresses the various problems of the microservices architecture faced by the diverse internet businesses of the NetEase Group and consolidates the existing microservices management framework. The establishment of this common, distributed microservices platform enables more enterprises to implement the evolution and upgrade of their microservices architecture. Further, NetEase Qingzhou has released an upgrade of the API gateway system built upon the Istio tech stack. The Envoy and Istio-based Qingzhou API gateway has enhanced capabilities and better performance. It has since become the standard component of the NetEase API gateway.
 Despite the comprehensive service mesh solutions provided by Istio, enterprises still need to set clear goals when constructing their service mesh systems.
 
-![](008eGmZEly1gna7uuqkylj31cf0u0qv6.jpg)
+![Goals when constructing service mesh system](008eGmZEly1gna7uuqkylj31cf0u0qv6.jpg)
 
 ### Architectural Design
 

@@ -1,0 +1,127 @@
+<!--- Set the page title. If we're on the root page, we only show the page Title (e.g "GetIstio ..."), on other pages we show the current page name + the title (e.g. Blog | GetIstio...)-->
+{{ $title := .Title }}
+{{ if ne (.Permalink | relURL) "/" }}
+{{ $title = (printf "%s | %s" .Title .Site.Title) }}
+{{ end }}
+
+<!--- Titles -->
+<title itemprop="name">{{ $title }}</title>
+<meta name="twitter:title" content="{{ $title }}" />
+<meta itemprop="name" content="{{ $title }}" />
+<meta name="application-name" content="{{ $title }}" />
+<meta property="og:site_name" content="{{ .Site.Params.sitename }}" />
+
+<!-- Descriptions -->
+<meta name="description" content="{{ .Site.Params.description }}" />
+<meta itemprop="description" content="{{ .Site.Params.description }}" />
+<meta name="twitter:description" content="{{ .Site.Params.description }}" />
+
+<!-- Languages -->
+<meta property="og:locale" content="{{ .Language.Lang }}">
+<meta name="language" content="{{ .Language.LanguageName }}">
+<!-- multilingual SEO optimizations -->
+{{ if .IsTranslated }}
+{{ range .Page.AllTranslations }}
+<link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink | relURL }}">
+{{ end }}
+{{ end }}
+
+<!-- Dates -->
+<meta property="og:updated_time" content={{ .Lastmod.Format "2006-01-02T15:04:05Z0700" | safeHTML }} />
+<link rel="sitemap" type="application/xml" title="Sitemap" href="{{ .Site.BaseURL | relURL }}sitemap.xml" />
+
+{{ with .OutputFormats.Get "RSS" }}
+<link href="{{ .Permalink | relURL }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
+<link href="{{ .Permalink | relURL }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" />
+{{ end }}
+
+<!-- Blog pages -->
+{{ if eq .Section "blog" }} 
+  <!-- Pagination meta tags for list pages only -->
+  {{ $paginator := .Paginate (where .Pages "Section" "blog") }}
+  {{ if $paginator }}
+    <link rel="first" href="{{ $paginator.First.URL }}">
+    <link rel="last" href="{{ $paginator.Last.URL }}">
+    {{ if $paginator.HasPrev }}
+      <link rel="prev" href="{{ $paginator.Prev.URL }}">
+    {{end }}
+    {{ if $paginator.HasNext }}
+      <link rel="next" href="{{ $paginator.Next.URL }}">
+    {{end }}
+  {{end }}
+
+  <meta property="og:type" content="article" />
+  <meta property="article:publisher" content="{{ .Site.Params.facebook }}" /> 
+  <meta property="og:article:published_time" content={{ .Date.Format "2006-01-02T15:04:05Z0700" | safeHTML }} /> 
+  <meta property="article:published_time" content={{ .Date.Format "2006-01-02T15:04:05Z0700" | safeHTML }} />
+  
+  {{ with.Params.author }} 
+    <meta property="og:article:author" content="{{humanize . }}" />
+    <meta property="article:author" content="{{humanize . }}" /> 
+    <meta name="author" content="{{humanize . }}" /> 
+  {{ end }}
+  
+  {{ with.Params.category }} 
+    <meta name="news_keywords" content="{{ index . 0 }}" />
+    <meta property="article:section" content="{{ index . 0 }}" /> 
+  {{ end }}
+
+  <script defer type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Article",
+      "headline": {{ .Title }},
+      "author": {
+        "@type": "Person",
+        "name": "{{ .Site.Params.github }}"
+      },
+      "datePublished": "{{ .Date.Format "2006-01-02" }}",
+      "description": {{ .Description }},
+      "wordCount": {{ .WordCount }},
+      "mainEntityOfPage": "True",
+      "dateModified": "{{ .Lastmod.Format "2006-01-02" }}",
+      "image": {
+        "@type": "imageObject",
+        "url": "{{ with .Params.image }}{{ .Permalink }}{{ end }}"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "{{ .Site.Title }}",
+        "logo": {
+          "@type": "imageObject",
+          "url": "https://getistio.io/images/getistio-by-tetrate-logo.png"
+        }
+      }
+    }
+  </script>
+{{ else }}
+<meta property="og:type" content="website" /> 
+<meta name="author" content="{{ .Site.Params.author }}" />
+<script defer type="application/ld+json">
+  { 
+    "@context": "http://schema.org", 
+    "@type": "WebSite", 
+    "url": "{{ .Permalink }}", 
+    "sameAs": [
+      "{{ .Site.Params.facebook }}", 
+      "{{ .Site.Params.github }}"
+    ], 
+    "name": "{{ .Site.Title }}", 
+    "logo": "https://getistio.io/images/getistio-by-tetrate-logo.png" 
+  }
+</script>
+{{ end }}
+
+<!-- Crawler tags -->
+<meta name="robots" content="index,follow" />
+<meta name="googlebot" content="index,follow" />
+
+<!-- Social media tags -->
+<meta name="twitter:site" content="{{ .Site.Params.twitter }}">
+<meta name="twitter:creator" content="{{ .Site.Params.twitter }}" />
+
+<!-- Mobile specific -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+
+<!-- Generator info -->
+{{ hugo.Generator }}
