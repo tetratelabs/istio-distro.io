@@ -4,124 +4,110 @@ date: "2020-01-21"
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : "Get Istio 1.0.0 Released With Transparent Proxying For VMs & New Retry Policy"
+description : "本文中我将带你了解 Istio 支持虚拟机的波澜壮阔的历史。"
 # thumbnail
-thumbnail: "https://mdbootstrap.com/img/new/standard/nature/184.jpg"
+thumbnail: "/images/blog/fiber.jpg"
+author: "[宋净超](https://jimmysong.io)"
+tags: ["VM"]
 ---
-![Istio](https://www.tetrate.io/wp-content/uploads/2021/01/fiber-4814456_1920.jpg)
 
-In this article, I’ll give you an overview of [Istio](https://istio.io/)‘s history of virtual machine integration support. In particular, the introduction of the smart DNS proxy and WorkloadGroup in Istio 1.8, which makes virtual machines and containers equivalent at the resource abstraction level.
+本文将为你介绍 Istio 历史上对虚拟机负载的支持情况，尤其是 Istio 1.8 中引入的智能 DNS 代理及 `WorkloadGroup` 使得虚拟机与容器在资源抽象层面可以等同视之。我将为你展现一幅 Istio 支持虚拟机的波澜壮阔的奥德赛。
 
+## 前言
 
-I will show you a tumultuous odyssey of Istio’s virtual machine integration. Tetrate, the enterprise service mesh company that made pushing Istio to run everywhere part of its founding mission, has used VM features extensively in customer deployments and has been instrumental in pushing VMs to Istio upstream.
+在我[之前的博客](https://thenewstack.io/how-to-integrate-virtual-machines-into-istio-service-mesh/)中谈到 Istio 1.7 如何支持虚拟机，但那时虚拟机仍然无法无缝的集成到 Istio 中，因为还需要做很多手动的操作。现在，Istio 1.8 新增了 WorkloadGroup 及[智能 DNS 代理](https://istio.io/latest/blog/2020/dns-proxy/)，这使得如虚拟机这样的非 Kubernetes 工作负载可以在 Istio 中成为像 Pod 一样的一等公民。
 
-## Preface
+不论有没有为虚拟机安装 sidecar，虚拟机通常情况下无法直接访问 Kubernetes 集群中的 DNS 服务器以解析 Kubernetes  服务的 Cluster IP 的（虽然你也许可以通过一些黑客的手段做到），这是在 Istio 中集成虚拟的最后一块短板，终于在 Istio 1.8 中完成了突破。
 
-In my [previous article](https://thenewstack.io/how-to-integrate-virtual-machines-into-istio-service-mesh/), I talked about how Istio 1.7 supported virtual machines. But at that time, late October, virtual machines were still not seamlessly integrated into Istio — there was still a lot of manual work required. Now, Istio 1.8 has added WorkloadGroup and smart DNS proxy, which allows non-Kubernetes workloads like VMs to become first-class citizens in Istio — just like pods.
+## 为什么要支持虚拟机？
 
-With or without a sidecar installed for virtual machines, until 1.7 you could not resolve the DNS name of a Kubernetes service unless a kube-external DNS was configured — which is the last piece of virtual machine integration in Istio. This shortcoming has finally been fixed in Istio 1.8.
+在我们将应用在迁移到云原生架构，不断容器化的过程中，将经历三个阶段，如下图所示。
 
-## Why Is Virtual Machine Support Important?
+![云原生应用的三个阶段](0081Kckwly1gm0d6t775lj31s80k8go8.jpg)
 
-In the process of migrating our applications to cloud native architectures and continuously containerizing them, we will go through three phases as shown in the figure below.
+- 阶段一：应用全部部署在虚拟机上
+- 阶段二：应用既部署在虚拟机上也部署在容器里，正在从虚拟机向容器中迁移，并使用 Kubernetes 管理容器
+- 阶段三：所有的应用优先部署在容器里，使用 Kubernetes 管理容器，使用 Istio 管理应用间的通信
 
-![Cloud Native Stages](https://i1.wp.com/www.tetrate.io/wp-content/uploads/2021/01/cloud-native-stages.png?resize=617%2C183&ssl=1)
+上图仅是对以上三个阶段的最简化描述，实际上还会有多混合云、多机房、多集群等情况，且阶段三只是个理想化的阶段，容器和虚拟机将是长期共存的，但是容器化趋势不变。
 
-*   Stage 1: All applications are deployed on virtual machines
-*   Stage 2: Applications are deployed on both virtual machines and containers, are migrating from virtual machines to containers, and are using Kubernetes to manage containers.
-*   Stage 3: All applications are deployed in containers first, using Kubernetes to manage containers and Istio to manage service-to-service communication.
+在阶段二中，人们通常会将新业务和少量应用率先实现容器化，并部署到 Kubernetes 中，在应用尚未完全实现容器化的时候，处于过度状态时会遇到很多问题，如何让应用与部署在虚拟机中的服务交互？虚拟机如何访问容器中的服务？在服务迁移的过程中如何保证稳定无缝？是否可以将容器和虚拟机纳入一个统一的控制平面来管理？Istio 从开源初期就考虑并着手解决这一问题。
 
-The above diagram is artificially simplified: in reality, there might be multiple hybrid clouds, multiple regions, multiple clusters, etc. Plus, at stage 3 containers and virtual machines may remain in long-term coexistence, but the trend of containerization remains unchanged.
+## Istio 支持虚拟机的历史
 
-## Istio’s History of Virtual Machine Support
+Istio 对于虚拟机的支持是个漫长的过程，堪称是一部奥德赛。
 
-Istio’s support for virtual machines is a long process, an odyssey of sorts.
+### Istio mesh 扩张
 
-### 0.2: Istio Mesh Expansion
+Istio 从 0.2 版本开始通过 [Istio Mesh Expansion](https://istio.io/v0.2/docs/setup/kubernetes/mesh-expansion.html) 将虚拟机加入的 Mesh 中，但是需要满足以下前提条件：
 
-As of version 0.2, Istio added virtual machines to the Mesh via [Istio Mesh Expansion](https://istio.io/v0.2/docs/setup/kubernetes/mesh-expansion.html), provided that the following prerequisites were met.
+- 虚拟机必须可以通过 IP 地址直接访问到应用的 Pod，这就要求容器与 VM 之间通过 VPC 或者 VPN 建立扁平网络，虚拟机不需要访问 Cluster IP，直接对服务的 Endpoint 端点访问即可。
+- 虚拟机必须可以访问到 Istio 的控制平面服务（Pilot、Mixer、CA，现在已正整合为 Istiod），可以通过在 Istio Mesh 中部署负载均衡器将控制平面端点暴露给虚拟机。
+- （可选）虚拟机可以访问到 Mesh 内部的（部署在 Kubernetes 中）的 DNS server。
 
-*   Virtual machines must have direct access to the application’s pods via IP address, which requires a flat network between the container and the VM via VPC or VPN; and virtual machines do not need access to the Cluster IP, but rather direct access to the service’s endpoints.
-*   Virtual machines must have access to Istio’s control plane services (Pilot, Mixer, CA, now being integrated as Istiod), which can expose the control plane endpoints to virtual machines by deploying load balancers in the Istio Mesh.
-*   (optional) the virtual machine has access to the DNS server inside the Mesh (deployed in Kubernetes).
+集成虚拟机的步骤如下：
 
-The steps to integrate a virtual machine are as follows.
+1. 为 Istio 控制平面服务及 Kubernetes 集群的 DNS 服务创建 Internal 负载均衡器；
+2. 生成 Istio Service CIDR、Service Account token、安全证书、Istio 控制平面服务的 IP（通过 Internal 负载均衡器暴露出来的 IP）的配置文件并发送给虚拟机；
+3. （可选）在虚拟机中安装、配置并启动 Istio 的组件、dnsmaq（用于DNS 发现），此时虚拟机可以使用   FQDN 访问 mesh 中的服务了，这一步是为了保证虚拟机可以正确解析出 mesh 中服务的 Cluster IP；
+4. 若要在虚拟机中运行服务，需要配置 sidecar，新增需要拦截的 inbound 端口，然后重启 istio，还需要运行 istioctl 为服务注册
 
-1.  Create an internal load balancer for the Istio control plane service and the DNS service for the Kubernetes cluster.
-2.  Generate a configuration file for the Istio Service CIDR, Service Account token, security certificate, and IP of the Istio Control Plane Service (the IP exposed through the Internal Load Balancer) and send it to the virtual machine.
-3.  Setup the Istio component, dnsmaq (for DNS discovery), in the virtual machine; so that the virtual machine can access the services in the mesh using FQDN, to ensure that the virtual machine can correctly resolve the Cluster IP of the services in the mesh.
-4.  To run the service in a virtual machine, you need to configure the sidecar, add inbound ports to be intercepted, then restart Istio and also run istioctl to register the service.
+下图展示的从集成虚拟机到在 mesh 中访问虚拟机中服务的详细流程。
 
-The following figure shows the detailed flow from integrating a virtual machine to accessing services in the virtual machine in a mesh.
+![图一：从集成虚拟机到在 mesh 中访问虚拟机中服务的详细流程](0081Kckwly1gm0d6rogojj30u00yhdil.jpg)
 
+1. DNS 被虚拟机中部署的 `dnsmasq` 劫持，这使得它可以正确的获取 Istio 服务、Kubernetes 内置 DNS 的端点 IP；
+2. 访问 Kubernetes 的内置 DNS 服务（该服务已通过 Internal 负载均衡器暴露到集群外，可以直接访问）；
+3. 返回 `productpage.bookinfo.svc.cluster.local` 被解析出来的 Cluster IP，注意该 IP 地址无法直接访问，但是如果无法被 DNS 解析的话将导致 VM 对该服务的请求失败；
+4. 虚拟机对 mesh 中服务的访问被 sidecar proxy 劫持；
+5. 因为 proxy 已连接 Istio 控制平面，可通过 xDS 查询到该服务的端点，因此流量将被转发到其中的一个端点。关于这一步的详细过程请参考 [Istio Handbook 中的 sidecar 流量路由机制分析 一节](https://www.servicemesher.com/istio-handbook/concepts/sidecar-traffic-route.html)；
+6. 要想在 mesh 中访问 VM 中的服务，需要使用 `istioctl register` 命令手动将 VM 中的服务添加到 mesh 中，这本质上是将 VM 中的服务，注册到 Kubernetes 中的 service 和 endpoint；
+7. mesh 中的服务可以使用 VM 注册的服务名称（FQDN，例如 `mysql.vm.svc.cluster.local`）来访问；
 
-![](https://i0.wp.com/cdn.thenewstack.io/media/2021/01/c2568250-image1-884x1024.png?resize=640%2C741&ssl=1)
+以上 Istio 对虚拟机支持的方式一直延续到 Istio 1.0，在 Istio 1.1 的时候引入了新的 API [ServiceEntry](https://istio.io/latest/docs/reference/config/networking/service-entry/)，使用它可以在 Istio 的内部服务注册表中添加额外的条目，这样 mesh 中的服务就可以访问/路由到这些手动指定的服务了，不再需要运行 `istioctl register` 命令，而且该命令在 Istio 1.9 中将被废弃。
 
+Istio 1.5 中增加了 `istioctl experimental add-to-mesh` 命令，可以将虚拟机中的服务添加到 mesh 中，其功能与 `istioctl register` 一样。
 
+### 新增资源抽象
 
-1.  The DNS is hijacked by dnsmasq deployed in the virtual machine, which allows it to correctly obtain the Cluster IP of the Istio service (Kubernetes’ built-in DNS).
-2.  Access to Kubernetes’ built-in DNS service (which is exposed outside the cluster via the Internal Load Balancer and can be accessed directly).
-3.  Return the Cluster IP resolved by `productpage.bookinfo . svc. cluster . local`, noting that the IP address is not directly accessible, but failure to be DNS resolved will result in a failed VM request for the service.
-4.  The virtual machine’s call to services in a mesh is hijacked by the sidecar proxy.
-5.  Since the proxy is connected to the Istio control plane, the endpoints of the service can be queried via xDS, so traffic will be forwarded to one of the endpoints.
-6.  To access VM services in mesh, you need to manually add VM services to mesh using the istioctl register command, which essentially registers the VM services to the service and endpoint in Kubernetes.
-7.  Services in the mesh can be accessed using the VM-registered service name (FQDN, e.g. `mysql.vm.svc.cluster.local`).
+Istio 从 [1.6 版本](https://istio.io/latest/news/releases/1.6.x/announcing-1.6/)开始在[流量管理](https://istio.io/latest/news/releases/1.6.x/announcing-1.6/change-notes/)中引入了新的资源类型 [WorkloadEntry](https://istio.io/latest/docs/reference/config/networking/workload-entry/)，用以将虚拟机进行抽象，使得虚拟机在加入 mesh 后可以作为与 Kubernetes 中的 Pod 等同的负载，具备流量管理、安全管理、可视化等能力。通过 `WorkloadEntry` 可以简化虚拟机的网格化配置过程。`WorkloadEntry` 对象可以根据服务条目中指定的标签选择器选择多个工作负载条目和 Kubernetes pod。
 
-The above Istio support for virtual machines continued with Istio 1.0, which introduced a new API [ServiceEntry](https://istio.io/latest/docs/reference/config/networking/service-entry/) with Istio 1.1, that allows additional entries to be added to Istio’s internal service registry so that services in the mesh can access/route to these manually specified services. The istioctl register command is no longer needed and will be deprecated in Istio 1.9.
+Istio 1.8 中增加了 [`WorkloadGroup`](http://istio.io/latest/docs/reference/config/networking/workload-group/) 的资源对象，它提供了一个规范，可以同时包括虚拟机和 Kubernetes 工作负载，旨在模仿现有的用于 Kubernetes 工作负载的 sidecar 注入和部署规范模型来引导 Istio 代理。
 
-The istioctl experimental add-to-mesh command has been added to Istio 1.5 to add services from a virtual machine to a mesh, and it works just like the istioctl register.
+下面是虚拟机与 Kubernetes 中负载的资源抽象层级对比。
 
-### 1.6 to 1.7: New Resource Abstractions
+| 对比项         | Kubernetes | 虚拟机        |
+| -------------- | ---------- | ------------- |
+| 基础调度单位   | Pod        | WorkloadEntry |
+| 编排组合       | Deployment | WorkloadGroup |
+| 服务注册与发现 | Service    | ServiceEntry  |
 
-Istio introduced a new resource type, [WorkloadEntry](https://istio.io/latest/docs/reference/config/networking/workload-entry/), in traffic management from [version 1.6](https://istio.io/latest/news/releases/1.6.x/announcing-1.6/), to abstract virtual machines so that they can be added to the mesh as equivalent loads to the pods in Kubernetes; with traffic management, security management, observability, etc. The mesh configuration process for virtual machines is simplified with WorkloadEntry, which selects multiple workload entries and Kubernetes pods based on the label selector specified in the service entry.
+从上面的图表中我们可以看到，对于虚拟机工作负载是可以与 Kubernetes 中的负载一一对对应的。
 
-Istio 1.8 adds a resource object for [WorkloadGroup](http://istio.io/latest/docs/reference/config/networking/workload-group/) that provides a specification that can include both virtual machines and Kubernetes workloads, designed to mimic the existing sidecar injection and deployment specification model for Kubernetes workloads to bootstrap Istio agents on the VMs.
+此时看似一切都比较完美了，但是直接将 Kubernetes 集群中的 DNS server 暴露出来会带来很大的[安全风险](https://blog.aquasec.com/dns-spoofing-kubernetes-clusters)，因此我们一般手动将虚拟机需要访问的服务的域名和 Cluster IP 对写到本机的 `/etc/hosts` 中，但是对于一个节点数量庞大的分布式集群来说，这种做法又有些不现实。
 
-Below is a comparison of resource abstraction levels for virtual machines versus workloads in Kubernetes.
+通过配置虚拟机本地 `/etc/hosts` 访问 mesh 内服务的流程，如下图所示。
 
+![图二：通过配置虚拟机本地 /etc/hosts 访问 mesh 内服务的流程](0081Kckwly1gm0d6qx2o0j30sq0v440v.jpg)
 
-From the above diagram, we can see that for virtual machine workloads there is a one-to-one correspondence with the workloads in Kubernetes.
+1. 将虚拟机中的服务注册到 mesh 中；
+2. 将要访问的服务的域名、Cluster IP 对手动写入虚拟机本地的 `/etc/hosts` 文件中；
+3. 虚拟机获得访问服务的 Cluster IP；
+4. 流量被 sidecar proxy 拦截并解析出要访问的服务的端点地址；
+5. 访问服务的指定端点；
 
-Everything seems perfect at this point. However, exposing the DNS server in the Kubernetes cluster directly is a big [security risk](https://blog.aquasec.com/dns-spoofing-kubernetes-clusters), so we usually manually write the domain name and Cluster IP pair of the service the virtual machine needs to access to the local /etc/hosts — but this is not practical for a distributed cluster with a large number of nodes.
+在 Kubernetes 中我们一般使用 Service 对象来实现服务的注册和发现，每个服务都有一个独立的 DNS 名称，应用程序可以使用服务名称来互相调用。我们可以使用 ServiceEntry 将虚拟机中的服务注册到 Istio 的服务注册表中，但是在 Kubernetes 集群中的 DNS server 无法对 mesh 外部暴露的情况下，虚拟机无法访问 Kubernetes 集群中的 DNS 服务以获取服务的 Cluster IP，从而导致虚拟机访问 mesh 中的服务失败。如果能在虚拟机中增加一个 sidecar 可以透明地拦截 DNS 请求，可获取 mesh 内所有服务的 ClusterIP，类似于图一中的 `dnsmasq` 的角色，这样不就可以解决问题了吗？
 
-The process of accessing the services inside mesh by configuring the local /etc/hosts of the virtual machine is shown in the following figure.
+### 智能 DNS 代理
 
+Istio 1.8 中引入了[智能 DNS 代理](https://cloudnative.to/blog/istio-dns-proxy/)，虚拟机访问 mesh 内服务无需再配置 `/ect/hosts`，如下图所示。
 
-![](https://i2.wp.com/cdn.thenewstack.io/media/2021/01/4bedb3a9-image4-933x1024.png?resize=640%2C702&ssl=1)
+![图三：引入了智能 DNS 代理后虚拟机访问 mesh 内服务的流程](0081Kckwly1gm0d6sgfpxj30oi0rsjt5.jpg)
 
+DNS proxy 是用 Go 编写的 Istio sidecar 代理。Sidecar 上的 Istio agent 将附带一个由 Istiod 动态编程的缓存 DNS 代理。来自应用程序的 DNS 查询会被 pod 或 VM 中的 Istio 代理透明地拦截和服务，该代理会智能地响应 DNS 查询请求，可以实现虚拟机到服务网格的无缝多集群访问。
 
+至此，Istio 1.8 中引入的 WordloadGroup 及智能 DNS 代理，补足了 Istio 对虚拟机支持的最后一块短板，使得部署在虚拟机中的遗留应用可以跟 Kubernetes 中的 Pod 一样完全等同看待。
 
-1.  Registration of services in the virtual machine into the mesh.
-2.  Manually write the domain name and Cluster IP pairs of the service to be accessed to the local /etc/hosts file in the virtual machine.
-3.  Cluster IP where the virtual machine gets access to the service.
-4.  The traffic is intercepted by the sidecar proxy and the endpoint address of the service to be accessed is resolved by Envoy.
-5.  Access to designated endpoints of the service.
+## 总结
 
-In Kubernetes, we generally use the Service object for service registration and discovery; each service has a separate DNS name that allows applications to call each other by using the service name. We can use ServiceEntry to register a service in a virtual machine into Istio’s service registry, but a virtual machine cannot access a DNS server in a Kubernetes cluster to get the Cluster IP if the DNS server is not exposed externally to the mesh, which causes the virtual machine to fail to access the services in the mesh. Wouldn’t the problem be solved if we could add a| Tables   |      Are      |  Cool |
-
-
-| Items        | Kubernetes | Virtual Machine  |
-| ------------- |:-------------:| -----:|
-| Basic schedule unit      | 	Pod | WorkloadEntry |
-| Component     | Deployment	      |   WorkloadGroup |
-| Service register and discovery	 | Service      |    ServiceEntry |
-
-
-
- sidecar to the virtual machine that would transparently intercept DNS requests and get the Cluster IP of all services in the mesh, similar to the role of dnsmasq in Figure 1?
-
-### As of Istio 1.8 — Smart DNS Proxy
-
-With the introduction of smart [DNS proxy](https://cloudnative.to/blog/istio-dns-proxy/) in Istio 1.8, virtual machines can access services within the mesh without the need to configure /etc/hosts, as shown in the following figure.
-
-
-![](https://i0.wp.com/cdn.thenewstack.io/media/2021/01/484de469-image2-884x1024.png?resize=640%2C741&ssl=1)
-
-
-The Istio agent on the sidecar will come with a cached DNS proxy dynamically programmed by Istiod. DNS queries from the application are transparently intercepted and served by the Istio proxy in the pod or VM, with the response to DNS query requests, enabling seamless access from the virtual machine to the service mesh.
-
-The WorkloadGroup and smart DNS proxy introduced in Istio 1.8 provide powerful support for virtual machine workloads, making legacy applications deployed in virtual machines fully equivalent to pods in Kubernetes.
-
-## Summary
-
-In this odyssey of Istio’s virtual machine support, we can see the gradual realization of unified management of virtual machines and pods — starting with exposing the DNS server in the mesh and setting up dnsmasq in the virtual machine, and ending with using smart DNS proxies and abstracting resources such as `WorkloadEntry`, `WorkloadGroup` and `ServiceEntry`. This article only focuses on the single cluster situation, which is not enough to be used in real production. We also need to deal with security, multicluster, multitenancy, etc.
+在这部 Istio 支持虚拟机的奥德赛中，我们可以看到：从最初的将 mesh 中的 DNS server 暴露给外部，在虚拟机中安装配置 `dnsmasq`，到最后的使用智能 DNS 代理，并使用 `WorkloadEntry`、`WorkloadGroup` 和 `ServiceEntry` 等资源抽象，逐步实现了虚拟机和 pod 的统一管理。本文仅仅是针对单集群的情况，在实际的生产中使用还远远不够，我们还需要处理安全、多集群、多租户等诸多问题，欢迎关注 Tetrate 的旗舰产品 [Tetrate Service Bridge](https://www.tetrate.io/tetrate-service-bridge/) 了解更多关于 Istio 应用在生产上的最佳实践。
