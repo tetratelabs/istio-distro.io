@@ -2,7 +2,7 @@
 # the name of the partner
 title: "AppViewX"
 # a quick blurb of what the partner does
-#description: "This is a description of Keyfactor"
+description: "AppViewX is revolutionizing the manner in which NetOps and SecOps teams deliver services to the rest of Enterprise IT."
 # the partner's image logo
 logo: "/images/appviewx_logo.png"
 # give this the same name as the partner's directory name in ecosystem-partners.
