@@ -4,15 +4,30 @@
   <!-- Render all meta tags -->
   {{ partial "meta" . }}
 
+  <!-- critical CSS -->
+  {{ partial "main-style" .}}
+
   <!-- plugins -->
   {{ $permalink:= .Permalink }}
   {{ range site.Params.plugins.css}}
   {{ if eq $permalink (.page | lower | urlize | relURL ) }}
-  <link rel="stylesheet" href="{{ .link | relURL }}" {{.attributes | safeHTMLAttr}}>
+  <link rel="preload" href="{{ .link | relURL }}" as="style" {{.attributes | safeHTMLAttr}}
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="styles.css">
+  </noscript>
   {{ else if eq .page "/"}}
-  <link rel="stylesheet" href="{{ .link | relURL }}" {{.attributes | safeHTMLAttr}}>
+  <link rel="preload" href="{{ .link | relURL }}" as="style" {{.attributes | safeHTMLAttr}}
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="styles.css">
+  </noscript>
   {{ else }}
-  <link rel="stylesheet" href="{{ .link | relURL }}" {{.attributes | safeHTMLAttr}}>
+  <link rel="preload" href="{{ .link | relURL }}" as="style" {{.attributes | safeHTMLAttr}}
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="styles.css">
+  </noscript>
   {{ end }}
   {{ end }}
 
