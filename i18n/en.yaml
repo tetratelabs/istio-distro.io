@@ -45,3 +45,6 @@
 
 - id: get_in_touch
   translation: Get in Touch
+
+- id: join_now
+  translation: Join Now

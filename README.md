@@ -66,11 +66,16 @@ description: "This is description for Sample Event 1"
 categories: "event"
 image: "images/webinar_dummy.jpg"
 eventLink: "http://meet.google.com/abc"
-eventDate: 2021-01-29
+eventDate: 2021-03-04T09:00:00
 pastEvent: false
 ```
 
 The `image`, `eventLink` and `eventDate` will be used to feature this event in the site's homepage. If the event is finished, you can change the frontmatter `pastEvent` to `true`.
+
+The event date should be provided in PST time zone. There are two shortcodes defined:
+
+- `eventDate`: shows the event date as well as the link to convert time to other timezones
+- `eventLink`: adds the event link to the page (uses the `eventLink` from frontmatter)
 
 ## Multiday Event
 
