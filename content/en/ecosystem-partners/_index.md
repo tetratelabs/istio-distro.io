@@ -15,7 +15,7 @@ We establish partnerships with various organizations to create synergy between I
 
 <ul>
   <li><a href="appviewx">AppViewX</a></li>
+  <li><a href="jetstack">Jetstack</a></li>
   <li><a href="keyfactor">Keyfactor</a></li>
-  <li><a href="venafi">Venafi</a></li>
   <li><a href="weaveworks">Weaveworks</a></li>
 <ul>
