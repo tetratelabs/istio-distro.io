@@ -11,4 +11,4 @@ type : "docs"
 
 有其他网页允许下载 Istio 发行版和 [Linux]({{< relref "linux" >}})、[MacOS]({{< relref "macos" >}}) 和 [Windows]({{< relref "windows" >}}) 的 istioctl 二进制文件。我们建议使用 GetIsio 来获取所需文件。
 
-{{< dwn_getistio >}}
+{{< versions_supported >}}
