@@ -1,5 +1,5 @@
 # getistio.io
-Website for GetIstio project. This supersedes previous project as we move from Gatsby to Hugo.
+Website for GetIstio project, build using Hugo
 
 ## Run Locally
 1. Download and install [hugo](https://www.gohugo.io), version not less than v0.80.0
@@ -113,3 +113,15 @@ The following pages of this website are auto-generated (see [here](https://githu
 - /getistio-cli/reference
 
 Be careful when modifying the contents of these pages in this repo as they will be lost whenever with the next GetIstio release. Also, if you're renaming the paths/URLs to those pages, make sure to [update the doc generation](https://github.com/tetratelabs/getistio/blob/main/doc/gen.go) in the GetIstio repository.
+
+## Contributing
+
+To contribute code to this website, you can do the following:
+
+1. Fork this repo
+2. Commit signed changes to your fork
+3. Submit a PR with those changes and ask for review
+4. After the changes have been approved by the reviewer, you can merge it.
+5. Happy contributing :)
+
+Also, feel free to submit issue.
