@@ -164,6 +164,11 @@ name = "GetEnvoy"
 url = "https://www.getenvoy.io/"
 weight = 6
 
+[[Languages.en.menu.main]]
+name = "Istio.io"
+url = "https://www.istio.io/"
+weight = 7
+
 # footer menu
 
 #[[Languages.en.menu.footer]]
