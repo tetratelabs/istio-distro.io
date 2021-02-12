@@ -1,0 +1,7 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
+
+<div class="pb-4">
+    <div class="font-weight-bold"><span><i class="ti-calendar mr-2"></i></span>{{ dateFormat "Monday, January 2, 2006 15:04 PST" .Page.Params.eventDate }}
+    </div>
+    <a href="https://www.timeanddate.com/worldclock/fixedtime.html?msg={{ .Page.Params.title }}&iso={{ .Page.Params.eventDate }}&p1=224">Check your timezone</a>
+</div>
