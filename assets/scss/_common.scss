@@ -751,6 +751,7 @@ pre {
   .carousel-inner {
     width: 50%;
     margin: 0 auto;
+    height: 240px;
   }
 }
 
@@ -796,6 +797,15 @@ pre {
   }
 }
 
+@media (min-width: $breakpoint-xl) and (max-width: $breakpoint-xxl) {
+  #customer-quote {
+    .carousel-inner {
+      width: 80%;
+      height: 280px;
+    }
+  }
+}
+
 @media (min-width: $breakpoint-md) and (max-width: $breakpoint-xl) {
   .hero-section {
     h1 {
@@ -809,6 +819,7 @@ pre {
     padding: 32px;
     .carousel-inner {
       width: 80%;
+      height: 330px;
     }
   }
 }
@@ -886,6 +897,7 @@ pre {
     padding: 32px;
     .carousel-inner {
       width: 100%;
+      height: auto;
     }
   }
 
