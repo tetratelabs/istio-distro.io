@@ -147,7 +147,7 @@ spec:
       - name: istio-ingressgateway-staging
         namespace: staging
         enabled: true
-        label:
+        labels:
             istio: istio-ingressgateway-staging
 ```
 
