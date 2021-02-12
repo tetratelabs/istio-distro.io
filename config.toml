@@ -165,7 +165,7 @@ url = "https://www.getenvoy.io/"
 weight = 6
 
 [[Languages.en.menu.main]]
-name = "istio.io"
+name = "Istio.io"
 url = "https://www.istio.io/"
 weight = 7
 
