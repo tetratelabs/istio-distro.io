@@ -8,6 +8,7 @@ eventLink: "https://us02web.zoom.us/j/89163866904"
 eventDate: 2021-03-04T09:00:00
 pastEvent: false
 weight: 3
+timezone: PST
 ---
 {{< eventDate >}}
 
