@@ -75,10 +75,10 @@ link = "plugins/bootstrap/bootstrap.min.js"
 attributes = ""
 page = "/"
 
-[[params.plugins.js]]
-link = "plugins/turbolinks/turbolinks.js"
-attributes = ""
-page = "/"
+#[[params.plugins.js]]
+#link = "plugins/turbolinks/turbolinks.js"
+#attributes = ""
+#page = "/"
 
 [[params.plugins.js]]
 link = "plugins/masonry/masonry.min.js"
