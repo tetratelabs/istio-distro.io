@@ -38,10 +38,10 @@ maxAge = "10s"
 ############################# Plugins ##############################
 
 # CSS Plugins
-[[params.plugins.css]]
-link = "plugins/bootstrap/bootstrap.min.css"
-attributes = "media='screen'"
-page = "/"
+#[[params.plugins.css]]
+#link = "css/bootstrap/bootstrap.min.css"
+#attributes = "media='screen'"
+#page = "/"
 
 [[params.plugins.css]]
 link = "plugins/themify-icons/themify-icons.css"

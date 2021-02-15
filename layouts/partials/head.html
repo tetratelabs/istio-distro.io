@@ -31,10 +31,15 @@
   {{ end }}
   {{ end }}
 
-  <!-- Main Stylesheet -->
-  {{ $styles := resources.Get "scss/style.scss" | toCSS }}
-  <!-- <link rel="stylesheet" href="{{ $styles.Permalink | relURL }}" media="screen"> -->
+  <!-- Bootstrap Stylesheet -->
+  {{ $bootstrap := resources.Get "css/bootstrap/bootstrap.min.css" | resources.ToCSS (dict "outputStyle" "compressed") | postCSS}}
+  <link rel="preload" href="{{ $bootstrap.Permalink | relURL }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="{{ $bootstrap.Permalink | relURL }}">
+  </noscript>
 
+  <!-- Main Stylesheet -->
+  {{ $styles := resources.Get "scss/style.scss" | resources.ToCSS (dict "outputStyle" "compressed") | postCSS}}
   <link rel="preload" href="{{ $styles.Permalink | relURL }}" as="style"
     onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
