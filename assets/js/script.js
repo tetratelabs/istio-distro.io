@@ -17,11 +17,6 @@ $(document).on('turbolinks:load', preloader);
     }
   });
 
-  // masonry
-  $('.masonry-wrapper').masonry({
-    columnWidth: 1,
-  });
-
   // Get Parameters from some url
   var getUrlParameter = function getUrlParameter(sPageURL) {
     var url = sPageURL.split('?');
