@@ -17,13 +17,10 @@
     <link rel="stylesheet" href="{{ .link | relURL }}">
   </noscript>
   {{ else if eq .page "/"}}
-  {{ $path := .link }}
-  {{ printf "%v" $path}}
-  {{ $css := resources.Get $path | resources.ToCSS (dict "outputStyle" "compressed") | postCSS}}
-  <link rel="preload" href="{{ $css.Permalink | relURL }}" as="style" {{.attributes | safeHTMLAttr}}
+  <link rel="preload" href="{{ .link | relURL }}" as="style" {{.attributes | safeHTMLAttr}}
     onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
-    <link rel="stylesheet" href="{{ $css.Permalink | relURL }}">
+    <link rel="stylesheet" href="{{ .link | relURL }}">
   </noscript>
   {{ else }}
   <link rel="preload" href="{{ .link | relURL }}" as="style" {{.attributes | safeHTMLAttr}}
@@ -34,9 +31,14 @@
   {{ end }}
   {{ end }}
 
+  <!-- Bootstrap Stylesheet -->
+  {{ $bootstrap := resources.Get "css/bootstrap/bootstrap.min.css" | resources.ToCSS (dict "outputStyle" "compressed") | postCSS}}
+  <link rel="preload" href="{{ $bootstrap.Permalink | relURL }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="{{ $bootstrap.Permalink | relURL }}">
+  </noscript>
+
   <!-- Main Stylesheet -->
-  <!-- {{ $styles := resources.Get "scss/style.scss" | toCSS }} -->
-  <!-- <link rel="stylesheet" href="{{ $styles.Permalink | relURL }}" media="screen"> -->
   {{ $styles := resources.Get "scss/style.scss" | resources.ToCSS (dict "outputStyle" "compressed") | postCSS}}
   <link rel="preload" href="{{ $styles.Permalink | relURL }}" as="style"
     onload="this.onload=null;this.rel='stylesheet'">
