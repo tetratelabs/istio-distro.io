@@ -17,10 +17,13 @@
     <link rel="stylesheet" href="{{ .link | relURL }}">
   </noscript>
   {{ else if eq .page "/"}}
-  <link rel="preload" href="{{ .link | relURL }}" as="style" {{.attributes | safeHTMLAttr}}
+  {{ $path := .link }}
+  {{ printf "%v" $path}}
+  {{ $css := resources.Get $path | resources.ToCSS (dict "outputStyle" "compressed") | postCSS}}
+  <link rel="preload" href="{{ $css.Permalink | relURL }}" as="style" {{.attributes | safeHTMLAttr}}
     onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
-    <link rel="stylesheet" href="{{ .link | relURL }}">
+    <link rel="stylesheet" href="{{ $css.Permalink | relURL }}">
   </noscript>
   {{ else }}
   <link rel="preload" href="{{ .link | relURL }}" as="style" {{.attributes | safeHTMLAttr}}
@@ -32,9 +35,9 @@
   {{ end }}
 
   <!-- Main Stylesheet -->
-  {{ $styles := resources.Get "scss/style.scss" | toCSS }}
+  <!-- {{ $styles := resources.Get "scss/style.scss" | toCSS }} -->
   <!-- <link rel="stylesheet" href="{{ $styles.Permalink | relURL }}" media="screen"> -->
-
+  {{ $styles := resources.Get "scss/style.scss" | resources.ToCSS (dict "outputStyle" "compressed") | postCSS}}
   <link rel="preload" href="{{ $styles.Permalink | relURL }}" as="style"
     onload="this.onload=null;this.rel='stylesheet'">
   <noscript>

@@ -39,22 +39,22 @@ maxAge = "10s"
 
 # CSS Plugins
 [[params.plugins.css]]
-link = "plugins/bootstrap/bootstrap.min.css"
+link = "css/bootstrap/bootstrap.min.css"
 attributes = "media='screen'"
 page = "/"
 
 [[params.plugins.css]]
-link = "plugins/themify-icons/themify-icons.css"
+link = "css/themify-icons/themify-icons.css"
 attributes = ""
 page = "/"
 
 [[params.plugins.css]]
-link = "plugins/search/auto-complete.css"
+link = "css/search/auto-complete.css"
 attributes = ""
 page = "/"
 
 [[params.plugins.css]]
-link = "plugins/featherlight/featherlight.min.css"
+link = "css/featherlight/featherlight.min.css"
 attributes = ""
 page = "/"
 
