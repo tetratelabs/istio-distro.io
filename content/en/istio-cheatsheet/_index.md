@@ -101,7 +101,7 @@ Best Practice for [Istio Obervability](https://istio.io/latest/docs/ops/best-pra
 - [Local K8s (kind, microk8s, minikube, dockerdesktop)](https://kubernetes.io/docs/tasks/tools/)
 
 ### Integrations
-- [Skywalking (log aggregation and visualization)](https://getistio-demo.netlify.app/istio-tutorials/install-skywalking/): analyze your platform with an open source tool that provides graphical analysis of multi-cluster and multi-cloud environment via log aggregation
+- [Skywalking (log aggregation and visualization)](https://getistio.io/istio-in-practice/install-skywalking/): analyze your platform with an open source tool that provides graphical analysis of multi-cluster and multi-cloud environment via log aggregation
 - [Zipkin (tracing)](https://istio.io/latest/docs/ops/integrations/zipkin/): track and analyze path, performance, and latency of distributed transactions
 - [Prometheus (monitor)](https://istio.io/latest/docs/ops/integrations/prometheus/#Configuration): record metrics to track the health of Istio and applications in the mesh
 - [Grafana (visualization)](https://istio.io/latest/docs/ops/integrations/grafana/): connect to various data sources and visualize the data use graphs, tables, and heatmaps
