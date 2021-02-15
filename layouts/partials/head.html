@@ -48,5 +48,9 @@
   {{ template "_internal/opengraph.html" . }}
   {{ template "_internal/google_analytics.html" . }}
   {{ template "_internal/google_analytics_async.html" . }}
+
+  <!-- Turbolinks -->
+  {{ $turbolinks := resources.Get "js/turbolinks.js" | minify}}
+  <script src="{{ $turbolinks.Permalink | relURL }}"></script>
   
 </head>
