@@ -30,6 +30,9 @@ $ getistio fetch --version 1.7.4 --flavor tetratefips
 # Fetch the latest "tetrate flavored" istioctl of version=1.7.4
 $ getistio fetch --version 1.7.4
 
+# Fetch the istioctl of version=1.8.3 flavor=istio flavor-version=0
+$ getistio fetch --version 1.8.3 --flavor istio
+
 
 
 # Fetch the latest "tetrate flavored" istioctl
@@ -49,10 +52,10 @@ For more information, please refer to "getistio list --help" command.
 #### Options
 
 ```
-      --flavor string        Flavor of istioctl, e.g. "--flavor tetrate" or --flavor tetratefips"
+      --version string       Version of istioctl e.g. "--version 1.7.4"
+      --flavor string        Flavor of istioctl, e.g. "--flavor tetrate" or --flavor tetratefips" or --flavor istio"
       --flavor-version int   Version of the flavor, e.g. "--version 1" (default -1)
   -h, --help                 help for fetch
-      --version string       Version of istioctl e.g. "--version 1.7.4"
 ```
 
 #### Options inherited from parent commands
