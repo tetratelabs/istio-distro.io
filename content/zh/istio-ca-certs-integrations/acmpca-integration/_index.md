@@ -38,7 +38,7 @@ certificateParameters:
     # SecretFilePath 是用于以 yaml 格式存储 Kubernetes Secret 的文件路径。
     secretFilePath:
     # 启用 force 标志后，强制删除 istioNamespace 中的 "cacerts" secret，并创建一个新的 secret。
-    force: true
+    overrideExistingCACertsSecret: true # 覆盖现有的 “cacerts” secret，用新的 secret 代替。
   caOptions:
     # ValidityDays 表示 CA 过期前的有效天数。
     validityDays: 365
@@ -67,4 +67,3 @@ getistio gen-ca --config-file acmpca-config.yaml
 ```
 
 运行完该命令，你会发现在 `~/.getistio/secret/` 下创建了一个文件，并且在 `istio-system` 命名空间中创建了 `cacerts` secret。`istiod` 启动后会使用这个证书来签署工作负载证书。
-
