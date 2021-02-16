@@ -58,7 +58,7 @@
         <!-- {{ with .Site.Params.banner }} -->
         <div class="dictionary-title row justify-content-between align-items-center mx-1 mb-3 pb-3">
           <h4 class="card-title h4">What is Get•Is•ti•o</h4>
-          <img src="/images/getistio-logo-notext-black.png" />
+          <img src="/images/getistio-logo-notext-black.png" alt="" />
         </div>
 
         <div class="px-2 pb-2">
@@ -214,7 +214,7 @@
               <span><i class="ti-calendar"></i></span>
             </p>
             <a href="{{ .Page.RelPermalink }}"><h5>{{ .Page.Title }}</h5></a>
-            <img src="{{ .Page.Params.image |relURL }}" />
+            <img src="{{ .Page.Params.image |relURL }}" alt="{{ .Page.Title }}" />
             <p>{{ .Page.Description }}</p>
             <div class="event-actions row">
                 <a class="btn btn-sm" href="{{ .Page.RelPermalink }}">{{ i18n "learn_more" }}</a>
