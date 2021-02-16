@@ -36,7 +36,7 @@ certificateParameters:
     # SecretFilePath 是用于以 yaml 格式存储 Kubernetes Secret 的文件路径。
     secretFilePath:
     # 启用 force 标志后，强制删除 istioNamespace 中的 "cacerts" secret，并创建一个新的 secret。
-    overrideExistingCACertsSecret: true
+    overrideExistingCACertsSecret: true # 覆盖现有的 “cacerts” secret，用新的 secret 代替。
   caOptions:
     # ValidityDays 表示 CA 过期前的有效天数。
     validityDays: 365
