@@ -65,7 +65,7 @@ visibility of InfoSec.
 
 ### Important Links
 
-- [cert-manager](https://marketplace.venafi.com/details/jetstack-cert-manager/)
+- [cert-manager](https://github.com/jetstack/cert-manager)
 - [Jetstack Secure](https://jetstack.io/jetstack-secure)
 - [cert-manager + Istio for Gateway](https://istio.io/latest/docs/ops/integrations/certmanager/)
 - [cert-manager + Istio for mTLS](https://github.com/cert-manager/istio-csr)
