@@ -12,7 +12,7 @@ timezone: PST
 ---
 {{< eventDate >}}
 
-The inaugural meetup will be a special edition with 90 minutes to introduce the community, unpacking the GetIstio project, an overview of the GetEnvoy project and an update on what's new in the Istio 1.9 release. We look forward to diving into the topics, demonstrating some new Istio capabilities and answering all of your questions during the Q&A session.
+The inaugural meetup will be a special edition with 90 minutes to introduce the community, unpack the GetIstio and GetEnvoy projects, and hear what's new in the Istio 1.9 release. We look forward to diving into the topics, demonstrating some new Istio capabilities and answering all of your questions during the Q&A session.
 
 - **Welcome and Introduction**
     - GetIstio community
