@@ -204,21 +204,25 @@ link = "/download"
 [[params.social]]
 title = "website"
 icon = "ti-world" # themify icon : https://themify.me/themify-icons
+alt = "Tetrate website"
 link = "https://www.tetrate.io/"
 
 [[params.social]]
 title = "twitter"
 icon = "ti-twitter-alt" # themify icon : https://themify.me/themify-icons
+alt = "Tetrate Twitter account"
 link = "https://www.twitter.com/tetrateio"
 
 [[params.social]]
 title = "github"
 icon = "ti-github" # themify icon : https://themify.me/themify-icons
+alt = "Tetrate Github account"
 link = "https://www.github.com/tetratelabs"
 
 [[params.social]]
 title = "linkedin"
 icon = "ti-linkedin" # themify icon : https://themify.me/themify-icons
+alt = "Tetrate LinkedIn account"
 link = "https://www.linkedin.com/company/tetrate/"
 
 
