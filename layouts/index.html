@@ -30,13 +30,16 @@
   <section class="cta-section mt-4 py-4">
     <div class="container mw-100">
       <div class="row justify-content-center">
-        <div class="col-lg-6 text-center">
+        <div class="col-lg-8 text-center">
           {{ range .item }}
           <p>{{ .content }}</p>
           {{ end }}
           <div class="form-control cta-form" id="emailFormContainer">
             <form id="emailForm">
-                <input id="email" type="email" class="input" placeholder="{{ i18n "work_email"}}" required/>
+              <div class="input-container">
+                <input id="email" type="email" class="input" placeholder=" " required/>
+                <label for="email">{{ i18n "work_email" }}</label>
+              </div>
                 <button class="btn btn-sm btn-primary">{{ i18n "get_updates" }}</button>
             </form>
           </div>
