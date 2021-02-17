@@ -151,9 +151,9 @@
             <h3 class="card-title h4">{{ .Title }}</h3>
             <p class="card-text">{{ .Params.Description }}</p>
             {{ if (isset .Params "altlink") }}
-              <a href="{{ .Params.Altlink }}" class="stretched-link"></a>
+              <a href="{{ .Params.Altlink }}" class="stretched-link" aria-label="{{ .Title}}"></a>
             {{ else }}  
-              <a href="{{ .Permalink }}" class="stretched-link"></a>
+              <a href="{{ .Permalink }}" class="stretched-link" aria-label="{{ .Title}}"></a>
             {{ end }}  
           </div>
         </div>
