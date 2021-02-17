@@ -35,8 +35,7 @@ layout: partner-single
 type: "partners"
 ---
 
-Jetstack helps businesses to build and operate modern cloud native infrastructure with Kubernetes. We’ve been
-contributing to the Kubernetes ecosystem since the beginning. We started
+Jetstack helps businesses to build and operate modern cloud native infrastructure with Kubernetes. The team have been contributing to the Kubernetes ecosystem since the beginning and started
 [cert-manager](https://github.com/jetstack/cert-manager) as an open source project to improve automation of certificate
 management within Kubernetes. Cert-manager builds natively on top of the Kubernetes API and has become the de facto
 solution for issuing and renewing certificates from popular public and private certificate issuers.
