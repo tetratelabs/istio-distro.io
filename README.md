@@ -4,7 +4,8 @@ Website for GetIstio project, build using Hugo
 ## Run Locally
 1. Download and install [hugo](https://www.gohugo.io), version not less than v0.80.0
 2. Fork this repo, clone it to your local machine 
-3. Go to the cloned directory and run
+3. Go to the cloned directory and run `npm install` to install PostCSS dependency (we use it to purge unused CSS)
+4. Finally, to run the website in development mode, run the command:
 
 ```
 hugo serve -D
