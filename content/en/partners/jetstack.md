@@ -24,6 +24,9 @@ docURL: "/jetstack"
 
 websiteURL: "https://www.jetstack.io/"
 websiteTitle: "Website"
+twitter: "https://twitter.com/JetstackHQ"
+linkedin: "https://www.linkedin.com/company/jetstack/"
+github: "https://github.com/jetstack"
 
 # keep this 2 parameters as is.
 
