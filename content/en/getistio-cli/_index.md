@@ -30,6 +30,8 @@ The GetIsio CLI tool supports these enterprise-level requirements as it:
 
 The Istio release schedule can be very aggressive for enterprise lifecycle and change management practices. GetIstio addresses this concern by testing all Istio versions against different Kubernetes distributions for functional integrity. GetIstio’sversions of Istio are actively supported for security patches and other bug updates and have much longer support life than provided by upstream Istio.
 
+## FIPS-Compliant Flavor
+
 Some service mesh customers need to support elevated security requirements. GetIstio addresses compliance by offering two flavors of the Istio distribution:
 - *tetrate* tracks the upstream Istio and may have additional patches applied
 - *tetratefips* is a FIPS-compliant version of the tetrate flavor
