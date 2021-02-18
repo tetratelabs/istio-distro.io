@@ -13,10 +13,10 @@ timezone: PST
 
 {{< eventDate >}}
 
-The inaugural meetup will be a special edition with 90 minutes to introduce the community, unpack the GetIstio and GetEnvoy projects, and hear what's new in the Istio 1.9 release. We look forward to diving into the topics, demonstrating some new Istio capabilities and answering all of your questions during the Q&A session.
-
 - Zoom: https://us02web.zoom.us/j/89163866904
 - Meeting note: [Google doc](https://docs.google.com/document/d/1jgcnuefeFlFEVtfeSVmTOxuUvI7KPznFN5zR9hzrjew/edit?usp=sharing)
+
+The inaugural meetup will be a special edition with 90 minutes to introduce the community, unpack the GetIstio and GetEnvoy projects, and hear what's new in the Istio 1.9 release. We look forward to diving into the topics, demonstrating some new Istio capabilities and answering all of your questions during the Q&A session.
 
 - **Welcome and Introduction**
     - GetIstio community
