@@ -17,7 +17,7 @@ In this article we at Tetrate will show how to integrate [cert-manager](https://
 
 For key and certificate management, Istio is using its own Certificate Authority (CA) inside `istiod` control plane.
 
-Here, we would use the [cert-manager ](https://cert-manager.io/)provisioned Issuer as the [external CA](https://getistio-demo.netlify.app/istio-ca-certs-integrations/) to sign the workload certificates using Istio CSR API with the CSR request directly going from the workloads to the external CA.
+Here, we would use the [cert-manager ](https://cert-manager.io/)provisioned Issuer as the [external CA](https://getistio.io/istio-ca-certs-integrations/) to sign the workload certificates using Istio CSR API with the CSR request directly going from the workloads to the external CA.
 
 ### Setting up the Environment
 

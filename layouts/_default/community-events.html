@@ -36,7 +36,7 @@
             {{ if .Page.Params.eventEndDate }}
             {{ dateFormat "Jan 2, 2006" .Page.Params.eventDate }} - {{ dateFormat "Jan 2, 2006" .Page.Params.eventEndDate }} 
             {{ else }}
-            {{ dateFormat "January 2, 2006 15:04 PST" .Page.Params.eventDate }}
+            {{ dateFormat "January 2, 2006" .Page.Params.eventDate }} {{ dateFormat "3:04 PM" .Page.Params.eventDate }} {{ .Page.Params.timezone }}
             {{ end }}
             <span><i class="ti-calendar"></i></span>
           </p>
@@ -47,7 +47,7 @@
           <p>{{ .Page.Description }}</p>
           <div class="event-actions row">
             <a class="btn btn-sm" href="{{ .Page.RelPermalink }}">{{ i18n "learn_more" }}</a>
-            <a class="btn btn-sm btn-primary" href="{{ .Page.Params.eventLink }}">{{ i18n "go_to_event" }}</a>
+            <a class="btn btn-sm btn-primary" href="{{ .Page.Params.eventLink }}" target="_blank">{{ i18n "go_to_event" }}</a>
           </div>
         </div>
       </div>

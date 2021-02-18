@@ -72,7 +72,7 @@ providerConfig:
 certificateParameters:
   secretOptions:
     istioCANamespace: "istio-system" # namespace where `cacerts` secrets live
-    force: true # force delete the `cacerts` secret and replace it with this new one
+    overrideExistingCACertsSecret: true # overwrites the existing `cacerts` secret and replaces it with this new one
   caOptions:
     validityDays: 365 # validity days before the CA expires
     keyLength: 2048 # length (bits) of Key to be created

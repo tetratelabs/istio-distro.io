@@ -43,7 +43,7 @@
         {{ range $version_value := $.Scratch.Get "version_list" }} 
           {{ if findRE $version_supported $version_value }}
             {{ $subversion := (int (strings.TrimLeft "." (substr $version_value -2))) }}
-              {{ if lt $previous_value $subversion }}
+              {{ if le $previous_value $subversion }}
                  {{ $previous_value = $subversion }} 
                  {{ $.Scratch.Set "highest_minor_supported_version" $version_value }} 
               {{ end }}

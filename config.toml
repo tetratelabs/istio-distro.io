@@ -38,10 +38,10 @@ maxAge = "10s"
 ############################# Plugins ##############################
 
 # CSS Plugins
-[[params.plugins.css]]
-link = "plugins/bootstrap/bootstrap.min.css"
-attributes = "media='screen'"
-page = "/"
+#[[params.plugins.css]]
+#link = "css/bootstrap/bootstrap.min.css"
+#attributes = "media='screen'"
+#page = "/"
 
 [[params.plugins.css]]
 link = "plugins/themify-icons/themify-icons.css"
@@ -75,15 +75,10 @@ link = "plugins/bootstrap/bootstrap.min.js"
 attributes = ""
 page = "/"
 
-[[params.plugins.js]]
-link = "plugins/turbolinks/turbolinks.js"
-attributes = ""
-page = "/"
-
-[[params.plugins.js]]
-link = "plugins/masonry/masonry.min.js"
-attributes = ""
-page = "/"
+# [[params.plugins.js]]
+#link = "plugins/masonry/masonry.min.js"
+#attributes = ""
+#page = "/"
 
 [[params.plugins.js]]
 link = "plugins/featherlight/featherlight.min.js"
@@ -164,6 +159,11 @@ name = "GetEnvoy"
 url = "https://www.getenvoy.io/"
 weight = 6
 
+[[Languages.en.menu.main]]
+name = "Istio.io"
+url = "https://www.istio.io/"
+weight = 7
+
 # footer menu
 
 #[[Languages.en.menu.footer]]
@@ -204,21 +204,25 @@ link = "/download"
 [[params.social]]
 title = "website"
 icon = "ti-world" # themify icon : https://themify.me/themify-icons
+alt = "Tetrate website"
 link = "https://www.tetrate.io/"
 
 [[params.social]]
 title = "twitter"
 icon = "ti-twitter-alt" # themify icon : https://themify.me/themify-icons
+alt = "Tetrate Twitter account"
 link = "https://www.twitter.com/tetrateio"
 
 [[params.social]]
 title = "github"
 icon = "ti-github" # themify icon : https://themify.me/themify-icons
+alt = "Tetrate Github account"
 link = "https://www.github.com/tetratelabs"
 
 [[params.social]]
 title = "linkedin"
 icon = "ti-linkedin" # themify icon : https://themify.me/themify-icons
+alt = "Tetrate LinkedIn account"
 link = "https://www.linkedin.com/company/tetrate/"
 
 

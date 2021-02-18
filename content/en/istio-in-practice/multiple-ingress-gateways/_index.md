@@ -134,7 +134,7 @@ spec:
 
 Before we go and deploy this, we also need to modify the labels this new Gateway will use. Remember, if we don't specify anything, Istio uses the default Gateway configuration, and we will end up with two Gateways with the same labels, albeit in a different namespace.
 
-The IstioOperator allows us to add new or modify existing labels by merely setting the `labels` field. Here's how the updated IstioOperator looks like:
+The IstioOperator allows us to add new or modify existing labels by merely setting the `label` field. Here's how the updated IstioOperator looks like:
 
 ```yaml
 apiVersion: install.istio.io/v1alpha1

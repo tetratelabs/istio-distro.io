@@ -9,6 +9,7 @@ eventDate: 2021-02-22
 eventEndDate: 2021-02-26
 pastEvent: false
 weight: 2
+timezone: PST
 ---
 
 [IstioCon 2021](https://events.istio.io/istiocon-2021/) is a community-led event, showcasing the lessons learned from running Istio in production, hands-on experiences from the Istio community, and featuring maintainers from across the Istio ecosystem. The conference offers a mix of keynotes, technical talks, lightning talks, workshops, and roadmap sessions. Fun and games are also included with two social hours to take the load off and mesh with the Istio community, vendors, and maintainers!
