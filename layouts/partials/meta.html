@@ -1,7 +1,13 @@
 <!--- Set the page title. If we're on the root page, we only show the page Title (e.g "GetIstio ..."), on other pages we show the current page name + the title (e.g. Blog | GetIstio...)-->
 {{ $title := .Title }}
-{{ if ne (.Permalink | relURL) "/" }}
-{{ $title = (printf "%s | %s" .Title .Site.Title) }}
+{{ if .IsHome }}
+{{ $title := (i18n "site_name") }}
+{{ else }}
+{{ $title = (printf "%s | %s" .Title (i18n "site_name")) }}
+{{ end }}
+
+{{ if eq .RelPermalink "/zh/" }}
+{{ $title = (i18n "site_name") }}
 {{ end }}
 
 <!--- Titles -->
@@ -36,7 +42,7 @@
 {{ end }}
 
 <!-- Blog pages -->
-{{ if eq .Section "blog" }} 
+{{ if eq .Section "blog" }}
   <!-- Pagination meta tags for list pages only -->
   {{ $paginator := .Paginate (where .Pages "Section" "blog") }}
   {{ if $paginator }}

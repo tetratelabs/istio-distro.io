@@ -34,9 +34,9 @@
         <div class="card match-height event-card">
           <p class="event-date pb-2">
             {{ if .Page.Params.eventEndDate }}
-            {{ dateFormat "Jan 2, 2006" .Page.Params.eventDate }} - {{ dateFormat "Jan 2, 2006" .Page.Params.eventEndDate }} 
+            {{ dateFormat (i18n "date_format") .Page.Params.eventDate }} - {{ dateFormat (i18n "date_format") .Page.Params.eventEndDate }} 
             {{ else }}
-            {{ dateFormat "January 2, 2006" .Page.Params.eventDate }} {{ dateFormat "3:04 PM" .Page.Params.eventDate }} {{ .Page.Params.timezone }}
+            {{ dateFormat (i18n "date_format") .Page.Params.eventDate }} {{ dateFormat (i18n "minute") .Page.Params.eventDate }} {{ .Page.Params.timezone }}
             {{ end }}
             <span><i class="ti-calendar"></i></span>
           </p>

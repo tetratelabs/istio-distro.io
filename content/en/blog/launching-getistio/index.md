@@ -6,6 +6,7 @@ author: "[Varun Talwar](https://www.linkedin.com/in/varuntalwar/)"
 # meta description
 # thumbnail
 thumbnail: "/images/introducing-getistio.png"
+alias: "/blog/launching-getisio"
 tags: ["getistio"]
 ---
 

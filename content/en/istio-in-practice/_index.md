@@ -16,10 +16,11 @@ This section contains practical tutorials and walkthroughs for Istio.
 
 | Title | Description |
 | --- | --- |
-| [Prerequisites](/istio-in-practice/prerequisites) | List of all prerequisites and instructions on how to install and configure them |
-| [How to do Zero-Downtime Releases](/istio-in-practice/zero-downtime-releases) | Learn how to release new versions without any downtime using Istio |
-| [How to use Traffic Mirroring](/istio-in-practice/traffic-mirroring) | Learn about traffic mirroring and how to use it with Istio |
-| [How to use Sticky Sessions](/istio-in-practice/sticky-sessions) | Learn about sticky sessions and how to use them with Istio |
-| [How to set up SSL Certificates](/istio-in-practice/setting-up-ssl-certs) | Learn how to set up Istio ingress gateway with a real SSL certificate |
-| [Integrate AWS Cloud Map with Istio](/istio-in-practice/aws-cloudmap-integration) | Learn how to integrate cloud resource discovery service (AWS Cloud Map) |
-| [How to Install Apache SkyWalking](/istio-in-practice/install-skywalking) | Learn how to install Apache SkyWalking and integrate it with Istio to gain observability |
+| [Prerequisites](./prerequisites) | List of all prerequisites and instructions on how to install and configure them |
+| [How to do Zero-Downtime Releases](./zero-downtime-releases) | Learn how to release new versions without any downtime using Istio |
+| [How to use Traffic Mirroring](./traffic-mirroring) | Learn about traffic mirroring and how to use it with Istio |
+| [How to use Sticky Sessions](./sticky-sessions) | Learn about sticky sessions and how to use them with Istio |
+| [How to set up SSL Certificates](./setting-up-ssl-certs) | Learn how to set up Istio ingress gateway with a real SSL certificate |
+| [How to Deploy Multiple Istio Ingress Gateways](./multiple-ingress-gateways/) | Learn how to deploy multiple Istio ingress gateways |
+| [Integrate AWS Cloud Map with Istio](./aws-cloudmap-integration) | Learn how to integrate cloud resource discovery service (AWS Cloud Map) |
+| [How to Install Apache SkyWalking](./install-skywalking) | Learn how to install Apache SkyWalking and integrate it with Istio to gain observability |

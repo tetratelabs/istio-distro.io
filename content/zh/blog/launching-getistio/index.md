@@ -1,6 +1,6 @@
 ---
 title: "GetIstio 简介：获取 Istio 最简单的方法"
-description: "GetIstio is an integration and lifecycle management CLI tool that ensures the use of supported and vetted versions of Istio."
+description: "GetIstio 是一个集成和生命周期管理 CLI 工具，可以确保使用支持和审核的 Istio 版本。"
 date: "2021-02-10"
 author: "[Varun Talwar](https://www.linkedin.com/in/varuntalwar/)"
 # meta description
