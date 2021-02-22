@@ -45,3 +45,56 @@
 
 - id: get_in_touch
   translation: 联系我们
+
+- id: similar
+  translation: 类似的
+
+- id: copy
+  translation: 复制
+
+- id: previous
+  translation: 上一个
+
+- id: next
+  translation: 下一个
+
+- id: date_format
+  translation: 2006年1月2日
+
+- id: minute
+  translation: 下午 3:04
+
+- id: min_read
+  translation: "分钟阅读"
+
+- id: continue_reading
+  translation: "继续阅读"
+
+- id: blog
+  translation: "博客"
+
+- id: stay_up
+  translation: "了解 GetIstio 的新闻"
+
+- id: by
+  translation: "作者"
+
+- id: published_on
+  translation: "发布于"
+
+- id: back_to_blog
+  translation: "返回博客列表"
+
+- id: back_to_partners
+  translation: "返回伙伴列表"
+
+- id: partners
+  translation: "伙伴"
+- id: at
+  translation: ""
+
+- id: check_your_timezone
+  translation: "查看你的时区"
+
+- id: site_name
+  translation: "简单、安全的企业级 Istio 发行版 | GetIstio 由 Tetrate 出品"

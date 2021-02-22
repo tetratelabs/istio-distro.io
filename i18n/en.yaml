@@ -48,3 +48,51 @@
 
 - id: join_now
   translation: Join Now
+
+- id: similar
+  translation: similar
+
+- id: copy
+  translation: copy
+
+- id: date_format
+  translation: "Jan 2, 2006"
+
+- id: minute
+  translation: "PM 3:04"
+
+- id: min_read
+  translation: "min read"
+
+- id: continue_reading
+  translation: "Continue Reading"
+
+- id: blog
+  translation: Blog
+
+- id: stay_up
+  translation: "Stay up to date on the latest GetIstio news"
+
+- id: by
+  translation: "by"
+
+- id: published_on
+  translation: "on"
+
+- id: back_to_blog
+  translation: "Back to Blog"
+
+- id: back_to_partners
+  translation: "Back to Partners"
+
+- id: parnters
+  translation: "Partners"
+
+- id: at
+  translation: "at"
+
+- id: check_your_timezone
+  translation: "Check your timezone"
+
+- id: site_name
+  translation: "GetIstio by Tetrate | Simple, safe enterprise-grade Istio distro"
