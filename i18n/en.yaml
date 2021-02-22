@@ -43,6 +43,9 @@
 - id: go_to_event
   translation: Go to Event
 
+- id: watch_recording
+  translation: Watch Recording
+
 - id: get_in_touch
   translation: Get in Touch
 
