@@ -78,7 +78,7 @@ The event date should be provided in PST time zone. There are two shortcodes def
 - `eventDate`: shows the event date as well as the link to convert time to other timezones
 - `eventLink`: adds the event link to the page (uses the `eventLink` from frontmatter)
 
-## Multiday Event
+### Multiday Event
 
 To add multiday event (events that starts and ends on different day), add a `eventEndDate` in the frontmatter to indicate the event end date. The `eventDate` frontmatter still acts as the event start date.
 
@@ -95,6 +95,11 @@ eventDate: 2021-03-05
 eventStartDate: 2021-03-08
 pastEvent: false
 ```
+
+### Past Event
+
+After an event is completed and a YouTube recording is available, you can update the `pastEvent` in that event's frontmatter to `true` and change the `eventLink` to that YouTube recording link. This will make that event appear in the Past Event section in Community page, as well as make the Watch Recording button appear, so that the website visitor can watch the event's recording.
+
 
 ## Adding Partnership Information
 
