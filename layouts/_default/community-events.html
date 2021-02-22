@@ -55,6 +55,36 @@
       {{ end }}
     </div>
   </div>
+  <div class="container">
+    <h3 class="text-center my-4">Past Events</h3>
+    <div class="row">
+      {{ range .Site.Taxonomies.categories.event }}
+      {{ if eq .Page.Params.pastEvent true }}
+      <div class="col-lg-6 mb-4 p-4">
+        <div class="card match-height event-card">
+          <p class="event-date pb-2">
+            {{ if .Page.Params.eventEndDate }}
+            {{ dateFormat (i18n "date_format") .Page.Params.eventDate }} - {{ dateFormat (i18n "date_format") .Page.Params.eventEndDate }}
+            {{ else }}
+            {{ dateFormat (i18n "date_format") .Page.Params.eventDate }} {{ dateFormat (i18n "minute") .Page.Params.eventDate }} {{ .Page.Params.timezone }}
+            {{ end }}
+            <span><i class="ti-calendar"></i></span>
+          </p>
+          <a href="{{ .Page.RelPermalink }}">
+            <h5>{{ .Page.Title }}</h5>
+          </a>
+          <img src="{{ .Page.Params.image |relURL }}" />
+          <p>{{ .Page.Description }}</p>
+          <div class="event-actions row">
+            <a class="btn btn-sm" href="{{ .Page.RelPermalink }}">{{ i18n "learn_more" }}</a>
+            <a class="btn btn-sm btn-primary" href="{{ .Page.Params.eventLink }}" target="_blank">{{ i18n "watch_recording" }}</a>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>
 </section>
 
 <section class="community-contribution">
