@@ -6,6 +6,10 @@
 {{ $title = (printf "%s | %s" .Title (i18n "site_name")) }}
 {{ end }}
 
+{{ if eq .RelPermalink "/zh/" }}
+{{ $title = (i18n "site_name") }}
+{{ end }}
+
 <!--- Titles -->
 <title itemprop="name">{{ $title }}</title>
 <meta name="twitter:title" content="{{ $title }}" />

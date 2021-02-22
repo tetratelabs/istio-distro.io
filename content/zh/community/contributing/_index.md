@@ -1,6 +1,7 @@
 ---
 title: "对 GetIstio 贡献"
 url: /zh/community/contributing
+weight: 3
 ---
 
 # 对 GetIstio 贡献

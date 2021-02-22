@@ -2,7 +2,7 @@
 title: "Istio 1.9 有哪些更新？"
 description: "2月9日，Istio 宣布发布Istio 1.9版本。在这个版本中，我们可以看到虚拟机更广泛地被采用到服务网格中，而且对虚拟机的支持、对虚拟机的 cert 发放、对工作负载入口的健康检查也更加完善。"
 date: "2021-02-10T12:15:00"
-author: "[Jimmy Song](https://jimmysong.io)"
+author: "[宋净超](https://jimmysong.io)"
 # thumbnail
 thumbnail: "/images/blog/fiber.jpg"
 tags: ["istio", "announcements"]

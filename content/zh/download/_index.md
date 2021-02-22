@@ -5,6 +5,7 @@ icon: "ti-credit-card" # themify icon pack : https://themify.me/themify-icons
 description: "下载列表。"
 # type dont remove or customize
 type : "docs"
+weight: 10
 ---
 
 目前 **GetIstio** 可以运行在 Linux 和 MacOS 上，要部署 GetIstio，你只需要一个简单的命令：

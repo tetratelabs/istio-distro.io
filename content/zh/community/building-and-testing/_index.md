@@ -1,6 +1,7 @@
 ---
 title: "构建和测试"
 url: /zh/community/building-and-testing
+weight: 2
 ---
 
 在继续之前，请确保您的机器中具有以下依赖项：
