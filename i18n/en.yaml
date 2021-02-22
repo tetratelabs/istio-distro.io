@@ -99,3 +99,12 @@
 
 - id: site_name
   translation: "GetIstio by Tetrate | Simple, safe enterprise-grade Istio distro"
+
+- id: upcoming_getistio_community_events
+  translation: "Upcoming GetIstio Community Events"
+
+- id: contributing_to_getistio
+  translation: "Contributing to GetIstio"
+
+- id: getistio_community
+  translation: "GetIstio Community"
