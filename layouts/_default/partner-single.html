@@ -21,7 +21,7 @@
       {{ .Content }}
       {{ if isset .Page.Params "docurl" }}
         <div class="row justify-content-center">
-          <a class="btn btn-sm btn-primary" href="/ecosystem-partners{{ .Params.DocURL | relURL }}">Read More in Docs</a>
+            <a class="btn btn-sm btn-primary" href="/ecosystem-partners{{ .Params.DocURL | relURL }}">{{ i18n "read_more" }}</a>
         </div>
       {{ end }}
       </div>
@@ -32,7 +32,7 @@
 <div class="container">
   <div class="row m-4 justify-content-center">
     <div class="col-lg-3 p-4">
-      <a href="/partners">← Go back to partners</a>
+        <a href="../">← {{ i18n "back_to_partners" }}</a>
     </div>
   </div>
 </div>

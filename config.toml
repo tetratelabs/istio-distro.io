@@ -4,7 +4,7 @@ title = "GetIstio by Tetrate | Simple, safe enterprise-grade Istio distro"
 # google analytics
 googleAnalytics = "G-P3J9XNBME4"
 # disable language
-disableLanguages = ["zh"] # disable language from here
+#disableLanguages = ["zh"] # disable language from here
 enableRobotsTXT = true
 hasCJKLanguage = true
 paginate = "6"
@@ -297,7 +297,7 @@ weight = 2
 
 [[Languages.zh.menu.main]]
 name = "社区"
-url = "/community/"
+url = "/community-events/"
 weight = 3
 
 [[Languages.zh.menu.main]]
@@ -314,3 +314,9 @@ weight = 5
 name = "GetEnvoy"
 url = "https://www.getenvoy.io/"
 weight = 6
+
+[[Languages.zh.menu.main]]
+name = "Istio.io"
+url = "https://www.istio.io/"
+weight = 7
+

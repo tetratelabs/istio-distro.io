@@ -12,6 +12,9 @@ timezone: PDT
 ---
 {{< eventDate >}}
 
+- Zoom: <https://us02web.zoom.us/j/89163866904>
+- Meeting note: [Google doc](https://docs.google.com/document/d/1jgcnuefeFlFEVtfeSVmTOxuUvI7KPznFN5zR9hzrjew/edit?usp=sharing)
+
 Episode 02 of the community meetup dives into _**getistio gen-ca**_ to help integrate Istio with intermediate certificate authorities (CA). GetIstio will do more than CA integration by managing the installation, operations, and upgrade of Istio across clouds. Join us as we dive into Istio the Easy Way!
 
 * **Welcome and Introduction**

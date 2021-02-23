@@ -1,32 +1,32 @@
 ---
-title: "GetEnvoy Deep Dive and Project Update"
+title: "01：使用 GetEnvoy 轻松实现 Envoy 和 WASM"
 date: 2021-01-29T11:00:00+07:00
-description: "Let's take a deep look into GetEnvoy and exciting updates from the project."
+description: "第 1 届：使用 GetEnvoy 轻松实现 Envoy 和 WASM。"
 categories: "event"
-image: "images/events/getenvoy-deep-dive.png"
-eventLink: "http://meet.google.com/abc"
-eventDate: 2021-03-16
+image: "images/events/effortless-envoy.webp"
+eventLink: "https://us02web.zoom.us/j/89163866904"
+eventDate: 2021-03-04T09:00:00
 pastEvent: false
-weight: 4
+weight: 3
+timezone: PST
 ---
+{{< eventDate >}}
 
-GetEnvoy has been around for more than a year now, and it has helped more than 70,000 people to get Envoy up and running in swift fashion. In this meetup, Christoph Pakulski engineer from Tetrate, will give a detailed explanation of how to use and participate in the project.
+- Zoom：<https://us02web.zoom.us/j/89163866904>
+- 会议纪要：[Google doc](https://docs.google.com/document/d/1jgcnuefeFlFEVtfeSVmTOxuUvI7KPznFN5zR9hzrjew/edit?usp=sharing)
 
-We will go into the following updates:
+社区的第 1 届 meetup 上推出更广泛的 Istio 生态系统，介绍 Envoy 以及像 GetIstio 一样，GetEnvoy 项目如何帮助确保在任何云或平台上取得成功。Christoph Pakulski 将展示 WASM 的力量，以及 Istio 和 Envoy 如何更好地结合。
 
-- Welcome and Introduction
-- GetIstio Community
-  - Future Topics
-  - Community Resources
-  - Community Feedback
-- GetEnvoy
-  - Envoy Overview
-  - GetEnvoy CLI Overview
-  - GetEnvoy Demo
-  - GetEnvoy Roadmap
-  - Community Participation
-- Q&A
-- Closing with Resource Links
-- Exit
+* 欢迎和介绍
+    + 社区新闻
+    + 未来话题
+    + 社区资源
+* GetEnvoy
+  + Envoy 概览
+  + GetEnvoy CLI
+  + GetEnvoy demo
+  + GetEnvoy roadmap
+* 问答
+* 最后是资源链接
 
-This event will be hosted by Tetrate's own Sean O'Dell. See you on March 16, 2021.
+{{< eventLink "点此加入">}}
