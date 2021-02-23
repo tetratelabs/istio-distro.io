@@ -15,4 +15,4 @@ Istio provides different mechanisms to sign workload certificates for the purpos
 1. Experimental Custom CA integration uses Kubernetes CSR API (Kubernetes 1.18+)
 1. External CA uses Istio CA gRPC API (either through the Istiod Registration Authority (RA) model or directly authenticating workloads and validating Subject Altenrative Name (SAN))
 
-GetIstio integrates with the Private CA from AWS Certificate Manager and the GCP Certificate Authority Service (CAS) to sign the workload certificates.
+GetIstio integrates with the Private CA from AWS Certificate Manager, the GCP Certificate Authority Service (CAS), and cert-manager to sign the workload certificates.
