@@ -1,6 +1,7 @@
 ---
 title: "Contributing to GetIstio"
 url: /community/contributing
+weight: 3
 ---
 
 We welcome contributions from the community. Please read the following guidelines carefully to maximize the chances of your PR being merged.

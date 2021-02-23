@@ -10,7 +10,7 @@ featured: true
 featureOrder: 1
 ---
 
-GetIstio是开始使用Istio的最简单方法，并确保您使用的是受信任和支持的Istio版本。安装和更新GetIstio非常简单，只需发出以下命令即可。
+GetIstio 是开始使用 Istio 最简单的方法，并确保您使用的是受信任和支持的 Istio 版本。安装和更新 GetIstio 非常简单，只需发出以下命令即可。
 
 ```sh
 curl -sL https://tetrate.bintray.com/getistio/download.sh | bash
@@ -31,7 +31,9 @@ GetIsio CLI 工具满足企业级需求，因为它：
 
 对于企业生命周期和变更管理实践来说，Istio 的发布时间表可能非常激进。GetIstio 通过针对不同的 Kubernetes 发行版测试所有 Istio 版本的功能完整性来解决这一问题。GetIstio 的 Istio 版本积极支持安全补丁和其他 bug 更新，比上游 Istio 提供的支持寿命要长得多。
 
-一些服务网格客户需要支持更高的安全要求。GetIstio 通过提供两种 Istio 发行版来解决合规性问题。
+### 符合 FIPS 标准的版本
+
+有些服务网格客户需要支持更高的安全要求。GetIstio 通过提供两种 Istio 发行版来解决合规性问题。
 
 - *tetrate* 跟踪上游 Istio，并可能应用额外的补丁。
 - *tetratefips* 是符合 FIPS 标准的版本。

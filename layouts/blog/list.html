@@ -3,8 +3,8 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-12 text-center">
-            <h1>Blog</h1>
-            <p>Stay up to date on the latest GetIstio news</p>
+            <h1>{{ i18n "blog" }}</h1>
+            <p>{{ i18n "stay_up" }}</p>
           </div>
         </div>
       </div>
@@ -26,15 +26,15 @@
                   </div>
 
                   <div class="col-12 col-sm-12 col-lg-8 col-xl-9 blog-overview">
-                    <p>{{ dateFormat "Jan 02, 2006" .Date }} / {{ math.Round (div (countwords .Content) 220.0) }} min read</p>
+                    <p>{{ dateFormat (i18n "date_format") .Date }} / {{ math.Round (div (countwords .Content) 220.0) }} {{ i18n "min_read" }}</p>
                     <a href="{{ .Permalink | relURL }}" class="blog-link"><h5 class="card-title">{{.Title}}</h5></a>
                     {{ if isset .Params "author"}}
-                      <p class="author-info">by {{ .Params.Author | markdownify }}</p>
+                    <p class="author-info">{{ i18n "by" }} {{ .Params.Author | markdownify }}</p>
                     {{ end }}
                     <p class="card-text mb-3">
-                      {{ .Params.Description }}
+                      {{ .Params.Description | truncate 200 }}
                     </p>
-                    <a href="{{ .Permalink | relURL }}">Continue Reading →</a>
+                    <a href="{{ .Permalink | relURL }}">{{ i18n "continue_reading"}}→</a>
                   </div>
                 </div>
               </div>

@@ -53,32 +53,29 @@
 {{ end }}
 {{ end }}
 
-
+{{ if $data.homepage.dictionary.enable }}
+{{ with $data.homepage.dictionary }}
 <section class="section dictionary-section">
   <div class="container">
     <div class="row justify-content-center">
       <div class="dictionary rounded col-lg-10 text-center text-lg-left shadow p-4">
-        <!-- {{ with .Site.Params.banner }} -->
         <div class="dictionary-title row justify-content-between align-items-center mx-1 mb-3 pb-3">
-          <h2 class="dictionary-card-title">What is Get•Is•ti•o</h2>
-          <img src="/images/getistio-logo-notext-black.png" alt="" />
+          <h2 class="dictionary-card-title">{{ .title }}</h2>
+          <img src="{{ .logo }}" alt="GetIstio logo" />
         </div>
 
         <div class="px-2 pb-2">
-          <p><span class="font-i">verb</span><br><strong>/getˌis,’tē,ō/</strong></p>
+          <p><span class="font-i">{{ .verb.name }}</span><br><strong>{{ .phonogram }}</strong></p>
           <ol class="home-order-list">
             <li class="mb-3">
-              <p class="list-title">Act of installing and managing vetted Istio for use in Kubernetes or application
-                platforms</p>
-              <p class="list-quote">"What’s the best way to install and update Istio in my Kubernetes cluster? Simple,
-                you just GetIstio"</p>
+              <p class="list-title">{{ .verb.meaning }}</p>
+              <p class="list-quote">{{ .verb.quote }}</p>
               <div>
-                <p class="d-inline color-green">Similar:</p>
+                <p class="d-inline color-green">{{ i18n "similar" }}</p>
                 <ul class="similar-list">
-                  <li>service mesh</li>
-                  <li>control plane</li>
-                  <li>application networking</li>
-                  <li>GetEnvoy</li>
+                  {{ range .verb.similar }}
+                  <li>{{ .content }}</li>
+                  {{ end }}
                 </ul>
               </div>
             </li>
@@ -86,62 +83,53 @@
         </div>
         <div id="more">
           <div class="px-2 pb-2">
-            <p class="font-i mt-4">noun / benefits</p>
+            <p class="font-i mt-4">{{ .noun_benefits.name }}</p>
             <ol class="home-order-list">
               <li class="mb-3">
-                <p class="list-title">Simple, open source CLI for assured installation and upgrade of specific Istio
-                  versions.</p>
-                <p class="list-quote">"I just upgraded to the latest Istio version in five minutes with getistio"</p>
+                <p class="list-title">{{ .noun_benefits.meaning1 }}</p>
+                <p class="list-quote">{{ .noun_benefits.quote1 }}</p>
                 <div>
-                  <p class="d-inline color-green">Similar:</p>
+                  <p class="d-inline color-green">{{ i18n "similar" }}</p>
                   <ul class="similar-list">
-                    <li>kubectl</li>
-                    <li>istioctl</li>
+                    {{ range .noun_benefits.similar }}
+                    <li>{{ .content }}</li>
+                    {{ end }}
                   </ul>
                 </div>
               </li>
               <li class="mb-3">
-                <p class="list-title">Upstream & FIPS compliant Istio distribution tested and hardened for EKS, GKE, AKS
-                  and more.</p>
+                  <p class="list-title">{{ .noun_benefits.meaning2 }} </p>
               </li>
               <li class="mb-4">
-                <p class="list-title">Hub for validated Istio integrations & tutorials from ecosystem partners like AWS,
-                  Weaveworks, Venafi.</p>
-                <p class="list-quote">"Using GetIstio CLI, I made AWS’ ACM my trusted cert provider for Istio mesh
-                  within minutes."</p>
+                <p class="list-title">{{ .noun_benefits.meaning3 }}</p>
+                <p class="list-quote">{{ .noun_benefits.quote2 }}
               </li>
             </ol>
           </div>
           <div class="px-2 pb-2">
-            <p class="font-i mt-4">collective noun</p>
+              <p class="font-i mt-4">{{ .collective_noun.name }}</p>
             <ol class="home-order-list">
               <li class="mb-3">
-                <p class="list-title">Community of Istio users, developers, tutorials and technology partners</p>
+                  <p class="list-title">{{ .collective_noun.meaning }}
               </li>
             </ol>
           </div>
         </div>
         <div class="row justify-content-center expand-button-container">
           {{/* <button class="expand-button" onclick="expandDictionary()" id="expandBtn">Read more</button> */}}
-          <button class="expand-button" onclick="expandDictionary()" id="expandBtn"><span class="mr-3">GetIstio
-              benefits</span><i id="expandBtnIcon" class="ti-angle-down"></i></button>
+          <button class="expand-button" onclick="expandDictionary()" id="expandBtn"><span class="mr-3">{{ .button_text }}
+          </span><i id="expandBtnIcon" class="ti-angle-down"></i></button>
         </div>
-        <!-- <p class="mb-4">1. Vetted distribution of upstream Istio tested for use in specific Kubernetes environments,
-          including EKS-D</p> -->
-        <!-- {{ end }} -->
-        <!-- <form class="search-wrapper" action="{{ `search` | relLangURL }}">
-          <input id="search-by" name="s" type="search" class="form-control form-control-lg" placeholder="{{ i18n `search_placeholder`}}">
-          <button type="submit" class="btn btn-primary">{{ i18n "search" }}</button>
-        </form> -->
       </div>
     </div>
   </div>
 </section>
+{{ end }}
+{{ end }}
 
 <!-- topics -->
 <section class="section page-section pb-0">
   <div class="container">
-    <!-- <h2 class="section-title">{{ i18n "topics" }}</h2> -->
     <div class="row">
       {{ range first 4 (.Pages.ByParam "featureOrder")}}
       <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
@@ -152,9 +140,9 @@
             <p class="card-text">{{ .Params.Description }}</p>
             {{ if (isset .Params "altlink") }}
               <a href="{{ .Params.Altlink }}" class="stretched-link" aria-label="{{ .Title}}"></a>
-            {{ else }}  
+            {{ else }}
               <a href="{{ .Permalink }}" class="stretched-link" aria-label="{{ .Title}}"></a>
-            {{ end }}  
+            {{ end }}
           </div>
         </div>
       </div>
@@ -164,45 +152,51 @@
 </section>
 <!-- /topics -->
 
+{{ if $data.homepage.start.enable }}
+{{ with $data.homepage.start }}
 <section class="section pb-0">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-9 home-code rounded shadow p-4">
-        <h4>Get Started Quickly</h4>
-        <!-- <img loading="lazy" src="{{ .Site.Params.banner.image | relURL }}" alt="illustration" class="img-fluid"> -->
-        <p class="pb-2 pt-4">1. Download GetIstio</p>
-          <pre class="pb-2 home-code-snippet"><code>curl -sL https://tetrate.bintray.com/getistio/download.sh | bash</code><span class="copy-to-clipboard">copy</span></pre>
-        <p class="pb-2 pt-4">2. Install Istio Demo</p>
-          <pre class="pb-2 home-code-snippet"><code>getistio istioctl install --set profile=demo </code><span class="copy-to-clipboard">copy</span></pre>
-        <p class="pb-2 pt-4">3. Check GetIstio version</p>
-          <pre class="pb-2 home-code-snippet"><code>getistio version</code><span class="copy-to-clipboard">copy</span></pre>
-        <p class="pb-2 pt-4">4. Validate config</p>
-          <pre class="pb-2 home-code-snippet"><code>getistio config-validate</code><span class="copy-to-clipboard">copy</span></pre>
+          <h4>{{ .title }}</h4>
+        {{ range .steps }}
+        <p class="pb-2 pt-4">{{ .desc }}</p>
+        <pre class="pb-2 home-code-snippet"><code>{{ .cmd }}</code><span class="copy-to-clipboard">{{ i18n "copy" }}</span></pre>
+        {{ end }}
         <div class="pt-4 row justify-content-center">
-            <a href="{{ "/getistio-cli/"| relLangURL }}" class="btn btn-sm learn-more">Learn more</a>
+            <a href="{{ "/getistio-cli/"| relLangURL }}" class="btn btn-sm learn-more">{{ i18n "learn_more" }}</a>
         </div>
       </div>
     </div>
   </div>
 </section>
+{{ end }}
+{{ end }}
 
+{{ if $data.homepage.training.enable }}
+{{ with $data.homepage.training }}
 <section class="training-section">
   <div class="container mw-100">
     <div class="row">
       <div class="col-lg-12 text-center banner-content">
-        <h4 class="mr-4">Increase your Istio skill with our training program</h4>
-        <span><a class="btn btn-sm btn-primary" href="https://academy.tetrate.io">Enroll Now</a></span>
+        <h4 class="mr-4">{{ .title }}</h4>
+        <span><a class="btn btn-sm btn-primary" href="{{ .url }}">{{ .button_text }}</a></span>
       </div>
     </div>
   </div>
 </section>
+{{ end }}
+{{ end }}
 
+{{ if $data.homepage.event.enable }}
 <section class="section events-section">
   <div class="container">
     <div class="event-header row justify-content-center align-items-sm-baseline justify-content-sm-between">
-    <h4>Upcoming Community Events</h4>
-    <span><a href="/community/event">See All Events →</a></span>
+    {{ with $data.homepage.event }}
+    <h4>{{ .title }}</h4>
+    <span><a href="{{ .url }}">{{ .link_text }}</a></span>
     </div>
+    {{ end }}
     <div class="row overflow-auto flex-md-nowrap">
       {{ range .Site.Taxonomies.categories.event }}
       {{ if eq .Page.Params.pastEvent false }}
@@ -210,9 +204,9 @@
           <div class="card match-height event-card">
             <p class="event-date pb-2">
               {{ if .Page.Params.eventEndDate }}
-              {{ dateFormat "Jan 2, 2006" .Page.Params.eventDate }} - {{ dateFormat "Jan 2, 2006" .Page.Params.eventEndDate }} 
+              {{ dateFormat (i18n "date_format") .Page.Params.eventDate }} - {{ dateFormat (i18n "date_format") .Page.Params.eventEndDate }}
               {{ else }}
-              {{ dateFormat "January 2, 2006" .Page.Params.eventDate }} {{ dateFormat "3:04 PM" .Page.Params.eventDate }} {{ .Page.Params.timezone }}
+              {{ dateFormat (i18n "date_format") .Page.Params.eventDate }} {{ dateFormat (i18n "minute") .Page.Params.eventDate }} {{ .Page.Params.timezone }}
               {{ end }}
               <span><i class="ti-calendar"></i></span>
             </p>
@@ -230,74 +224,48 @@
     </div>
   </div>
 </section>
-
-<!-- call to action -->
-<!-- {{ if .Site.Params.call_to_action.enable }}
-{{ with .Site.Params.call_to_action }}
-<section class="section cta-section">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-lg-left text-center">
-        <div class="box rounded">
-          <h2 class="mb-3">Get Community Updates</h2>
-          <p>Sign up for our GetIstio community newsletter to get the most recent updates and product announcements.</p>
-          <div class="form-control" id="emailFormContainer">
-            <form id="emailForm">
-              <input id="email" type="email" class="input" placeholder="Work Email"/ required>
-              <button class="btn btn-sm btn-primary">Join Newsletter</button>
-            </form>
-          </div>
-          <span id="errorMessage">Please enter a valid email address</span>
-          <p id="formMessage">Thank you for subscribing.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 {{ end }}
-{{ end }} -->
-<!-- /call to action -->
 
+{{ if $data.homepage.customer_quote.enable }}
+{{ with $data.homepage.customer_quote }}
 <div id="customer-quote" class="carousel slide quotes-section" data-ride="carousel">
   <div class="carousel-inner">
+    {{ range $index,$elements := .quotes }}
+    {{ if eq $index 0 }}
     <div class="carousel-item active">
-      <blockquote>Working with the Istio community, we're pleased to have developed "istio-csr", open source software to integrate Istio
-      with cert-manager. This enables workload certificates to be issued from the wide array of certificate authorities and
-      providers that cert-manager supports, including Venafi, Google Certificate Authority Service (CAS) and more. We look
-      forward to collaborating with the GetIstio community to provide an easy and seamless integration, enabling operators and
-      security teams to tap into cert-manager and secure the mesh from the get-go.</blockquote>
-      <h6>Matt Bates, co-founder & CTO Jetstack</h6>
-    </div>
+        {{ else }}
     <div class="carousel-item">
-      <blockquote>At Tracfone, we’ve built an immutable infrastructure with k8s, istio and a custom CI/CD platform. We leverage Istio for an array of capabilities like traffic management, telemetry, zero-trust security and more. Istio training from Tetrate Academy is a great resource for our teams to learn Istio fast and get the most out of it.</blockquote>
-      <h6>Kartik Rallapalli, Principal Enterprise Architect at Tracfone</h6>
+        {{ end }}
+     <blockquote>{{ .quote }}</blockquote>
+     <h6>{{ .title }}</h6>
     </div>
-    <div class="carousel-item">
-      <blockquote>In combination with a service mesh like Istio, Weave GitOps workflows automate progressive deployment strategies /
-      canary management in Kubernetes. Tetrate's new GetIstio product makes this simple, providing users with a quick and safe
-      way to deploy Istio into their GitOps workflows.</blockquote>
-      <h6>Alexis Richardson, co-founder & CEO Weaveworks</h6>
-    </div>
+    {{ end }}
   </div>
   <a class="carousel-control-prev" href="#customer-quote" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
+    <span class="sr-only">{{ i18n "previous" }}</span>
   </a>
   <a class="carousel-control-next" href="#customer-quote" role="button" data-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
+    <span class="sr-only">{{ i18n "next" }}</span>
   </a>
 </div>
+{{ end }}
+{{ end }}
 
+{{ if $data.homepage.support.enable }}
+{{ with $data.homepage.support }}
 <section class="support-section">
   <div class="container mw-100">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h4 class="mb-4">Need enterprise support for your Istio?</h4>
+        <h4 class="mb-4">{{ .title }}</h4>
         <a class="btn btn-sm btn-primary" href="https://www.tetrate.io/getistio">{{ i18n "get_in_touch" }}</a>
       </div>
     </div>
   </div>
 </section>
+{{ end }}
+{{ end }}
 
 {{ end }}
