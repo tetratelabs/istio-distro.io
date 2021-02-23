@@ -4,8 +4,6 @@ url: /zh/community/contributing
 weight: 3
 ---
 
-# 对 GetIstio 贡献
-
 我们欢迎社区的贡献。请仔细阅读以下指南，以最大限度地提高您的 PR 被合并的机会。
 
 ## 代码审查
