@@ -4,6 +4,16 @@
   <!-- Render all meta tags -->
   {{ partial "meta" . }}
 
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P3J9XNBME4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-P3J9XNBME4');
+  </script>
+
   <!-- critical CSS -->
   {{ partial "main-style" .}}
 
