@@ -7,22 +7,21 @@ tags: ["Istio"]
 date: 2021-02-12T10:03:00+08:00
 ---
 
-Fanjie Meng  is a senior architect at eBay, responsible for architecture and development of Kubernetes in enterprise implementation, focusing on networking, multi-clustering, service governance and service mesh, etc. Contributor of Kubernetes community, participated in the development of community cluster federation and service controller refactoring, etc.
 
-As a centralized cloud platform, Kubernetes manages multiple heterogeneous applications, including online services, big data, and backend searches. The number of clusters reaches up to the hundreds. In large clusters, thousands of microservices and hundreds of thousands of pods are run in a single cluster. Needless to say, different types of applications have different needs on traffic management. The question then arises: how do we address these different needs on traffic management with a centralized model? In fact, this is the biggest challenge that eBay has been seeking to tackle for years.
+As a centralized cloud platform, Kubernetes manages multiple heterogeneous applications, including online services, big data, and backend searches. The number of clusters reaches up to the hundreds. In large clusters, thousands of microservices and hundreds of thousands of pods are run in a single cluster. Needless to say, different types of applications have different traffic management needs. The question then arises: how do we address these different needs with a centralized model? In fact, this is the biggest challenge that eBay has been seeking to tackle for years.
 
 Taking cloud applications as an example, to meet the high availability requirements across data centers, the network topology for production-level applications can be summarized as follows:
 
 - eBay adopts an active-active data center network topology. Therefore, all production applications must deploy across three data centers.
 - To meet the high availability requirements of a single cluster, all applications must deploy with multiple copies, and set load balancer configurations.
-- Implementation of microservices across the entire site. To ensure there is high availability, service-to-service communications are primarily based on north-south traffic.
-- For core applications, in addition to the local load balancing configuration of the cluster, it is also necessary to configure the cross-data center load balancer, and use weight control to transfer 99% of requests to the local data center, and 1% of traffic to cross-regional data centers. When all local service instances of an application fail, the operations and maintenance personnel can immediately restrict members of the cross-data center load balancer that point to 99% of the local traffic, and the traffic can be diverted to other data centers in seconds. In this way, it allows business operations to run as usual. There are various causes for the failure of local service instances, including releases, hardware failures, firewalls, routers, and other network equipment changes.
+- Microservices are implemented across the entire site. To ensure there is high availability, service-to-service communications are primarily based on north-south traffic.
+- For core applications, in addition to the local load balancing configuration of the cluster, it is also necessary to configure the cross-data center load balancer, and use weight control to transfer 99% of requests to the local data center, and 1% of traffic to cross-regional data centers. When all local service instances of an application fail, the operations and maintenance personnel can immediately restrict members of the cross-data center load balancer that point to 99% of the local traffic, and the traffic can be diverted to other data centers in seconds. In this way, business operations can run as usual. There are various causes for the failure of local service instances, including releases, hardware failures, firewalls, routers, and other network equipment changes.
 
 ![](overview.jpg)
 
 ## Deployment Model
 
-eBay has multiple data centers. Each data center contains multiple availability zones with independent power supply and cooling systems. Each zone deploys multiple Kubernetes clusters. As the network latency of each zone is relatively small, the Istio control plane is built using the availability zone as the smallest management domain. In each availability zone, select a Kubernetes cluster as the gateway cluster, deploy Istio Primary, and install Istio Remote in other clusters in the same availability zone. In this configuration, the service-to-service communications in multiple clusters in the same availability zone are all converted into east-west traffic, and cross-availability zone communications must pass through the Istio gateway.
+eBay has multiple data centers. Each data center contains multiple availability zones with independent power supply and cooling systems. Each zone deploys multiple Kubernetes clusters. As the network latency of each zone is relatively small, the Istio control plane is built using the availability zone as the smallest management domain. In each availability zone, we select a Kubernetes cluster as the gateway cluster, deploy Istio Primary, and install Istio Remote in other clusters in the same availability zone. In this configuration, the service-to-service communications in multiple clusters in the same availability zone are all converted into east-west traffic, and cross-availability zone communications must pass through the Istio gateway.
 
 This Istio deployment model is primarily based on the Kubernetes operating model. Different Kubernetes clusters are built with computing nodes in different availability zones. Such configuration makes possible the low latency of service access in the same mesh and the high availability of the scale of the service mesh, allowing for efficient management and control of the fault domain.
 
@@ -64,7 +63,7 @@ There are multiple ways to implement software-based Layer 4 load balancing. The 
 
 Using the Layer 4 load balancer in conjunction with the ingress gateway powered by Istio, a highly available access solution for inbound traffic can be implemented throughout the site.
 
-As the forwarding target of the Layer 4 load balancer, the Layer 7 API gateway needs to cooperate to complete the tunneling configurations. Since the Layer 4 load balancer is based on the IP tunnel configuration forwarding rules, when it forwards data, it uses the data packet sent by the IP-over-IP protocol as the target. The Envoy pod must disassemble the IPIP packet after receiving the request. This requires creating a device of type IPIP in Enovy pod and binding a virtual IP address.
+As the forwarding target of the Layer 4 load balancer, the Layer 7 API gateway needs to cooperate to complete the tunneling configurations. Since the Layer 4 load balancer is based on the IP tunnel configuration forwarding rules, when it forwards data, it uses the data packet sent by the IP-over-IP protocol as the target. The Envoy pod must disassemble the IPIP packet after receiving the request. This requires creating a device of type IPIP in the Enovy pod and binding a virtual IP address.
 
 The main site of a website built with a microservice architecture usually consists of an aggregate of dozens to hundreds or even thousands of microservices. Different microservices are registered under the same main domain name with different access paths. At the same time, the API gateway will have some general access control policies. For example, the external IP cannot access the path ending with /admin. These access controls are well supported in Istio.
 
@@ -135,4 +134,7 @@ Nonetheless, as an emerging project that manages highly complex traffic in distr
 Istio enjoys strong support from the community and has been endorsed by many industry giants and well-known projects. It can remedy Kubernetes' functional deficiencies at the traffic management level, making it an all-round microservice management platform. We are confident that Istio has a promising future.
 
 For more Kubernetes- and Istio-based production practices, please see "The Road to Kubernetes Production Practice” (Chinese only). The book is currently on sale at JD.com for up to a 50% off.
+
+Fanjie Meng is a senior architect at eBay, responsible for architecture and development of Kubernetes in enterprise implementation, focusing on networking, multi-clustering, service governance and service mesh, etc. A Kubernetes contributor, Fanjie participated in the development of community cluster federation and service controller refactoring.
+
 
