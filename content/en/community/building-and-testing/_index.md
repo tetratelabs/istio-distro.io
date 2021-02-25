@@ -1,7 +1,6 @@
 ---
 title: "Building and Testing"
 url: /community/building-and-testing
-weight: 2
 ---
 
 Before you proceed, please make sure that you have the following dependencies available in your machine:
