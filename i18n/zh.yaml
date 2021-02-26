@@ -110,3 +110,6 @@
 
 - id: join_now
   translation: "立即加入"
+
+- id: watch_recording
+  translation: "观看回放"

@@ -1,28 +1,18 @@
 ---
-title: "cert-manager CA Integration"
+title: "cert-manager CA 集成"
 date: 2021-02-17T13:00:00+0
-description: "cert-manager CA Integration"
+description: "cert-manager CA 集成。"
 # type dont remove or customize
 type : "docs"
 ---
 
-This task shows how to provision Control Plane and Workload Certificates with an
-external Certificate Authority using [cert-manager](https://cert-manager.io).
-[cert-manager](https://cert-manager.io) is a x509 certificate operator for
-Kubernetes that supports a number of
-[Issuers](https://cert-manager.io/docs/configuration/), representing Certificate
-Authorities that can sign certificates.
+本任务展示了如何使用 [cert-manager](https://cert-manager.io) 与外部证书授权机构一起提供控制平面和工作负载证书。[cert-manager](https://cert-manager.io) 是 Kubernetes 的 x509 证书操作员，它支持许多 [Issuers](https://cert-manager.io/docs/configuration/)，代表可以签署证书的证书授权机构。
 
-The [istio-csr](https://github.com/cert-manager/istio-csr) project installs an
-agent that is responsible for verifying incoming certificate signing requests
-from Istio mesh workloads, and signs them through cert-manager via a configured
-Issuer.
+[istio-csr](https://github.com/cert-manager/istio-csr) 项目安装了一个代理，该代理负责验证来自 Istio 服务网格负载的传入证书签名请求，并通过配置的 Issuer 通过 cert-manager 进行签名。
 
-## Installing istio-csr
+## 安装 istio-csr
 
-First, cert-manager must be [installed on the
-cluster](https://cert-manager.io/docs/installation/kubernetes/) using your
-preferred method.
+首先，必须使用你喜欢的方法[在集群上安装 cert-manager](https://cert-manager.io/docs/installation/kubernetes/)。
 
 ```sh
 $ helm repo add jetstack https://charts.jetstack.io
@@ -31,17 +21,9 @@ $ kubectl create namespace cert-manager
 $ helm install -n cert-manager cert-manager jetstack/cert-manager --set installCRDs=true
 ```
 
-Next, an [Issuer](https://cert-manager.io/docs/configuration/) should be created
-in the `istio-system` namespace that you would like to sign the certificates for
-your Istio installation. In this case, we will be using a self signed
-certificate generated through cert-manager, though any Issuer that is
-appropriate for an internal PKI system can be used.  [Compatible external
-Issuers](https://cert-manager.io/docs/configuration/external/) can also be used
-in this installation.
+接下来，应该在 `istio-system` 命名空间中创建一个 Issuer，以便为你的 Istio 安装签署证书。在这种情况下，我们将使用通过 cert-manager 生成的自签名证书，尽管任何适合内部 PKI 系统的 Issuer 都可以使用。[兼容的外部 Issuer](https://cert-manager.io/docs/configuration/external/) 也可以在此安装中使用。
 
-> Note that publicly trusted certificates are strongly discouraged from being
-> used, including [ACME
-> certificates](https://cert-manager.io/docs/configuration/acme/).
+> 请注意，强烈不鼓励使用公开信任的证书，包括 [ACME 证书](https://cert-manager.io/docs/configuration/acme/)。
 
 ```sh
 $ kubectl create namespace istio-system
@@ -84,15 +66,12 @@ NAME         READY   AGE
 istio-ca     True    12m
 ```
 
-Once the Issuer has become ready,
-[istio-csr](https://github.com/cert-manager/istio-csr) can be installed into the
-cluster.
+一旦 Issuer 准备就绪，[istio-csr](https://github.com/cert-manager/istio-csr) 就可以安装到集群中。
 
 ```sh
 $ helm install -n cert-manager cert-manager-istio-csr jetstack/cert-manager-istio-csr
 ```
-Verify that istio-csr is running, and that the istiod Certificate is in a ready
-state.
+确认 istio-csr 正在运行，并且 istiod 证书处于就绪状态。
 
 ```sh
 $ kubectl get pods -n cert-manager
@@ -106,11 +85,8 @@ NAME       READY   SECRET       AGE
 istiod     True    istiod-tls   28s
 ```
 
-## Installing to a new Istio cluster
-
-When installing a new Istio cluster, it must be configured to use istio-csr as
-the CA server by both the Istio control plane and workloads. The following
-configuration should be used when installing:
+## 安装到新的 Istio 集群
+安装新的 Istio 集群时，必须配置成 Istio 控制平面和工作负载都使用 istio-csr 作为 CA 服务器。安装时应使用以下配置：
 
 ```sh
 $ cat << EOF > config.yaml
@@ -170,8 +146,7 @@ EOF
 $ getistio istioctl install -f config.yaml
 ```
 
-The installation should complete, and the Istio control plane should become in a
-ready state.
+安装应完成，Istio 控制平面应处于就绪状态。
 
 ```sh
 $ kubectl get pods -n istio-system
@@ -180,5 +155,4 @@ istio-ingressgateway-9ddfd475f-47ssj   1/1     Running   0          45s
 istiod-6ff8d84d66-tvdl2                1/1     Running   0          71s
 ```
 
-All workload certificates will now be requested through cert-manager using the
-configured Issuer.
+现在，所有的工作负载证书都将通过 cert-manager 使用配置的 Issuer 来请求。
