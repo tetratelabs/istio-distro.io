@@ -9,7 +9,6 @@ weight: 7
 # set these 2 to make it featured in homepage
 featured: true
 featureOrder: 3
-altLink: "/istio-cheatsheet/cheatsheet/"
 ---
 
 ### 设置
