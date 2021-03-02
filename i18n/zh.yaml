@@ -113,3 +113,6 @@
 
 - id: watch_recording
   translation: "观看回放"
+
+- id: see_also
+  translation: "推荐阅读"
