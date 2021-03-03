@@ -108,3 +108,6 @@
 
 - id: getistio_community
   translation: "GetIstio Community"
+
+- id: see_also
+  translation: "See Also"
