@@ -4,7 +4,7 @@ description: "This blog talks about Istio service mesh features that can help yo
 date: "2021-03-04T12:15:00"
 author: "[Peter Jausovec](https://peterj.dev)"
 # thumbnail
-thumbnail: "/images/blog/fiber.jpg"
+thumbnail: "/images/blog/1.jpg"
 tags: ["istio"]
 ---
 
