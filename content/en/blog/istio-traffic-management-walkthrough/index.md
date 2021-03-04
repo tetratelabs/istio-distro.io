@@ -2,7 +2,7 @@
 title: "Hands-on walkthrough of traffic management in Istio"
 description: "In this blog, we will talk about how to get started with routing traffic between your services using service mesh. "
 date: "2021-03-03T12:15:00"
-author: "[Peter Yausovec](https://www.peterj.dev/)"
+author: "[Peter Jausovec](https://www.peterj.dev/)"
 # thumbnail
 thumbnail: "/images/blog/traffic.jpg"
 tags: ["istio"]
