@@ -8,7 +8,7 @@ thumbnail: "/images/blog/2.jpg"
 tags: ["istio"]
 ---
 
-In this blog, we will talk about how to use Istio service mesh features that can help you to tests the resiliency of the services. 
+In this blog, we will talk about how to use Istio service mesh features that can help you to test the resiliency of the services. 
 
 ## Making Services Fail
 
