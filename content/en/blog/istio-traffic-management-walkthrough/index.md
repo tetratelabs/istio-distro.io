@@ -1,7 +1,7 @@
 ---
 title: "Hands-on walkthrough of traffic management in Istio"
 description: "In this blog, we will talk about how to get started with routing traffic between your services using service mesh. "
-date: "2021-03-03T12:15:00"
+date: "2021-02-23T12:15:00"
 author: "[Peter Jausovec](https://www.peterj.dev/)"
 # thumbnail
 thumbnail: "/images/blog/traffic.jpg"
@@ -18,7 +18,7 @@ In this blog, you will be using two different services. The first one, called He
 
 But, to get started, we will deploy the Hello Web and Greeter Service V1. Let's start with the Kubernetes deployment and service for the Greeter Service V1 and deploy the resources to the `default` namespace on your Kubernetes cluster.
 
-~~~~~~~~yaml
+```yaml
 cat <<EOF | kubectl create -f -
 apiVersion: apps/v1
 kind: Deployment
@@ -59,18 +59,18 @@ spec:
     - port: 3000
       name: http
 EOF
-~~~~~~~~
+```
 
 If all goes well, you will see an output like this:
 
-~~~~~~~~sh
+```sh
 deployment.apps/greeter-service-v1 created
 service/greeter-service created
-~~~~~~~~
+```
 
 Similarly, let's create the Kubernetes deployment and service for the Hello Web frontend service. Note that in this deployment we are declaring an environment variable called `GREETER_SERVICE_URL`. This environment variable tells our web frontend the address of the Greeter Service. 
 
-~~~~~~~~yaml
+```yaml
 cat <<EOF | kubectl create -f -
 apiVersion: apps/v1
 kind: Deployment
@@ -114,11 +114,11 @@ spec:
     - port: 3000
       name: http
 EOF
-~~~~~~~~
+```
 
 To watch the deployment, you can run `kubectl get pods --watch` - this shows you the status changes of each pod. You can also just run the `kubectl get pods` command to shows all pods and their current status:
 
-~~~~~~~~sh
+```sh
 NAME                                 READY   STATUS    RESTARTS   AGE
 greeter-service-v1-c4f8d55cb-2gbrr   2/2     Running   0          4m48s
 greeter-service-v1-c4f8d55cb-h7ssg   2/2     Running   0          4m48s
@@ -126,7 +126,7 @@ greeter-service-v1-c4f8d55cb-pjxcc   2/2     Running   0          4m48s
 helloweb-8567cfc9f8-5ctxm            2/2     Running   0          4m35s
 helloweb-8567cfc9f8-gcwcc            2/2     Running   0          4m35s
 helloweb-8567cfc9f8-p9krk            2/2     Running   0          4m35s
-~~~~~~~~
+```
 
 Notice we have three replicas of each service and each pod has two containers - one is the service container and the second one is the Envoy proxy that was automatically injected.
 
@@ -138,10 +138,10 @@ To allow incoming traffic to reach a service running inside the cluster, you nee
 
 If you run `kubectl get svc istio-ingressgateway -n istio-system`, you will get an output similar to this one: 
 
-~~~~~~~~sh
+```sh
 NAME                   TYPE           CLUSTER-IP      EXTERNAL-IP       PORT(S)...
 istio-ingressgateway   LoadBalancer   10.107.249.46   <pending>         80:31380/TCP... 
-~~~~~~~~
+```
 
 The above output shows the Istio ingress gateway of type LoadBalancer. If you're using a Minikube cluster you will notice how the external IP column shows text `<pending>` - that is because we don't have a real external load balancer as everything runs locally. With a cluster running in the cloud from any cloud provider, we would see an actual IP address there - that IP address is where the incoming traffic enters the cluster. If you are using Docker for Mac/Windows, you will see `localhost` under the EXTERNAL-IP column.
 
@@ -153,7 +153,7 @@ Minikube has a command called `minikube tunnel`. This command creates networking
 
 To use the tunnel command, open a new terminal window and run `minikube tunnel`. You should see an output similar to this one: 
 
-~~~~~~~~yaml
+```yaml
 $ minikube tunnel
 Status:
     machine: minikube
@@ -165,31 +165,31 @@ Status:
     minikube: no errors
     router: no errors
     loadbalancer emulator: no errors
-~~~~~~~~
+```
 
 If you run the `kubectl get svc istio-ingressgateway -n istio-system` command to get the ingress gateway service, you will notice an actual IP address in the `EXTERNAL-IP` column. It should look something like this: 
 
-~~~~~~~~sh
+```sh
 $ kubectl get svc istio-ingressgateway -n istio-system
 NAME                   TYPE           CLUSTER-IP       EXTERNAL-IP
 PORT(S)
 istio-ingressgateway   LoadBalancer   10.107.235.182   **10.99.132.130**
 .......
-~~~~~~~~
+```
 
 Now you can use the external IP address (e.g. `10.99.132.130`) as the public entry point to your cluster. Set this value to the GATEWAY variable like this:
 
-~~~~~~~~sh
+```sh
 export GATEWAY=[EXTERNAL-IP]
-~~~~~~~~
+```
 
 ### If using Docker for Mac/Windows
 
 When using Docker for Mac/Windows, the Istio ingress gateway is exposed on `http://localhost:80`, so you can set the `GATEWAY` variable like this:
 
-~~~~~~~~sh
+```sh
 export GATEWAY=http://localhost
-~~~~~~~~
+```
 
 ### If using hosted Kubernetes
 
@@ -202,7 +202,7 @@ For the rest of the book, we will be referring to the `GATEWAY` environment vari
 
 Now that you have the `GATEWAY` variable set up, you can try and access it. Unfortunately, the connection will be refused:
 
-~~~~~~~~sh
+```sh
 $ curl -v $GATEWAY
 *   Trying 10.99.132.130...
 * TCP_NODELAY set
@@ -211,11 +211,11 @@ $ curl -v $GATEWAY
 * Failed to connect to 10.99.132.130 port 80: Connection refused
 * Closing connection 0
 curl: (7) Failed to connect to 10.99.132.130 port 80: Connection refused
-~~~~~~~~
+```
 
 You need a Gateway resource for the ingress gateway to know where to route the requests when they hit the cluster. The ingress and the gateway resource operate at the edge of the service mesh and are used to enable incoming traffic to the cluster. Here's how a minimal Istio Gateway resource looks like:
 
-~~~~~~~~yaml
+```yaml
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
@@ -230,7 +230,7 @@ spec:
         protocol: HTTP
       hosts:
         - '*'
-~~~~~~~~
+```
 
 The snippet above creates an Istio Gateway resource with the `istio: ingressgateway` selector. An istio-ingressgateway pod with the label `istio=ingressgateway` got created as part of the Istio installation, and the gateway resource with the matching selector `istio=ingressgateway` adds the routing config to the istio-ingressgateway pod. 
 
@@ -244,7 +244,7 @@ Under `servers` you define which hosts will this gateway proxy. We are using `*`
 
 With the host and port combination above, we are allowing incoming HTTP traffic to port `80` for any host (`*`). Let's deploy our own Gateway resource to the `default` namespace:
 
-~~~~~~~~sh
+```sh
 cat <<EOF | kubectl create -f -
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
@@ -261,12 +261,12 @@ spec:
       hosts:
         - '*'
 EOF
-~~~~~~~~
+```
 
 
 Let's try and make a request to the $GATEWAY endpoint now.
 
-~~~~~~~~sh
+```sh
 $ curl -v $GATEWAY
 *   Trying 10.99.132.130...
 * TCP_NODELAY set
@@ -283,13 +283,13 @@ $ curl -v $GATEWAY
 <
 * Connection #0 to host 10.99.132.130 left intact
 * Closing connection 0
-~~~~~~~~
+```
 
 Notice this time we get back an HTTP 404 response. The request is getting to the ingress gateway, but there's nothing behind it and the gateway doesn't know where or how to route the request.
 
 Let's also look at the logs from the Istio ingress gateway pod to see the requests coming in:
 
-~~~~~~~~sh
+```sh
 $ kubectl get pod --selector="istio=ingressgateway" --all-namespaces
 NAMESPACE      NAME                                    READY   STATUS    RESTARTS   AGE
 istio-system   istio-ingressgateway-7bd5586b79-nzbm8   1/1     Running   0          11m
@@ -298,7 +298,7 @@ $ kubectl logs istio-ingressgateway-7bd5586b79-nzbm8 -n istio-system
 ...
 [2020-10-09T21:50:08.971Z] "GET / HTTP/1.1" 404 - "-" "-" 0 0 0 - "192.168.99.1" "curl/7.64.1" "697452d4-08c9-9370-a3c2-2cbca13b34c5" "10.99.132.130" "-" - - 172.17.0.5:8080 192.168.99.1:58015 - default
 ....
-~~~~~~~~
+```
 
 This is telling us that the incoming traffic did reach the ingress gateway. If you think about it, that response makes sense as we only defined the port and hosts with the Gateway resource, but haven't specified an actual destination for the traffic. To do that, we use another Istio resource called virtual service (`VirtualService`).
 
@@ -308,7 +308,7 @@ Since we will be talking a lot about *services* throughout the book, let's make 
 
 Istio's Virtual Service resource is used to configure how the requests get routed within the mesh. Virtual service is one of the resources you will use heavily throughout the book. Let's look at an example of the Istio virtual service resource:
 
-~~~~~~~~yaml
+```yaml
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
@@ -324,7 +324,7 @@ spec:
           host: helloweb.default.svc.cluster.local
           port:
             number: 3000
-~~~~~~~~
+```
 
 The host in the virtual service is the address used by clients when attempting to connect to the service. In our case, you will use the `helloweb.dev` as the host. Using an actual host instead of an asterisk (e.g. `*`) will allow us to have multiple services deployed and accessed through the gateway at the same time. A potential downside is that you will have to remember to include a `Host: [hostname]` header with each curl request you make. Besides, if you want to access services through the browser, you will need to install an extension that allows you to modify the headers. If using Chrome, you can try the [ModHeader extension](https://mod-header.appspot.com/help.html). 
 
@@ -338,7 +338,7 @@ With the help of a virtual service resource, one can also configure multiple des
 
 Let's go ahead and deploy the virtual service:
 
-~~~~~~~~sh
+```sh
 cat <<EOF | kubectl apply -f -
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -356,11 +356,11 @@ spec:
           port:
             number: 3000
 EOF
-~~~~~~~~
+```
 
 With the virtual service deploy, you can try the same `curl` command:
 
-~~~~~~~~sh
+```sh
 $ curl -H "Host: helloweb.dev" $GATEWAY
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 
@@ -371,7 +371,7 @@ $ curl -H "Host: helloweb.dev" $GATEWAY
 <div class="container">
     <h1>hello 👋 </h1>
 </div>
-~~~~~~~~
+```
 
 A> You can also open the `$GATEWAY` address in your browser for the UI experience.
 
@@ -385,7 +385,7 @@ To demonstrate the use of the service entry resource we are going to deploy a se
 
 Before you can deploy the Movie web, go to http://themoviedb.org and obtain an API key. Once you get the API key, replace the `<API_KEY_HERE>` in the YAML file with the actual API key. Now you can deploy the Movie web:
 
-~~~~~~~~bash
+```bash
 cat <<EOF | kubectl apply -f -
 apiVersion: apps/v1
 kind: Deployment
@@ -429,11 +429,11 @@ spec:
     - port: 3000
       name: http
 EOF
-~~~~~~~~
+```
 
 With the Kubernetes service and deployment created, you also need to deploy a virtual service:
 
-~~~~~~~~sh
+```sh
 cat <<EOF | kubectl apply -f -
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -451,16 +451,16 @@ spec:
           port:
             number: 3000
 EOF
-~~~~~~~~
+```
 
 Note that we are setting the `hosts` to `*`. This means that we don't need to specify a Host header to access the movieweb application.
 
 In the earlier versions of Istio, any requests made to the outside of the cluster were automatically blocked and you would get an error like this:
 
-~~~~~~~~sh
+```sh
 $ curl -H "Host: movieweb.dev" $GATEWAY
 {"error":"Error accessing: api.themoviedb.org"}
-~~~~~~~~
+```
 
 This setting has been changed in the recent versions of Istio and traffic going outside of the cluster is now enabled by default. To control the traffic exiting the service mesh, you can use another Istio resource called *ServiceEntry*. With this resource, you can make any service (external to the mesh or internal services, not part of the service registry) become part of the service registry.
 
@@ -468,7 +468,7 @@ When you use the service entry resource you are essentially making an external s
 
 Here's how a service entry resource looks like for the `api.themoviedb.org`:
 
-~~~~~~~~yaml
+```yaml
 apiVersion: networking.istio.io/v1alpha3
 kind: ServiceEntry
 metadata:
@@ -482,7 +482,7 @@ spec:
       protocol: HTTPS
   resolution: DNS
   location: MESH_EXTERNAL
-~~~~~~~~
+```
 
 The main parts that are interesting here are the entries under `hosts` - this is the actual host we call from the Movie web service. The port number (`443`) and protocol (`https`) are self-explanatory and should match the port/protocol used when accessing the external service.
 
@@ -493,7 +493,7 @@ Lastly, with the location set to `MESH_EXTERNAL` you are saying that this is an 
 
 Let's deploy the service entry resource for the Movie web and allow the Movie web to access the API:
 
-~~~~~~~~sh
+```sh
 cat <<EOF | kubectl apply -f -
 apiVersion: networking.istio.io/v1alpha3
 kind: ServiceEntry
@@ -509,7 +509,7 @@ spec:
   resolution: DNS
   location: MESH_EXTERNAL
 EOF
-~~~~~~~~
+```
 
 If you open the `http://$GATEWAY` in your browser or use curl you will get a web site with a list of movies, together with posters and descriptions, just like in it's shown below.
 
@@ -517,11 +517,11 @@ If you open the `http://$GATEWAY` in your browser or use curl you will get a web
 
 Let's delete the MovieWeb resources before you continue:
 
-~~~~~~~~sh
+```sh
 kubectl delete deploy movieweb
 kubectl delete svc movieweb
 kubectl delete vs movieweb
-~~~~~~~~
+```
 
 
 ## Basic Traffic Splitting
@@ -547,19 +547,19 @@ With Istio, you can route requests by assigning weights to each version of the s
 
 Traffic comes from the Internet and hits the load balancer and gateway and then goes to the `helloweb` Kubernetes service. After that `helloweb` Kubernetes services load balances the traffic between all pods that have the label `app: helloweb` set. If you look at the deployment YAML for the Hello web, you will notice we have the following labels defined: 
 
-~~~~~~~~yaml
+```yaml
   labels:
     app: helloweb
     version: v1
-~~~~~~~~
+```
 
 From the Hello web pod, we make a call to the Greeter service using it's DNS name (http://greeter-service.default.svc.cluster.local:3000) - this DNS name gets automatically created when Kubernetes service is deployed. The Kubernetes service will then in turn load balance between all pods labeled with the *app: greeter-service*. Similarly, as in the Hello web deployment, we have these labels defined in the Greeter service deployment v1:
 
-~~~~~~~~yaml
+```yaml
   labels:
     app: greeter-service
     version: v1
-~~~~~~~~
+```
 
 How would we go about deploying a second version of the greeter service?
 
@@ -569,10 +569,10 @@ How would we go about deploying a second version of the greeter service?
 
 Notice how the selector is defined in the greeter service Kubernetes service:
 
-~~~~~~~~yaml
+```yaml
   selector:
     app: greeter-service
-~~~~~~~~
+```
 
 This means that it doesn't have a clue about the greeter service versions, which is ok. However, if we would deploy the v2 of the greeter service and then reload the hello web, we would randomly get responses back from either v1 or v2 pods. This is shown blow.
 
@@ -580,7 +580,7 @@ This means that it doesn't have a clue about the greeter service versions, which
 
 If you remember when we talked about Istio's *VirtualService* resource, we briefly mentioned that one could define multiple destinations where requests can be routed to. This is exactly what we need to do. You can define a second destination like this:
 
-~~~~~~~~yaml
+```yaml
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
@@ -598,7 +598,7 @@ spec:
           host: greeter-service.default.svc.cluster.local
           port:
             number: 3000
-~~~~~~~~
+```
 
 However, this alone is not enough as we are not differentiating between service versions in any way - in both cases, we have the same host. We need to specify that we want only 10% of the requests going to V1 of the service and the rest of the traffic to go to the V2 version of the service.
 
@@ -606,7 +606,7 @@ For this purpose, Istio has a resource named *DestinationRule*. With this rule a
 
 Here's how a destination rule would look like for the greeter service:
 
-~~~~~~~~yaml
+```yaml
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
@@ -620,11 +620,11 @@ spec:
     - name: v2
       labels:
         version: v2
-~~~~~~~~
+```
 
 With the destination rule in place, you will also need to update the virtual service to use these subsets. Here's a snippet that shows how to define the subsets and weights:
 
-~~~~~~~~yaml
+```yaml
 ...
 - destination:
     host: greeter-service.default.svc.cluster.local
@@ -640,7 +640,7 @@ weight: 90
     subset: v2
 weight: 10
 ...
-~~~~~~~~
+```
 
 We have added the subset to each of the destinations, as well as the weight that routes 10% of the requests to the new version (v2) and 90% of the requests to the existing, v1 version.
 
@@ -648,7 +648,7 @@ Now that we clarified how this works let's come up with a better plan of deployi
 
 As a first step, you need to deploy the destination rule - in this rule, you define the versions by creating a subset for each version, and we specify the traffic policy to use mutual TLS for connections.
 
-~~~~~~~~sh
+```sh
 cat <<EOF | kubectl apply -f -
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
@@ -667,11 +667,11 @@ spec:
     tls:
       mode: ISTIO_MUTUAL
 EOF
-~~~~~~~~
+```
 
 Next, you can deploy the updated virtual service that defines how the traffic should be routed - all traffic to the v1 version of the greeter service.
 
-~~~~~~~~sh
+```sh
 cat <<EOF | kubectl apply -f -
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -695,11 +695,11 @@ spec:
           subset: v2
         weight: 0
 EOF
-~~~~~~~~
+```
 
 Remember that during this process, the service is "live", and there is no downtime at all. Finally, you can deploy the v2 version of the greeter service.
 
-~~~~~~~~sh
+```sh
 cat <<EOF | kubectl apply -f -
 apiVersion: apps/v1
 kind: Deployment
@@ -727,11 +727,11 @@ spec:
           ports:
             - containerPort: 3000
 EOF
-~~~~~~~~
+```
 
 Now you have v2 version deployed in the "dark mode" - no traffic is getting routed to that version at the moment. If you try and open the gateway URL now (don't forget to set the `helloweb.dev` Host header), you will get the same response back as earlier - all responses from v1 version only. Here's the output of the `kubectl get pods` command that shows that there are six greeter service pods deployed and running - three pods with the v1 version and three pods with the v2 version:
 
-~~~~~~~~sh
+```sh
 $ kubectl get pods
 NAME                                 READY   STATUS    RESTARTS   AGE
 greeter-service-v1-c4f8d55cb-2gbrr   2/2     Running   0          24h
@@ -743,11 +743,11 @@ greeter-service-v2-9974dc6-w78bl     2/2     Running   0          2m42s
 helloweb-75cdb96474-c24hw            2/2     Running   0          24h
 helloweb-75cdb96474-m6jcg            2/2     Running   0          24h
 helloweb-75cdb96474-w4crk            2/2     Running   0          24h
-~~~~~~~~
+```
 
 Let's start redirecting 10% of the incoming traffic to the v2 version. To do that, you need to update the weights in the virtual service and re-deploy it.
 
-~~~~~~~~sh
+```sh
 cat <<EOF | kubectl apply -f -
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -771,7 +771,7 @@ spec:
             subset: v2
           weight: 10
 EOF
-~~~~~~~~
+```
 
 If you open the gateway URL now and refresh the page a couple of times, you will eventually see the response from the v2 version of the greeter service as shown in figure below.
 
@@ -818,7 +818,7 @@ Let's see how the matching works in practice. We will be using the same Hello We
 
 As a first example, we are deploying an updated virtual service, that routes all requests coming from the Firefox browser to the v2 version of greeter service.
 
-~~~~~~~~
+```
 cat <<EOF | kubectl apply -f -
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -845,7 +845,7 @@ spec:
                 number: 3000
             subset: v1
 EOF
-~~~~~~~~
+```
 
 The above YAML defines two routes, but only the first one starts with a match condition. This condition does a check against the incoming request and tries to match the `User-Agent` header against a defined Regex `.*Firefox.*`.
 
@@ -857,7 +857,7 @@ To try this out, you can open the gateway URL in two different browsers - Firefo
 
 In case you don't have the Firefox browser installed, you can replace `Firefox` with something else, use same ModHeader extension we mentioned earlier and add another header called `User-Agent` with the value `Firefox`. Alternatively, you can also use `curl`:
 
-~~~~~~~~sh
+```sh
 $ curl -A "Firefox" -H "Host: helloweb.dev" $GATEWAY
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 
@@ -867,11 +867,11 @@ $ curl -A "Firefox" -H "Host: helloweb.dev" $GATEWAY
 <div class="container">
     <h1>🔥🔥 !!HELLO!! 🔥🔥</h1>
 </div>
-~~~~~~~~
+```
 
 Just like you matched the `User-Agent` header, you could match any other headers as well. For example, you could provide an opt-in mechanism for your users that would give them access to new, unreleased features. As part of this, you'd also be setting a special header to all requests (e.g. `x-beta-optin: true`) and then do request routing based on that header value like this:
 
-~~~~~~~~yaml
+```yaml
 ...
 http:
   - match:
@@ -885,7 +885,7 @@ http:
             number: 3000
           subset: beta-version
 ...
-~~~~~~~~
+```
 
 
 ### Redirects and Rewrites
@@ -898,7 +898,7 @@ One way we could do this is to create a second endpoint in the greeter service s
 
 Depending on what you want to do - either an HTTP rewrite or an HTTP redirect, Istio has you covered. Here's an example of how to do an HTTP re-write and rewrite all requests that have `/greeting` in the URI to go to the `/hello` endpoint on the v2 version and any other requests go to the v1 subset:
 
-~~~~~~~~sh
+```sh
 cat <<EOF | kubectl apply -f -
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -926,7 +926,7 @@ spec:
               number: 3000
             subset: v1
 EOF
-~~~~~~~~
+```
 
 Don't forget to include the other route destination at the end, so any request that doesn't match the `/greeting` will be routed correctly as well. If you forget to add that last route, Istio won't know where to route the traffic if the match condition evaluates to false.
 
@@ -934,7 +934,7 @@ Try deploying the above YAML and then open the `$GATEWAY/greeting` URL. When the
 
 Similarly, you could use an HTTP redirect as well:
 
-~~~~~~~~sh
+```sh
 cat <<EOF | kubectl apply -f -
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -956,13 +956,13 @@ spec:
             port:
               number: 3000
 EOF
-~~~~~~~~
+```
 
 Usually, you'd use the HTTP redirect if you want to redirect the call to a completely different service. Let's say we had another service called `better-greeter-service` and we tried to redirect traffic to that service instead. In that case, you can update the `authority` to `better-greeter-service` and the traffic will get redirected to that service.
 
 Just like you've defined a single match condition for one destination, we could also define multiple match conditions for each route OR add more conditions to a single match. If we build on the previous example, you can add additional match that would check if there's a specific value in the headers:
 
-~~~~~~~~sh
+```sh
 ...
 http:
     - match:
@@ -975,11 +975,11 @@ http:
           uri: /hello
           authority: greeter-service.default.svc.cluster.local:3000
 ...
-~~~~~~~~
+```
 
 In the above case we redirect requests to `/hello` endpoint if both match conditions are satisfied (`AND` semantics). Similarly, you could add an additional match entry:
 
-~~~~~~~~sh
+```sh
 ...
 http:
   - match:
@@ -997,7 +997,7 @@ http:
       uri: /blah
       authority: greeter-service.default.svc.cluster.local:3000
 ...
-~~~~~~~~
+```
 
 ## Dark Traffic (Mirroring)
 
@@ -1014,7 +1014,7 @@ The idea behind traffic mirroring is to minimize the risk of exposing users to p
 
 Here's how to turn on the service mirroring: 
 
-~~~~~~~~sh
+```sh
 cat <<EOF | kubectl apply -f -
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -1038,13 +1038,13 @@ spec:
         subset: v2
       mirror_percent: 100
 EOF
-~~~~~~~~
+```
 
 The virtual service above is routing 100% of the traffic to the greeter service v1, while also mirroring 100% of the traffic to the v2 version of the service. You can control the percentage of traffic mirrored to the service by setting the `mirror_percent` value. 
 
 The easiest way to see this in action is to watch the logs from the v2 service and then open the gateway URL and reload the page a couple of times. The responses you will see on the web page will be coming from the v1 version of the service; however, you'll also see the request being sent to the v2 version:
 
-~~~~~~~~
+```
 $ kubectl logs greeter-service-v2-78fc64b995-krzf7 -c svc -f
 
 > greeter-service@2.0.0 start /app
@@ -1056,7 +1056,7 @@ GET /hello 200 0.811 ms - 59
 GET /hello 200 0.254 ms - 59
 GET /hello 200 3.563 ms - 59
 ...
-~~~~~~~~
+```
 
 ## Sidecar Proxy
 
@@ -1070,7 +1070,7 @@ The sidecar resource uses a workload selector to determine which workloads will 
 
 Just like other resources in Istio and Kubernetes, a set of labels is used to select the workloads. For example, the snippet below will apply to all proxies that live inside the `default` namespace:
 
-~~~~~~~~yaml
+```yaml
 apiVersion: networking.istio.io/v1alpha3
 kind: Sidecar
 metadata:
@@ -1082,11 +1082,11 @@ spec:
     - "default/*"
     - "istio-system/*"
     - "staging/*"
-~~~~~~~~
+```
 
 Additionally, with the egress section, you are specifying that the proxies will have access to services running in the `default`, `istio-system` and `staging` namespaces. To only select certain workloads, you can add the `workloadSelector` key. The snippet below only applies to the workloads that have the label `version` set to `v1`:
 
-~~~~~~~~yaml
+```yaml
 apiVersion: networking.istio.io/v1alpha3
 kind: Sidecar
 metadata:
@@ -1101,13 +1101,13 @@ spec:
     - "default/*"
     - "istio-system/*"
     - "staging/*"
-~~~~~~~~
+```
 
 ### Ingress listener
 
 With an ingress listener, you can define which inbound traffic will be accepted. Each ingress listener needs to have a port set - this is the port where the traffic will be received (e.g. `5000` example below), and a default endpoint. The default endpoint can either be a loopback IP endpoint or a Unix domain socket - this is where the traffic will be forwarded to, for example `127.0.0.1:8080`. The snippet below shows an example of an ingress listener that listens on port `5000` and forwards traffic to the loopback IP on port `8080` - this is where your service would be listening to.
 
-~~~~~~~~yaml
+```yaml
 ...
   ingress:
   - port:
@@ -1116,7 +1116,7 @@ With an ingress listener, you can define which inbound traffic will be accepted.
       name: somename
     defaultEndpoint: 127.0.0.1:8080
 ...
-~~~~~~~~
+```
 
 You can also use a field called `captureMode` to configure how traffic will be captured (or not). By default, the capture mode defined by the environment will be used; you can also use `IPTABLES` as a valid setting to specify that the traffic will be captured using IPtables redirection. The last option is to use `NONE` - this means that is no traffic capture. 
 
@@ -1128,7 +1128,7 @@ Similarly, instead of using an IP for the default endpoint, you could forward th
 
 An egress listener is used to define the properties for outbound traffic on the sidecar proxy. It has similar fields as the ingress listener, with the addition of the `hosts` field. With the `hosts` field you can specify service hosts in the `namespace/dnsName` (e.g. `myservice.default` or `default/*`). Services in the `hosts` field can either be actual services from the registry (all services registered in the mesh) or services defined with a ServiceEntry (external services) or with virtual services.
 
-~~~~~~~~yaml
+```yaml
   egress:
   - port:
       number: 8080
@@ -1136,11 +1136,11 @@ An egress listener is used to define the properties for outbound traffic on the 
     bind: 127.0.0.1
     hosts:
     - "*/my-api.example.com"
-~~~~~~~~
+```
 
 The snippet above allows your application to communicate with an API that's listening on `127.0.0.1:8080` with the additional service entry, you can then proxy everything from `127.0.0.1:8080` to an external API.
 
-~~~~~~~~yaml
+```yaml
 apiVersion: networking.istio.io/v1alpha3
 kind: ServiceEntry
 metadata:
@@ -1153,10 +1153,10 @@ spec:
     protocol: HTTP
   location: MESH_EXTERNAL
   resolution: DNS
-~~~~~~~~
+```
 
 ## Conclusion
 
-This blog gave you an overview of request/traffic routing features that Istio provides. You familiarized yourself with the five essential resources in Istio: `Gateway`, `VirtualService`, `DestinationRule`, `ServiceEntry`, and `Sidecar`
+This blog gave you an overview of request/traffic routing features that Istio provides. You familiarized yourself with the five essential resources in Istio: `Gateway`, `VirtualService`, `DestinationRule`, `ServiceEntry`, and `Sidecar`.
 
 Using the Hello Web and Greeter service examples, you learned how to set up a gateway and allow traffic to enter the cluster and route it to Hello web. Similarly, you went through an exercise to enable a service to reach outside of the cluster to call an existing public API. You've learned how to split the traffic based on different conditions and rules as well as redirect and rewrite the URL requests. Finally, we showed how to deploy a service to production and mirror traffic to it to minimize the risk to users.

@@ -1,7 +1,7 @@
 ---
 title: "How to use Istio to test service resiliency?"
 description: "In this blog, we will talk about how to use Istio service mesh features that can help you to tests the resiliency of the services. "
-date: "2021-02-10T12:15:00"
+date: "2021-03-03T12:15:00"
 author: "[Peter Jausovec](https://peterj.dev)"
 # thumbnail
 thumbnail: "/images/blog/2.jpg"
