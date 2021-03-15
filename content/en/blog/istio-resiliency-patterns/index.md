@@ -136,6 +136,7 @@ There are a couple of dashboards that Istio creates automatically on installatio
 | Istio Mesh Dashboard           | Shows an overview of the services inside the mesh, their latency, success rate, overall request volume and number of non-5xx, 4xx, 5xx HTTP responses. |
 | Istio Performance Dashboard    | Shows the performance-related graphs for different Istio components (proxies, gateways, etc.) |
 | Istio Control Plane  Dashboard | Shows resource usage graphs for Istio control plane.         |
+| Istio Wasm Extension Dashboard | Shows the Wasm extensions.                                   |
 
 Most of our time in this module will be spent in the Service and Workload dashboards to monitor the behavior of our services. Performance and per-component dashboards are more useful when you're running Istio in production and want to monitor and potentially alert on the components, their performance, and resource consumption.
 

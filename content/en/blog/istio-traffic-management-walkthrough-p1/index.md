@@ -153,7 +153,7 @@ Minikube has a command called `minikube tunnel`. This command creates networking
 
 To use the tunnel command, open a new terminal window and run `minikube tunnel`. You should see an output similar to this one: 
 
-```yaml
+```sh
 $ minikube tunnel
 Status:
     machine: minikube
@@ -785,4 +785,4 @@ Assuming you don't find any issues with the new version of the service, you will
 
 A crucial thing to note here is the ability to monitor and observe your services from all angles. If you don't have any service monitoring in place, it's going to be hard to tell with a high degree of confidence when your service is behaving well or if it's broken. We will talk more about observability in a later blog.
 
-For more on Istio traffic management check out the [second part](../istio-traffic-management-walkthrough-p2/) of this blog.
+For more on Istio traffic management check out the [Hands-on walkthrough of traffic management in Istio Part 2](../istio-traffic-management-walkthrough-p2/) of this blog.

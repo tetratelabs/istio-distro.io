@@ -1,6 +1,6 @@
 ---
 title: "How to debug services with Istio?"
-description: "In this blog, I will explain how Istio can help to solve issues such as encrypting traffic, provide flexible service access control, configure mutual TLS and fine-grained access policies and auditing. "
+description: "In this blog, I will explain a couple of approaches you can use to debug services running inside your Kubernetes cluster, without deploying the version of the service you want to debug to the cluster."
 date: "2021-03-04T15:15:00"
 author: "[Peter Jausovec](https://peterj.dev)"
 # thumbnail
@@ -22,12 +22,119 @@ Since you will be running the service under the debugger on your machine, we can
 
 The traffic or request comes in to through the Hello web and gets mirrored to the external service, defined by the service entry. That service entry is using the static resolution to route to the IP address that's exposing the locally running Greeter service to the public.
 
-Let's deploy the *hello-web.yaml*, *greeter-service-v1.yaml*, and the Virtual service for the Hello web *hello-web-vs.yaml* from the *src/ch7* folder:
+Let's deploy Hello web service:
 
 ```sh
-kubectl create -f hello-web.yaml
-kubectl create -f hello-web-vs.yaml
-kubectl create -f greeter-service-v1.yaml
+cat << EOF | kubectl apply -f -
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloweb
+  labels:
+    app: helloweb
+    version: v1
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: helloweb
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: helloweb
+        version: v1
+    spec:
+      containers:
+        - name: web
+          image: learnistio/hello-web:1.0.0
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+          env:
+            - name: GREETER_SERVICE_URL
+              value: 'http://greeter-service.default.svc.cluster.local:3000'
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: helloweb
+  labels:
+    app: helloweb
+spec:
+  selector:
+    app: helloweb
+  ports:
+    - port: 3000
+      name: http
+EOF
+```
+
+Let's deploy the Greeter service:
+
+```sh
+cat << EOF | kubectl apply -f -
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: greeter-service-v1
+  labels:
+    app: greeter-service
+    version: v1
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: greeter-service
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: greeter-service
+        version: v1
+    spec:
+      containers:
+        - name: svc
+          image: learnistio/greeter-service:1.0.0
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: greeter-service
+  labels:
+    app: greeter-service
+spec:
+  selector:
+    app: greeter-service
+  ports:
+    - port: 3000
+      name: http
+EOF
+```
+
+Let's deploy the Virtual service for the Hello web:
+
+```sh
+cat << EOF | kubectl apply -f -
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: helloweb
+spec:
+  hosts:
+    - '*'
+  gateways:
+    - gateway
+  http:
+    - route:
+      - destination:
+          host: helloweb.default.svc.cluster.local
+          port:
+            number: 3000
+EOF
 ```
 
 This gives us a working Hello web and with Greeter service v1. As a next step, let's deploy a virtual service that routes 100% of the traffic to the v1 version of the greeter service and mirrors the traffic to a service we are calling *greeter-service.ext* - we will define this later.
@@ -49,7 +156,7 @@ spec:
             number: 3000
       mirror:
         host: greeter-service.ext
-      mirror_percent: 100
+      mirrorPercent: 100
 EOF
 ```
 

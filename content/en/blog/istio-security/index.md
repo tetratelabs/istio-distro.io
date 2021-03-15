@@ -20,7 +20,7 @@ The following Istio components are involved in providing security features in Is
 - Envoy proxy extensions: manage telemetry and auditing
 - Configuration API server: distributes authentication, authorization policies and secure naming information 
 
-A> Policy Enforcement Point (PEP) is a component that serves as a gatekeeper to a resource.
+> Policy Enforcement Point (PEP) is a component that serves as a gatekeeper to a resource.
 
 Let's look at the architecture diagram in the figure below for different components and their responsibilities.
 
@@ -185,14 +185,13 @@ Authentication policies can be defined in two scopes that are explained next.
 The policies in the namespace scope can only affect services running in the same namespace. Additionally, you need to specify the namespace name, otherwise, the default namespace is used. Here's an example of a namespace policy for the `prod` namespace:
 
 ```yaml
-apiVersion: authentication.istio.io/v1alpha1
-kind: Policy
+apiVersion: security.istio.io/v1beta1
+kind: PeerAuthentication
 metadata:
   name: default
-  namespace: prod
 spec:
-  peers:
-  - mtls: {}
+  mtls:
+    mode: STRICT
 ```
 
 **Mesh-scoped policy**
@@ -206,7 +205,7 @@ To define which services are affected by the policies, target selectors are used
 For example, a namespace-scope policy below would apply for the `service-a` (regardless of the ports) and `service-b` on port `8080`:
 ```yaml
 apiVersion: authentication.istio.io/v1alpha1
-kind: Policy
+kind: PeerAuthentication
 metadata:
   name: sample-policy
   namespace: prod
@@ -226,7 +225,7 @@ The field called `peers` defines the authentication methods and any parameters f
 
 ```yaml
 apiVersion: authentication.istio.io/v1alpha1
-kind: Policy
+kind: PeerAuthentication
 metadata:
   name: sample-policy
   namespace: prod

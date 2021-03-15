@@ -8,7 +8,7 @@ thumbnail: "/images/blog/traffic.jpg"
 tags: ["istio"]
 ---
 
-This blog is the second part of Istio's hands-on traffic management practice. See the [first part](../istio-traffic-management-walkthrough-p1/). I will show you how to do more advanced with match conditions on request parameters (e.g. URL, headers). Finally, I will talk about mirroring production traffic to a newly deployed service without impacting end-users.
+This blog is the second part of Istio's hands-on traffic management practice. See the [Hands-on walkthrough of traffic management in Istio Part 1](../istio-traffic-management-walkthrough-p1/). I will show you how to do more advanced with match conditions on request parameters (e.g. URL, headers). Finally, I will talk about mirroring production traffic to a newly deployed service without impacting end-users.
 
 ## Advanced Traffic Splitting
 
