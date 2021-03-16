@@ -13,8 +13,7 @@ timezone: PST
 
 {{< eventDate >}}
 
-- Recording: <https://www.youtube.com/watch?v=XSgpTruF-gY>
-- Meeting note: [Google doc](https://docs.google.com/document/d/1jgcnuefeFlFEVtfeSVmTOxuUvI7KPznFN5zR9hzrjew/edit?usp=sharing)
+- Recording: <https://youtu.be/EGzvJK0pzx8>
 
 The inaugural meetup will be a special edition with 90 minutes to introduce the community, unpack the GetIstio and GetEnvoy projects, and hear what's new in the Istio 1.9 release. We look forward to diving into the topics, demonstrating some new Istio capabilities and answering all of your questions during the Q&A session.
 
