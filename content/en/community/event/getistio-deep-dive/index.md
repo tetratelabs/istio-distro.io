@@ -1,5 +1,5 @@
 ---
-title: "02: Istio the Easy Way with GetIstio"
+title: "Episode 02: Istio the Easy Way with GetIstio"
 date: 2021-01-29T11:00:00+07:00
 description: "Episode 02: Istio the Easy Way with GetIstio"
 categories: "event"
