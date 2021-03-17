@@ -7,7 +7,7 @@ image: "images/events/istiocon-logo.webp"
 eventLink: "https://events.istio.io/istiocon-2021/"
 eventDate: 2021-02-22
 eventEndDate: 2021-02-26
-pastEvent: false
+pastEvent: true
 weight: 2
 timezone: PST
 ---
