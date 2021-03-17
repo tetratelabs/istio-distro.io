@@ -35,7 +35,7 @@ The tables below show all request properties that can get matched to user-provid
 | ---------- | ------------------------------------------------------------ |
 | exact      | Property needs to be an exact match to the provided value. For example: `exact: Hello` will only match if the property value is `Hello` - it's not going to match if the value is `HELLO` or `hello`) |
 | prefix     | Only prefix of the property will get matched. For example: `prefix: Hello` will match if the value is `HelloWorld`, `Hello`. |
-| regex      | Value will get matched based on the regex. For example: `regex: '.*Firefox.*'` will match if the value is `Hello Firefox World`.
+| regex      | Value will get matched based on the regex. For example: `regex: '.*Firefox.*'` will match if the value is `Hello Firefox World`. |
 
 In addition to the matching properties, one can also define `sourceLabels` to further constrain the rules to services with specified labels only (e.g. we could specify `app: myapp` to only apply the matching to requests coming from services that have those labels specified)
 
@@ -74,7 +74,7 @@ EOF
 
 The above YAML defines two routes, but only the first one starts with a match condition. This condition does a check against the incoming request and tries to match the `User-Agent` header against a defined Regex `.*Firefox.*`.
 
-A> This is straightforward matching for the browsers' user agent. We look for the `Firefox` string in the header. However, there is a variety of other things we could be matching on.
+> This is straightforward matching for the browsers' user agent. We look for the `Firefox` string in the header. However, there is a variety of other things we could be matching on.
 
 If the regex gets matched, the requests get routed to the v2 subset. If you remember from earlier, this subset defines the `version: v2` label which corresponds to the v2 version of the greeter service. If we can't match the incoming request, we end up routing to the second route, which is the v1 version of the service.
 
