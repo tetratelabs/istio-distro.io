@@ -332,7 +332,7 @@ In addition to the hosts setting, we are also specifying a name of the gateway r
 
 The route and destination portion are used to define the host and the port number of the Kubernetes service you are trying to reach. The host in our case is the Kubernetes service DNS name - `helloweb.default.svc.cluster.local`, just like the hostname.
 
-A> The reason for using fully qualified service names is because of the way Istio interprets the short names (e.g. `helloweb`). Istio expands the short name to `helloweb.[namespace].svc.cluster.local`. However, the `namespace` gets replaced with the namespace that contains the virtual service and _not_ with the namespace the `helloweb` service runs in. Always make sure to use fully qualified names, as to avoid confusion.
+> The reason for using fully qualified service names is because of the way Istio interprets the short names (e.g. `helloweb`). Istio expands the short name to `helloweb.[namespace].svc.cluster.local`. However, the `namespace` gets replaced with the namespace that contains the virtual service and _not_ with the namespace the `helloweb` service runs in. Always make sure to use fully qualified names, as to avoid confusion.
 
 With the help of a virtual service resource, one can also configure multiple destinations, and this is something that's explained later in the book where we talk about traffic splitting.
 
@@ -373,7 +373,7 @@ $ curl -H "Host: helloweb.dev" $GATEWAY
 </div>
 ```
 
-A> You can also open the `$GATEWAY` address in your browser for the UI experience.
+> You can also open the `$GATEWAY` address in your browser for the UI experience.
 
 The traffic is now flowing through the Istio ingress gateway, the virtual service and finally, it hits the Hello Web frontend, which in turn calls the Greeter service to get the greeting message. 
 
