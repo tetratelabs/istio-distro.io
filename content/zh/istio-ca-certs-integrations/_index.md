@@ -15,5 +15,4 @@ Istio 提供了不同的机制来签署 mTLS 功能的工作负载证书。如�
 4. 实验性自定义 CA 集成使用 Kubernetes CSR API（Kubernetes 1.18+）。
 5. 外部 CA 使用 Istio CA gRPC API（通过 Istiod RA 模型或直接验证工作负载和验证 SAN）。
 
-GetIstio 通过提供各种集成选择，包括为此部署 Vendor 代理，为自定义 CA 选项提供便利。
-
+GetIstio 与 AWS 证书管理器、GCP 证书授权服务（CAS）和 cert-manager 的私有 CA 集成，以签署工作负载证书。

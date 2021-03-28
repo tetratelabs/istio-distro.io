@@ -25,20 +25,20 @@ We performed this demo using Kubernetes 1.18 and Istio 1.8:
 
 1. Deploy Kubernetes cluster(>=1.16) with minikube.
 
-   ```bash
+   ```sh
    minikube start --memory=10000 --cpus=4 --kubernetes-version=1.18.6
    ```
 
 2. Install helm3 for cert-manager CRD installation.
 
-   ```bash
-   curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+   ```sh
+   curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | sh
    ```
 
 3. Install GetIstio and fetch Istio.
 
-   ```bash
-   curl -sL https://tetrate.bintray.com/getistio/download.sh | bash
+   ```sh
+   curl -sL https://tetrate.bintray.com/getistio/download.sh | sh
    getistio fetch
    ```
 
@@ -46,7 +46,7 @@ We performed this demo using Kubernetes 1.18 and Istio 1.8:
 
 Install cert-manager in cert-manager namespace.
 
-```bash
+```sh
 kubectl create namespace cert-manager
 helm repo add jetstack https://charts.jetstack.io
 helm repo update
@@ -96,7 +96,7 @@ spec:
     secretName: istio-ca
 ```
 
-```bash
+```sh
 kubectl create ns istio-system
 kubectl apply -f https://raw.githubusercontent.com/cert-manager/istio-csr/master/hack/demo/cert-manager-bootstrap-resources.yaml -n istio-system
 ```
@@ -105,7 +105,7 @@ kubectl apply -f https://raw.githubusercontent.com/cert-manager/istio-csr/master
 
 Deploy `istio-csr` through official helm chart. It will use a certificate named `istio-ca` to generate `istio-ca` secret for workload certificate and verification.
 
-```bash
+```sh
 helm repo add https://chart.jetstack.io
 helm repo update
 helm install -n cert-manager cert-manager-istio-csr jetstack/cert-manager-istio-csr
@@ -117,7 +117,7 @@ This agent also creates a secret `istod-tls` which holds the tls cert/key for is
 
 Initialize Istio operator.
 
-```bash
+```sh
 getistio istioctl operator init
 ```
 
@@ -188,7 +188,7 @@ spec:
 
 You could validate on all cert-manager certs in `istio-system` namespace through the following command.
 
-```bash
+```sh
 kubectl get certificates -n istio-system
 NAME       READY   SECRET       AGE
 istio-ca   True    istio-ca     16m
@@ -199,7 +199,7 @@ istiod     True    istiod-tls   16m
 
 Here we deploy a simple workload for certificate verification.
 
-```bash
+```sh
 kubectl create ns foo
 kubectl label ns foo istio-injection=enabled
 kubectl apply -f samples/sleep/sleep.yaml -n foo
@@ -213,7 +213,7 @@ sleep-8f795f47d-vv6hx   2/2     Running   0          42s
 
 After the workload is running, we could check on the secret in SDS using the istioctl proxy-config command.
 
-```bash
+```sh
 getistio istioctl pc secret sleep-8f795f47d-vv6hx.foo -o json > proxy_secret
 ```
 
@@ -221,7 +221,7 @@ Check on the proxy_secret. There should be a field named `ROOTCA` and in `ROOTCA
 
 Compare the base64 value in `trustedCA` with the `istio-ca` secret `ca.crt` located in `istio-system`. Those two should be the same.
 
-```bash
+```sh
 kubectl get secrets -n istio-system istio-ca -o json > istio-ca
 ```
 

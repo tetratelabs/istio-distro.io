@@ -154,6 +154,38 @@ a:hover {
   #emailForm {
     display: flex;
     justify-content: space-evenly;
+
+    .input-container {
+      width: 75%;
+
+      label {
+        position: absolute;
+        transform: translateY(-2px);
+        top: 50%;
+        left: 8%;
+        margin-bottom: 0;
+        font-size: 14px;
+        cursor: text;
+      }
+
+      .input {
+        border: 0;
+        border-radius: 6px;
+        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+        display: block;
+        font-size: 14px;
+        height: 42px;
+        padding: 12px 25px;
+        width: 100%;
+        &:focus {
+          outline: unset;
+        }
+        &:focus ~ label,
+        &:not(:placeholder-shown) ~ label {
+          z-index: -1;
+        }
+      }
+    }
   }
 
   .form-control {
@@ -436,19 +468,7 @@ a:hover {
   background: transparent;
 }
 
-.input {
-  border: 0;
-  border-radius: 6px;
-  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
-  display: block;
-  font-size: 14px;
-  height: 42px;
-  padding: 12px 25px;
-  width: 75%;
-  &:focus {
-    outline: unset;
-  }
-}
+
 
 // button.btn {
 //   border-radius: 50px;
@@ -461,7 +481,7 @@ a:hover {
 // }
 
 .blog-list-image {
-  width: 200px;
+  // width: 200px;
   height: 200px;
   object-fit: cover;
 }
@@ -522,10 +542,6 @@ a:hover {
     margin: 0 1px;
   }
 
-  h4 {
-    margin-bottom: 0;
-  }
-
   img {
     width: 32px;
     margin: 0px;
@@ -533,6 +549,12 @@ a:hover {
 
   p {
     font-size: 16px;
+  }
+
+  .dictionary-card-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 0;
   }
 
   #more {

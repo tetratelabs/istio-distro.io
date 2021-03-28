@@ -7,7 +7,7 @@ draft: false
 
 The purpose of the zero-downtime release is to release a new version of the application without affecting its users. If you have a website running, this means that you can release a new version without taking the website down. It means that you can make continuous requests to that application while releasing a new application, and the application users will never get that dreaded 504 Service Unavailable response.
 
-You might wonder why we would use Istio to do rolling updates if the Kubernetes option is much simpler. That's true, and you probably shouldn't be using Istio if zero-downtime deployments are the only thing you're going to use it for. You can achieve the same behavior with Istio. However, you have way more control over how and when the traffic gets routed to a specific version.
+You might wonder why we would use Istio to do rolling updates if the Kubernetes option is much simpler. Yes, you can get zero-downtime deployments whether you use Istio or Kubernetes. However, with Istio, you get more features and control over traffic routing. You can use weight-based routing, [mirroring the traffic to a different version](/istio-in-practice/traffic-mirroring), or you can route the traffic based on the request properties (URI, scheme, method, etc.). 
 
 ## Prerequisites
 
