@@ -1,9 +1,9 @@
 ---
-title: "cert-manager CA Integration"
+title: 'cert-manager CA Integration'
 date: 2021-02-17T13:00:00+0
-description: "cert-manager CA Integration"
+description: 'cert-manager CA Integration'
 # type dont remove or customize
-type : "docs"
+type: 'docs'
 ---
 
 This task shows how to provision Control Plane and Workload Certificates with an
@@ -25,17 +25,17 @@ cluster](https://cert-manager.io/docs/installation/kubernetes/) using your
 preferred method.
 
 ```sh
-$ helm repo add jetstack https://charts.jetstack.io
-$ helm repo update
-$ kubectl create namespace cert-manager
-$ helm install -n cert-manager cert-manager jetstack/cert-manager --set installCRDs=true
+helm repo add jetstack https://charts.jetstack.io
+helm repo update
+kubectl create namespace cert-manager
+helm install -n cert-manager cert-manager jetstack/cert-manager --set installCRDs=true
 ```
 
 Next, an [Issuer](https://cert-manager.io/docs/configuration/) should be created
 in the `istio-system` namespace that you would like to sign the certificates for
 your Istio installation. In this case, we will be using a self signed
 certificate generated through cert-manager, though any Issuer that is
-appropriate for an internal PKI system can be used.  [Compatible external
+appropriate for an internal PKI system can be used. [Compatible external
 Issuers](https://cert-manager.io/docs/configuration/external/) can also be used
 in this installation.
 
@@ -44,8 +44,8 @@ in this installation.
 > certificates](https://cert-manager.io/docs/configuration/acme/).
 
 ```sh
-$ kubectl create namespace istio-system
-$ kubectl apply -n istio-system -f - <<EOF
+kubectl create namespace istio-system
+kubectl apply -n istio-system -f - <<EOF
 apiVersion: cert-manager.io/v1
 kind: Issuer
 metadata:
@@ -78,7 +78,11 @@ spec:
   ca:
     secretName: istio-ca
 EOF
+```
 
+You can check the `issuers` using the `get issuers` command:
+
+```sh
 $ kubectl get issuers -n istio-system
 NAME         READY   AGE
 istio-ca     True    12m
@@ -89,8 +93,9 @@ Once the Issuer has become ready,
 cluster.
 
 ```sh
-$ helm install -n cert-manager cert-manager-istio-csr jetstack/cert-manager-istio-csr
+helm install -n cert-manager cert-manager-istio-csr jetstack/cert-manager-istio-csr
 ```
+
 Verify that istio-csr is running, and that the istiod Certificate is in a ready
 state.
 
@@ -101,6 +106,7 @@ cert-manager-756bb56c5-cdvln               1/1     Running   0          111s
 cert-manager-cainjector-86bc6dc648-bjnrp   1/1     Running   0          111s
 cert-manager-istio-csr-5b9cd98696-v4f6j    1/1     Running   0          12s
 cert-manager-webhook-66b555bb5-4s7qb       1/1     Running   0          111s
+
 $ kubectl get certificates -n istio-system
 NAME       READY   SECRET       AGE
 istiod     True    istiod-tls   28s
@@ -113,7 +119,7 @@ the CA server by both the Istio control plane and workloads. The following
 configuration should be used when installing:
 
 ```sh
-$ cat << EOF > config.yaml
+cat << EOF > config.yaml
 apiVersion: install.istio.io/v1alpha1
 kind: IstioOperator
 metadata:
@@ -167,7 +173,7 @@ spec:
                 defaultMode: 420
                 name: istio-ca-root-cert
 EOF
-$ getistio istioctl install -f config.yaml
+getistio istioctl install -f config.yaml
 ```
 
 The installation should complete, and the Istio control plane should become in a
