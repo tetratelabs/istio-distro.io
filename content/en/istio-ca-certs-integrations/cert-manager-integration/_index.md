@@ -140,7 +140,6 @@ spec:
           kind: Deployment
           name: istiod
           patches:
-
             # Mount istiod serving and webhook certificate from Secret mount
           - path: spec.template.spec.containers.[name:discovery].args[7]
             value: "--tlsCertFile=/etc/cert-manager/tls/tls.crt"
@@ -148,7 +147,6 @@ spec:
             value: "--tlsKeyFile=/etc/cert-manager/tls/tls.key"
           - path: spec.template.spec.containers.[name:discovery].args[9]
             value: "--caCertFile=/etc/cert-manager/ca/root-cert.pem"
-
           - path: spec.template.spec.containers.[name:discovery].volumeMounts[6]
             value:
               name: cert-manager
@@ -159,7 +157,6 @@ spec:
               name: ca-root-cert
               mountPath: "/etc/cert-manager/ca"
               readOnly: true
-
           - path: spec.template.spec.volumes[6]
             value:
               name: cert-manager
@@ -174,6 +171,19 @@ spec:
                 name: istio-ca-root-cert
 EOF
 getistio istioctl install -f config.yaml
+```
+
+Note: if you are using Istio 1.7.x, make sure to update the `args` under the `patches` filed in the above YAML as follows:
+
+```yaml
+patches:
+  # Mount istiod serving and webhook certificate from Secret mount
+  - path: spec.template.spec.containers.[name:discovery].args[8]
+    value: '--tlsCertFile=/etc/cert-manager/tls/tls.crt'
+  - path: spec.template.spec.containers.[name:discovery].args[9]
+    value: '--tlsKeyFile=/etc/cert-manager/tls/tls.key'
+  - path: spec.template.spec.containers.[name:discovery].args[10]
+    value: '--caCertFile=/etc/cert-manager/ca/root-cert.pem'
 ```
 
 The installation should complete, and the Istio control plane should become in a
