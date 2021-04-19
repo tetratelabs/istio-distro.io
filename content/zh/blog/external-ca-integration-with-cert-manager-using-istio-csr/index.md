@@ -38,7 +38,7 @@ thumbnail: "/images/blog/security.jpg"
 3. 安装 GetIstio 并获取 Istio。
 
    ```sh
-   curl -sL https://tetrate.bintray.com/getistio/download.sh | sh
+   curl -sL https://dl.getistio.io/public/raw/download.sh | sh
    getistio fetch
    ```
 

@@ -53,7 +53,7 @@ start:
   title: "快速开始"
   steps:
     - desc: "1. 下载 GetIstio"
-      cmd: "curl -sL https://tetrate.bintray.com/getistio/download.sh | bash"
+      cmd: "curl -sL https://dl.getistio.io/public/raw/download.sh | bash"
     - desc: "2. 安装 Istio Demo"
       cmd: "getistio istioctl install --set profile=demo"
     - desc: "3. 检查 GetIstio 版本"

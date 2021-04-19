@@ -11,7 +11,7 @@ weight: 10
 Currently <strong>GetIstio</strong> runs on Linux and MacOS. To deploy GetIstio, all you need is this one simple command:
 
 ```sh
-curl -sL https://tetrate.bintray.com/getistio/download.sh | bash
+curl -sL https://dl.getistio.io/public/raw/download.sh | bash
 ```
 
 Please follow [GetIstio Install and Update Page](/getistio-cli/install-and-update-of-getistio) for detailed instruction on downloading and subsequent steps to have GetIstio up and running in your machine.

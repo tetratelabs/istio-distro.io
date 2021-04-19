@@ -1,7 +1,7 @@
   {{ $os_type := .Get 0 }}  
   
-  {{ $url_beginning_distro := "https://tetrate.bintray.com/getistio/istio-" }}
-  {{ $url_beginning_cli := "https://tetrate.bintray.com/getistio/istioctl-" }}
+  {{ $url_beginning_distro := "https://dl.getistio.io/public/raw/istio-" }}
+  {{ $url_beginning_cli := "https://dl.getistio.io/public/raw/istioctl-" }}
   
   
   {{ $platforms := slice }}
@@ -31,7 +31,7 @@
   {{ end }}
 
 
-  {{ $manifest := getJSON "https://tetrate.bintray.com/getistio/manifest.json" }}
+  {{ $manifest := getJSON "https://dl.getistio.io/public/raw/manifest.json" }}
 
   {{ range $manifest.istio_distributions }} 
     {{ $.Scratch.Add "version_list" (slice .version) }} 

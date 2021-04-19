@@ -55,7 +55,7 @@ start:
   title: "Get Started Quickly"
   steps:
     - desc: "1. Download GetIstio"
-      cmd: "curl -sL https://tetrate.bintray.com/getistio/download.sh | bash"
+      cmd: "curl -sL https://dl.getistio.io/public/raw/download.sh | bash"
     - desc: "2. Install Istio Demo"
       cmd: "getistio istioctl install --set profile=demo"
     - desc: "3. Check GetIstio version"

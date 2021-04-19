@@ -44,7 +44,7 @@ In order to complete the do-it-yourself process, you will need to prepare the fo
 Let’s set up Istio 1.7.5 with GetIstio.
 
 ```sh
-curl -sL https://tetrate.bintray.com/getistio/download.sh | bash
+curl -sL https://dl.getistio.io/public/raw/download.sh | bash
 getistio fetch 1.7.5
 ```
 

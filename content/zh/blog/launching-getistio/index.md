@@ -35,7 +35,7 @@ GetIstio 是一个集成和生命周期管理 CLI 工具，可确保使用支持
 下面的命令获得一个 shell 脚本，下载并安装与脚本检测到的操作系统发行版相对应的 GetIstio 二进制文件（目前支持 macOS 和 Linux）。此外，还下载了最新支持的 Istio 版本。此外，该脚本还将 GetIstio 的位置添加到 PATH 变量中（需要重新登录以获得 PATH 填充）。
 
 ```bash
- curl -sL https://tetrate.bintray.com/getistio/download.sh | bash
+ curl -sL https://dl.getistio.io/public/raw/download.sh | bash
 ```
 
 下面的视频展示了 GetIstio 命令行工具的基本使用方法。
