@@ -15,7 +15,7 @@ eksctl create cluster --nodes 3
 
 This will deploy a EKS cluster with three nodes on it in your default region.
 
-If you have created your cluster using AWS web UI, you are going to need to set the context manually. Ensure your [aws cli](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)is properly configured. Then, run the following command:
+If you have created your cluster using AWS web UI, you are going to need to set the context manually. Ensure your [aws cli](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) is properly configured. Then, run the following command:
 
 
 ```sh
