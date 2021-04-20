@@ -38,7 +38,7 @@ thumbnail: "/images/blog/security.jpg"
 3. 安装 GetIstio 并获取 Istio。
 
    ```sh
-   curl -sL https://dl.getistio.io/public/raw/download.sh | sh
+   curl -sL https://dl.getistio.io/public/raw/files/download.sh | sh
    getistio fetch
    ```
 

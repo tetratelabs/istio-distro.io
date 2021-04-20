@@ -11,15 +11,15 @@ type : "docs"
 The command below obtains a shell script that downloads and installs GetIstio binary that corresponds to the OS distribution detected by the script (currently MacOS and Linux are supported). Additionally the most recent supported version of Istio is downloaded. Also script adds GetIstio location to PATH variable (re-login is required to get PATH populated)
 
 ```
-curl -sL https://dl.getistio.io/public/raw/download.sh | bash
+curl -sL https://dl.getistio.io/public/raw/files/download.sh | bash
 ```
 
 Output example:
 
 ```
-$ curl -sL https://dl.getistio.io/public/raw/download.sh | bash
+$ curl -sL https://dl.getistio.io/public/raw/files/download.sh | bash
 
-Downloading GetIstio from https://dl.getistio.io/public/raw/getistio_linux_amd64_v0.3.0 ...
+Downloading GetIstio from https://dl.getistio.io/public/raw/files/getistio_linux_amd64_v0.3.0 ...
 GetIstio Download Complete!
 
 Updating user profile (/home/user/.bashrc)...
@@ -30,7 +30,7 @@ export PATH="$GETISTIO_HOME/bin:$PATH"
 
 Downloading latest istio ...
 
-Downloading 1.8.2-distro-v0 from https://dl.getistio.io/public/raw/istioctl-1.8.2-distro-v0-linux-amd64.tar.gz ...
+Downloading 1.8.2-distro-v0 from https://dl.getistio.io/public/raw/files/istioctl-1.8.2-distro-v0-linux-amd64.tar.gz ...
 
 Istio 1.8.2 Download Complete!
 

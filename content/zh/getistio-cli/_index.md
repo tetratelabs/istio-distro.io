@@ -13,7 +13,7 @@ featureOrder: 1
 GetIstio 是开始使用 Istio 最简单的方法，并确保您使用的是受信任和支持的 Istio 版本。安装和更新 GetIstio 非常简单，只需发出以下命令即可。
 
 ```sh
-curl -sL https://dl.getistio.io/public/raw/download.sh | bash
+curl -sL https://dl.getistio.io/public/raw/files/download.sh | bash
 ```
 
 ### 为什么使用 CLI?

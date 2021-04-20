@@ -9,7 +9,7 @@ type : "docs"
 GetIstio 可以通过以下命令获得。
 
 ```sh
-curl -sL https://dl.getistio.io/public/raw/download.sh | bash
+curl -sL https://dl.getistio.io/public/raw/files/download.sh | bash
 ```
 
 默认情况下，这将下载最新版本的 GetIstio 和认证的 Istio。要检查下载是否成功，运行  [version 命令](/getistio-cli/reference/getistio_version)。
@@ -48,7 +48,7 @@ getistio update
 
 ```sh
 export GETISTIO_VERSION=<your_version> # 比如说0.5.0
-curl -sL https://dl.getistio.io/public/raw/download.sh | bash
+curl -sL https://dl.getistio.io/public/raw/files/download.sh | bash
 ```
 
 这将把现有的 GetIstio 版本覆盖到刚刚下载的版本。

@@ -42,7 +42,7 @@ GetIstio 是由 Tetrate 开源的基于 Istio 的发行版。他主要解决了�
 使用 GetIstio 安装 Istio 1.7.5。
 
 ```sh
-curl -sL https://dl.getistio.io/public/raw/download.sh | bash
+curl -sL https://dl.getistio.io/public/raw/files/download.sh | bash
 getistio fetch 1.7.5
 ```
 

@@ -38,7 +38,7 @@ We performed this demo using Kubernetes 1.18 and Istio 1.8:
 3. Install GetIstio and fetch Istio.
 
    ```sh
-   curl -sL https://dl.getistio.io/public/raw/download.sh | sh
+   curl -sL https://dl.getistio.io/public/raw/files/download.sh | sh
    getistio fetch
    ```
 
