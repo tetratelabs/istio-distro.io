@@ -7,7 +7,7 @@ type : "docs"
 ---
 To install Istio in EKS, you will need to set up the kube context before.
 
-If you create your cluster from the command line, kube context will be automatically set. Download and configure [ekscli]https://aws.amazon.com/blogs/opensource/eksctl-eks-cluster-one-command/ and [aws cli](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html). Now create your cluster. For example:
+If you create your cluster from the command line, Kubernetes context will be automatically set. Download and configure [ekscli](https://aws.amazon.com/blogs/opensource/eksctl-eks-cluster-one-command/) and [aws cli](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html). Now create your cluster. For example:
 
 ```sh
 eksctl create cluster --nodes 3
