@@ -33,4 +33,4 @@ kubernetes   ClusterIP   10.100.0.1   <none>        443/TCP   3d18h
 ```
 
 
-When your kube context is set you are ready to [install Istio](/getistio-cli/install-istio/)
+When your Kubernetes context is set you are ready to [install Istio](/getistio-cli/install-istio/).
