@@ -12,7 +12,7 @@ featureOrder: 3
 ---
 
 ### Set up
-- Always do pre and post checks after Istio installation. This is enabled by default when installing Istio through [GetIstio](/download/).
+- Always do pre and post checks after Istio installation. This is enabled by default when installing Istio through [Tetrate Istio Distro](/download/).
 - As a best practice, install [distroless images]( https://istio.io/latest/docs/ops/configuration/security/harden-docker-images/).
 - Istio Operator [API](https://istio.io/latest/docs/reference/config/istio.operator.v1alpha1/).
 - [Advanced customization](https://istio.io/latest/docs/setup/install/istioctl/#advanced-install-customization).
@@ -95,7 +95,7 @@ Best Practice for [Istio Obervability](https://istio.io/latest/docs/ops/best-pra
 - To get better insight into the mesh, istio-proxy and the control plane pods, Istio provides istioctl and UI based dashboard features. Details [here](https://istio.io/latest/docs/ops/diagnostic-tools/)
 
 ### Useful Links
-- [GetIstio CLI](https://getistio.io/getistio-cli/reference/getistio/)
+- [Tetrate Istio Distro CLI](https://getistio.io/getistio-cli/reference/getistio/)
 - [Kubectl](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands)
 - [Local K8s (kind, microk8s, minikube, dockerdesktop)](https://kubernetes.io/docs/tasks/tools/)
 
@@ -107,7 +107,7 @@ Best Practice for [Istio Obervability](https://istio.io/latest/docs/ops/best-pra
 - [Kiali](https://istio.io/latest/docs/ops/integrations/kiali/): perform basic troubleshooting with this service mesh visualization tool
 
 ### Documentation
-- [GetIstio](https://getistio.io/getistio-cli/)
+- [Tetrate Istio Distro](https://getistio.io/getistio-cli/)
 - [GetEnvoy](https://www.getenvoy.io/reference/getenvoy/)
 - [Learn Istio concepts interactively](https://tetrate-academy.thinkific.com/enrollments) 
 - [Envoy Docs](https://www.envoyproxy.io/docs/envoy/latest/configuration/configuration )
