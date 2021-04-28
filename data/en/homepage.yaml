@@ -21,7 +21,7 @@ subscribe:
 
 ########################## Dictionary section ###########################
 dictionary:
-  enable: true
+  enable: false
   title: "What is Get•Is•ti•o"
   logo: "/images/getistio-logo-notext-black.png"
   phonogram: "/getˌis,’tē,ō/"
@@ -54,11 +54,11 @@ start:
   enable: true
   title: "Get Started Quickly"
   steps:
-    - desc: "1. Download GetIstio CLI"
+    - desc: "1. Download Tetrate Istio Distro CLI"
       cmd: "curl -sL https://tetrate.bintray.com/getistio/download.sh | bash"
     - desc: "2. Install Istio Demo"
       cmd: "getistio istioctl install --set profile=demo"
-    - desc: "3. Check GetIstio version"
+    - desc: "3. Check Tetrate Istio Distro version"
       cmd: "getistio version"
     - desc: "4. Validate config"
       cmd: "getistio config-validate"
@@ -81,11 +81,11 @@ event:
 customer_quote:
   enable: true
   quotes:
-    - quote: Working with the Istio community, we're pleased to have developed "istio-csr", open source software to integrate Istio with cert-manager. This enables workload certificates to be issued from the wide array of certificate authorities and providers that cert-manager supports, including Venafi, Google Certificate Authority Service (CAS) and more. We look forward to collaborating with the GetIstio community to provide an easy and seamless integration, enabling operators and security teams to tap into cert-manager and secure the mesh from the get-go.
+    - quote: Working with the Istio community, we're pleased to have developed "istio-csr", open source software to integrate Istio with cert-manager. This enables workload certificates to be issued from the wide array of certificate authorities and providers that cert-manager supports, including Venafi, Google Certificate Authority Service (CAS) and more. We look forward to collaborating with the Tetrate Istio Distro community to provide an easy and seamless integration, enabling operators and security teams to tap into cert-manager and secure the mesh from the get-go.
       title: "Matt Bates, co-founder & CTO Jetstack"
     - quote: " At Tracfone, we’ve built an immutable infrastructure with k8s, istio and a custom CI/CD platform. We leverage Istio for an array of capabilities like traffic management, telemetry, zero-trust security and more. Istio training from Tetrate Academy is a great resource for our teams to learn Istio fast and get the most out of it."
       title: "Kartik Rallapalli, Principal Enterprise Architect at Tracfone"
-    - quote: "In combination with a service mesh like Istio, Weave GitOps workflows automate progressive deployment strategies / canary management in Kubernetes. Tetrate's new GetIstio product makes this simple, providing users with a quick and safe way to deploy Istio into their GitOps workflows."
+    - quote: "In combination with a service mesh like Istio, Weave GitOps workflows automate progressive deployment strategies / canary management in Kubernetes. Tetrate's new Tetrate Istio Distro product makes this simple, providing users with a quick and safe way to deploy Istio into their GitOps workflows."
       title: "Alexis Richardson, co-founder & CEO Weaveworks"
 
 ########################## Support section ###############################
