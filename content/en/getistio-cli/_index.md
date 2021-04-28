@@ -1,7 +1,7 @@
 ---
-title: "GetIstio Overview"
+title: "Tetrate Istio Distro Overview"
 icon: "ti-panel"
-description: "Learn more about GetIstio CLI, how to install and manage it."
+description: "Learn more about Tetrate Istio Distro, how to install and manage GetIstio CLI"
 # type dont remove or customize
 type : "docs"
 weight: 1

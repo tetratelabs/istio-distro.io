@@ -12,12 +12,12 @@ hero:
 subscribe:
   enable: true
   item:
-    - content: "GetIstio 1.0 is now available"
+    - content: "Tetrate Istio Distro 1.0.5 is now available"
     - content: "Never miss new releases and community events"
   error_message: "Please enter a valid email address."
   form_message: "Thank you for subscribing."
   community_item:
-    - content: "Join the GetIstio community to get release updates and community announcements"
+    - content: "Join the Tetrate Istio Distro community to get release updates and community announcements"
 
 ########################## Dictionary section ###########################
 dictionary:
@@ -54,7 +54,7 @@ start:
   enable: true
   title: "Get Started Quickly"
   steps:
-    - desc: "1. Download GetIstio"
+    - desc: "1. Download GetIstio CLI"
       cmd: "curl -sL https://tetrate.bintray.com/getistio/download.sh | bash"
     - desc: "2. Install Istio Demo"
       cmd: "getistio istioctl install --set profile=demo"
