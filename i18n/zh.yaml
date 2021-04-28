@@ -100,13 +100,13 @@
   translation: "简单、安全的企业级 Istio 发行版 | GetIstio 由 Tetrate 出品"
 
 - id: upcoming_getistio_community_events
-  translation: "接下来的 GetIstio 社区活动"
+  translation: "接下来的 Tetrate Istio Distro 社区活动"
 
 - id: contributing_to_getistio
   translation: "向 GetIstio 贡献"
 
 - id: getistio_community
-  translation: "GetIstio 社区"
+  translation: "Tetrate Istio Distro 社区"
 
 - id: join_now
   translation: "立即加入"

@@ -88,7 +88,7 @@
 - id: back_to_partners
   translation: "Back to Partners"
 
-- id: parnters
+- id: partners
   translation: "Partners"
 
 - id: at
@@ -101,13 +101,13 @@
   translation: "GetIstio by Tetrate | Simple, safe enterprise-grade Istio distro"
 
 - id: upcoming_getistio_community_events
-  translation: "Upcoming GetIstio Community Events"
+  translation: "Upcoming Tetrate Istio Distro Community Events"
 
 - id: contributing_to_getistio
   translation: "Contributing to GetIstio"
 
 - id: getistio_community
-  translation: "GetIstio Community"
+  translation: "Tetrate Istio Distro Community"
 
 - id: see_also
   translation: "See Also"
