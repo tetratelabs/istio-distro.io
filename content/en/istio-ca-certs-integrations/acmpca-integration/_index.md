@@ -62,7 +62,7 @@ The figure below shows the Private CA page.  Note that yours might look differen
 
 ### Configure AWS credentials
 
-Ensure you have AWS credentials set up with the `AWSCertificateManagerPrivateCAFullAccess` and `AWSCertificateManagerFullAccess` policy attached on a machine you're accessing the Kubernetes cluster from. Alternatively, if you installed GetIstio on AWS Cloud Shell, the credentials are already set up.
+Ensure you have AWS credentials set up with the `AWSCertificateManagerPrivateCAFullAccess` and `AWSCertificateManagerFullAccess` policy attached on a machine you're accessing the Kubernetes cluster from. Alternatively, if you installed Tetrate Istio Distro on AWS Cloud Shell, the credentials are already set up.
 
 </details>
 

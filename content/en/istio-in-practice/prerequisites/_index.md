@@ -32,9 +32,9 @@ Client Version: version.Info{Major:"1", Minor:"19", GitVersion:"v1.19.2", GitCom
 Server Version: version.Info{Major:"1", Minor:"19", GitVersion:"v1.19.0", GitCommit:"e19964183377d0ec2052d1f1fa930c4d7575bd50", GitTreeState:"clean", BuildDate:"2020-08-26T14:23:04Z", GoVersion:"go1.15", Compiler:"gc", Platform:"linux/amd64"}
 ```
 
-## 2. Install Istio with GetIstio 
+## 2. Install Istio with Tetrate Istio Distro 
 
-GetIstio is the easiest way to get started with Istio. After you've set up your Kubernetes cluster, you can download [GetIstio](https://getistio.io):
+Tetrate Istio Distro is the easiest way to get started with Istio. After you've set up your Kubernetes cluster, you can download [Tetrate Istio Distro](https://getistio.io):
 
 ```sh
 curl -sL https://tetrate.bintray.com/getistio/download.sh | bash

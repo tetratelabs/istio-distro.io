@@ -11,7 +11,7 @@ Each of the profiles contains a different combination of components. For example
 
  You can read more about the configuration profiles and check components that are part of the profiles on [Istio's docs page](https://istio.io/latest/docs/setup/additional-setup/config-profiles/).
 
-Using [GetIstio](https://getistio.io) you can pass in the installation configuration profile name to install Istio. For example, to install the demo profile, you can run this command:
+Using [Tetrate Istio Distro](https://getistio.io) you can pass in the installation configuration profile name to install Istio. For example, to install the demo profile, you can run this command:
 
 ```sh
 getistio istioctl install --set profile=demo
