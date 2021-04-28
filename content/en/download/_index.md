@@ -8,18 +8,18 @@ type : "docs"
 weight: 10
 ---
 
-Currently <strong>GetIstio</strong> runs on Linux and MacOS. To deploy GetIstio, all you need is this one simple command:
+Currently <strong>Tetrate Istio Distro</strong> runs on Linux and MacOS. To deploy Tetrate Istio Distro, all you need is this one simple command:
 
 ```sh
 curl -sL https://tetrate.bintray.com/getistio/download.sh | bash
 ```
 
-Please follow [GetIstio Install and Update Page](/getistio-cli/install-and-update-of-getistio) for detailed instruction on downloading and subsequent steps to have GetIstio up and running in your machine.
+Please follow [Tetrate Istio Distro Install and Update Page](/getistio-cli/install-and-update-of-getistio) for detailed instruction on downloading and subsequent steps to have Tetrate Istio Distro up and running in your machine.
 
 ### Supported Istio Versions
-GetIstio tracks Istio upstream releases. As part of GetIstio build pipeline, a series of tests are run to ensure the Istio distro works well on the underlying Kubernetes platform.
+Tetrate Istio Distro tracks Istio upstream releases. As part of Tetrate Istio Distro build pipeline, a series of tests are run to ensure the Istio distro works well on the underlying Kubernetes platform.
 
-GetIstio certified Istio distro has been tested against the following Kubernetes distros:
+Tetrate Istio Distro certified Istio distro has been tested against the following Kubernetes distros:
 - EKS - 1.18, 1.17, 1.16
 - GKE - 1.18, 1.17, 1.16
 - AKS - 1.18, 1.17, 1.16

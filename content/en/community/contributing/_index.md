@@ -1,5 +1,5 @@
 ---
-title: "Contributing to GetIstio"
+title: "Contributing to Tetrate Istio Distro"
 url: /community/contributing
 ---
 
