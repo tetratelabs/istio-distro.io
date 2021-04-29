@@ -176,7 +176,7 @@ weight = 7
 logo = "images/tetrate-istio-distro-logo.png"
 # Meta data
 description = "Tetrate's open source GetIstio project provides a simple, safe, enterprise-grade Istio distro."
-images = ["images/twitter-card.png"]
+images = ["images/twitter-card-new.png"]
 author = "Tetrate"
 sitename = "GetIstio"
 twitter = "@tetrateio"
