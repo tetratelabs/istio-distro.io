@@ -1,6 +1,6 @@
 ######################## default configuration ####################
 baseURL = "https://getistio.io/"
-title = "GetIstio by Tetrate | Simple, safe enterprise-grade Istio distro"
+title = "Tetrate Istio Distro | Simple, safe enterprise-grade Istio"
 # google analytics
 googleAnalytics = ""
 # disable language
@@ -173,10 +173,10 @@ weight = 7
 
 #################### default parameters ################################
 [params]
-logo = "images/getistio-by-tetrate-logo.png"
+logo = "images/tetrate-istio-distro-logo.png"
 # Meta data
 description = "Tetrate's open source GetIstio project provides a simple, safe, enterprise-grade Istio distro."
-images = ["images/twitter-card.png"]
+images = ["images/twitter-card-new.png"]
 author = "Tetrate"
 sitename = "GetIstio"
 twitter = "@tetrateio"

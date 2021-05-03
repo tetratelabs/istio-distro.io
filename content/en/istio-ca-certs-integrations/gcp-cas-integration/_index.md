@@ -55,7 +55,7 @@ The figure below shows the summary page. Note that your page might look differen
 
 ### Configure GCP credentials
 
-Ensure you have GCP credentials set up (e.g.`GOOGLE_APPLICATION_CREDENTIALS` environment variable has to point to the credentials) on a machine you're accessing the Kubernetes cluster from. Alternatively, if you installed GetIstio on Google Cloud Shell, the credentials are already set up.
+Ensure you have GCP credentials set up (e.g.`GOOGLE_APPLICATION_CREDENTIALS` environment variable has to point to the credentials) on a machine you're accessing the Kubernetes cluster from. Alternatively, if you installed Tetrate Istio Distro on Google Cloud Shell, the credentials are already set up.
 </details>
 
 ## Creating CAS configuration

@@ -39,5 +39,5 @@ Please refer to 'getistio fetch --help' or 'getistio list --help' for more infor
 
 #### SEE ALSO
 
-* [getistio](/getistio-cli/reference/getistio/)	 - GetIstio is an integration and lifecycle management CLI tool that ensures the use of supported and trusted versions of Istio.
+* [getistio](/getistio-cli/reference/getistio/)	 - Tetrate Istio Distro is an integration and lifecycle management CLI tool that ensures the use of supported and trusted versions of Istio.
 

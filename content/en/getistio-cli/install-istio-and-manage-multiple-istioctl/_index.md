@@ -5,13 +5,13 @@ description: "How to install Istio and manage multiple istioctl"
 # type dont remove or customize
 type : "docs"
 ---
-After downloading and [installing](/getistio-cli/install-istio) the latest trusted versions of GetIstio and Istio. We recommend always using  `getistio` to invoke `istioctl`. GetIstio eases switching between multiple versions of istioctl, and does version compatibility and configuration checks to ensure that only certified Istio is deployed.
+After downloading and [installing](/getistio-cli/install-istio) the latest trusted versions of Tetrate Istio Distro and Istio. We recommend always using  `getistio` to invoke `istioctl`. Tetrate Istio Distro eases switching between multiple versions of istioctl, and does version compatibility and configuration checks to ensure that only certified Istio is deployed.
 
 Refer to [Istio documentation](https://istio.io/latest/docs/reference/commands/istioctl) for the latest istioctl commands and options.
 
 Real-life requirements very often dictate the use of a different version of istioctl (than the latest version) or leveraging multiple versions of `istioctl` due custom configuration. The steps to achieve that are explained below.
 
-List the currently downloaded versions of Istio through GetIstio using the [show command](/getistio-cli/reference/getistio_show):
+List the currently downloaded versions of Istio through Tetrate Istio Distro using the [show command](/getistio-cli/reference/getistio_show):
 
 ```sh
 getistio show

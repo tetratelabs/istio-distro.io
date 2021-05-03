@@ -5,7 +5,7 @@ description: "How to install Istio with GetIstio CLI"
 # type dont remove or customize
 type : "docs"
 ---
-GetIstio by default communicates to the cluster defined by your Kubernetes configuration. Please make sure you’re connected to the correct cluster before proceeding.
+Tetrate Istio Distro by default communicates to the cluster defined by your Kubernetes configuration. Please make sure you’re connected to the correct cluster before proceeding.
 
 To install the demo profile of Istio, That can be done using [getistio istioctl](/getistio-cli/reference/getistio_istioctl) command
 ```sh
