@@ -11,7 +11,7 @@ weight: 10
 目前 **GetIstio** 可以运行在 Linux 和 MacOS 上，要部署 GetIstio，你只需要一个简单的命令：
 
 ```sh
-curl -sL https://tetrate.bintray.com/getistio/download.sh | bash
+curl -sL https://dl.getistio.io/public/raw/files/download.sh | bash
 ```
 
 请按照 [GetIstio 安装和更新页面](/getistio-cli/install-and-update-of-getistio)，了解下载和后续步骤的详细说明，以使 GetIstio 在您的机器上运行。

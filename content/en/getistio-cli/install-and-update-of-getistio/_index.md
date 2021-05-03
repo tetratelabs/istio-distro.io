@@ -9,7 +9,7 @@ type : "docs"
 Tetrate Istio Distro can be obtained by issuing the following command:
 
 ```sh
-curl -sL https://tetrate.bintray.com/getistio/download.sh | bash
+curl -sL https://dl.getistio.io/public/raw/files/download.sh | bash
 ```
 
 This, by default, downloads the latest version of Tetrate Istio Distro and certified Istio. To check if the download was successful, run the [version command](/getistio-cli/reference/getistio_version):
@@ -47,7 +47,7 @@ getistio update
 While we recommend always using the latest Tetrate Istio Distro, if the user wants to download a different version of Tetrate Istio Distro for testing or other reasons, they could do so with the following command:
 ```sh
 export GETISTIO_VERSION=<your_version> ##say 0.5.0 for example
-curl -sL https://tetrate.bintray.com/getistio/download.sh | bash
+curl -sL https://dl.getistio.io/public/raw/files/download.sh | bash
 ```
 This would overwrite the existing version of Tetrate Istio Distro to the one just downloaded.
 

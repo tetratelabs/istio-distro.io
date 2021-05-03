@@ -13,7 +13,7 @@ featureOrder: 1
 Tetrate Istio Distro is the easiest way to get started with Istio and to ensure you're using trusted, supported versions of Istio. Installing and updating Tetrate Istio Distro is as easy as issuing the following command:
 
 ```sh
-curl -sL https://tetrate.bintray.com/getistio/download.sh | bash
+curl -sL https://dl.getistio.io/public/raw/files/download.sh | bash
 ```
 
 ### Why Use a CLI?
