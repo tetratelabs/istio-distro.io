@@ -9,3 +9,4 @@
   to = "https://istio.tetratelabs.io"
   status = 301
   force = true
+  
