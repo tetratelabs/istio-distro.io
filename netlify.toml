@@ -1,12 +1,11 @@
 [[redirects]]
-  from = "https://www.getistio.io"
-  to = "https://istio.tetratelabs.io"
-  status = 301
-  force = true
+from = "https://getistio.io"
+to = "https://istio.tetratelabs.io"
+status = 301
+force = false
 
 [[redirects]]
-  from = "https://getistio.io"
-  to = "https://istio.tetratelabs.io"
-  status = 301
-  force = true
-  
+from = "https://www.getistio.io"
+to = "https://istio.tetratelabs.io"
+status = 301
+force = false
