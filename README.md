@@ -1,5 +1,5 @@
-# getistio.io
-Website for GetIstio project, build using Hugo
+# Tetrate Istio Distro Website
+Website for Tetrate Istio Distro project (formerly GetIstio), build using Hugo
 
 ## Run Locally
 1. Download and install [hugo](https://www.gohugo.io), version not less than v0.80.0. An **extended version** is required, so you may want to check how to install that for your machine's OS. Example, for [Linux](https://gohugo.io/getting-started/installing/#snap-package)
