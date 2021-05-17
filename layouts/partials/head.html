@@ -19,6 +19,8 @@
     {{ partial "main-style" .}}
   {{ else if eq .Page.Title "Community Events"}}
     {{ partial "community-style" . }}
+  {{ else if eq .Page.Title "Partners"}}
+    {{ partial "partners-style" . }}  
   {{ end }}
 
   <!-- plugins -->
