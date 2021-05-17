@@ -15,7 +15,13 @@
   </script>
 
   <!-- critical CSS -->
-  {{ partial "main-style" .}}
+  {{ if .Page.IsHome }}
+    {{ partial "main-style" .}}
+  {{ else if eq .Page.Title "Community Events"}}
+    {{ partial "community-style" . }}
+  {{ else if eq .Page.Title "Partners"}}
+    {{ partial "partners-style" . }}  
+  {{ end }}
 
   <!-- plugins -->
   {{ $permalink:= .Permalink }}
@@ -25,7 +31,6 @@
     onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
     <link rel="stylesheet" href="{{ .link | relURL }}">
-  </noscript>
   {{ else if eq .page "/"}}
   <link rel="preload" href="{{ .link | relURL }}" as="style" {{.attributes | safeHTMLAttr}}
     onload="this.onload=null;this.rel='stylesheet'">
@@ -33,7 +38,7 @@
     <link rel="stylesheet" href="{{ .link | relURL }}">
   </noscript>
   {{ else }}
-  <link rel="preload" href="{{ .link | relURL }}" as="style" {{.attributes | safeHTMLAttr}}
+  <link rel="stylesheet" href="{{ .link | relURL }}" as="style" {{.attributes | safeHTMLAttr}}
     onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
     <link rel="stylesheet" href="{{ .link | relURL }}">
@@ -55,6 +60,7 @@
   <noscript>
     <link rel="stylesheet" href="{{ $styles.Permalink | relURL }}">
   </noscript>
+
 
   <!--Favicon-->
   <link rel="shortcut icon" href="{{ `images/getistio-favicon.png` | relURL }}" type="image/x-icon">
