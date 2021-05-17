@@ -15,7 +15,11 @@
   </script>
 
   <!-- critical CSS -->
-  {{ partial "main-style" .}}
+  {{ if .Page.IsHome }}
+    {{ partial "main-style" .}}
+  {{ else if eq .Page.Title "Community Events"}}
+    {{ partial "community-style" . }}
+  {{ end }}
 
   <!-- plugins -->
   {{ $permalink:= .Permalink }}
@@ -48,17 +52,13 @@
   </noscript>
 
   <!-- Main Stylesheet -->
-  <!-- Loads main CSS async on homepage, normally on others. -->
   {{ $styles := resources.Get "scss/style.scss" | resources.ToCSS (dict "outputStyle" "compressed") | postCSS}}
-  {{ if .IsHome }}
   <link rel="preload" href="{{ $styles.Permalink | relURL }}" as="style"
     onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
     <link rel="stylesheet" href="{{ $styles.Permalink | relURL }}">
   </noscript>
-  {{ else }}
-  <link rel="stylesheet" href="{{ $styles.Permalink | relURL }}">
-  {{ end }}
+
 
   <!--Favicon-->
   <link rel="shortcut icon" href="{{ `images/getistio-favicon.png` | relURL }}" type="image/x-icon">
