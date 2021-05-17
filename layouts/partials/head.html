@@ -33,11 +33,7 @@
     <link rel="stylesheet" href="{{ .link | relURL }}">
   </noscript>
   {{ else }}
-  <link rel="preload" href="{{ .link | relURL }}" as="style" {{.attributes | safeHTMLAttr}}
-    onload="this.onload=null;this.rel='stylesheet'">
-  <noscript>
-    <link rel="stylesheet" href="{{ .link | relURL }}">
-  </noscript>
+  <link rel="stylesheet" href="{{ .link | relURL }}">
   {{ end }}
   {{ end }}
 
