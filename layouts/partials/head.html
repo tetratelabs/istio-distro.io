@@ -21,7 +21,10 @@
   {{ $permalink:= .Permalink }}
   {{ range site.Params.plugins.css}}
   {{ if eq $permalink (.page | lower | urlize | relURL ) }}
-  <link rel="stylesheet" href="{{ .link | relURL }}">
+  <link rel="preload" href="{{ .link | relURL }}" as="style" {{.attributes | safeHTMLAttr}}
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="{{ .link | relURL }}">
   {{ else if eq .page "/"}}
   <link rel="preload" href="{{ .link | relURL }}" as="style" {{.attributes | safeHTMLAttr}}
     onload="this.onload=null;this.rel='stylesheet'">
@@ -45,12 +48,17 @@
   </noscript>
 
   <!-- Main Stylesheet -->
+  <!-- Loads main CSS async on homepage, normally on others. -->
   {{ $styles := resources.Get "scss/style.scss" | resources.ToCSS (dict "outputStyle" "compressed") | postCSS}}
+  {{ if .IsHome }}
   <link rel="preload" href="{{ $styles.Permalink | relURL }}" as="style"
     onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
     <link rel="stylesheet" href="{{ $styles.Permalink | relURL }}">
   </noscript>
+  {{ else }}
+  <link rel="stylesheet" href="{{ $styles.Permalink | relURL }}">
+  {{ end }}
 
   <!--Favicon-->
   <link rel="shortcut icon" href="{{ `images/getistio-favicon.png` | relURL }}" type="image/x-icon">
