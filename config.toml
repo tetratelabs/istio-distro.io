@@ -1,5 +1,5 @@
 ######################## default configuration ####################
-baseURL = "https://getistio.io/"
+baseURL = "https://istio.tetratelabs.io/"
 title = "Tetrate Istio Distro | Simple, safe enterprise-grade Istio"
 # google analytics
 googleAnalytics = ""
