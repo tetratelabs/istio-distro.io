@@ -6,7 +6,7 @@ categories: 'event'
 image: 'images/events/episode-003-thumbnail.png'
 eventLink: 'https://youtu.be/nYJJ57WCkxE'
 eventDate: 2021-05-27T11:00:00
-pastEvent: false
+pastEvent: true
 weight: 5
 timezone: PDT
 ---
