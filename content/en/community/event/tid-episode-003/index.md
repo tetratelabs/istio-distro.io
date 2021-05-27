@@ -13,6 +13,8 @@ timezone: PDT
 
 {{< eventDate >}}
 
+- Recording: <https://youtu.be/nYJJ57WCkxE>
+
 In episode 3, we will talk about how to set up SSL certificates in your Istio ingress gateway. We’ll show you how to use self-signed certificates (and why you should never do this) and how to automate certificate management.
 
-{{< eventLink "Join here">}}
+Demo script for all scenarios is [here](https://github.com/tetratelabs/istio-weekly/blob/main/episodes/003/demo.md).
