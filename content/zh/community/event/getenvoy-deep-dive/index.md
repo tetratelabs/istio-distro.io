@@ -6,7 +6,7 @@ categories: "event"
 image: "images/events/effortless-envoy.webp"
 eventLink: "https://us02web.zoom.us/j/89163866904"
 eventDate: 2021-03-04T09:00:00
-pastEvent: false
+pastEvent: true
 weight: 3
 timezone: PST
 ---

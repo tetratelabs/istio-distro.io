@@ -6,7 +6,7 @@ categories: "event"
 image: "images/events/getistio-inaugural-meetup.webp"
 eventLink: "https://us02web.zoom.us/j/89163866904"
 eventDate: "2021-03-04T12:30:00"
-pastEvent: false
+pastEvent: true
 weight: 1
 timezone: BST
 ---
