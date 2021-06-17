@@ -7,7 +7,7 @@ image: 'images/events/episode-005-thumbnail.png'
 eventLink: 'https://www.youtube.com/watch?v=_ExvSKOX_gY'
 eventDate: 2021-06-24T11:00:00
 pastEvent: false
-weight: 6
+weight: 7
 timezone: PDT
 ---
 
