@@ -1,7 +1,7 @@
 ---
 title: "《Istio 大咖说》第 3 期：如何让 Istio 变得更为高效和智能"
 date: 2021-06-05T11:00:00+08:00
-description: "本次直播将分享本次分享将介绍网易自研的智能网格管理器 Slime。"
+description: "本次直播将介绍网易自研的智能网格管理器 Slime。"
 categories: "event"
 image: "images/events/ep03.jpg"
 eventLink: "https://www.bilibili.com/video/BV18o4y1y75e/"
