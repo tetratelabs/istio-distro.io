@@ -1,6 +1,6 @@
 ---
-title: "00: What is GetIstio - Inaugural Community Meetup"
-date: 2021-01-29T11:00:00+07:00
+title: "What is GetIstio - Inaugural Community Meetup"
+date: 2021-06-22T11:00:00+07:00
 description: "Episode 00: What is GetIstio - Inaugural Community Meetup"
 categories: "event"
 image: "images/events/getistio-inaugural-meetup.webp"

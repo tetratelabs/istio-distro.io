@@ -1,6 +1,6 @@
 ---
 title: "IstioCon 2021"
-date: 2021-01-29T11:00:00+07:00
+date: 2021-06-22T11:00:00+07:00
 description: "IstioCon 2021 is the inaugural community conference for the industry's most popular service mesh."
 categories: "event"
 image: "images/events/istiocon-logo.webp"

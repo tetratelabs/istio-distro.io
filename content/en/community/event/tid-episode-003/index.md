@@ -1,5 +1,5 @@
 ---
-title: '03: SSL Certificates in Istio Ingress Gateway'
+title: 'SSL Certificates in Istio Ingress Gateway'
 date: 2021-05-23T11:00:00+07:00
 description: 'Episode 03: SSL Certificates in Istio Ingress Gateway'
 categories: 'event'

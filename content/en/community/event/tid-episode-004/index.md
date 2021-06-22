@@ -1,12 +1,12 @@
 ---
-title: '04: Deploying multiple Istio ingress gateways'
+title: 'Deploying multiple Istio ingress gateways'
 date: 2021-05-23T11:00:00+07:00
 description: 'Episode 04: Deploying multiple Istio ingress gateways'
 categories: 'event'
 image: 'images/events/episode-004-thumbnail.png'
 eventLink: 'https://youtu.be/QIkryA8HnQ0'
 eventDate: 2021-06-10T11:00:00
-pastEvent: false
+pastEvent: true
 weight: 6
 timezone: PDT
 ---
