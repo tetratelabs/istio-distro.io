@@ -13,7 +13,7 @@ force = true
 # Redirect latest version of download.sh from getmesh repo
 [[redirects]]
 from = "/getmesh/install.sh"
-to = "https://raw.githubusercontent.com/tetratelabs/getmesh/main/download.sh"
+to = "https://raw.githubusercontent.com/tetratelabs/getmesh/main/site/install.sh"
 force = true
 status = 302
 
