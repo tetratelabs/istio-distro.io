@@ -55,7 +55,7 @@ start:
   title: "Get Started Quickly"
   steps:
     - desc: "1. Download Tetrate Istio Distro CLI"
-      cmd: "curl -sL https://dl.getistio.io/public/raw/files/download.sh | bash"
+      cmd: "curl -sL https://istio.tetratelabs.io/getmesh/install.sh | bash"
     - desc: "2. Install Istio Demo"
       cmd: "getistio istioctl install --set profile=demo"
     - desc: "3. Check Tetrate Istio Distro version"

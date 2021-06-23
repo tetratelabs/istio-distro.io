@@ -11,7 +11,7 @@ weight: 10
 Currently <strong>Tetrate Istio Distro</strong> runs on Linux and MacOS. To deploy Tetrate Istio Distro, all you need is this one simple command:
 
 ```sh
-curl -sL https://dl.getistio.io/public/raw/files/download.sh | bash
+curl -sL https://istio.tetratelabs.io/getmesh/install.sh | bash
 ```
 
 Please follow [Tetrate Istio Distro Install and Update Page](/getistio-cli/install-and-update-of-getistio) for detailed instruction on downloading and subsequent steps to have Tetrate Istio Distro up and running in your machine.

@@ -37,7 +37,7 @@ Server Version: version.Info{Major:"1", Minor:"19", GitVersion:"v1.19.0", GitCom
 Tetrate Istio Distro is the easiest way to get started with Istio. After you've set up your Kubernetes cluster, you can download [Tetrate Istio Distro](https://getistio.io):
 
 ```sh
-curl -sL https://dl.getistio.io/public/raw/files/download.sh | bash
+curl -sL https://istio.tetratelabs.io/getmesh/install.sh | bash
 ```
 
 Finally, to install the demo profile of Istio, use the following command:

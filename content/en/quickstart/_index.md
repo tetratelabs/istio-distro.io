@@ -11,13 +11,13 @@ type : "docs"
 The command below obtains a shell script that downloads and installs GetIstio binary that corresponds to the OS distribution detected by the script (currently MacOS and Linux are supported). Additionally the most recent supported version of Istio is downloaded. Also script adds GetIstio location to PATH variable (re-login is required to get PATH populated)
 
 ```
-curl -sL https://dl.getistio.io/public/raw/files/download.sh | bash
+curl -sL https://istio.tetratelabs.io/getmesh/install.sh | bash
 ```
 
 Output example:
 
 ```
-$ curl -sL https://dl.getistio.io/public/raw/files/download.sh | bash
+$ curl -sL https://istio.tetratelabs.io/getmesh/install.sh | bash
 
 Downloading GetIstio from https://dl.getistio.io/public/raw/files/getistio_linux_amd64_v0.3.0 ...
 GetIstio Download Complete!

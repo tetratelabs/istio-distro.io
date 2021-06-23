@@ -45,7 +45,7 @@ The order of links in the sidebar is controlled by the `weight` property set in 
 To automatically add copy code button to a shell code snippet, specify `sh` as the language after the backticks in the code snippet. For example:
 
 ```sh
-getistio version
+getmesh version
 ```
 
 The copy code button is also enabled for YAML (`yaml`) and Go (`go`) code listings. You can add support for more in the `/assets/js/script.js` file. For example:
@@ -103,7 +103,7 @@ After an event is completed and a YouTube recording is available, you can update
 
 ## Adding Partnership Information
 
-To add information about GetIstio partners, you can simply modify files in the following directories, with example given for a fictional partner named "Partner A":
+To add information about Tetrate Istio Distro partners, you can simply modify files in the following directories, with example given for a fictional partner named "Partner A":
 
 - `content/en/partners/partner-a.md` -> this file holds the overview information about the partner. The required data in frontmatter has been annotated for detail
 - `content/en/ecosystem-partners/partner-a` -> this directory holds the technical information that will be displayed in the docs section of the site. Technical documentation and tutorial can go here.
@@ -111,14 +111,14 @@ To add information about GetIstio partners, you can simply modify files in the f
 
 ## Auto-Generated Pages
 
-The following pages of this website are auto-generated (see [here](https://github.com/tetratelabs/getistio/blob/main/doc/gen.go)):
+The following pages of this website are auto-generated (see [here](https://github.com/tetratelabs/getmesh/blob/main/doc/gen.go)):
 
 - /community/building-and-testing
 - /community/contributing
 - /community/release
-- /getistio-cli/reference
+- /getmesh-cli/reference
 
-Be careful when modifying the contents of these pages in this repo as they will be lost whenever with the next GetIstio release. Also, if you're renaming the paths/URLs to those pages, make sure to [update the doc generation](https://github.com/tetratelabs/getistio/blob/main/doc/gen.go) in the GetIstio repository.
+Be careful when modifying the contents of these pages in this repo as they will be lost whenever with the next GetIstio release. Also, if you're renaming the paths/URLs to those pages, make sure to [update the doc generation](https://github.com/tetratelabs/getmesh/blob/main/doc/gen.go) in the GetIstio repository.
 
 ## Contributing
 
