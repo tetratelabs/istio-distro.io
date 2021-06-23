@@ -11,10 +11,10 @@ For the detailed steps please refer to the [blog article](https://skywalking.apa
 
 To highlight the essential integration steps:
 
-- Install getistio per [documentation](https://getistio.io/installing-getistio-cli)
+- Install getmesh per [documentation](https://getistio.io/installing-getistio-cli)
 - Deploy Istio using `getistio` command and enable [Access Log Service (ALS)](https://www.envoyproxy.io/docs/envoy/latest/api-v2/service/accesslog/v2/als.proto) using the following command:
 ```sh
-getistio istioctl install --set profile=demo \
+getmesh istioctl install --set profile=demo \
                --set meshConfig.enableEnvoyAccessLogService=true \
                --set meshConfig.defaultConfig.envoyAccessLogService.address=skywalking-oap.istio-system:11800
 ```

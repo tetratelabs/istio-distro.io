@@ -17,7 +17,7 @@ In this article we at Tetrate will show how to integrate [cert-manager](https://
 
 For key and certificate management, Istio is using its own Certificate Authority (CA) inside `istiod` control plane.
 
-Here, we would use the [cert-manager ](https://cert-manager.io/)provisioned Issuer as the [external CA](https://getistio.io/istio-ca-certs-integrations/) to sign the workload certificates using Istio CSR API with the CSR request directly going from the workloads to the external CA.
+Here, we would use the [cert-manager ](https://cert-manager.io/)provisioned Issuer as the [external CA](https://istio.tetratelabs.io/istio-ca-certs-integrations/) to sign the workload certificates using Istio CSR API with the CSR request directly going from the workloads to the external CA.
 
 ### Setting up the Environment
 
@@ -35,11 +35,11 @@ We performed this demo using Kubernetes 1.18 and Istio 1.8:
    curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | sh
    ```
 
-3. Install GetIstio and fetch Istio.
+3. Install GetMesh and fetch Istio.
 
    ```sh
-   curl -sL https://dl.getistio.io/public/raw/files/download.sh | sh
-   getistio fetch
+   curl -sL https://istio.tetratelabs.io/getmesh/install.sh | sh
+   getmesh fetch
    ```
 
 ### Deploy cert-manager
@@ -118,7 +118,7 @@ This agent also creates a secret `istod-tls` which holds the tls cert/key for is
 Initialize Istio operator.
 
 ```sh
-getistio istioctl operator init
+getmesh istioctl operator init
 ```
 
 Configure on the `operator yaml`.
@@ -135,7 +135,7 @@ metadata:
   name: istio-operator-csr
 spec:
   profile: "demo"
-  hub: tetrate-docker-getistio-docker.bintray.io
+  hub: containers.istio.tetratelabs.com
   values:
     global:
       # Change certificate provider to cert-manager istio agent for istio agent
@@ -214,7 +214,7 @@ sleep-8f795f47d-vv6hx   2/2     Running   0          42s
 After the workload is running, we could check on the secret in SDS using the istioctl proxy-config command.
 
 ```sh
-getistio istioctl pc secret sleep-8f795f47d-vv6hx.foo -o json > proxy_secret
+getmesh istioctl pc secret sleep-8f795f47d-vv6hx.foo -o json > proxy_secret
 ```
 
 Check on the proxy_secret. There should be a field named `ROOTCA` and in `ROOTCA` there should be a field `trustedCA` which is signed by cert-manager `istio-ca`.

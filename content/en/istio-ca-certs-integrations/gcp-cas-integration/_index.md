@@ -10,7 +10,7 @@ Instead of using a self-signed root certificate, here we get an intermediary Ist
 
 This approach enables the same root of trust for the root CA's workloads in GCP CAS. As Istio signs the workload certs, the latency for getting workload certs issued is far less than directly getting the certs signed by ACM Private CA itself.
 
-The [`getistio gen-ca`](/getistio-cli/reference/getistio_gen-ca) command furnishes the options to connect to ACM Private CA and get the intermediary CA cert signed. It uses the certificate details thus obtained to create the **cacerts** Kubernetes secret for Istio to use to sign workload certs. Istio, at startup, checks for the presence of the secret **cacerts** to decide if it needs to use this cert for signing workload certificates.
+The [`getmesh gen-ca`](/getistio-cli/reference/getistio_gen-ca) command furnishes the options to connect to ACM Private CA and get the intermediary CA cert signed. It uses the certificate details thus obtained to create the **cacerts** Kubernetes secret for Istio to use to sign workload certs. Istio, at startup, checks for the presence of the secret **cacerts** to decide if it needs to use this cert for signing workload certificates.
 
 ## Prerequisites
 
@@ -94,7 +94,7 @@ certificateParameters:
 Save the above file to `gcp-cas-config.yaml` and use `gen-ca` command to create the `cacert`:
 
 ```sh
-getistio gen-ca --config-file gcp-cas-config.yaml
+getmesh gen-ca --config-file gcp-cas-config.yaml
 ```
 
 The command output should look similar to this:
@@ -117,7 +117,7 @@ kubectl create deploy helloworld --image=gcr.io/tetratelabs/hello-world:1.0.0
 Wait for the Pod to start and then get the certificate chain and CA root certificate proxies use for mTLS. We will save them in the `proxy_secret` file:
 
 ```sh
-getistio istioctl pc secret [pod-name] -o json > proxy_secret
+getmesh istioctl pc secret [pod-name] -o json > proxy_secret
 ```
 
 The CA root certificate is base64 encoded in the `trustedCA` field. For example:
