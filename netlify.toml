@@ -26,7 +26,7 @@ status = 302
 
 # Redirect to the cloudsmith binary
 [[redirects]]
- from = "https://istio.tetratelabs.io/getmesh/files/*"
+ from = "/getmesh/files/*"
  to = "https://dl.getistio.io/public/raw/files/:splat"
- status = 200
+ status = 302
  force = true
