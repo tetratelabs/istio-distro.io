@@ -15,7 +15,7 @@ draft: false
 - 使用`getistio`命令部署 Istio，并使用以下命令启用[访问日志服务（ALS）](https://www.envoyproxy.io/docs/envoy/latest/api-v2/service/accesslog/v2/als.proto)：
 
 ```sh
-getistio istioctl install --set profile=demo \
+getmesh istioctl install --set profile=demo \
                --set meshConfig.enableEnvoyAccessLogService=true \
                --set meshConfig.defaultConfig.envoyAccessLogService.address=skywalking-oap.istio-system:11800
 ```

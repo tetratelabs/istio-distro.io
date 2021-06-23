@@ -14,7 +14,7 @@ draft: false
 使用 [GetIstio](/) 您可以传入安装配置文件名称来安装 Istio。例如，要安装演示配置文件，可以运行以下命令：
 
 ```sh
-getistio istioctl install --set profile=demo
+getmesh istioctl install --set profile=demo
 ```
 
 您还可以通过将其他`--set <key>=<value>`键 / 值对传递给命令来自定义 Istio 安装，而不考虑配置文件 。
@@ -34,7 +34,7 @@ getistio istioctl install --set profile=demo
 首先，我们需要查看单个 Ingress 网关的 Istio 配置，当您使用默认网关（或演示 / 预览配置文件）时将对其进行部署。我们可以使用以下`profile dump`命令获取配置：
 
 ```sh
-getistio istioctl profile dump --config-path components.ingressGateways > ingress-gateway.yaml
+getmesh istioctl profile dump --config-path components.ingressGateways > ingress-gateway.yaml
 ```
 
 > 如果您看到一条消息，说`proto: tag has too few fields: "-"`您可以放心地忽略它。这是当前正在解决的[已知问题](https://github.com/istio/istio/issues/26751)。
@@ -50,7 +50,7 @@ getistio istioctl profile dump --config-path components.ingressGateways > ingres
 首先，我们需要查看单个 Ingress 网关的 Istio 配置，当您使用默认网关（或演示 / 预览配置文件）时将对其进行部署。我们可以使用以下`profile dump`命令获取配置：
 
 ```sh
-getistio istioctl profile dump --config-path components.ingressGateways > ingress-gateway.yaml
+getmesh istioctl profile dump --config-path components.ingressGateways > ingress-gateway.yaml
 ```
 
 > 如果您看到一条消息，说`proto: tag has too few fields: "-"`您可以放心地忽略它。这是当前正在解决的[已知问题](https://github.com/istio/istio/issues/26751)。
@@ -168,7 +168,7 @@ kubectl create ns staging
 现在我们准备安装 Istio。将上述 YAML 保存到`istio-2-gw.yaml`并用于`getistio`安装：
 
 ```sh
-$ getistio istioctl install -f istio-2-gw.yaml
+$ getmesh istioctl install -f istio-2-gw.yaml
 This will install the Istio default profile with ["Istio core" "Istiod" "Ingress gateways"] components into the cluster. Proceed? (y/N) y
 ✔ Istio core installed
 ✔ Istiod installed

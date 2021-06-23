@@ -118,7 +118,7 @@ The following pages of this website are auto-generated (see [here](https://githu
 - /community/release
 - /getmesh-cli/reference
 
-Be careful when modifying the contents of these pages in this repo as they will be lost whenever with the next GetIstio release. Also, if you're renaming the paths/URLs to those pages, make sure to [update the doc generation](https://github.com/tetratelabs/getmesh/blob/main/doc/gen.go) in the GetIstio repository.
+Be careful when modifying the contents of these pages in this repo as they will be lost whenever with the next GetMesh release. Also, if you're renaming the paths/URLs to those pages, make sure to [update the doc generation](https://github.com/tetratelabs/getmesh/blob/main/doc/gen.go) in the GetMesh repository.
 
 ## Contributing
 

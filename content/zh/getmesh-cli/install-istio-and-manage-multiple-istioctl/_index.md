@@ -15,7 +15,7 @@ type : "docs"
 通过 GetIstio 使用 [show 命令](/getistio-cli/reference/getistio_show)列出当前下载的 Istio 版本。
 
 ```sh
-getistio show
+getmesh show
 ```
 
 Example output would be
@@ -29,7 +29,7 @@ Example output would be
 如果还没有下载到所需的 Istio 版本，操作者可以先通过 [list 命令](/getistio-cli/reference/getistio_list)查询可信的 Istio 版本列表。
 
 ```sh
-getistio list
+getmesh list
 ```
 
 输出示例为：
@@ -46,15 +46,15 @@ getistio list
 以下是利用 [fetch 命令](/getistio-cli/reference/getistio_fetch)获取 Istio 1.8.1 版本的例子。
 
 ```sh
-getistio fetch --version 1.8.1 --flavor tetrate --flavor-version 0 
+getmesh fetch --version 1.8.1 --flavor tetrate --flavor-version 0 
 ```
 
 在上面的例子中，`Flavor tetrate` 映射到上游 Istio，并添加了可能的补丁，`Flavor tetratefips` 是符合 FIPS 标准的 `Flavor tetrate` 版本。
 
-使用 [show 命令](/getistio-cli/reference/getistio_show) `getistio show` 交叉检查是否下载了 Istio 版本，输出将列出所有版本并标记活动版本。
+使用 [show 命令](/getistio-cli/reference/getistio_show) `getmesh show` 交叉检查是否下载了 Istio 版本，输出将列出所有版本并标记活动版本。
 
 ```text
-$ getistio show
+$ getmesh show
 1.7.4-distro-v0
 1.7.6-distro-v0
 1.8.1-distro-v0 (Active)
@@ -64,7 +64,7 @@ $ getistio show
 要切换到不同版本的 istioctl，请运行 [switch 命令](/getistio-cli/reference/getistio_switch)，例如：
 
 ```sh
-getistio switch --version 1.8.1 --flavor tetrate --flavor-version=0
+getmesh switch --version 1.8.1 --flavor tetrate --flavor-version=0
 ```
 
 输出示例为：

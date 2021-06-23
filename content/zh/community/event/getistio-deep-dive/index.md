@@ -15,7 +15,7 @@ timezone: PDT
 - Zoom：<https://us02web.zoom.us/j/89163866904>
 - 会议纪要：[Google doc](https://docs.google.com/document/d/1jgcnuefeFlFEVtfeSVmTOxuUvI7KPznFN5zR9hzrjew/edit?usp=sharing)
 
-第二届社区 meetup 将深入了解 `getistio gen-ca`，以帮助 Istio 与中间证书颁发机构（CA）整合。GetIstio 将通过管理 Istio 跨云的安装、运维和升级来完成比 CA 集成更多的工作。加入我们，我们将以简单的方式深入了解 Istio!
+第二届社区 meetup 将深入了解 `getmesh gen-ca`，以帮助 Istio 与中间证书颁发机构（CA）整合。GetIstio 将通过管理 Istio 跨云的安装、运维和升级来完成比 CA 集成更多的工作。加入我们，我们将以简单的方式深入了解 Istio!
 
 * 欢迎和介绍
     + 社区新闻
@@ -25,7 +25,7 @@ timezone: PDT
   + GetIstio CLI
   + GetIstio demo
   + GetIstio roadmap
-* `getistio gen-ca`
+* `getmesh gen-ca`
   + 从不同的管理服务中生成中间 CA
 * 问答
 * 最后是资源链接

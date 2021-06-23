@@ -1,26 +1,26 @@
 ---
-title: "How to set up Istio with GetIstio on GKE"
+title: "How to set up Istio with GetMesh on GKE"
 date: "2021-02-07"
 author: "[Jimmy Song](https://jimmysong.io)"
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : "This article will start by taking you through a hands-on installation and use of GetIstio on GKE."
+description : "This article will start by taking you through a hands-on installation and use of GetMesh on GKE."
 # tags
 tags : ["installation", "GKE"]
 thumbnail: "/images/blog/google-cloud.jpg"
 ---
 
-GetIstio is an Istio distribution open sourced by Tetrate. It mainly solves the following problems of Istio.
+GetMesh is a CLI for Istio distributions open sourced by Tetrate. It mainly solves the following problems of Istio.
 
 - Istio lifecycle management
 - Tested and safe Istio configurations
 - Native integrations into the computing environment
 - Learning curve and ongoing support
 
-To learn more about GetIstio, please visit https://getistio.io.
+To learn more about GetMesh, please visit https://istio.tetratelabs.io
 
-This article will start by taking you through a hands-on installation and use of GetIstio on GKE, including:
+This article will start by taking you through a hands-on installation and use of GetMesh on GKE, including:
 
 - Installing Istio 1.7 on GKE
 - Adding a virtual machine to the mesh
@@ -41,17 +41,17 @@ In order to complete the do-it-yourself process, you will need to prepare the fo
 
 ## Setup Istio
 
-Let’s set up Istio 1.7.5 with GetIstio.
+Let’s set up Istio 1.7.5 with GetMesh.
 
 ```sh
 curl -sL https://istio.tetratelabs.io/getmesh/install.sh | bash
-getistio fetch 1.7.5
+getmesh fetch 1.7.5
 ```
 
 Setup the [demo profile](https://istio.io/latest/docs/setup/getting-started/)（including Ingress gateway, egress gateway and Istiod）:
 
 ```text
-getistio istioctl install --set profile=demo --set values.global.meshExpansion.enabled=true
+getmesh istioctl install --set profile=demo --set values.global.meshExpansion.enabled=true
 Detected that your cluster does not support third party JWT authentication. Falling back to less secure first party JWT. See https://istio.io/docs/ops/best-practices/security/#configure-third-party-service-account-tokens for details.
 ✔ Istio core installed
 ✔ Istiod installed
@@ -148,7 +148,7 @@ kubectl create secret generic cacerts -n istio-system \
 Setup Istio mesh expansion.
 
 ```sh
-getistio istioctl install \
+getmesh istioctl install \
     -f manifests/examples/vm/values-istio-meshexpansion.yaml
 ```
 
@@ -168,7 +168,7 @@ spec:
      meshExpansion:
        enabled: true
 EOF
-getistio istioctl install -f "${WORK_DIR}"/vmintegration.yaml
+getmesh istioctl install -f "${WORK_DIR}"/vmintegration.yaml
 kubectl create namespace "${VM_NAMESPACE}"
 kubectl create serviceaccount "${SERVICE_ACCOUNT}" -n "${VM_NAMESPACE}"
 # 1 hour. Note the expiration time, this token is only used during authentication and is not needed later.
@@ -236,7 +236,7 @@ hostname -I
 Register the services in the virtual machine to mesh.
 
 ```sh
-getistio istioctl experimental add-to-mesh -n vm mysqldb <virtual_machine_ip> mysql:3306
+getmesh istioctl experimental add-to-mesh -n vm mysqldb <virtual_machine_ip> mysql:3306
 ```
 
 You will see the following output:
@@ -299,8 +299,8 @@ spec:
 On November 19, 2020, Istio 1.8 was released with support for canary and in-place upgrades. Here we will upgrade Istio using the in-place method.
 
 ```sh
-getistio fetch --version 1.8
-getistio istioctl upgrade
+getmesh fetch --version 1.8
+getmesh istioctl upgrade
 Confirm to proceed [y/N]?
 ```
 
@@ -310,7 +310,7 @@ Enter y to confirm the upgrade, and after confirming that the control plane upgr
 kubectl rollout restart deployment --namespace bookinfo
 ```
 
-Use the command `getistio istioctl proxy-status -n bookinfo` to check the version of the proxy and you can see that it has been updated to 1.8.0.
+Use the command `getmesh istioctl proxy-status -n bookinfo` to check the version of the proxy and you can see that it has been updated to 1.8.0.
 
 ## Frequently used command
 

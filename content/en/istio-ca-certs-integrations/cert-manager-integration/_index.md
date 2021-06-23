@@ -170,7 +170,7 @@ spec:
                 defaultMode: 420
                 name: istio-ca-root-cert
 EOF
-getistio istioctl install -f config.yaml
+getmesh istioctl install -f config.yaml
 ```
 
 Note: if you are using Istio 1.7.x, make sure to update the `args` under the `patches` filed in the above YAML as follows:

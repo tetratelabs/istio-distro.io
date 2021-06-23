@@ -143,7 +143,7 @@ spec:
                 defaultMode: 420
                 name: istio-ca-root-cert
 EOF
-$ getistio istioctl install -f config.yaml
+$ getmesh istioctl install -f config.yaml
 ```
 
 安装应完成，Istio 控制平面应处于就绪状态。

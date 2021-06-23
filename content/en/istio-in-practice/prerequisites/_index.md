@@ -43,7 +43,7 @@ curl -sL https://istio.tetratelabs.io/getmesh/install.sh | bash
 Finally, to install the demo profile of Istio, use the following command:
 
 ```sh
-getistio istioctl install --set profile=demo
+getmesh istioctl install --set profile=demo
 ```
 
 ## 3. Label the namespace for Istio sidecar injection

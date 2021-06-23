@@ -57,11 +57,11 @@ start:
     - desc: "1. Download Tetrate Istio Distro CLI"
       cmd: "curl -sL https://istio.tetratelabs.io/getmesh/install.sh | bash"
     - desc: "2. Install Istio Demo"
-      cmd: "getistio istioctl install --set profile=demo"
+      cmd: "getmesh istioctl install --set profile=demo"
     - desc: "3. Check Tetrate Istio Distro version"
-      cmd: "getistio version"
+      cmd: "getmesh version"
     - desc: "4. Validate config"
-      cmd: "getistio config-validate"
+      cmd: "getmesh config-validate"
 
 ########################## Training section ##############################
 training:

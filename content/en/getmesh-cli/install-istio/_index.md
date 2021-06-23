@@ -1,7 +1,7 @@
 ---
 title: "Install Istio"
 date: 2021-01-25T13:00:00+07:00
-description: "How to install Istio with GetIstio CLI"
+description: "How to install Istio with GetMesh CLI"
 # type dont remove or customize
 type : "docs"
 ---
@@ -20,7 +20,7 @@ This will install the Istio demo profile with ["Istio core" "Istiod" "Ingress ga
 ✔ Ingress gateways installed
 ✔ Egress gateways installed
 ✔ Installation complete </pre>
-Once this step is completed, the validation can be done by confirming the GetIstio and Istio versions installed, using the [version command](/getmesh-cli/reference/getmesh_version):
+Once this step is completed, the validation can be done by confirming the GetMesh and Istio versions installed, using the [version command](/getmesh-cli/reference/getmesh_version):
 ```sh
 getmesh version
 ```

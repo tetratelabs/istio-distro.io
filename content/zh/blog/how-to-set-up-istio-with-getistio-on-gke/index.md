@@ -43,13 +43,13 @@ GetIstio 是由 Tetrate 开源的基于 Istio 的发行版。他主要解决了�
 
 ```sh
 curl -sL https://istio.tetratelabs.io/getmesh/install.sh | bash
-getistio fetch 1.7.5
+getmesh fetch 1.7.5
 ```
 
 使用 [demo profile](https://istio.io/latest/docs/setup/getting-started/)（包括 Ingress gateway、egress gateway 和 Istiod 所有组件） 安装 Istio：
 
 ```text
-getistio istioctl install --set profile=demo --set values.global.meshExpansion.enabled=true
+getmesh istioctl install --set profile=demo --set values.global.meshExpansion.enabled=true
 Detected that your cluster does not support third party JWT authentication. Falling back to less secure first party JWT. See https://istio.io/docs/ops/best-practices/security/#configure-third-party-service-account-tokens for details.
 ✔ Istio core installed
 ✔ Istiod installed
@@ -146,7 +146,7 @@ kubectl create secret generic cacerts -n istio-system \
 安装 Istio mesh 扩展。
 
 ```sh
-getistio istioctl install \
+getmesh istioctl install \
     -f manifests/examples/vm/values-istio-meshexpansion.yaml
 ```
 
@@ -166,7 +166,7 @@ spec:
      meshExpansion:
        enabled: true
 EOF
-getistio istioctl install -f "${WORK_DIR}"/vmintegration.yaml
+getmesh istioctl install -f "${WORK_DIR}"/vmintegration.yaml
 kubectl create namespace "${VM_NAMESPACE}"
 kubectl create serviceaccount "${SERVICE_ACCOUNT}" -n "${VM_NAMESPACE}"
  # 1 hours，注意这个过期时间，这个 token 仅在认证时候使用，后面就不需要了。
@@ -232,7 +232,7 @@ hostname -I
 将虚拟机中的服务注册到 mesh 中。
 
 ```sh
-getistio istioctl experimental add-to-mesh -n vm mysqldb <virtual_machine_ip> mysql:3306
+getmesh istioctl experimental add-to-mesh -n vm mysqldb <virtual_machine_ip> mysql:3306
 ```
 
 将看到这样的输出：
@@ -295,8 +295,8 @@ spec:
 2020 年 11 月 19 日，Istio 1.8 发布，支持使用[ canary](https://istio.io/latest/docs/setup/upgrade/in-place/) 和[ in-place](https://istio.io/latest/docs/setup/upgrade/in-place/) 升级。下面我们将使用 in-place 方式升级 Istio。
 
 ```sh
-getistio fetch --version 1.8
-getistio istioctl upgrade
+getmesh fetch --version 1.8
+getmesh istioctl upgrade
 Confirm to proceed [y/N]?
 ```
 
@@ -306,7 +306,7 @@ Confirm to proceed [y/N]?
 kubectl rollout restart deployment --namespace bookinfo
 ```
 
-使用 `getistio istioctl proxy-status -n bookinfo` 命令检查 proxy 的版本，可以看到都已经升级为了 1.8.0。
+使用 `getmesh istioctl proxy-status -n bookinfo` 命令检查 proxy 的版本，可以看到都已经升级为了 1.8.0。
 
 ## 常用命令
 

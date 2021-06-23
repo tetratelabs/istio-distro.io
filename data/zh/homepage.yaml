@@ -55,11 +55,11 @@ start:
     - desc: "1. 下载 GetIstio"
       cmd: "curl -sL https://istio.tetratelabs.io/getmesh/install.sh | bash"
     - desc: "2. 安装 Istio Demo"
-      cmd: "getistio istioctl install --set profile=demo"
+      cmd: "getmesh istioctl install --set profile=demo"
     - desc: "3. 检查 GetIstio 版本"
-      cmd: "getistio version"
+      cmd: "getmesh version"
     - desc: "4. 验证配置"
-      cmd: "getistio config-validate"
+      cmd: "getmesh config-validate"
 
 ########################## Training section ##############################
 training:

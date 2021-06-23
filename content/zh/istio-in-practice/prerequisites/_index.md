@@ -43,7 +43,7 @@ curl -sL https://istio.tetratelabs.io/getmesh/install.sh | bash
 最后，要安装 Istio 的演示配置文件，请使用以下命令：
 
 ```sh
-getistio istioctl install --set profile=demo
+getmesh istioctl install --set profile=demo
 ```
 
 ## 3. 标记用于 Istio 边车注入的命名空间
