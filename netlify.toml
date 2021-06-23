@@ -9,3 +9,10 @@ from = "https://www.getistio.io"
 to = "https://istio.tetratelabs.io"
 status = 301
 force = true
+
+# Redirect latest version of download.sh from getmesh repo
+[[redirects]]
+from = "/install-getmesh.sh"
+to = "https://raw.githubusercontent.com/tetratelabs/getmesh/main/download.sh"
+force = true
+status = 302
