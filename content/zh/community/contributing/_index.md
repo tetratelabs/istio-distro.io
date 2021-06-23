@@ -1,5 +1,5 @@
 ---
-title: "Contributing to GetIstio"
+title: "Contributing to getmesh"
 url: /community/contributing
 ---
 
@@ -70,5 +70,4 @@ using your real name (sorry, no pseudonyms or anonymous contributions.)
 You can add the sign off when creating the git commit via `git commit -s`. 
 
 Or, you can sign off the whole PR via `git rebase --signoff main`.
-
 

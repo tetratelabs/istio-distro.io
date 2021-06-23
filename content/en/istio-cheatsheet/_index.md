@@ -90,7 +90,7 @@ The caveat here is that if there are conflicting service entries with the same h
 Best Practice for [Istio Obervability](https://istio.io/latest/docs/ops/best-practices/observability/)
 
 ### Debugging
-- To check if Istio cluster configurations and yet to be applied Istio configurations are valid,  run the `getistio config-validate` [command](/config-validation/).
+- To check if Istio cluster configurations and yet to be applied Istio configurations are valid,  run the `getmesh config-validate` [command](/config-validation/).
 - Many times, default envoy logs provide a great deal of information about the traffic. Use [this link](https://preliminary.istio.io/latest/docs/tasks/observability/logs/access-log/#default-access-log-format) for the default envoy log format details.
 - To get better insight into the mesh, istio-proxy and the control plane pods, Istio provides istioctl and UI based dashboard features. Details [here](https://istio.io/latest/docs/ops/diagnostic-tools/)
 

@@ -14,7 +14,7 @@ Each of the profiles contains a different combination of components. For example
 Using [Tetrate Istio Distro](https://getistio.io) you can pass in the installation configuration profile name to install Istio. For example, to install the demo profile, you can run this command:
 
 ```sh
-getistio istioctl install --set profile=demo
+getmesh istioctl install --set profile=demo
 ```
 
 You can additionally customize your Istio installation, regardless of the profile, by passing additional  `--set <key>=<value>` key/value pairs to the command. 
@@ -42,7 +42,7 @@ In this scenario, we have two different external IPs that point to two different
 To get started, we need to look at the Istio configuration for a single ingress gateway that gets deployed when you use the default (or demo/preview profile). We can use the `profile dump` command to get the configuration:
 
 ```sh
-getistio istioctl profile dump --config-path components.ingressGateways > ingress-gateway.yaml
+getmesh istioctl profile dump --config-path components.ingressGateways > ingress-gateway.yaml
 ```
 
 >If you see a message saying `proto: tag has too few fields: "-"`, you can safely ignore it. This is a [known issue](https://github.com/istio/istio/issues/26751) that's being currently worked on.
@@ -160,7 +160,7 @@ kubectl create ns staging
 Now we're ready to install Istio. Save the above YAML to `istio-2-gw.yaml` and use `getistio` to install it:
 
 ```sh
-$ getistio istioctl install -f istio-2-gw.yaml
+$ getmesh istioctl install -f istio-2-gw.yaml
 This will install the Istio default profile with ["Istio core" "Istiod" "Ingress gateways"] components into the cluster. Proceed? (y/N) y
 ✔ Istio core installed
 ✔ Istiod installed

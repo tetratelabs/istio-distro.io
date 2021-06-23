@@ -37,13 +37,13 @@ Server Version: version.Info{Major:"1", Minor:"19", GitVersion:"v1.19.0", GitCom
 GetIstio 是开始使用 Istio 的最简单方法。设置 Kubernetes 集群后，可以下载 [GetIstio](https://getistio.io/)：
 
 ```sh
-curl -sL https://dl.getistio.io/public/raw/files/download.sh | bash
+curl -sL https://istio.tetratelabs.io/getmesh/install.sh | bash
 ```
 
 最后，要安装 Istio 的演示配置文件，请使用以下命令：
 
 ```sh
-getistio istioctl install --set profile=demo
+getmesh istioctl install --set profile=demo
 ```
 
 ## 3. 标记用于 Istio 边车注入的命名空间

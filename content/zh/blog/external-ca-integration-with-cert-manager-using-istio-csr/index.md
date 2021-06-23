@@ -38,8 +38,8 @@ thumbnail: "/images/blog/security.jpg"
 3. 安装 GetIstio 并获取 Istio。
 
    ```sh
-   curl -sL https://dl.getistio.io/public/raw/files/download.sh | sh
-   getistio fetch
+   curl -sL https://istio.tetratelabs.io/getmesh/install.sh | sh
+   getmesh fetch
    ```
 
 ### 部署证书管理器
@@ -118,7 +118,7 @@ helm install -n cert-manager cert-manager-istio-csr jetstack/cert-manager-istio-
 初始化 Istio operator。
 
 ```sh
-getistio istioctl operator init
+getmesh istioctl operator init
 ```
 
 在 `operator yaml` 中配置：
@@ -214,7 +214,7 @@ sleep-8f795f47d-vv6hx   2/2     Running   0          42s
 工作负载运行后，我们可以使用 `istioctl proxy-config` 命令检查 SDS 中的 secret。
 
 ```sh
-getistio istioctl pc secret sleep-8f795f47d-vv6hx.foo -o json > proxy_secret
+getmesh istioctl pc secret sleep-8f795f47d-vv6hx.foo -o json > proxy_secret
 ```
 
 检查一下 `proxy_secret`。应该有一个名为 `ROOTCA` 的字段，在 `ROOTCA` 中应该有一个由cert-manager `istio-ca` 签署的 `trustedCA` 字段。

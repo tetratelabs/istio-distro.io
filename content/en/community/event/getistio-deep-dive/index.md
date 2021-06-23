@@ -14,7 +14,7 @@ timezone: PDT
 
 - Recording: <https://youtu.be/Q5MQjwUpay0>
 
-Episode 02 of the community meetup dives into _**getistio gen-ca**_ to help integrate Istio with intermediate certificate authorities (CA). GetIstio will do more than CA integration by managing the installation, operations, and upgrade of Istio across clouds. Join us as we dive into Istio the Easy Way!
+Episode 02 of the community meetup dives into _**getmesh gen-ca**_ to help integrate Istio with intermediate certificate authorities (CA). GetIstio will do more than CA integration by managing the installation, operations, and upgrade of Istio across clouds. Join us as we dive into Istio the Easy Way!
 
 * **Welcome and Introduction**
     + Community news
@@ -24,7 +24,7 @@ Episode 02 of the community meetup dives into _**getistio gen-ca**_ to help inte
   + GetIstio CLI
   + GetIstio demo
   + GetIstio roadmap
-* _**getistio gen-ca**_
+* _**getmesh gen-ca**_
   + Generate intermediate CA from different managed services
 * Q&A
 * Closing with resource links

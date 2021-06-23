@@ -50,7 +50,7 @@ version of Istio is downloaded. Also, the script adds the GetIstio location to t
 to get PATH populated)
 
 ```bash
- curl -sL https://dl.getistio.io/public/raw/files/download.sh | bash
+ curl -sL https://istio.tetratelabs.io/getmesh/install.sh | bash
 ```
 
 The following video shows the basic use of the GetIstio command line tool.

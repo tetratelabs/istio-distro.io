@@ -90,7 +90,7 @@ There are multiple ways to leverage Tetrate Istio Distro. Please see the [comman
 [Join the Tetrate Istio Distro community](/community) for updates on CVEs and zero-day vulnerabilities.
 
 ##### Can Tetrate Istio Distro help me upgrade Istio?
-Yes. Tetrate Istio Distro enables seamless upgrades via the [`getistio upgrade`](/getistio-cli/reference/getistio_update) command. 
+Yes. Tetrate Istio Distro enables seamless upgrades via the [`getmesh upgrade`](/getistio-cli/reference/getistio_update) command. 
 
 ### Project FAQ
 
