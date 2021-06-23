@@ -12,7 +12,14 @@ force = true
 
 # Redirect latest version of download.sh from getmesh repo
 [[redirects]]
-from = "/install-getmesh.sh"
-to = "https://raw.githubusercontent.com/tetratelabs/getmesh/main/download.sh"
+from = "/getmesh/install.sh"
+to = "https://raw.githubusercontent.com/tetratelabs/getmesh/main/site/install.sh"
+force = true
+status = 302
+
+# Redirect latest version of manifest.json from getmesh repo
+[[redirects]]
+from = "/getmesh/manifest.json"
+to = "https://raw.githubusercontent.com/tetratelabs/getmesh/main/site/manifest.json"
 force = true
 status = 302
