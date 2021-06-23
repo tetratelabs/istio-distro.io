@@ -23,3 +23,10 @@ from = "/getmesh/manifest.json"
 to = "https://raw.githubusercontent.com/tetratelabs/getmesh/main/site/manifest.json"
 force = true
 status = 302
+
+# Redirect to the cloudsmith binary
+[[redirects]]
+ from = "https://istio.tetratelabs.io/getmesh/files/*"
+ to = "https://dl.getistio.io/public/raw/files/:splat"
+ status = 200
+ force = true
