@@ -6,7 +6,7 @@ categories: 'event'
 image: 'images/events/episode-006-thumbnail.jpg'
 eventLink: 'https://live.bilibili.com/23095515'
 eventDate: 2021-06-23T08:00:00
-pastEvent: false
+pastEvent: true
 weight: 8
 timezone: CST
 ---
