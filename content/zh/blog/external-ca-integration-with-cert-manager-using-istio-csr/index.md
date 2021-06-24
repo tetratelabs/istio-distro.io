@@ -135,7 +135,7 @@ metadata:
   name: istio-operator-csr
 spec:
   profile: "demo"
-  hub: tetrate-docker-getistio-docker.bintray.io
+  hub: containers.istio.tetratelabs.com
   values:
     global:
       # 将 istio 代理的证书提供者改为 cert-manager。
