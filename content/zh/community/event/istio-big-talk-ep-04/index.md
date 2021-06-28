@@ -18,8 +18,7 @@ timezone: CST
 - 嘉宾：陈鹏（百度）
 - 话题：如何让 Istio 在大规模生产中落地
 - 提问地址：[腾讯文档](https://docs.qq.com/doc/DRUZSbHVkck9Wc0V4)
-- 直播回放：待更新
-- 幻灯片归档：待更新
+- 直播回放：<https://www.bilibili.com/video/BV18M4y1u76t>
 
 ## 嘉宾简介
 
