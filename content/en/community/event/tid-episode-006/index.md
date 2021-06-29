@@ -1,6 +1,6 @@
 ---
 title: 'Istio Big Talk Episode 4'
-date: 2021-06-24T11:00:00+07:00
+date: 2021-06-29T11:00:00+07:00
 description: 'Istio Big Talk Episode 4'
 categories: 'event'
 image: 'images/events/episode-006-thumbnail.jpg'

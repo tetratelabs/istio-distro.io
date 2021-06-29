@@ -1,13 +1,13 @@
 ---
 title: 'Security in Istio'
-date: 2021-06-14T11:00:00+07:00
+date: 2021-06-29T11:00:00+07:00
 description: 'Episode 05: Security in Istio'
 categories: 'event'
 image: 'images/events/episode-005-thumbnail.jpg'
 eventLink: 'https://www.youtube.com/watch?v=_ExvSKOX_gY'
 eventDate: 2021-06-24T11:00:00
-pastEvent: false
-weight: 7
+pastEvent: true
+weight: 9
 timezone: PDT
 ---
 
