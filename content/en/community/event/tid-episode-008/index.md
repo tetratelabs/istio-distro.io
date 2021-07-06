@@ -1,6 +1,6 @@
 ---
 title: 'Istio Weekly Episode 6: Envoy Fundamentals'
-date: 2021-07-06T11:00:00+07:20
+date: 2021-07-06T11:00:00+07:00
 description: 'Istio Weekly Episode 6: Envoy Fundamentals'
 categories: 'event'
 image: 'images/events/episode-008-thumbnail.jpg'
