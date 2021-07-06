@@ -74,7 +74,7 @@ training:
 event:
   enable: true
   title: "Upcoming Community Events"
-  url: "/community/event"
+  url: "/community-events"
   link_text: "See All Events→"
 
 ########################## Customer quote section ########################
