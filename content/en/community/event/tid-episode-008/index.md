@@ -15,6 +15,6 @@ timezone: PDT
 
 Envoy is one part of the engine that keeps Istio running. How does Envoy work? What are listeners, clusters, and endpoints?
 
-Join us on July 8th for another Istio weekly episode where we'll introduce the fundamentals of Envoy proxy.
+Join us on July 8th for another Istio weekly episode where we'll introduce the fundamentals of Envoy proxy
 
 {{< eventLink "Join here">}}
