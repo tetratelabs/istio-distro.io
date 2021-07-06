@@ -46,7 +46,7 @@ GetIstio 是 Istio 的上游发行版。
 
 ##### GetIstio 可以帮助我升级 Istio 吗？
 
-可以，GetIstio 可以帮助我升级 Istio。GetIstio 可以通过 getistio 升级命令实现无缝升级。
+可以，GetIstio 可以帮助我升级 Istio。GetIstio 可以通过 getmesh 升级命令实现无缝升级。
 
 #### 项目概述
 

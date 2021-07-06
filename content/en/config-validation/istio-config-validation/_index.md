@@ -7,32 +7,32 @@ type : "docs"
 ---
 
 
-[`config-validate`](/getistio-cli/reference/getistio_config-validate) command is not limited to Istio versions installed via GetIstio and  works well with all Istio distros, upstream and others.
+[`config-validate`](/getistio-cli/reference/getistio_config-validate) command is not limited to Istio versions installed via GetMesh CLI and  works well with all Istio distros, upstream and others.
 
 The command below checks if applying manifest that are defined in my-app.yaml and another-app.yaml will trigger any validation errors. The command reports the findings based on three sources (Istio upstream, Kiali and native Tetrate Istio Distro) without applying any configuration changes. It prevents unnecessary downtime or the preventable issues to affect production workloads:
 
 ```sh
 # validating a local manifest against the current cluster
-getistio config-validate my-app.yaml another-app.yaml
+getmesh config-validate my-app.yaml another-app.yaml
 ```
 
 For convenience the command can use all manifests from the specified directory instead of operator using individual filenames. The example below takes all manifests from my-manifest-dir and checks if applying those manifests triggers any validation alerts:
 
 ```sh
 # validating local manifests in a directory against the current cluster in a specific namespace
-getistio config-validate -n bookinfo my-manifest-dir/
+getmesh config-validate -n bookinfo my-manifest-dir/
 ```
 
 The validation of the currently implemented configuration is also possible - can be done clusterwise or per namespace leveraging the commands below:
 
 ```sh
 # for all namespaces
-getistio config-validate
+getmesh config-validate
 ```
 
 ```sh
 # for a specific namespace
-getistio config-validate -n bookinfo
+getmesh config-validate -n bookinfo
 ```
 
 The output would look similar to:

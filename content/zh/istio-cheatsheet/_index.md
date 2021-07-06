@@ -106,7 +106,7 @@ featureOrder: 3
 
 ### 调试
 
-- 要检查 Istio 集群配置以及尚未应用的 Istio 配置是否有效，请运行`getistio config-validate` [命令](/config-validation/)。
+- 要检查 Istio 集群配置以及尚未应用的 Istio 配置是否有效，请运行`getmesh config-validate` [命令](/config-validation/)。
 - 很多时候，默认特使日志提供了大量有关流量的信息。使用[此链接](https://preliminary.istio.io/latest/docs/tasks/observability/logs/access-log/#default-access-log-format)可获得默认的特使日志格式详细信息。
 - 为了更好地了解网格，istio-proxy 和控制平面窗格，Istio 提供了基于 istioctl 和 UI 的仪表板功能。详情[在这里](https://istio.io/latest/docs/ops/diagnostic-tools/)。
 

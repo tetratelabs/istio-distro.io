@@ -31,7 +31,7 @@
   {{ end }}
 
 
-  {{ $manifest := getJSON "https://dl.getistio.io/public/raw/files/manifest.json" }}
+  {{ $manifest := getJSON "https://istio.tetratelabs.io/getmesh/manifest.json" }}
 
   {{ range $manifest.istio_distributions }} 
     {{ $.Scratch.Add "version_list" (slice .version) }} 
