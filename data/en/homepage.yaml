@@ -33,7 +33,7 @@ dictionary:
       - content: "service mesh"
       - content: "control plane"
       - content: "application networking"
-      - content: "GetEnvoy"
+      - content: "func-e"
   noun_benefits:
     name: "noun / benefits"
     meaning1: "Simple, open source CLI for assured installation and upgrade of specific Istio versions."

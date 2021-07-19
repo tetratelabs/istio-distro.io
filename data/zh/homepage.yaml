@@ -31,7 +31,7 @@ dictionary:
       - content: "service mesh"
       - content: "control plane"
       - content: "application networking"
-      - content: "GetEnvoy"
+      - content: "func-e"
   noun_benefits:
     name: "名词/收益"
     meaning1: "简单、开源的 CLI，用于确保特定 Istio 版本的安装和升级。"

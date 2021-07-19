@@ -41,7 +41,7 @@ if (subscriptionForm) {
         ],
         context: {
           pageUri: "www.getistio.io",
-          pageName: "GetIstio Homepage"
+          pageName: "GetMesh Homepage"
         },
       };
 
