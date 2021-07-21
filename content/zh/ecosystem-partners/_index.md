@@ -2,7 +2,7 @@
 title: "生态 & 合作伙伴"
 date: 2018-12-29T11:02:05+06:00
 icon: "ti-comments"
-description: "看看 GetIstio 的合作伙伴，看看他们如何从中受益。"
+description: "看看 Tetrate Istio Distro 的合作伙伴，看看他们如何从中受益。"
 # type dont remove or customize
 type : "docs"
 weight: 6
@@ -19,4 +19,3 @@ featureOrder: 4
   <li><a href="keyfactor">Keyfactor</a></li>
   <li><a href="weaveworks">Weaveworks</a></li>
 <ul>
-

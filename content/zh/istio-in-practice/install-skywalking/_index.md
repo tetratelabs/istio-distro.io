@@ -11,8 +11,8 @@ draft: false
 
 要突出基本的集成步骤：
 
-- 根据[文档](/installing-getistio-cli)安装 getistio
-- 使用`getistio`命令部署 Istio，并使用以下命令启用[访问日志服务（ALS）](https://www.envoyproxy.io/docs/envoy/latest/api-v2/service/accesslog/v2/als.proto)：
+- 根据[文档](/installing-getmesh-cli)安装 Tetrate Istio Distro
+- 使用`getmesh`命令部署 Istio，并使用以下命令启用[访问日志服务（ALS）](https://www.envoyproxy.io/docs/envoy/latest/api-v2/service/accesslog/v2/als.proto)：
 
 ```sh
 getmesh istioctl install --set profile=demo \

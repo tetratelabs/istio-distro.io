@@ -23,4 +23,4 @@ GetMesh is an integration and lifecycle management CLI tool that ensures the use
 * [getmesh prune](/getmesh-cli/reference/getmesh_prune/)	 - Remove specific istioctl installed, or all, except the active one
 * [getmesh show](/getmesh-cli/reference/getmesh_show/)	 - Show fetched Istio versions
 * [getmesh switch](/getmesh-cli/reference/getmesh_switch/)	 - Switch the active istioctl to a specified version
-* [getmesh version](/getmesh-cli/reference/getmesh_version/)	 - Show the versions of GetIstio cli, running Istiod, Envoy, and the active istioctl
+* [getmesh version](/getmesh-cli/reference/getmesh_version/)	 - Show the versions of GetMesh cli, running Istiod, Envoy, and the active istioctl

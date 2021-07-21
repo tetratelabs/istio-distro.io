@@ -6,9 +6,9 @@ description: "配置验证的命令用法"
 type : "docs"
 ---
 
-[`config-validate`](/getistio-cli/reference/getistio_config-validate) 命令不限于通过 GetIstio 安装的 Istio 版本，而且适用于所有 Istio 发行版、上游和其他版本。
+[`config-validate`](/getmesh-cli/reference/getmesh_config-validate) 命令不限于通过 GetMesh 安装的 Istio 版本，而且适用于所有 Istio 发行版、上游和其他版本。
 
-下面的命令检查应用在 `my-app.yaml` 和 `another-app.yaml` 中定义的 manifest 是否会触发任何验证错误。该命令基于三个来源（Istio 上游、Kiali 和本地 GetIsito）报告结果，而无需应用任何配置更改。它可以防止不必要的停机或可预防的问题影响生产工作负载。
+下面的命令检查应用在 `my-app.yaml` 和 `another-app.yaml` 中定义的 manifest 是否会触发任何验证错误。该命令基于三个来源（Istio 上游、Kiali 和本地 GetMesh）报告结果，而无需应用任何配置更改。它可以防止不必要的停机或可预防的问题影响生产工作负载。
 
 ```sh
 # 根据当前集群验证本地 manifest

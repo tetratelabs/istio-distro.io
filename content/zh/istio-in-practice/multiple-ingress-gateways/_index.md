@@ -11,7 +11,7 @@ draft: false
 
 您可以在[Istio 的 docs 页面](https://istio.io/latest/docs/setup/additional-setup/config-profiles/)上阅读有关配置配置文件的更多信息，并检查属于配置文件的组件。
 
-使用 [GetIstio](/) 您可以传入安装配置文件名称来安装 Istio。例如，要安装演示配置文件，可以运行以下命令：
+使用 [Tetrate Istio Distro](/) 您可以传入安装配置文件名称来安装 Istio。例如，要安装演示配置文件，可以运行以下命令：
 
 ```sh
 getmesh istioctl install --set profile=demo
@@ -165,7 +165,7 @@ spec:
 kubectl create ns staging
 ```
 
-现在我们准备安装 Istio。将上述 YAML 保存到`istio-2-gw.yaml`并用于`getistio`安装：
+现在我们准备安装 Istio。将上述 YAML 保存到`istio-2-gw.yaml`并用于`getmesh`安装：
 
 ```sh
 $ getmesh istioctl install -f istio-2-gw.yaml
