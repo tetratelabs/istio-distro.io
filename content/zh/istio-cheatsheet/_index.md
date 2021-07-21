@@ -13,7 +13,7 @@ featureOrder: 3
 
 ### 设置
 
-- 在安装 Istio 之后，请务必进行事前检查和事后检查。通过 [GetIstio](/download/) 安装 Istio 时，默认情况下启用此功能。
+- 在安装 Istio 之后，请务必进行事前检查和事后检查。通过 [GetMesh](/download/) 安装 Istio 时，默认情况下启用此功能。
 - 作为最佳实践，请安装[发行版镜像](https://istio.io/latest/docs/ops/configuration/security/harden-docker-images/)。
 - Istio Operator [API](https://istio.io/latest/docs/reference/config/istio.operator.v1alpha1/)。
 - [高级定制](https://istio.io/latest/docs/setup/install/istioctl/#advanced-install-customization)。
@@ -112,13 +112,13 @@ featureOrder: 3
 
 ### 有用的链接
 
-- [GetIstio CLI](https://getistio.io/getistio-cli/reference/getistio/)
+- [GetMesh CLI](https://istio.tetratelabs.io//getmesh-cli/reference/getmesh/)
 - [Kubectl](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands)
 - [本地 Kubernetes（种类，microk8s，minikube，dockerdesktop）](https://kubernetes.io/docs/tasks/tools/)
 
 ### 整合方式
 
-- [Skywalking（日志聚合和可视化）](https://getistio.io/istio-in-practice/install-skywalking/)：使用开源工具分析平台，该工具通过日志聚合提供对多集群和多云环境的图形分析
+- [Skywalking（日志聚合和可视化）](https://istio.tetratelabs.io//istio-in-practice/install-skywalking/)：使用开源工具分析平台，该工具通过日志聚合提供对多集群和多云环境的图形分析
 - [Zipkin（跟踪）](https://istio.io/latest/docs/ops/integrations/zipkin/)：跟踪和分析分布式事务的路径，性能和延迟
 - [Prometheus（监视器）](https://istio.io/latest/docs/ops/integrations/prometheus/#Configuration)：记录指标以跟踪 Istio 和网格中应用程序的运行状况
 - [Grafana（可视化）](https://istio.io/latest/docs/ops/integrations/grafana/)：连接到各种数据源并使用图表，表格和热图可视化数据
@@ -126,8 +126,8 @@ featureOrder: 3
 
 ### 文献资料
 
-- [GetIstio](https://getistio.io/getistio-cli/)
-- [GetEnvoy](https://www.getenvoy.io/reference/getenvoy/)
+- [Tetrate Istio Distro](https://istio.tetratelabs.io/getmesh-cli/)
+- [func-e](https://func-e.io)
 - [交互式学习 Istio 概念](https://tetrate-academy.thinkific.com/enrollments)
 - [Envoy 文件](https://www.envoyproxy.io/docs/envoy/latest/configuration/configuration)
 - Istio 详细信息：

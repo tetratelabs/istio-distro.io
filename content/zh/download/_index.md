@@ -8,19 +8,19 @@ type : "docs"
 weight: 10
 ---
 
-目前 **GetIstio** 可以运行在 Linux 和 MacOS 上，要部署 GetIstio，你只需要一个简单的命令：
+目前 **GetMesh** 可以运行在 Linux 和 MacOS 上，要部署 GetMesh，你只需要一个简单的命令：
 
 ```sh
 curl -sL https://istio.tetratelabs.io/getmesh/install.sh | bash
 ```
 
-请按照 [GetIstio 安装和更新页面](/getistio-cli/install-and-update-of-getistio)，了解下载和后续步骤的详细说明，以使 GetIstio 在您的机器上运行。
+请按照 [Tetrate Istio Distro 安装和更新页面](/getmesh-cli/install-and-update-of-getmesh)，了解下载和后续步骤的详细说明，以使 GetMesh 在您的机器上运行。
 
 ## 支持的 Istio 版本
 
-GetIstio 跟踪 Istio 上游版本。作为 GetIstio 构建管道的一部分，我们会运行一系列测试以确保 Istio 发行版在底层 Kubernetes 平台上运行良好。
+Tetrate Istio Distro 跟踪 Istio 上游版本。作为 GetMesh 构建管道的一部分，我们会运行一系列测试以确保 Istio 发行版在底层 Kubernetes 平台上运行良好。
 
-GetIstio 认证的 Istio 发行版已经针对以下 Kubernetes 发行版进行了测试。
+Tetrate Istio Distro 认证的 Istio 发行版已经针对以下 Kubernetes 发行版进行了测试。
 
 - EKS - 1.18, 1.17, 1.16
 - GKE - 1.18, 1.17, 1.16

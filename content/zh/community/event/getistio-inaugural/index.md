@@ -15,7 +15,7 @@ timezone: BST
 
 ![云原生学院](e6c9d24ely1go6sv1vyduj21c00u04ow.jpg)
 
-GetIstio 社区首届 meetup 将作为[云原生学院](https://i.cloudnative.to/academy/)第 18 期直播的特别活动，在 Bilibili 直播。
+GetMesh 社区首届 meetup 将作为[云原生学院](https://i.cloudnative.to/academy/)第 18 期直播的特别活动，在 Bilibili 直播。
 
 - 主持人：厉辉
 - 嘉宾：宋净超（Tetrate 布道师/云原生社区创始人）、周礼赞（Tetrate 创始工程师/Envoy 维护者）

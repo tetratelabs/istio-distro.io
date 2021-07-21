@@ -62,7 +62,7 @@ Istio Cloud Map Operator 旨在通过将 ServiceEntry 推送到 Kube API 服务�
 ```sh
 # list the service in Cloud Map
 $ aws servicediscovery list-services | jq '.Services[] | "Name: \(.Name), Id: \(.Id)"'
-"Name: getistio-external-service, Id: srv-ou6hvfmjpls2lev6"
+"Name: getmesh-external-service, Id: srv-ou6hvfmjpls2lev6"
 
 # check namespace of your service
 $ aws servicediscovery get-namespace --id $(aws servicediscovery get-service --id srv-ou6hvfmjpls2lev6 | jq -r '.Service.NamespaceId') | jq '.Namespace.Name'
@@ -80,7 +80,7 @@ $ aws servicediscovery list-instances --service-id srv-ou6hvfmjpls2lev6 | jq '.I
 您可以运行以下命令以获取资源的 YAML 表示形式：
 
 ```sh
-kubectl get serviceentries.networking.istio.io cloudmap-getistio-external-service.my-namespace -o yaml
+kubectl get serviceentries.networking.istio.io cloudmap-getmesh-external-service.my-namespace -o yaml
 ```
 
 上面命令的输出如下所示：
@@ -98,7 +98,7 @@ spec:
       http: 80
       https: 443
   hosts:
-  - getistio-external-service.my-namespace
+  - getmesh-external-service.my-namespace
   ports:
   - name: http
     number: 80
@@ -109,4 +109,4 @@ spec:
   resolution: STATIC
 ```
 
-请注意，主机名`getistio-external-service.my-namespace`采用以下格式：`${Cloud Map's service name}.${service namespace}`。
+请注意，主机名`getmesh-external-service.my-namespace`采用以下格式：`${Cloud Map's service name}.${service namespace}`。

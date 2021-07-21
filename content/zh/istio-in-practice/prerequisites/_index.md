@@ -32,9 +32,9 @@ Client Version: version.Info{Major:"1", Minor:"19", GitVersion:"v1.19.2", GitCom
 Server Version: version.Info{Major:"1", Minor:"19", GitVersion:"v1.19.0", GitCommit:"e19964183377d0ec2052d1f1fa930c4d7575bd50", GitTreeState:"clean", BuildDate:"2020-08-26T14:23:04Z", GoVersion:"go1.15", Compiler:"gc", Platform:"linux/amd64"}
 ```
 
-## 2. 使用 GetIstio 安装 Istio
+## 2. 使用 Tetrate Istio Distro 安装 Istio
 
-GetIstio 是开始使用 Istio 的最简单方法。设置 Kubernetes 集群后，可以下载 [GetIstio](https://getistio.io/)：
+Tetrate Istio Distro 是开始使用 Istio 的最简单方法。设置 Kubernetes 集群后，可以下载 [Tetrate Istio Distro](https://istio.tetratelabs.io/)：
 
 ```sh
 curl -sL https://istio.tetratelabs.io/getmesh/install.sh | bash
@@ -108,6 +108,3 @@ spec:
 ```sh
 kubectl get svc istio-ingressgateway -n istio-system  -o jsonpath='{.status.loadBalancer.ingress[0].ip}'
 ```
-
-[
-](http://localhost:1313/zh/istio-in-practice/)

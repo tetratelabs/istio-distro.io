@@ -1,13 +1,13 @@
 ---
 title: "安装 Istio"
 date: 2021-01-25T13:00:00+07:00
-description: "如何使用 GetIstio CLI 安装 Istio。"
+description: "如何使用 GetMesh CLI 安装 Istio。"
 # type dont remove or customize
 type : "docs"
 ---
-GetIstio 默认与你的 Kubernetes 配置所定义的集群进行通信。在继续之前，请确保你连接到了正确的集群。
+GetMesh 默认与你的 Kubernetes 配置所定义的集群进行通信。在继续之前，请确保你连接到了正确的集群。
 
-要安装 Istio 的 demo profile，可以使用 [`getmesh istioctl`](/getistio-cli/reference/getistio_istioctl) 命令来完成。
+要安装 Istio 的 demo profile，可以使用 [`getmesh istioctl`](/getmesh-cli/reference/getmesh_istioctl) 命令来完成。
 
 ```sh
 getmesh istioctl install --set profile=demo
@@ -23,7 +23,7 @@ This will install the Istio demo profile with ["Istio core" "Istiod" "Ingress ga
 ✔ Ingress gateways installed
 ✔ Egress gateways installed
 ✔ Installation complete </pre>
-Once this step is completed, the validation can be done by confirming the GetIstio and Istio versions installed, using the [version command](/getistio-cli/reference/getistio_version):
+Once this step is completed, the validation can be done by confirming the GetMesh and Istio versions installed, using the [version command](/getmesh-cli/reference/getmesh_version):
 ```
 
 ```sh
@@ -41,7 +41,7 @@ control plane version: 1.8.2-tetrate-v0
 data plane version: 1.8.2-tetrate-v0 (2 proxies)
 ```
 
-除了版本输出之外，用户还可以通过发出 [config-validate 命令](/getistio-cli/reference/getistio_config-validate) 来验证预期的功能（阅读更多关于 [config 验证](/config-validation))。
+除了版本输出之外，用户还可以通过发出 [config-validate 命令](/getmesh-cli/reference/getmesh_config-validate) 来验证预期的功能（阅读更多关于 [config 验证](/config-validation))。
 
 ```sh
 getmesh config-validate

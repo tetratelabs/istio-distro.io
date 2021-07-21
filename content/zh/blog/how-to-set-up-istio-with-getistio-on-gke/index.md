@@ -1,22 +1,22 @@
 ---
-title: "如何使用 GetIstio 在 GKE 上安装 Istio"
+title: "如何使用 Tetrate Istio Distro 在 GKE 上安装 Istio"
 date: "2020-02-07"
 author: "[宋净超](https://jimmysong.io)"
 # page title background image
 bg_image: "images/backgrounds/page-title.jpg"
 # meta description
-description : "本文将带大家亲身体验GetIstio在GKE上的安装和使用。"
+description : "本文将带大家亲身体验Tetrate Istio Distro在GKE上的安装和使用。"
 # thumbnail
 ---
 
-GetIstio 是由 Tetrate 开源的基于 Istio 的发行版。他主要解决了用户使用 Istio 时候的以下痛点：
+Tetrate Istio Distro 是由 Tetrate 开源的基于 Istio 的发行版。他主要解决了用户使用 Istio 时候的以下痛点：
 
 - Istio 生命周期管理
 - 经过测试的安全的 Istio 配置
 - 可原生的计算环境支持
 - 陡峭的学习曲线及持续支持
 
-想要了解更多关于 GetIstio 的信息请访问 <https://getistio.io>。
+想要了解更多关于 Tetrate Istio Distro 的信息请访问 <https://istio.tetratelabs.io/>。
 
 本文将从带你动手安装和使用 Istio，包括：
 
@@ -39,7 +39,7 @@ GetIstio 是由 Tetrate 开源的基于 Istio 的发行版。他主要解决了�
 
 ## 安装 Istio
 
-使用 GetIstio 安装 Istio 1.7.5。
+使用 Tetrate Istio Distro 安装 Istio 1.7.5。
 
 ```sh
 curl -sL https://istio.tetratelabs.io/getmesh/install.sh | bash
