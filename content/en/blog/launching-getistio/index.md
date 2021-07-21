@@ -1,13 +1,13 @@
 ---
-title: "Introducing GetIstio: the easiest way to get Istio"
-description: "GetIstio is an integration and lifecycle management CLI tool that ensures the use of supported and vetted versions of Istio."
-date: "2021-02-10"
-author: "[Varun Talwar](https://www.linkedin.com/in/varuntalwar/)"
+title: 'Introducing GetIstio: the easiest way to get Istio'
+description: 'GetIstio is an integration and lifecycle management CLI tool that ensures the use of supported and vetted versions of Istio.'
+date: '2021-02-10'
+author: '[Varun Talwar](https://www.linkedin.com/in/varuntalwar/)'
 # meta description
 # thumbnail
-thumbnail: "/images/introducing-getistio.png"
-alias: "/blog/launching-getisio"
-tags: ["getistio"]
+thumbnail: '/images/introducing-getistio.png'
+alias: '/blog/launching-getisio'
+tags: ['getistio']
 ---
 
 Istio is one of the most popular and <a href="https://octoverse.github.com/2019/" target="_blank">fast growing</a> open-source projects in the
@@ -22,10 +22,10 @@ Istio. GetIstio provides a vetted, upstream distribution of Istio -- a hardened 
 that is simpler to install, manage, and upgrade. It will have integrations with cloud native and popular on-prem
 certificate managers (e.g., AWS ACM, Venafi, etc). This launch includes:
 
-* GetIstio CLI, the easiest way to install, operate, and upgrade Istio. GetIstio provides a safe, vetted, upstream Istio
+- GetIstio CLI, the easiest way to install, operate, and upgrade Istio. GetIstio provides a safe, vetted, upstream Istio
   distro, tested against AKS, EKS, and GKE.
-* A free, online course on Istio Fundamentals, that is available now at [Tetrate Academy](https://academy.tetrate.io/).
-* A new community to bring together Istio and Envoy users and technology partners.
+- A free, online course on Istio Fundamentals, that is available now at [Tetrate Academy](https://academy.tetrate.io/).
+- A new community to bring together Istio and Envoy users and technology partners.
 
 ### GetIstio CLI
 
@@ -34,13 +34,13 @@ Istio. Enterprises require the ability to control Istio versioning, support mult
 between the versions, integrate with cloud providers’ certification systems, and centralize config management and
 validation. The GetIstio CLI tool supports these enterprise-level requirements as it:
 
-* enforces fetching certified versions of Istio and enables only compatible versions of Istio installation
-* allows seamlessly switching between multiple istioctl versions
-* Includes a FIPS-compliant flavor
-* delivers Istio configuration validations platform based by integrating validation libraries from multiple sources
-* uses a number of cloud provider certificate management systems to create Istio CA certs that are used for signing
+- enforces fetching certified versions of Istio and enables only compatible versions of Istio installation
+- allows seamlessly switching between multiple istioctl versions
+- Includes a FIPS-compliant flavor
+- delivers Istio configuration validations platform based by integrating validation libraries from multiple sources
+- uses a number of cloud provider certificate management systems to create Istio CA certs that are used for signing
   Service-Mesh managed workloads, and
-* provides multiple additional integration points with cloud providers
+- provides multiple additional integration points with cloud providers
 
 ### Quick start
 
@@ -75,9 +75,8 @@ support. More details <a href="https://www.tetrate.io/getistio" target="_blank">
 
 Related links:
 
-* GetEnvoy: <a href="https://www.getenvoy.io" target="_blank">getenvoy.io</a>
-* GitHub: <a href="https://github.com/tetratelabs/getistio" target="_blank">github.com/tetratelabs/getistio</a>
-* Join the <a href="https://istio.slack.com" target="_blank">Istio Slack</a> and search for the **GetIstio** channel to contact us 
-* Get certified on the "Fundamentals of Istio": <a href="https://academy.tetrate.io" target="_blank">academy.tetrate.io</a>
-* GetIstio Subscription: <a href="https://www.tetrate.io/getistio" target="_blank">tetrate.io/getistio</a>[]()
-
+- func-e: <a href="https://func-e.io" target="_blank">func-e.io</a>
+- GitHub: <a href="https://github.com/tetratelabs/getistio" target="_blank">github.com/tetratelabs/getistio</a>
+- Join the <a href="https://istio.slack.com" target="_blank">Istio Slack</a> and search for the **GetIstio** channel to contact us
+- Get certified on the "Fundamentals of Istio": <a href="https://academy.tetrate.io" target="_blank">academy.tetrate.io</a>
+- GetIstio Subscription: <a href="https://www.tetrate.io/getistio" target="_blank">tetrate.io/getistio</a>[]()

@@ -14,7 +14,7 @@ Currently <strong>Tetrate Istio Distro</strong> runs on Linux and MacOS. To depl
 curl -sL https://istio.tetratelabs.io/getmesh/install.sh | bash
 ```
 
-Please follow [Tetrate Istio Distro Install and Update Page](/getistio-cli/install-and-update-of-getistio) for detailed instruction on downloading and subsequent steps to have Tetrate Istio Distro up and running in your machine.
+Please follow [Tetrate Istio Distro Install and Update Page](/getmesh-cli/install-and-update-of-getistio) for detailed instruction on downloading and subsequent steps to have Tetrate Istio Distro up and running in your machine.
 
 ### Supported Istio Versions
 Tetrate Istio Distro tracks Istio upstream releases. As part of Tetrate Istio Distro build pipeline, a series of tests are run to ensure the Istio distro works well on the underlying Kubernetes platform.

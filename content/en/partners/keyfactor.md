@@ -28,4 +28,4 @@ Using the Keyfactor-Istio integration, DevOps teams can leverage Istio without d
 * Operational Intelligence: Add powerful attributes to certificates beyond the standard X.509 format to search and manage them more effectively (i.e., application owner, cost center, cluster, etc.)
 * Policy Control: Enforce consistent certificate issuance policies and workflows from your PKI to comply with internal and external audit requirements.
 
-Keyfactor supports GetIstio's goal to improve Istio user safety by allowing workload certificates to be issued by an observable and trusted enterprise-sanctioned PKI.
+Keyfactor supports GetMesh's goal to improve Istio user safety by allowing workload certificates to be issued by an observable and trusted enterprise-sanctioned PKI.

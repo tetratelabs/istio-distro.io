@@ -32,9 +32,9 @@ Client Version: version.Info{Major:"1", Minor:"19", GitVersion:"v1.19.2", GitCom
 Server Version: version.Info{Major:"1", Minor:"19", GitVersion:"v1.19.0", GitCommit:"e19964183377d0ec2052d1f1fa930c4d7575bd50", GitTreeState:"clean", BuildDate:"2020-08-26T14:23:04Z", GoVersion:"go1.15", Compiler:"gc", Platform:"linux/amd64"}
 ```
 
-## 2. Install Istio with Tetrate Istio Distro 
+## 2. Install Istio with Tetrate Istio Distro
 
-Tetrate Istio Distro is the easiest way to get started with Istio. After you've set up your Kubernetes cluster, you can download [Tetrate Istio Distro](https://getistio.io):
+Tetrate Istio Distro is the easiest way to get started with Istio. After you've set up your Kubernetes cluster, you can download [Tetrate Istio Distro](https://istio.tetratelabs.io):
 
 ```sh
 curl -sL https://istio.tetratelabs.io/getmesh/install.sh | bash
@@ -48,7 +48,7 @@ getmesh istioctl install --set profile=demo
 
 ## 3. Label the namespace for Istio sidecar injection
 
-We need to label the namespace where we want Istio to inject the sidecar proxies to Kubernetes deployments automatically. 
+We need to label the namespace where we want Istio to inject the sidecar proxies to Kubernetes deployments automatically.
 
 To label the namepace, we can use the `kubectl label` command and label the namespace (`default` in our case) with a label called `istio-injection=enabled`:
 
@@ -75,9 +75,9 @@ metadata:
     app: helloworld
 spec:
   ports:
-  - name: http
-    port: 80
-    targetPort: 3000
+    - name: http
+      port: 80
+      targetPort: 3000
   selector:
     app: helloworld
 ```

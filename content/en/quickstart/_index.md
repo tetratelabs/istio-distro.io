@@ -1,14 +1,14 @@
 ---
-title: "Quickstart"
+title: 'Quickstart'
 date: 2021-01-25T13:00:00+07:00
-description: "GetMesh CLI quickstart"
+description: 'GetMesh CLI quickstart'
 # type dont remove or customize
-type : "docs"
+type: 'docs'
 ---
 
 <h3>Download</h3>
 
-The command below obtains a shell script that downloads and installs GetMesh CLI binary that corresponds to the OS distribution detected by the script (currently MacOS and Linux are supported). Additionally the most recent supported version of Istio is downloaded. Also script adds GetIstio location to PATH variable (re-login is required to get PATH populated)
+The command below obtains a shell script that downloads and installs GetMesh CLI binary that corresponds to the OS distribution detected by the script (currently MacOS and Linux are supported). Additionally the most recent supported version of Istio is downloaded. Also script adds GetMesh location to PATH variable (re-login is required to get PATH populated)
 
 ```
 curl -sL https://istio.tetratelabs.io/getmesh/install.sh | bash
@@ -42,7 +42,7 @@ This will install the Istio demo profile with ["Istio core" "Istiod" "Ingress ga
 ✔ Istiod installed
 ✔ Ingress gateways installed
 ✔ Egress gateways installed
-✔ Installation complete 
+✔ Installation complete
 ```
 
 After the previous step is completed - the validation can be done by confirming GetMesh and Istio version installed:

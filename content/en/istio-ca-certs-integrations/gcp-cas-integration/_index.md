@@ -1,16 +1,16 @@
 ---
-title: "GCP CA Integration"
+title: 'GCP CA Integration'
 date: 2021-01-25T13:00:00+07:00
-description: "GCP CA Integration"
+description: 'GCP CA Integration'
 # type dont remove or customize
-type : "docs"
+type: 'docs'
 ---
 
 Instead of using a self-signed root certificate, here we get an intermediary Istio certificate authority (CA) from GCP CAS (Certificate Authority Service) to sign the workload certificates.
 
 This approach enables the same root of trust for the root CA's workloads in GCP CAS. As Istio signs the workload certs, the latency for getting workload certs issued is far less than directly getting the certs signed by ACM Private CA itself.
 
-The [`getmesh gen-ca`](/getistio-cli/reference/getistio_gen-ca) command furnishes the options to connect to ACM Private CA and get the intermediary CA cert signed. It uses the certificate details thus obtained to create the **cacerts** Kubernetes secret for Istio to use to sign workload certs. Istio, at startup, checks for the presence of the secret **cacerts** to decide if it needs to use this cert for signing workload certificates.
+The [`getmesh gen-ca`](/getmesh-cli/reference/getmesh_gen-ca) command furnishes the options to connect to ACM Private CA and get the intermediary CA cert signed. It uses the certificate details thus obtained to create the **cacerts** Kubernetes secret for Istio to use to sign workload certs. Istio, at startup, checks for the presence of the secret **cacerts** to decide if it needs to use this cert for signing workload certificates.
 
 ## Prerequisites
 
@@ -31,22 +31,22 @@ The first thing we need is to set up the CAS in Google Cloud Console. Log in to 
 1. From the navigation menu, select Security → Certificate Authority Service.
 1. Click the **Create CA** button.
 1. Configure the CA type:
-    1. Select **Root CA**.
-    1. Select **365 days** for validity.
-    1. Select the **Enterprise** tier.
-    1. Select the CAS's location from the **Location** list (e.g. `us-east1`).
-    1. Click **Next**.
+   1. Select **Root CA**.
+   1. Select **365 days** for validity.
+   1. Select the **Enterprise** tier.
+   1. Select the CAS's location from the **Location** list (e.g. `us-east1`).
+   1. Click **Next**.
 1. Configure the CA subject name (you can use your values here):
-    1. For **Organization (O)**, enter **Istio**.
-    1. For **Organization unit (OU)**, enter **engineering**.
-    1. For **Country name (C)**, enter **US**.
-    1. For **Locality name**, enter **Sunnyvale**.
-    1. For **CA Common name (CN)**, enter **getistio.example.io**.
-    1. For **Resource ID**, enter **getistio-example-io**.
-    1. Click **Next**.
+   1. For **Organization (O)**, enter **Istio**.
+   1. For **Organization unit (OU)**, enter **engineering**.
+   1. For **Country name (C)**, enter **US**.
+   1. For **Locality name**, enter **Sunnyvale**.
+   1. For **CA Common name (CN)**, enter **getmesh.example.io**.
+   1. For **Resource ID**, enter **getmesh-example-io**.
+   1. Click **Next**.
 1. Configure the CA key size and algorithm:
-    1. Select **RSA PKCS1 2048 (SHA 256)**.
-    1. Click **Next**.
+   1. Select **RSA PKCS1 2048 (SHA 256)**.
+   1. Click **Next**.
 1. Click the **Create** button to create the CAS.
 
 The figure below shows the summary page. Note that your page might look different if you configured your own CA subject name.
@@ -56,39 +56,40 @@ The figure below shows the summary page. Note that your page might look differen
 ### Configure GCP credentials
 
 Ensure you have GCP credentials set up (e.g.`GOOGLE_APPLICATION_CREDENTIALS` environment variable has to point to the credentials) on a machine you're accessing the Kubernetes cluster from. Alternatively, if you installed Tetrate Istio Distro on Google Cloud Shell, the credentials are already set up.
+
 </details>
 
 ## Creating CAS configuration
 
 We will use a YAML configuration to configure CAS and CSR creation. Use the YAML below as a template, and enter the CAS information from the CAS summary page on GCP:
- 
+
 ```yaml
-providerName: "gcp"
+providerName: 'gcp'
 providerConfig:
   gcp:
     # This will hold the full CA name for the certificate authority you created on GCP
-    casCAName: "projects/tetrate-io-istio/locations/us-west1/certificateAuthorities/getistio-example-com"
+    casCAName: 'projects/tetrate-io-istio/locations/us-west1/certificateAuthorities/getmesh-example-com'
 
 certificateParameters:
   secretOptions:
-    istioCANamespace: "istio-system" # namespace where `cacerts` secrets live
+    istioCANamespace: 'istio-system' # namespace where `cacerts` secrets live
     overrideExistingCACertsSecret: true # overwrites the existing `cacerts` secret and replaces it with this new one
   caOptions:
     validityDays: 365 # validity days before the CA expires
     keyLength: 2048 # length (bits) of Key to be created
     certSigningRequestParams: # x509.CertificateRequest; most fields omitted
       subject:
-        commonname: "getistio.example.io"
-        country: 
-          - "US"
+        commonname: 'getmesh.example.io'
+        country:
+          - 'US'
         locality:
-          - "Sunnyvale"
+          - 'Sunnyvale'
         organization:
-          - "Istio"
+          - 'Istio'
         organizationunit:
-          - "engineering"
+          - 'engineering'
       emailaddresses:
-        - "youremail@example.io"
+        - 'youremail@example.io'
 ```
 
 Save the above file to `gcp-cas-config.yaml` and use `gen-ca` command to create the `cacert`:
@@ -100,7 +101,7 @@ getmesh gen-ca --config-file gcp-cas-config.yaml
 The command output should look similar to this:
 
 ```text
-Kubernetes Secret YAML created successfully in /home/user/.getistio/secret/getistio-740905469.yaml
+Kubernetes Secret YAML created successfully in /home/user/.getmesh/secret/getmesh-740905469.yaml
 Kubernetes Secret created successfully with name: cacerts, in namespace: istio-system
 ```
 
@@ -154,11 +155,11 @@ Certificate:
         Serial Number:
             55:7f:b3:00:f8:b2:24:50:dc:51:7c:e5:85:5a:14:7a:65:28:26:38
         Signature Algorithm: sha256WithRSAEncryption
-        Issuer: C = US, L = Sunnyvale, O = Istio, OU = engineering, CN = getistio.example.io
+        Issuer: C = US, L = Sunnyvale, O = Istio, OU = engineering, CN = getmesh.example.io
         Validity
             Not Before: Feb 10 17:24:51 2021 GMT
             Not After : Feb 10 17:24:51 2022 GMT
-        Subject: C = US, L = Sunnyvale, O = Istio, OU = engineering, CN = getistio.example.io
+        Subject: C = US, L = Sunnyvale, O = Istio, OU = engineering, CN = getmesh.example.io
         Subject Public Key Info:
             Public Key Algorithm: rsaEncryption
                 RSA Public-Key: (2048 bit)

@@ -10,7 +10,7 @@ Instead of using a self-signed root certificate, here we get an intermediary Ist
 
 This approach enables the same root of trust for the root CA's workloads in ACM Private CA. As Istio signs the workload certs, the latency for getting workload certs issued is far less than directly getting the certs signed by ACM Private CA itself.
 
-The [`getmesh gen-ca`](/getistio-cli/reference/getistio_gen-ca) command furnishes the options to connect to ACM Private CA and get the intermediary CA cert signed. It uses the certificate details thus obtained to create the **cacerts** Kubernetes secret for Istio to use to sign workload certs. Istio, at startup, checks for the presence of the secret **cacerts** to decide if it needs to use this cert for signing workload certificates.
+The [`getmesh gen-ca`](/getmesh-cli/reference/getmesh_gen-ca) command furnishes the options to connect to ACM Private CA and get the intermediary CA cert signed. It uses the certificate details thus obtained to create the **cacerts** Kubernetes secret for Istio to use to sign workload certs. Istio, at startup, checks for the presence of the secret **cacerts** to decide if it needs to use this cert for signing workload certificates.
 
 ## Prerequisites
 
@@ -36,7 +36,7 @@ The first thing we need is to set up the ACM Private CA in AWS Console. Log in t
     1. For **Organization unit (OU)**, enter **engineering**.
     1. For **Country name (C)**, select  **United States (US)**.
     1. For **Locality name**, enter **Sunnyvale**.
-    1. For **CA Common name (CN)**, enter **getistio.example.io**.
+    1. For **CA Common name (CN)**, enter **getmesh.example.io**.
     1. Click **Next**.
 1. Configure the CA key size and algorithm:
     1. Click **Advanced** to expand the options.
@@ -87,7 +87,7 @@ certificateParameters:
     keyLength: 2048 # length (bits) of Key to be created
     certSigningRequestParams: # x509.CertificateRequest; most fields omitted
       subject:
-        commonname: "getistio.example.io"
+        commonname: "getmesh.example.io"
         country: 
           - "US"
         locality:
@@ -109,7 +109,7 @@ getmesh gen-ca --config-file aws-acm-config.yaml
 The command output should look similar to this:
 
 ```text
-Kubernetes Secret YAML created successfully in /home/user/.getistio/secret/getistio-740905469.yaml
+Kubernetes Secret YAML created successfully in /home/user/.getmesh/secret/getmesh-740905469.yaml
 Kubernetes Secret created successfully with name: cacerts, in namespace: istio-system
 ```
 
@@ -163,11 +163,11 @@ Certificate:
         Serial Number:
             94:d9:65:d0:b0:42:ac:31:70:f8:9f:84:02:6b:b1:d7:8d:2e:cb:c8
         Signature Algorithm: sha256WithRSAEncryption
-        Issuer: C = US, L = Sunnyvale, O = Istio, OU = engineering, CN = getistio.example.io
+        Issuer: C = US, L = Sunnyvale, O = Istio, OU = engineering, CN = getmesh.example.io
         Validity
             Not Before: Feb  8 22:23:59 2021 GMT
             Not After : Jan 27 22:23:59 2031 GMT
-        Subject: C = US, L = Sunnyvale, O = Istio, OU = engineering, CN = getistio.example.io
+        Subject: C = US, L = Sunnyvale, O = Istio, OU = engineering, CN = getmesh.example.io
         Subject Public Key Info:
             Public Key Algorithm: rsaEncryption
                 RSA Public-Key: (2048 bit)

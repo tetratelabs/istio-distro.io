@@ -155,8 +155,8 @@ url = "/partners/"
 weight = 5
 
 [[Languages.en.menu.main]]
-name = "GetEnvoy"
-url = "https://www.getenvoy.io/"
+name = "func-e"
+url = "https://func-e.io/"
 weight = 6
 
 [[Languages.en.menu.main]]
@@ -311,8 +311,8 @@ url = "/partners/"
 weight = 5
 
 [[Languages.zh.menu.main]]
-name = "GetEnvoy"
-url = "https://www.getenvoy.io/"
+name = "func-e"
+url = "https://func-e.io/"
 weight = 6
 
 [[Languages.zh.menu.main]]

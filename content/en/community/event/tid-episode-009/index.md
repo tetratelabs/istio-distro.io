@@ -13,7 +13,7 @@ timezone: PST
 
 {{< eventDate >}}
 
-WebAssembly (Wasm) and the Envoy Proxy Wasm SDK are a way to extend the Envoy proxy functionality. We'll show you how to use the Proxy Wasm Go SDK and GetEnvoy to develop and test your Wasm extensions.
+WebAssembly (Wasm) and the Envoy Proxy Wasm SDK are a way to extend the Envoy proxy functionality. We'll show you how to use the Proxy Wasm Go SDK and the func-e CLI to develop and test your Wasm extensions.
 
 Join us on July 22th for another Istio weekly episode where we'll talk about how to start developing Envoy Wasm extensions.
 
