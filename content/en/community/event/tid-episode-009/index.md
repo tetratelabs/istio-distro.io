@@ -1,12 +1,12 @@
 ---
 title: 'Episode 07: Developing Envoy Wasm Extensions'
-date: 2021-07-10T11:00:00+07:30
+date: 2021-07-23T11:00:00+07:30
 description: 'Episode 07: Developing Envoy Wasm Extensions'
 categories: 'event'
-image: 'images/events/episode-008-thumbnail.jpg'
+image: 'images/events/episode-009-thumbnail.jpg'
 eventLink: 'https://www.youtube.com/watch?v=JIq8wujlG9s'
 eventDate: 2021-07-22T11:00:00
-pastEvent: false
+pastEvent: true
 weight: 12
 timezone: PST
 ---
