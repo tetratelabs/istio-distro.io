@@ -808,6 +808,10 @@ pre {
   background-color: #ddd;
 }
 
+.pagination{
+  display: none;
+}
+
 // this is valid if we use asciinema player, not embedding from asciinema.org.
 // pre.asciinema-terminal {
 //   height: 32em !important;
