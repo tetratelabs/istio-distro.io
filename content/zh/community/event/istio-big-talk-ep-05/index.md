@@ -8,7 +8,7 @@ eventLink: "https://live.bilibili.com/23095515"
 eventDate: 2021-06-30
 eventEndDate: 2021-06-30
 weight: 9
-pastEvent: false
+pastEvent: true
 timezone: CST
 ---
 
@@ -18,8 +18,8 @@ timezone: CST
 - 嘉宾：钟华（腾讯云）
 - 话题：腾讯云服务网格生产落地最佳实践
 - 提问地址：[腾讯文档](https://docs.qq.com/doc/DRUZSbHVkck9Wc0V4)
-- 直播回放：待更新
-- 幻灯片归档：待更新
+- 直播回放：[Bilibili](https://www.bilibili.com/video/BV1th411h7Zr/)
+- 幻灯片归档：[GitHub](https://github.com/tetratelabs/istio-weekly/tree/main/istio-big-talk/005)
 
 ## 嘉宾简介
 
