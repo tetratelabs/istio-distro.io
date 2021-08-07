@@ -1,13 +1,13 @@
 ---
 title: 'Istio in the enterprise: Solving security and scale challenges for microservices in Kubernetes'
-date: 2021-07-23T11:00:00+07:30
+date: 2021-08-07T11:00:00+07:30
 description: 'Join experts from Mirantis and Tetrate as they guide you through some of the challenges of deploying'
 categories: 'event'
 image: 'images/events/episode-010-thumbnail.jpg'
 eventLink: 'https://tetr8.io/istio-in-the-enterprise-webinar'
 eventDate: 2021-08-04T01:00:00
-pastEvent: false
-weight: 12
+pastEvent: true
+weight: 13
 timezone: EDT
 ---
 
