@@ -6,7 +6,7 @@ categories: 'event'
 image: 'images/events/episode-011-thumbnail.jpg'
 eventLink: 'https://www.youtube.com/watch?v=4b3H7isIAnQ'
 eventDate: 2021-08-05T11:00:00
-pastEvent: false
+pastEvent: true
 weight: 14
 timezone: PDT
 ---
