@@ -8,7 +8,7 @@ eventLink: "https://live.bilibili.com/23095515"
 eventDate: 2021-08-03
 eventEndDate: 2021-08-03
 weight: 10
-pastEvent: false
+pastEvent: true
 timezone: CST
 ---
 
@@ -18,8 +18,7 @@ timezone: CST
 - 嘉宾：周礼赞（Tetrate）
 - 话题：Envoy proxy 在线答疑
 - 提问地址：[腾讯文档](https://docs.qq.com/doc/DRUZSbHVkck9Wc0V4)
-- 直播回放：待更新
-- 幻灯片归档：待更新
+- 直播回放：[Bilibili](https://www.bilibili.com/video/BV1d64y1x7yn)
 
 ## 嘉宾简介
 
