@@ -26,7 +26,7 @@
 {{ end }}
 <section class="community-events">
   <div class="container">
-      <h3 class="text-center my-4">{{ i18n "upcoming_getistio_community_events" }}</h3>
+    <h3 class="text-center my-4">{{ i18n "upcoming_getistio_community_events" }}</h3>
     <div class="row">
       {{ range .Site.Taxonomies.categories.event }}
       {{ if eq .Page.Params.pastEvent false }}
