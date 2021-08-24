@@ -1,6 +1,5 @@
 ---
 title: 'Episode 09: Customizing Istio metrics'
-date: 2021-08-24T11:00:00+07:33
 description: 'Join us on August 19th for another Istio weekly episode where we will talk about how to customize and create new service-level metrics.'
 categories: 'event'
 image: 'images/events/episode-012-thumbnail.jpg'
