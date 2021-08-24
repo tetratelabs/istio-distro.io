@@ -62,7 +62,6 @@ To add Event, go to the `/content/community/event` directory and add a Markdown 
 
 ```yaml
 title: "Sample Event 1"
-date: 2018-12-29T11:02:05+06:00
 description: "This is description for Sample Event 1"
 categories: "event"
 image: "images/webinar_dummy.jpg"
