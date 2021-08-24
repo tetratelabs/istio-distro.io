@@ -6,7 +6,7 @@ categories: 'event'
 image: 'images/events/episode-012-thumbnail.jpg'
 eventLink: 'https://www.youtube.com/watch?v=hhoKWEBGM_c'
 eventDate: 2021-08-19T11:00:00
-pastEvent: true
+pastEvent: false
 weight: 15
 timezone: PDT
 ---
