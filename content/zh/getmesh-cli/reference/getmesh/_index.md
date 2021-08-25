@@ -1,9 +1,9 @@
 ---
 title: "getmesh"
-url: /getmesh-cli/reference/getmesh/
+url: /zh/getmesh-cli/reference/getmesh/
 ---
 
-GetMesh is an integration and lifecycle management CLI tool that ensures the use of supported and trusted versions of Istio.
+getmesh is an integration and lifecycle management CLI tool that ensures the use of supported and trusted versions of Istio.
 
 #### Options
 
@@ -14,13 +14,15 @@ GetMesh is an integration and lifecycle management CLI tool that ensures the use
 
 #### SEE ALSO
 
-* [getmesh check-upgrade](/getmesh-cli/reference/getmesh_check-upgrade/)	 - Check if there are patches available in the current minor version
-* [getmesh config-validate](/getmesh-cli/reference/getmesh_config-validate/)	 - Validate the current Istio configurations in your cluster
-* [getmesh fetch](/getmesh-cli/reference/getmesh_fetch/)	 - Fetch istioctl of the specified version, flavor and flavor-version available in "getmesh list" command
-* [getmesh gen-ca](/getmesh-cli/reference/getmesh_gen-ca/)	 - Generate intermediate CA
-* [getmesh istioctl](/getmesh-cli/reference/getmesh_istioctl/)	 - Execute istioctl with given arguments
-* [getmesh list](/getmesh-cli/reference/getmesh_list/)	 - List available Istio distributions built by Tetrate
-* [getmesh prune](/getmesh-cli/reference/getmesh_prune/)	 - Remove specific istioctl installed, or all, except the active one
-* [getmesh show](/getmesh-cli/reference/getmesh_show/)	 - Show fetched Istio versions
-* [getmesh switch](/getmesh-cli/reference/getmesh_switch/)	 - Switch the active istioctl to a specified version
-* [getmesh version](/getmesh-cli/reference/getmesh_version/)	 - Show the versions of GetMesh cli, running Istiod, Envoy, and the active istioctl
+* [getmesh check-upgrade](/zh/getmesh-cli/reference/getmesh_check-upgrade/)	 - Check if there are patches available in the current minor version
+* [getmesh config-validate](/zh/getmesh-cli/reference/getmesh_config-validate/)	 - Validate the current Istio configurations in your cluster
+* [getmesh default-hub](/zh/getmesh-cli/reference/getmesh_default-hub/)	 - Set or Show the default hub passed to "getmesh istioctl install" via "--set hub=" e.g. docker.io/istio
+* [getmesh fetch](/zh/getmesh-cli/reference/getmesh_fetch/)	 - Fetch istioctl of the specified version, flavor and flavor-version available in "getmesh list" command
+* [getmesh gen-ca](/zh/getmesh-cli/reference/getmesh_gen-ca/)	 - Generate intermediate CA
+* [getmesh istioctl](/zh/getmesh-cli/reference/getmesh_istioctl/)	 - Execute istioctl with given arguments
+* [getmesh list](/zh/getmesh-cli/reference/getmesh_list/)	 - List available Istio distributions built by Tetrate
+* [getmesh prune](/zh/getmesh-cli/reference/getmesh_prune/)	 - Remove specific istioctl installed, or all, except the active one
+* [getmesh show](/zh/getmesh-cli/reference/getmesh_show/)	 - Show fetched Istio versions
+* [getmesh switch](/zh/getmesh-cli/reference/getmesh_switch/)	 - Switch the active istioctl to a specified version
+* [getmesh version](/zh/getmesh-cli/reference/getmesh_version/)	 - Show the versions of getmesh cli, running Istiod, Envoy, and the active istioctl
+
