@@ -5,7 +5,7 @@ categories: "event"
 image: 'images/events/episode-014-thumbnail.jpg'
 eventLink: 'https://www.youtube.com/watch?v=HQ3BBsJDeXU'
 eventDate: 2021-09-16T11:00:00
-pastEvent: false
+pastEvent: true
 timezone: PST
 ---
 

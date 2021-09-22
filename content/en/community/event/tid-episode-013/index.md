@@ -1,5 +1,5 @@
 ---
-title: 'Episode 10: How to become a certified Istio expert?'
+title: ''
 description: 'Join us to learn about the Tetrate Istio Certified Administrator exam. Vijay Nadkarni will share his tips and tricks on how he prepared and passed the TCIA exam.'
 categories: "event"
 image: 'images/events/episode-013-thumbnail.jpg'
