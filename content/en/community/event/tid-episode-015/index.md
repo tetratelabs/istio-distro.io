@@ -11,7 +11,7 @@ timezone: PST
 
 {{< eventDate >}}
 
-Join us on September 30th for the next Istio weekly episode where we'll talk with Istio maintainer Aditya Prerepa.
+Join us on October 1st for the next Istio weekly episode where we'll talk with Istio maintainer Aditya Prerepa.
 
 In addition to being a member of the Istio networking working group, Aditya is also finishing high school this year. He’s worked on Istio for more than a year with a focus on Pilot and xDS as well as VM health checking, auto registration, and multitenancy.
 
