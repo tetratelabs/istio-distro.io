@@ -4,7 +4,7 @@ description: 'Join us on September 30th for the next Istio weekly episode where 
 categories: "event"
 image: 'images/events/episode-015-thumbnail.jpg'
 eventLink: 'https://www.youtube.com/watch?v=o3Fi6nwuuiI'
-eventDate: 2021-09-30T11:00:00
+eventDate: 2021-10-01T16:00:00
 pastEvent: false
 timezone: PST
 ---
