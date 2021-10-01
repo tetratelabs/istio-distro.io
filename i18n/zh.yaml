@@ -88,6 +88,9 @@
 - id: back_to_partners
   translation: "返回伙伴列表"
 
+- id: read_more
+  translation: "阅读更多"
+
 - id: partners
   translation: "伙伴"
 - id: at
