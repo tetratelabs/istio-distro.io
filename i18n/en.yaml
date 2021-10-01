@@ -85,6 +85,9 @@
 - id: back_to_blog
   translation: "Back to Blog"
 
+- id: read_more
+  translation: "Read More"
+
 - id: back_to_partners
   translation: "Back to Partners"
 
