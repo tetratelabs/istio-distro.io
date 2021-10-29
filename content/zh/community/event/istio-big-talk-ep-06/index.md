@@ -4,7 +4,7 @@ date: 2021-07-27T12:30:00+08:00
 description: "本次直播将分享腾讯云服务网格生产落地最佳实践。"
 categories: "event"
 image: "images/events/istio-big-talk-ep06.jpg"
-eventLink: "https://live.bilibili.com/23095515"
+eventLink: "https://www.bilibili.com/video/BV1d64y1x7yn"
 eventDate: 2021-08-03
 eventEndDate: 2021-08-03
 weight: 10
