@@ -1,5 +1,5 @@
 ---
-title: 'Episode 13: Access Control for Microservices'
+title: 'Access Control for Microservices'
 description: "Join us on November 18th for the next Istio weekly episode where we'll talk with Tetrate's founding engineer, Ignasi Barrera."
 categories: "event"
 image: 'images/events/episode-016-thumbnail.jpg'
