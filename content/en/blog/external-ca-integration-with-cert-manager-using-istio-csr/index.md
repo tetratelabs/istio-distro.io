@@ -181,7 +181,6 @@ spec:
             value:
               name: ca-root-cert
               configMap:
-                secretName: istiod-tls
                 defaultMode: 420
                 name: istio-ca-root-cert
 ```
