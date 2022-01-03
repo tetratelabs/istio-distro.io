@@ -55,7 +55,7 @@ to get PATH populated)
 
 The following video shows the basic use of the GetIstio command line tool.
 
-<script src="https://asciinema.org/a/390274.js" id="asciicast-390274" data-size="11px" data-speed="2" async></script>
+<script src="https://asciinema.org/a/459699.js" id="asciicast-459699" data-size="11px" data-speed="2" async></script>
 
 ### Get involved
 
