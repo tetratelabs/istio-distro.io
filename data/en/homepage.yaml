@@ -14,7 +14,7 @@ subscribe:
   item:
     - content: "Never miss new releases and community events"
   error_message: "Please enter a valid email address."
-  form_message: "Thank you for subscribing"
+  form_message: "Thank you for subscribing!"
   community_item:
     - content: "Join the Tetrate Istio Distro community to get release updates and community announcements"
 
