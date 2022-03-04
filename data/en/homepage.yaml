@@ -71,7 +71,7 @@ training:
 
 ########################## Event section #################################
 event:
-  enable: true
+  enable: false
   title: "Upcoming Community Events"
   url: "/community-events"
   link_text: "See All Events→"
