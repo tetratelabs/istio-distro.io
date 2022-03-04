@@ -12,7 +12,6 @@ hero:
 subscribe:
   enable: true
   item:
-    - content: "Tetrate Istio Distro 1.0.5 is now available"
     - content: "Never miss new releases and community events"
   error_message: "Please enter a valid email address."
   form_message: "Thank you for subscribing."
@@ -72,7 +71,7 @@ training:
 
 ########################## Event section #################################
 event:
-  enable: true
+  enable: false
   title: "Upcoming Community Events"
   url: "/community-events"
   link_text: "See All Events→"
