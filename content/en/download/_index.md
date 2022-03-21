@@ -48,5 +48,3 @@ Below you can find direct URL for Istio and istioctl distros:
 
 Below you can find direct URL for Istio and istioctl distros: 
 {{< downloads windows >}}
-
-
