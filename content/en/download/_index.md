@@ -8,7 +8,6 @@ type : "docs"
 weight: 10
 ---
 
-
 Currently <strong>Tetrate Istio Distro</strong> runs on Linux and MacOS. To deploy Tetrate Istio Distro, all you need is this one simple command:
 
 ```sh
