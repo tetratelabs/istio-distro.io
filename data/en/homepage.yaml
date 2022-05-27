@@ -6,13 +6,12 @@ hero:
     - content: "Easiest way of installing, operating, and upgrading Istio"
     - content: "Tested and hardened for your application and cloud platform"
     - content: "Community hub for users, ecosystem, and partners"
-  asciinema_id: 390274
+  asciinema_id: 459699
 
 ########################## Subscribe section ##########################
 subscribe:
   enable: true
   item:
-    - content: "Tetrate Istio Distro 1.0.5 is now available"
     - content: "Never miss new releases and community events"
   error_message: "Please enter a valid email address."
   form_message: "Thank you for subscribing."
@@ -72,7 +71,7 @@ training:
 
 ########################## Event section #################################
 event:
-  enable: true
+  enable: false
   title: "Upcoming Community Events"
   url: "/community-events"
   link_text: "See All Events→"

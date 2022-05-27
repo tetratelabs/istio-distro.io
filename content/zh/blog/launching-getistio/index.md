@@ -40,7 +40,7 @@ GetMesh是一个集成和生命周期管理 CLI 工具，可确保使用支持�
 
 下面的视频展示了 GetMesh命令行工具的基本使用方法。
 
-<script src="https://asciinema.org/a/390274.js" id="asciicast-390274" data-size="11px" data-speed="2" async></script>
+<script src="https://asciinema.org/a/459699.js" id="asciicast-459699" data-size="11px" data-speed="2" async></script>
 
 ### 参与进来
 
