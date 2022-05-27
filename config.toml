@@ -8,6 +8,7 @@ googleAnalytics = ""
 enableRobotsTXT = true
 hasCJKLanguage = true
 paginate = "6"
+ignoreErrors = ["error-remote-getjson"]
 
 # hugo outputs
 [outputs]
@@ -148,11 +149,6 @@ weight = 3
 name = "Training"
 url = "https://academy.tetrate.io"
 weight = 4
-
-[[Languages.en.menu.main]]
-name = "Partners"
-url = "/partners/"
-weight = 5
 
 [[Languages.en.menu.main]]
 name = "func-e"
@@ -304,11 +300,6 @@ weight = 3
 name = "培训"
 url = "https://academy.tetrate.io"
 weight = 4
-
-[[Languages.zh.menu.main]]
-name = "伙伴"
-url = "/partners/"
-weight = 5
 
 [[Languages.zh.menu.main]]
 name = "func-e"
