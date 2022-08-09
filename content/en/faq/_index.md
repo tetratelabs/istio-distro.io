@@ -113,9 +113,8 @@ to upstream.
 
 No. As an upstream distribution, Tetrate Istio Distro has no performance impact on Istio.
 
-##### How often are Tetrate Istio Distro distros updated?
-
-We make new Tetrate Istio Distro builds available as soon as they are available in upstream Istio.
+##### How often is Tetrate Istio Distro updated?
+We aim to release TID versions within two weeks of an upstream release.  This is because it takes time to create the extra build types (such as FIPs, arm64 etc) that TID provides and to complete testing.  Where a release contains critical security fixes we apply our best effort to ship the release as soon as possible, starting with the most recent version of Istio.
 
 ##### How do I request features?
 
@@ -125,3 +124,9 @@ Create a feature requests and vote for features on [GitHub](https://github.com/t
 
 Yes. Tetrate Istio Distro is an [Apache 2 licenced](https://www.apache.org/licenses/LICENSE-2.0) open source project. You can
 [contribute](/community/contributing) to any component of Tetrate Istio Distro.
+
+#### What is the CMVP number for the FIPs verison of TID?
+The FIPS verison of TID embeds BoringCrypto, [cerficiate number 3678](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/3678)
+
+##### How was the FIPs build of TID validated?
+The FIPs version of TID was tested by a third party NVLAP accredited lab and shown to faithfully implement its cryptographic and signing functions using the above library.  A letter from the lab is available to customers with a valid support contract, please [contact sales](https://www.tetrate.io/contact-us-sales/) for more details.
