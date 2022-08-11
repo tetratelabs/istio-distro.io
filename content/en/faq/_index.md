@@ -15,7 +15,7 @@ weight: 8
 - [Is it free?](#is-it-free)
 - [What are the supported versions of Tetrate Istio Distro?](#what-are-the-supported-versions-of-tetrate-istio-distro)
 - [What are the components of the Tetrate Istio Distro and how do they compare to Istio upstream?](#what-are-the-components-of-tetrate-istio-distro-and-how-do-they-compare-to-istio-upstream)
-- [I am currently using the default distros of Istio. How do I switch to using Tetrate Istio Distro?](#i-am-currently-using-default-distros-of-istio-how-do-i-switch-to-using-tetrate-istio-distro)
+- [I am currently using the default distros of Istio. How do I switch to using Tetrate Istio Distro?](#i-am-currently-using-the-default-distros-of-istio-how-do-i-switch-to-using-tetrate-istio-distro)
 - [I am new to Istio. Where should I start?](#i-am-new-to-istio-where-should-i-start)
 - [I am a platform admin trying to streamline Istio binaries in my organization. How should I use Tetrate Istio Distro?](#i-am-a-platform-admin-trying-to-streamline-istio-binaries-in-my-organization-how-should-i-use-tetrate-istio-distro)
 - [How can I be alerted to vulnerabilities in my Istio deployments](#how-can-i-be-alerted-to-vulnerabilities-in-my-istio-deployments)
@@ -25,7 +25,7 @@ weight: 8
 
 - [Are you creating a fork of the Istio project?](#are-you-creating-a-fork-of-the-istio-project)
 - [Do Tetrate Istio Distro builds have a performance impact?](#do-tetrate-istio-distro-builds-have-a-performance-impact)
-- [How often are Tetrate Istio Distro distros updated?](#how-often-are-tetrate-istio-distro-distros-updated)
+- [How often is Tetrate Istio Distro updated?](#how-often-is-tetrate-istio-distro-updated)
 - [How do I request features?](#how-do-i-request-features)
 - [Can Icontribute to the work done on Tetrate Istio Distro?](#can-i-contribute-to-the-work-done-on-tetrate-istio-distro)
 
@@ -82,9 +82,7 @@ manage installation, configuration, and upgrade.
 
 - Start by downloading the [`getmesh` CLI](/getmesh-cli). This will give you instant access to all of the Tetrate Istio Distro
   builds for the platforms you need.
-
 - The documentation will introduce you to the fundamentals of installing and configuring Istio.
-
 - To get up to speed on Istio quickly, we offer free training at
   [Tetrate Academy](https://academy.tetrate.io/courses/istio-fundamentals)
 - To get insights from top Istio contributors and practitioners, [join the Tetrate Istio Distro community](/community) and meet up
@@ -114,7 +112,8 @@ to upstream.
 No. As an upstream distribution, Tetrate Istio Distro has no performance impact on Istio.
 
 ##### How often is Tetrate Istio Distro updated?
-We aim to release TID versions within two weeks of an upstream release.  This is because it takes time to create the extra build types (such as FIPs, arm64 etc) that TID provides and to complete testing.  Where a release contains critical security fixes we apply our best effort to ship the release as soon as possible, starting with the most recent version of Istio.
+
+We aim to release TID versions within two weeks of an upstream release.  This is because it takes time to create the extra build types (such as FIPS, arm64 etc) that TID provides and to complete testing.  Where a release contains critical security fixes we apply our best effort to ship the release as soon as possible, starting with the most recent version of Istio.
 
 ##### How do I request features?
 
@@ -125,8 +124,10 @@ Create a feature requests and vote for features on [GitHub](https://github.com/t
 Yes. Tetrate Istio Distro is an [Apache 2 licenced](https://www.apache.org/licenses/LICENSE-2.0) open source project. You can
 [contribute](/community/contributing) to any component of Tetrate Istio Distro.
 
-#### What is the CMVP number for the FIPs verison of TID?
-The FIPS verison of TID embeds BoringCrypto, [cerficiate number 3678](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/3678)
+#### What is the CMVP number for the FIPS verison of TID?
 
-##### How was the FIPs build of TID validated?
-The FIPs version of TID was tested by a third party NVLAP accredited lab and shown to faithfully implement its cryptographic and signing functions using the above library.  A letter from the lab is available to customers with a valid support contract, please [contact sales](https://www.tetrate.io/contact-us-sales/) for more details.
+The FIPS verison of TID embeds BoringCrypto, [cerficiate number 3678](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/3678).
+
+##### How was the FIPS build of TID validated?
+
+The FIPS version of TID was tested by a third party NVLAP accredited lab and shown to faithfully implement its cryptographic and signing functions using the above library.  A letter from the lab is available to customers with a valid support contract, please [contact sales](https://www.tetrate.io/contact-us-sales/) for more details.
