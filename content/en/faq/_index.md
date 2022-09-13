@@ -131,3 +131,4 @@ The FIPS verison of TID embeds BoringCrypto, [cerficiate number 3678](https://cs
 ##### How was the FIPS build of TID validated?
 
 The FIPS version of TID was tested by a third party NVLAP accredited lab and shown to faithfully implement its cryptographic and signing functions using the above library.  A letter from the lab is available to customers with a valid support contract, please [contact sales](https://www.tetrate.io/contact-us-sales/) for more details.
+
