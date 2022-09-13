@@ -54,3 +54,6 @@
 {{ $formScript := resources.Get "js/form.js" | minify}}
 <script src="{{ $script.Permalink | relURL }}"></script>
 <script src="{{ $formScript.Permalink | relURL }}"></script>
+
+<!-- Hubspot form load  -->
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js?pre=1"></script>
