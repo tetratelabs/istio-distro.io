@@ -1,6 +1,6 @@
 ---
 title: "FIPS Download Request"
-date: 2022-09-13T11:02:05+07:00
+date: 2022-09-25T11:02:05+07:00
 icon: "ti-credit-card" # themify icon pack : https://themify.me/themify-icons
 description: "this is meta description"
 # type dont remove or customize
@@ -12,6 +12,8 @@ weight: 10
 
 blockquote{display:none !importatnt;}
 </style>
+
+<script charset="utf-8" type="text/javascript" src="https://js.hsforms.net/forms/v2.js?pre=1"></script>
 
 <script>
   hbspt.forms.create({
