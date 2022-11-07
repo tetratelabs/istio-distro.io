@@ -91,4 +91,3 @@ customer_quote:
 support:
   enable: true
   title: "Need enterprise support for your Istio?"
-  
