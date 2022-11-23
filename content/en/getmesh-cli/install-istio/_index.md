@@ -21,7 +21,7 @@ This will install the Istio demo profile with ["Istio core" "Istiod" "Ingress ga
 ✔ Egress gateways installed
 ✔ Installation complete </pre>
 
-By default, istio installtion profiles points to normal istio images(distro based), In case users want to install istio with  distroless images,this can be done by using the --set hub and tag commands as below. 
+By default, istio installation profiles points to normal istio images(distro based), In case users want to install istio with distroless images, this can be done by using the --set hub and tag commands as below. 
 ```sh
 getmesh istioctl install --set profile=demo --set hub=containers.istio.tetratelabs.com --set tag=1.12.4-tetratefips-v0-distroless
 ```
