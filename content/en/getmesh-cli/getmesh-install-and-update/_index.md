@@ -1,18 +1,18 @@
 ---
-title: "Installation and Update"
+title: "GetMesh installation and update"
 date: 2021-01-25T13:00:00+07:00
 description: "How to install and update Tetrate Istio Distro"
 # type dont remove or customize
 type : "docs"
 ---
 
-Tetrate Istio Distro can be obtained by issuing the following command:
+GetMesh CLI can be obtained by issuing the following command:
 
 ```sh
 curl -sL https://istio.tetratelabs.io/getmesh/install.sh | bash
 ```
 
-This, by default, downloads the latest version of Tetrate Istio Distro and certified Istio. To check if the download was successful, run the [version command](/getmesh-cli/reference/getmesh_version):
+This, by default, downloads the GetMesh CLI with the latest version of Tetrate Istio Distro and certified Istio. To check if the download was successful, run the [version command](/getmesh-cli/reference/getmesh_version):
 
 ```sh
 getmesh version
