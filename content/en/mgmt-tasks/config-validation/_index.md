@@ -13,6 +13,10 @@ The command invokes a series of validations using external sources such as upstr
 
 [`config-validate`](/getmesh-cli/reference/getmesh_config-validate) command is not limited to Istio versions installed via GetMesh CLI and  works well with all Istio distros, upstream and others.
 
+Config validation can be performed against two targets:
+- the current cluster config, which might include multiple Istio configuration constructs
+- pending manifest yaml files that have not yet been applied to the cluster
+
 The command below checks if applying manifest that are defined in my-app.yaml and another-app.yaml will trigger any validation errors. The command reports the findings based on three sources (Istio upstream, Kiali and native Tetrate Istio Distro) without applying any configuration changes. It prevents unnecessary downtime or the preventable issues to affect production workloads:
 
 ```sh

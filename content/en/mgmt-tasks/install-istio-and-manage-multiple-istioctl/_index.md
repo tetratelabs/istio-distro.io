@@ -5,7 +5,18 @@ description: "How to install Istio and manage multiple istioctl"
 # type dont remove or customize
 type : "docs"
 ---
-After downloading and [installing](/getmesh-cli/install-istio) the latest trusted versions of Tetrate Istio Distro and Istio. We recommend always using  `getmesh` to invoke `istioctl`. Tetrate Istio Distro eases switching between multiple versions of istioctl, and does version compatibility and configuration checks to ensure that only certified Istio is deployed.
+
+### Supporting Multiple Clusters
+
+The getmesh tool connects to the kubernetes cluster pointed to by the default kubernetes config file. Switch between these using `kubectl config use-context`.
+
+If the `KUBECONFIG` environment variable is set, that then takes precedence.
+
+### Supporting Multiple istioctl versions
+
+We recommend always using `getmesh` to invoke `istioctl`. 
+
+getmesh eases switching between multiple versions of istioctl, and does version compatibility and configuration checks to ensure that only certified Istio is deployed.
 
 Refer to [Istio documentation](https://istio.io/latest/docs/reference/commands/istioctl) for the latest istioctl commands and options.
 
