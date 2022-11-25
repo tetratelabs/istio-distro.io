@@ -17,7 +17,7 @@ The Istio distributions managed by TID include:
 
 Users of Tetrate Istio Distro benefit from:
 
-- **getmesh**: an easy way to install, manage, and update Istio;
+- **GetMesh**: an easy way to install, manage, and update Istio;
 - **Tetrate Istio distributions**: whenever you need an Istio distribution that is tested for use in AWS, Azure, GCP or vanilla Kubernetes;
 - **Support from the Tetrate Community**: [our community slack channels](https://tetr8.io/tetrate-community) are managed by Tetrate experts who actively participate in the Istio and Envoy projects
 
@@ -25,16 +25,16 @@ Users of Tetrate Istio Distro benefit from:
 
 Tetrate Istio Distro can install and manage Istio on a range of Kubernetes platforms.  Tetrate tests Istio builds on vanilla Kubernetes, Amazon EKS, Azure AKS and Google GKE:
 
-- **Installation**: Istio installation and updates are performed using [**getmesh**](../getmesh-cli/install-istio/) or [**EKS Addons**](../TODO) (Amazon EKS only)
+- **Installation**: Istio installation and updates are performed using [**GetMesh**](../getmesh-cli/install-istio/) or [**EKS Addons**](../TODO) (Amazon EKS only)
 - **Management**: Istio management is performed using [**getmesh**](getmesh-cli/reference/getmesh)
 
 `getmesh` runs on Linux and MacOS.
 
-### Introducing getmesh
+### Introducing GetMesh
 
-The `getmesh` CLI tool simplifies installation, management, and upgrades of Istio to help you get started quickly.  It guides you towards certified, compatible Istio software for your clusters.
+The `GetMesh` CLI tool simplifies installation, management, and upgrades of Istio to help you get started quickly.  It guides you towards certified, compatible Istio software for your clusters.
 
-With `getmesh`, you get:
+With `GetMesh`, you get:
 
 - certainty from knowing you're installing certified versions of Istio, tested for compatibility with your production clusters
 - flexibility to switch easily between different istioctl versions, allowing you to manage multiple different Istio clusters
