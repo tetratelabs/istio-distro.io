@@ -1,9 +1,10 @@
 ---
 title: "Introduction"
-date: 2021-01-25T13:00:00+07:00
+date: 2022-1126-25T13:00:00+07:00
 description: "Introduction to Tetrate Istio Distribution"
 # type dont remove or customize
-type : "docs"
+type: "docs"
+weight: 1
 ---
 
 Tetrate Istio Distro (TID) is an open source project from Tetrate that makes the tasks of adopting, managing, and updating Istio safe and easy.  TID includes the [**getmesh**](https://github.com/tetratelabs/getistio) management tool, and a selection of tested and optimized Istio distributions.
