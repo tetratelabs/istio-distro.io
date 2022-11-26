@@ -1,5 +1,6 @@
 ---
 title: "Introduction"
+icon: "ti-panel"
 date: 2022-1126-25T13:00:00+07:00
 description: "Introduction to Tetrate Istio Distribution"
 # type dont remove or customize
