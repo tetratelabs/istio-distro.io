@@ -2,8 +2,6 @@
 title: "Once you've installed Istio"
 date: 2021-01-25T13:00:00+07:00
 description: "Post-install checks with getmesh"
-# type dont remove or customize
-type : "docs"
 ---
 
 Once you have installed Istio, you can use `getmesh` to verify that the installation is operating correctly.
