@@ -1,9 +1,7 @@
 ---
 title: "Install Istio"
-date: 2021-01-25T13:00:00+07:00
+date: 2022-11-26T06:33:01+0700
 description: "How to install Istio with GetMesh CLI"
-# type dont remove or customize
-type : "docs"
 ---
 Tetrate Istio Distro by default communicates to the cluster defined by your Kubernetes configuration. Please make sure you’re connected to the correct cluster before proceeding.
 
@@ -21,7 +19,7 @@ This will install the Istio demo profile with ["Istio core" "Istiod" "Ingress ga
 ✔ Egress gateways installed
 ✔ Installation complete </pre>
 
-By default, istio installation profiles points to normal istio images(distro based), In case users want to install istio with distroless images, this can be done by using the --set hub and tag commands as below. 
+By default, istio installation profiles points to normal istio images(distro based), In case users want to install istio with distroless images, this can be done by using the --set hub and tag commands as below.
 ```sh
 getmesh istioctl install --set profile=demo --set hub=containers.istio.tetratelabs.com --set tag=1.12.4-tetratefips-v0-distroless
 ```
@@ -32,9 +30,8 @@ This will install the Istio demo profile with ["Istio core" "Istiod" "Ingress ga
 ✔ Istiod installed
 ✔ Ingress gateways installed
 ✔ Egress gateways installed
-✔ Installation complete 
+✔ Installation complete
 </pre>
-
 
 Once this step is completed, the validation can be done by confirming the GetMesh and Istio versions installed, using the [version command](/getmesh-cli/reference/getmesh_version):
 ```sh
