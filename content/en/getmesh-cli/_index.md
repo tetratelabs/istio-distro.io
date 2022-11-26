@@ -1,6 +1,5 @@
 ---
 title: "GetMesh Documentation"
-icon: "ti-panel"
 description: "Learn more about GetMesh, how to install and manage the CLI"
 # set these 2 to make it featured in homepage
 weight: 15

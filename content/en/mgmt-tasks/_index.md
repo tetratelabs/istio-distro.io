@@ -5,6 +5,8 @@ description: "Using GetMesh to perform common management tasks"
 # type dont remove or customize
 type : "docs"
 weight: 25
+featured: true
+featureOrder: 1
 ---
 
 GetMesh simplifies the management of Istio clusters. It is used by platform operators to quickly and reliably maintain an installation, apply upgrades and perform quick troubleshooting operations.

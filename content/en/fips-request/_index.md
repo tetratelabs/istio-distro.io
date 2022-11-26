@@ -4,7 +4,7 @@ date: 2022-09-25T11:02:05+07:00
 icon: "ti-credit-card" # themify icon pack : https://themify.me/themify-icons
 description: "this is meta description"
 # type dont remove or customize
-layout: "docs"
+type: "docs"
 weight: 110
 ---
 
