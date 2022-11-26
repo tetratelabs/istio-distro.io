@@ -2,6 +2,7 @@
 title: "Install Istio"
 date: 2022-11-26T06:33:01+0700
 description: "How to install Istio with GetMesh CLI"
+type : "docs"
 ---
 Tetrate Istio Distro by default communicates to the cluster defined by your Kubernetes configuration. Please make sure you’re connected to the correct cluster before proceeding.
 

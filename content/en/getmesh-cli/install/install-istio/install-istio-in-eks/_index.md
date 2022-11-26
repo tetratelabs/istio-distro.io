@@ -3,7 +3,6 @@ title: "Install Istio in EKS"
 date: 2021-04-19T13:00:00+07:00
 description: "How to install Istio in Amazon EKS."
 # type dont remove or customize
-weight: 2
 type : "docs"
 ---
 To install Istio in EKS, you will need to set up the Kubernetes context before.
