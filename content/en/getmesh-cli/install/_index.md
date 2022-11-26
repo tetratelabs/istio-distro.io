@@ -2,9 +2,6 @@
 title: "Install GetMesh and Istio"
 date: 2021-01-25T13:00:00+07:00
 description: "Installing getmesh and Istio"
-# type dont remove or customize
-type : "docs"
-weight: 21
 ---
 
 In this section, you'll learn how to install `getmesh` on your local client, and install an Istio distribution of your choice on a Kubernetes cluster:

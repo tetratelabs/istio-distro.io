@@ -2,9 +2,6 @@
 title: "GetMesh Documentation"
 icon: "ti-panel"
 description: "Learn more about GetMesh, how to install and manage the CLI"
-# type dont remove or customize
-type : "docs"
-weight: 1
 # set these 2 to make it featured in homepage
 featured: true
 featureOrder: 1
