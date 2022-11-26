@@ -3,3 +3,5 @@
 *public
 *node_modules
 .hugo_build.lock
+.github
+config.toml
