@@ -80,4 +80,3 @@ deployment.apps/reviews-v1 restarted
 deployment.apps/reviews-v2 restarted
 deployment.apps/reviews-v3 restarted
 ```
-
