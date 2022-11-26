@@ -3,7 +3,37 @@ title: "Install Istio"
 date: 2022-11-26T06:33:01+0700
 description: "How to install Istio with GetMesh CLI"
 ---
-Tetrate Istio Distro by default communicates to the cluster defined by your Kubernetes configuration. Please make sure you’re connected to the correct cluster before proceeding.
+Tetrate Istio Distro by default communicates to the cluster defined by your Kubernetes configuration. 
+
+Before proceeding, please:
+
+- make sure your current `kubernetes context` points to the correct cluster
+- the required `version` and `flavor` of Istio version are set. The chosen version/flavor will be applied to the all following commands. Below is the example of the command sequence.
+  - first list available versions using [getmesh list](/getmesh-cli/reference/getmesh_list) command, output of the command will list all the versions available and highlights the current version with asterix (__*__)
+    ```sh
+    getmesh list
+    ```
+    ```pre
+    ISTIO VERSION     FLAVOR        FLAVOR VERSION     K8S VERSIONS     
+    1.15.3         tetrate             0         1.22,1.23,1.24,1.25
+    1.15.3       tetratefips           0         1.22,1.23,1.24,1.25
+    1.15.3          istio              0         1.22,1.23,1.24,1.25
+    1.15.1         tetrate             0         1.22,1.23,1.24,1.25
+    1.15.1       tetratefips           0         1.22,1.23,1.24,1.25
+    1.15.1          istio              0         1.22,1.23,1.24,1.25
+    *1.14.5         tetrate             0         1.21,1.22,1.23,1.24
+    1.14.5       tetratefips           0         1.21,1.22,1.23,1.24
+    1.14.5          istio              0         1.21,1.22,1.23,1.24
+    ...
+    ```
+  - Change `getmesh` to the desired version by issuing [getmesh switch](/getmesh-cli/reference/getmesh_list) command. (e.g. to set the desired version to `1.15.3` and flavor to `tetrate` - the following command will be issued:
+    ```sh
+    getmesh switch --version 1.15.3 --flavor=tetrate
+    ```
+    the confirmation will look like the following:
+    ```
+    istioctl switched to 1.15.3-tetrate-v0 now
+    ```
 
 To install the demo profile of Istio, That can be done using [getmesh istioctl](/getmesh-cli/reference/getmesh_istioctl) command
 ```sh
