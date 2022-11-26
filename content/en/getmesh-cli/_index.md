@@ -5,7 +5,7 @@ description: "Learn more about GetMesh, how to install and manage the CLI"
 # set these 2 to make it featured in homepage
 type : "docs"
 featured: true
-featureOrder: 1
+featureOrder: 2
 ---
 
 GetMesh is the easiest way to get started with Istio and to ensure you're using trusted, supported versions of Istio. Installing GetMesh is as easy as issuing the following command:

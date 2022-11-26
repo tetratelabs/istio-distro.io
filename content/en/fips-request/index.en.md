@@ -5,7 +5,7 @@ icon: "ti-credit-card" # themify icon pack : https://themify.me/themify-icons
 description: "this is meta description"
 # type dont remove or customize
 layout: "docs"
-weight: 10
+weight: 110
 ---
 
 <style>

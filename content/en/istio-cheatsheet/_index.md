@@ -5,10 +5,7 @@ icon: 'ti-notepad'
 description: "Important commands that you'll need to manage your Istio."
 # type dont remove or customize
 type: 'docs'
-weight: 7
-# set these 2 to make it featured in homepage
-featured: true
-featureOrder: 3
+weight: 45
 ---
 
 ### Set up

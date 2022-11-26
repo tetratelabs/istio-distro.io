@@ -2,6 +2,8 @@
 title: "Install Istio in EKS with add-on"
 date: 2021-04-19T13:00:00+07:00
 description: "How to use EKS Istio add-on."
+featured: true
+featureOrder: 1
 ---
 AWS offers EKS addon installation. Which is streamlined process that can be done via AWS web UI or AWS cli.
 
