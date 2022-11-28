@@ -1,9 +1,9 @@
 ---
-title: "getmesh"
+title: "GetMesh"
 url: /getmesh-cli/reference/getmesh/
 ---
 
-getmesh is an integration and lifecycle management CLI tool that ensures the use of supported and trusted versions of Istio.
+GetMesh is an integration and lifecycle management CLI tool that ensures the use of supported and trusted versions of Istio.
 
 #### Options
 

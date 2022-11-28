@@ -5,7 +5,7 @@ icon: 'ti-settings' # themify icon pack : https://themify.me/themify-icons
 description: 'Tetrate Istio Distro frequently asked questions.'
 # type dont remove or customize
 type: 'docs'
-weight: 8
+weight: 50
 ---
 
 ### General FAQ

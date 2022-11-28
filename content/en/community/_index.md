@@ -5,7 +5,7 @@ icon: 'ti-notepad'
 description: 'Contributing to the community'
 # type dont remove or customize
 type: 'docs'
-weight: 9
+weight: 90
 ---
 
 There are multiple ways you can contribute and get involved in the community:
