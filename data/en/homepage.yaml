@@ -1,7 +1,7 @@
 ########################## Hero Block ################################
 hero:
   title: "Simple, safe enterprise-grade Istio distro"
-  subtitle: "Now deployable as an Amazon EKS addon"
+  subtitle: "Now deployable as an Amazon EKS add-on"
   subtitle_url: "getmesh-cli/install/install-istio/eks-addon/"
   enable: true
   lead_item:

@@ -10,7 +10,7 @@
       <div class="col-lg-6 col-md-6">
         <h1 class="display-4">{{ .title  }}</h1>
         {{ if .subtitle }}
-        <p><span><a class="btn btn-sm btn-primary" href="{{ .subtitle_url }}">{{ .subtitle }}</a></span></p>
+        <p><span><a class="btn btn-sm btn-primary no-transform" href="{{ .subtitle_url }}">{{ .subtitle }}</a></span></p>
         {{ end }}
         <ul class="hero">
           {{ range .lead_item }}
