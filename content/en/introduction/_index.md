@@ -8,13 +8,11 @@ type: "docs"
 weight: 10
 ---
 
-Tetrate Istio Distro (TID) is an open source project from Tetrate that makes the tasks of adopting, managing, and updating Istio safe and easy.  TID includes the [**getmesh**](https://github.com/tetratelabs/getistio) management tool, and a selection of tested and optimized Istio distributions.
+Tetrate Istio Distro is an open source project from Tetrate that provides vetted builds of Istio tested against all major cloud platforms. TID provides extended Istio version support beyond upstream Istio (release date plus 14 months). It also includes the GetMesh lifecycle and change management CLI.
 
-The Istio distributions managed by TID include:
+The TID Istio distributions are hardened and performant, and are full distributions of the upstream Istio project. 
 
-- Community Istio distributions - Istio binaries taken directly from the [community Istio project](https://istio.io/latest/docs/releases/supported-releases/)
-- Tetrate Istio distributions - based on the community project, the Tetrate binaries benefit from longer support windows and additional release testing.
-- Tetrate Istio distributions (FIPS) - on request, Tetrate can also provide validated Istio binaries that are FIPS-certified
+#### Why use Tetrate Istio Distro?
 
 Users of Tetrate Istio Distro benefit from:
 
@@ -22,29 +20,35 @@ Users of Tetrate Istio Distro benefit from:
 - **Tetrate Istio distributions**: whenever you need an Istio distribution that is tested for use in AWS, Azure, GCP or vanilla Kubernetes;
 - **Support from the Tetrate Community**: [our community slack channels](https://tetr8.io/tetrate-community) are managed by Tetrate experts who actively participate in the Istio and Envoy projects
 
-#### Supported Environments
+#### What Istio distributions are available?
+
+The Istio distributions managed by TID include:
+
+- **Community Istio distributions** - Istio binaries taken directly from the [community Istio project](https://istio.io/latest/docs/releases/supported-releases/)
+- **Tetrate Istio distributions** - based on the community project, the Tetrate binaries benefit from longer support windows and additional release testing.
+- **Tetrate Istio distributions (FIPS)** - on request, Tetrate can also provide Istio distributions which contain FIPS-compliant cryptographic modules. TIS subscribers obtain FIPS-validated modules and the corresponding FIPS validation certificate.
+
+#### What Environments are Supported?
 
 Tetrate Istio Distro can install and manage Istio on a range of Kubernetes platforms.  Tetrate tests Istio builds on vanilla Kubernetes, Amazon EKS, Azure AKS and Google GKE:
 
-- **Installation**: Istio installation and updates are performed using [**GetMesh**](../getmesh-cli/install-istio/) or [**EKS Addons**](../TODO) (Amazon EKS only)
-- **Management**: Istio management is performed using [**getmesh**](getmesh-cli/reference/getmesh)
+- **Installation**: Istio installation and updates are performed using [**GetMesh**](../getmesh-cli/install-istio/) or [**EKS Addons**](../getmesh-cli/install/install-istio/eks-addon/) (Amazon EKS only)
+- **Management**: Istio management is performed using [**GetMesh**](../getmesh-cli/reference/getmesh)
 
-`getmesh` runs on Linux and MacOS.
+### Components of Tetrate Istio Distro
 
-### Introducing GetMesh
+#### GetMesh
 
-The `GetMesh` CLI tool simplifies installation, management, and upgrades of Istio to help you get started quickly.  It guides you towards certified, compatible Istio software for your clusters.
-
-With `GetMesh`, you get:
+**GetMesh** simplifies installation, management, and upgrades of Istio to help you get started quickly.  It guides you towards certified, compatible Istio software for your clusters. You get:
 
 - certainty from knowing you're installing certified versions of Istio, tested for compatibility with your production clusters
 - flexibility to switch easily between different istioctl versions, allowing you to manage multiple different Istio clusters
 - confidence in the correctness of your configuration, provided by Istio validation libraries from multiple sources
 - rapid security by integrating quickly with external certificate authorities from cloud providers and cert-manager
 
-... plus multiple additional integration points with cloud providers
+... plus multiple additional integration points with cloud providers.  The `getmesh` CLI tool runs on Linux and MacOS.
 
-### Introducing the Tetrate Istio distributions
+#### Tetrate Istio distributions
 
 The [Istio release schedule](https://istio.io/latest/docs/releases/supported-releases/#support-policy) can be very aggressive for enterprise lifecycle and change management practices. Releases are issued approximately quarterly. Each release is typically supported for 7 months, after which it no longer receive any security updates. 
 
@@ -59,8 +63,10 @@ The Tetrate-provided Istio distributions are rigorously tested against multiple 
 
 For a complete list of the currently-supported Istio versions and the associated Kubernetes versions, refer to the notes on the [Downloads](../download/) documentation.
 
-#### FIPS-Compliant Istio distributions
+##### FIPS-Compliant and FIPS-Validated Istio distributions
 
-Istio performs mTLS and other cryptographic operations to encrypt and decrypt data. Some environments require enhanced security assurance, and may require the use of FIPS-certified cryptographic software.
+Istio performs mTLS and other cryptographic operations to encrypt and decrypt data. Some environments require enhanced security assurance, and may require the use of FIPS-validated cryptographic software.
 
-On request, Tetrate can provide a FIPS-compliant implementation of each supported Tetrate Istio distribution.  Additionally, where an organization is required to demonstrate their use of FIPS-certified software, Tetrate can provide a formal certificate of compliance.
+On request, Tetrate can provide a FIPS-compliant implementation of each supported Tetrate Istio distribution. These implementations contain a cryptographic module that complies with the requirements of the FIPS-140-2 standard.
+
+Additionally, where an organization is required to demonstrate their use of FIPS-validated software, Tetrate Istio Subscription (TIS) customers benefit from a FIPS-validated module and validation certificate.

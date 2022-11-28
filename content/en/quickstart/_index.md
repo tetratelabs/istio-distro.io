@@ -1,22 +1,23 @@
 ---
-title: 'Quickstart'
+title: 'TID Quickstart'
 date: 2021-01-25T13:00:00+07:00
-description: 'GetMesh CLI quickstart'
+description: 'Tetrate Istio Distro quickstart'
 # type dont remove or customize
 type: 'docs'
+weight: 11
 ---
 
 <h3>Download</h3>
 
 The command below obtains a shell script that downloads and installs GetMesh CLI binary that corresponds to the OS distribution detected by the script (currently MacOS and Linux are supported). Additionally the most recent supported version of Istio is downloaded. Also script adds GetMesh location to PATH variable (re-login is required to get PATH populated)
 
-```
+```sh
 curl -sL https://istio.tetratelabs.io/getmesh/install.sh | bash
 ```
 
 Output example:
 
-```
+```sh
 $ curl -sL https://istio.tetratelabs.io/getmesh/install.sh | bash
 tetratelabs/getmesh info checking GitHub for latest tag
 tetratelabs/getmesh info found version: 1.1.1 for v1.1.1/linux/amd64
@@ -29,13 +30,13 @@ As explained earlier - GetMesh by default communicates to the cluster defined by
 
 The most command example is to install the demo profile of Istio - that can be done with following command:
 
-```
+```sh
 getmesh istioctl install --set profile=demo
 ```
 
 Output:
 
-```
+```sh
 $ getmesh istioctl install --set profile=demo
 This will install the Istio demo profile with ["Istio core" "Istiod" "Ingress gateways" "Egress gateways"] components into the cluster. Proceed? (y/N) Y
 ✔ Istio core installed
@@ -47,13 +48,13 @@ This will install the Istio demo profile with ["Istio core" "Istiod" "Ingress ga
 
 After the previous step is completed - the validation can be done by confirming GetMesh and Istio version installed:
 
-```
+```sh
 getmesh version
 ```
 
 Output:
 
-```
+```sh
 $ getmesh version
 GetMesh version: 0.3.0
 Active istioctl: 1.8.2-distro-v0
@@ -64,13 +65,13 @@ data plane version: 1.8.2-distro-v0 (2 proxies)
 
 Additionally to the version output - a user can confirm that config validation is functioning as expected by issuing the following command:
 
-```
+```sh
 getmesh config-validate
 ```
 
 With fresh install of Kubernetes cluster and Istio - the output will look similar to the below:
 
-```
+```sh
 $ getmesh config-validate
 Running the config validator. This may take some time...
 
