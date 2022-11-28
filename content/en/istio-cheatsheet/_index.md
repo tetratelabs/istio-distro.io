@@ -1,11 +1,11 @@
 ---
-title: 'Istio Cheatsheet'
+title: 'Istio Hints and Tips'
 date: 2018-12-29T11:02:05+06:00
 icon: 'ti-notepad'
 description: "Important commands that you'll need to manage your Istio."
 # type dont remove or customize
 type: 'docs'
-weight: 45
+weight: 38
 ---
 
 ### Set up

@@ -4,7 +4,7 @@ date: 2021-01-25T13:00:00+07:00
 description: "Using GetMesh to perform common management tasks"
 # type dont remove or customize
 type : "docs"
-weight: 25
+weight: 12
 featured: true
 featureOrder: 1
 ---
