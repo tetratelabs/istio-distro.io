@@ -46,11 +46,13 @@ This will install the Istio demo profile with ["Istio core" "Istiod" "Ingress ga
 ✔ Installation complete
 ```
 
-After the previous step is completed - the validation can be done by confirming GetMesh and Istio version installed:
+<h3>Verify it's Worked!</h3>
 
-```sh
-getmesh version
-```
+After the previous step is completed, you can use GetMesh to verify that the installation has succeeeded.
+
+**Check the Install Version**
+
+Run `getmesh version` to check the versions of GetMesh and the target Istio install:
 
 Output:
 
@@ -63,13 +65,9 @@ control plane version: 1.8.2-distro-v0
 data plane version: 1.8.2-distro-v0 (2 proxies)
 ```
 
-Additionally to the version output - a user can confirm that config validation is functioning as expected by issuing the following command:
+**Check the Istio Configuration**
 
-```sh
-getmesh config-validate
-```
-
-With fresh install of Kubernetes cluster and Istio - the output will look similar to the below:
+Run `getmesh config-validate` to confirm that GetMesh can access the Istio configuration. With a fresh install of Kubernetes and Istio, the output will look similar to the below:
 
 ```sh
 $ getmesh config-validate
@@ -83,3 +81,9 @@ The error codes of the found issues are prefixed by 'IST' or 'KIA'. For the deta
 - https://istio.io/latest/docs/reference/config/analysis/ for 'IST' error codes
 - https://kiali.io/documentation/latest/validations/ for 'KIA' error codes
 ```
+
+<h3>Next Steps</h3>
+
+Read on for next steps with Tetrate Istio Distro and GetMesh.
+
+For community support, join Tetrate's <a href="https://tetr8.io/tetrate-community">#GetMesh Slack Channel</a>.
