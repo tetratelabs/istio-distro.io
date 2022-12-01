@@ -7,7 +7,7 @@ type: 'docs'
 weight: 11
 ---
 
-<h3>Download</h3>
+### Download
 
 The command below obtains a shell script that downloads and installs GetMesh CLI binary that corresponds to the OS distribution detected by the script (currently MacOS and Linux are supported). Additionally the most recent supported version of Istio is downloaded. Also script adds GetMesh location to PATH variable (re-login is required to get PATH populated)
 
@@ -24,7 +24,7 @@ tetratelabs/getmesh info found version: 1.1.1 for v1.1.1/linux/amd64
 tetratelabs/getmesh info installed /home/mathetake/./bin/getmesh
 ```
 
-<h3>Install Istio</h3>
+### Install Istio
 
 As explained earlier - GetMesh by default communicates to the cluster defined by your Kubernetes configuration. Please make sure you’re connected to the correct cluster before proceeding with the installation steps.
 
@@ -46,11 +46,11 @@ This will install the Istio demo profile with ["Istio core" "Istiod" "Ingress ga
 ✔ Installation complete
 ```
 
-<h3>Verify it's Worked!</h3>
+### Verify it Worked!
 
 After the previous step is completed, you can use GetMesh to verify that the installation has succeeeded.
 
-**Check the Install Version**
+**Check the Installed GetMesh and Istio Versions**
 
 Run `getmesh version` to check the versions of GetMesh and the target Istio install:
 
@@ -67,7 +67,7 @@ data plane version: 1.8.2-distro-v0 (2 proxies)
 
 **Check the Istio Configuration**
 
-Run `getmesh config-validate` to confirm that GetMesh can access the Istio configuration. With a fresh install of Kubernetes and Istio, the output will look similar to the below:
+Run `getmesh config-validate` to confirm that GetMesh can access and validate the configuration in the Istio cluster. With a fresh install of Kubernetes and Istio, the output will look similar to the below:
 
 ```sh
 $ getmesh config-validate
@@ -82,8 +82,8 @@ The error codes of the found issues are prefixed by 'IST' or 'KIA'. For the deta
 - https://kiali.io/documentation/latest/validations/ for 'KIA' error codes
 ```
 
-<h3>Next Steps</h3>
+### Next Steps
 
 Read on for next steps with Tetrate Istio Distro and GetMesh.
 
-For community support, join Tetrate's <a href="https://tetr8.io/tetrate-community">#GetMesh Slack Channel</a>.
+For community support, join Tetrate's [#tid-and-getmesh Slack Channel](https://tetr8.io/tetrate-community).
