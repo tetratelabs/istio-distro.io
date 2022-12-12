@@ -40,6 +40,9 @@
 - id: learn_more
   translation: Learn More
 
+- id: get_support
+  translation: Get Support
+
 - id: go_to_event
   translation: Go to Event
 
