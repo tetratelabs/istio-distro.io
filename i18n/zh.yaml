@@ -40,6 +40,9 @@
 - id: learn_more
   translation: 了解详情
 
+- id: get_support
+  translation: 得到支持
+
 - id: go_to_event
   translation: 转到活动
 

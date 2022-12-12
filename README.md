@@ -1,10 +1,10 @@
 # Tetrate Istio Distro Website
-Website for Tetrate Istio Distro project (formerly GetIstio), build using Hugo
+Website for Tetrate Istio Distro project (formerly GetIstio), build using Hugo.
 
 ## Run Locally
-1. Download and install [hugo](https://www.gohugo.io), version not less than v0.80.0. An **extended version** is required, so you may want to check how to install that for your machine's OS. Example, for [Linux](https://gohugo.io/getting-started/installing/#snap-package)
-2. Fork this repo, clone it to your local machine 
-3. Go to the cloned directory and run `npm install` to install PostCSS dependency (we use it to purge unused CSS)
+1. Download and install [hugo](https://www.gohugo.io), version not less than v0.80.0 (to match the one in the current [Netlify CI builder image](https://github.com/netlify/build-image/blob/focal/focal-amd64.yaml#L26): it is recommended to use [v0.85](https://github.com/gohugoio/hugo/releases/tag/v0.85.0)). An **extended version** is required, so you may want to check how to install that for your machine's OS. Example, for [Linux](https://gohugo.io/getting-started/installing/#snap-package)
+2. Fork this repo, clone it to your local machine
+3. Go to the cloned directory and run `npm install` to install PostCSS dependency (we use it to purge unused CSS). Currently, we use node-12.
 4. Finally, to run the website in development mode, run the command:
 
 ```

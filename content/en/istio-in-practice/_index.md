@@ -5,10 +5,10 @@ icon: "ti-blackboard"
 description: "After you got Istio running, sharpen your Istio skill by following these tutorials."
 # type dont remove or customize
 type : "docs"
-weight: 4
+weight: 20
 # set these 2 to make it featured in homepage
 featured: true
-featureOrder: 2
+featureOrder: 3
 ---
 
 This section contains practical tutorials and walkthroughs for Istio.

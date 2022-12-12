@@ -9,6 +9,9 @@
     <div class="row">
       <div class="col-lg-6 col-md-6">
         <h1 class="display-4">{{ .title  }}</h1>
+        {{ if .subtitle }}
+        <p><span><a class="btn btn-sm btn-primary no-transform" href="{{ .subtitle_url }}">{{ .subtitle }}</a></span></p>
+        {{ end }}
         <ul class="hero">
           {{ range .lead_item }}
           <li class="lead text-white">{{ .content }}</li>
@@ -164,6 +167,8 @@
         {{ end }}
         <div class="pt-4 row justify-content-center">
             <a href="{{ "/getmesh-cli/"| relLangURL }}" class="btn btn-sm learn-more">{{ i18n "learn_more" }}</a>
+            &nbsp;&nbsp;
+            <a href="{{ "https://tetr8.io/tetrate-community"| relLangURL }}" class="btn btn-sm learn-more">{{ i18n "get_support" }}</a>
         </div>
       </div>
     </div>

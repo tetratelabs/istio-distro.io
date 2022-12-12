@@ -20,6 +20,7 @@
           {{ end }}
         </ul>
       </div>
+      <small class="text-white">Support: Join our <a href="https://tetr8.io/tetrate-community" target="_blank">#tid-and-getmesh Slack Channel</a> for Community Support</small><br />
       <small class="text-white">License: Tetrate Istio Distro is an open source project and is released under Apache License 2.0 | <a href="https://www.tetrate.io/privacy" target="_blank">Privacy Statement</a></small><br />
       <small class="text-white">Official project site of istio is <a href="https://www.istio.io" target="_blank">istio.io</a></small><br />
       <small class="text-white">Copyright &copy; {{ dateFormat "2006" now }} <a href="https://www.tetrate.io" target="_blank">Tetrate</a> All rights reserved.</small>
@@ -54,3 +55,6 @@
 {{ $formScript := resources.Get "js/form.js" | minify}}
 <script src="{{ $script.Permalink | relURL }}"></script>
 <script src="{{ $formScript.Permalink | relURL }}"></script>
+
+<!-- Hubspot form load  -->
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js?pre=1"></script>
