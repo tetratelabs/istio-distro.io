@@ -58,11 +58,11 @@ Output:
 
 ```sh
 $ getmesh version
-GetMesh version: 0.3.0
-Active istioctl: 1.8.2-distro-v0
-client version: 1.8.2-distro-v0
-control plane version: 1.8.2-distro-v0
-data plane version: 1.8.2-distro-v0 (2 proxies)
+getmesh version: 1.1.4
+active istioctl: 1.15.3-tetrate-v0
+client version: 1.15.3-tetrate-v0
+control plane version: 1.15.3-tetrate-v0
+data plane version: 1.15.3-tetrate-v0 (2 proxies)
 ```
 
 **Check the Istio Configuration**
