@@ -1,6 +1,5 @@
 ######################## default configuration ####################
-# baseURL = "https://istio.tetratelabs.io/"
-baseURL = "https://petrmc.github.io/istio-distro.io/"
+baseURL = "https://istio.tetratelabs.io/"
 title = "Tetrate Istio Distro | Simple, safe enterprise-grade Istio"
 # google analytics
 googleAnalytics = ""
@@ -133,7 +132,7 @@ page = "search/"
 # main menu
 [[Languages.en.menu.main]]
 name = "Docs"
-url = "/introduction/"
+url = "/getmesh-cli/"
 weight = 1
 
 [[Languages.en.menu.main]]
@@ -311,4 +310,3 @@ weight = 6
 name = "Istio.io"
 url = "https://www.istio.io/"
 weight = 7
-
