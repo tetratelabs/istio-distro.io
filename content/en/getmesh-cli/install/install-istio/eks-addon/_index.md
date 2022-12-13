@@ -2,6 +2,7 @@
 title: "Install Istio in EKS with add-on"
 date: 2022-12-12T22:00:40+0700
 description: "How to use EKS Istio add-on."
+weight: 20
 ---
 
 AWS and Tetrate have brought ability to deploy Istio to EKS cluster with minimal number of steps. TID EKS add-on deployment can be done via AWS Web console or AWS CLI. Below are both approaches are described.

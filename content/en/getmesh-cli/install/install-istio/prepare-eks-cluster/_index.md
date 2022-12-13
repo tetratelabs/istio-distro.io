@@ -1,7 +1,8 @@
 ---
-title: "Install Istio in EKS"
-date: 2021-04-19T13:00:00+07:00
-description: "How to install Istio in Amazon EKS."
+title: "Prepare AWS EKS cluster"
+date: 2022-12-13T15:00:00+0700
+description: "AWS EKS Cluster is prerequisite for Istio deployment"
+weight: 10
 ---
 To install Istio in EKS, you will need to set up the Kubernetes context before.
 
