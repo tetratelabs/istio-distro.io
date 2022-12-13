@@ -1,6 +1,6 @@
 ---
 title: "AWS Private CA Integration"
-date: 2021-01-25T13:00:00+07:00
+date: 2022-12-12T22:01:10+0700
 description: "AWS Private CA Integration"
 # type dont remove or customize
 type : "docs"
@@ -172,4 +172,3 @@ Certificate:
             Public Key Algorithm: rsaEncryption
                 RSA Public-Key: (2048 bit)
 ...
-```
