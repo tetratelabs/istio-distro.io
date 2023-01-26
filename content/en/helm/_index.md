@@ -53,6 +53,13 @@ To ensure consistency the variables can be set per below:
   ```bash
   export latest_version=$(helm search repo ${name} -o json | jq -r .[].version)
   ```
+  
+  Make sure the variables are set:
+
+  ```pre
+  echo $name $latest_version
+  tid/tetrate-istio 1.16.1
+  ```
 
 #### Charts installation via Helm
 
@@ -78,9 +85,9 @@ __FIPS Note__
 Output:
 
 ```pre
- $ > export name="tid/tetrate-istio"
- $ > export latest_version=$(helm search repo ${name} -o json | jq -r .[].version)
- $ > helm install tetrate-istio ${name} \
+ $ export name="tid/tetrate-istio"
+ $ export latest_version=$(helm search repo ${name} -o json | jq -r .[].version)
+ $ helm install tetrate-istio ${name} \
 >     --set global.hub=containers.istio.tetratelabs.com \
 >     --set global.tag=${latest_version}-tetrate-v0 \
 >     --create-namespace --namespace istio-system
@@ -113,7 +120,7 @@ helm status tetrate-istio -n istio-system
 Also confirming that all objects are created as expected, use `kubectl` the output should be something similar to below:
 
 ```pre
- $ > kubectl get all -n istio-system
+$ kubectl get all -n istio-system
 NAME                          READY   STATUS    RESTARTS   AGE
 pod/istio-cni-node-4vc9p      1/1     Running   0          21m
 pod/istio-cni-node-dhp6v      1/1     Running   0          21m
