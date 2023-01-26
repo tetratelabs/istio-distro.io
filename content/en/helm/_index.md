@@ -109,6 +109,48 @@ More details and feedback [Tetrate Istio Distro](https://istio.tetratelabs.io/)
 
 __Gateway Note__ While a separate Envoy Gateway chart is available, it's not necessary to deploy them. The configuration templates deployed with the default chart allow to configure `proxyv2` container to act as standalone gateway pod.
 
+#### Installing specific version
+
+Tetrate supports multiple versions of Istio. There are many reasons to deploy one of the previous versions of Istio. To achive specific version, follow the following steps
+
+- Set deployment name variable
+
+  ```bash
+  export name="tid/tetrate-istio"
+  ```
+
+- List all available versions from Tetrate repo that is added via a procedure deployed above.
+
+  ```pre
+  $ helm search repo ${name} --versions
+  NAME                    CHART VERSION   APP VERSION     DESCRIPTION                                       
+  tid/tetrate-istio       1.16.1                          Tetrate Istio Distro Istiod is simple, safe ent...
+  tid/tetrate-istio       1.16.0                          Tetrate Istio Distro Istiod is simple, safe ent...
+  tid/tetrate-istio       1.15.3                          Tetrate Istio Distro Istiod is simple, safe ent...
+  tid/tetrate-istio       1.15.1                          Tetrate Istio Distro Istiod is simple, safe ent...
+  tid/tetrate-istio       1.14.6                          Tetrate Istio Distro Istiod is simple, safe ent...
+  tid/tetrate-istio       1.14.5                          Tetrate Istio Distro Istiod is simple, safe ent...
+  tid/tetrate-istio       1.14.4                          Tetrate Istio Distro Istiod is simple, safe ent...
+  tid/tetrate-istio       1.14.3                          Tetrate Istio Distro Istiod is simple, safe ent..
+  ...<truncated>
+  ```
+
+- export the version environment based on __CHART VERSION__ 
+
+```pre
+export version=1.14.1
+```
+
+- deploy desired version using the following command
+
+```bash
+helm install tetrate-istio ${name} \
+    --set global.hub=containers.istio.tetratelabs.com \
+    --set global.tag=${version}-tetrate-v0 \
+    --create-namespace --namespace istio-system \
+    --version $version --devel
+```
+
 ### Verify the Tetrate Istio Distro deployment
 
 Use helm command anytime to get the output similar to install command:
@@ -137,6 +179,61 @@ deployment.apps/istiod   1/1     1            1           21m
 
 NAME                                DESIRED   CURRENT   READY   AGE
 replicaset.apps/istiod-56b5bdd674   1         1         1       21m
+```
+
+### Upgrade version with latest
+
+When you need to upgrade the version, the steps are similar to the install command. 
+
+- Follow the `Set variables` above to set the variables.
+- issue the Helm upgrade command
+  ```bash
+  helm upgrade tetrate-istio ${name} \
+      --set global.hub=containers.istio.tetratelabs.com \
+      --set global.tag=${latest_version}-tetrate-v0 \
+      --namespace istio-system
+  ```
+Output:
+  ```pre
+  $ export name="tid/tetrate-istio"
+  $ export latest_version=$(helm search repo ${name} -o json | jq -r .[].version)
+  
+  $ echo $name $latest_version
+  tid/tetrate-istio 1.16.1
+  
+  $ helm upgrade tetrate-istio ${name} \
+  >     --set global.hub=containers.istio.tetratelabs.com \
+  >     --set global.tag=${latest_version}-tetrate-v0 \
+  >     --namespace istio-system
+  Release "tetrate-istio" has been upgraded. Happy Helming!
+  NAME: tetrate-istio
+  LAST DEPLOYED: Thu Jan 26 22:39:25 2023
+  NAMESPACE: istio-system
+  STATUS: deployed
+  REVISION: 2
+  TEST SUITE: None
+  NOTES:
+  "TID - Tetrate Distro of Istio 1.16.1-tetrate-v0 successfully installed!"
+  
+  To learn more about the release, try:
+    $ helm status tetrate-istio
+    $ helm get all tetrate-istio
+  
+  More details and feedback [Tetrate Istio Distro](https://istio.tetratelabs.io/)
+  ```
+
+#### Uninstalling Tetrate Istio Distro
+
+Before removing Tetrate Istio Distro - all the application and gateway need to be off-boarded. 
+
+Export chart name into environmental variable and then use helm command:
+```pre
+$ export chart=$(helm list --namespace istio-system -o json | jq -r .[].name)
+$ echo $chart
+tetrate-istio
+
+$ helm uninstall ${chart} --namespace istio-system
+release "tetrate-istio" uninstalled
 ```
 
 ### Next Steps
