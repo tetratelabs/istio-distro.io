@@ -139,8 +139,6 @@ NAME                                DESIRED   CURRENT   READY   AGE
 replicaset.apps/istiod-56b5bdd674   1         1         1       21m
 ```
 
-
-
 ### Next Steps
 
 The cluster is ready for your applications.
