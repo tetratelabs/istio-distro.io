@@ -29,11 +29,12 @@ getmesh show
 ```
 
 Example output would be
-<pre>
+
+```pre
 1.7.6-distro-v0
 1.8.1-distro-v0
 1.8.2-distro-v0 (Active)
-</pre>
+```
 
 If the required version of Istio is not yet downloaded, the operator can first query the list of trusted Istio versions through the [list command](/getmesh-cli/reference/getmesh_list):
 ```sh
@@ -41,14 +42,16 @@ getmesh list
 ```
 
 Example output would be:
-<pre>
+
+```pre
  ISTIO VERSION   FLAVOR  FLAVOR VERSION   K8S VERSIONS  
     *1.8.2       tetrate       0         1.16,1.17,1.18  
      1.8.1       tetrate       1         1.16,1.17,1.18  
      1.7.6       tetratefips   2         1.16,1.17,1.18  
      1.7.5       tetratefips   3         1.16,1.17,1.18  
      1.7.4       tetrate       0         1.16,1.17,1.18  
-</pre>
+```
+
 Below is an example of obtaining version 1.8.1 of Istio by leveraging the [fetch command](/getmesh-cli/reference/getmesh_fetch):
 
 ```sh
@@ -59,13 +62,13 @@ In the example above, `Flavor tetrate` maps to upstream Istio with the addition 
 
 Use the [show command](/getmesh-cli/reference/getmesh_show) `getmesh show` to cross check if the Istio version is downloaded and the output will list all versions and mark the active one:
 
-<pre>
+```pre
 $ getmesh show
 1.7.4-distro-v0
 1.7.6-distro-v0
 1.8.1-distro-v0 (Active)
 1.8.2-distro-v0
-</pre>
+```
 
 To switch to a different version of istioctl, run the [switch command](/getmesh-cli/reference/getmesh_switch) for example:
 ```sh

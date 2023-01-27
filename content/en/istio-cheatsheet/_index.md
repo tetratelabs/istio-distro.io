@@ -5,7 +5,7 @@ icon: 'ti-notepad'
 description: "Important commands that you'll need to manage your Istio."
 # type dont remove or customize
 type: 'docs'
-weight: 38
+weight: 30
 ---
 
 ### Set up
