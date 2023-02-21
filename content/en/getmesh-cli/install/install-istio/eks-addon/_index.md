@@ -1,7 +1,7 @@
 ---
-title: "Install Istio on AKS from Azure Marketplace"
+title: "Install Istio in EKS with add-on"
 date: 2022-12-12T22:00:40+0700
-description: "How to deploy Istio on AKS (step by step instruction)"
+description: "How to use EKS Istio add-on."
 weight: 20
 ---
 
