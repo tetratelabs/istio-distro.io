@@ -14,7 +14,7 @@ weight: 10
 curl -sL https://istio.tetratelabs.io/getmesh/install.sh | bash
 ```
 
-请按照 [Tetrate Istio Distro 安装和更新页面](/getmesh-cli/install-and-update-of-getmesh)，了解下载和后续步骤的详细说明，以使 GetMesh 在您的机器上运行。
+请按照 [GetMesh 安装页面](/getmesh-cli/install)，了解下载和后续步骤的详细说明，以使 GetMesh 在您的机器上运行。
 
 ## 支持的 Istio 版本
 
