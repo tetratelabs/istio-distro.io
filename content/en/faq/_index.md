@@ -13,7 +13,7 @@ weight: 50
 - [What is Tetrate Istio Distro?](#what-is-tetrate-istio-distro)
 - [Why should I use Tetrate Istio Distro?](#why-should-i-use-tetrate-istio-distro)
 - [Is it free?](#is-it-free)
-- [How to download FIPS complaint distro](#how-to-download-fips-complaint-distro)
+- [How to download FIPS compliant distro](#how-to-download-fips-compliant-distro)
 - [What are the supported versions of Tetrate Istio Distro?](#what-are-the-supported-versions-of-tetrate-istio-distro)
 - [What are the components of the Tetrate Istio Distro and how do they compare to Istio upstream?](#what-are-the-components-of-tetrate-istio-distro-and-how-do-they-compare-to-istio-upstream)
 - [I am currently using the default distros of Istio. How do I switch to using Tetrate Istio Distro?](#i-am-currently-using-the-default-distros-of-istio-how-do-i-switch-to-using-tetrate-istio-distro)
@@ -28,7 +28,7 @@ weight: 50
 - [Do Tetrate Istio Distro builds have a performance impact?](#do-tetrate-istio-distro-builds-have-a-performance-impact)
 - [How often is Tetrate Istio Distro updated?](#how-often-is-tetrate-istio-distro-updated)
 - [How do I request features?](#how-do-i-request-features)
-- [Can Icontribute to the work done on Tetrate Istio Distro?](#can-i-contribute-to-the-work-done-on-tetrate-istio-distro)
+- [Can I contribute to the work done on Tetrate Istio Distro?](#can-i-contribute-to-the-work-done-on-tetrate-istio-distro)
 
 ##### What is Tetrate Istio Distro?
 
@@ -60,9 +60,9 @@ all of the builds are available for free. We welcome community participation and
 [community](/community) for updates on new releases, notifications, and regular community events with Istio
 contributors and practitioners.
 
-##### How to download FIPS complaint distro?
+##### How to download FIPS compliant distro?
 
-FIPS complaint distro is available to active Tetrate Istio Subscribtion customers. 
+FIPS compliant distro is available to active Tetrate Istio Subscription customers. 
 - new customers [order FIPS compliant distribution](/fips-request/) 
 - existing customers - please reach out to Tetrate's support to obtain the required binaries
 
