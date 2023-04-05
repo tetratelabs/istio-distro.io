@@ -63,8 +63,8 @@ contributors and practitioners.
 ##### How to download FIPS compliant distro?
 
 FIPS compliant distro is available to active Tetrate Istio Subscription customers. 
-- new customers [order FIPS compliant distribution](/fips-request/) 
-- existing customers - please reach out to Tetrate's support to obtain the required binaries
+- new customers [order FIPS compliant distribution](/fips-request/).
+- existing customers - please reach out to Tetrate's support to obtain the required binaries.
 
 ##### What are the supported versions of Tetrate Istio Distro?
 

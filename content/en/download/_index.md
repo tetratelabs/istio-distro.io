@@ -36,8 +36,8 @@ There are additional download of **Istio distributions and istioctl** binaries f
 #### FIPS compliant Distros access
 
 **FIPS compliant distros** are _only_ available to Tetrate Istio Subscription customers. 
-- new customers [order FIPS compliant distribution](/fips-request/) 
-- existing customers - please reach out to Tetrate's support to obtain the required binaries
+- new customers [order FIPS compliant distribution](/fips-request/).
+- existing customers - please reach out to Tetrate's support to obtain the required binaries.
 
 #### Linux Istio Distros (non-FIPS)
 
