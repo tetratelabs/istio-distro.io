@@ -13,6 +13,7 @@ weight: 50
 - [What is Tetrate Istio Distro?](#what-is-tetrate-istio-distro)
 - [Why should I use Tetrate Istio Distro?](#why-should-i-use-tetrate-istio-distro)
 - [Is it free?](#is-it-free)
+- [How to download FIPS complaint distro](#how-to-download-fips-complaint-distro)
 - [What are the supported versions of Tetrate Istio Distro?](#what-are-the-supported-versions-of-tetrate-istio-distro)
 - [What are the components of the Tetrate Istio Distro and how do they compare to Istio upstream?](#what-are-the-components-of-tetrate-istio-distro-and-how-do-they-compare-to-istio-upstream)
 - [I am currently using the default distros of Istio. How do I switch to using Tetrate Istio Distro?](#i-am-currently-using-the-default-distros-of-istio-how-do-i-switch-to-using-tetrate-istio-distro)
@@ -58,6 +59,12 @@ Yes. Tetrate Istio Distro is an [Apache 2 licenced](https://www.apache.org/licen
 all of the builds are available for free. We welcome community participation and contribution. Join our
 [community](/community) for updates on new releases, notifications, and regular community events with Istio
 contributors and practitioners.
+
+##### How to download FIPS complaint distro?
+
+FIPS complaint distro is available to active Tetrate Istio Subscribtion customers. 
+- new customers [order FIPS compliant distribution](/fips-request/) 
+- existing customers - please reach out to Tetrate's support to obtain the required binaries
 
 ##### What are the supported versions of Tetrate Istio Distro?
 

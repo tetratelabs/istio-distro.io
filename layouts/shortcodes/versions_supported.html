@@ -22,8 +22,6 @@
   {{ delimit (uniq ($.Scratch.Get "eos_list")) ", " " and " }}
 
   <br><br><strong> Currently supported releases are {{ delimit $minor_versions ", " " and " }}. </strong><br>
-
-
   {{ range $minor_versions := uniq (.Scratch.Get "version_trimmed") }}
     {{ $previous_sec_value := 0 }}
     {{ $previous_value := 0 }}
@@ -44,13 +42,11 @@
           {{ end }}         
 	{{ end }}
       {{ end }}
-
       {{ if ne (len ($.Scratch.Get "highest_minor_security_patches")) 0 }}
         <strong>For {{ $minor_versions }} please upgrade to the latest patch version {{ $.Scratch.Get "highest_minor_supported_version" }}
-      	({{ $.Scratch.Get "highest_minor_security_patches" }} has a security fix) </strong> 
+      	({{ $.Scratch.Get "highest_minor_security_patches" }} has a security fix) </strong> <br>
       {{ end }}
       {{ $.Scratch.Set "highest_minor_security_patches" ""}}
-      </br>
   {{ end }}
 
   {{ range $version, $eos_time := $manifest.istio_minor_versions_eol_dates }}
@@ -60,6 +56,7 @@
     {{ $60_days := 5184000 }}
     {{ $time_difference := sub $time_json $current_time }}
     {{ if and (gt $time_difference 0) (gt $60_days $time_difference) }}
+    <br>
       {{ $.Scratch.Add "eos_item" $version }}
       {{ $.Scratch.Add "eos_item" " is End Of Life by " }}
       {{ $.Scratch.Add "eos_item" $eos_time }}

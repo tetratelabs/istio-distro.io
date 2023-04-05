@@ -21,9 +21,9 @@ Please follow [Tetrate Istio Distro Install and Update Page](/getmesh-cli/instal
 Tetrate Istio Distro tracks Istio upstream releases. As part of Tetrate Istio Distro build pipeline, a series of tests are run to ensure the Istio distro works well on the underlying Kubernetes platform.
 
 Tetrate Istio Distro certified Istio distro has been tested against the following Kubernetes distros (exact support varies on version of Istio used):
-- EKS - 1.22 - 1.16
-- GKE - 1.22 - 1.16
-- AKS - 1.22 - 1.16
+- EKS - 1.25 - 1.19
+- GKE - 1.25 - 1.19
+- AKS - 1.25 - 1.19
 
 While the core features of Istio have been tested and certified against different Kubernetes distros, users are advised to recognize that certain features of Istio stipulate a minimum Kubernetes version (for example K8S CSR API to sign istio workload needs Kubernetes 1.18+) and certain other features would need provider specific configurations to be set (for example enabling Istio CNI plugin)
 
@@ -33,11 +33,15 @@ There are additional download of **Istio distributions and istioctl** binaries f
 
 ### Istio Binaries Download
 
-#### Linux Istio Distros
+#### FIPS complaint Distros access
+
+**FIPS complaint distro** is _only_ available to Tetrate Istio Subscription customers. 
+- new customers [order FIPS compliant distribution](/fips-request/) 
+- existing customers - please reach out to Tetrate's support to obtain the required binaries
+
+#### Linux Istio Distros (non-FIPS)
 
 Below you can find direct URL for Istio and istioctl distros: 
-
-[Need a FIPS compliant distribution?](/fips-request/)
 
 {{< downloads linux >}}
 
