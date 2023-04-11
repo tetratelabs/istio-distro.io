@@ -1,5 +1,5 @@
 ---
-title: "Contributing to GetMesh"
+title: "Contributing to getmesh"
 url: /community/contributing
 ---
 
