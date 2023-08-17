@@ -87,7 +87,7 @@
       {{ $.Scratch.Add "istio_url_middle" (string .flavor_version) }}
       {{ $.Scratch.Add "istio_url_middle" (string .flavor_version) }}
 
-      {{ if eq .flavor "tetratefips" }} <a href="https://istio.tetratelabs.io/fips-request/" style="color: rgb(32, 27, 27);" target="_blank">Get in touch here.</a></strong> {{ end }} 
+      {{ if eq .flavor "tetratefips" }} <a href="https://istio.tetratelabs.io/fips-request/" style="color: rgb(32, 27, 27);" target="_blank">Contact us</a></strong> {{ end }} 
 
       {{ if ne .flavor "tetratefips" }} 
       {{ range $type,$url_ending := $.Scratch.Get "file_suffix" }}
@@ -100,7 +100,7 @@
     </td>
 
     <td>
-      {{ if eq .flavor "tetratefips" }} <a href="https://istio.tetratelabs.io/fips-request/" style="color: rgb(32, 27, 27);" target="_blank">Get in touch here.</a></strong> {{ end }} 
+      {{ if eq .flavor "tetratefips" }} <a href="https://istio.tetratelabs.io/fips-request/" style="color: rgb(32, 27, 27);" target="_blank">Contact us</a></strong> {{ end }} 
       {{ if ne .flavor "tetratefips" }} 
       {{ range $type,$url_ending := $.Scratch.Get "file_suffix" }}
       {{ if not $multiple_version }} {{ $type = "istioctl" }} {{ end }}
