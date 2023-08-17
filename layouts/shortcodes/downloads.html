@@ -31,7 +31,7 @@
 {{ end }}
 
 
-{{ $manifest := getJSON "https://istio.tetratelabs.io/getmesh/manifest.json" }}
+{{ $manifest := getJSON "https://raw.githubusercontent.com/tetratelabs/helm-charts/main/manifest.json" }}
 
 {{ range $manifest.istio_distributions }}
 {{ $.Scratch.Add "version_list" (slice .version) }}
@@ -53,6 +53,7 @@
 {{ end }}
 
 <table>
+  <th>Tags</th>
   <th>Distribution type</th>
   <th>Istio version</th>
   <th>Release Notes</th>
@@ -62,9 +63,10 @@
 
   {{ range $valid_version := $.Scratch.Get "latest_versions" }}
   {{ range $manifest.istio_distributions }}
-  {{ if and (findRE $valid_version .version) (ne $os_type "unspecified") (ne .flavor "tetratefips")}}
+  {{ if and (findRE $valid_version .version) (ne $os_type "unspecified") }}
   {{ $release_url := index (.release_notes) 0}}
   <tr>
+    <td> {{ .version }}-{{ .flavor }}-v{{ .flavor_version }} </td>
     <td> {{ .flavor }}-v{{ .flavor_version }} </td>
     <td> {{ .version }} </td>
 
@@ -73,30 +75,38 @@
     <td> <a href={{ $release_url }}>Release Notes {{ .version }}</a> </td>
     <td>
 
-      {{ if $multiple_version }} <strong>Istio Distro</strong><br> {{ end }}
+
+      
+
+      {{ if and ($multiple_version) ( ne .flavor "tetratefips") }} <strong>Istio Distro</strong><br> {{ end }}
 
       {{ $.Scratch.Add "istio_url_middle" .version }}
       {{ $.Scratch.Add "istio_url_middle" "-" }}
       {{ $.Scratch.Add "istio_url_middle" .flavor }}
       {{ $.Scratch.Add "istio_url_middle" "-v" }}
       {{ $.Scratch.Add "istio_url_middle" (string .flavor_version) }}
+      {{ $.Scratch.Add "istio_url_middle" (string .flavor_version) }}
 
+      {{ if eq .flavor "tetratefips" }} <a href="https://istio.tetratelabs.io/fips-request/" style="color: rgb(32, 27, 27);" target="_blank">Get in touch here.</a></strong> {{ end }} 
+
+      {{ if ne .flavor "tetratefips" }} 
       {{ range $type,$url_ending := $.Scratch.Get "file_suffix" }}
       {{ if not $multiple_version }} {{ $type = "Istio Distro" }} {{ end }}
 
       <a href={{ $url_beginning_distro }}{{ $.Scratch.Get "istio_url_middle" }}{{ $url_ending }}>{{ $type }}</a> <br>
-      {{ end }}
+      {{ end }} {{ end }} 
+
 
     </td>
 
     <td>
-      {{ if $multiple_version }} <strong>istioctl</strong><br> {{ end }}
-
+      {{ if eq .flavor "tetratefips" }} <a href="https://istio.tetratelabs.io/fips-request/" style="color: rgb(32, 27, 27);" target="_blank">Get in touch here.</a></strong> {{ end }} 
+      {{ if ne .flavor "tetratefips" }} 
       {{ range $type,$url_ending := $.Scratch.Get "file_suffix" }}
       {{ if not $multiple_version }} {{ $type = "istioctl" }} {{ end }}
 
       <a href={{ $url_beginning_cli }}{{ $.Scratch.Get "istio_url_middle" }}{{ $url_ending }}>{{ $type }}</a> <br>
-      {{ end }}
+      {{ end }} {{ end }}
 
     </td>
 
