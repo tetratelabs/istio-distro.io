@@ -85,7 +85,6 @@
       {{ $.Scratch.Add "istio_url_middle" .flavor }}
       {{ $.Scratch.Add "istio_url_middle" "-v" }}
       {{ $.Scratch.Add "istio_url_middle" (string .flavor_version) }}
-      {{ $.Scratch.Add "istio_url_middle" (string .flavor_version) }}
 
       {{ if eq .flavor "tetratefips" }} <a href="https://istio.tetratelabs.io/fips-request/" style="color: rgb(32, 27, 27);" target="_blank">Contact us</a></strong> {{ end }} 
 
