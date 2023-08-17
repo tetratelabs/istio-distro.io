@@ -39,7 +39,7 @@ There are additional download of **Istio distributions and istioctl** binaries f
 - new customers [order FIPS compliant distribution](/fips-request/).
 - existing customers - please reach out to Tetrate's support to obtain the required binaries.
 
-#### Linux Istio Distros (non-FIPS)
+#### Linux Istio Distros 
 
 Below you can find direct URL for Istio and istioctl distros: 
 
