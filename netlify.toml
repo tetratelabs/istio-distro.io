@@ -20,7 +20,7 @@ status = 302
 # Redirect latest version of manifest.json from getmesh repo
 [[redirects]]
 from = "/getmesh/manifest.json"
-to = "https://istio.tetratelabs.io/getmesh/manifest.json"
+to = "https://raw.githubusercontent.com/tetratelabs/helm-charts/main/manifest.json"
 force = true
 status = 302
 

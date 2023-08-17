@@ -31,7 +31,7 @@
 {{ end }}
 
 
-{{ $manifest := getJSON "https://raw.githubusercontent.com/tetratelabs/helm-charts/main/manifest.json" }}
+{{ $manifest := getJSON "https://istio.tetratelabs.io/getmesh/manifest.json" }}
 
 {{ range $manifest.istio_distributions }}
 {{ $.Scratch.Add "version_list" (slice .version) }}
@@ -100,6 +100,7 @@
     </td>
 
     <td>
+      {{ if and ($multiple_version) ( ne .flavor "tetratefips") }} <strong>Istioctl</strong><br> {{ end }}
       {{ if eq .flavor "tetratefips" }} <a href="https://istio.tetratelabs.io/fips-request/" style="color: rgb(32, 27, 27);" target="_blank">Contact us</a></strong> {{ end }} 
       {{ if ne .flavor "tetratefips" }} 
       {{ range $type,$url_ending := $.Scratch.Get "file_suffix" }}
