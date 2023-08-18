@@ -21,9 +21,9 @@ Please follow [GetMesh and Istio](/getmesh-cli/install) for detailed instruction
 Tetrate Istio Distro tracks Istio upstream releases. As part of Tetrate Istio Distro build pipeline, a series of tests are run to ensure the Istio distro works well on the underlying Kubernetes platform.
 
 Tetrate Istio Distro certified Istio distro has been tested against the following Kubernetes distros (exact support varies on version of Istio used):
-- EKS - 1.25 - 1.19
-- GKE - 1.25 - 1.19
-- AKS - 1.25 - 1.19
+- EKS - 1.23 - 1.27
+- GKE - 1.23 - 1.27
+- AKS - 1.23 - 1.27
 
 While the core features of Istio have been tested and certified against different Kubernetes distros, users are advised to recognize that certain features of Istio stipulate a minimum Kubernetes version (for example K8S CSR API to sign istio workload needs Kubernetes 1.18+) and certain other features would need provider specific configurations to be set (for example enabling Istio CNI plugin)
 
