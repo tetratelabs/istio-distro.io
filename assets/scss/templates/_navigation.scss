@@ -21,9 +21,12 @@
 .logo-width {
   width: 150px;
 }
+
 .navigation {
   transition: 0.2s ease;
   background: transparent;
+  position: absolute;
+  width: 100%;
 
   &.nav-bg {
     background: #262f40;
