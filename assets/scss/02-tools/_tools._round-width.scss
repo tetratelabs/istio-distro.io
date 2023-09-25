@@ -1,0 +1,13 @@
+@use 'sass:math';
+
+/**
+ * Round Width
+ *
+ * Group: Tools
+ */
+
+/* round flex items' width */
+@function roundWidth($i) {
+  $width: (100 * $i * 100) / $grid-columns;
+  @return unquote(($width) + '%');
+}

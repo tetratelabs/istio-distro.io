@@ -1,0 +1,48 @@
+/**
+ * Logos Box
+ *
+ * Group: Custom Components
+ */
+
+.c-logos-box {
+	$this: &;
+
+	text-align: center;
+
+	&__logos {
+		display: flex;
+		align-items: center;
+
+		&--grid {
+			justify-content: space-between;
+		}
+
+		&--single {
+			justify-content: center;
+		}
+	}
+
+	&__logo {
+		max-width: 80px;
+	}
+
+	&__text {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-sm);
+	}
+
+	&__list {
+		width: fit-content;
+		margin-left: auto;
+		margin-right: auto;
+
+		li {
+			padding: var(--space-sm) var(--space-md);
+
+			& + li {
+				border-top: 1px solid var(--color-border);
+			}
+		}
+	}
+}

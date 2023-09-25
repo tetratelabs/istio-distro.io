@@ -1,0 +1,64 @@
+/**
+ * Link
+ *
+ * Group: Custom Components
+ */
+
+.c-link {
+	$this: &;
+
+	align-items: center;
+	display: inline-flex;
+
+	@include onEvent {
+		color: currentColor;
+
+		span {
+			text-decoration: underline;
+		}
+	}
+
+	i {
+		& + span {
+			margin-left: var(--space-sm);
+		}
+	}
+
+	span {
+		& + i {
+			margin-left: var(--space-sm);
+		}
+	}
+
+	&--primary {
+		color: var(--color-primary);
+
+		@include onEvent {
+			color: var(--color-primary);
+		}
+	}
+
+	&--secondary {
+		color: var(--color-secondary);
+
+		@include onEvent {
+			color: var(--color-secondary);
+		}
+	}
+
+	&--light {
+		color: var(--color-light);
+
+		@include onEvent {
+			color: var(--color-light);
+		}
+	}
+
+	&--dark {
+		color: var(--color-dark);
+
+		@include onEvent {
+			color: var(--color-dark);
+		}
+	}
+}

@@ -1,0 +1,29 @@
+/**
+ * Color
+ *
+ * Group: Utilities
+ */
+
+@import "../01-settings/settings.variables";
+
+.u-color {
+	@each $name, $color in $colors {
+		&-#{$name} {
+			color: var(--color-#{$name});
+		}
+	}
+
+	&-gradient {
+		background: -webkit-linear-gradient(left, var(--color-primary), var(--color-secondary));
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+}
+
+.has-primary-color {
+	color: var(--color-primary);
+}
+
+.has-secondary-color {
+	color: var(--color-secondary);
+}

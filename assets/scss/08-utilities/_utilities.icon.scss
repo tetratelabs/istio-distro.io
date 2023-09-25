@@ -1,0 +1,63 @@
+/**
+ * Icon
+ *
+ * Group: Utilities
+ */
+
+[class*="u-icon"] {
+	width: auto !important;
+}
+
+/* icon size */
+.u-icon-xs {
+	font-size: var(--icon-xs);
+	height: var(--icon-xs);
+	min-width: var(--icon-xs);
+}
+
+.u-icon-sm {
+	font-size: var(--icon-sm);
+	height: var(--icon-sm);
+	min-width: var(--icon-sm);
+}
+
+.u-icon-md {
+	font-size: var(--icon-md);
+	height: var(--icon-md);
+	min-width: var(--icon-md);
+}
+
+.u-icon-lg {
+	font-size: var(--icon-lg);
+	height: var(--icon-lg);
+	min-width: var(--icon-lg);
+}
+
+.u-icon-xl {
+	font-size: var(--icon-xl);
+	height: var(--icon-xl);
+	min-width: var(--icon-xl);
+}
+
+.u-icon-2xl {
+	font-size: var(--icon-2xl);
+	height: var(--icon-2xl);
+	min-width: var(--icon-2xl);
+}
+
+.u-icon-3xl {
+	font-size: var(--icon-3xl);
+	height: var(--icon-3xl);
+	min-width: var(--icon-3xl);
+}
+
+.u-icon-4xl {
+	font-size: var(--icon-4xl);
+	height: var(--icon-4xl);
+	min-width: var(--icon-4xl);
+}
+
+.u-icon--rounded {
+	border-radius: 100%;
+	overflow: hidden;
+}

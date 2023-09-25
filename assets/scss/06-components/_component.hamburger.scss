@@ -1,0 +1,131 @@
+/**
+ * Hamburger
+ *
+ * Group: Custom Components
+ */
+
+.c-hamburger {
+	$this: &;
+
+	display: inline-block;
+	cursor: pointer;
+	padding: var(--hamburger-padding-y) var(--hamburger-padding-x);
+
+	transition-duration: 0.15s;
+	transition-property: opacity, filter;
+	transition-timing-function: linear;
+
+	// Normalize (<button>)
+	font: inherit;
+	color: inherit;
+	text-transform: none;
+	background-color: transparent;
+	border: 0;
+	margin: 0;
+	overflow: visible;
+
+	&:hover {
+		@if var(--hamburger-hover-use-filter) == true {
+			filter: var(--hamburger-hover-filter);
+		} @else {
+			opacity: var(--hamburger-hover-opacity);
+		}
+	}
+
+	&__box {
+		width: var(--hamburger-layer-width);
+		height: calc(var(--hamburger-layer-height) * 3);
+		display: inline-block;
+		position: relative;
+	}
+
+	&__inner {
+		display: block;
+		top: 50%;
+		margin-top: calc(var(--hamburger-layer-height) / -2);
+
+		&,
+		&::before,
+		&::after {
+			width: var(--hamburger-layer-width);
+			height: var(--hamburger-layer-height);
+			background-color: var(--hamburger-layer-color);
+			border-radius: var(--hamburger-layer-border-radius);
+			position: absolute;
+			transition-property: transform;
+			transition-duration: 0.15s;
+			transition-timing-function: ease;
+		}
+
+		&::before,
+		&::after {
+			content: "";
+			display: block;
+		}
+
+		&::before {
+			top: calc((var(--hamburger-layer-spacing) + var(--hamburger-layer-height)) * -1);
+		}
+
+		&::after {
+			bottom: calc((var(--hamburger-layer-spacing) + var(--hamburger-layer-height)) * -1);
+		}
+	}
+
+	/* Active State */
+	&.is-active {
+		&:hover {
+			@if var(--hamburger-hover-use-filter) == true {
+				filter: var(hamburger-active-hover-filter);
+			} @else {
+				opacity: var(hamburger-active-hover-opacity);
+			}
+		}
+
+		#{$this}__inner,
+		#{$this}__inner::before,
+		#{$this}__inner::after {
+			background-color: var(--hamburger-active-layer-color);
+		}
+	}
+
+	/* Spin Type */
+	&--spin {
+		#{$this}__inner {
+			transition-duration: 0.22s;
+			transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+
+			&::before {
+				transition: top 0.1s 0.25s ease-in,
+				opacity 0.1s ease-in;
+			}
+
+			&::after {
+				transition: bottom 0.1s 0.25s ease-in,
+				transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+			}
+		}
+
+		&.is-active {
+			#{$this}__inner {
+				transform: rotate(225deg);
+				transition-delay: 0.12s;
+				transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+				&::before {
+					top: 0;
+					opacity: 0;
+					transition: top 0.1s ease-out,
+					opacity 0.1s 0.12s ease-out;
+				}
+
+				&::after {
+					bottom: 0;
+					transform: rotate(-90deg);
+					transition: bottom 0.1s ease-out,
+					transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+				}
+			}
+		}
+	}
+}

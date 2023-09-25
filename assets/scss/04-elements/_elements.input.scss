@@ -1,0 +1,50 @@
+/**
+ * Input
+ *
+ * Group: Elements
+ */
+
+input {
+
+	&:not([type="checkbox"]):not([type="radio"]) {
+		height: var(--input-height);
+		border: none;
+		-webkit-appearance: none;
+	}
+
+	&[type="button" ],
+	&[type="submit" ] {
+		@include button;
+		@include buttonStyle('primary');
+		@include buttonSize('sm');
+		cursor: pointer;
+	}
+
+	&[type="search"] {
+		&::-webkit-search-decoration,
+		&::-webkit-search-cancel-button,
+		&::-webkit-search-results-button,
+		&::-webkit-search-results-decoration {
+			display: none;
+		}
+	}
+
+	&[type="checkbox"] {
+		border-radius: var(--border-radius-3xs);
+		cursor: pointer;
+		height: var(--checkbox-size);
+		outline: none;
+		width: var(--checkbox-size);
+	}
+
+	&[type="radio"] {
+		cursor: pointer;
+		height: var(--checkbox-size);
+		width: var(--checkbox-size);
+	}
+
+	&:not([type="submit"]):not([type="button"]):not([type="checkbox"]):not([type="radio"]) {
+		@include inputDefault('reset');
+	}
+
+}

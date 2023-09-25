@@ -1,0 +1,16 @@
+@mixin gridLayout($cols...) {
+  @supports(grid-area: auto) {
+    grid-template-columns: repeat($grid-columns, 1fr);
+
+    $i: 1;
+    @each $col in $cols {
+      > :nth-of-type(#{$i}) {
+        grid-column-end: span nth($col,1);
+        @if length($col) > 1 {
+          grid-row-end: span nth($col,2);
+        }
+      }
+      $i: $i + 1;
+    }
+  }
+}

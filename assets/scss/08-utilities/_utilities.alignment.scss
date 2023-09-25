@@ -1,0 +1,20 @@
+/**
+ * Alignment
+ *
+ * Group: Utilities
+ */
+
+.u-flex-center {
+	display: flex;
+	flex-direction: column;
+	place-items: center;
+	text-align: center;
+}
+
+.u-ai-center {
+	align-items: center;
+}
+
+.u-jc-center {
+	justify-content: center;
+}

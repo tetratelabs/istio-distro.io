@@ -1,0 +1,48 @@
+/**
+ * Rhythm
+ *
+ * Group: Utilities
+ */
+
+[class*="u-rhythm"] {
+	> * {
+		margin-bottom: 0 !important;
+		margin-top: 0 !important;
+
+		+ * {
+			margin-top: var(--space-md) !important;
+		}
+	}
+}
+
+[class*="u-rhythm-2xs"] > * + * {
+	margin-top: var(--space-2xs) !important;
+}
+
+[class*="u-rhythm-xs"] > * + * {
+	margin-top: var(--space-xs) !important;
+}
+
+[class*="u-rhythm-sm"] > * + * {
+	margin-top: var(--space-sm) !important;
+}
+
+[class*="u-rhythm-lg"] > * + * {
+	margin-top: var(--space-lg) !important;
+}
+
+[class*="u-rhythm-xl"] > * + * {
+	margin-top: var(--space-xl) !important;
+}
+
+[class*="u-rhythm-2xl"] > * + * {
+	margin-top: var(--space-2xl) !important;
+}
+
+[class*="u-rhythm-3xl"] > * + * {
+	margin-top: var(--space-3xl) !important;
+}
+
+[class*="u-rhythm-4xl"] > * + * {
+	margin-top: var(--space-4xl) !important;
+}

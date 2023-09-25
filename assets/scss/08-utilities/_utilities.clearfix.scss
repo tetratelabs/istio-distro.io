@@ -1,0 +1,9 @@
+/**
+ * Clearfix
+ *
+ * Group: Utilities
+ */
+
+.u-clearfix {
+  @include clearfix;
+}

@@ -1,0 +1,30 @@
+/**
+ * Hamburger
+ *
+ * Group: Settings
+ */
+
+:root {
+
+	// Settings
+	--hamburger-padding-x: 0;
+	--hamburger-padding-y: 0;
+	--hamburger-layer-width: 26px;
+	--hamburger-layer-height: 2px;
+	--hamburger-layer-spacing: 6px;
+	--hamburger-layer-color: var(--color-dark);
+	--hamburger-layer-border-radius: 0;
+	--hamburger-hover-opacity: 0.7;
+	--hamburger-active-layer-color: var(--color-dark);
+	--hamburger-active-hover-opacity: --hamburger-hover-opacity;
+
+	// To use CSS filters as the hover effect instead of opacity,
+	// set --hamburger-hover-use-filter as true and
+	// change the value of --hamburger-hover-filter accordingly.
+	--hamburger-hover-use-filter: false;
+	--hamburger-hover-filter: opacity(50%);
+	--hamburger-active-hover-filter: var(--hamburger-hover-filter);
+
+}
+
+

@@ -1,0 +1,40 @@
+/**
+ * Button
+ *
+ * Group: Elements
+ */
+
+button {
+	height: var(--button-height);
+	border: none;
+	border-radius: var(--border-radius-2xl);
+	cursor: pointer;
+	-webkit-appearance: none;
+	gap: var(--space-md);
+
+	@include button;
+	@include buttonStyle('primary');
+
+	&[disabled] {
+		cursor: not-allowed;
+		box-shadow: none;
+		opacity: 0.6;
+	}
+
+	.button-variation--primary-outline  & {
+		@include buttonStyle('primary-outline');
+	}
+
+	.button-variation--secondary-outline  & {
+		@include buttonStyle('secondary-outline');
+	}
+
+	.button-variation--tertiary-outline  & {
+		@include buttonStyle('tertiary-outline');
+	}
+
+	.button-variation--quaternary-outline  & {
+		@include buttonStyle('quaternary-outline');
+	}
+}
+

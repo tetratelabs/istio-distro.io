@@ -1,0 +1,230 @@
+/**
+ * Grid
+ *
+ * Group: Objects
+ */
+
+.o-grid {
+	@include grid();
+
+	& > * {
+		width: 100%;
+		grid-column: auto / span 12;
+	}
+
+	/*
+	 *
+	 * GRID NO. COLUMNS
+	 *
+	 */
+	/* 2-columns */
+	&--col-2 {
+		> * {
+			@include mq($from: phablet) {
+				grid-column: auto / span 6;
+			}
+		}
+	}
+
+	/* 3-columns */
+	&--col-3 {
+		> * {
+			@include mq($from: phablet) {
+				grid-column: auto / span 6;
+			}
+
+			@include mq($from: desktop) {
+				grid-column: auto / span 4;
+			}
+		}
+	}
+
+	/* 4-columns */
+	&--col-4 {
+		> * {
+			@include mq($from: phablet) {
+				grid-column: auto / span 6;
+			}
+
+			@include mq($from: desktop) {
+				grid-column: auto / span 3;
+			}
+		}
+	}
+
+	/* 3/2-columns */
+	&--col-32 {
+
+		> * {
+			@include mq($from: phablet) {
+				grid-column: auto / span 6;
+			}
+
+			@include mq($from: tablet) {
+				&:nth-child(5) {
+					grid-column-start: 4;
+				}
+			}
+
+			@include mq($from: desktop) {
+				grid-column: auto / span 4;
+
+				&:nth-child(4) {
+					grid-column-start: 3;
+				}
+
+				&:nth-child(5) {
+					grid-column-start: 7;
+				}
+			}
+		}
+	}
+
+	/* 5-columns */
+	&--col-5 {
+
+		@include mq($from: desktop) {
+			grid-template-columns: var(--grid-template-columns-5);
+		}
+
+		> * {
+			grid-column: auto / span 12;
+
+			@include mq($from: phablet) {
+				grid-column: auto / span 6;
+
+				&:nth-child(5) {
+					grid-column-start: 4;
+				}
+			}
+
+			@include mq($from: desktop) {
+				grid-column: auto / span 1;
+
+				&:nth-child(5) {
+					grid-column-start: 5;
+				}
+			}
+		}
+	}
+
+
+	/* 6-columns */
+	&--col-6 {
+		> * {
+			@include mq($from: phablet) {
+				grid-column: auto / span 6;
+			}
+
+			@include mq($from: tablet) {
+				grid-column: auto / span 3;
+			}
+
+			@include mq($from: desktop) {
+				grid-column: auto / span 2;
+			}
+		}
+	}
+
+	/*
+	 *
+	 * GRID COLUMN GAP
+	 *
+	 */
+	&--column-gap {
+
+		@include mq($from: phablet) {
+
+			&-2xs {
+				grid-column-gap: calc(var(--grid-gap) / 4);
+			}
+
+			&-xs {
+				grid-column-gap: calc(var(--grid-gap) / 2);
+			}
+
+			&-sm {
+				grid-column-gap: calc(var(--grid-gap) / 1.5);
+			}
+
+			&-md {
+				grid-column-gap: calc(var(--grid-gap) * 1.5);
+			}
+
+			&-lg {
+				grid-column-gap: calc(var(--grid-gap) * 2);
+			}
+
+			&-xl {
+				grid-column-gap: calc(var(--grid-gap) * 3);
+			}
+
+			&-2xl {
+				grid-column-gap: calc(var(--grid-gap) * 4);
+			}
+
+			&-3xl {
+				grid-column-gap: calc(var(--grid-gap) * 6);
+			}
+
+			&-4xl {
+				grid-column-gap: calc(var(--grid-gap) * 8);
+			}
+
+			&-none {
+				grid-column-gap: 0;
+			}
+		}
+
+	}
+
+
+	/*
+	 *
+	 * GRID ROW GAP
+	 *
+	 */
+	&--row-gap {
+
+		&-2xs {
+			grid-row-gap: calc(var(--grid-gap) / 4);
+		}
+
+		&-xs {
+			grid-row-gap: calc(var(--grid-gap) / 2);
+		}
+
+		&-sm {
+			grid-row-gap: calc(var(--grid-gap) / 1.5);
+		}
+
+		&-md {
+			grid-row-gap: calc(var(--grid-gap) * 1.5);
+		}
+
+		&-lg {
+			grid-row-gap: calc(var(--grid-gap) * 2);
+		}
+
+		&-xl {
+			grid-row-gap: calc(var(--grid-gap) * 3);
+		}
+
+		&-2xl {
+			grid-row-gap: calc(var(--grid-gap) * 4);
+		}
+
+		&-3xl {
+			grid-row-gap: calc(var(--grid-gap) * 6);
+		}
+
+		&-4xl {
+			grid-row-gap: calc(var(--grid-gap) * 8);
+		}
+
+		&-none {
+			grid-row-gap: 0;
+		}
+	}
+
+}

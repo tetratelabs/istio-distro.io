@@ -1,0 +1,44 @@
+/**
+ * Breakpoints
+ *
+ * Group: Settings
+ */
+
+/// @link https://github.com/sass-mq/sass-mq#responsive-mode-off Disabled responsive mode documentation
+$mq-responsive: true;
+
+$bkp-mobile-small: 320px;
+$bkp-mobile-medium: 375px;
+$bkp-mobile-large: 414px;
+$bkp-phablet: 600px;
+$bkp-tablet: 768px;
+$bkp-desktop: 992px;
+$bkp-desktop-large: 1280px;
+$bkp-wide: 1600px;
+$bpk-hd: 1920px;
+$bpk-xlarge: 2560px;
+
+$breakpoints: (
+		mobile-small: $bkp-mobile-small,
+		mobile-medium: $bkp-mobile-medium,
+		mobile-large: $bkp-mobile-large,
+		phablet: $bkp-phablet,
+		tablet: $bkp-tablet,
+		desktop: $bkp-desktop,
+		desktop-large: $bkp-desktop-large,
+		wide: $bkp-wide,
+		hd: $bpk-hd,
+		xlarge: $bpk-xlarge
+);
+
+/**
+ * Breakpoints needed for sass-mq mixin
+ */
+
+$mq-breakpoints: $breakpoints !global;
+
+
+@debug "The breakpoints used on the design system are :" $mq-breakpoints;
+
+
+

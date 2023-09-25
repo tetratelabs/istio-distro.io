@@ -1,0 +1,31 @@
+/**
+ * Input
+ *
+ * Group: Tools
+ */
+
+@mixin inputDefault($type : 'default') {
+	$this: &;
+
+	background-color: var(--color-neutral-10);
+	border-radius: var(--border-radius-xs);
+	border: none;
+	font-size: var(--body-font-size);
+	font-weight: var(--font-weight-regular);
+	line-height: var(--body-line-height);
+	text-indent: 0.5rem;
+
+	@if ($type == 'reset') {
+		-webkit-appearance: none;
+	}
+
+	&:focus-visible {
+		outline-color: var(--color-secondary);
+	}
+}
+
+@mixin inputStyle($style: 'primary', $important: false) {
+	@if ($style == 'light') {
+		background-color: var(--color-light) if-important($important);
+	}
+}

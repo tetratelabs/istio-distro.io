@@ -1,0 +1,39 @@
+/**
+ * Background Color
+ *
+ * Group: Utilities
+ */
+
+@import "../01-settings/settings.variables";
+
+.u-bg-color {
+	@each $name, $color in $colors {
+		&-#{$name} {
+			background-color: var(--color-#{$name});
+		}
+	}
+
+	&-gradient {
+		background: -webkit-linear-gradient(left, var(--color-primary), var(--color-secondary));
+	}
+
+	&-dark-gradient {
+		background: -webkit-linear-gradient(top, #130245, #25018A);
+	}
+
+	&-light-gradient {
+		background: -webkit-linear-gradient(top, var(--color-light), var(--color-neutral-10));
+	}
+}
+
+.has {
+	@each $name, $color in $colors {
+		&-#{$name}-background-color {
+			background-color: var(--color-#{$name});
+		}
+
+		&-light-gradient-background-color {
+			background: -webkit-linear-gradient(top, var(--color-light), var(--color-neutral-10));
+		}
+	}
+}

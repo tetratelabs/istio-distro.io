@@ -1,0 +1,65 @@
+/**
+ * Headings
+ *
+ * Group: Elements
+ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--font-primary);
+
+	p, a, span {
+		color: inherit;
+		display: inherit;
+		font-size: inherit;
+		font-weight: inherit;
+		line-height: inherit;
+		text-decoration: none;
+	}
+}
+
+h1 {
+	font-size: var(--h1-font-size);
+	font-weight: var(--h1-font-weight);
+	letter-spacing: var(--h1-letter-spacing);
+	line-height: var(--h1-line-height);
+}
+
+h2 {
+	font-size: var(--h2-font-size);
+	font-weight: var(--h2-font-weight);
+	letter-spacing: var(--h2-letter-spacing);
+	line-height: var(--h2-line-height);
+}
+
+h3 {
+	font-size: var(--h3-font-size);
+	font-weight: var(--h3-font-weight);
+	letter-spacing: var(--h3-letter-spacing);
+	line-height: var(--h3-line-height);
+}
+
+h4 {
+	font-size: var(--h4-font-size);
+	font-weight: var(--h4-font-weight);
+	letter-spacing: var(--h4-letter-spacing);
+	line-height: var(--h4-line-height);
+}
+
+h5 {
+	font-size: var(--h5-font-size);
+	font-weight: var(--h5-font-weight);
+	letter-spacing: var(--h5-letter-spacing);
+	line-height: var(--h5-line-height);
+}
+
+h6 {
+	font-size: var(--h6-font-size);
+	font-weight: var(--h6-font-weight);
+	letter-spacing: var(--h6-letter-spacing);
+	line-height: var(--h6-line-height);
+}

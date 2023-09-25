@@ -1,0 +1,26 @@
+/**
+ * Spacing
+ *
+ * Group: Settings
+ */
+
+:root {
+	--space-unit: 1rem;
+	--space-4xs: calc(0.125 * var(--space-unit)); // 2px in 16px base
+	--space-3xs: calc(0.25 * var(--space-unit)); // 4px in 16px base
+	--space-2xs: calc(0.375 * var(--space-unit)); // 6px in 16px base
+	--space-xs: calc(0.5 * var(--space-unit)); // 8px in 16px base
+	--space-sm: calc(0.75 * var(--space-unit)); // 12px in 16px base
+	--space-md: calc(1.5 * var(--space-unit)); // 24px in 16px base
+	--space-default: var(--space-unit); // 16px in 16px base
+	--space-lg: calc(2 * var(--space-unit)); // 32px in 16px base
+	--space-xl: calc(3 * var(--space-unit)); // 48px in 16px base
+	--space-2xl: calc(4 * var(--space-unit)); // 64px in 16px base
+	--space-3xl: calc(6 * var(--space-unit)); // 96px in 16px base
+	--space-4xl: calc(8 * var(--space-unit)); // 128px in 16px base
+	--space-5xl: calc(10 * var(--space-unit)); // 160px in 16px base
+	--space-6xl: calc(12 * var(--space-unit)); // 192px in 16px base
+	--space-7xl: calc(14 * var(--space-unit)); // 224px in 16px base
+	--space-8xl: calc(16 * var(--space-unit)); // 256px in 16px base
+	--space-9xl: calc(18 * var(--space-unit)); // 288px in 16px base
+}

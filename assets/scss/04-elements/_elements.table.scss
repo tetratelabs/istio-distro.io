@@ -1,0 +1,46 @@
+/**
+ * Table
+ *
+ * Group: Elements
+ */
+
+
+table {
+
+	border-radius: var(--border-radius-sm);
+	box-shadow: var(--box-shadow);
+	text-align: left;
+	width: 100%;
+
+	thead {
+		th {
+			background-color: var(--color-neutral-40);
+		}
+	}
+
+	tbody {
+		tr {
+
+			&:nth-child(odd) {
+				background-color: var(--color-neutral-20);
+			}
+		}
+	}
+
+	tr {
+
+	}
+
+	th {
+		font-weight: var(--font-weight-bold);
+	}
+
+	td {
+		word-break: normal;
+	}
+
+	th,
+	td {
+		padding: var(--space-sm);
+	}
+}

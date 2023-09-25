@@ -1,0 +1,67 @@
+/**
+ * Spacing
+ *
+ * Group: Tools
+ */
+
+@mixin spacingSides($right: true, $left: true) {
+	@if $right {
+		padding-right: var(--space-sm)
+	}
+
+	@if $left {
+		padding-left: var(--space-sm)
+	}
+
+	@include mq($from: tablet) {
+		@if $right {
+			padding-right: var(--space-md);
+		}
+
+		@if $left {
+			padding-left: var(--space-md);
+		}
+	}
+
+	@include mq($from: desktop) {
+		@if $right {
+			padding-right: var(--space-lg);
+		}
+
+		@if $left {
+			padding-left: var(--space-lg);
+		}
+	}
+}
+
+@mixin marginSides($right: true, $left: true, $negative: false) {
+	$minus: if($negative, '-', '');
+
+	@if $right {
+		margin-right: #{$minus}var(--space-sm)
+	}
+
+	@if $left {
+		margin-left: #{$minus}var(--space-sm)
+	}
+
+	@include mq($from: tablet) {
+		@if $right {
+			margin-right: #{$minus}var(--space-md);
+		}
+
+		@if $left {
+			margin-left: #{$minus}var(--space-md);
+		}
+	}
+
+	@include mq($from: desktop) {
+		@if $right {
+			margin-right: #{$minus}var(--space-lg);
+		}
+
+		@if $left {
+			margin-left: #{$minus}var(--space-lg);
+		}
+	}
+}

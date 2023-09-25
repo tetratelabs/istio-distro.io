@@ -1,0 +1,23 @@
+/**
+ * Colors
+ *
+ * Group: Tools
+ */
+
+// converter rgba(r, g, b, a) color to #HEX string without alpha channel,
+// with optional applying afterwards opacity ($opacity)
+// by default alpha channel for rgba-color is applying against white background,
+// but you can change it by setting third argument ($background)
+@function rgba-to-rgb($rgba, $opacity: 0, $background: #fff) {
+	@if $opacity > 0 {
+		@if $opacity < 1 {
+			$opacity: $opacity * 100
+		}
+		@return mix(mix(rgb(red($rgba), green($rgba), blue($rgba)), $background, alpha($rgba) * 100%), rgb(255,255,255), $opacity)
+	}
+	@return mix(rgb(red($rgba), green($rgba), blue($rgba)), $background, alpha($rgba) * 100%)
+}
+// by this function you can calc next color composition to real colors:
+// opacity: 0.12;
+// background-color: rgba(0, 0, 0, 0.87);
+
