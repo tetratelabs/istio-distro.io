@@ -1,95 +1,96 @@
 ########################## Hero Block ################################
 hero:
-  title: "Simple, safe enterprise-grade Istio distro"
-  subtitle: "Now deployable as an Amazon EKS add-on"
-  subtitle_url: "getmesh-cli/install/install-istio/eks-addon/"
+  title: 'Simple, safe enterprise-grade Istio distro'
+  subtitle: 'TID is the easiest and fastest way to get started with open source Istio.'
+  cta_url: 'getmesh-cli/install/install-istio/eks-addon/'
+  cta_title: 'Get started for free'
   enable: true
   lead_item:
-    - content: "Easiest way of installing, operating, and upgrading Istio"
-    - content: "Tested and hardened for your application and cloud platform"
-    - content: "Community hub for users, ecosystem, and partners"
+    - content: 'Easiest way of installing, operating, and upgrading Istio'
+    - content: 'Tested and hardened for your application and cloud platform'
+    - content: 'Community hub for users, ecosystem, and partners'
   asciinema_id: 459699
 
 ########################## Subscribe section ##########################
 subscribe:
   enable: true
   item:
-    - content: "Never miss new releases and community events"
-  error_message: "Please enter a valid email address."
-  form_message: "Thank you for subscribing."
+    - content: 'Never miss new releases and community events'
+  error_message: 'Please enter a valid email address.'
+  form_message: 'Thank you for subscribing.'
   community_item:
-    - content: "Join the Tetrate Istio Distro community to get release updates and community announcements"
+    - content: 'Join the Tetrate Istio Distro community to get release updates and community announcements'
 
 ########################## Dictionary section ###########################
 dictionary:
   enable: false
-  title: "What is Get•Is•ti•o"
-  logo: "/images/getistio-logo-notext-black.png"
-  phonogram: "/getˌis,’tē,ō/"
+  title: 'What is Get•Is•ti•o'
+  logo: '/images/getistio-logo-notext-black.png'
+  phonogram: '/getˌis,’tē,ō/'
   verb:
-    name: "verb"
-    meaning: "Act of installing and managing vetted Istio for use in Kubernetes or application platforms."
-    quote: "What’s the best way to install and update Istio in my Kubernetes cluster? Simple, you just GetIstio."
-    similar: 
-      - content: "service mesh"
-      - content: "control plane"
-      - content: "application networking"
-      - content: "func-e"
-  noun_benefits:
-    name: "noun / benefits"
-    meaning1: "Simple, open source CLI for assured installation and upgrade of specific Istio versions."
-    quote1: "I just upgraded to the latest Istio version in five minutes with getistio."
+    name: 'verb'
+    meaning: 'Act of installing and managing vetted Istio for use in Kubernetes or application platforms.'
+    quote: 'What’s the best way to install and update Istio in my Kubernetes cluster? Simple, you just GetIstio.'
     similar:
-      - content: "kubectl"
-      - content: "istioctl"
-    meaning2: "Upstream & FIPS compliant Istio distribution tested and hardened for EKS, GKE, AKS and more."
-    meaning3: "Hub for validated Istio integrations & tutorials from ecosystem partners like AWS, Weaveworks, Venafi."
-    quote2: "Using GetIstio CLI, I made AWS’ ACM my trusted cert provider for Istio mesh within minutes."
+      - content: 'service mesh'
+      - content: 'control plane'
+      - content: 'application networking'
+      - content: 'func-e'
+  noun_benefits:
+    name: 'noun / benefits'
+    meaning1: 'Simple, open source CLI for assured installation and upgrade of specific Istio versions.'
+    quote1: 'I just upgraded to the latest Istio version in five minutes with getistio.'
+    similar:
+      - content: 'kubectl'
+      - content: 'istioctl'
+    meaning2: 'Upstream & FIPS compliant Istio distribution tested and hardened for EKS, GKE, AKS and more.'
+    meaning3: 'Hub for validated Istio integrations & tutorials from ecosystem partners like AWS, Weaveworks, Venafi.'
+    quote2: 'Using GetIstio CLI, I made AWS’ ACM my trusted cert provider for Istio mesh within minutes.'
   collective_noun:
-    name: "collective noun"
-    meaning: "Community of Istio users, developers, tutorials and technology partners."
-  button_text: "GetIstio benifets"
+    name: 'collective noun'
+    meaning: 'Community of Istio users, developers, tutorials and technology partners.'
+  button_text: 'GetIstio benifets'
 
 ########################## Get Start section #############################
 start:
   enable: true
-  title: "Get Started Quickly"
+  title: 'Get Started Quickly'
   steps:
-    - desc: "1. Download Tetrate Istio Distro CLI"
-      cmd: "curl -sL https://istio.tetratelabs.io/getmesh/install.sh | bash"
-    - desc: "2. Install Istio Demo"
-      cmd: "getmesh istioctl install --set profile=demo"
-    - desc: "3. Check Tetrate Istio Distro version"
-      cmd: "getmesh version"
-    - desc: "4. Validate config"
-      cmd: "getmesh config-validate"
+    - desc: '1. Download Tetrate Istio Distro CLI'
+      cmd: 'curl -sL https://istio.tetratelabs.io/getmesh/install.sh | bash'
+    - desc: '2. Install Istio Demo'
+      cmd: 'getmesh istioctl install --set profile=demo'
+    - desc: '3. Check Tetrate Istio Distro version'
+      cmd: 'getmesh version'
+    - desc: '4. Validate config'
+      cmd: 'getmesh config-validate'
 
 ########################## Training section ##############################
 training:
   enable: true
-  title: "Increase your Istio skill with our training program"
-  url: "https://academy.tetrate.io"
-  button_text: "Enroll Now"
+  title: 'Increase your Istio skill with our training program'
+  url: 'https://academy.tetrate.io'
+  button_text: 'Enroll Now'
 
 ########################## Event section #################################
 event:
   enable: false
-  title: "Upcoming Community Events"
-  url: "/community-events"
-  link_text: "See All Events→"
+  title: 'Upcoming Community Events'
+  url: '/community-events'
+  link_text: 'See All Events→'
 
 ########################## Customer quote section ########################
 customer_quote:
   enable: true
   quotes:
     - quote: Working with the Istio community, we're pleased to have developed "istio-csr", open source software to integrate Istio with cert-manager. This enables workload certificates to be issued from the wide array of certificate authorities and providers that cert-manager supports, including Venafi, Google Certificate Authority Service (CAS) and more. We look forward to collaborating with the Tetrate Istio Distro community to provide an easy and seamless integration, enabling operators and security teams to tap into cert-manager and secure the mesh from the get-go.
-      title: "Matt Bates, co-founder & CTO Jetstack"
-    - quote: "At Tracfone, we’ve built an immutable infrastructure with k8s, istio and a custom CI/CD platform. We leverage Istio for an array of capabilities like traffic management, telemetry, zero-trust security and more. Istio training from Tetrate Academy is a great resource for our teams to learn Istio fast and get the most out of it."
-      title: "Kartik Rallapalli, Principal Enterprise Architect at Tracfone"
+      title: 'Matt Bates, co-founder & CTO Jetstack'
+    - quote: 'At Tracfone, we’ve built an immutable infrastructure with k8s, istio and a custom CI/CD platform. We leverage Istio for an array of capabilities like traffic management, telemetry, zero-trust security and more. Istio training from Tetrate Academy is a great resource for our teams to learn Istio fast and get the most out of it.'
+      title: 'Kartik Rallapalli, Principal Enterprise Architect at Tracfone'
     - quote: "In combination with a service mesh like Istio, Weave GitOps workflows automate progressive deployment strategies / canary management in Kubernetes. Tetrate's new Tetrate Istio Distro product makes this simple, providing users with a quick and safe way to deploy Istio into their GitOps workflows."
-      title: "Alexis Richardson, co-founder & CEO Weaveworks"
+      title: 'Alexis Richardson, co-founder & CEO Weaveworks'
 
 ########################## Support section ###############################
 support:
   enable: true
-  title: "Need enterprise support for your Istio?"
+  title: 'Need enterprise support for your Istio?'
