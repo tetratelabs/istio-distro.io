@@ -15,20 +15,18 @@
     padding: 0 30px;
   }
   @include mobile {
-    padding: 0 ;
+    padding: 0;
   }
 }
 .logo-width {
   width: 150px;
 }
 .navigation {
-  transition: .2s ease;
-  // background: #eeeeee;
-  // background: #dee5f2;
-  background: #262F40;
+  transition: 0.2s ease;
+  background: transparent;
 
   &.nav-bg {
-    background: #262F40;
+    background: #262f40;
     @extend .shadow;
     @include desktop {
       top: -50px;

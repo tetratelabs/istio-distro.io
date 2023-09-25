@@ -169,7 +169,7 @@ weight = 7
 
 #################### default parameters ################################
 [params]
-logo = "images/tetrate-istio-distro-logo.png"
+logo = "images/tetrate-logo-dark.svg"
 # Meta data
 description = "Tetrate Istio Distro project provides a simple, safe, enterprise-grade Istio distro."
 images = ["images/twitter-card-new.png"]

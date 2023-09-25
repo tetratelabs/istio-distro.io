@@ -1,0 +1,91 @@
+/**
+ * Widget
+ *
+ * Group: Core Components
+ */
+
+.widget {
+  $this: &;
+
+  margin-bottom: var(--space-lg);
+
+  @include mq($from: desktop) {
+    margin-bottom: var(--space-xl);
+  }
+
+  // Widget titles
+  &__title {
+    @include text('h6');
+  }
+
+  h2,
+  h3,
+  h4 h5,
+  h6 {
+    margin-bottom: var(--space-sm);
+  }
+
+  // Core widgets.
+  &--archives {
+  }
+
+  &--calendar {
+  }
+
+  &--categories {
+  }
+
+  &--custom-html {
+  }
+
+  &--media-audio {
+  }
+
+  &--media-gallery {
+  }
+
+  &--media-image {
+  }
+
+  &--media-video {
+  }
+
+  &--meta {
+  }
+
+  &--nav-menu {
+  }
+
+  &--pages {
+  }
+
+  &--recent-comments {
+  }
+
+  &--recent-posts {
+  }
+
+  &--rss {
+  }
+
+  &--text {
+  }
+
+  &--search {
+  }
+
+  &--tag-cloud {
+  }
+
+  &--nav-menu {
+    &:not(:has(.widget__title)) {
+      .menu__items {
+        > .menu__item {
+          &:first-of-type {
+            font-weight: var(--font-weight-bold);
+          }
+        }
+      }
+    }
+  }
+}
