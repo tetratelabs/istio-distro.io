@@ -61,7 +61,7 @@
                 <input id="email" type="email" class="input" placeholder=" " required/>
                 <label for="email">{{ i18n "work_email" }}</label>
               </div>
-                <button class="btn btn-sm btn-primary">{{ i18n "get_updates" }}</button>
+                <button class="c-button c-button--primary">{{ i18n "get_updates" }}</button>
             </form>
           </div>
           <span id="errorMessage">{{ .error_message }}</span>
@@ -203,7 +203,7 @@
     <div class="row">
       <div class="col-lg-12 text-center banner-content">
         <h4 class="mr-4">{{ .title }}</h4>
-        <span><a class="btn btn-sm btn-primary" href="{{ .url }}">{{ .button_text }}</a></span>
+        <span><a class="c-button c-button--primary" href="{{ .url }}">{{ .button_text }}</a></span>
       </div>
     </div>
   </div>
@@ -238,7 +238,7 @@
             <p>{{ .Page.Description }}</p>
             <div class="event-actions row">
                 <a class="btn btn-sm" href="{{ .Page.RelPermalink }}">{{ i18n "learn_more" }}</a>
-                <a class="btn btn-sm btn-primary" href="{{ .Page.Params.eventLink }}" target="_blank">{{ i18n "go_to_event" }}</a>
+                <a class="c-button c-button--primary" href="{{ .Page.Params.eventLink }}" target="_blank">{{ i18n "go_to_event" }}</a>
             </div>
           </div>
         </div>
@@ -283,7 +283,7 @@
     <div class="row">
       <div class="col-lg-12 text-center">
         <h4 class="mb-4">{{ .title }}</h4>
-        <a class="btn btn-sm btn-primary" href="https://www.tetrate.io/getistio">{{ i18n "get_in_touch" }}</a>
+        <a class="c-button c-button--primary" href="https://www.tetrate.io/getistio">{{ i18n "get_in_touch" }}</a>
       </div>
     </div>
   </div>

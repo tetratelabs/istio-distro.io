@@ -2,19 +2,20 @@
 <div class="container d-block d-sm-block d-lg-none">
   <div class="row justify-content-center mb-4">
     <div>
-      <button onClick="dropdownFunction()" class="btn btn-primary dropdown-toggle nav-dropdown">Browse Docs
-      <span class="caret"></span></button>
+      <button
+        onClick="dropdownFunction()"
+        class="c-button c-button--primary dropdown-toggle nav-dropdown"
+      >
+        Browse Docs <span class="caret"></span>
+      </button>
       <ul id="mobileDropdownMenu" class="dropdown-content">
-        {{ $currentNode := . }}
-        {{range (where .Site.Pages "Type" "docs")}}
+        {{ $currentNode := . }} {{range (where .Site.Pages "Type" "docs")}}
         <!-- not render any single page, like contact page. -->
-        {{ $numberOfMainPages := len .Pages }}
-        {{ if eq $numberOfMainPages 0 }}
+        {{ $numberOfMainPages := len .Pages }} {{ if eq $numberOfMainPages 0 }}
         {{ else }}
         <!-- /not render any single page, like contact page. -->
-        {{ template "section-tree-nav-mobile" dict "sect" . "currentnode" $currentNode}}
-        {{ end }}
-        {{ end }}
+        {{ template "section-tree-nav-mobile" dict "sect" . "currentnode"
+        $currentNode}} {{ end }} {{ end }}
       </ul>
     </div>
   </div>
@@ -22,21 +23,18 @@
 {{ "<!-- navigation -->" | safeHTML }}
 
 <!-- templates -->
-{{ define "section-tree-nav-mobile" }}
-{{ $showvisitedlinks := .showvisitedlinks }}
-{{ $currentNode := .currentnode }}
-{{with .sect}}
-{{safeHTML .Params.head}}
-{{ $fileUniqueID := "" }}
-{{ with .File }}{{ $fileUniqueID = .UniqueID }}{{ end }}
-{{ $currentNodeFileUniqueID := "" }}
-{{ with $currentNode.File }}{{ $currentNodeFileUniqueID = .UniqueID }}{{ end }}
-<li data-nav-id="{{.Permalink | relURL }}" title="{{.Title}}"
-  class="sidelist {{if .IsAncestor $currentNode }}parent{{end}} {{if eq $fileUniqueID $currentNodeFileUniqueID}}active{{end}} my-2">
+{{ define "section-tree-nav-mobile" }} {{ $showvisitedlinks := .showvisitedlinks
+}} {{ $currentNode := .currentnode }} {{with .sect}} {{safeHTML .Params.head}}
+{{ $fileUniqueID := "" }} {{ with .File }}{{ $fileUniqueID = .UniqueID }}{{ end
+}} {{ $currentNodeFileUniqueID := "" }} {{ with $currentNode.File }}{{
+$currentNodeFileUniqueID = .UniqueID }}{{ end }}
+<li
+  data-nav-id="{{.Permalink | relURL }}"
+  title="{{.Title}}"
+  class="sidelist {{if .IsAncestor $currentNode }}parent{{end}} {{if eq $fileUniqueID $currentNodeFileUniqueID}}active{{end}} my-2"
+>
   <a href="{{.Permalink | relURL }}">{{.Title }}</a>
-  {{ $numberOfPages := (add (len .Pages) (len .Sections)) }}
-  {{ if ne $numberOfPages 0 }}
+  {{ $numberOfPages := (add (len .Pages) (len .Sections)) }} {{ if ne
+  $numberOfPages 0 }}
 </li>
-{{ end }}
-{{ end }}
-{{ end }}
+{{ end }} {{ end }} {{ end }}
