@@ -5,71 +5,72 @@
  */
 
 .c-callout {
-	$this: &;
-	background-color: var(--color-light);
-	display: flex;
-	position: relative;
-	overflow: hidden;
-	min-width: 100vw;
-	margin-left: -50vw;
-	left: 50%;
+  $this: &;
+  background-color: var(--color-light);
+  display: flex;
+  position: relative;
+  overflow: hidden;
 
-	&__wrap {
-		align-items: center;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		text-align: center;
+  &__wrap {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
 
-		> div {
-			width: 100%;
-		}
-	}
+    > div {
+      width: 100%;
+    }
+  }
 
-	&__pattern {
-		bottom: 0;
-		max-height: 80%;
-		max-width: var(--max-width--lg);
-		right: 0;
-		position: absolute;
-		pointer-events: none;
-		width: 100%;
+  &__pattern {
+    bottom: 0;
+    max-height: 80%;
+    max-width: var(--max-width--lg);
+    right: 0;
+    position: absolute;
+    pointer-events: none;
+    width: 100%;
 
-		@include mq($from: desktop) {
-			right: 20%;
-		}
-	}
+    @include mq($from: desktop) {
+      right: 20%;
+    }
+  }
 
-	&__grid {
-		display: grid;
-		grid-template-columns: 1fr;
-		grid-template-rows: 1fr;
-		grid-template-areas: "content";
-		width: 100%;
-		max-width: var(--max-width--lg);
-		gap: var(--space-md);
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 'content';
+    width: 100%;
+    max-width: var(--max-width--lg);
+    gap: var(--space-md);
 
-		@include mq($from: desktop) {
-			grid-template-columns: 1fr 1fr;
-			grid-template-rows: 1fr;
-			grid-template-areas: "content content";
-			gap: var(--space-lg);
-		}
-	}
+    @include mq($from: desktop) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas: 'content content';
+      gap: var(--space-lg);
+    }
+  }
 
-	&--dark {
-		background: var(--color-primary);
-	}
+  &--dark {
+    background: var(--color-primary);
+  }
 
-	&--gradient {
-		background: -webkit-linear-gradient(top, var(--color-primary), var(--color-primary-dark))
-	}
+  &--gradient {
+    background: -webkit-linear-gradient(
+      top,
+      var(--color-primary),
+      var(--color-primary-dark)
+    );
+  }
 
-	&--bg-image {
-		min-height: 460px;
-	}
+  &--bg-image {
+    min-height: 460px;
+  }
 
-	&--transparent {
-		background: transparent;
-	}
+  &--transparent {
+    background: transparent;
+  }
 }

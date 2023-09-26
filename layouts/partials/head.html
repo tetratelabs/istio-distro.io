@@ -20,7 +20,7 @@
   {{ else if eq .Page.Title "Community Events"}}
     {{ partial "community-style" . }}
   {{ else if eq .Page.Title "Partners"}}
-    {{ partial "partners-style" . }}  
+    {{ partial "partners-style" . }}
   {{ end }}
 
   <!-- plugins -->
@@ -46,6 +46,7 @@
   {{ end }}
   {{ end }}
 
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
   <!-- Bootstrap Stylesheet -->
   {{ $bootstrap := resources.Get "css/bootstrap/bootstrap.min.css" | resources.ToCSS (dict "outputStyle" "compressed") | postCSS}}
   <link rel="preload" href="{{ $bootstrap.Permalink | relURL }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -73,5 +74,5 @@
   <!-- Turbolinks -->
   {{ $turbolinks := resources.Get "js/turbolinks.js" | minify}}
   <script async defer src="{{ $turbolinks.Permalink | relURL }}"></script>
-  
+
 </head>

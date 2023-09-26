@@ -1,4 +1,5 @@
 {{ define "main" }}
+<main id="main" class="o-main">
 
 {{ $data := index .Site.Data .Site.Language.Lang }}
 
@@ -211,71 +212,6 @@
 {{ end }}
 {{ end }}
 
-{{ if $data.homepage.event.enable }}
-<section class="section events-section">
-  <div class="container">
-    <div class="event-header row justify-content-center align-items-sm-baseline justify-content-sm-between">
-    {{ with $data.homepage.event }}
-    <h4>{{ .title }}</h4>
-    <span><a href="{{ .url }}">{{ .link_text }}</a></span>
-    </div>
-    {{ end }}
-    <div class="row overflow-auto flex-md-nowrap">
-      {{ range .Site.Taxonomies.categories.event }}
-      {{ if eq .Page.Params.pastEvent false }}
-        <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
-          <div class="card match-height event-card">
-            <p class="event-date pb-2">
-              {{ if .Page.Params.eventEndDate }}
-              {{ dateFormat (i18n "date_format") .Page.Params.eventDate }} - {{ dateFormat (i18n "date_format") .Page.Params.eventEndDate }}
-              {{ else }}
-              {{ dateFormat (i18n "date_format") .Page.Params.eventDate }} {{ dateFormat (i18n "minute") .Page.Params.eventDate }} {{ .Page.Params.timezone }}
-              {{ end }}
-              <span><i class="ti-calendar"></i></span>
-            </p>
-            <a href="{{ .Page.RelPermalink }}"><h5>{{ .Page.Title }}</h5></a>
-            <img src="{{ .Page.Params.image |relURL }}" alt="{{ .Page.Title }}" />
-            <p>{{ .Page.Description }}</p>
-            <div class="event-actions row">
-                <a class="c-button c-button--primary-outline" href="{{ .Page.RelPermalink }}">{{ i18n "learn_more" }}</a>
-                <a class="c-button c-button--primary" href="{{ .Page.Params.eventLink }}" target="_blank">{{ i18n "go_to_event" }}</a>
-            </div>
-          </div>
-        </div>
-      {{ end }}
-      {{ end }}
-    </div>
-  </div>
-</section>
-{{ end }}
-
-{{ if $data.homepage.customer_quote.enable }}
-{{ with $data.homepage.customer_quote }}
-<div id="customer-quote" class="carousel slide quotes-section" data-ride="carousel">
-  <div class="carousel-inner">
-    {{ range $index,$elements := .quotes }}
-    {{ if eq $index 0 }}
-    <div class="carousel-item active">
-        {{ else }}
-    <div class="carousel-item">
-        {{ end }}
-     <blockquote>{{ .quote }}</blockquote>
-     <h6>{{ .title }}</h6>
-    </div>
-    {{ end }}
-  </div>
-  <a class="carousel-control-prev" href="#customer-quote" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">{{ i18n "previous" }}</span>
-  </a>
-  <a class="carousel-control-next" href="#customer-quote" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">{{ i18n "next" }}</span>
-  </a>
-</div>
-{{ end }}
-{{ end }}
-
 {{ if $data.homepage.support.enable }}
 {{ with $data.homepage.support }}
 <section class="support-section">
@@ -291,4 +227,93 @@
 {{ end }}
 {{ end }}
 
+
+{{ if $data.homepage.logos.enable }}
+{{ with $data.homepage.logos }}
+<section id="block_106c3ff0323b9f3950a5f153830b65c2" class="o-section u-bg-color-light-gradient o-section--3xl" data-theme="light">
+
+	<div class="c-section-heading">
+		<div class="c-section-heading__wrap u-rhythm o-container o-container--lg">
+			<h2 class="c-heading c-section-heading__title u-font-h2 u-color-primary">
+				TID Adopters
+			</h2>
+		</div>
+	</div>
+
+	<div class="c-logos c-logos--centered o-container o-container--lg">
+		<div class="c-logo">
+			<img decoding="async" class="" src="https://tetrate.io/wp-content/uploads/2023/04/US-Air-Force-logo-1.svg" alt="U.S. Air Force">
+		</div>
+		<div class="c-logo">
+			<img decoding="async" class="" src="https://tetrate.io/wp-content/uploads/2023/04/Visa-logo-1.svg" alt="Visa">
+		</div>
+		<div class="c-logo">
+			<img decoding="async" class="" src="https://tetrate.io/wp-content/uploads/2023/04/FICO-logo-1.svg" alt="Fico">
+		</div>
+		<div class="c-logo">
+			<img decoding="async" class="" src="https://tetrate.io/wp-content/uploads/2023/04/Square-Inc-logo-1.svg" alt="Square">
+		</div>
+		<div class="c-logo">
+			<img decoding="async" class="" src="https://tetrate.io/wp-content/uploads/2023/04/Freddie-Mac-logo-1.svg" alt="Freddie Mac">
+		</div>
+		<div class="c-logo">
+			<img decoding="async" class="" src="https://tetrate.io/wp-content/uploads/2023/04/JusPay-logo-1.svg" alt="Juspay">
+		</div>
+		<div class="c-logo">
+			<img decoding="async" class="" src="https://tetrate.io/wp-content/uploads/2023/04/GAP-Logo-1.svg" alt="GAP">
+		</div>
+		<div class="c-logo">
+			<img decoding="async" class="" src="https://tetrate.io/wp-content/uploads/2023/04/Flexport-logo-1.svg" alt="Flexport">
+		</div>
+		<div class="c-logo">
+			<img decoding="async" class="" src="https://tetrate.io/wp-content/uploads/2023/04/Delta-Dental-logo-1.svg" alt="Delta Dental">
+		</div>
+		<div class="c-logo">
+			<img decoding="async" class="" src="https://tetrate.io/wp-content/uploads/2023/04/Autodesk-logo-1.svg" alt="Autodesk">
+		</div>
+		<div class="c-logo">
+			<img decoding="async" class="" src="https://tetrate.io/wp-content/uploads/2023/04/Box-Inc-logo-1.svg" alt="Box">
+		</div>
+		<div class="c-logo">
+			<img decoding="async" class="" src="https://tetrate.io/wp-content/uploads/2023/04/MicroStrategy-logo-1.svg" alt="Microstrategy">
+		</div>
+		<div class="c-logo">
+			<img decoding="async" class="" src="https://tetrate.io/wp-content/uploads/2023/04/Age-of-Learning-logo-1.svg" alt="Age of Learning">
+		</div>
+		<div class="c-logo">
+			<img decoding="async" class="" src="https://tetrate.io/wp-content/uploads/2023/04/KPMG-logo-1.svg" alt="KPMG">
+		</div>
+		<div class="c-logo">
+			<img decoding="async" class="" src="https://tetrate.io/wp-content/uploads/2023/04/Sony-logo-1.svg" alt="Sony">
+		</div>
+	</div>
+
+</section>
+{{ end }}
+{{ end }}
+
+
+{{ if $data.homepage.callout.enable }}
+{{ with $data.homepage.callout }}
+<section id="block_bde3bcd580cfae982de8a8a4f11ffe9e" class="c-callout o-section--3xl u-bg-color-primary">
+	<div class="c-callout__wrap u-rhythm-lg o-container o-container--md">
+
+    <h2 class="c-heading u-font-h3 u-color-light">{{ .heading }}</h2>
+
+    <img class="img-fluid logo-width" src="{{ .image }}" alt="{{ .heading }}">
+
+    <div class="o-button-group o-section__button-group">
+      <a href="{{ .link_url }}" target="{{ .link_target }}" class="c-button c-button--light">
+	      <span>{{ .link_text }}</span>
+	      <i class="material-icons" aria-hidden="true">arrow_forward</i>
+      </a>
+    </div>
+
+	</div>
+</section>
+{{ end }}
+{{ end }}
+
+
+</main>
 {{ end }}

@@ -5,128 +5,125 @@
  */
 
 .o-section {
-	$this: &;
+  $this: &;
 
-	max-width: 100%;
-	overflow: hidden;
-	position: relative;
-	z-index: 1;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
 
-	&::before {
-		content: '';
-	}
+  &::before {
+    content: '';
+  }
 
-	&__cta {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-direction: column;
-		margin-top: var(--space-xl);
+  &__cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: var(--space-xl);
 
-		@include mq($from: desktop) {
-			margin-top: var(--space-2xl);
-		}
-	}
+    @include mq($from: desktop) {
+      margin-top: var(--space-2xl);
+    }
+  }
 
-	&__callout {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-direction: column;
-		margin-top: var(--space-xl);
-	}
+  &__callout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: var(--space-xl);
+  }
 
-	&__button-group {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-direction: column;
-		margin-top: var(--space-2xl);
-		width: 100%;
+  &__button-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: var(--space-2xl);
+    width: 100%;
 
-		@include mq($from: phablet) {
-			align-items: flex-start;
-			flex-direction: row;
-		}
+    @include mq($from: phablet) {
+      align-items: flex-start;
+      flex-direction: row;
+    }
 
-		@include mq($from: desktop) {
-			margin-top: var(--space-3xl);
-		}
+    @include mq($from: desktop) {
+      margin-top: var(--space-3xl);
+    }
 
-		> a,
-		> button {
+    > a,
+    > button {
+      &:not(:first-child) {
+        margin: var(--space-lg) 0 0;
 
-			&:not(:first-child) {
-				margin: var(--space-lg) 0 0;
+        @include mq($from: phablet) {
+          margin: 0 0 0 var(--space-md);
+        }
+      }
+    }
+  }
 
-				@include mq($from: phablet) {
-					margin: 0 0 0 var(--space-md);
-				}
-			}
-		}
-	}
+  &__bg {
+    left: 0;
+    position: absolute;
+    pointer-events: none;
+    width: 100%;
+    bottom: 0;
 
+    &--top {
+      bottom: auto;
+      top: 0;
+    }
+  }
 
-	&__bg {
-		left: 0;
-		position: absolute;
-		pointer-events: none;
-		width: 100%;
-		bottom: 0;
+  /* Sizes */
+  &--none {
+    padding: 0;
+  }
 
-		&--top {
-			bottom: auto;
-			top: 0;
-		}
-	}
+  &--md {
+    @include mq($from: desktop) {
+      padding: var(--space-md) 0;
+    }
+  }
 
-	/* Sizes */
-	&--none {
-		padding: 0;
-	}
+  &--lg {
+    @include mq($from: desktop) {
+      padding: var(--space-lg) 0;
+    }
+  }
 
-	&--md {
-		@include mq($from: desktop) {
-			padding: var(--space-md) 0;
-		}
-	}
+  &--xl {
+    padding: var(--space-lg) 0;
 
-	&--lg {
-		@include mq($from: desktop) {
-			padding: var(--space-lg) 0;
-		}
-	}
+    @include mq($from: desktop) {
+      padding: var(--space-xl) 0;
+    }
+  }
 
-	&--xl {
-		padding: var(--space-lg) 0;
+  &--2xl {
+    padding: var(--space-xl) 0;
 
-		@include mq($from: desktop) {
-			padding: var(--space-xl) 0;
-		}
-	}
+    @include mq($from: desktop) {
+      padding: var(--space-2xl) 0;
+    }
+  }
 
-	&--2xl {
-		padding: var(--space-xl) 0;
+  &--3xl {
+    padding: var(--space-2xl) 0;
 
-		@include mq($from: desktop) {
-			padding: var(--space-2xl) 0;
-		}
-	}
+    @include mq($from: desktop) {
+      padding: var(--space-3xl) 0;
+    }
+  }
 
-	&--3xl {
-		padding: var(--space-2xl) 0;
+  &--4xl {
+    padding: var(--space-2xl) 0;
 
-		@include mq($from: desktop) {
-			padding: var(--space-3xl) 0;
-		}
-	}
-
-	&--4xl {
-		padding: var(--space-2xl) 0;
-
-		@include mq($from: desktop) {
-			padding: var(--space-4xl) 0;
-		}
-	}
-
+    @include mq($from: desktop) {
+      padding: var(--space-4xl) 0;
+    }
+  }
 }
