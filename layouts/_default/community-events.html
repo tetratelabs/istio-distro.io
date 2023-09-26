@@ -9,11 +9,8 @@ partial "community-banner.html" . -}} {{ with $data.homepage.subscribe }}
         {{ end }}
         <div class="form-control cta-form" id="emailFormContainer">
           <form id="emailForm">
-            <input id="email" type="email" class="input" placeholder="{{ i18n "
-            work_email"}}" / required>
-            <button class="c-button c-button--primary">
-              {{ i18n "join_now" }}
-            </button>
+            <input id="email" type="email" class="input" placeholder="{{ i18n " work_email"}}" / required>
+            <button class="c-button c-button--primary">{{ i18n "join_now" }}</button>
           </form>
         </div>
         <span id="errorMessage">{{ .error_message }}</span>
@@ -48,7 +45,7 @@ partial "community-banner.html" . -}} {{ with $data.homepage.subscribe }}
           <img src="{{ .Page.Params.image |relURL }}" />
           <p>{{ .Page.Description }}</p>
           <div class="event-actions row">
-            <a class="btn btn-sm" href="{{ .Page.RelPermalink }}"
+            <a class="c-button c-button--primary-outline" href="{{ .Page.RelPermalink }}"
               >{{ i18n "learn_more" }}</a
             >
             <a
@@ -85,7 +82,7 @@ partial "community-banner.html" . -}} {{ with $data.homepage.subscribe }}
           <img src="{{ .Page.Params.image |relURL }}" />
           <p>{{ .Page.Description }}</p>
           <div class="event-actions row">
-            <a class="btn btn-sm" href="{{ .Page.RelPermalink }}"
+            <a class="c-button c-button--primary-outline" href="{{ .Page.RelPermalink }}"
               >{{ i18n "learn_more" }}</a
             >
             <a
