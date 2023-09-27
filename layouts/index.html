@@ -158,7 +158,6 @@
 
     <h2 class="c-heading u-font-h3 u-color-light">{{ .heading }}</h2>
 
-    <img class="img-fluid logo-width" src="{{ .image }}" alt="{{ .heading }}">
 
     <div class="o-button-group o-section__button-group">
       <a href="{{ .link_url }}" target="{{ .link_target }}" class="c-button c-button--light">
@@ -166,6 +165,8 @@
 	      <i class="material-icons" aria-hidden="true">arrow_forward</i>
       </a>
     </div>
+
+    <img class="img-fluid u-mt-lg" src="{{ .image }}" alt="{{ .heading }}">
 
 	</div>
 </section>
