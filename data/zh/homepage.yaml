@@ -8,45 +8,6 @@ hero:
     - content: '用户、生态系统和合作伙伴的社区中心'
   asciinema_id: 459699
 
-########################## Subsribe section #############################
-subscribe:
-  enable: true
-  item:
-    - content: 'GetIstio 1.0 已就绪'
-    - content: '不要错过新版本和社区活动'
-  error_message: '请输入有效的邮箱地址。'
-  form_message: '感谢您订阅。'
-
-########################## Dictionary section ###########################
-dictionary:
-  enable: true
-  title: '什么是 GetIstio'
-  logo: '/images/getistio-logo-notext-black.png'
-  phonogram: '/getˌis,’tē,ō/'
-  verb:
-    name: '动词'
-    meaning: '为 Kubernetes 或应用平台安装和管理经过审核的 Istio。'
-    quote: '在 Kubernetes 集群中安装和更新 Istio 的最佳方法是什么？很简单，你只要 GetIstio！'
-    similar:
-      - content: 'service mesh'
-      - content: 'control plane'
-      - content: 'application networking'
-      - content: 'func-e'
-  noun_benefits:
-    name: '名词/收益'
-    meaning1: '简单、开源的 CLI，用于确保特定 Istio 版本的安装和升级。'
-    quote1: '我刚刚用 GetIstio 在五分钟内升级到最新的 Istio 版本。'
-    similar:
-      - content: 'kubectl'
-      - content: 'istioctl'
-    meaning2: '上游和 FIPS 兼容的 Istio 分布测试，并针对 EKS、GKE、AKS 等进行加固。'
-    meaning3: '来自 AWS、Weaveworks、Venafi 等生态系统合作伙伴的验证 Istio 集成和教程的枢纽。'
-    quote2: '使用 GetIstio CLI，我在几分钟内就使 AWS 的 ACM 成为我对 Istio mesh 的信任证书提供商。'
-  collective_noun:
-    name: '组合名词'
-    meaning: 'Istio 用户、开发者、教程和技术合作伙伴的社区。'
-  button_text: 'GetIstio 收益'
-
 ########################## Get Start section #############################
 start:
   enable: true

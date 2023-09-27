@@ -11,16 +11,6 @@ hero:
     - content: 'Available as an Amazon EKS add on'
   asciinema_id: 459699
 
-########################## Subscribe section ##########################
-subscribe:
-  enable: true
-  item:
-    - content: 'Never miss new releases and community events'
-  error_message: 'Please enter a valid email address.'
-  form_message: 'Thank you for subscribing.'
-  community_item:
-    - content: 'Join the Tetrate Istio Distro community to get release updates and community announcements'
-
 ########################## Get Start section #############################
 start:
   enable: true

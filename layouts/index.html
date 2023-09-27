@@ -47,153 +47,39 @@
 {{ end }}
 {{ end }}
 
-{{ if $data.homepage.dictionary.enable }}
-{{ with $data.homepage.dictionary }}
-<section class="section dictionary-section">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="dictionary rounded col-lg-10 text-center text-lg-left shadow p-4">
-        <div class="dictionary-title row justify-content-between align-items-center mx-1 mb-3 pb-3">
-          <h2 class="dictionary-card-title">{{ .title }}</h2>
-          <img src="{{ .logo }}" alt="GetIstio logo" />
-        </div>
-
-        <div class="px-2 pb-2">
-          <p><span class="font-i">{{ .verb.name }}</span><br><strong>{{ .phonogram }}</strong></p>
-          <ol class="home-order-list">
-            <li class="mb-3">
-              <p class="list-title">{{ .verb.meaning }}</p>
-              <p class="list-quote">{{ .verb.quote }}</p>
-              <div>
-                <p class="d-inline color-green">{{ i18n "similar" }}</p>
-                <ul class="similar-list">
-                  {{ range .verb.similar }}
-                  <li>{{ .content }}</li>
-                  {{ end }}
-                </ul>
-              </div>
-            </li>
-          </ol>
-        </div>
-        <div id="more">
-          <div class="px-2 pb-2">
-            <p class="font-i mt-4">{{ .noun_benefits.name }}</p>
-            <ol class="home-order-list">
-              <li class="mb-3">
-                <p class="list-title">{{ .noun_benefits.meaning1 }}</p>
-                <p class="list-quote">{{ .noun_benefits.quote1 }}</p>
-                <div>
-                  <p class="d-inline color-green">{{ i18n "similar" }}</p>
-                  <ul class="similar-list">
-                    {{ range .noun_benefits.similar }}
-                    <li>{{ .content }}</li>
-                    {{ end }}
-                  </ul>
-                </div>
-              </li>
-              <li class="mb-3">
-                  <p class="list-title">{{ .noun_benefits.meaning2 }} </p>
-              </li>
-              <li class="mb-4">
-                <p class="list-title">{{ .noun_benefits.meaning3 }}</p>
-                <p class="list-quote">{{ .noun_benefits.quote2 }}
-              </li>
-            </ol>
-          </div>
-          <div class="px-2 pb-2">
-              <p class="font-i mt-4">{{ .collective_noun.name }}</p>
-            <ol class="home-order-list">
-              <li class="mb-3">
-                  <p class="list-title">{{ .collective_noun.meaning }}
-              </li>
-            </ol>
-          </div>
-        </div>
-        <div class="row justify-content-center expand-button-container">
-          {{/* <button class="expand-button" onclick="expandDictionary()" id="expandBtn">Read more</button> */}}
-          <button class="expand-button" onclick="expandDictionary()" id="expandBtn"><span class="mr-3">{{ .button_text }}
-          </span><i id="expandBtnIcon" class="ti-angle-down"></i></button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-{{ end }}
-{{ end }}
-
-<!-- topics -->
-<section class="section page-section pb-0">
-  <div class="container">
-    <div class="row">
-      {{ range first 4 (.Pages.ByParam "featureOrder")}}
-      <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
-        <div class="card match-height">
-          <div class="card-body">
-            <i class="card-icon {{ .Params.Icon }} mb-4"></i>
-            <h3 class="card-title h4">{{ .Title }}</h3>
-            <p class="card-text">{{ .Params.Description }}</p>
-            {{ if (isset .Params "altlink") }}
-              <a href="{{ .Params.Altlink }}" class="stretched-link" aria-label="{{ .Title}}"></a>
-            {{ else }}
-              <a href="{{ .Permalink }}" class="stretched-link" aria-label="{{ .Title}}"></a>
-            {{ end }}
-          </div>
-        </div>
-      </div>
-      {{ end }}
-    </div>
-  </div>
-</section>
-<!-- /topics -->
 
 {{ if $data.homepage.start.enable }}
 {{ with $data.homepage.start }}
-<section class="section pb-0">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-9 home-code rounded shadow p-4">
-          <h4>{{ .title }}</h4>
-        {{ range .steps }}
-        <p class="pb-2 pt-4">{{ .desc }}</p>
-        <pre class="pb-2 home-code-snippet"><code>{{ .cmd }}</code><span class="copy-to-clipboard">{{ i18n "copy" }}</span></pre>
-        {{ end }}
-        <div class="pt-4 row justify-content-center">
-            <a href="{{ "/getmesh-cli/"| relLangURL }}" class="c-button c-button--primary-outline learn-more">{{ i18n "learn_more" }}</a>
-            &nbsp;&nbsp;
-            <a href="{{ "https://tetr8.io/tetrate-community"| relLangURL }}" class="c-button c-button--primary-outline learn-more">{{ i18n "get_support" }}</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-{{ end }}
-{{ end }}
+<section class="o-section o-section--2xl u-bg-color-light-gradient u-ta-center">
+  <div class="o-container o-container--xl">
 
-{{ if $data.homepage.training.enable }}
-{{ with $data.homepage.training }}
-<section class="training-section">
-  <div class="container mw-100">
-    <div class="row">
-      <div class="col-lg-12 text-center banner-content">
-        <h4 class="mr-4">{{ .title }}</h4>
-        <span><a class="c-button c-button--primary" href="{{ .url }}">{{ .button_text }}</a></span>
+    <div class="c-section-heading">
+      <div class="c-section-heading__wrap u-rhythm o-container o-container--lg">
+        <h2 class="c-heading c-section-heading__title u-font-h2 u-color-primary">
+          TID Quick Start
+        </h2>
       </div>
-    </div>
-  </div>
-</section>
-{{ end }}
-{{ end }}
+	 </div>
 
-{{ if $data.homepage.support.enable }}
-{{ with $data.homepage.support }}
-<section class="support-section">
-  <div class="container mw-100">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <h4 class="mb-4">{{ .title }}</h4>
-        <a class="c-button c-button--primary" href="https://www.tetrate.io/getistio">{{ i18n "get_in_touch" }}</a>
-      </div>
+     <div class="u-rhythm-lg">
+		 <p class="u-font-h6 u-fw-500">Choose from four installation options</p>
+
+		<div class="o-button-group o-button-group--center">
+			<a class="c-button c-button--primary" href="https://docs.tetrate.io/istio-distro/installation/install-helm">HELM <i class="material-icons" aria-hidden="true">arrow_forward</i></a>
+			<a class="c-button c-button--primary" href="https://docs.tetrate.io/istio-distro/installation/install-istioctl">Istioctl <i class="material-icons" aria-hidden="true">arrow_forward</i></a>
+			<a class="c-button c-button--primary" href="https://docs.tetrate.io/istio-distro/installation/install-eks/">AWS EKS Add on <i class="material-icons" aria-hidden="true">arrow_forward</i></a>
+			<a class="c-button c-button--primary" href="https://docs.tetrate.io/istio-distro/installation/install-azure/">Azure AKS <i class="material-icons" aria-hidden="true">arrow_forward</i></a>
+		</div>
+
+		<div class="u-rhythm">
+			<p class="u-font-h6 u-fw-500">Choose from four installation options</p>
+			<p>If you need help using or running TID, please ask a question on Slack</p>
+			<p>If you want enterprise grade support, extended CVE fixes or a FIPS-verified version, visit Tetrate Istio Subscription</p>
+		</div>
+	 </div>
+
     </div>
+
   </div>
 </section>
 {{ end }}
