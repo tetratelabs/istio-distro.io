@@ -47,34 +47,6 @@
 {{ end }}
 {{ end }}
 
-{{ if $data.homepage.subscribe.enable }}
-{{ with $data.homepage.subscribe }}
-  <section class="cta-section mt-4 py-4">
-    <div class="container mw-100">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-          {{ range .item }}
-          <p>{{ .content }}</p>
-          {{ end }}
-          <div class="form-control cta-form" id="emailFormContainer">
-            <form id="emailForm">
-              <div class="input-container">
-                <input id="email" type="email" class="input" placeholder=" " required/>
-                <label for="email">{{ i18n "work_email" }}</label>
-              </div>
-                <button class="c-button c-button--primary">{{ i18n "get_updates" }}</button>
-            </form>
-          </div>
-          <span id="errorMessage">{{ .error_message }}</span>
-          <p id="formMessage">{{ .form_message }}</p>
-        </div>
-      </div>
-    </div>
-  </section>
-</section>
-{{ end }}
-{{ end }}
-
 {{ if $data.homepage.dictionary.enable }}
 {{ with $data.homepage.dictionary }}
 <section class="section dictionary-section">

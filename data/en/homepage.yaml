@@ -1,14 +1,14 @@
 ########################## Hero Block ################################
 hero:
-  title: 'Simple, safe enterprise-grade Istio distro'
+  title: 'Tetrate Istio Distro (TID)'
   subtitle: 'TID is the easiest and fastest way to get started with open source Istio.'
   cta_url: 'getmesh-cli/install/install-istio/eks-addon/'
   cta_title: 'Get started for free'
   enable: true
   lead_item:
-    - content: 'Easiest way of installing, operating, and upgrading Istio'
-    - content: 'Tested and hardened for your application and cloud platform'
-    - content: 'Community hub for users, ecosystem, and partners'
+    - content: '100% Upstream Istio'
+    - content: 'FIPS - compliant'
+    - content: 'Available as an Amazon EKS add on'
   asciinema_id: 459699
 
 ########################## Subscribe section ##########################
@@ -20,36 +20,6 @@ subscribe:
   form_message: 'Thank you for subscribing.'
   community_item:
     - content: 'Join the Tetrate Istio Distro community to get release updates and community announcements'
-
-########################## Dictionary section ###########################
-dictionary:
-  enable: false
-  title: 'What is Get•Is•ti•o'
-  logo: '/images/getistio-logo-notext-black.png'
-  phonogram: '/getˌis,’tē,ō/'
-  verb:
-    name: 'verb'
-    meaning: 'Act of installing and managing vetted Istio for use in Kubernetes or application platforms.'
-    quote: 'What’s the best way to install and update Istio in my Kubernetes cluster? Simple, you just GetIstio.'
-    similar:
-      - content: 'service mesh'
-      - content: 'control plane'
-      - content: 'application networking'
-      - content: 'func-e'
-  noun_benefits:
-    name: 'noun / benefits'
-    meaning1: 'Simple, open source CLI for assured installation and upgrade of specific Istio versions.'
-    quote1: 'I just upgraded to the latest Istio version in five minutes with getistio.'
-    similar:
-      - content: 'kubectl'
-      - content: 'istioctl'
-    meaning2: 'Upstream & FIPS compliant Istio distribution tested and hardened for EKS, GKE, AKS and more.'
-    meaning3: 'Hub for validated Istio integrations & tutorials from ecosystem partners like AWS, Weaveworks, Venafi.'
-    quote2: 'Using GetIstio CLI, I made AWS’ ACM my trusted cert provider for Istio mesh within minutes.'
-  collective_noun:
-    name: 'collective noun'
-    meaning: 'Community of Istio users, developers, tutorials and technology partners.'
-  button_text: 'GetIstio benifets'
 
 ########################## Get Start section #############################
 start:
