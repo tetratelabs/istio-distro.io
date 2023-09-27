@@ -11,5 +11,5 @@
 
 .u-sr,
 .screen-reader-text {
-	@include hiddenVisually();
+  @include hiddenVisually();
 }

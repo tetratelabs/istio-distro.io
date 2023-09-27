@@ -5,63 +5,54 @@
  */
 
 .c-section-heading {
-	$this: &;
+  $this: &;
 
-	text-align: center;
-	margin-bottom: var(--space-xl);
-	width: 100%;
+  text-align: center;
+  margin-bottom: var(--space-xl);
+  width: 100%;
 
+  &__title {
+    min-height: 1.12em;
 
-	@include mq($from: desktop) {
-		margin-bottom: var(--space-2xl);
-	}
+    @include mq($until: phablet) {
+      text-align: center;
+    }
+  }
 
-	&__wrap {
+  &__subtitle {
+    @include mq($until: phablet) {
+      text-align: center;
+    }
+  }
 
-	}
+  &--inner {
+    margin-bottom: 0;
+  }
 
-	&__title {
-		min-height: 1.12em;
+  &--left {
+    text-align: left;
 
-		@include mq($until: phablet) {
-			text-align: center;
-		}
-	}
+    .o-container {
+      text-align: left;
+    }
 
-	&__subtitle {
-		@include mq($until: phablet) {
-			text-align: center;
-		}
-	}
+    #{$this}__title {
+      max-width: 14em;
+    }
 
-	&--inner {
-		margin-bottom: 0;
-	}
+    #{$this}__subtitle {
+      max-width: 31em;
+    }
+  }
 
-	&--left {
-		text-align: left;
+  &--advanced {
+    align-items: center;
+    display: inline-flex;
+    justify-content: space-between;
+    text-align: left;
 
-		.o-container {
-			text-align: left;
-		}
-
-		#{$this}__title {
-			max-width: 14em;
-		}
-
-		#{$this}__subtitle {
-			max-width: 31em;
-		}
-	}
-
-	&--advanced {
-		align-items: center;
-		display: inline-flex;
-		justify-content: space-between;
-		text-align: left;
-
-		@include mq($until: phablet) {
-			flex-direction: column-reverse;
-		}
-	}
+    @include mq($until: phablet) {
+      flex-direction: column-reverse;
+    }
+  }
 }

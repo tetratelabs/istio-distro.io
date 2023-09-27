@@ -5,209 +5,207 @@
  */
 
 .u-font-primary {
-	font-family: var(--font-primary) !important;
+  font-family: var(--font-primary) !important;
 
-	* {
-		font-family: var(--font-primary) !important;
-	}
+  * {
+    font-family: var(--font-primary) !important;
+  }
 }
 
 /* Font Types */
 .u-font-headline {
-	@include heading('headline');
+  @include heading('headline');
 }
 
 .u-font-h1 {
-	@include heading('h1');
+  @include heading('h1');
 }
 
 .u-font-h2 {
-	@include heading('h2');
+  @include heading('h2');
 }
 
 .u-font-h3 {
-	@include heading('h3');
+  @include heading('h3');
 }
 
 .u-font-h4 {
-	@include heading('h4');
+  @include heading('h4');
 }
 
 .u-font-h5 {
-	@include heading('h5');
+  @include heading('h5');
 }
 
 .u-font-h6 {
-	@include heading('h6');
+  @include heading('h6');
 }
 
 .u-font-p {
-	@include text();
+  @include text();
 }
 
 .u-font-xs {
-	@include text('xs');
+  @include text('xs');
 }
 
 .u-font-sm {
-	@include text('sm');
+  @include text('sm');
 }
 
 .u-font-md {
-	@include text('md');
+  @include text('md');
 }
 
 .u-font-lg {
-	@include text('lg');
+  @include text('lg');
 }
 
 .u-font-xl {
-	@include text('xl');
+  @include text('xl');
 }
 
 /* Font Sizes */
 .u-fz-headline {
-	@include heading('headline');
+  @include heading('headline');
 }
 
 .u-fz-h1 {
-	@include heading('h1');
+  @include heading('h1');
 }
 
 .u-fz-h2 {
-	@include heading('h2');
+  @include heading('h2');
 }
 
 .u-fz-h3 {
-	@include heading('h3');
+  @include heading('h3');
 }
 
 .u-fz-h4 {
-	@include heading('h4');
+  @include heading('h4');
 }
 
 .u-fz-h5 {
-	@include heading('h5');
+  @include heading('h5');
 }
 
 .u-fz-h6 {
-	@include heading('h6');
+  @include heading('h6');
 }
 
 .u-fz-p {
-	@include text();
+  @include text();
 }
 
 .u-fz-xs {
-	@include text('xs');
+  @include text('xs');
 }
 
 .u-fz-sm {
-	@include text('sm');
+  @include text('sm');
 }
 
 .u-fz-md {
-	@include text('md');
+  @include text('md');
 }
 
 .u-fz-lg {
-	@include text('lg');
+  @include text('lg');
 }
 
 .u-fz-xl {
-	@include text('xl');
+  @include text('xl');
 }
 
 /* Text alignment */
 .u-ta-right {
-	text-align: right !important;
+  text-align: right !important;
 }
 
 .u-ta-left {
-	text-align: left !important;
+  text-align: left !important;
 }
 
 .u-ta-center {
-	text-align: center !important;
+  text-align: center !important;
 }
 
 /* Text transform */
 .u-tt-up {
-	text-transform: uppercase !important;
+  text-transform: uppercase !important;
 }
 
 .u-tt-cap {
-	text-transform: capitalize !important;
+  text-transform: capitalize !important;
 }
-
 
 /* Font weights */
 .u-fw-normal {
-	font-weight: normal !important;
+  font-weight: normal !important;
 }
 
 .u-fw-bold {
-	font-weight: bold !important;
+  font-weight: bold !important;
 }
 
 .u-fw-extra-bold {
-	font-weight: 800 !important;
+  font-weight: 800 !important;
 }
 
 .u-fw-black {
-	font-weight: 900 !important;
+  font-weight: 900 !important;
 }
 
 .u-fw-300 {
-	font-weight: 300 !important;
+  font-weight: 300 !important;
 }
 
 .u-fw-400 {
-	font-weight: 400 !important;
+  font-weight: 400 !important;
 }
 
 .u-fw-500 {
-	font-weight: 500 !important;
+  font-weight: 500 !important;
 }
 
 .u-fw-600 {
-	font-weight: 600 !important;
+  font-weight: 600 !important;
 }
 
 .u-fw-700 {
-	font-weight: 700 !important;
+  font-weight: 700 !important;
 }
 
 .u-fw-800 {
-	font-weight: 800 !important;
+  font-weight: 800 !important;
 }
 
 .u-fw-900 {
-	font-weight: 900 !important;
+  font-weight: 900 !important;
 }
 
 /* Truncate text */
 .u-truncate {
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-
 
 /* Highlight text */
 .u-highlight {
-	background-color: var(--color-primary);
+  background-color: var(--color-primary);
 }
 
 /* Text decoration */
 .u-td-n {
-	text-decoration: none !important;
+  text-decoration: none !important;
 }
 
 .has-text-align-center {
-	text-align: center;
+  text-align: center;
 }
 
 .has-text-align-right {
-	text-align: right;
+  text-align: right;
 }
