@@ -1,15 +1,7 @@
 ########################## Hero Block ################################
 hero:
-  title: 'Tetrate Istio Distro (TID)'
-  subtitle: 'TID is the easiest and fastest way to get started with open source Istio.'
-  cta_url: 'getmesh-cli/install/install-istio/eks-addon/'
-  cta_title: 'Get started for free'
+  title: 'Why Istio'
   enable: true
-  lead_item:
-    - content: '100% Upstream Istio'
-    - content: 'FIPS - compliant'
-    - content: 'Available as an Amazon EKS add on'
-  asciinema_id: 459699
 
 ########################## Get Start section #############################
 start:

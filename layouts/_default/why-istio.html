@@ -1,0 +1,20 @@
+{{ define "main" }}
+<main id="main" class="o-main">
+  {{ $data := index .Site.Data .Site.Language.Lang }} {{ if
+  $data.istio.hero.enable }} {{ with $data.istio.hero }}
+  <section class="c-hero c-hero--compact o-section o-section--2xl">
+    <div class="c-hero__wrap u-rhythm-md o-container o-container--xl">
+      <h1 class="c-heading u-font-h1">{{ .title }}</h1>
+    </div>
+
+    <img
+      decoding="async"
+      class="c-hero__bg"
+      src="https://tetrate.io/wp-content/uploads/2023/08/m-Tetrate-2023-TIS-Homepage-Light@2x.png"
+      alt=""
+    />
+  </section>
+
+  {{ end }} {{ end }}
+</main>
+{{ end }}
