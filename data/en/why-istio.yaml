@@ -1,0 +1,40 @@
+########################## Hero Block ################################
+hero:
+  title: 'Tetrate Istio Distro (TID)'
+  subtitle: 'TID is the easiest and fastest way to get started with open source Istio.'
+  cta_url: 'getmesh-cli/install/install-istio/eks-addon/'
+  cta_title: 'Get started for free'
+  enable: true
+  lead_item:
+    - content: '100% Upstream Istio'
+    - content: 'FIPS - compliant'
+    - content: 'Available as an Amazon EKS add on'
+  asciinema_id: 459699
+
+########################## Get Start section #############################
+start:
+  enable: true
+  title: 'Get Started Quickly'
+  steps:
+    - desc: '1. Download Tetrate Istio Distro CLI'
+      cmd: 'curl -sL https://istio.tetratelabs.io/getmesh/install.sh | bash'
+    - desc: '2. Install Istio Demo'
+      cmd: 'getmesh istioctl install --set profile=demo'
+    - desc: '3. Check Tetrate Istio Distro version'
+      cmd: 'getmesh version'
+    - desc: '4. Validate config'
+      cmd: 'getmesh config-validate'
+
+########################## Logos section ###############################
+logos:
+  enable: true
+
+########################## Callout section ###############################
+callout:
+  enable: true
+  heading: 'Istio is a cNCF graduated project'
+  title: 'Need enterprise support for your Istio?'
+  image: '/images/home/cncf-graduated-color.svg'
+  link_url: 'https://tetrate.io/blog/'
+  link_text: 'Read the blog'
+  link_target: '_blank'
