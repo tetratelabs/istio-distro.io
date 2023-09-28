@@ -1,0 +1,75 @@
+/**
+ * WYSIWYG
+ *
+ * Group: Custom Components
+ */
+
+.wysiwyg {
+  $this: &;
+
+  ul {
+    margin-bottom: var(--space-md);
+  }
+
+  p {
+    &:not(:empty) {
+      margin: 0 0 var(--space-md);
+    }
+  }
+
+  pre,
+  table,
+  figure {
+    margin-bottom: var(--space-md);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: var(--space-md);
+  }
+
+  hr {
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-lg);
+
+    @include mq($from: wide) {
+      margin-top: var(--space-xl);
+      margin-bottom: var(--space-xl);
+    }
+  }
+
+  blockquote {
+    color: var(--color-text);
+    background-color: var(--color-neutral-10);
+    margin: var(--space-lg) 0;
+    padding: var(--space-lg) var(--space-xl) var(--space-lg) var(--space-lg);
+    position: relative;
+    text-align: left;
+
+    &::before {
+      content: '';
+      background-color: var(--color-primary);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 3px;
+      height: 100%;
+    }
+
+    > p {
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  img {
+    max-width: 50em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
