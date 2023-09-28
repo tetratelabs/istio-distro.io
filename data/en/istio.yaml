@@ -3,30 +3,11 @@ hero:
   title: 'Why Istio'
   enable: true
 
-########################## Get Start section #############################
-start:
-  enable: true
-  title: 'Get Started Quickly'
-  steps:
-    - desc: '1. Download Tetrate Istio Distro CLI'
-      cmd: 'curl -sL https://istio.tetratelabs.io/getmesh/install.sh | bash'
-    - desc: '2. Install Istio Demo'
-      cmd: 'getmesh istioctl install --set profile=demo'
-    - desc: '3. Check Tetrate Istio Distro version'
-      cmd: 'getmesh version'
-    - desc: '4. Validate config'
-      cmd: 'getmesh config-validate'
-
-########################## Logos section ###############################
-logos:
-  enable: true
-
 ########################## Callout section ###############################
 callout:
   enable: true
-  heading: 'Istio is a cNCF graduated project'
-  title: 'Need enterprise support for your Istio?'
-  image: '/images/home/cncf-graduated-color.svg'
+  heading: 'Get Started'
+  subheading: 'Tetrate offers training and certification to turbo-charge your service mesh journey.'
   link_url: 'https://tetrate.io/blog/'
-  link_text: 'Read the blog'
+  link_text: 'Learn More'
   link_target: '_blank'

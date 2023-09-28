@@ -14,7 +14,152 @@
       alt=""
     />
   </section>
+  {{ end }} {{ end }}
 
+  <section
+    id="block_4bc2e51c80ccd6d061ee9ff1b249290f"
+    class="c-resources o-section o-section--3xl u-bg-color-none"
+  >
+    <div class="c-resources__wrapper o-container o-container--xl">
+      <div class="c-section-heading">
+        <div
+          class="c-section-heading__wrap u-rhythm o-container o-container--sm"
+        >
+          <h2
+            class="c-heading c-section-heading__title u-font-h2 u-color-primary"
+          >
+            Additional Resources
+          </h2>
+        </div>
+      </div>
+
+      <div
+        id="grid-6515ec295511d6.23825095"
+        class="o-grid o-grid--col-3 o-grid--column-gap-lg"
+      >
+        <div
+          class="c-post-card c-post-card--simple u-bg-color-dark-gradient c-post-card--secondary has-cta"
+          data-post-type="resource"
+        >
+          <div class="c-post-card__content u-rhythm-md">
+            <p class="c-post-card__badge u-fw-bold u-color-primary-medium">
+              Tetrate Service Express
+            </p>
+
+            <h3 class="c-heading c-post-card__title u-font-h5 u-color-light">
+              <a
+                class="c-link"
+                href="https://tetrate.io/resource/introducing-tetrate-service-express/"
+                target="_self"
+              >
+                <span> Introducing Tetrate Service Express</span>
+              </a>
+            </h3>
+
+            <a
+              class="c-link c-post-card__link c-link--light"
+              href="https://tetrate.io/resource/introducing-tetrate-service-express/"
+              target="_self"
+            >
+              <span> Get educated</span>
+
+              <i class="material-icons" aria-hidden="true">arrow_forward</i>
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="c-post-card c-post-card--simple u-bg-color-dark-gradient c-post-card--secondary has-cta"
+          data-post-type="press"
+        >
+          <div class="c-post-card__content u-rhythm-md">
+            <p class="c-post-card__badge u-fw-bold u-color-primary-medium">
+              Press Coverage
+            </p>
+
+            <h3 class="c-heading c-post-card__title u-font-h5 u-color-light">
+              <a
+                class="c-link"
+                href="https://vmblog.com/archive/2023/04/10/zero-trust-is-the-answer-when-the-call-is-coming-from-inside-the-house.aspx#.ZDSd0uzMJ6q"
+                target="_self"
+              >
+                <span>
+                  Zero Trust is the Answer When the Call is Coming from Inside
+                  the House</span
+                >
+              </a>
+            </h3>
+
+            <a
+              class="c-link c-post-card__link c-link--light"
+              href="https://vmblog.com/archive/2023/04/10/zero-trust-is-the-answer-when-the-call-is-coming-from-inside-the-house.aspx#.ZDSd0uzMJ6q"
+              target="_blank"
+            >
+              <span> Read More</span>
+
+              <i class="material-icons" aria-hidden="true">arrow_forward</i>
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="c-post-card c-post-card--simple u-bg-color-dark-gradient c-post-card--secondary has-cta"
+          data-post-type="resource"
+        >
+          <div class="c-post-card__content u-rhythm-md">
+            <p class="c-post-card__badge u-fw-bold u-color-primary-medium">
+              Zero Trust
+            </p>
+
+            <h3 class="c-heading c-post-card__title u-font-h5 u-color-light">
+              <a
+                class="c-link"
+                href="https://tetrate.io/resource/zero-trust-architecture-white-paper/"
+                target="_self"
+              >
+                <span> Zero Trust Architecture White Paper</span>
+              </a>
+            </h3>
+
+            <a
+              class="c-link c-post-card__link c-link--light"
+              href="https://tetrate.io/resource/zero-trust-architecture-white-paper/"
+              target="_self"
+            >
+              <span> Get educated</span>
+
+              <i class="material-icons" aria-hidden="true">arrow_forward</i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{ if $data.istio.callout.enable }} {{ with $data.istio.callout }}
+  <section
+    id="block_bde3bcd580cfae982de8a8a4f11ffe9e"
+    class="c-callout o-section--3xl u-bg-color-primary"
+  >
+    <div class="c-callout__wrap u-rhythm-lg o-container o-container--md">
+      {{ if.heading }}
+      <h2 class="c-heading u-font-h3 u-color-light">{{ .heading }}</h2>
+      {{ end }} {{ if.subheading }}
+      <p class="u-fz-h6 u-color-light">{{ .subheading }}</p>
+      {{ end }}
+
+      <div class="o-button-group o-section__button-group">
+        <a
+          href="{{ .link_url }}"
+          target="{{ .link_target }}"
+          class="c-button c-button--light"
+        >
+          <span>{{ .link_text }}</span>
+          <i class="material-icons" aria-hidden="true">arrow_forward</i>
+        </a>
+      </div>
+    </div>
+  </section>
   {{ end }} {{ end }}
 </main>
 {{ end }}
