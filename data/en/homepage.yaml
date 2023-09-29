@@ -11,6 +11,14 @@ hero:
     - content: 'Available as an Amazon EKS add on'
   asciinema_id: 459699
 
+########################## Logos section ###############################
+logos:
+  enable: true
+
+########################## Why Istio section ###############################
+why_istio:
+  enable: true
+
 ########################## Get Start section #############################
 start:
   enable: true

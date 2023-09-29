@@ -5,105 +5,104 @@
  */
 
 :root {
+  /* Font Faces */
+  --font-primary: 'Poppins', sans-serif;
+  --font-mono: 'Monaco', monospace;
+  --font-awesome: 'FontAwesome';
+  --font-material: 'Material Icons';
 
-	/* Font Faces */
-	--font-primary: "Poppins", sans-serif;
-	--font-mono: 'Monaco', monospace;
-	--font-awesome: "FontAwesome";
-	--font-material: "Material Icons";
+  /* Type base */
+  --text-base-size: 1em;
 
-	/* Type base */
-	--text-base-size: 1em;
+  /* Font Weights */
+  --font-weight-thin: 100;
+  --font-weight-extralight: 200;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
 
-	/* Font Weights */
-	--font-weight-thin: 100;
-	--font-weight-extralight: 200;
-	--font-weight-light: 300;
-	--font-weight-regular: 400;
-	--font-weight-medium: 500;
-	--font-weight-semibold: 600;
-	--font-weight-bold: 700;
-	--font-weight-extrabold: 800;
-	--font-weight-black: 900;
+  /* Letter Spacings */
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.075em;
 
-	/* Letter Spacings */
-	--tracking-tighter: -0.05em;
-	--tracking-tight: -0.025em;
-	--tracking-normal: 0em;
-	--tracking-wide: 0.025em;
-	--tracking-wider: 0.05em;
-	--tracking-widest: 0.075em;
+  /* Line heights */
+  --leading-none: 1;
+  --leading-tightest: 1.09;
+  --leading-tighter: 1.15;
+  --leading-tight: 1.275;
+  --leading-snug: 1.425;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 1.75;
+  --leading-extra-loose: 2.25;
 
-	/* Line heights */
-	--leading-none: 1;
-	--leading-tightest: 1.09;
-	--leading-tighter: 1.15;
-	--leading-tight: 1.275;
-	--leading-snug: 1.425;
-	--leading-normal: 1.500;
-	--leading-relaxed: 1.625;
-	--leading-loose: 1.750;
-	--leading-extra-loose: 2.250;
+  /* Body variables */
 
-	/* Body variables */
+  --body-font-weight: var(--font-weight-regular);
 
-	--body-font-weight: var(--font-weight-regular);
+  --body-small-font-size: 0.75rem; // 12px in 16px base
+  --body-small-letter-spacing: var(--tracking-normal);
+  --body-small-line-height: var(--leading-normal);
 
-	--body-small-font-size: 0.75rem; // 12px in 16px base
-	--body-small-letter-spacing: var(--tracking-normal);
-	--body-small-line-height: var(--leading-normal);
+  --body-font-size: 1rem; // 16px in 16px base
+  --body-letter-spacing: var(--tracking-normal);
+  --body-line-height: var(--leading-snug);
 
-	--body-font-size: 1.000rem; // 16px in 16px base
-	--body-letter-spacing: var(--tracking-normal);
-	--body-line-height: var(--leading-snug);
+  --button-font-size: 1rem; // 16px in 16px base
+  --button-letter-spacing: var(--tracking-normal);
+  --button-line-height: var(--leading-snug);
 
-	--button-font-size: 1.000rem; // 16px in 16px base
-	--button-letter-spacing: var(--tracking-normal);
-	--button-line-height: var(--leading-snug);
+  --h1-font-size: 2.5rem; // 40px in 16px base
+  --h1-font-weight: var(--font-weight-light);
+  --h1-letter-spacing: var(--tracking-normal);
+  --h1-line-height: var(--leading-tight);
 
-	--h1-font-size: 2.500rem; // 40px in 16px base
-	--h1-font-weight: var(--font-weight-light);
-	--h1-letter-spacing: var(--tracking-normal);
-	--h1-line-height: var(--leading-tight);
+  --h2-font-size: 2.25rem; // 36x in 16px base
+  --h2-font-weight: var(--font-weight-light);
+  --h2-letter-spacing: var(--tracking-normal);
+  --h2-line-height: var(--leading-tight);
 
-	--h2-font-size: 2.250rem; // 36x in 16px base
-	--h2-font-weight: var(--font-weight-light);
-	--h2-letter-spacing: var(--tracking-normal);
-	--h2-line-height: var(--leading-tight);
+  --h3-font-size: 2rem; // 32px in 16px base
+  --h3-font-weight: var(--font-weight-light);
+  --h3-letter-spacing: var(--tracking-normal);
+  --h3-line-height: var(--leading-tight);
 
-	--h3-font-size: 2.000rem; // 32px in 16px base
-	--h3-font-weight: var(--font-weight-light);
-	--h3-letter-spacing: var(--tracking-normal);
-	--h3-line-height: var(--leading-tight);
+  --h4-font-size: 1.5rem; // 24px in 16px base
+  --h4-font-weight: var(--font-weight-regular);
+  --h4-letter-spacing: var(--tracking-normal);
+  --h4-line-height: var(--leading-tight);
 
-	--h4-font-size: 1.500rem; // 24px in 16px base
-	--h4-font-weight: var(--font-weight-regular);
-	--h4-letter-spacing: var(--tracking-normal);
-	--h4-line-height: var(--leading-tight);
+  --h5-font-size: 1.25rem; // 20px in 16px base
+  --h5-font-weight: var(--font-weight-normal);
+  --h5-letter-spacing: var(--tracking-normal);
+  --h5-line-height: var(--leading-tight);
 
-	--h5-font-size: 1.250rem; // 20px in 16px base
-	--h5-font-weight: var(--font-weight-light);
-	--h5-letter-spacing: var(--tracking-normal);
-	--h5-line-height: var(--leading-tight);
+  --h6-font-size: 1rem; // 16px in 16px base
+  --h6-font-weight: var(--font-weight-light);
+  --h6-letter-spacing: var(--tracking-normal);
+  --h6-line-height: var(--leading-snug);
 
-	--h6-font-size: 1.000rem; // 16px in 16px base
-	--h6-font-weight: var(--font-weight-light);
-	--h6-letter-spacing: var(--tracking-normal);
-	--h6-line-height: var(--leading-snug);
+  @include mq($from: desktop) {
+    --h1-font-size: 3.875rem; // 62px in 16px base
 
-	@include mq($from: desktop) {
-		--h1-font-size: 3.875rem; // 62px in 16px base
+    --h2-font-size: 3rem; // 48x in 16px base
 
-		--h2-font-size: 3.000rem; // 48x in 16px base
+    --h3-font-size: 2.25rem; // 36px in 16px base
 
-		--h3-font-size: 2.250rem; // 36px in 16px base
+    --h4-font-size: 1.75rem; // 28px in 16px base
 
-		--h4-font-size: 1.750rem; // 28px in 16px base
+    --h5-font-size: 1.5rem; // 24px in 16px base
 
-		--h5-font-size: 1.500rem; // 24px in 16px base
+    --h6-font-size: 1.25rem; // 20px in 16px base
 
-		--h6-font-size: 1.250rem; // 20px in 16px base
-
-		--button-font-size: 1.125rem // 18px in 16px base
-	}
+    --button-font-size: 1.125rem; // 18px in 16px base
+  }
 }
