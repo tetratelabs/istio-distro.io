@@ -150,10 +150,15 @@
 }
 
 #newsletter-form {
-  align-items: center;
   display: flex;
+  flex-direction: column;
   gap: var(--space-lg);
   padding: var(--space-xl) 0;
+
+  @include mq($from: phablet) {
+    align-items: center;
+    flex-direction: row;
+  }
 }
 
 #emailForm {
