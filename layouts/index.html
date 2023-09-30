@@ -41,7 +41,7 @@
 
 	</div>
 
-  <img decoding="async" class="c-hero__bg" src="https://tetrate.io/wp-content/uploads/2023/08/m-Tetrate-2023-TIS-Homepage-Light@2x.png" alt="">
+  <img decoding="async" class="c-hero__bg" src="{{ .bg }}" alt="{{ .title }}">
 </section>
 
 {{ end }}
@@ -163,7 +163,7 @@
 		<div class="c-logos c-logos--centered o-container o-container--2xl">
 			{{ range.items }}
 				<div class="c-logo">
-					<img decoding="async" src="{{ .url }}" alt="U.S. Air Force">
+					<img decoding="async" src="{{ .url }}" alt="{{ .title }}">
 				</div>
 			{{ end }}
 		</ul>
