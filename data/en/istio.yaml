@@ -2,7 +2,7 @@
 hero:
   title: 'Why Istio'
   enable: true
-  bg: '/images/home/homepage-hero-bg.png'
+  bg: '/images/why-istio/why-istio-hero-bg.png'
 
 ########################## Additional Resources section ###############################
 additional_resources:
