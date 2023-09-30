@@ -14,6 +14,19 @@ hero:
 ########################## Why Istio section ###############################
 why_istio:
   enable: true
+  heading: 'Safe, simple Enterprise-Grade Istio'
+  image: '/images/home/logo-tetrate-istio-distro.svg'
+  text: 'TID is Tetrate’s hardened, fully upstream Istio distribution, with FIPS-verified builds and support available. It’s an ideal starting point for your service mesh journey, supported by the creators of the open source Istio project.'
+  subheading: 'Why tetrate Istio Distro?'
+  cards:
+    - title: 'Security Simplified'
+      content: 'TID helps you embrace a zero trust security model by giving you the tools to automatically and declaratively secure your services and their communication. You can manage authentication, authorization and encry[tion between services, with little or no changes to the application themselves.'
+    - title: 'Efficient Traffic Management'
+      content: 'With TID, you can control traffic flows and API calls between services while also gaining visibility into your traffic. This makes calls more reliable and your network more robust, even in adverse conditions.'
+    - title: 'Understand Your Apps'
+      content: 'TID’s robust tracing, monitoring and logging features give you deep insights into how your services are performing, how that performance affects other processes and any issues that might exist.'
+    - title: 'Rocust Policy Enforcements'
+      content: 'Apply organizational policies to service interactions, ensuring the enforcement of access policies and equitable resource distribution among consumers.'
 
 ########################## Get Start section #############################
 start:
