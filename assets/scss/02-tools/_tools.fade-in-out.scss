@@ -1,0 +1,18 @@
+/**
+ * Fade In Out
+ *
+ * Group: Tools
+ */
+
+@mixin fadeInOut($activeClass: 'is-active', $transition: 500) {
+	transition: opacity #{$transition}ms ease-out;
+	opacity: 0;
+	height: 0;
+	overflow: hidden;
+
+	&.#{$activeClass} {
+		height: auto;
+		opacity: 1;
+	}
+
+}

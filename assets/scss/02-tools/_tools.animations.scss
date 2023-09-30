@@ -1,0 +1,84 @@
+/**
+ * Animations
+ *
+ * Group: Tools
+ */
+
+@mixin basicTransition($properties: (all), $duration: var(--transition-duration), $delay: null, $easing: var(--cubicIn)) {
+	$value: null;
+
+	@each $prop in $properties {
+		$prop-value: append((), $prop, space);
+		$prop-value: append($prop-value, $duration, space);
+
+		@if $delay != null {
+			$prop-value: append($prop-value, $delay, space);
+		}
+
+		$prop-value: append($prop-value, $easing, space);
+
+		$value: append($value, $prop-value, comma);
+	}
+
+	transition: $value;
+}
+
+
+@mixin lineAnimation() {
+	position: relative;
+
+	&::before {
+		background: currentColor;
+		content: '';
+		height: 1px;
+		left: 0;
+		pointer-events: none;
+		position: absolute;
+		top: 100%;
+		transform-origin: 100% 50%;
+		transform: scale3d(0, 1, 1);
+		transition: transform 0.3s;
+		width: 100%;
+	}
+
+	@include onEvent {
+		&::before {
+			transform-origin: 0 50%;
+			transform: scale3d(1, 1, 1);
+		}
+	}
+}
+
+@mixin anchorAnimation() {
+	$this: &;
+
+	display: inline-block;
+	margin: 0 var(--space-4xs);
+	overflow: hidden;
+	padding: 0 var(--space-4xs);
+	position: relative;
+	text-decoration: none;
+	vertical-align: bottom;
+	white-space: nowrap;
+
+	&::before {
+		background-color: var(--color-primary);
+		content: '';
+		left: 0;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		transition: transform 0.2s;
+		transform: translateY(95%);
+		z-index: -1;
+	}
+
+	@include onEvent {
+		color: var(--color-light);
+
+		&::before {
+			transform: translateY(0);
+		}
+	}
+}

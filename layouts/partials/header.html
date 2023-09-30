@@ -6,74 +6,65 @@
       <div class="navbar-brand-container">
         <a class="navbar-brand" href="{{ .Site.BaseURL | relLangURL }}">
           {{ if .Site.Params.logo }}
-          <img class="img-fluid logo-width" src="{{ .Site.Params.logo | relURL }}" alt="{{ .Site.Title }}">
-          {{ else }}
-          {{ .Site.Title }}
-          {{ end }}</a>
-        <!-- GitHub button -->
-        <a class="github-button" href="https://github.com/tetratelabs/getistio" data-icon="octicon-star"
-          aria-label="Star tetratelabs/getmesh on GitHub">Star</a>
+          <img
+            class="img-fluid logo-width"
+            src="{{ .Site.Params.logo | relURL }}"
+            alt="{{ .Site.Title }}"
+          />
+          {{ else }} {{ .Site.Title }} {{ end }}</a
+        >
       </div>
-      <button aria-label="Menu" class="navbar-toggler border-0" type="button" data-toggle="collapse"
-        data-target="#navigation">
+      <button
+        aria-label="Menu"
+        class="navbar-toggler border-0"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navigation"
+      >
         <i class="ti-menu h4 text-white"></i>
       </button>
 
       <div class="collapse navbar-collapse text-center" id="navigation">
         <ul class="navbar-nav mx-auto align-items-center">
-          {{ range .Site.Menus.main }}
-          {{ if .HasChildren }}
+          {{ range .Site.Menus.main }} {{ if .HasChildren }}
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-toggle="dropdown"
+            >
               {{ .Name }}
             </a>
             <div class="dropdown-menu">
               {{ range .Children }}
-              <a class="dropdown-item" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
+              <a class="dropdown-item" href="{{ .URL | relLangURL }}"
+                >{{ .Name }}</a
+              >
               {{ end }}
             </div>
           </li>
           {{ else }}
           <li class="nav-item">
             {{ if in .URL "http"}}
-            <a class="nav-link" href="{{ .URL | relLangURL }}" target="_blank">{{ .Name }} {{.Pre}}</a>
+            <a class="nav-link" href="{{ .URL | relLangURL }}" target="_blank"
+              >{{ .Name }} {{.Pre}}</a
+            >
             {{ else }}
             <a class="nav-link" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
             {{ end }}
           </li>
-          {{ end }}
-          {{ end }}
-          <li class="nav-link">
-            <!-- Language List -->
-            {{ if .IsTranslated }}
-            <select class="nav-item" id="select-language" onchange="location = this.value;">
-              {{ $siteLanguages := .Site.Languages}}
-              {{ $pageLang := .Page.Lang}}
-              {{ range .Page.AllTranslations }}
-              {{ $translation := .}}
-              {{ range $siteLanguages }}
-              {{ if eq $translation.Lang .Lang }}
-              {{ $selected := false }}
-              {{ if eq $pageLang .Lang}}
-              <option id="{{ $translation.Language }}" value="{{ $translation.Permalink | relURL }}" selected>{{ .LanguageName }}
-              </option>
-              {{ else }}
-              <option id="{{ $translation.Language }}" value="{{ $translation.Permalink | relURL }}">{{ .LanguageName }}
-              </option>
-              {{ end }}
-              {{ end }}
-              {{ end }}
-              {{ end }}
-            </select>
-            {{ end }}
-          </li>
+          {{ end }} {{ end }}
         </ul>
 
         <!-- for mobile -->
         <div class="d-lg-none d-block">
           {{ range site.Params.nav_button }}
-          <a href="{{ .link | relLangURL }}"
-            class="btn btn-sm {{if eq .style `outline`}}btn-outline-primary{{else}}btn-primary{{end}} ml-lg-4">{{ .label}}</a>
+          <a
+            href="{{ .link | relLangURL }}"
+            class="btn btn-sm {{if eq .style `outline`}}btn-outline-primary{{else}}btn-primary{{end}} ml-lg-4"
+            >{{ .label}}</a
+          >
           {{ end }}
         </div>
         <!-- /for mobile -->
@@ -90,8 +81,11 @@
       <!-- for desktop -->
       <div class="d-lg-flex d-none">
         {{ range site.Params.nav_button }}
-        <a href="{{ .link | relLangURL }}"
-          class="btn btn-sm {{if eq .style `outline`}}btn-outline-primary{{else}}btn-primary{{end}} ml-lg-4">{{ i18n .label }}</a>
+        <a
+          href="{{ .link | relLangURL }}"
+          class="btn btn-sm {{if eq .style `outline`}}btn-outline-primary{{else}}btn-primary{{end}} ml-lg-4"
+          >{{ i18n .label }}</a
+        >
         {{ end }}
       </div>
       <!-- /for desktop -->

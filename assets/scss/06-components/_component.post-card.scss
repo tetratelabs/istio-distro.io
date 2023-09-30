@@ -1,0 +1,65 @@
+/**
+ * Post Card
+ *
+ * Group: Custom Components
+ */
+
+.c-post-card {
+  $this: &;
+
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-md);
+
+  &__badge {
+    @include text('xs');
+    text-transform: uppercase;
+  }
+
+  &__metadata {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  &__header {
+    margin-bottom: var(--space-md);
+
+    @include mq($from: desktop) {
+      margin-bottom: var(--space-lg);
+    }
+  }
+
+  &__content {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  &__cta,
+  &__link {
+    position: absolute;
+    bottom: var(--space-sm);
+  }
+
+  &--simple {
+    padding: var(--space-lg);
+  }
+
+  &:not(#{$this}--simple) {
+    box-shadow: var(--box-shadow);
+  }
+
+  /**
+	 *	This code is used to fix the vertical rhythm on the card button, because it is position absolute and
+	 *	normal vertical rhythm doesn't work on elements with position absolute
+	 */
+  &.has-cta {
+    #{$this}__content {
+      height: 100%;
+      padding-bottom: calc(var(--button-size) + var(--space-sm));
+    }
+  }
+}

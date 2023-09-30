@@ -1,0 +1,112 @@
+/**
+ * Card
+ *
+ * Group: Custom Components
+ */
+
+.c-card {
+	$this: &;
+
+	background-color: var(--color-light);
+	display: flex;
+	flex-direction: column;
+	position: relative;
+
+	&__inner {
+		align-items: flex-start;
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+		padding: var(--space-lg) var(--space-md)
+	}
+
+	&__cta {
+		position: absolute;
+		bottom: var(--space-lg);
+	}
+
+	&__list {
+		a {
+			color: var(--color-dark);
+			text-decoration: underline;
+
+			@include onEvent {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	/* Benefit */
+	&--benefit {
+		display: flex;
+		flex-direction: column;
+		background-color: var(--color-neutral-10);
+
+		#{$this}__inner {
+			padding: var(--space-lg);
+		}
+
+		#{$this}__content {
+			min-height: 3em;
+		}
+	}
+
+	/**
+	 * Color variations
+	 */
+	&--primary {
+		outline-color: var(--color-primary);
+
+		#{$this}__list {
+			a {
+				color: var(--color-primary);
+			}
+		}
+	}
+
+	&--secondary {
+		outline-color: var(--color-secondary);
+
+		#{$this}__list {
+			a {
+				color: var(--color-secondary);
+			}
+		}
+	}
+
+	&--tertiary {
+		outline-color: var(--color-tertiary);
+
+		#{$this}__list {
+			a {
+				color: var(--color-tertiary);
+			}
+		}
+	}
+
+	&--quaternary {
+		outline-color: var(--color-quaternary);
+
+		#{$this}__list {
+			a {
+				color: var(--color-quaternary);
+			}
+		}
+	}
+
+	/**
+	 *	This code is used to fix the vertical rhythm on the card button, because it is position absolute and
+	 *	normal vertical rhythm doesn't work on elements with position absolute
+	 */
+	&.has-cta {
+		#{$this}__inner {
+			padding-bottom: calc(var(--button-size) + var(--space-2xl));
+		}
+
+		&#{$this}--gradient {
+			#{$this}__inner {
+				padding-bottom: calc(var(--button-size) + var(--space-lg));
+			}
+		}
+	}
+}

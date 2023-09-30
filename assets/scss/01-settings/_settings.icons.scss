@@ -1,0 +1,20 @@
+/**
+ * Icons
+ *
+ * Group: Settings
+ */
+
+:root {
+	--icon-unit: 1rem;
+	--icon-2xs: calc(var(--icon-unit) / 1.5);
+	--icon-xs: var(--icon-unit);
+	--icon-sm: calc(2 * var(--icon-unit));
+	--icon-md: calc(3 * var(--icon-unit));
+	--icon-lg: calc(4 * var(--icon-unit));
+	--icon-xl: calc(5.25 * var(--icon-unit));
+	--icon-2xl: calc(6 * var(--icon-unit));
+	--icon-3xl: calc(8 * var(--icon-unit));
+	--icon-4xl: calc(10 * var(--icon-unit));
+}
+
+

@@ -1,0 +1,53 @@
+/**
+ * Blockquote
+ *
+ * Group: Elements
+ */
+
+blockquote {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 0;
+	position: relative;
+	text-align: center;
+
+	footer {
+		font-size: var(--body-font-size);
+	}
+
+	cite {
+		display: block;
+		max-width: var(--max-width--3xs);
+
+		span {
+			display: inline;
+		}
+
+		span:not(:last-child) {
+			&::after {
+				color: currentColor;
+				content: ',';
+				margin: 0 var(--space-xxs);
+			}
+		}
+	}
+
+	p, span {
+		font-size: inherit;
+		font-weight: inherit;
+		font-style: inherit;
+		line-height: inherit;
+		margin: 0;
+	}
+
+	&[data-size="small"] {
+		font-size: var(--blockquote-small-font-size);
+	}
+
+	&[data-alignment="left"] {
+		align-items: flex-start;
+		text-align: left;
+	}
+}

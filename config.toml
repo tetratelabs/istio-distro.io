@@ -131,18 +131,18 @@ page = "search/"
 
 # main menu
 [[Languages.en.menu.main]]
-name = "Docs"
-url = "/getmesh-cli/"
+name = "Why Istio"
+url = "/why-istio"
 weight = 1
 
 [[Languages.en.menu.main]]
-name = "Blog"
-url = "/blog/"
+name = "Docs"
+url = "/getmesh-cli/"
 weight = 2
 
 [[Languages.en.menu.main]]
-name = "Community"
-url = "/community-events/"
+name = "GitHub"
+url = "https://github.com/tetratelabs/getistio"
 weight = 3
 
 [[Languages.en.menu.main]]
@@ -169,7 +169,7 @@ weight = 7
 
 #################### default parameters ################################
 [params]
-logo = "images/tetrate-istio-distro-logo.png"
+logo = "images/tetrate-logo-dark.svg"
 # Meta data
 description = "Tetrate Istio Distro project provides a simple, safe, enterprise-grade Istio distro."
 images = ["images/twitter-card-new.png"]

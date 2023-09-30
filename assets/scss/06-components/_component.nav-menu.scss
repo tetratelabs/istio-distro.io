@@ -1,0 +1,387 @@
+/**
+ * Nav Menu
+ *
+ * Group: Core Components
+ */
+
+.menu {
+  $this: &;
+
+  /**
+	 * Menu Options
+	 */
+  &--primary {
+    height: calc(100% - var(--space-sm));
+    overflow-y: scroll;
+    width: 100%;
+
+    @include mq($from: desktop-large) {
+      height: auto;
+      width: auto;
+      overflow-y: initial;
+    }
+
+    #{$this}__items {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+
+      @include mq($from: desktop-large) {
+        align-items: center;
+        display: inline-flex;
+        flex-direction: row;
+        height: auto;
+      }
+
+      > #{$this}__item {
+        @include mq($from: desktop-large) {
+          font-weight: inherit;
+        }
+
+        &:last-child {
+          #{$this}__sub-menu {
+            &::before {
+              left: 85%;
+            }
+
+            @include mq($from: desktop-large) {
+              transform: translateX(-40%);
+            }
+          }
+        }
+
+        &:not(:last-child) {
+          @include mq($until: desktop-large) {
+            padding-bottom: var(--space-md);
+            border-bottom: 1px solid var(--color-light);
+          }
+        }
+
+        &:not(.menu__item--cta) {
+          @include mq($from: desktop-large) {
+            > #{$this}__link {
+              border-bottom: 2px solid transparent;
+              margin-bottom: -2px;
+            }
+
+            @include onEvent {
+              > #{$this}__link {
+                border-color: currentColor;
+              }
+            }
+
+            &.menu__item--current {
+              > #{$this}__link {
+                border-color: currentColor;
+              }
+            }
+          }
+        }
+
+        &.has-children {
+          @include onEvent {
+            &::after {
+              @include mq($from: desktop-large) {
+                transform: rotate(-90deg);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    #{$this}__item {
+      border-bottom: 3px solid transparent;
+      position: relative;
+
+      @include mq($from: desktop-large) {
+        border-bottom: none;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: var(--space-md);
+
+        @include mq($from: desktop-large) {
+          margin-bottom: 0;
+          margin-right: var(--space-lg);
+        }
+      }
+
+      &--cta {
+        opacity: 1;
+
+        @include mq($from: desktop-large) {
+          margin-left: var(--space-md);
+        }
+
+        #{$this}__link {
+          @include button;
+          @include buttonSize('md');
+          @include buttonStyle('primary-outline');
+
+          &::before {
+            display: none;
+          }
+
+          .c-header--light & {
+            @include buttonStyle('light');
+          }
+
+          .is-header-sticky:not(.is-mobile-menu-open) & {
+            @include buttonStyle('primary-outline');
+          }
+        }
+      }
+
+      &.has-children {
+        @include mq($from: desktop-large) {
+          padding-right: var(--space-md);
+        }
+
+        > #{$this}__link {
+          #{$this}__arrow {
+            display: inline-block;
+            position: absolute;
+            width: 36px;
+            height: 36px;
+            right: 0;
+            top: -6px;
+          }
+        }
+
+        &::after {
+          font-family: var(--font-material);
+          font-weight: normal;
+          font-style: normal;
+          font-size: 24px;
+          line-height: 1;
+          letter-spacing: normal;
+          text-transform: none;
+          display: inline-block;
+          pointer-events: none;
+          white-space: nowrap;
+          word-wrap: normal;
+          direction: ltr;
+          -webkit-font-feature-settings: 'liga';
+          -webkit-font-smoothing: antialiased;
+          content: 'chevron_right';
+          color: inherit;
+          position: absolute;
+          transform: rotate(90deg);
+          right: 0;
+          top: 0;
+          transition: 0.2s 0.2s; /* delay of 1 seconds on hover off */
+        }
+
+        @include onEvent {
+          opacity: 1;
+
+          > #{$this}__sub-menu {
+            opacity: 1;
+            visibility: visible;
+            transition-delay: 0s; /* react immediately on hover */
+          }
+        }
+      }
+
+      &:not(#{$this}__item--cta) {
+        #{$this}__link {
+          @include mq($until: desktop-large) {
+            width: 100%;
+          }
+        }
+      }
+
+      &.is-active {
+        &::after {
+          transform: rotate(-90deg);
+          transition-delay: 0s; /* react immediately on hover */
+        }
+
+        #{$this}__sub-menu {
+          display: block;
+        }
+      }
+    }
+
+    #{$this}__link {
+      display: inline-flex;
+      color: currentColor;
+      font-weight: var(--font-weight-semibold);
+      width: 100%;
+
+      @include mq($from: desktop-large) {
+        font-weight: var(--font-weight-medium);
+      }
+    }
+
+    #{$this}__megalink {
+      color: var(--color-secondary);
+
+      @include onEvent {
+        color: var(--color-primary);
+        text-decoration: underline;
+      }
+    }
+
+    #{$this}__arrow {
+      display: none;
+    }
+
+    #{$this}__sub-menu {
+      display: none;
+      padding: var(--space-md);
+      width: 100%;
+
+      &--mega {
+        @include mq($until: desktop-large) {
+          padding: var(--space-md) 0;
+        }
+      }
+
+      @include mq($from: desktop-large) {
+        background-color: var(--color-light);
+        border-radius: var(--border-radius-sm);
+        box-shadow: var(--box-shadow);
+        color: var(--color-primary);
+        display: block;
+        margin-top: var(--space-xs);
+        min-width: 242px;
+        width: auto;
+        opacity: 0;
+        position: absolute;
+        left: calc(var(--space-md) * -1);
+        top: 2.225rem;
+        transition: 0.1s 0.1s; /* delay on hover off */
+        visibility: hidden;
+
+        &--mega {
+          transform: translateX(
+            calc(-50% + calc(15rem / var(--megamenu-divider)))
+          );
+          min-width: 920px;
+
+          &-large {
+            min-width: 1100px;
+          }
+        }
+
+        &::before {
+          content: '';
+          border-style: solid;
+          border-width: 0 7.5px 10px 7.5px;
+          border-color: transparent transparent var(--color-light) transparent;
+          height: 0;
+          width: 0;
+          position: absolute;
+          top: -10px;
+          left: 50px;
+        }
+
+        #{$this}__link {
+          color: var(--color-dark);
+
+          @include onEvent {
+            color: var(--color-primary);
+          }
+        }
+      }
+
+      @include mq($from: wide) {
+        top: 3.425rem;
+      }
+
+      #{$this}__item {
+        @include mq($from: desktop-large) {
+          &:not(:last-child) {
+            margin-bottom: var(--space-sm);
+            margin-right: 0;
+          }
+        }
+
+        &.has-children {
+          &::after {
+            pointer-events: none;
+            transform: rotate(0deg);
+
+            @include mq($until: desktop-large) {
+              display: none;
+            }
+          }
+        }
+      }
+
+      #{$this}__link {
+        @include onEvent {
+          color: var(--color-primary);
+        }
+      }
+
+      #{$this}__sub-menu {
+        @include mq($from: desktop-large) {
+          margin-top: 0;
+          top: 0;
+          right: 0;
+          min-width: 255px;
+          transform: translateX(calc(100% + var(--space-md)));
+        }
+      }
+    }
+  }
+
+  /*
+	 * Menu Widget
+	 */
+  &--widget {
+    #{$this}__item {
+      &:not(:last-of-type) {
+        margin-bottom: var(--space-sm);
+      }
+    }
+
+    #{$this}__link {
+      i {
+        margin-right: var(--space-2xs);
+      }
+    }
+  }
+
+  /**
+	 * Footer Menu
+	 */
+  &--footer {
+    align-items: center;
+    display: flex;
+    margin: 0 0 var(--space-md) 0;
+
+    @include mq($from: phablet) {
+      margin: 0;
+    }
+
+    #{$this}__items {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+
+      @include mq($from: phablet) {
+        flex-direction: row;
+      }
+    }
+
+    #{$this}__item {
+      line-height: var(--leading-extra-loose);
+
+      @include mq($from: tablet) {
+        line-height: var(--leading-relaxed);
+      }
+
+      &:not(:last-child) {
+        margin: 0 var(--space-md) 0 0;
+      }
+    }
+
+    #{$this}__link {
+      @include text('sm');
+    }
+  }
+}

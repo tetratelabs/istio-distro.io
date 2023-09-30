@@ -1,0 +1,15 @@
+/**
+ * A11y
+ *
+ * Group: Utilities
+ */
+
+/**
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+.u-sr,
+.screen-reader-text {
+  @include hiddenVisually();
+}

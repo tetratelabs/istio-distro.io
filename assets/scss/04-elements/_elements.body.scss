@@ -1,0 +1,38 @@
+/**
+ * Body
+ *
+ * Group: Elements
+ */
+
+body {
+	background-color: var(--color-neutral-10);
+	color: var(--color-text);
+	display: flex;
+	flex-direction: column;
+	font-family: var(--font-primary);
+	font-size: 100%;
+	font-weight: var(--font-weight-regular);
+	height: 100vh;
+	line-height: var(--body-line-height);
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	@include mq($until: phablet) {
+		max-width: 100%;
+		overflow-x: hidden;
+	}
+
+	&.is-hidden,
+	&.is-blocked ,
+	&.is-mobile-menu-open {
+		overflow: hidden;
+	}
+
+	[data-theme="dark"] {
+		color: var(--color-light);
+		background-color: var(--color-primary);
+	}
+}

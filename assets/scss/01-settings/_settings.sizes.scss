@@ -1,0 +1,51 @@
+/**
+ * Sizes
+ *
+ * Group: Settings
+ */
+
+:root {
+	/* Max widths */
+	--max-width--4xs: 25.000rem; // 400px in 16px base pixel size
+	--max-width--3xs: 30.000rem; // 480px in 16px base pixel size
+	--max-width--2xs: 33.750rem; // 540px in 16px base pixel size
+	--max-width--xs: 42.000rem; // 672px in 16px base pixel size
+	--max-width--sm: 52.500rem; // 840px in 16px base pixel size
+	--max-width--md: 61.25rem; // 980 in 16px base pixel size
+	--max-width--lg: 72.50rem; // 1160px in 16px base pixel size
+	--max-width--xl: 80.00rem; // 1280px in 16px base pixel size
+	--max-width--2xl: 90.00rem; // 1440px in 16px base pixel size
+	--max-width: 73.75rem; // 1180px in 16px base pixel size
+
+	/* Heights */
+	--admin-bar-height: 46px;
+	--header-height: 92px;
+
+	/* Widths */
+	--sidebar-width: 100%;
+	--content-width: 100%;
+
+	/* Sizing  */
+	--page-max-wrapper: 120rem; // 1920px in 16px base pixel size
+	--page-max-wrapper-large: 160rem; // 2560px in 16px base pixel size
+
+	--editor-sidebar-width: 18.75rem; // 300px in 16px base pixel size
+
+	@include mq($from: desktop) {
+		--header-height: 68px;
+		--content-width: calc(70% - var(--space-xl));
+		--sidebar-width: 30%;
+	}
+
+	@media screen and (min-width: 783px) {
+		--admin-bar-height: 32px;
+	}
+
+	@include mq($from: desktop-large) {
+		--editor-sidebar-width: 25rem; // 400px in 16px base pixel size
+	}
+
+	@include mq($from: wide) {
+		--editor-sidebar-width: 37.5rem; // 600px in 16px base pixel size
+	}
+}

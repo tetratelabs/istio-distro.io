@@ -1,0 +1,130 @@
+/**
+ * Text
+ *
+ * Group: Elements
+ */
+
+p, span, li, a, time, address {
+	font-size: var(--body-font-size);
+	font-weight: var(--font-weight-regular);
+	letter-spacing: var(--body-letter-spacing);
+	line-height: var(--body-line-height);
+}
+
+p {
+	&.has-small-font-size {
+		@include text('sm', true);
+	}
+
+	&.has-large-font-size {
+		@include heading('h6', true);
+	}
+
+	&.has-larger-font-size {
+		@include heading('h5', true);
+	}
+}
+
+th,
+td,
+li,
+p {
+	a,
+	span {
+		font-family: inherit;
+		font-size: inherit;
+		font-weight: inherit;
+		letter-spacing: inherit;
+		line-height: inherit;
+	}
+}
+
+// Span or a inside a span
+a,
+span {
+	span {
+		font-family: inherit;
+		font-size: inherit;
+		font-weight: inherit;
+		letter-spacing: inherit;
+		line-height: inherit;
+	}
+}
+
+li {
+	p, span {
+		font-family: inherit;
+		font-size: inherit;
+		font-weight: inherit;
+		letter-spacing: inherit;
+		line-height: inherit;
+	}
+}
+
+a {
+	color: var(--color-link);
+}
+
+// Small
+small {
+	font-size: var(--body-small-font-size);
+	font-weight: var(--font-weight-regular);
+	line-height: var(--body-small-line-height);
+
+	> * {
+		font-size: inherit;
+		font-weight: inherit;
+		line-height: inherit;
+	}
+}
+
+// Strong Tags
+b,
+strong {
+	font-weight: var(--font-weight-bold);
+}
+
+i,
+em {
+	font-style: italic;
+}
+
+sup {
+	display: inline;
+	font-size: 0.6em;
+	font-weight: 400;
+	vertical-align: top;
+}
+
+mark {
+	color: var(--color-primary);
+	background-color: transparent;
+	position: relative;
+}
+
+/*
+ * Inherit font styles if div has font classes
+ * This is really helpful for the WYSIWYG partial which is a div and accepts p tags inside
+ */
+div {
+	&[class*='u-fz-'],
+	&[class*='u-font-'] {
+
+		p {
+			font-size: inherit;
+			font-weight: inherit;
+			line-height: inherit;
+		}
+	}
+}
+
+del {
+	+ ins {
+		margin-left: var(--space-sm);
+	}
+}
+
+ins {
+	font-weight: var(--font-weight-bold);
+	text-decoration: none;
+}

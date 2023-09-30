@@ -1,0 +1,33 @@
+/**
+ * Generic
+ *
+ * Group: Elements
+ */
+
+/**
+ * More sensible default box-sizing:
+ * css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+ */
+html {
+	box-sizing: border-box !important;
+	scroll-behavior: smooth;
+	width: 100%;
+	max-width: 100%;
+	overflow-x: hidden !important;
+}
+
+* {
+	box-sizing: border-box !important;
+	font-variant-ligatures: no-common-ligatures !important;
+	-webkit-tap-highlight-color: transparent !important; /* for removing the highlight */
+
+	&,
+	&:before,
+	&:after {
+		box-sizing: inherit;
+	}
+}
+
+#top {
+	background-color: var(--color-light);
+}

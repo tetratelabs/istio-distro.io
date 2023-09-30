@@ -1,0 +1,80 @@
+/**
+ * Aspect Ratio
+ *
+ * Group: Objects
+ *
+ * link: https://twitter.com/csswizardry/status/1267046214069030912
+ */
+
+.o-aspect-ratio {
+
+	@supports (padding-top: calc(var(--height) / var(--width) * 100%)) {
+		--width: 16;
+		--height: 9;
+		position: relative;
+		background-size: cover;
+
+		&::after {
+			content: "";
+			display: block;
+			padding-top: calc(var(--height) / var(--width) * 100%);
+		}
+
+		> div,
+		> img,
+		> video,
+		> iframe {
+			object-fit: cover;
+			position: absolute !important;
+			left: 0;
+			top: 0;
+			height: 100%;
+			width: 100% !important;
+		}
+	}
+}
+
+/* Apply aspect ratio to container */
+.wp-has-aspect-ratio {
+	position: relative;
+
+	&::before {
+		content: "";
+		display: block;
+	}
+
+	> div {
+		object-fit: cover;
+		position: absolute !important;
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 100% !important;
+	}
+
+	iframe {
+		height: 100%;
+		width: 100%;
+	}
+}
+
+.wp-embed-aspect-16-9:before {
+	padding-bottom: 56.25%; /* 16:9 aspect ratio */
+}
+
+.wp-embed-aspect-4-3:before {
+	padding-bottom: 75%; /* 4:3 aspect ratio */
+}
+
+.wp-embed-aspect-1-1:before {
+	padding-bottom: 100%; /* 1:1 aspect ratio */
+}
+
+.wp-embed-aspect-3-2:before {
+	padding-bottom: 66.67%; /* 3:2 aspect ratio */
+}
+
+.wp-embed-aspect-2-1:before {
+	padding-bottom: 50%; /* 2:1 aspect ratio */
+}
+

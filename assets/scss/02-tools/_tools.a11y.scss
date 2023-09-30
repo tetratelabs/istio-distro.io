@@ -1,0 +1,15 @@
+/**
+ * A11y
+ *
+ * Group: Tools
+ */
+
+
+/* This is to cover Voice-over devices for accessibility purposes */
+@mixin listStyleNone() {
+	list-style-type: none;
+
+	&:before {
+		content: "\200B"; /* add zero-width space */
+	}
+}

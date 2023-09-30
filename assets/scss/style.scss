@@ -1,8 +1,8 @@
 /*!------------------------------------------------------------------
 [MAIN STYLESHEET]
 
-PROJECT:	Project Name
-VERSION:	Versoin Number
+PROJECT:	Istio Tetrate labs
+VERSION:	2.0
 -------------------------------------------------------------------*/
 
 /*------------------------------------------------------------------
@@ -26,3 +26,29 @@ VERSION:	Versoin Number
 @import 'templates/partner.scss';
 
 @import 'syntax';
+
+// 00. Libraries
+@import '00-libraries/libraries.sass-mq';
+
+// 01. Settings
+@import '01-settings/_index';
+
+// 02.Tools
+@import '02-tools/_index';
+
+@import '03-generic/_index';
+
+// 04. Elements
+@import '04-elements/_index';
+
+// 05. Objects
+@import '05-objects/_index';
+
+// 06. Components
+@import '06-components/_index';
+
+// 07. Scopes
+@import '07-scopes/_index';
+
+// 08. Utilities
+@import '08-utilities/_index';

@@ -1,275 +1,205 @@
 {{ define "main" }}
+<main id="main" class="o-main">
 
 {{ $data := index .Site.Data .Site.Language.Lang }}
 
 {{ if $data.homepage.hero.enable }}
 {{ with $data.homepage.hero }}
-<div class="hero-section mb-0 jumbotron jumbotron-fluid">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6 col-md-6">
-        <h1 class="display-4">{{ .title  }}</h1>
-        {{ if .subtitle }}
-        <p><span><a class="btn btn-sm btn-primary no-transform" href="{{ .subtitle_url }}">{{ .subtitle }}</a></span></p>
-        {{ end }}
-        <ul class="hero">
-          {{ range .lead_item }}
-          <li class="lead text-white">{{ .content }}</li>
-          {{ end }}
-        </ul>
-      </div>
-      <div class="col-lg-6 col-md-6 mt-md-0 mt-xl-0">
-        <!-- embedded asciinema for the time being is more stable -->
-        <script src="https://asciinema.org/a/{{ .asciinema_id }}.js" id="asciicast-{{ .asciinema_id }}" data-size="11px" data-speed="2" async></script>
-      </div>
+<section class="c-hero o-content-split o-content-split--hero o-content-split--reverse o-section o-section--2xl">
+	<div class="o-content-split__wrap o-container o-container--xl">
+
+    <div class="o-content-split__media-wrap">
+        <div class="c-hero__image-wrapper">
+          <!-- embedded asciinema for the time being is more stable -->
+				  <script src="https://asciinema.org/a/{{ .asciinema_id }}.js" id="asciicast-{{ .asciinema_id }}" data-size="11px" data-speed="2" async></script>
+        </div>
     </div>
-  </div>
-{{ end }}
-{{ end }}
 
-{{ if $data.homepage.subscribe.enable }}
-{{ with $data.homepage.subscribe }}
-  <section class="cta-section mt-4 py-4">
-    <div class="container mw-100">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-          {{ range .item }}
-          <p>{{ .content }}</p>
-          {{ end }}
-          <div class="form-control cta-form" id="emailFormContainer">
-            <form id="emailForm">
-              <div class="input-container">
-                <input id="email" type="email" class="input" placeholder=" " required/>
-                <label for="email">{{ i18n "work_email" }}</label>
-              </div>
-                <button class="btn btn-sm btn-primary">{{ i18n "get_updates" }}</button>
-            </form>
-          </div>
-          <span id="errorMessage">{{ .error_message }}</span>
-          <p id="formMessage">{{ .form_message }}</p>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
-{{ end }}
-{{ end }}
-
-{{ if $data.homepage.dictionary.enable }}
-{{ with $data.homepage.dictionary }}
-<section class="section dictionary-section">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="dictionary rounded col-lg-10 text-center text-lg-left shadow p-4">
-        <div class="dictionary-title row justify-content-between align-items-center mx-1 mb-3 pb-3">
-          <h2 class="dictionary-card-title">{{ .title }}</h2>
-          <img src="{{ .logo }}" alt="GetIstio logo" />
-        </div>
-
-        <div class="px-2 pb-2">
-          <p><span class="font-i">{{ .verb.name }}</span><br><strong>{{ .phonogram }}</strong></p>
-          <ol class="home-order-list">
-            <li class="mb-3">
-              <p class="list-title">{{ .verb.meaning }}</p>
-              <p class="list-quote">{{ .verb.quote }}</p>
-              <div>
-                <p class="d-inline color-green">{{ i18n "similar" }}</p>
-                <ul class="similar-list">
-                  {{ range .verb.similar }}
-                  <li>{{ .content }}</li>
-                  {{ end }}
-                </ul>
-              </div>
-            </li>
-          </ol>
-        </div>
-        <div id="more">
-          <div class="px-2 pb-2">
-            <p class="font-i mt-4">{{ .noun_benefits.name }}</p>
-            <ol class="home-order-list">
-              <li class="mb-3">
-                <p class="list-title">{{ .noun_benefits.meaning1 }}</p>
-                <p class="list-quote">{{ .noun_benefits.quote1 }}</p>
-                <div>
-                  <p class="d-inline color-green">{{ i18n "similar" }}</p>
-                  <ul class="similar-list">
-                    {{ range .noun_benefits.similar }}
-                    <li>{{ .content }}</li>
-                    {{ end }}
-                  </ul>
-                </div>
-              </li>
-              <li class="mb-3">
-                  <p class="list-title">{{ .noun_benefits.meaning2 }} </p>
-              </li>
-              <li class="mb-4">
-                <p class="list-title">{{ .noun_benefits.meaning3 }}</p>
-                <p class="list-quote">{{ .noun_benefits.quote2 }}
-              </li>
-            </ol>
-          </div>
-          <div class="px-2 pb-2">
-              <p class="font-i mt-4">{{ .collective_noun.name }}</p>
-            <ol class="home-order-list">
-              <li class="mb-3">
-                  <p class="list-title">{{ .collective_noun.meaning }}
-              </li>
-            </ol>
-          </div>
-        </div>
-        <div class="row justify-content-center expand-button-container">
-          {{/* <button class="expand-button" onclick="expandDictionary()" id="expandBtn">Read more</button> */}}
-          <button class="expand-button" onclick="expandDictionary()" id="expandBtn"><span class="mr-3">{{ .button_text }}
-          </span><i id="expandBtnIcon" class="ti-angle-down"></i></button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-{{ end }}
-{{ end }}
-
-<!-- topics -->
-<section class="section page-section pb-0">
-  <div class="container">
-    <div class="row">
-      {{ range first 4 (.Pages.ByParam "featureOrder")}}
-      <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
-        <div class="card match-height">
-          <div class="card-body">
-            <i class="card-icon {{ .Params.Icon }} mb-4"></i>
-            <h3 class="card-title h4">{{ .Title }}</h3>
-            <p class="card-text">{{ .Params.Description }}</p>
-            {{ if (isset .Params "altlink") }}
-              <a href="{{ .Params.Altlink }}" class="stretched-link" aria-label="{{ .Title}}"></a>
-            {{ else }}
-              <a href="{{ .Permalink }}" class="stretched-link" aria-label="{{ .Title}}"></a>
-            {{ end }}
-          </div>
-        </div>
-      </div>
+    <div class="o-content-split__text-wrap u-rhythm-lg">
+      {{ if.title }}
+      	<h1 class="c-heading o-content-split__text-heading u-font-h2">{{ .title }}</h1>
       {{ end }}
-    </div>
-  </div>
+
+	  {{ if.subtitle }}
+        <div class="u-fz-h6 u-color-dark ">
+	        {{ .subtitle }}
+        </div>
+      {{ end }}
+
+      {{ if .lead_item  }}
+      <ul class="hero">
+        {{ range.lead_item }}
+        <li class="lead">{{ .content }}</li>
+        {{ end }}
+      </ul>
+      {{ end }}
+
+      {{ if and (.cta_url) (.cta_title) }}
+			<p>
+				<span>
+					<a class="c-button c-button--primary" href="{{ .cta_url }}">{{ .cta_title }} <i class="material-icons" aria-hidden="true">arrow_forward</i></a>
+				</span>
+			</p>
+      	{{ end }}
+	 </div>
+
+	</div>
+
+  <img decoding="async" class="c-hero__bg" src="{{ .bg }}" alt="{{ .title }}">
 </section>
-<!-- /topics -->
+
+{{ end }}
+{{ end }}
+
+{{ if $data.homepage.why_istio.enable }}
+{{ with $data.homepage.why_istio }}
+<section class="o-section o-section--2xl u-bg-color-neutral-05 u-ta-center">
+  	<div class="o-container o-container--xl">
+
+		{{if .heading  }}
+		<div class="c-section-heading">
+			<div class="c-section-heading__wrap u-rhythm o-container o-container--lg">
+				<h2 class="c-heading c-section-heading__title u-font-h2 u-color-primary">
+					{{ .heading }}
+				</h2>
+			</div>
+		</div>
+		{{ end }}
+
+		<div class="u-rhythm-xl">
+			{{if .image  }}
+				<p class="image-center">
+					<img src="{{ .image }}" alt="{{ .heading }}" />
+				</p>
+			{{ end }}
+
+			{{if .text  }}
+				<p class="u-font-lg">{{ .text }}</p>
+			{{ end }}
+
+			{{if .subheading  }}
+				<p class="u-font-h3">{{  .subheading }}</p>
+			{{ end }}
+
+			{{if .cards  }}
+				<div class="box-cards">
+					{{ range.cards }}
+						<div class="box-card">
+						<h3 class="u-font-h5">{{  .title }}</h3>
+						<p>{{ .content }}</p>
+					</div>
+					{{ end }}
+				</div>
+			{{ end }}
+
+		</div>
+
+	</div>
+</section>
+{{ end }}
+{{ end }}
+
 
 {{ if $data.homepage.start.enable }}
 {{ with $data.homepage.start }}
-<section class="section pb-0">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-9 home-code rounded shadow p-4">
-          <h4>{{ .title }}</h4>
-        {{ range .steps }}
-        <p class="pb-2 pt-4">{{ .desc }}</p>
-        <pre class="pb-2 home-code-snippet"><code>{{ .cmd }}</code><span class="copy-to-clipboard">{{ i18n "copy" }}</span></pre>
-        {{ end }}
-        <div class="pt-4 row justify-content-center">
-            <a href="{{ "/getmesh-cli/"| relLangURL }}" class="btn btn-sm learn-more">{{ i18n "learn_more" }}</a>
-            &nbsp;&nbsp;
-            <a href="{{ "https://tetr8.io/tetrate-community"| relLangURL }}" class="btn btn-sm learn-more">{{ i18n "get_support" }}</a>
-        </div>
-      </div>
+<section class="o-section o-section--2xl u-bg-color-light-gradient u-ta-center">
+	<div class="o-container o-container--xl">
+
+	{{if .heading  }}
+		<div class="c-section-heading">
+			<div class="c-section-heading__wrap u-rhythm o-container o-container--lg">
+				<h2 class="c-heading c-section-heading__title u-font-h2 u-color-primary">
+				{{  .heading }}
+				</h2>
+			</div>
+		</div>
+	{{ end }}
+
+    <div class="u-rhythm-lg">
+		{{if .subheading  }}
+			<p class="u-font-h6 u-fw-500">{{ .subheading }}</p>
+		{{ end }}
+
+		{{if .installation_options  }}
+			<div class="o-button-group o-button-group--center">
+				{{ range.installation_options }}
+					<a class="c-button c-button--primary" href="{{ .url }}">{{ .text }} <i class="material-icons" aria-hidden="true">arrow_forward</i></a>
+				{{ end }}
+			</div>
+		{{ end }}
+
+		<div class="u-rhythm">
+			{{if .callout_heading  }}
+				<p class="u-font-h6 u-fw-500">{{ .callout_heading }}</p>
+			{{ end }}
+
+			{{if .callout_text_one  }}
+				<p>{{ safeHTML .callout_text_one }}</p>
+			{{ end }}
+
+			{{if .callout_text_two  }}
+				<p>{{ safeHTML .callout_text_two }}</p>
+			{{ end }}
+		</div>
+	 </div>
+
     </div>
+
   </div>
 </section>
 {{ end }}
 {{ end }}
 
-{{ if $data.homepage.training.enable }}
-{{ with $data.homepage.training }}
-<section class="training-section">
-  <div class="container mw-100">
-    <div class="row">
-      <div class="col-lg-12 text-center banner-content">
-        <h4 class="mr-4">{{ .title }}</h4>
-        <span><a class="btn btn-sm btn-primary" href="{{ .url }}">{{ .button_text }}</a></span>
-      </div>
-    </div>
-  </div>
+
+{{ if $data.homepage.logos.enable }}
+{{ with $data.homepage.logos }}
+<section id="block_106c3ff0323b9f3950a5f153830b65c2" class="o-section u-bg-color-light-gradient o-section--3xl" data-theme="light">
+
+	<div class="c-section-heading">
+		<div class="c-section-heading__wrap u-rhythm o-container o-container--lg">
+			<h2 class="c-heading c-section-heading__title u-font-h2 u-color-primary">
+				TID Adopters
+			</h2>
+		</div>
+	</div>
+
+	{{ if .items  }}
+		<div class="c-logos c-logos--centered o-container o-container--2xl">
+			{{ range.items }}
+				<div class="c-logo">
+					<img decoding="async" src="{{ .url }}" alt="{{ .title }}">
+				</div>
+			{{ end }}
+		</ul>
+	{{ end }}
+
 </section>
 {{ end }}
 {{ end }}
 
-{{ if $data.homepage.event.enable }}
-<section class="section events-section">
-  <div class="container">
-    <div class="event-header row justify-content-center align-items-sm-baseline justify-content-sm-between">
-    {{ with $data.homepage.event }}
-    <h4>{{ .title }}</h4>
-    <span><a href="{{ .url }}">{{ .link_text }}</a></span>
-    </div>
-    {{ end }}
-    <div class="row overflow-auto flex-md-nowrap">
-      {{ range .Site.Taxonomies.categories.event }}
-      {{ if eq .Page.Params.pastEvent false }}
-        <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
-          <div class="card match-height event-card">
-            <p class="event-date pb-2">
-              {{ if .Page.Params.eventEndDate }}
-              {{ dateFormat (i18n "date_format") .Page.Params.eventDate }} - {{ dateFormat (i18n "date_format") .Page.Params.eventEndDate }}
-              {{ else }}
-              {{ dateFormat (i18n "date_format") .Page.Params.eventDate }} {{ dateFormat (i18n "minute") .Page.Params.eventDate }} {{ .Page.Params.timezone }}
-              {{ end }}
-              <span><i class="ti-calendar"></i></span>
-            </p>
-            <a href="{{ .Page.RelPermalink }}"><h5>{{ .Page.Title }}</h5></a>
-            <img src="{{ .Page.Params.image |relURL }}" alt="{{ .Page.Title }}" />
-            <p>{{ .Page.Description }}</p>
-            <div class="event-actions row">
-                <a class="btn btn-sm" href="{{ .Page.RelPermalink }}">{{ i18n "learn_more" }}</a>
-                <a class="btn btn-sm btn-primary" href="{{ .Page.Params.eventLink }}" target="_blank">{{ i18n "go_to_event" }}</a>
-            </div>
-          </div>
-        </div>
-      {{ end }}
-      {{ end }}
-    </div>
-  </div>
-</section>
-{{ end }}
 
-{{ if $data.homepage.customer_quote.enable }}
-{{ with $data.homepage.customer_quote }}
-<div id="customer-quote" class="carousel slide quotes-section" data-ride="carousel">
-  <div class="carousel-inner">
-    {{ range $index,$elements := .quotes }}
-    {{ if eq $index 0 }}
-    <div class="carousel-item active">
-        {{ else }}
-    <div class="carousel-item">
-        {{ end }}
-     <blockquote>{{ .quote }}</blockquote>
-     <h6>{{ .title }}</h6>
-    </div>
-    {{ end }}
-  </div>
-  <a class="carousel-control-prev" href="#customer-quote" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">{{ i18n "previous" }}</span>
-  </a>
-  <a class="carousel-control-next" href="#customer-quote" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">{{ i18n "next" }}</span>
-  </a>
-</div>
-{{ end }}
-{{ end }}
+{{ if $data.homepage.callout.enable }}
+{{ with $data.homepage.callout }}
+<section id="block_bde3bcd580cfae982de8a8a4f11ffe9e" class="c-callout o-section--3xl u-bg-color-primary">
+	<div class="c-callout__wrap u-rhythm-lg o-container o-container--md">
 
-{{ if $data.homepage.support.enable }}
-{{ with $data.homepage.support }}
-<section class="support-section">
-  <div class="container mw-100">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <h4 class="mb-4">{{ .title }}</h4>
-        <a class="btn btn-sm btn-primary" href="https://www.tetrate.io/getistio">{{ i18n "get_in_touch" }}</a>
-      </div>
+    <h2 class="c-heading u-font-h3 u-color-light">{{ .heading }}</h2>
+
+
+    <div class="o-button-group o-section__button-group">
+      <a href="{{ .link_url }}" target="{{ .link_target }}" class="c-button c-button--light">
+	      <span>{{ .link_text }}</span>
+	      <i class="material-icons" aria-hidden="true">arrow_forward</i>
+      </a>
     </div>
-  </div>
+
+    <img class="img-fluid u-mt-lg" src="{{ .image }}" alt="{{ .heading }}">
+
+	</div>
 </section>
 {{ end }}
 {{ end }}
 
+
+</main>
 {{ end }}

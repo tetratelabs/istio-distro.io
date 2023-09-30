@@ -1,92 +1,28 @@
 ########################## Hero section ################################
 hero:
-  title: "简单，安全，企业级的 Istio 发行版"
+  title: '简单，安全，企业级的 Istio 发行版'
   enable: true
   lead_item:
-    - content: "最简单的安装、操作和升级 Istio 的方法"
-    - content: "为您的应用和云平台进行测试和加固"
-    - content: "用户、生态系统和合作伙伴的社区中心"
+    - content: '最简单的安装、操作和升级 Istio 的方法'
+    - content: '为您的应用和云平台进行测试和加固'
+    - content: '用户、生态系统和合作伙伴的社区中心'
   asciinema_id: 459699
-
-########################## Subsribe section #############################
-subscribe:
-  enable: true
-  item:
-    - content: "GetIstio 1.0 已就绪"
-    - content: "不要错过新版本和社区活动"
-  error_message: "请输入有效的邮箱地址。"
-  form_message: "感谢您订阅。"
-
-########################## Dictionary section ###########################
-dictionary:
-  enable: true
-  title: "什么是 GetIstio"
-  logo: "/images/getistio-logo-notext-black.png"
-  phonogram: "/getˌis,’tē,ō/"
-  verb:
-    name: "动词"
-    meaning: "为 Kubernetes 或应用平台安装和管理经过审核的 Istio。"
-    quote: "在 Kubernetes 集群中安装和更新 Istio 的最佳方法是什么？很简单，你只要 GetIstio！"
-    similar: 
-      - content: "service mesh"
-      - content: "control plane"
-      - content: "application networking"
-      - content: "func-e"
-  noun_benefits:
-    name: "名词/收益"
-    meaning1: "简单、开源的 CLI，用于确保特定 Istio 版本的安装和升级。"
-    quote1: "我刚刚用 GetIstio 在五分钟内升级到最新的 Istio 版本。"
-    similar:
-      - content: "kubectl"
-      - content: "istioctl"
-    meaning2: "上游和 FIPS 兼容的 Istio 分布测试，并针对 EKS、GKE、AKS 等进行加固。"
-    meaning3: "来自 AWS、Weaveworks、Venafi 等生态系统合作伙伴的验证 Istio 集成和教程的枢纽。"
-    quote2: "使用 GetIstio CLI，我在几分钟内就使 AWS 的 ACM 成为我对 Istio mesh 的信任证书提供商。"
-  collective_noun:
-    name: "组合名词"
-    meaning: "Istio 用户、开发者、教程和技术合作伙伴的社区。"
-  button_text: "GetIstio 收益"
 
 ########################## Get Start section #############################
 start:
   enable: true
-  title: "快速开始"
+  title: '快速开始'
   steps:
-    - desc: "1. 下载 GetIstio"
-      cmd: "curl -sL https://istio.tetratelabs.io/getmesh/install.sh | bash"
-    - desc: "2. 安装 Istio Demo"
-      cmd: "getmesh istioctl install --set profile=demo"
-    - desc: "3. 检查 GetIstio 版本"
-      cmd: "getmesh version"
-    - desc: "4. 验证配置"
-      cmd: "getmesh config-validate"
-
-########################## Training section ##############################
-training:
-  enable: true
-  title: "通过我们的培训计划提高您的 Istio 技能"
-  url: "https://academy.tetrate.io"
-  button_text: "立即加入"
-
-########################## Event section #################################
-event:
-  enable: true
-  title: "即将举行"
-  url: "/zh/community/event"
-  link_text: "查看所有活动→"
-
-########################## Customer quote section ########################
-customer_quote:
-  enable: true
-  quotes:
-    - quote: 与 Istio 社区合作，我们很高兴开发了 "istio-csr"，这是一个开源软件，用于整合 Istio 和 cert-manager。这使得工作负载证书可以从 cert-manager 支持的众多证书颁发机构和提供商处颁发，包括 Venafi、Google 证书颁发机构服务（CAS）等。我们期待与 GetIstio 社区合作，提供一个简单而无缝的集成，使运维和安全团队能够利用 cert-manager，从一开始就确保服务网格的安全。
-      title: "Matt Bates, co-founder & CTO Jetstack"
-    - quote: " 在 Tracfone，我们利用 Kubernetes、Istio 和一个定制的 CI/CD 平台建立了一个不可改变的基础设施。我们利用 Istio 来实现流量管理、遥测、零信任安全等一系列功能。来自 Tetrate 学院的 Istio 培训是我们团队快速学习 Istio 并获得最大收益的重要资源。"
-      title: "Kartik Rallapalli, Principal Enterprise Architect at Tracfone"
-    - quote: "结合 Istio 这样的服务网格，Weave GitOps 工作流可以在 Kubernetes 中自动实现渐进式部署策略/金丝雀发布。Tetrate 新的 GetIstio 产品让这一切变得简单，为用户提供了一种快速而安全的方式，将 Istio 部署到他们的 GitOps 工作流中。"
-      title: "Alexis Richardson, co-founder & CEO Weaveworks"
+    - desc: '1. 下载 GetIstio'
+      cmd: 'curl -sL https://istio.tetratelabs.io/getmesh/install.sh | bash'
+    - desc: '2. 安装 Istio Demo'
+      cmd: 'getmesh istioctl install --set profile=demo'
+    - desc: '3. 检查 GetIstio 版本'
+      cmd: 'getmesh version'
+    - desc: '4. 验证配置'
+      cmd: 'getmesh config-validate'
 
 ########################## Support section ###############################
 support:
   enable: true
-  title: "您的 Istio 需要企业支持？"
+  title: '您的 Istio 需要企业支持？'

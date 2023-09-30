@@ -1,0 +1,158 @@
+/**
+ * Logo
+ *
+ * Group: Custom Components
+ */
+
+.c-logo {
+  $this: &;
+
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  flex-direction: column;
+  flex: 1;
+  gap: var(--space-lg);
+  min-height: 80px;
+  min-width: 160px;
+  padding: 0 var(--space-md);
+  text-align: center;
+  width: 100%;
+
+  @include mq($from: phablet) {
+    min-width: 240px;
+  }
+
+  &__text {
+    min-width: 260px;
+  }
+
+  img {
+    max-height: 80px;
+
+    @include mq($until: phablet) {
+      transform: scale(1.5);
+    }
+  }
+
+  &--innovation {
+    justify-content: flex-start;
+  }
+
+  &--small {
+    min-width: 100px;
+    padding: var(--space-sm);
+
+    img {
+      max-height: 80px;
+      max-width: 120px;
+
+      @include mq($until: phablet) {
+        transform: scale(1);
+      }
+    }
+  }
+
+  &--light {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(100%)
+      hue-rotate(0deg) brightness(100%) contrast(100%);
+  }
+
+  &--dark {
+    filter: grayscale(100%) brightness(0%);
+  }
+
+  .swiper-slide & {
+    min-width: 120px;
+  }
+}
+
+.c-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+
+  @include mq($from: desktop) {
+    gap: var(--space-sm);
+  }
+
+  &--centered {
+    justify-content: center;
+
+    .c-logo {
+      flex: 0;
+    }
+  }
+
+  &--top {
+    align-items: flex-start;
+  }
+
+  .swiper-slide {
+    align-items: center;
+    justify-content: center;
+    display: inline-flex;
+  }
+}
+
+/**
+ * Logos Section
+ */
+.c-logos-section {
+  $this: &;
+
+  & + & {
+    margin-top: var(--space-xl);
+    padding-top: var(--space-xl);
+    border-top: 1px solid var(--color-border);
+  }
+}
+
+/**
+ * Logos grid
+ */
+.c-logos-grid {
+  overflow: hidden;
+
+  .c-logo {
+    @include mq($from: desktop) {
+      border: 1px solid var(--color-border-light);
+      height: calc(100% + 2px);
+      min-height: 120px;
+      min-width: calc(100% + 2px);
+      margin: -1px;
+    }
+  }
+}
+
+/**
+ * Testimonials Carousel
+ */
+.c-testimonials-carousel {
+  background-color: var(--color-border);
+  height: 1px;
+  width: 100%;
+  margin: var(--space-xl) 0;
+  position: relative;
+
+  &__line {
+    position: absolute;
+    width: 0;
+    height: 5px;
+    background-color: var(--color-primary);
+    left: 0;
+    top: 0;
+
+    &.loading {
+      transition: width 8s linear;
+      width: 100%; /* Set width to 100% when "loading" class is applied */
+    }
+  }
+}
+
+/**
+ * Social logos in Homepage
+ */
+.c-social-logos {
+  text-align: center;
+}

@@ -1,0 +1,29 @@
+/**
+ * Box Shadows
+ *
+ * Group: Tools
+ */
+
+@mixin boxShadow($style: 'default', $important: false) {
+
+	@if ($style == 'default') {
+		box-shadow: var(--box-shadow);
+	}
+
+	@if ($style == 'card') {
+		box-shadow: var(--box-shadow);
+
+		@include onEvent {
+			box-shadow: var(--box-shadow-hover);
+		}
+	}
+
+	@if ($style == 'md') {
+		box-shadow: var(--box-shadow-md);
+	}
+
+	@if ($style == 'lg') {
+		box-shadow: var(--box-shadow-lg);
+	}
+
+}

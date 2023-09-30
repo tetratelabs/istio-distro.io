@@ -1,0 +1,16 @@
+/**
+ * Link / Anchor
+ *
+ * Group: Elements
+ */
+
+a {
+	color: inherit;
+	text-decoration: none;
+
+	&[disabled] {
+		cursor: not-allowed;
+		box-shadow: none;
+		opacity: 0.6;
+	}
+}

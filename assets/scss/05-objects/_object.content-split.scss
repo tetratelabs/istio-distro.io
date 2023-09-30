@@ -1,0 +1,153 @@
+/**
+ * Content Split
+ *
+ * Group: Objects
+ */
+
+.o-content-split {
+	$this: &;
+
+	&__wrap {
+		display: flex;
+		flex-direction: column;
+
+		@include mq($from: tablet) {
+			flex-direction: row;
+			justify-content: space-between;
+		}
+	}
+
+	&__text-wrap,
+	&__form-wrap,
+	&__media-wrap {
+		width: 100%;
+
+		@include mq($from: tablet) {
+			flex-basis: calc(50% - var(--space-md));
+			margin: 0 var(--space-sm);
+		}
+
+		@include mq($from: desktop) {
+			margin: 0;
+		}
+	}
+
+	&__media-wrap {
+		align-items: center;
+		display: flex;
+		justify-content: center;
+		position: relative;
+		z-index: 2;
+
+		[id^="lottie"] {
+			min-width: 280px;
+
+			@include mq($from: desktop) {
+				min-width: 380px;
+			}
+		}
+	}
+
+	&__text-wrap {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: var(--space-md) 0;
+		text-align: center;
+
+		@include mq($from: tablet) {
+			align-items: flex-start;
+			padding: 0;
+			text-align: left;
+		}
+
+		@include mq($from: desktop) {
+			max-width: 34em;
+		}
+
+		p + p {
+			margin-top: var(--space-md);
+
+			@include mq($from: desktop) {
+				margin-top: var(--space-lg);
+			}
+		}
+
+	}
+
+	&__text-heading {
+		min-height: 1.15em;
+	}
+
+	ul {
+		font-weight: var(--font-weight-bold);
+		list-style: unset;
+		padding-left: calc(var(--space-sm) * 1.5);
+	}
+
+	/* Reverse Option */
+	&--reverse {
+		#{$this}__wrap {
+			@include mq($from: tablet) {
+				flex-direction: row-reverse;
+			}
+		}
+	}
+
+	&--hero {
+
+		#{$this}__media-wrap {
+			justify-content: flex-start;
+		}
+
+		#{$this}__wrap {
+			gap: var(--space-md);
+
+			@include mq($from: tablet) {
+				flex-direction: column;
+			}
+
+			@include mq($from: desktop) {
+				flex-direction: row;
+			}
+		}
+
+		&#{$this}--reverse {
+			#{$this}__wrap {
+				@include mq($from: desktop) {
+					flex-direction: row-reverse;
+				}
+			}
+		}
+	}
+
+	&--top {
+		#{$this}__text-wrap,
+		#{$this}__media-wrap {
+			@include mq($from: tablet) {
+				align-items: flex-start;
+				justify-content: flex-start;
+			}
+		}
+	}
+
+	&--no-media {
+		#{$this}__text-wrap {
+			@include mq($from: tablet) {
+				flex-basis: 100%;
+				max-width: 58em;
+			}
+		}
+
+		&#{$this}--left-aligned {
+			#{$this}__text-wrap {
+				@include mq($from: tablet) {
+					max-width: 38em;
+					margin-left: 0;
+					margin-right: auto;
+				}
+			}
+		}
+	}
+}

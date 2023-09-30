@@ -15,20 +15,21 @@
     padding: 0 30px;
   }
   @include mobile {
-    padding: 0 ;
+    padding: 0;
   }
 }
 .logo-width {
   width: 150px;
 }
+
 .navigation {
-  transition: .2s ease;
-  // background: #eeeeee;
-  // background: #dee5f2;
-  background: #262F40;
+  transition: 0.2s ease;
+  background: transparent;
+  position: absolute;
+  width: 100%;
 
   &.nav-bg {
-    background: #262F40;
+    background: #262f40;
     @extend .shadow;
     @include desktop {
       top: -50px;
@@ -55,14 +56,11 @@
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: $white;
+  color: var(--color-dark);
 
-  &:hover {
-    color: $primary-color;
-  }
-
+  &:hover,
   &:focus {
-    color: $primary-color;
+    color: var(--color-primary);
   }
 }
 
@@ -87,5 +85,5 @@
 #select-language {
   border: 1px solid $border-color;
   background: transparent;
-  color: white;
+  color: var(--color-light);
 }

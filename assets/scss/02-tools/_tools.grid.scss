@@ -1,0 +1,102 @@
+/**
+ * Grids
+ *
+ * Group: Tools
+ */
+
+/* Grid Mixin */
+@mixin grid {
+	grid-auto-rows: max-content;
+	grid-template-columns: var(--grid-template-columns);
+	row-gap: var(--grid-gap);
+
+	// fallback for IE
+	&::before, &::after {
+		content: '';
+		display: table;
+	}
+
+	&::after {
+		clear: both;
+	}
+
+	> * {
+		float: left;
+		margin-right: var(--gap-horizontal);
+		margin-bottom: var(--gap-vertical);
+	}
+
+	@supports (grid-area: auto) {
+		//CSS Grid style
+		display: grid;
+		grid-column-gap: var(--gap-horizontal);
+		grid-row-gap: var(--gap-vertical);
+
+		&::after, &::before {
+			content: none;
+		}
+
+		> * {
+			margin-right: 0;
+			margin-bottom: 0;
+		}
+	}
+}
+
+
+// Grid Auto Mixin
+@mixin gridAuto($min-width, $fallback: 3) {
+	> * {
+		float: left;
+		width: calc(100% / #{$fallback} - #{var(--gap-horizontal)});
+
+		&:nth-child(#{$fallback}n + 1) {
+			clear: both;
+		}
+	}
+
+	@supports (grid-area: auto) {
+		grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
+
+		> * {
+			width: auto;
+			margin: 0;
+		}
+	}
+}
+
+// Grid Advanced mixin
+@mixin gridAdvanced($cols...) {
+	@supports (grid-area: auto) {
+		grid-template-columns: repeat($grid-columns, 1fr);
+
+		$i: 1;
+		@each $col in $cols {
+			> :nth-of-type(#{$i}) {
+				grid-column-start: nth($col, 1);
+				grid-column-end: nth($col, 2);
+				grid-row-start: nth($col, 3);
+				grid-row-end: nth($col, 4);
+			}
+			$i: $i + 1;
+		}
+	}
+}
+
+// Grid Layout mixin
+@mixin gridLayout($cols...) {
+	@supports (grid-area: auto) {
+		grid-template-columns: repeat($grid-columns, 1fr);
+
+		$i: 1;
+		@each $col in $cols {
+			> :nth-of-type(#{$i}) {
+				grid-column-end: span nth($col, 1);
+				@if length($col) > 1 {
+					grid-row-end: span nth($col, 2);
+				}
+			}
+			$i: $i + 1;
+		}
+	}
+}

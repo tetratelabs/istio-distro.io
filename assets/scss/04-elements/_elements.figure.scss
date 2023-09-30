@@ -1,0 +1,14 @@
+/**
+ * Figure
+ *
+ * Group: Elements
+ */
+
+figure {
+	&:not([class]) {
+
+		figcaption {
+			@include hiddenVisually();
+		}
+	}
+}

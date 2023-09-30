@@ -1,29 +1,302 @@
-<footer>
-  <div class="container">
-    <div class="row align-items-center pb-0 footer-logo">
-      <a class="navbar-brand" href="{{ .Site.BaseURL | relLangURL }}">
-        {{ if .Site.Params.logo }}
-        <img id="getistio-footer-logo" class="img-fluid" src="{{ .Site.Params.logo | relURL }}" alt="{{ .Site.Title }}">
-        {{ else }}
-        {{ .Site.Title }}
-        {{ end }}
-      </a>
-      <a href="https://www.tetrate.io" target="_blank">
-        <img id="tetrate-footer-logo" class="img-fluid" src="/images/tetrate-logo.svg" alt="Tetrate Logo">
-      </a>
-    </div>
-    <div class="py-4 text-center">
-      <div class="mb-4">
-        <ul class="list-inline social-icons text-lg-center text-center">
-          {{ range .Site.Params.social }}
-          <li class="list-inline-item"><a href="{{ .link | safeURL }}" target="_blank" aria-label="{{ .alt }}" ><i class="{{ .icon }}"></i></a></li>
-          {{ end }}
-        </ul>
+<footer class="c-footer s-footer" role="contentinfo">
+  <div class="o-container o-container--xl">
+    <div class="c-footer__wrapper s-footer-widgets">
+      <div class="c-footer__widgets">
+        <div class="c-footer__widget widget-area">
+          <section
+            id="nav_menu-8"
+            class="widget widget--nav-menu widget--nav_menu widget_nav_menu"
+          >
+            <div class="menu menu--widget menu--why-tetrate">
+              <ul id="menu-why-tetrate" class="menu__items">
+                <li id="menu-item-42869" class="menu__item">
+                  <a href="https://tetrate.io/why-tetrate/" class="menu__link"
+                    >Why Tetrate</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+
+        <div class="c-footer__widget widget-area">
+          <section
+            id="nav_menu-5"
+            class="widget widget--nav-menu widget--nav_menu widget_nav_menu"
+          >
+            <h3 class="widget__title">Products</h3>
+            <div class="menu menu--widget menu--products">
+              <ul id="menu-products" class="menu__items">
+                <li id="menu-item-48406" class="menu__item">
+                  <a
+                    href="https://tetrate.io/tetrate-istio-subscription/"
+                    class="menu__link"
+                    >Tetrate Istio Subscription</a
+                  >
+                </li>
+                <li id="menu-item-46395" class="menu__item">
+                  <a
+                    target="_blank"
+                    rel="noopener"
+                    href="https://istio.tetratelabs.io/"
+                    class="menu__link"
+                    >Tetrate Istio Distro</a
+                  >
+                </li>
+                <li id="menu-item-42858" class="menu__item">
+                  <a
+                    href="https://tetrate.io/tetrate-service-express/"
+                    class="menu__link"
+                    >Tetrate Service Express</a
+                  >
+                </li>
+                <li id="menu-item-42859" class="menu__item">
+                  <a
+                    href="https://tetrate.io/tetrate-service-bridge/"
+                    class="menu__link"
+                    >Tetrate Service Bridge</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+
+        <div class="c-footer__widget widget-area">
+          <section
+            id="nav_menu-11"
+            class="widget widget--nav-menu widget--nav_menu widget_nav_menu"
+          >
+            <h3 class="widget__title">Solutions</h3>
+            <div class="menu menu--widget menu--solutions">
+              <ul id="menu-solutions" class="menu__items">
+                <li id="menu-item-46398" class="menu__item">
+                  <a href="https://tetrate.io/government/" class="menu__link"
+                    >Government</a
+                  >
+                </li>
+                <li id="menu-item-46399" class="menu__item">
+                  <a
+                    href="https://tetrate.io/nist-zero-trust-sp-800-207a/"
+                    class="menu__link"
+                    >NIST 800-207</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+
+        <div class="c-footer__widget widget-area">
+          <section
+            id="nav_menu-6"
+            class="widget widget--nav-menu widget--nav_menu widget_nav_menu"
+          >
+            <h3 class="widget__title">Learn</h3>
+            <div class="menu menu--widget menu--learn">
+              <ul id="menu-learn" class="menu__items">
+                <li id="menu-item-46396" class="menu__item">
+                  <a href="https://tetrate.io/blog/" class="menu__link">Blog</a>
+                </li>
+                <li id="menu-item-46397" class="menu__item">
+                  <a href="https://tetrate.io/resources/" class="menu__link"
+                    >Resources</a
+                  >
+                </li>
+                <li id="menu-item-46037" class="menu__item">
+                  <a
+                    href="https://tetrate.io/learning-center/"
+                    class="menu__link"
+                    >Learning Center</a
+                  >
+                </li>
+                <li id="menu-item-40138" class="menu__item">
+                  <a
+                    target="_blank"
+                    rel="noopener"
+                    href="https://academy.tetrate.io/"
+                    class="menu__link"
+                    >Tetrate Academy</a
+                  >
+                </li>
+                <li id="menu-item-40136" class="menu__item">
+                  <a
+                    target="_blank"
+                    rel="noopener"
+                    href="https://docs.tetrate.io/"
+                    class="menu__link"
+                    >Documentation</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+
+        <div class="c-footer__widget widget-area">
+          <section
+            id="nav_menu-10"
+            class="widget widget--nav-menu widget--nav_menu widget_nav_menu"
+          >
+            <div class="menu menu--widget menu--events">
+              <ul id="menu-events" class="menu__items">
+                <li id="menu-item-42871" class="menu__item">
+                  <a href="https://tetrate.io/events/" class="menu__link"
+                    >Events</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+
+        <div class="c-footer__widget widget-area">
+          <section
+            id="nav_menu-7"
+            class="widget widget--nav-menu widget--nav_menu widget_nav_menu"
+          >
+            <h3 class="widget__title">Company</h3>
+            <div class="menu menu--widget menu--company">
+              <ul id="menu-company" class="menu__items">
+                <li id="menu-item-42861" class="menu__item">
+                  <a href="https://tetrate.io/about-us/" class="menu__link"
+                    >About</a
+                  >
+                </li>
+                <li id="menu-item-45122" class="menu__item">
+                  <a
+                    href="https://tetrate.io/about-us/#leadership"
+                    class="menu__link"
+                    >Leadership</a
+                  >
+                </li>
+                <li id="menu-item-45123" class="menu__item">
+                  <a
+                    href="https://tetrate.io/about-us/#investors"
+                    class="menu__link"
+                    >Investors</a
+                  >
+                </li>
+                <li id="menu-item-45124" class="menu__item">
+                  <a
+                    href="https://tetrate.io/about-us/#partners"
+                    class="menu__link"
+                    >Partners</a
+                  >
+                </li>
+                <li id="menu-item-45125" class="menu__item">
+                  <a
+                    href="https://tetrate.io/about-us/#newsroom"
+                    class="menu__link"
+                    >Newsroom</a
+                  >
+                </li>
+                <li id="menu-item-45126" class="menu__item">
+                  <a
+                    href="https://tetrate.io/about-us/#careers"
+                    class="menu__link"
+                    >Careers</a
+                  >
+                </li>
+                <li id="menu-item-45127" class="menu__item">
+                  <a
+                    href="https://tetrate.io/about-us/#support"
+                    class="menu__link"
+                    >Get Support</a
+                  >
+                </li>
+                <li id="menu-item-45128" class="menu__item">
+                  <a
+                    href="https://tetrate.io/about-us/#support"
+                    class="menu__link"
+                    >Contact Us</a
+                  >
+                </li>
+                <li id="menu-item-48197" class="menu__item">
+                  <a href="https://tetrate.io/legal" class="menu__link"
+                    >Legal</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
       </div>
-      <small class="text-white">Support: Join our <a href="https://tetr8.io/tetrate-community" target="_blank">#tid-and-getmesh Slack Channel</a> for Community Support</small><br />
-      <small class="text-white">License: Tetrate Istio Distro is an open source project and is released under Apache License 2.0 | <a href="https://www.tetrate.io/privacy" target="_blank">Privacy Statement</a></small><br />
-      <small class="text-white">Official project site of istio is <a href="https://www.istio.io" target="_blank">istio.io</a></small><br />
-      <small class="text-white">Copyright &copy; {{ dateFormat "2006" now }} <a href="https://www.tetrate.io" target="_blank">Tetrate</a> All rights reserved.</small>
+    </div>
+
+    <div id="newsletter-form">
+      <h4 class="c-heading u-font-h6 u-color-primary">
+        Subscribe to our newsletter
+      </h4>
+      <div class="c-footer__newsletter">
+        <div class="cta-form" id="emailFormContainer">
+          <form id="emailForm">
+            <div class="input-container">
+              <input id="email" type="email" class="input" placeholder="{{ i18n
+              "email" }}" required />
+            </div>
+            <button class="c-button c-button--primary">
+              {{ i18n "get_updates" }}
+            </button>
+          </form>
+        </div>
+        <span id="errorMessage">ERROR_MESSAGE</span>
+        <p id="formMessage">FORM_MESSAGE</p>
+      </div>
+    </div>
+
+    <div class="c-footer__social s-footer-social">
+      <h3 class="c-footer__social-title">Follow us:</h3>
+      <ul class="c-social list-reset">
+        {{ range .Site.Params.social }}
+        <li class="c-social__item">
+          <a
+            class="c-social__link"
+            href="{{ .link | safeURL }}"
+            target="_blank"
+            aria-label="{{ .alt }}"
+            ><i class="{{ .icon }}"></i
+          ></a>
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+
+    <div class="c-footer__socket s-footer-socket">
+      <div class="c-footer__branding">
+        <a href="{{ .Site.BaseURL | relLangURL }}">
+          {{ if .Site.Params.logo }}
+          <img
+            id="getistio-footer-logo"
+            class="img-fluid"
+            src="{{ .Site.Params.logo | relURL }}"
+            alt="{{ .Site.Title }}"
+          />
+          {{ else }} {{ .Site.Title }} {{ end }}
+        </a>
+      </div>
+      <div class="c-footer__copyright">
+        Copyright © Tetrate 2023. All rights reserved.
+      </div>
+
+      <nav class="menu menu--footer">
+        <h3 class="menu__title screen-reader-text">Footer</h3>
+
+        <ul class="menu__items">
+          <li id="menu-item-42847" class="menu__item">
+            <a
+              href="https://tetrate.io/terms-and-conditions/"
+              class="menu__link"
+              >Terms of Use<span class="menu__arrow"></span
+            ></a>
+          </li>
+          <li id="menu-item-42848" class="menu__item">
+            <a href="https://tetrate.io/privacy/" class="menu__link"
+              >Privacy Policy<span class="menu__arrow"></span
+            ></a>
+          </li>
+        </ul>
+      </nav>
     </div>
   </div>
 </footer>
@@ -39,22 +312,24 @@
 </script>
 
 <!-- JS Plugins -->
-{{ $permalink:= .Permalink }}
-{{ range site.Params.plugins.js}}
-{{ if eq $permalink (.page | lower | urlize | relURL ) }}
+{{ $permalink:= .Permalink }} {{ range site.Params.plugins.js}} {{ if eq
+$permalink (.page | lower | urlize | relURL ) }}
 <script src="{{ .link | relURL }}" {{.attributes | safeHTMLAttr}}></script>
 {{ else if eq .page "/"}}
 <script src="{{ .link | relURL }}" {{.attributes | safeHTMLAttr}}></script>
 {{ else }}
 <script src="{{ .link | relURL }}" {{.attributes | safeHTMLAttr}}></script>
-{{ end }}
-{{ end }}
+{{ end }} {{ end }}
 
 <!-- Main Script -->
-{{ $script := resources.Get "js/script.js" | minify}}
-{{ $formScript := resources.Get "js/form.js" | minify}}
+{{ $script := resources.Get "js/script.js" | minify}} {{ $formScript :=
+resources.Get "js/form.js" | minify}}
 <script src="{{ $script.Permalink | relURL }}"></script>
 <script src="{{ $formScript.Permalink | relURL }}"></script>
 
 <!-- Hubspot form load  -->
-<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js?pre=1"></script>
+<script
+  charset="utf-8"
+  type="text/javascript"
+  src="//js.hsforms.net/forms/v2.js?pre=1"
+></script>
