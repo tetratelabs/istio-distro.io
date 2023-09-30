@@ -1,6 +1,6 @@
 ---
 title: 'Why Istio'
-description: 'this is meta description'
+description: 'Why Istio'
 layout: 'why-istio'
 draft: false
 ---

@@ -56,12 +56,11 @@
 }
 
 .navbar-light .navbar-nav .nav-link {
-  &:hover {
-    color: $primary-color;
-  }
+  color: var(--color-dark);
 
+  &:hover,
   &:focus {
-    color: $primary-color;
+    color: var(--color-primary);
   }
 }
 
@@ -86,5 +85,5 @@
 #select-language {
   border: 1px solid $border-color;
   background: transparent;
-  color: white;
+  color: var(--color-light);
 }

@@ -2,6 +2,25 @@
 hero:
   title: 'Why Istio'
   enable: true
+  bg: '/images/home/homepage-hero-bg.png'
+
+########################## Additional Resources section ###############################
+additional_resources:
+  enable: true
+  heading: 'Additional Resources'
+  cards:
+    - eyebrow: 'Ebook'
+      title: 'The Current and Future State of the Istio Service Mesh'
+      cta_text: 'Read more'
+      url: 'https://tetrate.io/resource/current-state-and-future-of-istio-service-mesh/'
+    - eyebrow: 'Blog'
+      title: '5 Ways to Overcome Barriers to Istio Adoption'
+      cta_text: 'Read more'
+      url: 'https://tetrate.io/blog/istio-adoption-5-lessons-on-how-to-overcome-barriers-to-adoption/'
+    - eyebrow: 'Webinar'
+      title: 'Istio in the Enterprise'
+      cta_text: 'Read more'
+      url: 'https://tetrate.io/resource/istio-in-the-enterprise/'
 
 ########################## Callout section ###############################
 callout:

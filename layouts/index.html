@@ -16,12 +16,16 @@
     </div>
 
     <div class="o-content-split__text-wrap u-rhythm-lg">
-      <h1 class="c-heading o-content-split__text-heading u-font-h2">{{ .title }}</h1>
-      {{ if.subtitle }}
+      {{ if.title }}
+      	<h1 class="c-heading o-content-split__text-heading u-font-h2">{{ .title }}</h1>
+      {{ end }}
+
+	  {{ if.subtitle }}
         <div class="u-fz-h6 u-color-dark ">
 	        {{ .subtitle }}
         </div>
       {{ end }}
+
       {{ if .lead_item  }}
       <ul class="hero">
         {{ range.lead_item }}
@@ -30,14 +34,14 @@
       </ul>
       {{ end }}
 
-      	{{ if and (.cta_url) (.cta_title) }}
+      {{ if and (.cta_url) (.cta_title) }}
 			<p>
 				<span>
 					<a class="c-button c-button--primary" href="{{ .cta_url }}">{{ .cta_title }} <i class="material-icons" aria-hidden="true">arrow_forward</i></a>
 				</span>
 			</p>
       	{{ end }}
-		</div>
+	 </div>
 
 	</div>
 
