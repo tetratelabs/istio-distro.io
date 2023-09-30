@@ -11,10 +11,6 @@ hero:
     - content: 'Available as an Amazon EKS add on'
   asciinema_id: 459699
 
-########################## Logos section ###############################
-logos:
-  enable: true
-
 ########################## Why Istio section ###############################
 why_istio:
   enable: true
@@ -22,20 +18,46 @@ why_istio:
 ########################## Get Start section #############################
 start:
   enable: true
-  title: 'Get Started Quickly'
-  steps:
-    - desc: '1. Download Tetrate Istio Distro CLI'
-      cmd: 'curl -sL https://istio.tetratelabs.io/getmesh/install.sh | bash'
-    - desc: '2. Install Istio Demo'
-      cmd: 'getmesh istioctl install --set profile=demo'
-    - desc: '3. Check Tetrate Istio Distro version'
-      cmd: 'getmesh version'
-    - desc: '4. Validate config'
-      cmd: 'getmesh config-validate'
+  heading: 'TID Quick Start'
+  subheading: 'Choose from four installation options'
+  installation_options:
+    - text: 'HELM'
+      url: 'https://docs.tetrate.io/istio-distro/installation/install-helm'
+    - text: 'Istioctl'
+      url: 'https://docs.tetrate.io/istio-distro/installation/install-istioctl'
+    - text: 'AWS EKS Add on'
+      url: 'https://docs.tetrate.io/istio-distro/installation/install-eks'
+    - text: 'Azure AKS'
+      url: 'https://docs.tetrate.io/istio-distro/installation/install-azure'
+  callout_heading: 'Getting Help'
+  callout_text_one: 'If you need help using or running TID, please ask a question on <a href="https://tetrate-community.slack.com/join/shared_invite/zt-1tug2el0k-JioVIPVWB1_ny8E995Vu4A#/shared-invite/email">Slack</a>'
+  callout_text_two: 'If you want enterprise grade support, extended CVE fixes or a FIPS-verified version, visit <a href="https://tetrate.io/tetrate-istio-subscription/">Tetrate Istio Subscription</a>'
 
 ########################## Logos section ###############################
 logos:
   enable: true
+  items:
+    - url: '/images/logos/logo-amway.svg'
+    - url: '/images/logos/logo-box.svg'
+    - url: '/images/logos/logo-bu.svg'
+    - url: '/images/logos/logo-dc3-emblem.svg'
+    - url: '/images/logos/logo-defense-unicorns.svg'
+    - url: '/images/logos/logo-demandbase.svg'
+    - url: '/images/logos/logo-docusign.svg'
+    - url: '/images/logos/logo-informatika.svg'
+    - url: '/images/logos/logo-kaiser-permanente.svg'
+    - url: '/images/logos/logo-microstrategy.svg'
+    - url: '/images/logos/logo-movehq.svg'
+    - url: '/images/logos/logo-paloalto.svg'
+    - url: '/images/logos/logo-playtika.svg'
+    - url: '/images/logos/logo-qlik.svg'
+    - url: '/images/logos/logo-riot-games.svg'
+    - url: '/images/logos/logo-sephora.svg'
+    - url: '/images/logos/logo-snyk.svg'
+    - url: '/images/logos/logo-splunk.svg'
+    - url: '/images/logos/logo-tiaa.svg'
+    - url: '/images/logos/logo-tracfone.svg'
+    - url: '/images/logos/logo-two-sigma.svg'
 
 ########################## Callout section ###############################
 callout:

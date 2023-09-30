@@ -30,13 +30,13 @@
       </ul>
       {{ end }}
 
-      {{ if and (.cta_url) (.cta_title) }}
-        <p>
-          <span>
-            <a class="c-button c-button--primary" href="{{ .cta_url }}">{{ .cta_title }} <i class="material-icons" aria-hidden="true">arrow_forward</i></a>
-          </span>
-        </p>
-      {{ end }}
+      	{{ if and (.cta_url) (.cta_title) }}
+			<p>
+				<span>
+					<a class="c-button c-button--primary" href="{{ .cta_url }}">{{ .cta_title }} <i class="material-icons" aria-hidden="true">arrow_forward</i></a>
+				</span>
+			</p>
+      	{{ end }}
 		</div>
 
 	</div>
@@ -94,30 +94,43 @@
 {{ if $data.homepage.start.enable }}
 {{ with $data.homepage.start }}
 <section class="o-section o-section--2xl u-bg-color-light-gradient u-ta-center">
-  <div class="o-container o-container--xl">
+	<div class="o-container o-container--xl">
 
-    <div class="c-section-heading">
-      <div class="c-section-heading__wrap u-rhythm o-container o-container--lg">
-        <h2 class="c-heading c-section-heading__title u-font-h2 u-color-primary">
-          TID Quick Start
-        </h2>
-      </div>
-	 </div>
-
-     <div class="u-rhythm-lg">
-		 <p class="u-font-h6 u-fw-500">Choose from four installation options</p>
-
-		<div class="o-button-group o-button-group--center">
-			<a class="c-button c-button--primary" href="https://docs.tetrate.io/istio-distro/installation/install-helm">HELM <i class="material-icons" aria-hidden="true">arrow_forward</i></a>
-			<a class="c-button c-button--primary" href="https://docs.tetrate.io/istio-distro/installation/install-istioctl">Istioctl <i class="material-icons" aria-hidden="true">arrow_forward</i></a>
-			<a class="c-button c-button--primary" href="https://docs.tetrate.io/istio-distro/installation/install-eks/">AWS EKS Add on <i class="material-icons" aria-hidden="true">arrow_forward</i></a>
-			<a class="c-button c-button--primary" href="https://docs.tetrate.io/istio-distro/installation/install-azure/">Azure AKS <i class="material-icons" aria-hidden="true">arrow_forward</i></a>
+	{{if .heading  }}
+		<div class="c-section-heading">
+			<div class="c-section-heading__wrap u-rhythm o-container o-container--lg">
+				<h2 class="c-heading c-section-heading__title u-font-h2 u-color-primary">
+				{{  .heading }}
+				</h2>
+			</div>
 		</div>
+	{{ end }}
+
+    <div class="u-rhythm-lg">
+		{{if .subheading  }}
+			<p class="u-font-h6 u-fw-500">{{ .subheading }}</p>
+		{{ end }}
+
+		{{if .installation_options  }}
+			<div class="o-button-group o-button-group--center">
+				{{ range.installation_options }}
+					<a class="c-button c-button--primary" href="{{ .url }}">{{ .text }} <i class="material-icons" aria-hidden="true">arrow_forward</i></a>
+				{{ end }}
+			</div>
+		{{ end }}
 
 		<div class="u-rhythm">
-			<p class="u-font-h6 u-fw-500">Choose from four installation options</p>
-			<p>If you need help using or running TID, please ask a question on Slack</p>
-			<p>If you want enterprise grade support, extended CVE fixes or a FIPS-verified version, visit Tetrate Istio Subscription</p>
+			{{if .callout_heading  }}
+				<p class="u-font-h6 u-fw-500">{{ .callout_heading }}</p>
+			{{ end }}
+
+			{{if .callout_text_one  }}
+				<p>{{ safeHTML .callout_text_one }}</p>
+			{{ end }}
+
+			{{if .callout_text_two  }}
+				<p>{{ safeHTML .callout_text_two }}</p>
+			{{ end }}
 		</div>
 	 </div>
 
@@ -141,53 +154,15 @@
 		</div>
 	</div>
 
-	<div class="c-logos c-logos--centered o-container o-container--lg">
-		<div class="c-logo">
-			<img decoding="async" class="" src="https://tetrate.io/wp-content/uploads/2023/04/US-Air-Force-logo-1.svg" alt="U.S. Air Force">
-		</div>
-		<div class="c-logo">
-			<img decoding="async" class="" src="https://tetrate.io/wp-content/uploads/2023/04/Visa-logo-1.svg" alt="Visa">
-		</div>
-		<div class="c-logo">
-			<img decoding="async" class="" src="https://tetrate.io/wp-content/uploads/2023/04/FICO-logo-1.svg" alt="Fico">
-		</div>
-		<div class="c-logo">
-			<img decoding="async" class="" src="https://tetrate.io/wp-content/uploads/2023/04/Square-Inc-logo-1.svg" alt="Square">
-		</div>
-		<div class="c-logo">
-			<img decoding="async" class="" src="https://tetrate.io/wp-content/uploads/2023/04/Freddie-Mac-logo-1.svg" alt="Freddie Mac">
-		</div>
-		<div class="c-logo">
-			<img decoding="async" class="" src="https://tetrate.io/wp-content/uploads/2023/04/JusPay-logo-1.svg" alt="Juspay">
-		</div>
-		<div class="c-logo">
-			<img decoding="async" class="" src="https://tetrate.io/wp-content/uploads/2023/04/GAP-Logo-1.svg" alt="GAP">
-		</div>
-		<div class="c-logo">
-			<img decoding="async" class="" src="https://tetrate.io/wp-content/uploads/2023/04/Flexport-logo-1.svg" alt="Flexport">
-		</div>
-		<div class="c-logo">
-			<img decoding="async" class="" src="https://tetrate.io/wp-content/uploads/2023/04/Delta-Dental-logo-1.svg" alt="Delta Dental">
-		</div>
-		<div class="c-logo">
-			<img decoding="async" class="" src="https://tetrate.io/wp-content/uploads/2023/04/Autodesk-logo-1.svg" alt="Autodesk">
-		</div>
-		<div class="c-logo">
-			<img decoding="async" class="" src="https://tetrate.io/wp-content/uploads/2023/04/Box-Inc-logo-1.svg" alt="Box">
-		</div>
-		<div class="c-logo">
-			<img decoding="async" class="" src="https://tetrate.io/wp-content/uploads/2023/04/MicroStrategy-logo-1.svg" alt="Microstrategy">
-		</div>
-		<div class="c-logo">
-			<img decoding="async" class="" src="https://tetrate.io/wp-content/uploads/2023/04/Age-of-Learning-logo-1.svg" alt="Age of Learning">
-		</div>
-		<div class="c-logo">
-			<img decoding="async" class="" src="https://tetrate.io/wp-content/uploads/2023/04/KPMG-logo-1.svg" alt="KPMG">
-		</div>
-		<div class="c-logo">
-			<img decoding="async" class="" src="https://tetrate.io/wp-content/uploads/2023/04/Sony-logo-1.svg" alt="Sony">
-		</div>
-	</div>
+	{{ if .items  }}
+		<div class="c-logos c-logos--centered o-container o-container--2xl">
+			{{ range.items }}
+				<div class="c-logo">
+					<img decoding="async" src="{{ .url }}" alt="U.S. Air Force">
+				</div>
+			{{ end }}
+		</ul>
+	{{ end }}
 
 </section>
 {{ end }}
