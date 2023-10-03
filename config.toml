@@ -151,13 +151,13 @@ url = "https://academy.tetrate.io"
 weight = 4
 
 [[Languages.en.menu.main]]
-name = "func-e"
-url = "https://func-e.io/"
+name = "Support"
+url = "https://tetrate.io/tetrate-istio-subscription/"
 weight = 6
 
 [[Languages.en.menu.main]]
-name = "Istio.io"
-url = "https://www.istio.io/"
+name = "FIPS"
+url = "https://tetrate.io/learn/fips/what-is-fips/"
 weight = 7
 
 # footer menu
