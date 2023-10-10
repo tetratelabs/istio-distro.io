@@ -46,6 +46,10 @@
   {{ end }}
   {{ end }}
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
   <!-- Bootstrap Stylesheet -->
   {{ $bootstrap := resources.Get "css/bootstrap/bootstrap.min.css" | resources.ToCSS (dict "outputStyle" "compressed") | postCSS}}
