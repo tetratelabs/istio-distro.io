@@ -200,6 +200,43 @@
 {{ end }}
 {{ end }}
 
+{{ if $data.homepage.guide.enable }}
+{{ with $data.homepage.guide }}
+<section class="o-section o-section--2xl u-bg-color-neutral-05 u-ta-center">
+  	<div class="o-container o-container--xl">
+
+		<div class="guide">
+			<div class="guide__content u-rhythm">
+				{{ if .heading  }}
+				<h2 class="c-heading c-section-heading__title u-font-h2 u-color-primary">
+					{{ .heading }}
+				</h2>
+				{{ end }}
+				{{if .text  }}
+					<p>{{ safeHTML .text }}</p>
+				{{ end }}
+
+				{{ if and (.link_url) (.link_text) }}
+					<p>
+						<span>
+							<a class="c-link" href="{{ .link_url }}" target="{{ .link_target }}">{{ .link_text }} <i class="material-icons" aria-hidden="true">arrow_forward</i></a>
+						</span>
+					</p>
+				{{ end }}
+			</div>
+			{{if .image  }}
+				<div class="guide__image">
+					<img class="img-fluid" src="{{ .image }}" alt="{{ .heading }}">
+				</div>
+			{{ end }}
+		</div>
+
+
+	</div>
+</section>
+{{ end }}
+{{ end }}
+
 
 </main>
 {{ end }}

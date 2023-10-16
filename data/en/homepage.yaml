@@ -106,3 +106,13 @@ callout:
   link_url: 'https://tetrate.io/blog/istio-service-mesh-graduates-cncf/'
   link_text: 'Read the blog'
   link_target: '_blank'
+
+########################## Guide section ###############################
+guide:
+  enable: true
+  heading: '5 Stages to Istio Production Success'
+  text: 'A technical guide with practical recommendations on how to deploy Istio for production success.'
+  image: '/images/home/5-stages-to-istio-production-success.png'
+  link_url: '#'
+  link_text: 'Download Now'
+  link_target: '_blank'
