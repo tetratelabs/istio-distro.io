@@ -38,14 +38,6 @@
 		justify-content: center;
 		position: relative;
 		z-index: 2;
-
-		[id^="lottie"] {
-			min-width: 280px;
-
-			@include mq($from: desktop) {
-				min-width: 380px;
-			}
-		}
 	}
 
 	&__text-wrap {
@@ -99,6 +91,12 @@
 
 		#{$this}__media-wrap {
 			justify-content: flex-start;
+
+			&.code {
+				background-color: var(--color-dark);
+				justify-content: center;
+				align-items: center;
+			}
 		}
 
 		#{$this}__wrap {

@@ -131,18 +131,18 @@ page = "search/"
 
 # main menu
 [[Languages.en.menu.main]]
-name = "Why Istio"
+name = "Why Istio?"
 url = "/why-istio"
 weight = 1
 
 [[Languages.en.menu.main]]
 name = "Docs"
-url = "/getmesh-cli/"
+url = "https://docs.tetrate.io/"
 weight = 2
 
 [[Languages.en.menu.main]]
 name = "GitHub"
-url = "https://github.com/tetratelabs/getistio"
+url = "https://github.com/tetratelabs/istio-distro.io"
 weight = 3
 
 [[Languages.en.menu.main]]

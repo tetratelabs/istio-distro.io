@@ -2,9 +2,10 @@
 hero:
   title: 'Tetrate Istio Distro (TID)'
   subtitle: 'TID is the easiest and fastest way to get started with open source Istio.'
-  cta_url: 'getmesh-cli/install/install-istio/eks-addon/'
+  cta_url: 'https://istio.tetratelabs.io/download/'
   cta_title: 'Get started for free'
   enable: true
+  cta_target: "_blank"
   lead_item:
     - content: '100% Upstream Istio'
     - content: 'FIPS - compliant'
