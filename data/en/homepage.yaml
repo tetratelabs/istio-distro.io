@@ -5,7 +5,7 @@ hero:
   cta_url: 'https://istio.tetratelabs.io/download/'
   cta_title: 'Get started for free'
   enable: true
-  cta_target: "_blank"
+  cta_target: '_blank'
   lead_item:
     - content: '100% Upstream Istio'
     - content: 'FIPS - compliant'
@@ -16,18 +16,18 @@ hero:
 ########################## Why Istio section ###############################
 why_istio:
   enable: true
-  heading: 'Safe, simple Enterprise-Grade Istio'
+  heading: 'Safe, Simple Enterprise-Grade Istio'
   image: '/images/home/logo-tetrate-istio-distro.svg'
   text: 'TID is Tetrate’s hardened, fully upstream Istio distribution, with FIPS-verified builds and support available. It’s an ideal starting point for your service mesh journey, supported by the creators of the open source Istio project.'
-  subheading: 'Why tetrate Istio Distro?'
+  subheading: 'Why Tetrate Istio Distro?'
   cards:
     - title: 'Security Simplified'
-      content: 'TID helps you embrace a zero trust security model by giving you the tools to automatically and declaratively secure your services and their communication. You can manage authentication, authorization and encry[tion between services, with little or no changes to the application themselves.'
-    - title: 'Efficient Traffic Management'
+      content: 'TID helps you embrace a zero trust security model by giving you the tools to automatically and declaratively secure your services and their communication. You can manage authentication, authorization and encryption between services, with little or no changes to the application themselves.'
+    - title: 'Traffic Management'
       content: 'With TID, you can control traffic flows and API calls between services while also gaining visibility into your traffic. This makes calls more reliable and your network more robust, even in adverse conditions.'
     - title: 'Understand Your Apps'
       content: 'TID’s robust tracing, monitoring and logging features give you deep insights into how your services are performing, how that performance affects other processes and any issues that might exist.'
-    - title: 'Rocust Policy Enforcements'
+    - title: 'Robust Policy Enforcements'
       content: 'Apply organizational policies to service interactions, ensuring the enforcement of access policies and equitable resource distribution among consumers.'
 
 ########################## Get Start section #############################
@@ -66,6 +66,10 @@ logos:
       title: 'Demandbase'
     - url: '/images/logos/logo-docusign.svg'
       title: 'Docusign'
+    - url: '/images/logos/logo-forescout.svg'
+      title: 'Forescout'
+    - url: '/images/logos/logo-govini.svg'
+      title: 'Govini'
     - url: '/images/logos/logo-informatica.svg'
       title: 'Informatica'
     - url: '/images/logos/logo-kaiser-permanente.svg'
@@ -77,29 +81,28 @@ logos:
     - url: '/images/logos/logo-paloalto.svg'
       title: 'Palo Alto networks'
     - url: '/images/logos/logo-playtika.svg'
-      title: 'laytika'
+      title: 'playtika'
     - url: '/images/logos/logo-qlik.svg'
       title: 'QLik'
     - url: '/images/logos/logo-riot-games.svg'
       title: 'Riot Games'
     - url: '/images/logos/logo-sephora.svg'
-      title: 'Snyk'
+      title: 'Sephora'
     - url: '/images/logos/logo-snyk.svg'
-      title: 'Splunk'
+      title: 'Snyk'
     - url: '/images/logos/logo-splunk.svg'
-      title: 'Tiaa'
+      title: 'Splunk'
     - url: '/images/logos/logo-tiaa.svg'
-      title: 'Tracfone'
+      title: 'Tiaa'
     - url: '/images/logos/logo-tracfone.svg'
-      title: 'Two Sigma'
-    - url: '/images/logos/logo-two-sigma.svg'
+      title: 'Tracfone'
 
 ########################## Callout section ###############################
 callout:
   enable: true
-  heading: 'Istio is a cNCF graduated project'
+  heading: 'Istio is a CNCF graduated project'
   title: 'Need enterprise support for your Istio?'
   image: '/images/home/cncf-graduated-color.svg'
-  link_url: 'https://tetrate.io/blog/'
+  link_url: 'https://tetrate.io/blog/istio-service-mesh-graduates-cncf/'
   link_text: 'Read the blog'
   link_target: '_blank'
