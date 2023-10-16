@@ -58,7 +58,10 @@
 
 		{{if .heading  }}
 		<div class="c-section-heading">
-			<div class="c-section-heading__wrap u-rhythm o-container o-container--lg">
+			<div class="c-section-heading__wrap why-istio u-rhythm o-container o-container--lg">
+				{{if .image  }}
+					<img src="{{ .image }}" alt="{{ .heading }}" />
+				{{ end }}
 				<h2 class="c-heading c-section-heading__title u-font-h2 u-color-primary">
 					{{ .heading }}
 				</h2>
@@ -67,12 +70,6 @@
 		{{ end }}
 
 		<div class="u-rhythm-xl">
-			{{if .image  }}
-				<p class="image-center">
-					<img src="{{ .image }}" alt="{{ .heading }}" />
-				</p>
-			{{ end }}
-
 			{{if .text  }}
 				<p class="u-font-lg">{{ .text }}</p>
 			{{ end }}

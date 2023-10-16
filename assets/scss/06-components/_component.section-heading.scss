@@ -11,6 +11,14 @@
   margin-bottom: var(--space-xl);
   width: 100%;
 
+  &__wrap {
+    &.why-istio {
+      align-items: center;
+      display: flex;
+      gap: var(--space-xl);
+    }
+  }
+
   &__title {
     min-height: 1.12em;
 
@@ -42,17 +50,6 @@
 
     #{$this}__subtitle {
       max-width: 31em;
-    }
-  }
-
-  &--advanced {
-    align-items: center;
-    display: inline-flex;
-    justify-content: space-between;
-    text-align: left;
-
-    @include mq($until: phablet) {
-      flex-direction: column-reverse;
     }
   }
 }

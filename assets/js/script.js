@@ -201,7 +201,7 @@ new ClipboardJS('.copy-to-clipboard', {
 });
 
 function dropdownFunction() {
-  document.getElementById("mobileDropdownMenu").classList.toggle("show");
+  document.getElementById('mobileDropdownMenu').classList.toggle('show');
 }
 
 window.onclick = function (event) {
