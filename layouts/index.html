@@ -71,7 +71,7 @@
 
 		<div class="u-rhythm-xl">
 			{{if .text  }}
-				<p class="u-font-lg">{{ .text }}</p>
+				<p class="u-font-lg">{{ safeHTML .text }}</p>
 			{{ end }}
 
 			{{if .subheading  }}

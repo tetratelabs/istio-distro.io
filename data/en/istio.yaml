@@ -27,6 +27,6 @@ callout:
   enable: true
   heading: 'Get Started'
   subheading: 'Tetrate offers training and certification to turbo-charge your service mesh journey.'
-  link_url: 'https://tetrate.io/blog/'
+  link_url: 'https://academy.tetrate.io/'
   link_text: 'Learn More'
   link_target: '_blank'

@@ -18,7 +18,7 @@ why_istio:
   enable: true
   heading: 'Safe, Simple Enterprise-Grade Istio'
   image: '/images/home/logo-tetrate-istio-distro.svg'
-  text: 'TID is Tetrate’s hardened, fully upstream Istio distribution, with FIPS-verified builds and support available. It’s an ideal starting point for your service mesh journey, supported by the creators of the open source Istio project.'
+  text: 'TID is Tetrate’s hardened, fully upstream Istio distribution, with FIPS-verified builds and support available.<br/> It’s an ideal starting point for your service mesh journey, supported by the creators of the open source Istio project.'
   subheading: 'Why Tetrate Istio Distro?'
   cards:
     - title: 'Security Simplified'
@@ -96,6 +96,8 @@ logos:
       title: 'Tiaa'
     - url: '/images/logos/logo-tracfone.svg'
       title: 'Tracfone'
+    - url: '/images/logos/logo-two-sigma.svg'
+      title: 'Two Sigma'
 
 ########################## Callout section ###############################
 callout:
@@ -113,6 +115,6 @@ guide:
   heading: '5 Stages to Istio Production Success'
   text: 'A technical guide with practical recommendations on how to deploy Istio for production success.'
   image: '/images/home/5-stages-to-istio-production-success.png'
-  link_url: '#'
+  link_url: 'https://tetrate.io/resource/5-stages-to-istio-production-success/'
   link_text: 'Download Now'
   link_target: '_blank'
