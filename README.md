@@ -46,7 +46,7 @@ To automatically add copy code button to a shell code snippet, specify `sh` as t
 
 ```sh
 getmesh version
-```
+``` 
 
 The copy code button is also enabled for YAML (`yaml`) and Go (`go`) code listings. You can add support for more in the `/assets/js/script.js` file. For example:
 
