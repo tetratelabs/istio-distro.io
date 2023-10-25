@@ -170,7 +170,6 @@ $(document).on('turbolinks:load', preloader);
     });
 
   // var checkUser = localStorage.getItem('User');
-  // console.log(checkUser);
   // var pathname = window.location.pathname;
   // if (checkUser == null) {
   //   if (pathname !== '/login/') {

@@ -12,8 +12,6 @@ function displayMessage() {
   let emailForm = document.getElementById('emailFormContainer');
   let formMessage = document.getElementById('formMessage');
 
-  console.log('formMessage: ', formMessage);
-
   emailForm.className += ' hidden';
   formMessage.className += 'active';
 }
@@ -26,8 +24,6 @@ if (subscriptionForm) {
 
   errorMessage.classList.add('hidden');
   formMessage.classList.add('hidden');
-
-  console.log('formMessage: ', formMessage);
 
   document.getElementById('emailForm').addEventListener('submit', function (e) {
     e.preventDefault();
