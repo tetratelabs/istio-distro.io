@@ -1,0 +1,207 @@
+/**
+ * Header Main
+ *
+ * Group: Custom Components
+ */
+
+.c-header {
+	$this: &;
+
+	position: relative;
+	height: var(--header-height);
+	width: 100%;
+	z-index: 5;
+
+	@include mq($from: desktop-large) {
+		background-color: var(--color-light);
+		color: var(--color-dark);
+		height: max-content;
+		min-height: var(--header-height);
+		padding: var(--space-md) 0;
+		position: absolute;
+	}
+
+	/*
+	 * Header Parts
+	 */
+	&__wrap {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+		padding: var(--space-md);
+		position: relative;
+
+		@include mq($from: desktop-large) {
+			padding: 0 var(--space-md);
+		}
+	}
+
+	/* Branding */
+	&__branding {
+		max-width: 160px;
+		width: 100%;
+		z-index: 3;
+
+		@include mq($from: desktop-large) {
+			max-width: 156px;
+		}
+	}
+
+	/* Nav */
+	&__nav {
+		align-items: flex-start;
+		background: var(--color-light);
+		color: var(--color-dark);
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 100vh;
+		max-height: calc(100vh - var(--header-height));
+		left: 0;
+		padding: var(--space-lg) var(--space-md) var(--space-md);
+		position: absolute;
+		top: var(--header-height);
+		transform: translateX(-100%);
+		transition: transform 300ms ease-in-out;
+		width: 100%;
+		z-index: 2;
+
+		@include mq($from: desktop-large) {
+			align-items: center;
+			flex-direction: row;
+			color: var(--color-light);
+			background-color: transparent;
+			height: auto;
+			left: auto;
+			min-height: 0;
+			padding: 0;
+			position: relative;
+			transform: translate(0, 0);
+			top: auto;
+			width: auto;
+			flex: 1;
+		}
+
+		&-inner {
+			width: 100%;
+			height: 100%;
+			max-height: calc(100% - var(--space-2xl));
+
+			@include mq($from: desktop-large) {
+				margin-left: auto;
+				margin-right: auto;
+				height: auto;
+				width: auto;
+			}
+		}
+
+		.is-mobile-menu-open & {
+			transform: translateX(0);
+		}
+
+		[data-theme="light"] &,
+		.is-header-sticky & {
+			color: var(--color-dark);
+		}
+	}
+
+	&__buttons {
+		display: flex;
+		gap: var(--space-sm);
+
+		@include mq($from: desktop-large) {
+			margin-left: var(--space-md);
+		}
+	}
+
+	/* Toggle */
+	&__toggle-menu {
+		z-index: 3;
+
+		@include mq($from: desktop-large) {
+			display: none;
+		}
+	}
+
+	&__light-logo {
+		display: none;
+
+		@include mq($from: desktop-large) {
+			display: block;
+
+			.is-header-sticky & {
+				display: none;
+			}
+		}
+	}
+
+	&__dark-logo {
+		display: block;
+
+		@include mq($from: desktop-large) {
+			display: none;
+
+			.is-header-sticky & {
+				display: block;
+			}
+		}
+	}
+
+	/**
+	 * Light Version
+	 */
+	&[data-theme="dark"] {
+		background-color: transparent;
+
+		@include mq($from: desktop-large) {
+			#{$this}__light-logo {
+				display: none;
+			}
+
+			#{$this}__dark-logo {
+				display: block;
+			}
+		}
+
+
+		#{$this}__nav {
+			color: var(--color-dark);
+		}
+	}
+
+
+	/**
+	 * Transparent header
+	 */
+	&[data-theme="transparent"] {
+		background-color: transparent;
+	}
+
+	/* Mobile menu open */
+	.is-mobile-menu-open & {
+		top: 0;
+	}
+
+	/* Sticky header */
+	.is-header-sticky & {
+		box-shadow: var(--box-shadow);
+	}
+
+	.is-header-sticky:not(.is-mobile-menu-open) & {
+		background-color: var(--color-light);
+		color: var(--color-primary);
+		position: fixed;
+		top: 0;
+	}
+
+	.is-header-sticky.is-mobile-menu-open & {
+		background-color: var(--color-primary);
+		position: fixed;
+		top: 0 !important;
+	}
+
+	.is-modal-open & {
+		display: none;
+	}
+
+}

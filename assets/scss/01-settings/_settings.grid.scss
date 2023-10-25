@@ -1,0 +1,14 @@
+/**
+ * Grid
+ *
+ * Group: Settings
+ */
+
+:root {
+  --grid-columns: 12;
+  --grid-gap: 1rem;
+  --gap-vertical: var(--grid-gap);
+  --gap-horizontal: var(--grid-gap);
+  --grid-template-columns: repeat(12, 1fr);
+  --grid-template-columns-5: repeat(5, 1fr);
+}

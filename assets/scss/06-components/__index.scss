@@ -1,0 +1,24 @@
+/**
+ * Main file
+ *
+ * Group: Components
+ */
+
+@import 'component.button';
+// ☢ Keep button in this order to avoid overrides
+@import 'component.box-card';
+@import 'component.callout';
+@import 'component.card';
+@import 'component.footer';
+@import 'component.guide';
+@import 'component.hamburger';
+@import 'component.hero';
+@import 'component.header';
+@import 'component.link';
+@import 'component.logo';
+@import 'component.nav-menu';
+@import 'component.post-card';
+@import 'component.section-heading';
+@import 'component.social';
+@import 'component.widget';
+@import 'component.wysiwyg';

@@ -1,0 +1,17 @@
+/**
+ * Fade In
+ *
+ * Group: Utilities
+ */
+
+.u-fade-in {
+  opacity: 0 !important;
+  transform: translateY(60px) !important;
+  transition: opacity 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+.u-fade-in--visible {
+  opacity: 1 !important;
+  transform: translate(0, 0) !important;
+}

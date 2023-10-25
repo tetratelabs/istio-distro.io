@@ -1,0 +1,45 @@
+/**
+ * List
+ *
+ * Group: Elements
+ */
+
+ol,
+ul {
+	padding: 0;
+
+	li {
+		font-family: inherit;
+		font-size: inherit;
+		font-weight: inherit;
+		letter-spacing: inherit;
+		line-height: inherit;
+
+		&::marker {
+			color: currentColor;
+		}
+	}
+
+	/* When UL doesn't have any class */
+	.o-main &:not([class]) {
+		padding-left: 1.5em;
+
+		li {
+			margin: var(--space-sm) 0;
+		}
+	}
+}
+
+ol {
+	/* When OL doesn't have any class */
+	.o-main &:not([class]) {
+		list-style: auto;
+	}
+}
+
+ul {
+	/* When UL doesn't have any class */
+	.o-main &:not([class]) {
+		list-style: disc outside;
+	}
+}

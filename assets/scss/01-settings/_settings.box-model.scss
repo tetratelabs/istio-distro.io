@@ -1,0 +1,31 @@
+/**
+ * Box Model
+ *
+ * Group: Settings
+ */
+
+:root {
+	--border-radius-3xl: 3.000rem;
+	--border-radius-2xl: 2.000rem;
+	--border-radius-xl: 1.000rem;
+	--border-radius-lg: 0.750rem;
+	--border-radius: 0.500rem;
+	--border-radius-sm: 0.325rem;
+	--border-radius-xs: 0.250rem;
+	--border-radius-2xs: 0.150rem;
+	--border-radius-3xs: 0.100rem;
+	--border-radius-4xs: 0.075rem;
+	--border-radius-5xs: 0.050rem;
+	--border-radius-6xs: 0.025rem;
+	--border-radius-7xs: 0.0125rem;
+	--border-radius-full: 9999px;
+	--radius: 1rem;
+
+	--box-shadow-color: hsla(222, 100%, 5%, 0.2);
+	--box-shadow: 0 4px 12px rgba(10, 13, 15, 0.1);
+	--box-shadow-md: 0 12px 32px rgba(112, 120, 143, 0.08);
+	--box-shadow-lg: 0 24px 64px rgba(0, 0, 0, 0.08);
+	--box-shadow-hover: 0 4px 20px rgba(10, 13, 15, 0.35);
+	--overlay-color-dark: rgba(0, 0, 0, 0.7);
+	--overlay-color-light: rgba(255, 255, 255, 0.8);
+}

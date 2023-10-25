@@ -1,0 +1,28 @@
+/**
+ * Buttons
+ *
+ * Group: Settings
+ */
+
+:root {
+
+	--btn-font-size: 1rem;
+	--btn-sm: calc(var(--btn-font-size) - 0.2rem);
+	--btn-md: calc(var(--btn-font-size) + 0.2rem);
+	--btn-lg: calc(var(--btn-font-size) + 0.4rem);
+
+	--btn-radius: var(--radius);
+	--btn-radius-xs: calc(var(--radius) / 8);
+	--btn-radius-sm: calc(var(--radius) / 4);
+	--btn-radius-md: calc(var(--radius) / 2);
+
+	--button-size: 52px;
+	--button-size-xsmall: 32px;
+	--button-size-small: 44px;
+	--button-size-large: 68px;
+	--button-border-width: 2px;
+	--button-border-width-small: 1px;
+
+}
+
+

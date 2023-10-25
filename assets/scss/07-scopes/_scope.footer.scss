@@ -1,0 +1,82 @@
+/**
+ * Footer
+ *
+ * Group: Scopes
+ */
+
+.s-footer {
+	$this: &;
+
+	h2, h3, h4, h5, h6 {
+		@include text("md");
+		font-weight: var(--font-weight-bold);
+	}
+
+	.widget {
+		margin-bottom: 0;
+	}
+
+	.c-link {
+		@include text("sm");
+		color: var(--color-light);
+		display: inline-block;
+		font-weight: var(--font-weight-bold);
+
+		i {
+			color: var(--color-primary);
+			transform: rotate(-45deg);
+		}
+	}
+
+	.c-social__link {
+		color: var(--color-light);
+	}
+
+	/**
+	 * Default Option
+	 */
+	div.gform_wrapper {
+
+		form {
+			input {
+				&[type="button" ],
+				&[type="submit" ] {
+					@include buttonStyle('secondary');
+				}
+			}
+		}
+	}
+
+	.widget_text + .widget_text {
+		margin-top: var(--space-md);
+	}
+}
+
+.s-footer-widgets,
+.s-footer-social {
+	a {
+		&:not(.c-button) {
+			color: var(--color-dark);
+
+			@include onEvent() {
+				color: var(--color-primary);
+			}
+		}
+	}
+}
+
+.s-footer-socket {
+	p {
+		@include text('sm');
+		color: var(--color-neutral-60);
+	}
+
+	a {
+		color: var(--color-neutral-60);
+		text-decoration: underline;
+
+		@include onEvent() {
+			color: var(--color-primary);
+		}
+	}
+}

@@ -1,5 +1,4 @@
-{{ define "main" }}
-{{- partial "partner-banner.html" . -}}
+{{ define "main" }} {{- partial "partner-banner.html" . -}}
 <section>
   <div class="container">
     <div class="row justify-content-center partner-content">
@@ -7,23 +6,26 @@
         <div class="text-center partner-heading">
           <img class="partner-medium-logo mb-4" src="{{ .Params.Logo }}" />
           <!-- <h2 class="mb-3">{{ .Title }}</h2> -->
-          <a href="{{ .Params.WebsiteURL }}" class="external-link">{{ .Params.WebsiteTitle }}</a>
+          <a href="{{ .Params.WebsiteURL }}" class="external-link"
+            >{{ .Params.WebsiteTitle }}</a
+          >
           {{ if isset .Page.Params "linkedin"}}
-            <a href="{{ .Params.Linkedin }}" class="external-link">LinkedIn</a>
-          {{ end }}
-          {{ if isset .Page.Params "github"}}
-            <a href="{{ .Params.Github }}" class="external-link">GitHub</a>
-          {{ end }}
-          {{ if isset .Page.Params "twitter"}}
-            <a href="{{ .Params.Twitter }}" class="external-link">Twitter</a>
+          <a href="{{ .Params.Linkedin }}" class="external-link">LinkedIn</a>
+          {{ end }} {{ if isset .Page.Params "github"}}
+          <a href="{{ .Params.Github }}" class="external-link">GitHub</a>
+          {{ end }} {{ if isset .Page.Params "twitter"}}
+          <a href="{{ .Params.Twitter }}" class="external-link">Twitter</a>
           {{ end }}
         </div>
-      {{ .Content }}
-      {{ if isset .Page.Params "docurl" }}
+        {{ .Content }} {{ if isset .Page.Params "docurl" }}
         <div class="row justify-content-center">
-            <a class="btn btn-sm btn-primary" href="/ecosystem-partners{{ .Params.DocURL | relURL }}">{{ i18n "read_more" }}</a>
+          <a
+            class="c-button c-button--primary"
+            href="/ecosystem-partners{{ .Params.DocURL | relURL }}"
+            >{{ i18n "read_more" }}</a
+          >
         </div>
-      {{ end }}
+        {{ end }}
       </div>
     </div>
   </div>
@@ -32,7 +34,7 @@
 <div class="container">
   <div class="row m-4 justify-content-center">
     <div class="col-lg-3 p-4">
-        <a href="../">← {{ i18n "back_to_partners" }}</a>
+      <a href="../">← {{ i18n "back_to_partners" }}</a>
     </div>
   </div>
 </div>

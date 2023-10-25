@@ -1,0 +1,31 @@
+/**
+ * Image
+ *
+ * Group: Elements
+ */
+
+img {
+	display: block;
+	max-width: 100%;
+	flex-shrink: 1;
+	height: auto;
+
+	&.emoji,
+	&.wp-smiley,
+	&.wp-emoji {
+		display: inline;
+		width: 1em;
+		height: 1em;
+		margin: 0 .07em;
+		padding: 0;
+		vertical-align: -0.1em;
+		background: none;
+		border: none;
+		box-shadow: none;
+	}
+
+}
+
+svg {
+	pointer-events: none;
+}

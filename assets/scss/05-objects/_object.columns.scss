@@ -1,0 +1,30 @@
+/**
+ * Columns
+ *
+ * Group: Objects
+ */
+
+.o-columns {
+	column-gap: var(--space-lg);
+
+	&::after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+
+	/* 2-columns */
+	&--col-2 {
+		column-count: 2;
+	}
+
+	/* 3-columns */
+	&--col-3 {
+		column-count: 3;
+	}
+
+	/* 4-columns */
+	&--col-4 {
+		column-count: 4;
+	}
+}

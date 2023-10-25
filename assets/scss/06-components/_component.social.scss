@@ -1,0 +1,74 @@
+/**
+ * Social
+ *
+ * Group: Components
+ */
+
+.c-social {
+  $this: &;
+
+  display: flex;
+  gap: var(--space-sm);
+
+  &__title {
+    @include text();
+    color: var(--color-secondary);
+    margin: 0 var(--space-md) 0 0;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    &:not(:last-of-type) {
+      margin: 0 var(--space-sm) 0 0;
+    }
+  }
+
+  &__link {
+    @include onEvent {
+      color: var(--color-primary);
+    }
+  }
+
+  /*
+	 * Stacked mode
+	 */
+  &--stacked {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /*
+	 * Vertical mode
+	 */
+  &--vertical {
+    align-items: flex-start;
+    flex-direction: column;
+    display: inline-flex;
+
+    #{$this}__list {
+      flex-direction: column;
+    }
+
+    #{$this}__title {
+      margin: 0 0 var(--space-md) 0;
+    }
+
+    #{$this}__list {
+      text-align: center;
+    }
+
+    #{$this}__item {
+      &:not(:last-of-type) {
+        margin: 0 0 var(--space-sm) 0;
+      }
+    }
+  }
+
+  i {
+    font-size: 18px;
+    min-width: var(--icon-xs);
+  }
+}

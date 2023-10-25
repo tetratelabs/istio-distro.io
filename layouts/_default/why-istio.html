@@ -1,0 +1,257 @@
+{{ define "main" }}
+<main id="main" class="o-main">
+  {{ $data := index .Site.Data .Site.Language.Lang }} {{ if
+  $data.istio.hero.enable }} {{ with $data.istio.hero }}
+  <section class="c-hero c-hero--compact o-section o-section--2xl">
+    <div class="c-hero__wrap u-rhythm-md o-container o-container--xl">
+      <h1 class="c-heading u-font-h1">{{ .title }}</h1>
+    </div>
+
+    <img
+      decoding="async"
+      class="c-hero__bg"
+      src="{{ .bg }}"
+      alt="{{ .title }}"
+    />
+  </section>
+  {{ end }} {{ end }}
+
+  <section class="o-section o-section--3xl u-bg-color-light">
+    <div class="o-container o-container--xl">
+      <div class="wysiwyg">
+        <h3>Microservices Sprawl</h3>
+        <p>
+          Cloud-native applications are architected as a constellation of
+          distributed microservices, which run in containers, orchestrated
+          through kubernetes. Adopting a microservices architecture brings a
+          host of benefits, including increased autonomy, flexibility and
+          modularity. But the process of decoupling a monolithic application
+          into smaller services introduces new obstacles: How do you know what’s
+          running? How do you roll out new versions of your services? How do you
+          secure and monitor all those containers?
+        </p>
+        <p>
+          Most companies using microservices architecture don’t fully understand
+          until they are well down the path about microservices sprawl. The
+          number of small services that are deployed expand exponentially and
+          this exponential growth in microservices creates challenges around
+          figuring out how to enforce and standardize things like routing
+          between multiple services/versions, authentication and authorization,
+          encryption and load balancing within a Kubernetes cluster. Building on
+          service mesh helps resolve some of these issues and more.
+        </p>
+        <p>
+          As containers abstract away the operating system from the application,
+          a service mesh abstracts away how inter-process communications are
+          handled. Istio is a widely adopted open-source service mesh that helps
+          organizations run distributed, microservices-based apps. Its  powerful
+          features provide a uniform and more efficient way to secure, connect
+          and monitor services, so DevOps can modernize their apps more swiftly
+          and securely. Whether you’re building from scratch or migrating
+          existing applications to cloud native, Istio addresses the challenges
+          developers and operators face with a distributed or microservices
+          architecture.
+        </p>
+
+        <hr />
+      </div>
+      <div class="wysiwyg">
+        <h3>The Genesis of Istio</h3>
+        <p>
+          To explain what Istio is, it’s also important to understand the
+          context in which Istio came into being — i.e., why is there an Istio?
+        </p>
+        <p>
+          Microservices are a technical solution to an organizational problem.
+          And Kubernetes and Istio are technical solutions to deal with the
+          issues created by moving to microservices. As a deliverable for
+          microservices, containers solve the problem of environmental
+          consistency and allow for more granularity in limiting application
+          resources. They are widely used as a vehicle for microservices.
+        </p>
+        <p>
+          Google open-sourced Kubernetes in 2014, which grew exponentially over
+          the next few years. It became a container scheduling tool to solve the
+          deployment and scheduling problems of distributed applications —
+          allowing you to treat many computers as though they were one computer.
+          Because the resources of a single machine are limited and Internet
+          applications may have traffic floods at different times (due to rapid
+          expansion of user scale or different user attributes), the elasticity
+          of computing resources needs to be high. A single machine obviously
+          can’t meet the needs of a large-scale application; and conversely, it
+          would be a huge waste for a very small-scale application to occupy the
+          whole host. In short, Kubernetes defines the final state of the
+          service and enables the system to reach and stay in that state
+          automatically.
+        </p>
+        <hr />
+      </div>
+      <div class="wysiwyg">
+        <h3>What is Istio?</h3>
+        <p>
+          Istio is an open-source service mesh that helps organizations run
+          distributed, microservices-based apps. It provides a way to secure,
+          connect and monitor microservices. Istio layers transparently onto
+          existing distributed applications and sits as an overlay between the
+          layers of distributed applications. Istio works natively with
+          Kubernetes (K8s) only, but its open source nature makes it possible
+          for anyone to write extensions enabling Istio to run on any cluster
+          software. Istio includes APIs that let Istio integrate into any
+          logging platform, telemetry or policy system. Istio enables
+          intelligent application-aware load balancing from the application
+          layer to other mesh-enabled services in the cluster. It bypasses the
+          rudimentary kube-proxy load balancing. 
+        </p>
+        <p>Istio’s powerful control plane brings vital features including:</p>
+        <ul>
+          <li>
+            Secure service-to-service communication in a cluster with TLS
+            encryption, strong identity-based authentication and authorization
+          </li>
+          <li>
+            Automatic load balancing for HTTP, gRPC, WebSocket and TCP traffic
+          </li>
+          <li>
+            Fine-grained control of traffic behavior with rich routing rules,
+            retries, failovers, and fault injection
+          </li>
+          <li>
+            A pluggable policy layer and configuration API supporting access
+            controls, rate limits and quotas
+          </li>
+          <li>
+            Automatic metrics, logs and traces for all traffic within a cluster,
+            including cluster ingress and egress
+          </li>
+        </ul>
+        <hr />
+      </div>
+
+      <div class="wysiwyg">
+        <h3>How it Works</h3>
+        <p>
+          Istio’s core consists of a control plane and a data plane, with Envoy
+          as the default data-plane agent. The following diagram shows the
+          various components of each plane:
+        </p>
+        <p>
+          <img src="/images/why-istio-diagram.png" alt="" />
+        </p>
+        <p>
+          Istio is designed for extensibility and can handle a diverse range of
+          deployment needs. Istio’s control plane runs on Kubernetes and you can
+          add applications deployed in that cluster to your mesh, extend the
+          mesh to other clusters, or even connect VMs or other endpoints running
+          outside of Kubernetes.
+        </p>
+        <hr />
+      </div>
+
+      <div class="wysiwyg">
+        <h3>How do Istio, Envoy and Kubernetes work together?</h3>
+        <p>
+          The key to understanding Isto and the Istio architecture is to
+          understand both Envoy and Kubernetes. It’s not a question of Istio
+          versus Envoy or Istio versus Kubernetes - they often work together to
+          make a microservices-based containerized environment operate smoothly.
+          For example, service meshes like Istio are made up of both a control
+          plane and a data plane. Istio uses an extended version of Envoy as its
+          data plane. Envoy then manages all inbound and outbound traffic in the
+          Istio service mesh. Kubernetes is an open source platform that gets
+          rid of many of the manual processes involved in deploying and scaling
+          containerized applications by automating and orchestrating them. And
+          although Istio is platform independent, using Istio and Kubernetes
+          together is popular among developers. In addition, Kubernetes stands
+          as a cornerstone for building cloud-native applications. It offers key
+          features such as self-healing capabilities, service discovery, load
+          balancing and secret management, which are essential for running
+          applications at scale in distributed environments. Its inherent
+          support for mulit-cloud deployments, microservices architecture and
+          CI/CD pipelines positions it as a pivotal element in the DevOps and
+          cloud computing ecosystems.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {{ if $data.istio.additional_resources.enable }} {{ with
+  $data.istio.additional_resources }}
+  <section class="c-resources o-section o-section--3xl u-bg-color-neutral-10">
+    <div class="c-resources__wrapper o-container o-container--xl">
+      {{if .heading }}
+      <div class="c-section-heading">
+        <div
+          class="c-section-heading__wrap u-rhythm o-container o-container--lg"
+        >
+          <h2
+            class="c-heading c-section-heading__title u-font-h2 u-color-primary"
+          >
+            {{ .heading }}
+          </h2>
+        </div>
+      </div>
+      {{ end }} {{if .cards }}
+      <div class="o-grid o-grid--col-3 o-grid--column-gap-lg">
+        {{ range.cards }}
+        <div
+          class="c-post-card c-post-card--simple u-bg-color-dark-gradient c-post-card--secondary has-cta"
+        >
+          <div class="c-post-card__content u-rhythm-md">
+            <p class="c-post-card__badge u-fw-bold u-color-primary-medium">
+              {{ .eyebrow }}
+            </p>
+
+            <h3 class="c-heading c-post-card__title u-font-h5 u-color-light">
+              <a
+                class="c-link"
+                href="https://tetrate.io/resource/introducing-tetrate-service-express/"
+                target="_self"
+              >
+                <span> {{ .title }}</span>
+              </a>
+            </h3>
+
+            <a
+              class="c-link c-post-card__link c-link--light"
+              href="{{ .url }}"
+              target="_blank"
+            >
+              <span> {{ .cta_text }}</span>
+
+              <i class="material-icons" aria-hidden="true">arrow_forward</i>
+            </a>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }} {{ end }} {{ if $data.istio.callout.enable }} {{ with
+  $data.istio.callout }}
+  <section
+    id="block_bde3bcd580cfae982de8a8a4f11ffe9e"
+    class="c-callout o-section--3xl u-bg-color-primary"
+  >
+    <div class="c-callout__wrap u-rhythm-lg o-container o-container--md">
+      {{ if.heading }}
+      <h2 class="c-heading u-font-h3 u-color-light">{{ .heading }}</h2>
+      {{ end }} {{ if.subheading }}
+      <p class="u-fz-h6 u-color-light">{{ .subheading }}</p>
+      {{ end }}
+
+      <div class="o-button-group o-section__button-group">
+        <a
+          href="{{ .link_url }}"
+          target="{{ .link_target }}"
+          class="c-button c-button--light"
+        >
+          <span>{{ .link_text }}</span>
+          <i class="material-icons" aria-hidden="true">arrow_forward</i>
+        </a>
+      </div>
+    </div>
+  </section>
+  {{ end }} {{ end }}
+</main>
+{{ end }}

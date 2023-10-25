@@ -1,95 +1,120 @@
 ########################## Hero Block ################################
 hero:
-  title: "Simple, safe enterprise-grade Istio distro"
-  subtitle: "Now deployable as an Amazon EKS add-on"
-  subtitle_url: "getmesh-cli/install/install-istio/eks-addon/"
+  title: 'Tetrate Istio Distro (TID)'
+  subtitle: 'TID is the easiest and fastest way to get started with open source Istio.'
+  cta_url: 'https://istio.tetratelabs.io/download/'
+  cta_title: 'Get started for free'
   enable: true
+  cta_target: '_blank'
   lead_item:
-    - content: "Easiest way of installing, operating, and upgrading Istio"
-    - content: "Tested and hardened for your application and cloud platform"
-    - content: "Community hub for users, ecosystem, and partners"
+    - content: '100% Upstream Istio'
+    - content: 'FIPS - compliant'
+    - content: 'Available as an Amazon EKS add on'
   asciinema_id: 459699
+  bg: '/images/home/homepage-hero-bg.png'
 
-########################## Subscribe section ##########################
-subscribe:
+########################## Why Istio section ###############################
+why_istio:
   enable: true
-  item:
-    - content: "Never miss new releases and community events"
-  error_message: "Please enter a valid email address."
-  form_message: "Thank you for subscribing."
-  community_item:
-    - content: "Join the Tetrate Istio Distro community to get release updates and community announcements"
-
-########################## Dictionary section ###########################
-dictionary:
-  enable: false
-  title: "What is Get•Is•ti•o"
-  logo: "/images/getistio-logo-notext-black.png"
-  phonogram: "/getˌis,’tē,ō/"
-  verb:
-    name: "verb"
-    meaning: "Act of installing and managing vetted Istio for use in Kubernetes or application platforms."
-    quote: "What’s the best way to install and update Istio in my Kubernetes cluster? Simple, you just GetIstio."
-    similar: 
-      - content: "service mesh"
-      - content: "control plane"
-      - content: "application networking"
-      - content: "func-e"
-  noun_benefits:
-    name: "noun / benefits"
-    meaning1: "Simple, open source CLI for assured installation and upgrade of specific Istio versions."
-    quote1: "I just upgraded to the latest Istio version in five minutes with getistio."
-    similar:
-      - content: "kubectl"
-      - content: "istioctl"
-    meaning2: "Upstream & FIPS compliant Istio distribution tested and hardened for EKS, GKE, AKS and more."
-    meaning3: "Hub for validated Istio integrations & tutorials from ecosystem partners like AWS, Weaveworks, Venafi."
-    quote2: "Using GetIstio CLI, I made AWS’ ACM my trusted cert provider for Istio mesh within minutes."
-  collective_noun:
-    name: "collective noun"
-    meaning: "Community of Istio users, developers, tutorials and technology partners."
-  button_text: "GetIstio benifets"
+  heading: 'Safe, Simple Enterprise-Grade Istio'
+  image: '/images/home/logo-tetrate-istio-distro.svg'
+  text: 'TID is Tetrate’s hardened, fully upstream Istio distribution, with FIPS-verified builds and support available.<br/> It’s an ideal starting point for your service mesh journey, supported by the creators of the open source Istio project.'
+  subheading: 'Why Tetrate Istio Distro?'
+  cards:
+    - title: 'Security Simplified'
+      content: 'TID helps you embrace a zero trust security model by giving you the tools to automatically and declaratively secure your services and their communication. You can manage authentication, authorization and encryption between services, with little or no changes to the application themselves.'
+    - title: 'Traffic Management'
+      content: 'With TID, you can control traffic flows and API calls between services while also gaining visibility into your traffic. This makes calls more reliable and your network more robust, even in adverse conditions.'
+    - title: 'Understand Your Apps'
+      content: 'TID’s robust tracing, monitoring and logging features give you deep insights into how your services are performing, how that performance affects other processes and any issues that might exist.'
+    - title: 'Robust Policy Enforcements'
+      content: 'Apply organizational policies to service interactions, ensuring the enforcement of access policies and equitable resource distribution among consumers.'
 
 ########################## Get Start section #############################
 start:
   enable: true
-  title: "Get Started Quickly"
-  steps:
-    - desc: "1. Download Tetrate Istio Distro CLI"
-      cmd: "curl -sL https://istio.tetratelabs.io/getmesh/install.sh | bash"
-    - desc: "2. Install Istio Demo"
-      cmd: "getmesh istioctl install --set profile=demo"
-    - desc: "3. Check Tetrate Istio Distro version"
-      cmd: "getmesh version"
-    - desc: "4. Validate config"
-      cmd: "getmesh config-validate"
+  heading: 'TID Quick Start'
+  subheading: 'Choose from four installation options'
+  installation_options:
+    - text: 'HELM'
+      url: 'https://docs.tetrate.io/istio-distro/installation/install-helm'
+    - text: 'Istioctl'
+      url: 'https://docs.tetrate.io/istio-distro/installation/install-istioctl'
+    - text: 'AWS EKS Add on'
+      url: 'https://docs.tetrate.io/istio-distro/installation/install-eks'
+    - text: 'Azure AKS'
+      url: 'https://docs.tetrate.io/istio-distro/installation/install-azure'
+  callout_heading: 'Getting Help'
+  callout_text_one: 'If you need help using or running TID, please ask a question on <a href="https://tetrate-community.slack.com/join/shared_invite/zt-1tug2el0k-JioVIPVWB1_ny8E995Vu4A#/shared-invite/email">Slack</a>'
+  callout_text_two: 'If you want enterprise grade support, extended CVE fixes or a FIPS-verified version, visit <a href="https://tetrate.io/tetrate-istio-subscription/">Tetrate Istio Subscription</a>'
 
-########################## Training section ##############################
-training:
+########################## Logos section ###############################
+logos:
   enable: true
-  title: "Increase your Istio skill with our training program"
-  url: "https://academy.tetrate.io"
-  button_text: "Enroll Now"
+  items:
+    - url: '/images/logos/logo-amway.svg'
+      title: 'Amway'
+    - url: '/images/logos/logo-box.svg'
+      title: 'Box'
+    - url: '/images/logos/logo-bu.svg'
+      title: 'BetterUp'
+    - url: '/images/logos/logo-dc3-emblem.svg'
+      title: 'D3'
+    - url: '/images/logos/logo-defense-unicorns.svg'
+      title: 'Defense Unicorns'
+    - url: '/images/logos/logo-demandbase.svg'
+      title: 'Demandbase'
+    - url: '/images/logos/logo-docusign.svg'
+      title: 'Docusign'
+    - url: '/images/logos/logo-forescout.svg'
+      title: 'Forescout'
+    - url: '/images/logos/logo-govini.svg'
+      title: 'Govini'
+    - url: '/images/logos/logo-informatica.svg'
+      title: 'Informatica'
+    - url: '/images/logos/logo-kaiser-permanente.svg'
+      title: 'Kaiser Permanente'
+    - url: '/images/logos/logo-microstrategy.svg'
+      title: 'Microstrategy'
+    - url: '/images/logos/logo-movehq.svg'
+      title: 'MoveHQ'
+    - url: '/images/logos/logo-paloalto.svg'
+      title: 'Palo Alto networks'
+    - url: '/images/logos/logo-playtika.svg'
+      title: 'playtika'
+    - url: '/images/logos/logo-qlik.svg'
+      title: 'QLik'
+    - url: '/images/logos/logo-riot-games.svg'
+      title: 'Riot Games'
+    - url: '/images/logos/logo-sephora.svg'
+      title: 'Sephora'
+    - url: '/images/logos/logo-snyk.svg'
+      title: 'Snyk'
+    - url: '/images/logos/logo-splunk.svg'
+      title: 'Splunk'
+    - url: '/images/logos/logo-tiaa.svg'
+      title: 'Tiaa'
+    - url: '/images/logos/logo-tracfone.svg'
+      title: 'Tracfone'
+    - url: '/images/logos/logo-two-sigma.svg'
+      title: 'Two Sigma'
 
-########################## Event section #################################
-event:
-  enable: false
-  title: "Upcoming Community Events"
-  url: "/community-events"
-  link_text: "See All Events→"
-
-########################## Customer quote section ########################
-customer_quote:
+########################## Callout section ###############################
+callout:
   enable: true
-  quotes:
-    - quote: Working with the Istio community, we're pleased to have developed "istio-csr", open source software to integrate Istio with cert-manager. This enables workload certificates to be issued from the wide array of certificate authorities and providers that cert-manager supports, including Venafi, Google Certificate Authority Service (CAS) and more. We look forward to collaborating with the Tetrate Istio Distro community to provide an easy and seamless integration, enabling operators and security teams to tap into cert-manager and secure the mesh from the get-go.
-      title: "Matt Bates, co-founder & CTO Jetstack"
-    - quote: "At Tracfone, we’ve built an immutable infrastructure with k8s, istio and a custom CI/CD platform. We leverage Istio for an array of capabilities like traffic management, telemetry, zero-trust security and more. Istio training from Tetrate Academy is a great resource for our teams to learn Istio fast and get the most out of it."
-      title: "Kartik Rallapalli, Principal Enterprise Architect at Tracfone"
-    - quote: "In combination with a service mesh like Istio, Weave GitOps workflows automate progressive deployment strategies / canary management in Kubernetes. Tetrate's new Tetrate Istio Distro product makes this simple, providing users with a quick and safe way to deploy Istio into their GitOps workflows."
-      title: "Alexis Richardson, co-founder & CEO Weaveworks"
+  heading: 'Istio is a CNCF graduated project'
+  title: 'Need enterprise support for your Istio?'
+  image: '/images/home/cncf-graduated-color.svg'
+  link_url: 'https://tetrate.io/blog/istio-service-mesh-graduates-cncf/'
+  link_text: 'Read the blog'
+  link_target: '_blank'
 
-########################## Support section ###############################
-support:
+########################## Guide section ###############################
+guide:
   enable: true
-  title: "Need enterprise support for your Istio?"
+  heading: '5 Stages to Istio Production Success'
+  text: 'A technical guide with practical recommendations on how to deploy Istio for production success.'
+  image: '/images/home/5-stages-to-istio-production-success.png'
+  link_url: 'https://tetrate.io/resource/5-stages-to-istio-production-success/'
+  link_text: 'Download Now'
+  link_target: '_blank'

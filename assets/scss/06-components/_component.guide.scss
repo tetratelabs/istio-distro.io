@@ -1,0 +1,34 @@
+/**
+ * Guide
+ *
+ * Group: Custom Components
+ */
+
+.guide {
+  $this: &;
+
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--space-lg);
+  position: relative;
+
+  @include mq($from: desktop) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__content {
+    margin: auto;
+    max-width: 42em;
+
+    @include mq($from: desktop) {
+      text-align: left;
+    }
+  }
+
+  &__image {
+    display: inline-flex;
+    justify-content: center;
+    max-width: 260px;
+  }
+}

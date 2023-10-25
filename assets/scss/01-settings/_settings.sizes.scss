@@ -1,0 +1,22 @@
+/**
+ * Sizes
+ *
+ * Group: Settings
+ */
+
+:root {
+  /* Max widths */
+  --max-width--4xs: 25rem; // 400px in 16px base pixel size
+  --max-width--3xs: 30rem; // 480px in 16px base pixel size
+  --max-width--2xs: 33.75rem; // 540px in 16px base pixel size
+  --max-width--xs: 42rem; // 672px in 16px base pixel size
+  --max-width--sm: 52.5rem; // 840px in 16px base pixel size
+  --max-width--md: 61.25rem; // 980 in 16px base pixel size
+  --max-width--lg: 72.5rem; // 1160px in 16px base pixel size
+  --max-width--xl: 80rem; // 1280px in 16px base pixel size
+  --max-width--2xl: 90rem; // 1440px in 16px base pixel size
+  --max-width: 73.75rem; // 1180px in 16px base pixel size
+
+  /* Heights */
+  --header-height: 78px;
+}

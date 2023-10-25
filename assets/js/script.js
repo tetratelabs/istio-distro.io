@@ -170,7 +170,6 @@ $(document).on('turbolinks:load', preloader);
     });
 
   // var checkUser = localStorage.getItem('User');
-  // console.log(checkUser);
   // var pathname = window.location.pathname;
   // if (checkUser == null) {
   //   if (pathname !== '/login/') {
@@ -201,7 +200,7 @@ new ClipboardJS('.copy-to-clipboard', {
 });
 
 function dropdownFunction() {
-  document.getElementById("mobileDropdownMenu").classList.toggle("show");
+  document.getElementById('mobileDropdownMenu').classList.toggle('show');
 }
 
 window.onclick = function (event) {

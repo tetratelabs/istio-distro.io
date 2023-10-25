@@ -1,0 +1,15 @@
+/**
+ * Form
+ *
+ * Group: Elements
+ */
+
+form {
+	legend {
+
+	}
+
+	&[role="search"] {
+		display: flex;
+	}
+}

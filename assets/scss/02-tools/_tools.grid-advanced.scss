@@ -1,0 +1,16 @@
+@mixin gridAdvanced($cols...) {
+  @supports (grid-area: auto) {
+    grid-template-columns: repeat($grid-columns, 1fr);
+
+    $i: 1;
+    @each $col in $cols {
+      > :nth-of-type(#{$i}) {
+        grid-column-start: nth($col, 1);
+        grid-column-end: nth($col, 2);
+        grid-row-start: nth($col, 3);
+        grid-row-end: nth($col, 4);
+      }
+      $i: $i + 1;
+    }
+  }
+}

@@ -1,0 +1,235 @@
+/**
+ * Button
+ *
+ * Group: Tools
+ */
+
+@function if-important($important){
+	@return #{if($important, '!important', '')};
+}
+
+@mixin button() {
+	$this: &;
+
+	align-items: center;
+	border-radius: var(--btn-radius-xs);
+	border-width: 2px;
+	border-style: solid;
+	border-color: transparent;
+	display: inline-flex;
+	font-size: var(--button-font-size);
+	font-style: normal;
+	font-stretch: normal;
+	font-weight: var(--font-weight-bold);
+	justify-content: center;
+	line-height: 1;
+	letter-spacing: var(--tracking-wider);
+	padding-block: var(--space-unit);
+	padding-inline: calc(var(--space-unit) * 2);
+	text-decoration: none;
+	transition: all 200ms ease;
+	-webkit-appearance: none;
+
+	@include mq($until: phablet) {
+	    white-space: nowrap;
+	}
+
+	&:active {
+	}
+
+	& + & {
+		margin-left: var(--space-unit);
+
+		@include mq($from: tablet) {
+			margin-left: 0;
+			margin-top: var(--space-unit);
+		}
+	}
+
+}
+
+@mixin buttonStyle($style: 'primary', $important: false) {
+
+	@if ($style == 'primary') {
+		background-color: var(--color-primary) if-important($important);
+		border-color: var(--color-primary) if-important($important);
+		color: var(--color-light) if-important($important);
+
+		@include onEvent {
+			background-color: var(--color-primary-dark) if-important($important);
+			border-color: var(--color-primary-dark) if-important($important);
+			color: var(--color-light) if-important($important);
+		}
+	}
+
+	@if ($style == 'primary-outline') {
+		background-color: var(--color-light) if-important($important);
+		border-color: var(--color-primary) if-important($important);
+		color: var(--color-primary) if-important($important);
+
+		@include onEvent {
+			background-color: var(--color-primary) if-important($important);
+			border-color: var(--color-primary) if-important($important);
+			color: var(--color-light) if-important($important);
+		}
+	}
+
+	@if ($style == 'secondary') {
+		background-color: var(--color-secondary) if-important($important);
+		border-color: var(--color-secondary) if-important($important);
+		color: var(--color-light) if-important($important);
+
+		@include onEvent {
+			background-color: var(--color-secondary-dark) if-important($important);
+			border-color: var(--color-secondary-dark) if-important($important);
+			color: var(--color-light) if-important($important);
+		}
+	}
+
+	@if ($style == 'secondary-outline') {
+		background-color: transparent if-important($important);
+		border-color: var(--color-secondary) if-important($important);
+		color: var(--color-secondary) if-important($important);
+
+		@include onEvent {
+			background-color: var(--color-secondary) if-important($important);
+			border-color: var(--color-secondary) if-important($important);
+			color: var(--color-light) if-important($important);
+		}
+	}
+
+	@if ($style == 'tertiary') {
+		background-color: var(--color-tertiary) if-important($important);
+		border-color: var(--color-tertiary) if-important($important);
+		color: var(--color-light) if-important($important);
+
+		@include onEvent {
+			background-color: var(--color-tertiary-dark) if-important($important);
+			border-color: var(--color-tertiary-dark) if-important($important);
+		}
+	}
+
+	@if ($style == 'tertiary-outline') {
+		background-color: transparent if-important($important);
+		border-color: var(--color-tertiary) if-important($important);
+		color: var(--color-tertiary) if-important($important);
+
+		@include onEvent {
+			background-color: var(--color-tertiary) if-important($important);
+			border-color: var(--color-tertiary) if-important($important);
+			color: var(--color-light) if-important($important);
+		}
+	}
+
+	@if ($style == 'quaternary') {
+		background-color: var(--color-quaternary) if-important($important);
+		border-color: var(--color-quaternary) if-important($important);
+		color: var(--color-light) if-important($important);
+
+		@include onEvent {
+			background-color: var(--color-quaternary-dark) if-important($important);
+			border-color: var(--color-quaternary-dark) if-important($important);
+			color: var(--color-light) if-important($important);
+		}
+	}
+
+	@if ($style == 'quaternary-outline') {
+		background-color: transparent if-important($important);
+		border-color: var(--color-quaternary) if-important($important);
+		color: var(--color-quaternary) if-important($important);
+
+		@include onEvent {
+			background-color: var(--color-quaternary) if-important($important);
+			border-color: var(--color-quaternary) if-important($important);
+			color: var(--color-light) if-important($important);
+		}
+	}
+
+	@if ($style == 'light') {
+		background-color: var(--color-light) if-important($important);
+		border-color: var(--color-light) if-important($important);
+		color: var(--color-primary) if-important($important);
+
+		@include onEvent {
+			background-color: var(--color-primary) if-important($important);
+			border-color: var(--color-light) if-important($important);
+			color: var(--color-light) if-important($important);
+		}
+	}
+
+	@if ($style == 'light-outline') {
+		background-color: transparent if-important($important);
+		border-color: var(--color-light) if-important($important);
+		color: var(--color-light) if-important($important);
+
+		@include onEvent {
+			background-color: var(--color-light) if-important($important);
+			border-color: var(--color-light) if-important($important);
+			color: var(--color-dark) if-important($important);
+		}
+	}
+
+	@if ($style == 'dark') {
+		background-color: var(--color-dark) if-important($important);
+		border-color: var(--color-dark) if-important($important);
+		color: var(--color-light) if-important($important);
+
+		@include onEvent {
+			background-color: var(--color-primary) if-important($important);
+			border-color: var(--color-primary) if-important($important);
+			color: var(--color-light) if-important($important);
+		}
+	}
+
+	@if ($style == 'dark-outline') {
+		background-color: transparent if-important($important);
+		border-color: var(--color-dark) if-important($important);
+		color: var(--color-dark) if-important($important);
+
+		@include onEvent {
+			background-color: var(--color-dark) if-important($important);
+			border-color: var(--color-dark) if-important($important);
+			color: var(--color-light) if-important($important);
+		}
+	}
+
+	@if ($style == 'light-blue') {
+		background-color: var(--color-blue-10) if-important($important);
+		border-color: var(--color-blue-10) if-important($important);
+		color: var(--color-blue-60) if-important($important);
+
+		@include onEvent {
+			background-color: var(--color-blue-20) if-important($important);
+			border-color: var(--color-blue-20) if-important($important);
+			color: var(--color-blue-60) if-important($important);
+		}
+	}
+
+}
+
+@mixin buttonSize($size: 'default') {
+	border-width: var(--button-border-width);
+	min-height: var(--button-size);
+	padding-block: 0;
+	padding-inline: calc(var(--button-size) / 1.425);
+
+	@if ($size == 'xs') {
+		border-width: var(--button-border-width-small);
+		min-height: var(--button-size-xsmall);
+		padding-block: 0;
+		padding-inline: calc(var(--button-size-xsmall) / 1.425);
+	}
+
+	@if ($size == 'sm') {
+		border-width: var(--button-border-width-small);
+		min-height: var(--button-size-small);
+		padding-block: 0;
+		padding-inline: calc(var(--button-size-small) / 1.425);
+	}
+
+	@if ($size == 'lg') {
+		min-height: var(--button-size-large);
+		padding-block: 0;
+		padding-inline: calc(var(--button-size-large) / 1.425);
+	}
+}

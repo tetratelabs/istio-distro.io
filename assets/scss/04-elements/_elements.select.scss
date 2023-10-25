@@ -1,0 +1,11 @@
+/**
+ * Select
+ *
+ * Group: Elements
+ */
+
+select {
+	@include inputDefault();
+	height: var(--input-height);
+}
+

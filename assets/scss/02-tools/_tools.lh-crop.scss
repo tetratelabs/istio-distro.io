@@ -1,0 +1,66 @@
+/**
+ * Line-height Crop
+ *
+ * Group: Tools
+ */
+
+// Mixin to remove unwanted line=height from elements.
+// Further reading: https://medium.com/codyhouse/line-height-crop-a-simple-css-formula-to-remove-top-space-from-your-text-9c3de06d7c6f
+//  @use:
+//
+// 1. Using CSS Variables
+//
+// :root {
+//  /* line-height */
+//  --heading-line-height: 1.2;
+//  --body-line-height: 1.4;
+//  --article-line-height: 1.58;
+// }
+//
+// .text-to-crop {
+//  @include lhCrop(var(--heading-line-height));
+// }
+//
+// 2. Using normal variables
+//
+// .text-to-crop {
+//  @include lhCrop(1.2); //line-height: 1.2
+// }
+//
+// @note:
+// Please try to use it with much care. Should be used mostly on headings and
+// paragraphs that don't use :pseudo-elements like :before or :after. Avoid
+// using on semantic elements like div, aside, section, header, footer, main,
+// etc. Also avoid using on inline elements such as anchors or spans. If an
+// inline element needs to be cropped, consider wrapping it in a block-level
+// element such as a paragraph.
+
+
+// these vars are used to crop to the cap-height and the baseline. They are
+// specific to the Facundo font and should be updated if the font is changed.
+$lh-offset-top: 0.13em;
+$lh-offset-bottom: 0.17em;
+
+@mixin lhCropTop($line-height) {
+	display: flow-root; // prevents margin collapse interfering with the crop
+
+	&::before {
+		content: '';
+		display: block;
+		height: 0;
+		width: 0;
+		margin-top: calc((1 - #{$line-height}) * 0.5em - #{$lh-offset-top});
+	}
+}
+
+@mixin lhCropBottom($line-height) {
+	display: flow-root; // prevents margin collapse interfering with the crop
+
+	&::after {
+		content: '';
+		display: block;
+		height: 0;
+		width: 0;
+		margin-bottom: calc((1 - #{$line-height}) * 0.5em - #{$lh-offset-bottom});
+	}
+}

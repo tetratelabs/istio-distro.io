@@ -1,0 +1,55 @@
+/**
+ * Section Heading
+ *
+ * Group: Custom Components
+ */
+
+.c-section-heading {
+  $this: &;
+
+  text-align: center;
+  margin-bottom: var(--space-xl);
+  width: 100%;
+
+  &__wrap {
+    &.why-istio {
+      align-items: center;
+      display: flex;
+      gap: var(--space-xl);
+    }
+  }
+
+  &__title {
+    min-height: 1.12em;
+
+    @include mq($until: phablet) {
+      text-align: center;
+    }
+  }
+
+  &__subtitle {
+    @include mq($until: phablet) {
+      text-align: center;
+    }
+  }
+
+  &--inner {
+    margin-bottom: 0;
+  }
+
+  &--left {
+    text-align: left;
+
+    .o-container {
+      text-align: left;
+    }
+
+    #{$this}__title {
+      max-width: 14em;
+    }
+
+    #{$this}__subtitle {
+      max-width: 31em;
+    }
+  }
+}
