@@ -1,0 +1,23 @@
+name: 'Refresh downloads page'
+on:
+  schedule:
+    - cron: '0 0 * * *' # https://crontab.guru/#0_0_*_*_*
+
+  # Allows triggering the workflow manually in github actions page.
+  workflow_dispatch:
+
+defaults:
+  run: # use bash for all operating systems unless overridden
+    shell: bash
+
+concurrency:
+  group: refresh-download-page
+
+jobs:
+  trigger-build:
+    name: 'Trigger build'
+    runs-on: ubuntu-latest
+    steps:
+      # We trigger build using https://docs.netlify.com/configure-builds/build-hooks.
+      - name: Trigger build
+        run: curl -X POST -d '{}' https://api.netlify.com/build_hooks/${{ BUILD_HOOK_ID }}
