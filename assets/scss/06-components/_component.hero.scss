@@ -17,6 +17,10 @@
   margin-left: -50vw;
   left: 50%;
 
+  @include mq($until: tablet) {
+    padding-top: 100px !important;
+  }
+
   @include mq($from: tablet) {
     min-height: 440px;
   }
