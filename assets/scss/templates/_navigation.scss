@@ -28,14 +28,6 @@
   position: absolute;
   width: 100%;
 
-  &.nav-bg {
-    background: #262f40;
-    @extend .shadow;
-    @include desktop {
-      top: -50px;
-    }
-  }
-
   @include desktop {
     .form-inline {
       width: 100%;

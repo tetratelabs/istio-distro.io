@@ -8,14 +8,35 @@ $(document).on('turbolinks:load', preloader);
 (function ($) {
   'use strict';
 
-  // navfixed
-  $(window).scroll(function () {
-    if ($('.navigation').offset().top > 50) {
-      $('.navigation').addClass('nav-bg');
+  let lastKnownScrollPosition = 0;
+  let ticking = false;
+  let stickyClass = 'is-sticky';
+  const header = document.querySelector('.header');
+
+  function updateHeaderStickiness(scrollPosition) {
+    if (scrollPosition > 50) {
+      header.classList.add(stickyClass);
     } else {
-      $('.navigation').removeClass('nav-bg');
+      header.classList.remove(stickyClass);
     }
-  });
+  }
+
+  document.addEventListener(
+    'scroll',
+    (event) => {
+      lastKnownScrollPosition = document.body.scrollTop;
+
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          updateHeaderStickiness(lastKnownScrollPosition);
+          ticking = false;
+        });
+
+        ticking = true;
+      }
+    },
+    { capture: true }
+  );
 
   // Get Parameters from some url
   var getUrlParameter = function getUrlParameter(sPageURL) {
