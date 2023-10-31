@@ -16,6 +16,12 @@
 - id: email
   translation: Email
 
+- id: error_message
+  translation: Please enter a valid email address.
+
+- id: form_message
+  translation: Thank you for subscribing.
+
 - id: contact_reason
   translation: Reason of Contact
 
@@ -62,58 +68,58 @@
   translation: copy
 
 - id: date_format
-  translation: "Jan 2, 2006"
+  translation: 'Jan 2, 2006'
 
 - id: minute
-  translation: "PM 3:04"
+  translation: 'PM 3:04'
 
 - id: min_read
-  translation: "min read"
+  translation: 'min read'
 
 - id: continue_reading
-  translation: "Continue Reading"
+  translation: 'Continue Reading'
 
 - id: blog
   translation: Blog
 
 - id: stay_up
-  translation: "Stay up to date on the latest GetIstio news"
+  translation: 'Stay up to date on the latest GetIstio news'
 
 - id: by
-  translation: "by"
+  translation: 'by'
 
 - id: published_on
-  translation: "on"
+  translation: 'on'
 
 - id: back_to_blog
-  translation: "Back to Blog"
+  translation: 'Back to Blog'
 
 - id: read_more
-  translation: "Read More"
+  translation: 'Read More'
 
 - id: back_to_partners
-  translation: "Back to Partners"
+  translation: 'Back to Partners'
 
 - id: partners
-  translation: "Partners"
+  translation: 'Partners'
 
 - id: at
-  translation: "at"
+  translation: 'at'
 
 - id: check_your_timezone
-  translation: "Check your timezone"
+  translation: 'Check your timezone'
 
 - id: site_name
-  translation: "GetIstio by Tetrate | Simple, safe enterprise-grade Istio distro"
+  translation: 'GetIstio by Tetrate | Simple, safe enterprise-grade Istio distro'
 
 - id: upcoming_getistio_community_events
-  translation: "Upcoming Tetrate Istio Distro Community Events"
+  translation: 'Upcoming Tetrate Istio Distro Community Events'
 
 - id: contributing_to_getistio
-  translation: "Contributing to GetIstio"
+  translation: 'Contributing to GetIstio'
 
 - id: getistio_community
-  translation: "Tetrate Istio Distro Community"
+  translation: 'Tetrate Istio Distro Community'
 
 - id: see_also
-  translation: "See Also"
+  translation: 'See Also'
