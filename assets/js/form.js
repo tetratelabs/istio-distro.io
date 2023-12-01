@@ -34,7 +34,7 @@ if (subscriptionForm) {
     let emailValue = document.getElementById('email').value;
 
     if (validation()) {
-      errorMessage.className = '';
+      // errorMessage.className = '';
 
       let data = {
         fields: [

@@ -18,6 +18,7 @@
     padding: 0;
   }
 }
+
 .logo-width {
   width: 150px;
 }
@@ -37,6 +38,23 @@
       }
     }
   }
+
+  @media screen and (max-width: 991px) {
+    background-color: var(--color-light);
+  }
+}
+
+.navbar-toggler {
+  background-color: transparent;
+
+  i {
+    color: var(--color-dark);
+    margin: 0;
+  }
+}
+
+.navbar-collapse {
+  padding: var(--space-lg);
 }
 
 .nav-item {

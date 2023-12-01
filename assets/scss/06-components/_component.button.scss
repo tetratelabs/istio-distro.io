@@ -5,108 +5,111 @@
  */
 
 .c-button {
-	$this: &;
+  $this: &;
 
-	@include button;
-	@include buttonSize;
+  @include button;
+  @include buttonSize;
 
-	/**
+  @include mq($until: phablet) {
+    min-width: 240px;
+  }
+
+  /**
 	 * Button States
 	 */
-	&[disabled] {
-		cursor: not-allowed;
-		box-shadow: none;
-		opacity: 0.6;
-	}
+  &[disabled] {
+    cursor: not-allowed;
+    box-shadow: none;
+    opacity: 0.6;
+  }
 
-	/**
+  /**
 	 * Button Parts
 	 */
-	&__icon {
-		max-width: var(--icon-sm);
-		margin-right: var(--space-sm)
-	}
+  &__icon {
+    max-width: var(--icon-sm);
+    margin-right: var(--space-sm);
+  }
 
-	i {
-		& + span {
-			margin-left: var(--space-sm);
-		}
-	}
+  i {
+    & + span {
+      margin-left: var(--space-sm);
+    }
+  }
 
-	span {
-		& + i {
-			margin-left: var(--space-sm);
-		}
-	}
+  span {
+    & + i {
+      margin-left: var(--space-sm);
+    }
+  }
 
-	/**
+  /**
 	 * Button Styles
 	 */
-	&--primary {
-		@include buttonStyle('primary', true);
-	}
+  &--primary {
+    @include buttonStyle('primary', true);
+  }
 
-	&--primary-outline {
-		@include buttonStyle('primary-outline', true);
-	}
+  &--primary-outline {
+    @include buttonStyle('primary-outline', true);
+  }
 
-	&--secondary {
-		@include buttonStyle('secondary', true);
-	}
+  &--secondary {
+    @include buttonStyle('secondary', true);
+  }
 
-	&--secondary-outline {
-		@include buttonStyle('secondary-outline', true);
-	}
+  &--secondary-outline {
+    @include buttonStyle('secondary-outline', true);
+  }
 
-	&--tertiary {
-		@include buttonStyle('tertiary', true);
-	}
+  &--tertiary {
+    @include buttonStyle('tertiary', true);
+  }
 
-	&--tertiary-outline {
-		@include buttonStyle('tertiary-outline', true);
-	}
+  &--tertiary-outline {
+    @include buttonStyle('tertiary-outline', true);
+  }
 
-	&--quaternary {
-		@include buttonStyle('quaternary', true);
-	}
+  &--quaternary {
+    @include buttonStyle('quaternary', true);
+  }
 
-	&--quaternary-outline {
-		@include buttonStyle('quaternary-outline', true);
-	}
+  &--quaternary-outline {
+    @include buttonStyle('quaternary-outline', true);
+  }
 
-	&--light {
-		@include buttonStyle('light');
-	}
+  &--light {
+    @include buttonStyle('light');
+  }
 
-	&--light-outline {
-		@include buttonStyle('light-outline');
-	}
+  &--light-outline {
+    @include buttonStyle('light-outline');
+  }
 
-	&--dark {
-		@include buttonStyle('dark');
-	}
+  &--dark {
+    @include buttonStyle('dark');
+  }
 
-	&--dark-outline {
-		@include buttonStyle('dark-outline');
-	}
+  &--dark-outline {
+    @include buttonStyle('dark-outline');
+  }
 
-	&--light-blue {
-		@include buttonStyle('light-blue');
-	}
+  &--light-blue {
+    @include buttonStyle('light-blue');
+  }
 
-	/**
+  /**
 	 * Button Sizes
 	 */
-	&--xs {
-		@include buttonSize('xs');
-	}
+  &--xs {
+    @include buttonSize('xs');
+  }
 
-	&--sm {
-		@include buttonSize('sm');
-	}
+  &--sm {
+    @include buttonSize('sm');
+  }
 
-	&--lg {
-		@include buttonSize('lg');
-	}
-
+  &--lg {
+    @include buttonSize('lg');
+  }
 }

@@ -15,16 +15,18 @@
     &.why-istio {
       align-items: center;
       display: flex;
-      gap: var(--space-xl);
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+      text-align: left;
+
+      @include mq($from: tablet) {
+        gap: var(--space-xl);
+      }
     }
   }
 
   &__title {
     min-height: 1.12em;
-
-    @include mq($until: phablet) {
-      text-align: center;
-    }
   }
 
   &__subtitle {
