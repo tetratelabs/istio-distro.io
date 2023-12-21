@@ -33,7 +33,7 @@ force = true
 
 # Redirect download page
 [[redirects]]
-from = "/download/*"
+from = "/download"
 to = "https://docs.tetrate.io/istio-subscription/releases/"
 status = 301
 force = true
