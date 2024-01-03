@@ -8,7 +8,7 @@ hero:
   cta_target: '_blank'
   lead_item:
     - content: '100% Upstream Istio'
-    - content: 'FIPS - compliant'
+    - content: 'FIPS compliant with Tetrate Istio Subscription'
     - content: 'Available as an Amazon EKS add on'
   asciinema_id: 459699
   bg: '/images/home/homepage-hero-bg.png'
