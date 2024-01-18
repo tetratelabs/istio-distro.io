@@ -1,4 +1,10 @@
 [[redirects]]
+from = "*"
+to = "https://docs.tetrate.io/istio-distro"
+status = 301
+force = true
+
+[[redirects]]
 from = "https://getistio.io"
 to = "https://istio.tetratelabs.io"
 status = 301
